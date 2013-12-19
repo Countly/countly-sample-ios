@@ -8,5 +8,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+- (IBAction)onClick_event:(id)sender;
 
 @end

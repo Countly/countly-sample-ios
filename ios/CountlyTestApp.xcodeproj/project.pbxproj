@@ -18,6 +18,13 @@
 		D2BAB0B817EC8EE600807D0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BAB0B717EC8EE600807D0D /* ViewController.m */; };
 		D2BAB0BA17EC8EE600807D0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2BAB0B917EC8EE600807D0D /* Images.xcassets */; };
 		D2BAB0D717EC8FF400807D0D /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2BAB0D617EC8FF400807D0D /* ViewController.xib */; };
+		D2D3FBAE18639382000C0367 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = D2D3FBA318639382000C0367 /* .gitattributes */; };
+		D2D3FBAF18639382000C0367 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D3FBA518639382000C0367 /* Countly.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D2D3FBB018639382000C0367 /* Countly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2D3FBA618639382000C0367 /* Countly.xcdatamodeld */; };
+		D2D3FBB118639382000C0367 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D3FBA918639382000C0367 /* Countly_OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D2D3FBB218639382000C0367 /* CountlyDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D3FBAB18639382000C0367 /* CountlyDB.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D2D3FBB318639382000C0367 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D2D3FBAC18639382000C0367 /* LICENSE */; };
+		D2D3FBB418639382000C0367 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D2D3FBAD18639382000C0367 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +45,16 @@
 		D2BAB0B917EC8EE600807D0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D2BAB0C017EC8EE600807D0D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D2BAB0D617EC8FF400807D0D /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		D2D3FBA318639382000C0367 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		D2D3FBA418639382000C0367 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
+		D2D3FBA518639382000C0367 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
+		D2D3FBA718639382000C0367 /* Countly.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Countly.xcdatamodel; sourceTree = "<group>"; };
+		D2D3FBA818639382000C0367 /* Countly_OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly_OpenUDID.h; sourceTree = "<group>"; };
+		D2D3FBA918639382000C0367 /* Countly_OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly_OpenUDID.m; sourceTree = "<group>"; };
+		D2D3FBAA18639382000C0367 /* CountlyDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyDB.h; sourceTree = "<group>"; };
+		D2D3FBAB18639382000C0367 /* CountlyDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyDB.m; sourceTree = "<group>"; };
+		D2D3FBAC18639382000C0367 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D2D3FBAD18639382000C0367 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +106,7 @@
 		D2BAB0A717EC8EE600807D0D /* CountlyTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				D2D3FBA218639382000C0367 /* countly-sdk-ios */,
 				D2BAB0B017EC8EE600807D0D /* AppDelegate.h */,
 				D2BAB0B117EC8EE600807D0D /* AppDelegate.m */,
 				D2BAB0B617EC8EE600807D0D /* ViewController.h */,
@@ -109,6 +127,23 @@
 				D2BAB0AF17EC8EE600807D0D /* CountlyTestApp-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2D3FBA218639382000C0367 /* countly-sdk-ios */ = {
+			isa = PBXGroup;
+			children = (
+				D2D3FBA318639382000C0367 /* .gitattributes */,
+				D2D3FBA418639382000C0367 /* Countly.h */,
+				D2D3FBA518639382000C0367 /* Countly.m */,
+				D2D3FBA618639382000C0367 /* Countly.xcdatamodeld */,
+				D2D3FBA818639382000C0367 /* Countly_OpenUDID.h */,
+				D2D3FBA918639382000C0367 /* Countly_OpenUDID.m */,
+				D2D3FBAA18639382000C0367 /* CountlyDB.h */,
+				D2D3FBAB18639382000C0367 /* CountlyDB.m */,
+				D2D3FBAC18639382000C0367 /* LICENSE */,
+				D2D3FBAD18639382000C0367 /* README.md */,
+			);
+			path = "countly-sdk-ios";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,9 +199,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2D3FBB418639382000C0367 /* README.md in Resources */,
 				D2BAB0BA17EC8EE600807D0D /* Images.xcassets in Resources */,
 				D2BAB0D717EC8FF400807D0D /* ViewController.xib in Resources */,
 				D2BAB0AC17EC8EE600807D0D /* InfoPlist.strings in Resources */,
+				D2D3FBAE18639382000C0367 /* .gitattributes in Resources */,
+				D2D3FBB318639382000C0367 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,8 +215,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2D3FBB218639382000C0367 /* CountlyDB.m in Sources */,
+				D2D3FBB118639382000C0367 /* Countly_OpenUDID.m in Sources */,
 				D2BAB0B217EC8EE600807D0D /* AppDelegate.m in Sources */,
 				D2BAB0AE17EC8EE600807D0D /* main.m in Sources */,
+				D2D3FBB018639382000C0367 /* Countly.xcdatamodeld in Sources */,
+				D2D3FBAF18639382000C0367 /* Countly.m in Sources */,
 				D2BAB0B817EC8EE600807D0D /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +361,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D2D3FBA618639382000C0367 /* Countly.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D2D3FBA718639382000C0367 /* Countly.xcdatamodel */,
+			);
+			currentVersion = D2D3FBA718639382000C0367 /* Countly.xcdatamodel */;
+			path = Countly.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D2BAB09617EC8EE600807D0D /* Project object */;
 }

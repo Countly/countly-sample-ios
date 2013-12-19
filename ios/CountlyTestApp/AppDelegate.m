@@ -7,11 +7,14 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "Countly.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[Countly sharedInstance] start:@"YOUR_APP_KEY" withHost:@"https://YOUR_API_HOST.com"];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];

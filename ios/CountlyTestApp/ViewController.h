@@ -9,5 +9,6 @@
 
 @interface ViewController : UIViewController
 - (IBAction)onClick_event:(id)sender;
+@property (strong, nonatomic) IBOutlet UITextView *txt_log;
 
 @end

@@ -17,6 +17,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self performSelector:@selector(updateLogs) withObject:nil afterDelay:0.0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,7 +38,7 @@
 
 - (IBAction)onClick_event:(id)sender
 {
-    NSLog(@"%s tag: %i",__FUNCTION__,[sender tag]);
+    NSLog(@"%s tag: %li",__FUNCTION__,(long)[sender tag]);
 
     switch ([sender tag])
     {
@@ -55,5 +57,23 @@
         default:
             break;
     }
+}
+
+-(void)updateLogs
+{
+    NSString *logFilePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"logfile.log"];
+    
+    NSData *d = [NSData dataWithContentsOfFile:logFilePath];
+    NSString *s = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
+    
+    if(![s isEqualToString:@""])
+        self.txt_log.text = s;
+    
+    NSRange myRange=NSMakeRange(self.txt_log.text.length, 0);
+    [self.txt_log scrollRangeToVisible:myRange];
+
+    s = nil;
+    
+    [self performSelector:@selector(updateLogs) withObject:nil afterDelay:0.2];
 }
 @end

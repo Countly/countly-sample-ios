@@ -19,7 +19,7 @@
     [[Countly sharedInstance] start:@"YOUR_APP_KEY" withHost:@"https://YOUR_API_HOST.com"];
 
 //  or
-//  [[Countly sharedInstance] startOnCloudWithAppKey:@"2b1161ec475f2f236231365fa2774b9bc9820403"];
+//  [[Countly sharedInstance] startOnCloudWithAppKey:@"YOUR_APP_KEY"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 

@@ -7,34 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D22224D5190005DC002061C5 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = D22224C9190005DC002061C5 /* .gitattributes */; };
-		D22224D6190005DC002061C5 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D22224CB190005DC002061C5 /* Countly.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D22224D7190005DC002061C5 /* Countly.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D22224CC190005DC002061C5 /* Countly.podspec */; };
-		D22224D8190005DC002061C5 /* Countly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D22224CD190005DC002061C5 /* Countly.xcdatamodeld */; };
-		D22224D9190005DC002061C5 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D22224D0190005DC002061C5 /* Countly_OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D22224DA190005DC002061C5 /* CountlyDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D22224D2190005DC002061C5 /* CountlyDB.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D22224DB190005DC002061C5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D22224D3190005DC002061C5 /* LICENSE */; };
-		D22224DC190005DC002061C5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D22224D4190005DC002061C5 /* README.md */; };
 		D2315A2E18EBE52000119D0D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2315A2D18EBE52000119D0D /* Cocoa.framework */; };
 		D2315A3818EBE52100119D0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2315A3618EBE52100119D0D /* InfoPlist.strings */; };
 		D2315A3A18EBE52100119D0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2315A3918EBE52100119D0D /* main.m */; };
 		D2315A4118EBE52100119D0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2315A4018EBE52100119D0D /* AppDelegate.m */; };
 		D2315A4418EBE52100119D0D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2315A4218EBE52100119D0D /* MainMenu.xib */; };
 		D2315A4618EBE52100119D0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2315A4518EBE52100119D0D /* Images.xcassets */; };
+		D2A1708D19093F5B00AB636E /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = D2A1708119093F5B00AB636E /* .gitattributes */; };
+		D2A1708E19093F5B00AB636E /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A1708319093F5B00AB636E /* Countly.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D2A1708F19093F5B00AB636E /* Countly.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D2A1708419093F5B00AB636E /* Countly.podspec */; };
+		D2A1709019093F5B00AB636E /* Countly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2A1708519093F5B00AB636E /* Countly.xcdatamodeld */; };
+		D2A1709119093F5B00AB636E /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A1708819093F5B00AB636E /* Countly_OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D2A1709219093F5B00AB636E /* CountlyDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A1708A19093F5B00AB636E /* CountlyDB.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D2A1709319093F5B00AB636E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D2A1708B19093F5B00AB636E /* LICENSE */; };
+		D2A1709419093F5B00AB636E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D2A1708C19093F5B00AB636E /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D22224C9190005DC002061C5 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
-		D22224CA190005DC002061C5 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
-		D22224CB190005DC002061C5 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
-		D22224CC190005DC002061C5 /* Countly.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countly.podspec; sourceTree = "<group>"; };
-		D22224CE190005DC002061C5 /* Countly.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Countly.xcdatamodel; sourceTree = "<group>"; };
-		D22224CF190005DC002061C5 /* Countly_OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly_OpenUDID.h; sourceTree = "<group>"; };
-		D22224D0190005DC002061C5 /* Countly_OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly_OpenUDID.m; sourceTree = "<group>"; };
-		D22224D1190005DC002061C5 /* CountlyDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyDB.h; sourceTree = "<group>"; };
-		D22224D2190005DC002061C5 /* CountlyDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyDB.m; sourceTree = "<group>"; };
-		D22224D3190005DC002061C5 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		D22224D4190005DC002061C5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		D2315A2A18EBE52000119D0D /* CountlyTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountlyTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2315A2D18EBE52000119D0D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D2315A3018EBE52000119D0D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -48,6 +37,17 @@
 		D2315A4018EBE52100119D0D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D2315A4318EBE52100119D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D2315A4518EBE52100119D0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D2A1708119093F5B00AB636E /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		D2A1708219093F5B00AB636E /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
+		D2A1708319093F5B00AB636E /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
+		D2A1708419093F5B00AB636E /* Countly.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countly.podspec; sourceTree = "<group>"; };
+		D2A1708619093F5B00AB636E /* Countly.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Countly.xcdatamodel; sourceTree = "<group>"; };
+		D2A1708719093F5B00AB636E /* Countly_OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly_OpenUDID.h; sourceTree = "<group>"; };
+		D2A1708819093F5B00AB636E /* Countly_OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly_OpenUDID.m; sourceTree = "<group>"; };
+		D2A1708919093F5B00AB636E /* CountlyDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyDB.h; sourceTree = "<group>"; };
+		D2A1708A19093F5B00AB636E /* CountlyDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyDB.m; sourceTree = "<group>"; };
+		D2A1708B19093F5B00AB636E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D2A1708C19093F5B00AB636E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,24 +62,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D22224C8190005DC002061C5 /* countly-sdk-ios */ = {
-			isa = PBXGroup;
-			children = (
-				D22224C9190005DC002061C5 /* .gitattributes */,
-				D22224CA190005DC002061C5 /* Countly.h */,
-				D22224CB190005DC002061C5 /* Countly.m */,
-				D22224CC190005DC002061C5 /* Countly.podspec */,
-				D22224CD190005DC002061C5 /* Countly.xcdatamodeld */,
-				D22224CF190005DC002061C5 /* Countly_OpenUDID.h */,
-				D22224D0190005DC002061C5 /* Countly_OpenUDID.m */,
-				D22224D1190005DC002061C5 /* CountlyDB.h */,
-				D22224D2190005DC002061C5 /* CountlyDB.m */,
-				D22224D3190005DC002061C5 /* LICENSE */,
-				D22224D4190005DC002061C5 /* README.md */,
-			);
-			path = "countly-sdk-ios";
-			sourceTree = "<group>";
-		};
 		D2315A2118EBE52000119D0D = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +101,7 @@
 		D2315A3318EBE52000119D0D /* CountlyTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				D22224C8190005DC002061C5 /* countly-sdk-ios */,
+				D2A1708019093F5B00AB636E /* countly-sdk-ios */,
 				D2315A3F18EBE52100119D0D /* AppDelegate.h */,
 				D2315A4018EBE52100119D0D /* AppDelegate.m */,
 				D2315A4218EBE52100119D0D /* MainMenu.xib */,
@@ -138,6 +120,25 @@
 				D2315A3B18EBE52100119D0D /* CountlyTestApp-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2A1708019093F5B00AB636E /* countly-sdk-ios */ = {
+			isa = PBXGroup;
+			children = (
+				D2A1708119093F5B00AB636E /* .gitattributes */,
+				D2A1708219093F5B00AB636E /* Countly.h */,
+				D2A1708319093F5B00AB636E /* Countly.m */,
+				D2A1708419093F5B00AB636E /* Countly.podspec */,
+				D2A1708519093F5B00AB636E /* Countly.xcdatamodeld */,
+				D2A1708719093F5B00AB636E /* Countly_OpenUDID.h */,
+				D2A1708819093F5B00AB636E /* Countly_OpenUDID.m */,
+				D2A1708919093F5B00AB636E /* CountlyDB.h */,
+				D2A1708A19093F5B00AB636E /* CountlyDB.m */,
+				D2A1708B19093F5B00AB636E /* LICENSE */,
+				D2A1708C19093F5B00AB636E /* README.md */,
+			);
+			name = "countly-sdk-ios";
+			path = "../../ios/CountlyTestApp/countly-sdk-ios";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,13 +193,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D22224DB190005DC002061C5 /* LICENSE in Resources */,
-				D22224D7190005DC002061C5 /* Countly.podspec in Resources */,
+				D2A1709319093F5B00AB636E /* LICENSE in Resources */,
+				D2A1708F19093F5B00AB636E /* Countly.podspec in Resources */,
 				D2315A3818EBE52100119D0D /* InfoPlist.strings in Resources */,
-				D22224DC190005DC002061C5 /* README.md in Resources */,
+				D2A1709419093F5B00AB636E /* README.md in Resources */,
 				D2315A4618EBE52100119D0D /* Images.xcassets in Resources */,
 				D2315A4418EBE52100119D0D /* MainMenu.xib in Resources */,
-				D22224D5190005DC002061C5 /* .gitattributes in Resources */,
+				D2A1708D19093F5B00AB636E /* .gitattributes in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,10 +211,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2315A4118EBE52100119D0D /* AppDelegate.m in Sources */,
-				D22224D6190005DC002061C5 /* Countly.m in Sources */,
-				D22224DA190005DC002061C5 /* CountlyDB.m in Sources */,
-				D22224D9190005DC002061C5 /* Countly_OpenUDID.m in Sources */,
-				D22224D8190005DC002061C5 /* Countly.xcdatamodeld in Sources */,
+				D2A1708E19093F5B00AB636E /* Countly.m in Sources */,
+				D2A1709219093F5B00AB636E /* CountlyDB.m in Sources */,
+				D2A1709119093F5B00AB636E /* Countly_OpenUDID.m in Sources */,
+				D2A1709019093F5B00AB636E /* Countly.xcdatamodeld in Sources */,
 				D2315A3A18EBE52100119D0D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,12 +361,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D22224CD190005DC002061C5 /* Countly.xcdatamodeld */ = {
+		D2A1708519093F5B00AB636E /* Countly.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D22224CE190005DC002061C5 /* Countly.xcdatamodel */,
+				D2A1708619093F5B00AB636E /* Countly.xcdatamodel */,
 			);
-			currentVersion = D22224CE190005DC002061C5 /* Countly.xcdatamodel */;
+			currentVersion = D2A1708619093F5B00AB636E /* Countly.xcdatamodel */;
 			path = Countly.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

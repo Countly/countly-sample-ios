@@ -12,8 +12,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    [[Countly sharedInstance] start:@"YOUR_APP_KEY" withHost:@"https://YOUR_API_HOST.com"];
-
+    [[Countly sharedInstance] start:@"1cc08d39369fc0ee65188b0c70be9ce8771eace0" withHost:@"http://cloud.count.ly"];
+    [Countly.sharedInstance startCrashReporting];
 //  or
 //
 //  [[Countly sharedInstance] startOnCloudWithAppKey:@"YOUR_APP_KEY"];
@@ -29,11 +29,15 @@
 {
     switch ([sender tag])
     {
-        case 1: [[Countly sharedInstance] recordEvent:@"EventA" count:1];
+        case 1: [self performSelector:@selector(nonExistingSel:) withObject:nil];
+            
+//            [[Countly sharedInstance] recordEvent:@"EventA" count:1];
                 NSLog(@"\nRecorded event 'EventA' with count: 1");
                 break;
             
-        case 2: [[Countly sharedInstance] recordEvent:@"EventA" count:3 sum:4.99];
+        case 2:
+        {int *p =NULL; *p = 33;}
+//            [[Countly sharedInstance] recordEvent:@"EventA" count:3 sum:4.99];
                 NSLog(@"\nRecorded event 'EventA' with count: 1 and sum: 4.99");
                 break;
             

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D20C2C5F1A3F2DF600664CAD /* SamplePicture.gif in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */; };
+		D20C2C601A3F2DF600664CAD /* SamplePicture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */; };
+		D20C2C611A3F2DF600664CAD /* SamplePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */; };
 		D290ED8A186337A90027082D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290ED89186337A90027082D /* CoreTelephony.framework */; };
 		D290ED8C186337B00027082D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290ED8B186337B00027082D /* CoreData.framework */; };
 		D2BAB0A217EC8EE600807D0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A117EC8EE600807D0D /* Foundation.framework */; };
@@ -25,9 +28,13 @@
 		D2D3FBB218639382000C0367 /* CountlyDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D3FBAB18639382000C0367 /* CountlyDB.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D2D3FBB318639382000C0367 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D2D3FBAC18639382000C0367 /* LICENSE */; };
 		D2D3FBB418639382000C0367 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D2D3FBAD18639382000C0367 /* README.md */; };
+		D2D4F4281A0BB34500C0EF0B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D4F4271A0BB34500C0EF0B /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SamplePicture.gif; sourceTree = "<group>"; };
+		D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SamplePicture.jpg; sourceTree = "<group>"; };
+		D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SamplePicture.png; sourceTree = "<group>"; };
 		D290ED89186337A90027082D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D290ED8B186337B00027082D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D2BAB09E17EC8EE600807D0D /* CountlyTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountlyTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,7 +50,6 @@
 		D2BAB0B617EC8EE600807D0D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D2BAB0B717EC8EE600807D0D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D2BAB0B917EC8EE600807D0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D2BAB0C017EC8EE600807D0D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D2BAB0D617EC8FF400807D0D /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		D2D3FBA318639382000C0367 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		D2D3FBA418639382000C0367 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
@@ -55,6 +61,7 @@
 		D2D3FBAB18639382000C0367 /* CountlyDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyDB.m; sourceTree = "<group>"; };
 		D2D3FBAC18639382000C0367 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D2D3FBAD18639382000C0367 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		D2D4F4271A0BB34500C0EF0B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2D4F4281A0BB34500C0EF0B /* AdSupport.framework in Frameworks */,
 				D290ED8C186337B00027082D /* CoreData.framework in Frameworks */,
 				D290ED8A186337A90027082D /* CoreTelephony.framework in Frameworks */,
 				D2BAB0A417EC8EE600807D0D /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +81,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D20C2C5B1A3F2DF600664CAD /* img */ = {
+			isa = PBXGroup;
+			children = (
+				D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */,
+				D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */,
+				D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
 		D2BAB09517EC8EE600807D0D = {
 			isa = PBXGroup;
 			children = (
@@ -93,12 +111,12 @@
 		D2BAB0A017EC8EE600807D0D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D2D4F4271A0BB34500C0EF0B /* AdSupport.framework */,
 				D290ED8B186337B00027082D /* CoreData.framework */,
 				D290ED89186337A90027082D /* CoreTelephony.framework */,
 				D2BAB0A117EC8EE600807D0D /* Foundation.framework */,
 				D2BAB0A317EC8EE600807D0D /* CoreGraphics.framework */,
 				D2BAB0A517EC8EE600807D0D /* UIKit.framework */,
-				D2BAB0C017EC8EE600807D0D /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,6 +130,7 @@
 				D2BAB0B617EC8EE600807D0D /* ViewController.h */,
 				D2BAB0B717EC8EE600807D0D /* ViewController.m */,
 				D2BAB0D617EC8FF400807D0D /* ViewController.xib */,
+				D20C2C5B1A3F2DF600664CAD /* img */,
 				D2BAB0B917EC8EE600807D0D /* Images.xcassets */,
 				D2BAB0A817EC8EE600807D0D /* Supporting Files */,
 			);
@@ -201,7 +220,10 @@
 			files = (
 				D2D3FBB418639382000C0367 /* README.md in Resources */,
 				D2BAB0BA17EC8EE600807D0D /* Images.xcassets in Resources */,
+				D20C2C601A3F2DF600664CAD /* SamplePicture.jpg in Resources */,
 				D2BAB0D717EC8FF400807D0D /* ViewController.xib in Resources */,
+				D20C2C5F1A3F2DF600664CAD /* SamplePicture.gif in Resources */,
+				D20C2C611A3F2DF600664CAD /* SamplePicture.png in Resources */,
 				D2BAB0AC17EC8EE600807D0D /* InfoPlist.strings in Resources */,
 				D2D3FBAE18639382000C0367 /* .gitattributes in Resources */,
 				D2D3FBB318639382000C0367 /* LICENSE in Resources */,
@@ -256,7 +278,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Onur Soner (3S32KFMHB8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Onur Soner (3S32KFMHB8)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -274,6 +297,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "DB143A64-F101-45FE-B924-277E325A4148";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -295,7 +319,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Onur Soner (3S32KFMHB8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Onur Soner (3S32KFMHB8)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -306,6 +331,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PROVISIONING_PROFILE = "DB143A64-F101-45FE-B924-277E325A4148";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -317,10 +343,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CountlyTestApp/CountlyTestApp-Prefix.pch";
 				INFOPLIST_FILE = "CountlyTestApp/CountlyTestApp-Info.plist";
 				PRODUCT_NAME = CountlyTestApp;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -330,11 +358,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CountlyTestApp/CountlyTestApp-Prefix.pch";
 				INFOPLIST_FILE = "CountlyTestApp/CountlyTestApp-Info.plist";
 				PRODUCT_NAME = CountlyTestApp;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -45,6 +45,14 @@
 }
 
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.scr_main.contentSize = (CGSize){self.scr_main.bounds.size.width*3,self.scr_main.bounds.size.height};
+    [super viewWillAppear:animated];
+}
+
+
+
 #pragma mark -
 - (IBAction)onClick_event:(id)sender
 {

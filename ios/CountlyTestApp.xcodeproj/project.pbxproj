@@ -22,10 +22,10 @@
 		D2BAB0BA17EC8EE600807D0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2BAB0B917EC8EE600807D0D /* Images.xcassets */; };
 		D2BAB0D717EC8FF400807D0D /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2BAB0D617EC8FF400807D0D /* ViewController.xib */; };
 		D2D3FBAE18639382000C0367 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = D2D3FBA318639382000C0367 /* .gitattributes */; };
-		D2D3FBAF18639382000C0367 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D3FBA518639382000C0367 /* Countly.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D2D3FBAF18639382000C0367 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D3FBA518639382000C0367 /* Countly.m */; };
 		D2D3FBB018639382000C0367 /* Countly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2D3FBA618639382000C0367 /* Countly.xcdatamodeld */; };
-		D2D3FBB118639382000C0367 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D3FBA918639382000C0367 /* Countly_OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D2D3FBB218639382000C0367 /* CountlyDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D3FBAB18639382000C0367 /* CountlyDB.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D2D3FBB118639382000C0367 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D3FBA918639382000C0367 /* Countly_OpenUDID.m */; };
+		D2D3FBB218639382000C0367 /* CountlyDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D3FBAB18639382000C0367 /* CountlyDB.m */; };
 		D2D3FBB318639382000C0367 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D2D3FBAC18639382000C0367 /* LICENSE */; };
 		D2D3FBB418639382000C0367 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D2D3FBAD18639382000C0367 /* README.md */; };
 		D2D4F4281A0BB34500C0EF0B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D4F4271A0BB34500C0EF0B /* AdSupport.framework */; };

@@ -113,6 +113,11 @@
                                                         kCLYUserPicturePath:localImagePath
                                                         }];
         }break;
+        
+        case 22:
+        {
+            [Countly.sharedInstance setLocation:33.6789 longitude:43.1234];
+        }break;
             
         default:
             break;

@@ -12,16 +12,17 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    [[Countly sharedInstance] start:@"1cc08d39369fc0ee65188b0c70be9ce8771eace0" withHost:@"http://cloud.count.ly"];
-//    [Countly.sharedInstance startCrashReporting];
-//  or
+//start Countly
+//  [Countly.sharedInstance start:@"YOUR_APP_KEY" withHost:@"https://YOUR_API_HOST.com"];
 //
-//  [[Countly sharedInstance] startOnCloudWithAppKey:@"YOUR_APP_KEY"];
+//or use convenience method for Countly Cloud
+//
+//  [Countly.sharedInstance startOnCloudWithAppKey:@"YOUR_APP_KEY"];
     
-
     self.window.backgroundColor = [NSColor colorWithCalibratedRed:65/255.0 green:178/255.0 blue:70/255.0 alpha:1];
-    
-    [self performSelector:@selector(updateLogs) withObject:nil afterDelay:0.0];
+
+//uncomment these lines (and some in main.m) for displaying console logs inside the test app
+//    [self performSelector:@selector(updateLogs) withObject:nil afterDelay:0.0];
 }
 
 
@@ -30,25 +31,28 @@
     switch ([sender tag])
     {
         case 1:
-//        [self performSelector:@selector(nonExistingSel:) withObject:nil];
-        
-            [[Countly sharedInstance] recordEvent:@"EventA" count:1];
-                NSLog(@"\nRecorded event 'EventA' with count: 1");
-                break;
+        {
+            [Countly.sharedInstance recordEvent:@"EventA" count:1];
+            NSLog(@"\nRecorded event 'EventA' with count: 1");
+        }break;
             
         case 2:
-//        {int *p =NULL; *p = 33;}
-            [[Countly sharedInstance] recordEvent:@"EventA" count:3 sum:4.99];
-                NSLog(@"\nRecorded event 'EventA' with count: 1 and sum: 4.99");
-                break;
+        {
+            [Countly.sharedInstance recordEvent:@"EventA" count:3 sum:4.99];
+            NSLog(@"\nRecorded event 'EventA' with count: 1 and sum: 4.99");
+        }break;
             
-        case 3: [[Countly sharedInstance] recordEvent:@"EventB" segmentation:@{@"aSegKey" : @"aValue"} count:5];
-                NSLog(@"\nRecorded event 'EventB' with segmentation 'aSegKey':'aValue' and count: 5");
-                break;
+        case 3:
+        {
+            [Countly.sharedInstance recordEvent:@"EventB" segmentation:@{@"aSegKey" : @"aValue"} count:5];
+            NSLog(@"\nRecorded event 'EventB' with segmentation 'aSegKey':'aValue' and count: 5");
+        }break;
             
-        case 4: [[Countly sharedInstance] recordEvent:@"EventB" segmentation:@{@"aSegKey" : @"aValue"} count:7 sum:3.94];
-                NSLog(@"\nRecorded event 'EventB' with segmentation 'aSegKey':'aValue' and count: 7 and sum: 3.49");
-                break;
+        case 4:
+        {
+            [Countly.sharedInstance recordEvent:@"EventB" segmentation:@{@"aSegKey" : @"aValue"} count:7 sum:3.94];
+            NSLog(@"\nRecorded event 'EventB' with segmentation 'aSegKey':'aValue' and count: 7 and sum: 3.49");
+        }break;
             
         default:break;
     }

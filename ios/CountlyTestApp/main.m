@@ -12,8 +12,9 @@
 
 int main(int argc, char * argv[])
 {
-    NSString *logFilePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"logfile.log"];
-    freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding],"w",stderr);
+//uncomment these lines for displaying console logs inside the test app
+//    NSString *logFilePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"logfile.log"];
+//    freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding],"w",stderr);
 
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));

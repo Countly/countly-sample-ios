@@ -1,4 +1,3 @@
-//
 // ViewController.h
 //
 // This code is provided under the MIT License.
@@ -17,14 +16,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSURL* documentsDirectory = [NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].lastObject;
 
-    //set log path to see NSLog's within the app
-    self.logFilePath = [documentsDirectory.absoluteString stringByAppendingPathComponent:@"logfile.log"];
-    [self performSelector:@selector(updateLogs) withObject:nil afterDelay:0.0];
+//uncomment these lines (and some in main.m) for displaying console logs inside the test app
+//    self.logFilePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"logfile.log"];
+//    [self performSelector:@selector(updateLogs) withObject:nil afterDelay:0.1];
 
     //copy pictures from App Bundle to Documents directory, to use later for User Details picture upload tests.
+    NSURL* documentsDirectory = [NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
+
     NSArray *fileTypes = @[@"gif",@"jpg",@"png"];
     [fileTypes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
     {
@@ -44,10 +43,23 @@
     return NO;
 }
 
-
 -(void)viewWillAppear:(BOOL)animated
 {
-    self.scr_main.contentSize = (CGSize){self.scr_main.bounds.size.width*3,self.scr_main.bounds.size.height};
+    typedef enum:NSInteger
+    {
+        TestPageCustomEvents,
+        TestPageCrashReporting,
+        TestPageUserDetails,
+        TestPageAPM,
+        TestPageCount
+    } TestPages;
+    
+    self.scr_main.contentSize = (CGSize){self.scr_main.bounds.size.width*TestPageCount,self.scr_main.bounds.size.height};
+    
+    NSInteger startPage = TestPageCustomEvents;
+
+    self.scr_main.contentOffset = CGPointMake(self.scr_main.bounds.size.width*startPage, 0);
+
     [super viewWillAppear:animated];
 }
 
@@ -60,69 +72,182 @@
 
     switch ([sender tag])
     {
-        case 1: [[Countly sharedInstance] recordEvent:@"button-click" count:1];
-            break;
+        case 1:
+            [Countly.sharedInstance recordEvent:@"button-click" count:1];
+        break;
 
-        case 2: [[Countly sharedInstance] recordEvent:@"button-click" count:1 sum:1.99];
-            break;
+        case 2:
+            [Countly.sharedInstance recordEvent:@"button-click" count:1 sum:1.99];
+        break;
 
-        case 3: [[Countly sharedInstance] recordEvent:@"button-click" segmentation:@{@"seg_test" : @"seg_value"} count:1];
-            break;
+        case 3:
+            [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"seg_test" : @"seg_value"} count:1];
+        break;
 
-        case 4: [[Countly sharedInstance] recordEvent:@"button-click" segmentation:@{@"seg_test" : @"seg_value"} count:1 sum:1.99];
-            break;
-            
-            
-//NOTE: requires crashreporting branch
-//        case 11:
-//                CountlyCrashLog(@"pressed the first crash button!");
-//                [self performSelector:@selector(thisIsTheUnrecognizedSelectorWhichCausesTheCrash)];
-//            break;
-//            
-//        case 12:
-//                CountlyCrashLog(@"pressed the second crash button!");
-//                {NSArray *a = @[@"one",@"two",@"three"]; a = @[a[3+arc4random()%10000]];}
-//            break;
-//            
-//        case 13:
-//                CountlyCrashLog(@"pressed the third crash button!");
-//                {int *p = NULL; *p = 1970;}
-//            break;
-//            
-//        case 14:
-//                 CountlyCrashLog(@"pressed the fourth crash button!");
-//                 {CGRect p = (CGRect){0.0/0.0, 0.0, 100.0, 100.0}; UIView *crashView = UIView.new; crashView.frame =p;}
-//            break;
-            
-            
+        case 4:
+            [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"seg_test" : @"seg_value"} count:1 sum:1.99];
+        break;
+        
+        default:break;
+    }
+}
+
+
+- (IBAction)onClick_crash:(id)sender
+{
+    NSLog(@"%s tag: %li",__FUNCTION__,(long)[sender tag]);
+
+    switch ([sender tag])
+    {
+        case 11:
+        {
+            [CountlyCrashReporter.sharedInstance crashTest];
+        }break;
+
+        case 12:
+        {
+            [CountlyCrashReporter.sharedInstance crashTest2];
+        }break;
+
+        case 13:
+        {
+            [CountlyCrashReporter.sharedInstance crashTest3];
+        }break;
+
+        case 14:
+        {
+            [CountlyCrashReporter.sharedInstance crashTest4];
+        }break;
+
+        default: break;
+    }
+}
+
+
+- (IBAction)onClick_userDetails:(id)sender
+{
+    NSLog(@"%s tag: %li",__FUNCTION__,(long)[sender tag]);
+    
+    switch ([sender tag])
+    {
         case 21:
         {
-            ;
             NSURL* documentsDirectory = [NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].lastObject;
             NSString* localImagePath = [documentsDirectory.absoluteString stringByAppendingPathComponent:@"SamplePicture.jpg"];
-            
+            // SamplePicture.png or SamplePicture.gif can be used too.
+        
             [Countly.sharedInstance recordUserDetails:@{
-                                                        kCLYUserName:@"John Doe",
-                                                        kCLYUserEmail:@"john@doe.com",
-                                                        kCLYUserBirthYear:@1970,
-                                                        kCLYUserOrganization:@"UN",
-                                                        kCLYUserGender:@"M",
-                                                        kCLYUserPhone:@"+90123456789",
-                                                      //kCLYUserPicture:@"http://example.com/examplepicture.jpg",
-                                                        kCLYUserCustom:@{@"testkey1":@"testvalue1",@"testkey2":@"testvalue2"},
-                                                        kCLYUserPicturePath:localImagePath
-                                                        }];
+                                                    kCLYUserName:@"John Doe",
+                                                    kCLYUserEmail:@"john@doe.com",
+                                                    kCLYUserBirthYear:@1970,
+                                                    kCLYUserOrganization:@"United Nations",
+                                                    kCLYUserGender:@"M",
+                                                    kCLYUserPhone:@"+0123456789",
+                                                    //kCLYUserPicture:@"http://example.com/examplepicture.jpg",
+                                                    kCLYUserCustom:@{@"testkey1":@"testvalue1",@"testkey2":@"testvalue2"},
+                                                    kCLYUserPicturePath:localImagePath
+                                                    }];
         }break;
         
         case 22:
         {
             [Countly.sharedInstance setLocation:33.6789 longitude:43.1234];
         }break;
-            
-        default:
-            break;
+        
+        default:break;
     }
 }
+
+
+- (IBAction)onClick_APM:(id)sender
+{
+    NSLog(@"%s tag: %li",__FUNCTION__,(long)[sender tag]);
+
+    NSString* urlString = @"http://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json";
+//    NSString* urlString = @"http://www.bbc.co.uk/radio1/playlist.json";
+//    NSString* urlString = @"https://maps.googleapis.com/maps/api/geocode/json?address=Ebisu%20Garden%20Place,Tokyo";
+//    NSString* urlString = @"https://itunes.apple.com/search?term=Michael%20Jackson&entity=musicVideo";
+
+    NSURL* URL = [NSURL URLWithString:urlString];
+    NSMutableURLRequest* request= [NSMutableURLRequest requestWithURL:URL];
+
+    NSURLResponse* response;
+    NSError* error;
+        
+    switch ([sender tag])
+    {
+        case 31:
+        {
+            [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        }break;
+
+        case 32:
+        {
+            [NSURLConnection sendAsynchronousRequest:request queue:NSOperationQueue.mainQueue completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError)
+            {
+            
+            }];
+        }break;
+        
+        case 33:
+        {
+            [NSURLConnection connectionWithRequest:request delegate:self];
+        }break;
+
+        case 34:
+        {
+            #pragma clang diagnostic push
+            #pragma clang diagnostic ignored "-Wunused-variable"
+            NSURLConnection* testConnection = [NSURLConnection.alloc initWithRequest:request delegate:self];
+            #pragma clang diagnostic push
+        }break;
+
+        case 35:
+        {
+            [request setHTTPMethod:@"POST"];
+            [request addValue:@"application/x-www-form-urlencoded;charset=utf-8" forHTTPHeaderField: @"Content-Type"];
+            [request setHTTPBody:[@"testKey1=testValue1&testKey2=testValue2" dataUsingEncoding:NSUTF8StringEncoding]];
+
+            NSURLConnection * testConnection = [NSURLConnection.alloc initWithRequest:request delegate:self startImmediately:YES];
+            [testConnection start];
+        }break;
+
+        case 36:
+        {
+/*
+            NSURLSessionDataTask* testSessionDataTask = [NSURLSession.sharedSession dataTaskWithRequest:request
+                                                                       completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+            {
+                NSLog(@"dataTaskWithRequest finished!");
+            }];
+
+            NSURLSessionDataTask* testSessionDataTask = [NSURLSession.sharedSession dataTaskWithURL:URL
+                                                                                   completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+            {
+                NSLog(@"dataTaskWithURL finished!");
+            }];
+*/
+            NSURLSessionDataTask* testSessionDataTask = [NSURLSession.sharedSession dataTaskWithRequest:request];
+
+            [testSessionDataTask resume];
+//          [testSessionDataTask performSelector:@selector(resume) withObject:nil afterDelay:5];
+        
+        }break;
+
+        case 37:
+        {
+            [Countly.sharedInstance addExceptionForAPM:@"http://finance.yahoo.com"];
+        }break;
+
+        case 38:
+        {
+            [Countly.sharedInstance removeExceptionForAPM:@"http://finance.yahoo.com"];
+        }break;
+
+        default:break;
+    }
+}
+
 
 #pragma mark -
 
@@ -135,17 +260,44 @@
 
 -(void)updateLogs
 {
-    NSData *d = [NSData dataWithContentsOfFile:self.logFilePath];
+    NSError* fileError;
+    
+    NSData *d = [NSData dataWithContentsOfFile:self.logFilePath options:0 error:&fileError];
     NSString *s = [NSString.alloc initWithData:d encoding:NSUTF8StringEncoding];
     
     if(![s isEqualToString:@""])
         self.txt_log.text = s;
     
-    NSRange myRange=NSMakeRange(self.txt_log.text.length, 0);
-    [self.txt_log scrollRangeToVisible:myRange];
+    UIScrollView* textViewScroll = (UIScrollView*)self.txt_log;
+    
+    if (textViewScroll.contentOffset.y >= textViewScroll.contentSize.height - textViewScroll.bounds.size.height)
+    {
+        NSRange myRange = NSMakeRange(self.txt_log.text.length, 0);
+       [self.txt_log scrollRangeToVisible:myRange];
+    }
 
     s = nil;
     
     [self performSelector:@selector(updateLogs) withObject:nil afterDelay:0.2];
 }
+
+#pragma mark -
+
+-(void)connection:(NSURLConnection *)connection didFailWithError:(nonnull NSError *)error
+{
+//    NSLog(@"%s %@",__FUNCTION__,[connection description]);
+}
+
+
+-(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+//    NSLog(@"%s %@",__FUNCTION__,[connection description]);
+}
+
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+//    NSLog(@"%s %@",__FUNCTION__,[connection description]);
+}
+
 @end

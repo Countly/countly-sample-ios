@@ -13,14 +13,23 @@
 		D2315A4118EBE52100119D0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2315A4018EBE52100119D0D /* AppDelegate.m */; };
 		D2315A4418EBE52100119D0D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2315A4218EBE52100119D0D /* MainMenu.xib */; };
 		D2315A4618EBE52100119D0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2315A4518EBE52100119D0D /* Images.xcassets */; };
+		D28D58FE1C1BDA0700006D39 /* CountlyAPMDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = D28D58F71C1BDA0700006D39 /* CountlyAPMDelegateProxy.m */; };
+		D28D58FF1C1BDA0700006D39 /* CountlyAPMNetworkLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D28D58F91C1BDA0700006D39 /* CountlyAPMNetworkLog.m */; };
+		D28D59001C1BDA0700006D39 /* NSURLConnection+CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D28D58FB1C1BDA0700006D39 /* NSURLConnection+CountlyAPM.m */; };
+		D28D59011C1BDA0700006D39 /* NSURLSession+CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D28D58FD1C1BDA0700006D39 /* NSURLSession+CountlyAPM.m */; };
 		D2A1708D19093F5B00AB636E /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = D2A1708119093F5B00AB636E /* .gitattributes */; };
-		D2A1708E19093F5B00AB636E /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A1708319093F5B00AB636E /* Countly.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D2A1708E19093F5B00AB636E /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A1708319093F5B00AB636E /* Countly.m */; };
 		D2A1708F19093F5B00AB636E /* Countly.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D2A1708419093F5B00AB636E /* Countly.podspec */; };
-		D2A1709019093F5B00AB636E /* Countly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2A1708519093F5B00AB636E /* Countly.xcdatamodeld */; };
-		D2A1709119093F5B00AB636E /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A1708819093F5B00AB636E /* Countly_OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D2A1709219093F5B00AB636E /* CountlyDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A1708A19093F5B00AB636E /* CountlyDB.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D2A1709119093F5B00AB636E /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A1708819093F5B00AB636E /* Countly_OpenUDID.m */; };
 		D2A1709319093F5B00AB636E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D2A1708B19093F5B00AB636E /* LICENSE */; };
 		D2A1709419093F5B00AB636E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D2A1708C19093F5B00AB636E /* README.md */; };
+		D2AC89601C1AD5D2002D5688 /* CountlyCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC89531C1AD5D2002D5688 /* CountlyCommon.m */; };
+		D2AC89611C1AD5D2002D5688 /* CountlyConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC89551C1AD5D2002D5688 /* CountlyConnectionManager.m */; };
+		D2AC89621C1AD5D2002D5688 /* CountlyCrashReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC89571C1AD5D2002D5688 /* CountlyCrashReporter.m */; };
+		D2AC89631C1AD5D2002D5688 /* CountlyDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC89591C1AD5D2002D5688 /* CountlyDeviceInfo.m */; };
+		D2AC89641C1AD5D2002D5688 /* CountlyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC895B1C1AD5D2002D5688 /* CountlyEvent.m */; };
+		D2AC89651C1AD5D2002D5688 /* CountlyPersistency.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC895D1C1AD5D2002D5688 /* CountlyPersistency.m */; };
+		D2AC89661C1AD5D2002D5688 /* CountlyUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC895F1C1AD5D2002D5688 /* CountlyUserDetails.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,17 +46,36 @@
 		D2315A4018EBE52100119D0D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D2315A4318EBE52100119D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D2315A4518EBE52100119D0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D28D58F61C1BDA0700006D39 /* CountlyAPMDelegateProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPMDelegateProxy.h; sourceTree = "<group>"; };
+		D28D58F71C1BDA0700006D39 /* CountlyAPMDelegateProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPMDelegateProxy.m; sourceTree = "<group>"; };
+		D28D58F81C1BDA0700006D39 /* CountlyAPMNetworkLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPMNetworkLog.h; sourceTree = "<group>"; };
+		D28D58F91C1BDA0700006D39 /* CountlyAPMNetworkLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPMNetworkLog.m; sourceTree = "<group>"; };
+		D28D58FA1C1BDA0700006D39 /* NSURLConnection+CountlyAPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+CountlyAPM.h"; sourceTree = "<group>"; };
+		D28D58FB1C1BDA0700006D39 /* NSURLConnection+CountlyAPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+CountlyAPM.m"; sourceTree = "<group>"; };
+		D28D58FC1C1BDA0700006D39 /* NSURLSession+CountlyAPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+CountlyAPM.h"; sourceTree = "<group>"; };
+		D28D58FD1C1BDA0700006D39 /* NSURLSession+CountlyAPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+CountlyAPM.m"; sourceTree = "<group>"; };
 		D2A1708119093F5B00AB636E /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		D2A1708219093F5B00AB636E /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
 		D2A1708319093F5B00AB636E /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
 		D2A1708419093F5B00AB636E /* Countly.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countly.podspec; sourceTree = "<group>"; };
-		D2A1708619093F5B00AB636E /* Countly.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Countly.xcdatamodel; sourceTree = "<group>"; };
 		D2A1708719093F5B00AB636E /* Countly_OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly_OpenUDID.h; sourceTree = "<group>"; };
 		D2A1708819093F5B00AB636E /* Countly_OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly_OpenUDID.m; sourceTree = "<group>"; };
-		D2A1708919093F5B00AB636E /* CountlyDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyDB.h; sourceTree = "<group>"; };
-		D2A1708A19093F5B00AB636E /* CountlyDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyDB.m; sourceTree = "<group>"; };
 		D2A1708B19093F5B00AB636E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D2A1708C19093F5B00AB636E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		D2AC89521C1AD5D2002D5688 /* CountlyCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCommon.h; sourceTree = "<group>"; };
+		D2AC89531C1AD5D2002D5688 /* CountlyCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCommon.m; sourceTree = "<group>"; };
+		D2AC89541C1AD5D2002D5688 /* CountlyConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConnectionManager.h; sourceTree = "<group>"; };
+		D2AC89551C1AD5D2002D5688 /* CountlyConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConnectionManager.m; sourceTree = "<group>"; };
+		D2AC89561C1AD5D2002D5688 /* CountlyCrashReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCrashReporter.h; sourceTree = "<group>"; };
+		D2AC89571C1AD5D2002D5688 /* CountlyCrashReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCrashReporter.m; sourceTree = "<group>"; };
+		D2AC89581C1AD5D2002D5688 /* CountlyDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyDeviceInfo.h; sourceTree = "<group>"; };
+		D2AC89591C1AD5D2002D5688 /* CountlyDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyDeviceInfo.m; sourceTree = "<group>"; };
+		D2AC895A1C1AD5D2002D5688 /* CountlyEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyEvent.h; sourceTree = "<group>"; };
+		D2AC895B1C1AD5D2002D5688 /* CountlyEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyEvent.m; sourceTree = "<group>"; };
+		D2AC895C1C1AD5D2002D5688 /* CountlyPersistency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPersistency.h; sourceTree = "<group>"; };
+		D2AC895D1C1AD5D2002D5688 /* CountlyPersistency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPersistency.m; sourceTree = "<group>"; };
+		D2AC895E1C1AD5D2002D5688 /* CountlyUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyUserDetails.h; sourceTree = "<group>"; };
+		D2AC895F1C1AD5D2002D5688 /* CountlyUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyUserDetails.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,13 +156,32 @@
 				D2A1708119093F5B00AB636E /* .gitattributes */,
 				D2A1708219093F5B00AB636E /* Countly.h */,
 				D2A1708319093F5B00AB636E /* Countly.m */,
-				D2A1708419093F5B00AB636E /* Countly.podspec */,
-				D2A1708519093F5B00AB636E /* Countly.xcdatamodeld */,
 				D2A1708719093F5B00AB636E /* Countly_OpenUDID.h */,
 				D2A1708819093F5B00AB636E /* Countly_OpenUDID.m */,
-				D2A1708919093F5B00AB636E /* CountlyDB.h */,
-				D2A1708A19093F5B00AB636E /* CountlyDB.m */,
+				D2A1708419093F5B00AB636E /* Countly.podspec */,
+				D28D58F61C1BDA0700006D39 /* CountlyAPMDelegateProxy.h */,
+				D28D58F71C1BDA0700006D39 /* CountlyAPMDelegateProxy.m */,
+				D28D58F81C1BDA0700006D39 /* CountlyAPMNetworkLog.h */,
+				D28D58F91C1BDA0700006D39 /* CountlyAPMNetworkLog.m */,
+				D2AC89521C1AD5D2002D5688 /* CountlyCommon.h */,
+				D2AC89531C1AD5D2002D5688 /* CountlyCommon.m */,
+				D2AC89541C1AD5D2002D5688 /* CountlyConnectionManager.h */,
+				D2AC89551C1AD5D2002D5688 /* CountlyConnectionManager.m */,
+				D2AC89561C1AD5D2002D5688 /* CountlyCrashReporter.h */,
+				D2AC89571C1AD5D2002D5688 /* CountlyCrashReporter.m */,
+				D2AC89581C1AD5D2002D5688 /* CountlyDeviceInfo.h */,
+				D2AC89591C1AD5D2002D5688 /* CountlyDeviceInfo.m */,
+				D2AC895A1C1AD5D2002D5688 /* CountlyEvent.h */,
+				D2AC895B1C1AD5D2002D5688 /* CountlyEvent.m */,
+				D2AC895C1C1AD5D2002D5688 /* CountlyPersistency.h */,
+				D2AC895D1C1AD5D2002D5688 /* CountlyPersistency.m */,
+				D2AC895E1C1AD5D2002D5688 /* CountlyUserDetails.h */,
+				D2AC895F1C1AD5D2002D5688 /* CountlyUserDetails.m */,
 				D2A1708B19093F5B00AB636E /* LICENSE */,
+				D28D58FA1C1BDA0700006D39 /* NSURLConnection+CountlyAPM.h */,
+				D28D58FB1C1BDA0700006D39 /* NSURLConnection+CountlyAPM.m */,
+				D28D58FC1C1BDA0700006D39 /* NSURLSession+CountlyAPM.h */,
+				D28D58FD1C1BDA0700006D39 /* NSURLSession+CountlyAPM.m */,
 				D2A1708C19093F5B00AB636E /* README.md */,
 			);
 			name = "countly-sdk-ios";
@@ -167,7 +214,7 @@
 		D2315A2218EBE52000119D0D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Countly;
 			};
 			buildConfigurationList = D2315A2518EBE52000119D0D /* Build configuration list for PBXProject "CountlyTestApp" */;
@@ -210,11 +257,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28D58FF1C1BDA0700006D39 /* CountlyAPMNetworkLog.m in Sources */,
+				D2AC89631C1AD5D2002D5688 /* CountlyDeviceInfo.m in Sources */,
+				D28D59001C1BDA0700006D39 /* NSURLConnection+CountlyAPM.m in Sources */,
+				D2AC89611C1AD5D2002D5688 /* CountlyConnectionManager.m in Sources */,
 				D2315A4118EBE52100119D0D /* AppDelegate.m in Sources */,
 				D2A1708E19093F5B00AB636E /* Countly.m in Sources */,
-				D2A1709219093F5B00AB636E /* CountlyDB.m in Sources */,
+				D2AC89661C1AD5D2002D5688 /* CountlyUserDetails.m in Sources */,
+				D2AC89641C1AD5D2002D5688 /* CountlyEvent.m in Sources */,
+				D2AC89621C1AD5D2002D5688 /* CountlyCrashReporter.m in Sources */,
+				D2AC89651C1AD5D2002D5688 /* CountlyPersistency.m in Sources */,
+				D28D59011C1BDA0700006D39 /* NSURLSession+CountlyAPM.m in Sources */,
+				D2AC89601C1AD5D2002D5688 /* CountlyCommon.m in Sources */,
+				D28D58FE1C1BDA0700006D39 /* CountlyAPMDelegateProxy.m in Sources */,
 				D2A1709119093F5B00AB636E /* Countly_OpenUDID.m in Sources */,
-				D2A1709019093F5B00AB636E /* Countly.xcdatamodeld in Sources */,
 				D2315A3A18EBE52100119D0D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +314,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -273,7 +330,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -306,7 +363,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -319,6 +376,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CountlyTestApp/CountlyTestApp-Prefix.pch";
 				INFOPLIST_FILE = "CountlyTestApp/CountlyTestApp-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -332,6 +390,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CountlyTestApp/CountlyTestApp-Prefix.pch";
 				INFOPLIST_FILE = "CountlyTestApp/CountlyTestApp-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -359,19 +418,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		D2A1708519093F5B00AB636E /* Countly.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D2A1708619093F5B00AB636E /* Countly.xcdatamodel */,
-			);
-			currentVersion = D2A1708619093F5B00AB636E /* Countly.xcdatamodel */;
-			path = Countly.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D2315A2218EBE52000119D0D /* Project object */;
 }

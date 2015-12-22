@@ -54,11 +54,11 @@
         TestPageCount
     } TestPages;
     
-    self.scr_main.contentSize = (CGSize){self.scr_main.bounds.size.width*TestPageCount,self.scr_main.bounds.size.height};
-    
-    NSInteger startPage = TestPageCustomEvents;
+    NSInteger startPage = TestPageCustomEvents; //start page of testing app can be set here.
 
+    self.scr_main.contentSize = (CGSize){self.scr_main.bounds.size.width*TestPageCount,self.scr_main.bounds.size.height};
     self.scr_main.contentOffset = CGPointMake(self.scr_main.bounds.size.width*startPage, 0);
+    [self scrollViewDidEndDecelerating:self.scr_main];
 
     [super viewWillAppear:animated];
 }
@@ -73,19 +73,43 @@
     switch ([sender tag])
     {
         case 1:
-            [Countly.sharedInstance recordEvent:@"button-click" count:1];
+            [Countly.sharedInstance recordEvent:@"button-click"];
         break;
 
         case 2:
-            [Countly.sharedInstance recordEvent:@"button-click" count:1 sum:1.99];
+            [Countly.sharedInstance recordEvent:@"button-click" count:5];
         break;
 
         case 3:
-            [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"seg_test" : @"seg_value"} count:1];
+            [Countly.sharedInstance recordEvent:@"button-click" sum:1.99];
         break;
 
         case 4:
-            [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"seg_test" : @"seg_value"} count:1 sum:1.99];
+            [Countly.sharedInstance recordEvent:@"button-click" count:5 sum:1.99];
+        break;
+
+        case 5:
+            [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"k" : @"v"}];
+        break;
+
+        case 6:
+            [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"k" : @"v"} count:5];
+        break;
+
+        case 7:
+            [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"k" : @"v"} count:5 sum:1.99];
+        break;
+
+        case 8:
+            [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"k" : @"v"} count:5 sum:1.99 duration:0.314];
+        break;
+        
+        case 9:
+            [Countly.sharedInstance startEvent:@"timed-event"];
+        break;
+
+        case 10:
+            [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k" : @"v"} count:5 sum:1.99];
         break;
         
         default:break;

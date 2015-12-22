@@ -20,10 +20,8 @@
 		D2AC894B1C1AC67E002D5688 /* CountlyDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC894A1C1AC67E002D5688 /* CountlyDeviceInfo.m */; };
 		D2AC894E1C1AC733002D5688 /* CountlyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC894D1C1AC733002D5688 /* CountlyEvent.m */; };
 		D2AC89511C1AD01C002D5688 /* CountlyCrashReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC89501C1AD01C002D5688 /* CountlyCrashReporter.m */; };
-		D2AC896B1C1AE0D9002D5688 /* CountlyAPMDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC89681C1AE0D9002D5688 /* CountlyAPMDelegateProxy.m */; };
+		D2AC896B1C1AE0D9002D5688 /* CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC89681C1AE0D9002D5688 /* CountlyAPM.m */; };
 		D2AC896C1C1AE0D9002D5688 /* CountlyAPMNetworkLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC896A1C1AE0D9002D5688 /* CountlyAPMNetworkLog.m */; };
-		D2AC89711C1AE21D002D5688 /* NSURLConnection+CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC896E1C1AE21D002D5688 /* NSURLConnection+CountlyAPM.m */; };
-		D2AC89721C1AE21D002D5688 /* NSURLSession+CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC89701C1AE21D002D5688 /* NSURLSession+CountlyAPM.m */; };
 		D2BAB0A217EC8EE600807D0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A117EC8EE600807D0D /* Foundation.framework */; };
 		D2BAB0A417EC8EE600807D0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A317EC8EE600807D0D /* CoreGraphics.framework */; };
 		D2BAB0A617EC8EE600807D0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A517EC8EE600807D0D /* UIKit.framework */; };
@@ -62,14 +60,10 @@
 		D2AC894D1C1AC733002D5688 /* CountlyEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyEvent.m; sourceTree = "<group>"; };
 		D2AC894F1C1AD01C002D5688 /* CountlyCrashReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCrashReporter.h; sourceTree = "<group>"; };
 		D2AC89501C1AD01C002D5688 /* CountlyCrashReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCrashReporter.m; sourceTree = "<group>"; };
-		D2AC89671C1AE0D9002D5688 /* CountlyAPMDelegateProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPMDelegateProxy.h; sourceTree = "<group>"; };
-		D2AC89681C1AE0D9002D5688 /* CountlyAPMDelegateProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPMDelegateProxy.m; sourceTree = "<group>"; };
+		D2AC89671C1AE0D9002D5688 /* CountlyAPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPM.h; sourceTree = "<group>"; };
+		D2AC89681C1AE0D9002D5688 /* CountlyAPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPM.m; sourceTree = "<group>"; };
 		D2AC89691C1AE0D9002D5688 /* CountlyAPMNetworkLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPMNetworkLog.h; sourceTree = "<group>"; };
 		D2AC896A1C1AE0D9002D5688 /* CountlyAPMNetworkLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPMNetworkLog.m; sourceTree = "<group>"; };
-		D2AC896D1C1AE21D002D5688 /* NSURLConnection+CountlyAPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+CountlyAPM.h"; sourceTree = "<group>"; };
-		D2AC896E1C1AE21D002D5688 /* NSURLConnection+CountlyAPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+CountlyAPM.m"; sourceTree = "<group>"; };
-		D2AC896F1C1AE21D002D5688 /* NSURLSession+CountlyAPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+CountlyAPM.h"; sourceTree = "<group>"; };
-		D2AC89701C1AE21D002D5688 /* NSURLSession+CountlyAPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+CountlyAPM.m"; sourceTree = "<group>"; };
 		D2BAB09E17EC8EE600807D0D /* CountlyTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountlyTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BAB0A117EC8EE600807D0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2BAB0A317EC8EE600807D0D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -196,14 +190,10 @@
 				D2AC894A1C1AC67E002D5688 /* CountlyDeviceInfo.m */,
 				D2AC894C1C1AC733002D5688 /* CountlyEvent.h */,
 				D2AC894D1C1AC733002D5688 /* CountlyEvent.m */,
-				D2AC89671C1AE0D9002D5688 /* CountlyAPMDelegateProxy.h */,
-				D2AC89681C1AE0D9002D5688 /* CountlyAPMDelegateProxy.m */,
+				D2AC89671C1AE0D9002D5688 /* CountlyAPM.h */,
+				D2AC89681C1AE0D9002D5688 /* CountlyAPM.m */,
 				D2AC89691C1AE0D9002D5688 /* CountlyAPMNetworkLog.h */,
 				D2AC896A1C1AE0D9002D5688 /* CountlyAPMNetworkLog.m */,
-				D2AC896D1C1AE21D002D5688 /* NSURLConnection+CountlyAPM.h */,
-				D2AC896E1C1AE21D002D5688 /* NSURLConnection+CountlyAPM.m */,
-				D2AC896F1C1AE21D002D5688 /* NSURLSession+CountlyAPM.h */,
-				D2AC89701C1AE21D002D5688 /* NSURLSession+CountlyAPM.m */,
 				D2AC89401C1AC30C002D5688 /* CountlyPersistency.h */,
 				D2AC89411C1AC30C002D5688 /* CountlyPersistency.m */,
 				D2AC89461C1AC504002D5688 /* CountlyUserDetails.h */,
@@ -291,9 +281,8 @@
 				D2AC893F1C1AC232002D5688 /* CountlyConnectionManager.m in Sources */,
 				D2AC89451C1AC3F2002D5688 /* CountlyCommon.m in Sources */,
 				D2D3FBB118639382000C0367 /* Countly_OpenUDID.m in Sources */,
-				D2AC89721C1AE21D002D5688 /* NSURLSession+CountlyAPM.m in Sources */,
 				D2AC89421C1AC30C002D5688 /* CountlyPersistency.m in Sources */,
-				D2AC896B1C1AE0D9002D5688 /* CountlyAPMDelegateProxy.m in Sources */,
+				D2AC896B1C1AE0D9002D5688 /* CountlyAPM.m in Sources */,
 				D2AC896C1C1AE0D9002D5688 /* CountlyAPMNetworkLog.m in Sources */,
 				D2BAB0B217EC8EE600807D0D /* AppDelegate.m in Sources */,
 				D2BAB0AE17EC8EE600807D0D /* main.m in Sources */,
@@ -303,7 +292,6 @@
 				D2AC89481C1AC504002D5688 /* CountlyUserDetails.m in Sources */,
 				D2AC894B1C1AC67E002D5688 /* CountlyDeviceInfo.m in Sources */,
 				D2BAB0B817EC8EE600807D0D /* ViewController.m in Sources */,
-				D2AC89711C1AE21D002D5688 /* NSURLConnection+CountlyAPM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

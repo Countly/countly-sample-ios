@@ -7,16 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2275CB01C4110A300B361F7 /* CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D2275CAF1C4110A300B361F7 /* CountlyAPM.m */; };
 		D2315A2E18EBE52000119D0D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2315A2D18EBE52000119D0D /* Cocoa.framework */; };
 		D2315A3818EBE52100119D0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2315A3618EBE52100119D0D /* InfoPlist.strings */; };
 		D2315A3A18EBE52100119D0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2315A3918EBE52100119D0D /* main.m */; };
 		D2315A4118EBE52100119D0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2315A4018EBE52100119D0D /* AppDelegate.m */; };
 		D2315A4418EBE52100119D0D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2315A4218EBE52100119D0D /* MainMenu.xib */; };
 		D2315A4618EBE52100119D0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2315A4518EBE52100119D0D /* Images.xcassets */; };
-		D28D58FE1C1BDA0700006D39 /* CountlyAPMDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = D28D58F71C1BDA0700006D39 /* CountlyAPMDelegateProxy.m */; };
 		D28D58FF1C1BDA0700006D39 /* CountlyAPMNetworkLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D28D58F91C1BDA0700006D39 /* CountlyAPMNetworkLog.m */; };
-		D28D59001C1BDA0700006D39 /* NSURLConnection+CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D28D58FB1C1BDA0700006D39 /* NSURLConnection+CountlyAPM.m */; };
-		D28D59011C1BDA0700006D39 /* NSURLSession+CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D28D58FD1C1BDA0700006D39 /* NSURLSession+CountlyAPM.m */; };
 		D2A1708D19093F5B00AB636E /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = D2A1708119093F5B00AB636E /* .gitattributes */; };
 		D2A1708E19093F5B00AB636E /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A1708319093F5B00AB636E /* Countly.m */; };
 		D2A1708F19093F5B00AB636E /* Countly.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D2A1708419093F5B00AB636E /* Countly.podspec */; };
@@ -33,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D2275CAE1C4110A300B361F7 /* CountlyAPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPM.h; sourceTree = "<group>"; };
+		D2275CAF1C4110A300B361F7 /* CountlyAPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPM.m; sourceTree = "<group>"; };
 		D2315A2A18EBE52000119D0D /* CountlyTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountlyTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2315A2D18EBE52000119D0D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D2315A3018EBE52000119D0D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -46,14 +46,8 @@
 		D2315A4018EBE52100119D0D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D2315A4318EBE52100119D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D2315A4518EBE52100119D0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D28D58F61C1BDA0700006D39 /* CountlyAPMDelegateProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPMDelegateProxy.h; sourceTree = "<group>"; };
-		D28D58F71C1BDA0700006D39 /* CountlyAPMDelegateProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPMDelegateProxy.m; sourceTree = "<group>"; };
 		D28D58F81C1BDA0700006D39 /* CountlyAPMNetworkLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPMNetworkLog.h; sourceTree = "<group>"; };
 		D28D58F91C1BDA0700006D39 /* CountlyAPMNetworkLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPMNetworkLog.m; sourceTree = "<group>"; };
-		D28D58FA1C1BDA0700006D39 /* NSURLConnection+CountlyAPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+CountlyAPM.h"; sourceTree = "<group>"; };
-		D28D58FB1C1BDA0700006D39 /* NSURLConnection+CountlyAPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+CountlyAPM.m"; sourceTree = "<group>"; };
-		D28D58FC1C1BDA0700006D39 /* NSURLSession+CountlyAPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+CountlyAPM.h"; sourceTree = "<group>"; };
-		D28D58FD1C1BDA0700006D39 /* NSURLSession+CountlyAPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+CountlyAPM.m"; sourceTree = "<group>"; };
 		D2A1708119093F5B00AB636E /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		D2A1708219093F5B00AB636E /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
 		D2A1708319093F5B00AB636E /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
@@ -154,13 +148,13 @@
 			isa = PBXGroup;
 			children = (
 				D2A1708119093F5B00AB636E /* .gitattributes */,
-				D2A1708219093F5B00AB636E /* Countly.h */,
-				D2A1708319093F5B00AB636E /* Countly.m */,
 				D2A1708719093F5B00AB636E /* Countly_OpenUDID.h */,
 				D2A1708819093F5B00AB636E /* Countly_OpenUDID.m */,
+				D2A1708219093F5B00AB636E /* Countly.h */,
+				D2A1708319093F5B00AB636E /* Countly.m */,
 				D2A1708419093F5B00AB636E /* Countly.podspec */,
-				D28D58F61C1BDA0700006D39 /* CountlyAPMDelegateProxy.h */,
-				D28D58F71C1BDA0700006D39 /* CountlyAPMDelegateProxy.m */,
+				D2275CAE1C4110A300B361F7 /* CountlyAPM.h */,
+				D2275CAF1C4110A300B361F7 /* CountlyAPM.m */,
 				D28D58F81C1BDA0700006D39 /* CountlyAPMNetworkLog.h */,
 				D28D58F91C1BDA0700006D39 /* CountlyAPMNetworkLog.m */,
 				D2AC89521C1AD5D2002D5688 /* CountlyCommon.h */,
@@ -178,10 +172,6 @@
 				D2AC895E1C1AD5D2002D5688 /* CountlyUserDetails.h */,
 				D2AC895F1C1AD5D2002D5688 /* CountlyUserDetails.m */,
 				D2A1708B19093F5B00AB636E /* LICENSE */,
-				D28D58FA1C1BDA0700006D39 /* NSURLConnection+CountlyAPM.h */,
-				D28D58FB1C1BDA0700006D39 /* NSURLConnection+CountlyAPM.m */,
-				D28D58FC1C1BDA0700006D39 /* NSURLSession+CountlyAPM.h */,
-				D28D58FD1C1BDA0700006D39 /* NSURLSession+CountlyAPM.m */,
 				D2A1708C19093F5B00AB636E /* README.md */,
 			);
 			name = "countly-sdk-ios";
@@ -259,7 +249,7 @@
 			files = (
 				D28D58FF1C1BDA0700006D39 /* CountlyAPMNetworkLog.m in Sources */,
 				D2AC89631C1AD5D2002D5688 /* CountlyDeviceInfo.m in Sources */,
-				D28D59001C1BDA0700006D39 /* NSURLConnection+CountlyAPM.m in Sources */,
+				D2275CB01C4110A300B361F7 /* CountlyAPM.m in Sources */,
 				D2AC89611C1AD5D2002D5688 /* CountlyConnectionManager.m in Sources */,
 				D2315A4118EBE52100119D0D /* AppDelegate.m in Sources */,
 				D2A1708E19093F5B00AB636E /* Countly.m in Sources */,
@@ -267,9 +257,7 @@
 				D2AC89641C1AD5D2002D5688 /* CountlyEvent.m in Sources */,
 				D2AC89621C1AD5D2002D5688 /* CountlyCrashReporter.m in Sources */,
 				D2AC89651C1AD5D2002D5688 /* CountlyPersistency.m in Sources */,
-				D28D59011C1BDA0700006D39 /* NSURLSession+CountlyAPM.m in Sources */,
 				D2AC89601C1AD5D2002D5688 /* CountlyCommon.m in Sources */,
-				D28D58FE1C1BDA0700006D39 /* CountlyAPMDelegateProxy.m in Sources */,
 				D2A1709119093F5B00AB636E /* Countly_OpenUDID.m in Sources */,
 				D2315A3A18EBE52100119D0D /* main.m in Sources */,
 			);

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "FA5AA7C11756FF77BB24EE2836F0CD801F0A1936",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "FA5AA7C11756FF77BB24EE2836F0CD801F0A1936" : 0,
+    "E212CE6A13F37CE1A577B6EE0BE9609B0AA640C7" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7787B530-8003-4834-A090-E199934D01DD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "FA5AA7C11756FF77BB24EE2836F0CD801F0A1936" : "countly-sdk-samples_20160113_amended\/",
+    "E212CE6A13F37CE1A577B6EE0BE9609B0AA640C7" : "countly-sdk-samples_20160113_amended\/ios\/CountlyTestApp\/countly-sdk-ios\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CountlyTestApp-iOS",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ios\/CountlyTestApp-iOS.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/erkanyildiz\/countly-sdk-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E212CE6A13F37CE1A577B6EE0BE9609B0AA640C7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/erkanyildiz\/countly-sdk-samples.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FA5AA7C11756FF77BB24EE2836F0CD801F0A1936"
+    }
+  ]
+}

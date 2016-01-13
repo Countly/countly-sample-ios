@@ -64,14 +64,14 @@
 		D2AC89681C1AE0D9002D5688 /* CountlyAPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPM.m; sourceTree = "<group>"; };
 		D2AC89691C1AE0D9002D5688 /* CountlyAPMNetworkLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPMNetworkLog.h; sourceTree = "<group>"; };
 		D2AC896A1C1AE0D9002D5688 /* CountlyAPMNetworkLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPMNetworkLog.m; sourceTree = "<group>"; };
-		D2BAB09E17EC8EE600807D0D /* CountlyTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountlyTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2BAB09E17EC8EE600807D0D /* CountlyTestApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BAB0A117EC8EE600807D0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2BAB0A317EC8EE600807D0D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D2BAB0A517EC8EE600807D0D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D2BAB0A917EC8EE600807D0D /* CountlyTestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CountlyTestApp-Info.plist"; sourceTree = "<group>"; };
+		D2BAB0A917EC8EE600807D0D /* CountlyTestApp-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CountlyTestApp-iOS-Info.plist"; sourceTree = "<group>"; };
 		D2BAB0AB17EC8EE600807D0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D2BAB0AD17EC8EE600807D0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D2BAB0AF17EC8EE600807D0D /* CountlyTestApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CountlyTestApp-Prefix.pch"; sourceTree = "<group>"; };
+		D2BAB0AF17EC8EE600807D0D /* CountlyTestApp-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CountlyTestApp-iOS-Prefix.pch"; sourceTree = "<group>"; };
 		D2BAB0B017EC8EE600807D0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2BAB0B117EC8EE600807D0D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D2BAB0B617EC8EE600807D0D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		D2BAB09517EC8EE600807D0D = {
 			isa = PBXGroup;
 			children = (
-				D2BAB0A717EC8EE600807D0D /* CountlyTestApp */,
+				D2BAB0A717EC8EE600807D0D /* CountlyTestApp-iOS */,
 				D2BAB0A017EC8EE600807D0D /* Frameworks */,
 				D2BAB09F17EC8EE600807D0D /* Products */,
 			);
@@ -127,7 +127,7 @@
 		D2BAB09F17EC8EE600807D0D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2BAB09E17EC8EE600807D0D /* CountlyTestApp.app */,
+				D2BAB09E17EC8EE600807D0D /* CountlyTestApp-iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,7 +145,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D2BAB0A717EC8EE600807D0D /* CountlyTestApp */ = {
+		D2BAB0A717EC8EE600807D0D /* CountlyTestApp-iOS */ = {
 			isa = PBXGroup;
 			children = (
 				D2D3FBA218639382000C0367 /* countly-sdk-ios */,
@@ -158,16 +158,17 @@
 				D2BAB0B917EC8EE600807D0D /* Images.xcassets */,
 				D2BAB0A817EC8EE600807D0D /* Supporting Files */,
 			);
-			path = CountlyTestApp;
+			name = "CountlyTestApp-iOS";
+			path = CountlyTestApp-iOS;
 			sourceTree = "<group>";
 		};
 		D2BAB0A817EC8EE600807D0D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D2BAB0A917EC8EE600807D0D /* CountlyTestApp-Info.plist */,
+				D2BAB0A917EC8EE600807D0D /* CountlyTestApp-iOS-Info.plist */,
 				D2BAB0AA17EC8EE600807D0D /* InfoPlist.strings */,
 				D2BAB0AD17EC8EE600807D0D /* main.m */,
-				D2BAB0AF17EC8EE600807D0D /* CountlyTestApp-Prefix.pch */,
+				D2BAB0AF17EC8EE600807D0D /* CountlyTestApp-iOS-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -208,9 +209,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D2BAB09D17EC8EE600807D0D /* CountlyTestApp */ = {
+		D2BAB09D17EC8EE600807D0D /* CountlyTestApp-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D2BAB0D017EC8EE600807D0D /* Build configuration list for PBXNativeTarget "CountlyTestApp" */;
+			buildConfigurationList = D2BAB0D017EC8EE600807D0D /* Build configuration list for PBXNativeTarget "CountlyTestApp-iOS" */;
 			buildPhases = (
 				D2BAB09A17EC8EE600807D0D /* Sources */,
 				D2BAB09B17EC8EE600807D0D /* Frameworks */,
@@ -220,9 +221,9 @@
 			);
 			dependencies = (
 			);
-			name = CountlyTestApp;
-			productName = CountlyTestApp;
-			productReference = D2BAB09E17EC8EE600807D0D /* CountlyTestApp.app */;
+			name = "CountlyTestApp-iOS";
+			productName = CountlyTestApp-iOS;
+			productReference = D2BAB09E17EC8EE600807D0D /* CountlyTestApp-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -235,7 +236,7 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = InnovationBox;
 			};
-			buildConfigurationList = D2BAB09917EC8EE600807D0D /* Build configuration list for PBXProject "CountlyTestApp" */;
+			buildConfigurationList = D2BAB09917EC8EE600807D0D /* Build configuration list for PBXProject "CountlyTestApp-iOS" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -248,7 +249,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D2BAB09D17EC8EE600807D0D /* CountlyTestApp */,
+				D2BAB09D17EC8EE600807D0D /* CountlyTestApp-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -392,10 +393,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CountlyTestApp/CountlyTestApp-Prefix.pch";
-				INFOPLIST_FILE = "CountlyTestApp/CountlyTestApp-Info.plist";
+				GCC_PREFIX_HEADER = "CountlyTestApp-iOS/CountlyTestApp-iOS-Prefix.pch";
+				INFOPLIST_FILE = "CountlyTestApp-iOS/CountlyTestApp-iOS-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = CountlyTestApp;
+				PRODUCT_NAME = "CountlyTestApp-iOS";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -408,10 +409,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CountlyTestApp/CountlyTestApp-Prefix.pch";
-				INFOPLIST_FILE = "CountlyTestApp/CountlyTestApp-Info.plist";
+				GCC_PREFIX_HEADER = "CountlyTestApp-iOS/CountlyTestApp-iOS-Prefix.pch";
+				INFOPLIST_FILE = "CountlyTestApp-iOS/CountlyTestApp-iOS-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = CountlyTestApp;
+				PRODUCT_NAME = "CountlyTestApp-iOS";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -420,7 +421,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D2BAB09917EC8EE600807D0D /* Build configuration list for PBXProject "CountlyTestApp" */ = {
+		D2BAB09917EC8EE600807D0D /* Build configuration list for PBXProject "CountlyTestApp-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D2BAB0CE17EC8EE600807D0D /* Debug */,
@@ -429,7 +430,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D2BAB0D017EC8EE600807D0D /* Build configuration list for PBXNativeTarget "CountlyTestApp" */ = {
+		D2BAB0D017EC8EE600807D0D /* Build configuration list for PBXNativeTarget "CountlyTestApp-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D2BAB0D117EC8EE600807D0D /* Debug */,

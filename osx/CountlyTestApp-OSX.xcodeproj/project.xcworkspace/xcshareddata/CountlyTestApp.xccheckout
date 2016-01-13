@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7D0C6EAB-0717-4C41-8983-5BCE280E2731</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CountlyTestApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E212CE6A13F37CE1A577B6EE0BE9609B0AA640C7</key>
+		<string>https://github.com/erkanyildiz/countly-sdk-ios.git</string>
+		<key>FA5AA7C11756FF77BB24EE2836F0CD801F0A1936</key>
+		<string>https://github.com/Countly/countly-sdk-samples.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>osx/CountlyTestApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E212CE6A13F37CE1A577B6EE0BE9609B0AA640C7</key>
+		<string>../../..ios/CountlyTestApp/countly-sdk-ios</string>
+		<key>FA5AA7C11756FF77BB24EE2836F0CD801F0A1936</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Countly/countly-sdk-samples.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FA5AA7C11756FF77BB24EE2836F0CD801F0A1936</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E212CE6A13F37CE1A577B6EE0BE9609B0AA640C7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>countly-sdk-ios</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FA5AA7C11756FF77BB24EE2836F0CD801F0A1936</string>
+			<key>IDESourceControlWCCName</key>
+			<string>countly-sdk-samples_20141031_USERMETRIC</string>
+		</dict>
+	</array>
+</dict>
+</plist>

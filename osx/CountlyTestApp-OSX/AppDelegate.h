@@ -1,4 +1,3 @@
-//
 // AppDelegate.h
 //
 // This code is provided under the MIT License.

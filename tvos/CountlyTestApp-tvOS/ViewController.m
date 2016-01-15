@@ -24,43 +24,43 @@
     switch ([sender tag])
     {
         case 1:
-        [Countly.sharedInstance recordEvent:@"button-click"];
+            [Countly.sharedInstance recordEvent:@"button-click"];
         break;
         
         case 2:
-        [Countly.sharedInstance recordEvent:@"button-click" count:5];
+            [Countly.sharedInstance recordEvent:@"button-click" count:5];
         break;
         
         case 3:
-        [Countly.sharedInstance recordEvent:@"button-click" sum:1.99];
+            [Countly.sharedInstance recordEvent:@"button-click" sum:1.99];
         break;
         
         case 4:
-        [Countly.sharedInstance recordEvent:@"button-click" count:5 sum:1.99];
+            [Countly.sharedInstance recordEvent:@"button-click" duration:3.14];
         break;
         
         case 5:
-        [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"k" : @"v"}];
+            [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"k" : @"v"}];
         break;
         
         case 6:
-        [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"k" : @"v"} count:5];
+            [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"k" : @"v"} count:5];
         break;
         
         case 7:
-        [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"k" : @"v"} count:5 sum:1.99];
+            [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"k" : @"v"} count:5 sum:1.99];
         break;
         
         case 8:
-        [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"k" : @"v"} count:5 sum:1.99 duration:0.314];
+            [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"k" : @"v"} count:5 sum:1.99 duration:0.314];
         break;
         
         case 9:
-        [Countly.sharedInstance startEvent:@"timed-event"];
+            [Countly.sharedInstance startEvent:@"timed-event"];
         break;
         
         case 10:
-        [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k" : @"v"} count:5 sum:1.99];
+            [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k" : @"v"} count:1 sum:0];
         break;
         
         default:break;

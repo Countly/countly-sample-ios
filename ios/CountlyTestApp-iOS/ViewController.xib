@@ -91,7 +91,7 @@
                                     <color key="backgroundColor" red="0.28341542120000002" green="0.28341542120000002" blue="0.28341542120000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                     <inset key="contentEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" title="record event with segmnt.">
+                                    <state key="normal" title="record event with segm.">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
@@ -136,7 +136,7 @@ count &amp; sum</string>
                                     <inset key="contentEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     <state key="normal">
                                         <string key="title">record event with segm. 
-duration, count &amp; sum</string>
+count, sum &amp; duration</string>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>

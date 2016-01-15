@@ -85,7 +85,7 @@
         break;
 
         case 4:
-            [Countly.sharedInstance recordEvent:@"button-click" count:5 sum:1.99];
+            [Countly.sharedInstance recordEvent:@"button-click" duration:3.14];
         break;
 
         case 5:
@@ -109,7 +109,7 @@
         break;
 
         case 10:
-            [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k" : @"v"} count:5 sum:1.99];
+            [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k" : @"v"} count:1 sum:0];
         break;
         
         default:break;

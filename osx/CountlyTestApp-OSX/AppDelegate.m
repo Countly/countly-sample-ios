@@ -1,4 +1,4 @@
-// AppDelegate.h
+// AppDelegate.m
 //
 // This code is provided under the MIT License.
 //
@@ -30,29 +30,45 @@
     switch ([sender tag])
     {
         case 1:
-        {
-            [Countly.sharedInstance recordEvent:@"EventA" count:1];
-            NSLog(@"\nRecorded event 'EventA' with count: 1");
-        }break;
-            
+            [Countly.sharedInstance recordEvent:@"button-click"];
+        break;
+        
         case 2:
-        {
-            [Countly.sharedInstance recordEvent:@"EventA" count:3 sum:4.99];
-            NSLog(@"\nRecorded event 'EventA' with count: 1 and sum: 4.99");
-        }break;
-            
+            [Countly.sharedInstance recordEvent:@"button-click" count:5];
+        break;
+        
         case 3:
-        {
-            [Countly.sharedInstance recordEvent:@"EventB" segmentation:@{@"aSegKey" : @"aValue"} count:5];
-            NSLog(@"\nRecorded event 'EventB' with segmentation 'aSegKey':'aValue' and count: 5");
-        }break;
-            
+            [Countly.sharedInstance recordEvent:@"button-click" sum:1.99];
+        break;
+        
         case 4:
-        {
-            [Countly.sharedInstance recordEvent:@"EventB" segmentation:@{@"aSegKey" : @"aValue"} count:7 sum:3.94];
-            NSLog(@"\nRecorded event 'EventB' with segmentation 'aSegKey':'aValue' and count: 7 and sum: 3.49");
-        }break;
-            
+            [Countly.sharedInstance recordEvent:@"button-click" duration:3.14];
+        break;
+        
+        case 5:
+            [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"k" : @"v"}];
+        break;
+        
+        case 6:
+            [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"k" : @"v"} count:5];
+        break;
+        
+        case 7:
+            [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"k" : @"v"} count:5 sum:1.99];
+        break;
+        
+        case 8:
+            [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"k" : @"v"} count:5 sum:1.99 duration:0.314];
+        break;
+        
+        case 9:
+            [Countly.sharedInstance startEvent:@"timed-event"];
+        break;
+        
+        case 10:
+            [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k" : @"v"} count:1 sum:0];
+        break;
+        
         default:break;
     }
 }

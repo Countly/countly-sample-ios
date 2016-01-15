@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <objects>
@@ -29,9 +30,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" tag="1" id="ngm-fN-qQ4">
-                        <rect key="frame" x="10" y="584" width="64" height="47"/>
+                        <rect key="frame" x="10" y="579" width="300" height="52"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="squareTextured" title="Event A" bezelStyle="texturedSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="V8a-0Z-hXW">
+                        <buttonCell key="cell" type="squareTextured" title="  record event" bezelStyle="texturedSquare" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="V8a-0Z-hXW">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="cellTitle"/>
                         </buttonCell>
@@ -39,52 +40,41 @@
                             <action selector="onClick_events:" target="Voe-Tx-rLC" id="vns-Gg-7Ro"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" tag="3" id="mA1-Uy-nFz">
-                        <rect key="frame" x="292" y="587" width="64" height="47"/>
+                    <button verticalHuggingPriority="750" tag="2" id="Xjt-K4-lnT">
+                        <rect key="frame" x="10" y="522" width="300" height="52"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="squareTextured" title="Event B" bezelStyle="texturedSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hDa-yI-DNn">
+                        <buttonCell key="cell" type="squareTextured" title="  record event with count" bezelStyle="texturedSquare" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="33F-8y-Fr8">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="cellTitle"/>
                         </buttonCell>
                         <connections>
-                            <action selector="onClick_events:" target="Voe-Tx-rLC" id="D06-fJ-4ex"/>
+                            <action selector="onClick_events:" target="Voe-Tx-rLC" id="ZlR-g5-DoV"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" tag="4" id="saq-yd-b9E">
-                        <rect key="frame" x="292" y="527" width="64" height="47"/>
+                    <button verticalHuggingPriority="750" tag="3" id="DOl-V7-9aa">
+                        <rect key="frame" x="10" y="465" width="300" height="52"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="squareTextured" title="Event B" bezelStyle="texturedSquare" alignment="center" lineBreakMode="charWrapping" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TWt-lF-JZY">
+                        <buttonCell key="cell" type="squareTextured" title="  record event with sum" bezelStyle="texturedSquare" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="egv-Se-rX1">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="cellTitle"/>
                         </buttonCell>
                         <connections>
-                            <action selector="onClick_events:" target="Voe-Tx-rLC" id="vxy-bF-aYe"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" tag="2" id="4YV-cq-otq">
-                        <rect key="frame" x="10" y="527" width="64" height="47"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="squareTextured" title="Event A" bezelStyle="texturedSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0EM-hG-7U3">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="cellTitle"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="onClick_events:" target="Voe-Tx-rLC" id="tmi-B5-KXk"/>
+                            <action selector="onClick_events:" target="Voe-Tx-rLC" id="vgY-8D-9HD"/>
                         </connections>
                     </button>
                     <scrollView borderType="line" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="RZ1-4W-d6A">
-                        <rect key="frame" x="10" y="12" width="620" height="504"/>
+                        <rect key="frame" x="10" y="10" width="620" height="333"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="bnt-5i-fCR">
-                            <rect key="frame" x="1" y="1" width="618" height="502"/>
+                            <rect key="frame" x="1" y="1" width="618" height="331"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="NsF-AG-bgk">
-                                    <rect key="frame" x="0.0" y="0.0" width="618" height="502"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="618" height="331"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="textColor" red="0.25490196079999999" green="0.69803921570000005" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <size key="minSize" width="618" height="502"/>
+                                    <size key="minSize" width="618" height="331"/>
                                     <size key="maxSize" width="621" height="10000000"/>
                                     <attributedString key="textStorage">
                                         <fragment content="Set COUNTLY_DEBUG flag in CountlyCommon.h to see logs">
@@ -96,7 +86,7 @@
                                         </fragment>
                                     </attributedString>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="618" height="502"/>
+                                    <size key="minSize" width="618" height="331"/>
                                     <size key="maxSize" width="621" height="10000000"/>
                                 </textView>
                             </subviews>
@@ -107,48 +97,98 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="thr-Eh-aIt">
-                            <rect key="frame" x="603" y="1" width="16" height="502"/>
+                            <rect key="frame" x="603" y="1" width="16" height="331"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="QyF-ZJ-Q3D">
-                        <rect key="frame" x="373" y="594" width="234" height="34"/>
+                    <button verticalHuggingPriority="750" tag="4" id="48d-6a-zgd">
+                        <rect key="frame" x="10" y="408" width="300" height="52"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Count:5                                 Segmentation: &quot;aSegKey&quot;:&quot;aValue&quot; " id="Qfh-Fg-ttT">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="lky-sW-RPE">
-                        <rect key="frame" x="373" y="534" width="234" height="34"/>
+                        <buttonCell key="cell" type="squareTextured" title="  record event with duration" bezelStyle="texturedSquare" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tV5-Hf-joA">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="cellTitle"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="onClick_events:" target="Voe-Tx-rLC" id="r2C-Q3-F5P"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" tag="9" id="leL-wP-BAc">
+                        <rect key="frame" x="10" y="351" width="300" height="52"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Count:7     Sum:3.94                             Segmentation: &quot;aSegKey&quot;:&quot;aValue&quot; " id="sh1-db-b35">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="cfm-yu-Z12">
-                        <rect key="frame" x="80" y="589" width="206" height="34"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Count:1" id="GMb-c4-0ky">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="dJQ-I8-42q">
-                        <rect key="frame" x="80" y="534" width="206" height="34"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Count:3     Sum:4.99" id="mAt-BR-2Xs">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
+                        <buttonCell key="cell" type="squareTextured" title="  start event" bezelStyle="texturedSquare" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="txZ-zV-K3s">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="cellTitle"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="onClick_events:" target="Voe-Tx-rLC" id="OUp-qN-Qw5"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" tag="5" id="4PZ-a7-jBI">
+                        <rect key="frame" x="330" y="579" width="300" height="52"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="squareTextured" title="  record event with segm." bezelStyle="texturedSquare" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iBA-80-qnD">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="cellTitle"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="onClick_events:" target="Voe-Tx-rLC" id="AJy-69-lm0"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" tag="6" id="J2x-gY-ziK">
+                        <rect key="frame" x="330" y="522" width="300" height="52"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GCB-bA-yyn">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <string key="title">  record event with segm.
+  &amp; count</string>
+                            <font key="font" metaFont="cellTitle"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="onClick_events:" target="Voe-Tx-rLC" id="CaC-Y5-pXw"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" tag="7" id="EDd-47-u7C">
+                        <rect key="frame" x="330" y="465" width="300" height="52"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="idC-Iz-Wfw">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <string key="title">  record event with segm.
+  count &amp; sum</string>
+                            <font key="font" metaFont="cellTitle"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="onClick_events:" target="Voe-Tx-rLC" id="VEy-j9-FBa"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" tag="8" id="KdJ-G5-n2Y">
+                        <rect key="frame" x="330" y="408" width="300" height="52"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="r0A-hY-4J6">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <string key="title">  record event with segm.
+  count, sum &amp; duration</string>
+                            <font key="font" metaFont="cellTitle"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="onClick_events:" target="Voe-Tx-rLC" id="BDR-ka-JfY"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" tag="10" id="cDl-j4-tDd">
+                        <rect key="frame" x="330" y="351" width="300" height="52"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uZJ-Al-yyV">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <string key="title">  end event with segm.
+  count &amp; sum</string>
+                            <font key="font" metaFont="cellTitle"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="onClick_events:" target="Voe-Tx-rLC" id="v5N-Du-hME"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
+            <point key="canvasLocation" x="241" y="125"/>
         </window>
     </objects>
 </document>

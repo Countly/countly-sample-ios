@@ -17,14 +17,6 @@
 
 - (void)awakeWithContext:(id)context
 {
-
-//start Countly
-//  [Countly.sharedInstance start:@"YOUR_APP_KEY" withHost:@"https://YOUR_API_HOST.com"];
-//
-//  or use convenience method for Countly Cloud
-//
-//  [Countly.sharedInstance startOnCloudWithAppKey:@"YOUR_APP_KEY"];
-    
     NSArray* testButtonTitles = @[
                                     @"record event",
                                     @"record event with count",

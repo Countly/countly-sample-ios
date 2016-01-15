@@ -5,20 +5,28 @@
 // Please visit www.count.ly for more information.
 
 #import "ExtensionDelegate.h"
+#import "Countly.h"
 
 @implementation ExtensionDelegate
 
-- (void)applicationDidFinishLaunching {
-    // Perform any final initialization of your application.
+- (void)applicationDidFinishLaunching
+{
+//start Countly
+//  [Countly.sharedInstance start:@"YOUR_APP_KEY" withHost:@"https://YOUR_API_HOST.com"];
+//
+//  or use convenience method for Countly Cloud
+//
+//  [Countly.sharedInstance startOnCloudWithAppKey:@"YOUR_APP_KEY"];
 }
 
-- (void)applicationDidBecomeActive {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+- (void)applicationDidBecomeActive
+{
+//    [Countly.sharedInstance resume];
 }
 
-- (void)applicationWillResignActive {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, etc.
+- (void)applicationWillResignActive
+{
+//    [Countly.sharedInstance suspend];
 }
 
 @end

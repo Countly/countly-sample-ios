@@ -239,19 +239,19 @@
         case 36:
         {
 /*
-            NSURLSessionDataTask* testSessionDataTask = [NSURLSession.sharedSession dataTaskWithRequest:request
+            NSURLSessionDataTask* testTask = [NSURLSession.sharedSession dataTaskWithRequest:request
                                                                        completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
             {
                 NSLog(@"dataTaskWithRequest finished!");
             }];
 
-            NSURLSessionDataTask* testSessionDataTask = [NSURLSession.sharedSession dataTaskWithURL:URL
+            NSURLSessionDataTask* testTask = [NSURLSession.sharedSession dataTaskWithURL:URL
                                                                                    completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
             {
                 NSLog(@"dataTaskWithURL finished!");
             }];
 
-            NSURLSessionDownloadTask* testSessionDataTask = [NSURLSession.sharedSession downloadTaskWithRequest:request
+            NSURLSessionDownloadTask* testTask = [NSURLSession.sharedSession downloadTaskWithRequest:request
                                                                                               completionHandler:^(NSURL * _Nullable location,
                                                                                                                   NSURLResponse * _Nullable response,
                                                                                                                   NSError * _Nullable error)
@@ -259,10 +259,10 @@
                   NSLog(@"downloadTaskWithRequest finished!");
             }];
 */
-            NSURLSessionDataTask* testSessionDataTask = [NSURLSession.sharedSession dataTaskWithRequest:request];
+            NSURLSessionDataTask* testTask = [NSURLSession.sharedSession dataTaskWithRequest:request];
 
-            [testSessionDataTask resume];
-//          [testSessionDataTask performSelector:@selector(resume) withObject:nil afterDelay:5];
+            [testTask resume];
+//          [testTask performSelector:@selector(resume) withObject:nil afterDelay:5];
         
         }break;
 

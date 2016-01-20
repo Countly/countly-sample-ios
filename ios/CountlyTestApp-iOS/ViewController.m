@@ -250,6 +250,14 @@
             {
                 NSLog(@"dataTaskWithURL finished!");
             }];
+
+            NSURLSessionDownloadTask* testSessionDataTask = [NSURLSession.sharedSession downloadTaskWithRequest:request
+                                                                                              completionHandler:^(NSURL * _Nullable location,
+                                                                                                                  NSURLResponse * _Nullable response,
+                                                                                                                  NSError * _Nullable error)
+            {
+                  NSLog(@"downloadTaskWithRequest finished!");
+            }];
 */
             NSURLSessionDataTask* testSessionDataTask = [NSURLSession.sharedSession dataTaskWithRequest:request];
 

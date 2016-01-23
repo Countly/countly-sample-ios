@@ -10,6 +10,7 @@
 		D20C2C5F1A3F2DF600664CAD /* SamplePicture.gif in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */; };
 		D20C2C601A3F2DF600664CAD /* SamplePicture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */; };
 		D20C2C611A3F2DF600664CAD /* SamplePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */; };
+		D2867F5D1C5131A700032ED6 /* CountlyConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D2867F5C1C5131A700032ED6 /* CountlyConfig.m */; };
 		D289685D1B4BC10800F87DE3 /* Countly.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D289685C1B4BC10800F87DE3 /* Countly.podspec */; };
 		D290ED8A186337A90027082D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290ED89186337A90027082D /* CoreTelephony.framework */; };
 		D290ED8C186337B00027082D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290ED8B186337B00027082D /* CoreData.framework */; };
@@ -43,6 +44,8 @@
 		D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SamplePicture.gif; sourceTree = "<group>"; };
 		D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SamplePicture.jpg; sourceTree = "<group>"; };
 		D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SamplePicture.png; sourceTree = "<group>"; };
+		D2867F5B1C5131A700032ED6 /* CountlyConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConfig.h; sourceTree = "<group>"; };
+		D2867F5C1C5131A700032ED6 /* CountlyConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConfig.m; sourceTree = "<group>"; };
 		D289685C1B4BC10800F87DE3 /* Countly.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countly.podspec; sourceTree = "<group>"; };
 		D290ED89186337A90027082D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D290ED8B186337B00027082D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -158,8 +161,7 @@
 				D2BAB0B917EC8EE600807D0D /* Images.xcassets */,
 				D2BAB0A817EC8EE600807D0D /* Supporting Files */,
 			);
-			name = "CountlyTestApp-iOS";
-			path = CountlyTestApp-iOS;
+			path = "CountlyTestApp-iOS";
 			sourceTree = "<group>";
 		};
 		D2BAB0A817EC8EE600807D0D /* Supporting Files */ = {
@@ -181,6 +183,8 @@
 				D2D3FBA518639382000C0367 /* Countly.m */,
 				D2D3FBA818639382000C0367 /* Countly_OpenUDID.h */,
 				D2D3FBA918639382000C0367 /* Countly_OpenUDID.m */,
+				D2867F5B1C5131A700032ED6 /* CountlyConfig.h */,
+				D2867F5C1C5131A700032ED6 /* CountlyConfig.m */,
 				D2AC89431C1AC3F2002D5688 /* CountlyCommon.h */,
 				D2AC89441C1AC3F2002D5688 /* CountlyCommon.m */,
 				D2AC893D1C1AC232002D5688 /* CountlyConnectionManager.h */,
@@ -222,7 +226,7 @@
 			dependencies = (
 			);
 			name = "CountlyTestApp-iOS";
-			productName = CountlyTestApp-iOS;
+			productName = "CountlyTestApp-iOS";
 			productReference = D2BAB09E17EC8EE600807D0D /* CountlyTestApp-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -282,6 +286,7 @@
 				D2AC893F1C1AC232002D5688 /* CountlyConnectionManager.m in Sources */,
 				D2AC89451C1AC3F2002D5688 /* CountlyCommon.m in Sources */,
 				D2D3FBB118639382000C0367 /* Countly_OpenUDID.m in Sources */,
+				D2867F5D1C5131A700032ED6 /* CountlyConfig.m in Sources */,
 				D2AC89421C1AC30C002D5688 /* CountlyPersistency.m in Sources */,
 				D2AC896B1C1AE0D9002D5688 /* CountlyAPM.m in Sources */,
 				D2AC896C1C1AE0D9002D5688 /* CountlyAPMNetworkLog.m in Sources */,

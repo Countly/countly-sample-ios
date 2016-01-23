@@ -11,12 +11,11 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-//start Countly
-//  [Countly.sharedInstance start:@"YOUR_APP_KEY" withHost:@"https://YOUR_API_HOST.com"];
-//
-//or use convenience method for Countly Cloud
-//
-//  [Countly.sharedInstance startOnCloudWithAppKey:@"YOUR_APP_KEY"];
+    CountlyConfig* config = CountlyConfig.new;
+    config.appKey = @"YOUR_APP_KEY";
+    config.host = @"https://YOUR_COUNTLY_SERVER";
+//  config.features = @[CLYAPM];                                      //Optional features
+    [Countly.sharedInstance startWithConfig:config];
     
     self.window.backgroundColor = [NSColor colorWithCalibratedRed:65/255.0 green:178/255.0 blue:70/255.0 alpha:1];
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2867F601C5249D600032ED6 /* CountlyConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D2867F5F1C5249D600032ED6 /* CountlyConfig.m */; };
+		D2867F671C53491C00032ED6 /* CountlyConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D2867F5F1C5249D600032ED6 /* CountlyConfig.m */; };
 		D2F0FC431C4756CF007C5556 /* RowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F0FC421C4756CF007C5556 /* RowController.m */; };
 		D2FADF841C464C6A00060D08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADF831C464C6A00060D08 /* main.m */; };
 		D2FADF871C464C6A00060D08 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADF861C464C6A00060D08 /* AppDelegate.m */; };
@@ -91,6 +93,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D2867F5E1C5249D600032ED6 /* CountlyConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConfig.h; sourceTree = "<group>"; };
+		D2867F5F1C5249D600032ED6 /* CountlyConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConfig.m; sourceTree = "<group>"; };
 		D2F0FC411C4756CF007C5556 /* RowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowController.h; sourceTree = "<group>"; };
 		D2F0FC421C4756CF007C5556 /* RowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowController.m; sourceTree = "<group>"; };
 		D2FADF7F1C464C6A00060D08 /* CountlyTestApp-watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -258,6 +262,8 @@
 				D2FADFF61C46543200060D08 /* .gitattributes */,
 				D2FADFF71C46543200060D08 /* Countly.h */,
 				D2FADFF81C46543200060D08 /* Countly.m */,
+				D2867F5E1C5249D600032ED6 /* CountlyConfig.h */,
+				D2867F5F1C5249D600032ED6 /* CountlyConfig.m */,
 				D2FADFF91C46543200060D08 /* Countly.podspec */,
 				D2FADFFA1C46543200060D08 /* Countly_OpenUDID.h */,
 				D2FADFFB1C46543200060D08 /* Countly_OpenUDID.m */,
@@ -420,6 +426,7 @@
 				D2FADF8A1C464C6A00060D08 /* ViewController.m in Sources */,
 				D2FAE01A1C46543200060D08 /* CountlyEvent.m in Sources */,
 				D2FAE0191C46543200060D08 /* CountlyDeviceInfo.m in Sources */,
+				D2867F601C5249D600032ED6 /* CountlyConfig.m in Sources */,
 				D2FAE0161C46543200060D08 /* CountlyCommon.m in Sources */,
 				D2FADF871C464C6A00060D08 /* AppDelegate.m in Sources */,
 				D2FAE0171C46543200060D08 /* CountlyConnectionManager.m in Sources */,
@@ -450,6 +457,7 @@
 				D2FADFB71C464C6A00060D08 /* GlanceController.m in Sources */,
 				D2FAE0251C46545000060D08 /* CountlyCrashReporter.m in Sources */,
 				D2FAE0271C46545000060D08 /* CountlyEvent.m in Sources */,
+				D2867F671C53491C00032ED6 /* CountlyConfig.m in Sources */,
 				D2FAE0241C46545000060D08 /* CountlyConnectionManager.m in Sources */,
 				D2FAE0231C46545000060D08 /* CountlyCommon.m in Sources */,
 				D2F0FC431C4756CF007C5556 /* RowController.m in Sources */,

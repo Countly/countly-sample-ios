@@ -13,6 +13,7 @@
 		D2315A4118EBE52100119D0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2315A4018EBE52100119D0D /* AppDelegate.m */; };
 		D2315A4418EBE52100119D0D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2315A4218EBE52100119D0D /* MainMenu.xib */; };
 		D2315A4618EBE52100119D0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2315A4518EBE52100119D0D /* Images.xcassets */; };
+		D2867F661C53486500032ED6 /* CountlyConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D2867F651C53486500032ED6 /* CountlyConfig.m */; };
 		D2FA2C831C462C560080FE6C /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FA2C6A1C462C560080FE6C /* Countly.m */; };
 		D2FA2C851C462C560080FE6C /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FA2C6D1C462C560080FE6C /* Countly_OpenUDID.m */; };
 		D2FA2C861C462C560080FE6C /* CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FA2C6F1C462C560080FE6C /* CountlyAPM.m */; };
@@ -40,6 +41,8 @@
 		D2315A4018EBE52100119D0D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D2315A4318EBE52100119D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D2315A4518EBE52100119D0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D2867F641C53486500032ED6 /* CountlyConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConfig.h; sourceTree = "<group>"; };
+		D2867F651C53486500032ED6 /* CountlyConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConfig.m; sourceTree = "<group>"; };
 		D2FA2C681C462C560080FE6C /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		D2FA2C691C462C560080FE6C /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
 		D2FA2C6A1C462C560080FE6C /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 				D2FA2C691C462C560080FE6C /* Countly.h */,
 				D2FA2C6A1C462C560080FE6C /* Countly.m */,
 				D2FA2C6B1C462C560080FE6C /* Countly.podspec */,
+				D2867F641C53486500032ED6 /* CountlyConfig.h */,
+				D2867F651C53486500032ED6 /* CountlyConfig.m */,
 				D2FA2C6C1C462C560080FE6C /* Countly_OpenUDID.h */,
 				D2FA2C6D1C462C560080FE6C /* Countly_OpenUDID.m */,
 				D2FA2C6E1C462C560080FE6C /* CountlyAPM.h */,
@@ -241,6 +246,7 @@
 			files = (
 				D2315A4118EBE52100119D0D /* AppDelegate.m in Sources */,
 				D2FA2C831C462C560080FE6C /* Countly.m in Sources */,
+				D2867F661C53486500032ED6 /* CountlyConfig.m in Sources */,
 				D2FA2C851C462C560080FE6C /* Countly_OpenUDID.m in Sources */,
 				D2FA2C871C462C560080FE6C /* CountlyAPMNetworkLog.m in Sources */,
 				D2FA2C8A1C462C560080FE6C /* CountlyCrashReporter.m in Sources */,

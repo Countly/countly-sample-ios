@@ -12,21 +12,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//start Countly
-//  [Countly.sharedInstance start:@"YOUR_APP_KEY" withHost:@"https://YOUR_API_HOST.com"];
-//
-//  or use convenience method for Countly Cloud
-//
-//  [Countly.sharedInstance startOnCloudWithAppKey:@"YOUR_APP_KEY"];
-    
-    
-//start CrashReporting (optional)
-//    [Countly.sharedInstance startCrashReporting];
-
-    
-//start APM (optional)
-//    [Countly.sharedInstance startAPM];
-
+    CountlyConfig* config = CountlyConfig.new;
+    config.appKey = @"YOUR_APP_KEY";
+    config.host = @"https://YOUR_COUNTLY_SERVER";
+//  config.features = @[CLYMessaging, CLYCrashReporting, CLYAPM];     //Optional features
+//  config.launchOptions = launchOptions;                             //Required for CLYMessaging feature
+    [Countly.sharedInstance startWithConfig:config];
 
     
     self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];

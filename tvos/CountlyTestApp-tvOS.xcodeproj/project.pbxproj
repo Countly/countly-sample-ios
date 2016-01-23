@@ -12,6 +12,7 @@
 		D22D430B1C4631BD00C69E7C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D430A1C4631BD00C69E7C /* ViewController.m */; };
 		D22D430E1C4631BD00C69E7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22D430C1C4631BD00C69E7C /* Main.storyboard */; };
 		D22D43101C4631BD00C69E7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22D430F1C4631BD00C69E7C /* Assets.xcassets */; };
+		D2867F631C5347F700032ED6 /* CountlyConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D2867F621C5347F700032ED6 /* CountlyConfig.m */; };
 		D2FADF681C46498500060D08 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADF4F1C46498500060D08 /* Countly.m */; };
 		D2FADF6A1C46498500060D08 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADF521C46498500060D08 /* Countly_OpenUDID.m */; };
 		D2FADF6B1C46498500060D08 /* CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADF541C46498500060D08 /* CountlyAPM.m */; };
@@ -35,6 +36,8 @@
 		D22D430D1C4631BD00C69E7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D22D430F1C4631BD00C69E7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D22D43111C4631BD00C69E7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2867F611C5347F700032ED6 /* CountlyConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConfig.h; sourceTree = "<group>"; };
+		D2867F621C5347F700032ED6 /* CountlyConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConfig.m; sourceTree = "<group>"; };
 		D2FADF4D1C46498500060D08 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		D2FADF4E1C46498500060D08 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
 		D2FADF4F1C46498500060D08 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
@@ -123,6 +126,8 @@
 				D2FADF501C46498500060D08 /* Countly.podspec */,
 				D2FADF511C46498500060D08 /* Countly_OpenUDID.h */,
 				D2FADF521C46498500060D08 /* Countly_OpenUDID.m */,
+				D2867F611C5347F700032ED6 /* CountlyConfig.h */,
+				D2867F621C5347F700032ED6 /* CountlyConfig.m */,
 				D2FADF531C46498500060D08 /* CountlyAPM.h */,
 				D2FADF541C46498500060D08 /* CountlyAPM.m */,
 				D2FADF551C46498500060D08 /* CountlyAPMNetworkLog.h */,
@@ -220,6 +225,7 @@
 				D22D430B1C4631BD00C69E7C /* ViewController.m in Sources */,
 				D2FADF711C46498500060D08 /* CountlyEvent.m in Sources */,
 				D2FADF701C46498500060D08 /* CountlyDeviceInfo.m in Sources */,
+				D2867F631C5347F700032ED6 /* CountlyConfig.m in Sources */,
 				D2FADF6D1C46498500060D08 /* CountlyCommon.m in Sources */,
 				D22D43081C4631BD00C69E7C /* AppDelegate.m in Sources */,
 				D2FADF6E1C46498500060D08 /* CountlyConnectionManager.m in Sources */,

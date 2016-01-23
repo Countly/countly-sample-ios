@@ -11,12 +11,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//start Countly
-//  [Countly.sharedInstance start:@"YOUR_APP_KEY" withHost:@"https://YOUR_API_HOST.com"];
-//
-//or use convenience method for Countly Cloud
-//
-//  [Countly.sharedInstance startOnCloudWithAppKey:@"YOUR_APP_KEY"];
+    CountlyConfig* config = CountlyConfig.new;
+    config.appKey = @"YOUR_APP_KEY";
+    config.host = @"https://YOUR_COUNTLY_SERVER";
+//  config.features = @[CLYAPM];                                      //Optional features
+    [Countly.sharedInstance startWithConfig:config];
 
     return YES;
 }

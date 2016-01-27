@@ -10,19 +10,8 @@
 		D20C2C5F1A3F2DF600664CAD /* SamplePicture.gif in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */; };
 		D20C2C601A3F2DF600664CAD /* SamplePicture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */; };
 		D20C2C611A3F2DF600664CAD /* SamplePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */; };
-		D2867F5D1C5131A700032ED6 /* CountlyConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D2867F5C1C5131A700032ED6 /* CountlyConfig.m */; };
-		D289685D1B4BC10800F87DE3 /* Countly.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D289685C1B4BC10800F87DE3 /* Countly.podspec */; };
 		D290ED8A186337A90027082D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290ED89186337A90027082D /* CoreTelephony.framework */; };
 		D290ED8C186337B00027082D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290ED8B186337B00027082D /* CoreData.framework */; };
-		D2AC893F1C1AC232002D5688 /* CountlyConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC893E1C1AC232002D5688 /* CountlyConnectionManager.m */; };
-		D2AC89421C1AC30C002D5688 /* CountlyPersistency.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC89411C1AC30C002D5688 /* CountlyPersistency.m */; };
-		D2AC89451C1AC3F2002D5688 /* CountlyCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC89441C1AC3F2002D5688 /* CountlyCommon.m */; };
-		D2AC89481C1AC504002D5688 /* CountlyUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC89471C1AC504002D5688 /* CountlyUserDetails.m */; };
-		D2AC894B1C1AC67E002D5688 /* CountlyDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC894A1C1AC67E002D5688 /* CountlyDeviceInfo.m */; };
-		D2AC894E1C1AC733002D5688 /* CountlyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC894D1C1AC733002D5688 /* CountlyEvent.m */; };
-		D2AC89511C1AD01C002D5688 /* CountlyCrashReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC89501C1AD01C002D5688 /* CountlyCrashReporter.m */; };
-		D2AC896B1C1AE0D9002D5688 /* CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC89681C1AE0D9002D5688 /* CountlyAPM.m */; };
-		D2AC896C1C1AE0D9002D5688 /* CountlyAPMNetworkLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AC896A1C1AE0D9002D5688 /* CountlyAPMNetworkLog.m */; };
 		D2BAB0A217EC8EE600807D0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A117EC8EE600807D0D /* Foundation.framework */; };
 		D2BAB0A417EC8EE600807D0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A317EC8EE600807D0D /* CoreGraphics.framework */; };
 		D2BAB0A617EC8EE600807D0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A517EC8EE600807D0D /* UIKit.framework */; };
@@ -32,41 +21,27 @@
 		D2BAB0B817EC8EE600807D0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BAB0B717EC8EE600807D0D /* ViewController.m */; };
 		D2BAB0BA17EC8EE600807D0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2BAB0B917EC8EE600807D0D /* Images.xcassets */; };
 		D2BAB0D717EC8FF400807D0D /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2BAB0D617EC8FF400807D0D /* ViewController.xib */; };
-		D2D3FBAE18639382000C0367 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = D2D3FBA318639382000C0367 /* .gitattributes */; };
-		D2D3FBAF18639382000C0367 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D3FBA518639382000C0367 /* Countly.m */; };
-		D2D3FBB118639382000C0367 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D3FBA918639382000C0367 /* Countly_OpenUDID.m */; };
-		D2D3FBB318639382000C0367 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D2D3FBAC18639382000C0367 /* LICENSE */; };
-		D2D3FBB418639382000C0367 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D2D3FBAD18639382000C0367 /* README.md */; };
 		D2D4F4281A0BB34500C0EF0B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D4F4271A0BB34500C0EF0B /* AdSupport.framework */; };
+		D2EB406A1C58BFAA00EAA633 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB404F1C58BFAA00EAA633 /* Countly.m */; };
+		D2EB406C1C58BFAA00EAA633 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40521C58BFAA00EAA633 /* Countly_OpenUDID.m */; };
+		D2EB406D1C58BFAA00EAA633 /* CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40541C58BFAA00EAA633 /* CountlyAPM.m */; };
+		D2EB406E1C58BFAA00EAA633 /* CountlyAPMNetworkLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40561C58BFAA00EAA633 /* CountlyAPMNetworkLog.m */; };
+		D2EB406F1C58BFAA00EAA633 /* CountlyCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40581C58BFAA00EAA633 /* CountlyCommon.m */; };
+		D2EB40701C58BFAA00EAA633 /* CountlyConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB405A1C58BFAA00EAA633 /* CountlyConfig.m */; };
+		D2EB40711C58BFAA00EAA633 /* CountlyConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB405C1C58BFAA00EAA633 /* CountlyConnectionManager.m */; };
+		D2EB40721C58BFAA00EAA633 /* CountlyCrashReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB405E1C58BFAA00EAA633 /* CountlyCrashReporter.m */; };
+		D2EB40731C58BFAA00EAA633 /* CountlyDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40601C58BFAA00EAA633 /* CountlyDeviceInfo.m */; };
+		D2EB40741C58BFAA00EAA633 /* CountlyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40621C58BFAA00EAA633 /* CountlyEvent.m */; };
+		D2EB40751C58BFAA00EAA633 /* CountlyPersistency.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40641C58BFAA00EAA633 /* CountlyPersistency.m */; };
+		D2EB40761C58BFAA00EAA633 /* CountlyUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40661C58BFAA00EAA633 /* CountlyUserDetails.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SamplePicture.gif; sourceTree = "<group>"; };
 		D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SamplePicture.jpg; sourceTree = "<group>"; };
 		D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SamplePicture.png; sourceTree = "<group>"; };
-		D2867F5B1C5131A700032ED6 /* CountlyConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConfig.h; sourceTree = "<group>"; };
-		D2867F5C1C5131A700032ED6 /* CountlyConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConfig.m; sourceTree = "<group>"; };
-		D289685C1B4BC10800F87DE3 /* Countly.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countly.podspec; sourceTree = "<group>"; };
 		D290ED89186337A90027082D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D290ED8B186337B00027082D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		D2AC893D1C1AC232002D5688 /* CountlyConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConnectionManager.h; sourceTree = "<group>"; };
-		D2AC893E1C1AC232002D5688 /* CountlyConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConnectionManager.m; sourceTree = "<group>"; };
-		D2AC89401C1AC30C002D5688 /* CountlyPersistency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPersistency.h; sourceTree = "<group>"; };
-		D2AC89411C1AC30C002D5688 /* CountlyPersistency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPersistency.m; sourceTree = "<group>"; };
-		D2AC89431C1AC3F2002D5688 /* CountlyCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCommon.h; sourceTree = "<group>"; };
-		D2AC89441C1AC3F2002D5688 /* CountlyCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCommon.m; sourceTree = "<group>"; };
-		D2AC89461C1AC504002D5688 /* CountlyUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyUserDetails.h; sourceTree = "<group>"; };
-		D2AC89471C1AC504002D5688 /* CountlyUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyUserDetails.m; sourceTree = "<group>"; };
-		D2AC89491C1AC67E002D5688 /* CountlyDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyDeviceInfo.h; sourceTree = "<group>"; };
-		D2AC894A1C1AC67E002D5688 /* CountlyDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyDeviceInfo.m; sourceTree = "<group>"; };
-		D2AC894C1C1AC733002D5688 /* CountlyEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyEvent.h; sourceTree = "<group>"; };
-		D2AC894D1C1AC733002D5688 /* CountlyEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyEvent.m; sourceTree = "<group>"; };
-		D2AC894F1C1AD01C002D5688 /* CountlyCrashReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCrashReporter.h; sourceTree = "<group>"; };
-		D2AC89501C1AD01C002D5688 /* CountlyCrashReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCrashReporter.m; sourceTree = "<group>"; };
-		D2AC89671C1AE0D9002D5688 /* CountlyAPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPM.h; sourceTree = "<group>"; };
-		D2AC89681C1AE0D9002D5688 /* CountlyAPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPM.m; sourceTree = "<group>"; };
-		D2AC89691C1AE0D9002D5688 /* CountlyAPMNetworkLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPMNetworkLog.h; sourceTree = "<group>"; };
-		D2AC896A1C1AE0D9002D5688 /* CountlyAPMNetworkLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPMNetworkLog.m; sourceTree = "<group>"; };
 		D2BAB09E17EC8EE600807D0D /* CountlyTestApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BAB0A117EC8EE600807D0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2BAB0A317EC8EE600807D0D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,14 +56,35 @@
 		D2BAB0B717EC8EE600807D0D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D2BAB0B917EC8EE600807D0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D2BAB0D617EC8FF400807D0D /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		D2D3FBA318639382000C0367 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
-		D2D3FBA418639382000C0367 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
-		D2D3FBA518639382000C0367 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
-		D2D3FBA818639382000C0367 /* Countly_OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly_OpenUDID.h; sourceTree = "<group>"; };
-		D2D3FBA918639382000C0367 /* Countly_OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly_OpenUDID.m; sourceTree = "<group>"; };
-		D2D3FBAC18639382000C0367 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		D2D3FBAD18639382000C0367 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		D2D4F4271A0BB34500C0EF0B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		D2EB404D1C58BFAA00EAA633 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		D2EB404E1C58BFAA00EAA633 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
+		D2EB404F1C58BFAA00EAA633 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
+		D2EB40501C58BFAA00EAA633 /* Countly.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countly.podspec; sourceTree = "<group>"; };
+		D2EB40511C58BFAA00EAA633 /* Countly_OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly_OpenUDID.h; sourceTree = "<group>"; };
+		D2EB40521C58BFAA00EAA633 /* Countly_OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly_OpenUDID.m; sourceTree = "<group>"; };
+		D2EB40531C58BFAA00EAA633 /* CountlyAPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPM.h; sourceTree = "<group>"; };
+		D2EB40541C58BFAA00EAA633 /* CountlyAPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPM.m; sourceTree = "<group>"; };
+		D2EB40551C58BFAA00EAA633 /* CountlyAPMNetworkLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPMNetworkLog.h; sourceTree = "<group>"; };
+		D2EB40561C58BFAA00EAA633 /* CountlyAPMNetworkLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPMNetworkLog.m; sourceTree = "<group>"; };
+		D2EB40571C58BFAA00EAA633 /* CountlyCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCommon.h; sourceTree = "<group>"; };
+		D2EB40581C58BFAA00EAA633 /* CountlyCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCommon.m; sourceTree = "<group>"; };
+		D2EB40591C58BFAA00EAA633 /* CountlyConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConfig.h; sourceTree = "<group>"; };
+		D2EB405A1C58BFAA00EAA633 /* CountlyConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConfig.m; sourceTree = "<group>"; };
+		D2EB405B1C58BFAA00EAA633 /* CountlyConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConnectionManager.h; sourceTree = "<group>"; };
+		D2EB405C1C58BFAA00EAA633 /* CountlyConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConnectionManager.m; sourceTree = "<group>"; };
+		D2EB405D1C58BFAA00EAA633 /* CountlyCrashReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCrashReporter.h; sourceTree = "<group>"; };
+		D2EB405E1C58BFAA00EAA633 /* CountlyCrashReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCrashReporter.m; sourceTree = "<group>"; };
+		D2EB405F1C58BFAA00EAA633 /* CountlyDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyDeviceInfo.h; sourceTree = "<group>"; };
+		D2EB40601C58BFAA00EAA633 /* CountlyDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyDeviceInfo.m; sourceTree = "<group>"; };
+		D2EB40611C58BFAA00EAA633 /* CountlyEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyEvent.h; sourceTree = "<group>"; };
+		D2EB40621C58BFAA00EAA633 /* CountlyEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyEvent.m; sourceTree = "<group>"; };
+		D2EB40631C58BFAA00EAA633 /* CountlyPersistency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPersistency.h; sourceTree = "<group>"; };
+		D2EB40641C58BFAA00EAA633 /* CountlyPersistency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPersistency.m; sourceTree = "<group>"; };
+		D2EB40651C58BFAA00EAA633 /* CountlyUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyUserDetails.h; sourceTree = "<group>"; };
+		D2EB40661C58BFAA00EAA633 /* CountlyUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyUserDetails.m; sourceTree = "<group>"; };
+		D2EB40671C58BFAA00EAA633 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D2EB40681C58BFAA00EAA633 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				D2BAB0A717EC8EE600807D0D /* CountlyTestApp-iOS */,
+				D2EB404C1C58BFAA00EAA633 /* countly-sdk-ios */,
 				D2BAB0A017EC8EE600807D0D /* Frameworks */,
 				D2BAB09F17EC8EE600807D0D /* Products */,
 			);
@@ -151,7 +148,6 @@
 		D2BAB0A717EC8EE600807D0D /* CountlyTestApp-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D2D3FBA218639382000C0367 /* countly-sdk-ios */,
 				D2BAB0B017EC8EE600807D0D /* AppDelegate.h */,
 				D2BAB0B117EC8EE600807D0D /* AppDelegate.m */,
 				D2BAB0B617EC8EE600807D0D /* ViewController.h */,
@@ -175,39 +171,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D2D3FBA218639382000C0367 /* countly-sdk-ios */ = {
+		D2EB404C1C58BFAA00EAA633 /* countly-sdk-ios */ = {
 			isa = PBXGroup;
 			children = (
-				D2D3FBA318639382000C0367 /* .gitattributes */,
-				D2D3FBA418639382000C0367 /* Countly.h */,
-				D2D3FBA518639382000C0367 /* Countly.m */,
-				D2D3FBA818639382000C0367 /* Countly_OpenUDID.h */,
-				D2D3FBA918639382000C0367 /* Countly_OpenUDID.m */,
-				D2867F5B1C5131A700032ED6 /* CountlyConfig.h */,
-				D2867F5C1C5131A700032ED6 /* CountlyConfig.m */,
-				D2AC89431C1AC3F2002D5688 /* CountlyCommon.h */,
-				D2AC89441C1AC3F2002D5688 /* CountlyCommon.m */,
-				D2AC893D1C1AC232002D5688 /* CountlyConnectionManager.h */,
-				D2AC893E1C1AC232002D5688 /* CountlyConnectionManager.m */,
-				D2AC894F1C1AD01C002D5688 /* CountlyCrashReporter.h */,
-				D2AC89501C1AD01C002D5688 /* CountlyCrashReporter.m */,
-				D2AC89491C1AC67E002D5688 /* CountlyDeviceInfo.h */,
-				D2AC894A1C1AC67E002D5688 /* CountlyDeviceInfo.m */,
-				D2AC894C1C1AC733002D5688 /* CountlyEvent.h */,
-				D2AC894D1C1AC733002D5688 /* CountlyEvent.m */,
-				D2AC89671C1AE0D9002D5688 /* CountlyAPM.h */,
-				D2AC89681C1AE0D9002D5688 /* CountlyAPM.m */,
-				D2AC89691C1AE0D9002D5688 /* CountlyAPMNetworkLog.h */,
-				D2AC896A1C1AE0D9002D5688 /* CountlyAPMNetworkLog.m */,
-				D2AC89401C1AC30C002D5688 /* CountlyPersistency.h */,
-				D2AC89411C1AC30C002D5688 /* CountlyPersistency.m */,
-				D2AC89461C1AC504002D5688 /* CountlyUserDetails.h */,
-				D2AC89471C1AC504002D5688 /* CountlyUserDetails.m */,
-				D289685C1B4BC10800F87DE3 /* Countly.podspec */,
-				D2D3FBAC18639382000C0367 /* LICENSE */,
-				D2D3FBAD18639382000C0367 /* README.md */,
+				D2EB404E1C58BFAA00EAA633 /* Countly.h */,
+				D2EB404F1C58BFAA00EAA633 /* Countly.m */,
+				D2EB40511C58BFAA00EAA633 /* Countly_OpenUDID.h */,
+				D2EB40521C58BFAA00EAA633 /* Countly_OpenUDID.m */,
+				D2EB40531C58BFAA00EAA633 /* CountlyAPM.h */,
+				D2EB40541C58BFAA00EAA633 /* CountlyAPM.m */,
+				D2EB40551C58BFAA00EAA633 /* CountlyAPMNetworkLog.h */,
+				D2EB40561C58BFAA00EAA633 /* CountlyAPMNetworkLog.m */,
+				D2EB40571C58BFAA00EAA633 /* CountlyCommon.h */,
+				D2EB40581C58BFAA00EAA633 /* CountlyCommon.m */,
+				D2EB40591C58BFAA00EAA633 /* CountlyConfig.h */,
+				D2EB405A1C58BFAA00EAA633 /* CountlyConfig.m */,
+				D2EB405B1C58BFAA00EAA633 /* CountlyConnectionManager.h */,
+				D2EB405C1C58BFAA00EAA633 /* CountlyConnectionManager.m */,
+				D2EB405D1C58BFAA00EAA633 /* CountlyCrashReporter.h */,
+				D2EB405E1C58BFAA00EAA633 /* CountlyCrashReporter.m */,
+				D2EB405F1C58BFAA00EAA633 /* CountlyDeviceInfo.h */,
+				D2EB40601C58BFAA00EAA633 /* CountlyDeviceInfo.m */,
+				D2EB40611C58BFAA00EAA633 /* CountlyEvent.h */,
+				D2EB40621C58BFAA00EAA633 /* CountlyEvent.m */,
+				D2EB40631C58BFAA00EAA633 /* CountlyPersistency.h */,
+				D2EB40641C58BFAA00EAA633 /* CountlyPersistency.m */,
+				D2EB40651C58BFAA00EAA633 /* CountlyUserDetails.h */,
+				D2EB40661C58BFAA00EAA633 /* CountlyUserDetails.m */,
+				D2EB404D1C58BFAA00EAA633 /* .gitattributes */,
+				D2EB40501C58BFAA00EAA633 /* Countly.podspec */,
+				D2EB40671C58BFAA00EAA633 /* LICENSE */,
+				D2EB40681C58BFAA00EAA633 /* README.md */,
 			);
-			path = "countly-sdk-ios";
+			name = "countly-sdk-ios";
+			path = "../countly-sdk-ios";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,16 +260,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2D3FBB418639382000C0367 /* README.md in Resources */,
 				D2BAB0BA17EC8EE600807D0D /* Images.xcassets in Resources */,
 				D20C2C601A3F2DF600664CAD /* SamplePicture.jpg in Resources */,
 				D2BAB0D717EC8FF400807D0D /* ViewController.xib in Resources */,
 				D20C2C5F1A3F2DF600664CAD /* SamplePicture.gif in Resources */,
-				D289685D1B4BC10800F87DE3 /* Countly.podspec in Resources */,
 				D20C2C611A3F2DF600664CAD /* SamplePicture.png in Resources */,
 				D2BAB0AC17EC8EE600807D0D /* InfoPlist.strings in Resources */,
-				D2D3FBAE18639382000C0367 /* .gitattributes in Resources */,
-				D2D3FBB318639382000C0367 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,21 +276,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2AC893F1C1AC232002D5688 /* CountlyConnectionManager.m in Sources */,
-				D2AC89451C1AC3F2002D5688 /* CountlyCommon.m in Sources */,
-				D2D3FBB118639382000C0367 /* Countly_OpenUDID.m in Sources */,
-				D2867F5D1C5131A700032ED6 /* CountlyConfig.m in Sources */,
-				D2AC89421C1AC30C002D5688 /* CountlyPersistency.m in Sources */,
-				D2AC896B1C1AE0D9002D5688 /* CountlyAPM.m in Sources */,
-				D2AC896C1C1AE0D9002D5688 /* CountlyAPMNetworkLog.m in Sources */,
+				D2EB40731C58BFAA00EAA633 /* CountlyDeviceInfo.m in Sources */,
 				D2BAB0B217EC8EE600807D0D /* AppDelegate.m in Sources */,
+				D2EB40751C58BFAA00EAA633 /* CountlyPersistency.m in Sources */,
+				D2EB406F1C58BFAA00EAA633 /* CountlyCommon.m in Sources */,
+				D2EB40761C58BFAA00EAA633 /* CountlyUserDetails.m in Sources */,
 				D2BAB0AE17EC8EE600807D0D /* main.m in Sources */,
-				D2D3FBAF18639382000C0367 /* Countly.m in Sources */,
-				D2AC89511C1AD01C002D5688 /* CountlyCrashReporter.m in Sources */,
-				D2AC894E1C1AC733002D5688 /* CountlyEvent.m in Sources */,
-				D2AC89481C1AC504002D5688 /* CountlyUserDetails.m in Sources */,
-				D2AC894B1C1AC67E002D5688 /* CountlyDeviceInfo.m in Sources */,
+				D2EB40701C58BFAA00EAA633 /* CountlyConfig.m in Sources */,
+				D2EB406C1C58BFAA00EAA633 /* Countly_OpenUDID.m in Sources */,
+				D2EB406D1C58BFAA00EAA633 /* CountlyAPM.m in Sources */,
+				D2EB406A1C58BFAA00EAA633 /* Countly.m in Sources */,
+				D2EB406E1C58BFAA00EAA633 /* CountlyAPMNetworkLog.m in Sources */,
+				D2EB40741C58BFAA00EAA633 /* CountlyEvent.m in Sources */,
+				D2EB40711C58BFAA00EAA633 /* CountlyConnectionManager.m in Sources */,
 				D2BAB0B817EC8EE600807D0D /* ViewController.m in Sources */,
+				D2EB40721C58BFAA00EAA633 /* CountlyCrashReporter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

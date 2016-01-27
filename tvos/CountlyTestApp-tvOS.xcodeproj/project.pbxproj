@@ -12,18 +12,18 @@
 		D22D430B1C4631BD00C69E7C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D430A1C4631BD00C69E7C /* ViewController.m */; };
 		D22D430E1C4631BD00C69E7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22D430C1C4631BD00C69E7C /* Main.storyboard */; };
 		D22D43101C4631BD00C69E7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22D430F1C4631BD00C69E7C /* Assets.xcassets */; };
-		D2867F631C5347F700032ED6 /* CountlyConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D2867F621C5347F700032ED6 /* CountlyConfig.m */; };
-		D2FADF681C46498500060D08 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADF4F1C46498500060D08 /* Countly.m */; };
-		D2FADF6A1C46498500060D08 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADF521C46498500060D08 /* Countly_OpenUDID.m */; };
-		D2FADF6B1C46498500060D08 /* CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADF541C46498500060D08 /* CountlyAPM.m */; };
-		D2FADF6C1C46498500060D08 /* CountlyAPMNetworkLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADF561C46498500060D08 /* CountlyAPMNetworkLog.m */; };
-		D2FADF6D1C46498500060D08 /* CountlyCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADF581C46498500060D08 /* CountlyCommon.m */; };
-		D2FADF6E1C46498500060D08 /* CountlyConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADF5A1C46498500060D08 /* CountlyConnectionManager.m */; };
-		D2FADF6F1C46498500060D08 /* CountlyCrashReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADF5C1C46498500060D08 /* CountlyCrashReporter.m */; };
-		D2FADF701C46498500060D08 /* CountlyDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADF5E1C46498500060D08 /* CountlyDeviceInfo.m */; };
-		D2FADF711C46498500060D08 /* CountlyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADF601C46498500060D08 /* CountlyEvent.m */; };
-		D2FADF721C46498500060D08 /* CountlyPersistency.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADF621C46498500060D08 /* CountlyPersistency.m */; };
-		D2FADF731C46498500060D08 /* CountlyUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADF641C46498500060D08 /* CountlyUserDetails.m */; };
+		D2EB40C41C58C03500EAA633 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40A91C58C03500EAA633 /* Countly.m */; };
+		D2EB40C61C58C03500EAA633 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40AC1C58C03500EAA633 /* Countly_OpenUDID.m */; };
+		D2EB40C71C58C03500EAA633 /* CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40AE1C58C03500EAA633 /* CountlyAPM.m */; };
+		D2EB40C81C58C03500EAA633 /* CountlyAPMNetworkLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40B01C58C03500EAA633 /* CountlyAPMNetworkLog.m */; };
+		D2EB40C91C58C03500EAA633 /* CountlyCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40B21C58C03500EAA633 /* CountlyCommon.m */; };
+		D2EB40CA1C58C03500EAA633 /* CountlyConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40B41C58C03500EAA633 /* CountlyConfig.m */; };
+		D2EB40CB1C58C03500EAA633 /* CountlyConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40B61C58C03500EAA633 /* CountlyConnectionManager.m */; };
+		D2EB40CC1C58C03500EAA633 /* CountlyCrashReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40B81C58C03500EAA633 /* CountlyCrashReporter.m */; };
+		D2EB40CD1C58C03500EAA633 /* CountlyDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40BA1C58C03500EAA633 /* CountlyDeviceInfo.m */; };
+		D2EB40CE1C58C03500EAA633 /* CountlyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40BC1C58C03500EAA633 /* CountlyEvent.m */; };
+		D2EB40CF1C58C03500EAA633 /* CountlyPersistency.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40BE1C58C03500EAA633 /* CountlyPersistency.m */; };
+		D2EB40D01C58C03500EAA633 /* CountlyUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40C01C58C03500EAA633 /* CountlyUserDetails.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,34 +36,34 @@
 		D22D430D1C4631BD00C69E7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D22D430F1C4631BD00C69E7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D22D43111C4631BD00C69E7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D2867F611C5347F700032ED6 /* CountlyConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConfig.h; sourceTree = "<group>"; };
-		D2867F621C5347F700032ED6 /* CountlyConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConfig.m; sourceTree = "<group>"; };
-		D2FADF4D1C46498500060D08 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
-		D2FADF4E1C46498500060D08 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
-		D2FADF4F1C46498500060D08 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
-		D2FADF501C46498500060D08 /* Countly.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countly.podspec; sourceTree = "<group>"; };
-		D2FADF511C46498500060D08 /* Countly_OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly_OpenUDID.h; sourceTree = "<group>"; };
-		D2FADF521C46498500060D08 /* Countly_OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly_OpenUDID.m; sourceTree = "<group>"; };
-		D2FADF531C46498500060D08 /* CountlyAPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPM.h; sourceTree = "<group>"; };
-		D2FADF541C46498500060D08 /* CountlyAPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPM.m; sourceTree = "<group>"; };
-		D2FADF551C46498500060D08 /* CountlyAPMNetworkLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPMNetworkLog.h; sourceTree = "<group>"; };
-		D2FADF561C46498500060D08 /* CountlyAPMNetworkLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPMNetworkLog.m; sourceTree = "<group>"; };
-		D2FADF571C46498500060D08 /* CountlyCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCommon.h; sourceTree = "<group>"; };
-		D2FADF581C46498500060D08 /* CountlyCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCommon.m; sourceTree = "<group>"; };
-		D2FADF591C46498500060D08 /* CountlyConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConnectionManager.h; sourceTree = "<group>"; };
-		D2FADF5A1C46498500060D08 /* CountlyConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConnectionManager.m; sourceTree = "<group>"; };
-		D2FADF5B1C46498500060D08 /* CountlyCrashReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCrashReporter.h; sourceTree = "<group>"; };
-		D2FADF5C1C46498500060D08 /* CountlyCrashReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCrashReporter.m; sourceTree = "<group>"; };
-		D2FADF5D1C46498500060D08 /* CountlyDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyDeviceInfo.h; sourceTree = "<group>"; };
-		D2FADF5E1C46498500060D08 /* CountlyDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyDeviceInfo.m; sourceTree = "<group>"; };
-		D2FADF5F1C46498500060D08 /* CountlyEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyEvent.h; sourceTree = "<group>"; };
-		D2FADF601C46498500060D08 /* CountlyEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyEvent.m; sourceTree = "<group>"; };
-		D2FADF611C46498500060D08 /* CountlyPersistency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPersistency.h; sourceTree = "<group>"; };
-		D2FADF621C46498500060D08 /* CountlyPersistency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPersistency.m; sourceTree = "<group>"; };
-		D2FADF631C46498500060D08 /* CountlyUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyUserDetails.h; sourceTree = "<group>"; };
-		D2FADF641C46498500060D08 /* CountlyUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyUserDetails.m; sourceTree = "<group>"; };
-		D2FADF651C46498500060D08 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		D2FADF661C46498500060D08 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D2EB40A71C58C03500EAA633 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		D2EB40A81C58C03500EAA633 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
+		D2EB40A91C58C03500EAA633 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
+		D2EB40AA1C58C03500EAA633 /* Countly.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countly.podspec; sourceTree = "<group>"; };
+		D2EB40AB1C58C03500EAA633 /* Countly_OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly_OpenUDID.h; sourceTree = "<group>"; };
+		D2EB40AC1C58C03500EAA633 /* Countly_OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly_OpenUDID.m; sourceTree = "<group>"; };
+		D2EB40AD1C58C03500EAA633 /* CountlyAPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPM.h; sourceTree = "<group>"; };
+		D2EB40AE1C58C03500EAA633 /* CountlyAPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPM.m; sourceTree = "<group>"; };
+		D2EB40AF1C58C03500EAA633 /* CountlyAPMNetworkLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPMNetworkLog.h; sourceTree = "<group>"; };
+		D2EB40B01C58C03500EAA633 /* CountlyAPMNetworkLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPMNetworkLog.m; sourceTree = "<group>"; };
+		D2EB40B11C58C03500EAA633 /* CountlyCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCommon.h; sourceTree = "<group>"; };
+		D2EB40B21C58C03500EAA633 /* CountlyCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCommon.m; sourceTree = "<group>"; };
+		D2EB40B31C58C03500EAA633 /* CountlyConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConfig.h; sourceTree = "<group>"; };
+		D2EB40B41C58C03500EAA633 /* CountlyConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConfig.m; sourceTree = "<group>"; };
+		D2EB40B51C58C03500EAA633 /* CountlyConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConnectionManager.h; sourceTree = "<group>"; };
+		D2EB40B61C58C03500EAA633 /* CountlyConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConnectionManager.m; sourceTree = "<group>"; };
+		D2EB40B71C58C03500EAA633 /* CountlyCrashReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCrashReporter.h; sourceTree = "<group>"; };
+		D2EB40B81C58C03500EAA633 /* CountlyCrashReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCrashReporter.m; sourceTree = "<group>"; };
+		D2EB40B91C58C03500EAA633 /* CountlyDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyDeviceInfo.h; sourceTree = "<group>"; };
+		D2EB40BA1C58C03500EAA633 /* CountlyDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyDeviceInfo.m; sourceTree = "<group>"; };
+		D2EB40BB1C58C03500EAA633 /* CountlyEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyEvent.h; sourceTree = "<group>"; };
+		D2EB40BC1C58C03500EAA633 /* CountlyEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyEvent.m; sourceTree = "<group>"; };
+		D2EB40BD1C58C03500EAA633 /* CountlyPersistency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPersistency.h; sourceTree = "<group>"; };
+		D2EB40BE1C58C03500EAA633 /* CountlyPersistency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPersistency.m; sourceTree = "<group>"; };
+		D2EB40BF1C58C03500EAA633 /* CountlyUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyUserDetails.h; sourceTree = "<group>"; };
+		D2EB40C01C58C03500EAA633 /* CountlyUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyUserDetails.m; sourceTree = "<group>"; };
+		D2EB40C11C58C03500EAA633 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D2EB40C21C58C03500EAA633 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				D22D43021C4631BD00C69E7C /* CountlyTestApp-tvOS */,
+				D2EB40A61C58C03500EAA633 /* countly-sdk-ios */,
 				D22D43011C4631BD00C69E7C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,7 +97,6 @@
 		D22D43021C4631BD00C69E7C /* CountlyTestApp-tvOS */ = {
 			isa = PBXGroup;
 			children = (
-				D2FADF4C1C46498500060D08 /* countly-sdk-ios */,
 				D22D43061C4631BD00C69E7C /* AppDelegate.h */,
 				D22D43071C4631BD00C69E7C /* AppDelegate.m */,
 				D22D43091C4631BD00C69E7C /* ViewController.h */,
@@ -117,40 +117,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D2FADF4C1C46498500060D08 /* countly-sdk-ios */ = {
+		D2EB40A61C58C03500EAA633 /* countly-sdk-ios */ = {
 			isa = PBXGroup;
 			children = (
-				D2FADF4D1C46498500060D08 /* .gitattributes */,
-				D2FADF4E1C46498500060D08 /* Countly.h */,
-				D2FADF4F1C46498500060D08 /* Countly.m */,
-				D2FADF501C46498500060D08 /* Countly.podspec */,
-				D2FADF511C46498500060D08 /* Countly_OpenUDID.h */,
-				D2FADF521C46498500060D08 /* Countly_OpenUDID.m */,
-				D2867F611C5347F700032ED6 /* CountlyConfig.h */,
-				D2867F621C5347F700032ED6 /* CountlyConfig.m */,
-				D2FADF531C46498500060D08 /* CountlyAPM.h */,
-				D2FADF541C46498500060D08 /* CountlyAPM.m */,
-				D2FADF551C46498500060D08 /* CountlyAPMNetworkLog.h */,
-				D2FADF561C46498500060D08 /* CountlyAPMNetworkLog.m */,
-				D2FADF571C46498500060D08 /* CountlyCommon.h */,
-				D2FADF581C46498500060D08 /* CountlyCommon.m */,
-				D2FADF591C46498500060D08 /* CountlyConnectionManager.h */,
-				D2FADF5A1C46498500060D08 /* CountlyConnectionManager.m */,
-				D2FADF5B1C46498500060D08 /* CountlyCrashReporter.h */,
-				D2FADF5C1C46498500060D08 /* CountlyCrashReporter.m */,
-				D2FADF5D1C46498500060D08 /* CountlyDeviceInfo.h */,
-				D2FADF5E1C46498500060D08 /* CountlyDeviceInfo.m */,
-				D2FADF5F1C46498500060D08 /* CountlyEvent.h */,
-				D2FADF601C46498500060D08 /* CountlyEvent.m */,
-				D2FADF611C46498500060D08 /* CountlyPersistency.h */,
-				D2FADF621C46498500060D08 /* CountlyPersistency.m */,
-				D2FADF631C46498500060D08 /* CountlyUserDetails.h */,
-				D2FADF641C46498500060D08 /* CountlyUserDetails.m */,
-				D2FADF651C46498500060D08 /* LICENSE */,
-				D2FADF661C46498500060D08 /* README.md */,
+				D2EB40A81C58C03500EAA633 /* Countly.h */,
+				D2EB40A91C58C03500EAA633 /* Countly.m */,
+				D2EB40AB1C58C03500EAA633 /* Countly_OpenUDID.h */,
+				D2EB40AC1C58C03500EAA633 /* Countly_OpenUDID.m */,
+				D2EB40AD1C58C03500EAA633 /* CountlyAPM.h */,
+				D2EB40AE1C58C03500EAA633 /* CountlyAPM.m */,
+				D2EB40AF1C58C03500EAA633 /* CountlyAPMNetworkLog.h */,
+				D2EB40B01C58C03500EAA633 /* CountlyAPMNetworkLog.m */,
+				D2EB40B11C58C03500EAA633 /* CountlyCommon.h */,
+				D2EB40B21C58C03500EAA633 /* CountlyCommon.m */,
+				D2EB40B31C58C03500EAA633 /* CountlyConfig.h */,
+				D2EB40B41C58C03500EAA633 /* CountlyConfig.m */,
+				D2EB40B51C58C03500EAA633 /* CountlyConnectionManager.h */,
+				D2EB40B61C58C03500EAA633 /* CountlyConnectionManager.m */,
+				D2EB40B71C58C03500EAA633 /* CountlyCrashReporter.h */,
+				D2EB40B81C58C03500EAA633 /* CountlyCrashReporter.m */,
+				D2EB40B91C58C03500EAA633 /* CountlyDeviceInfo.h */,
+				D2EB40BA1C58C03500EAA633 /* CountlyDeviceInfo.m */,
+				D2EB40BB1C58C03500EAA633 /* CountlyEvent.h */,
+				D2EB40BC1C58C03500EAA633 /* CountlyEvent.m */,
+				D2EB40BD1C58C03500EAA633 /* CountlyPersistency.h */,
+				D2EB40BE1C58C03500EAA633 /* CountlyPersistency.m */,
+				D2EB40BF1C58C03500EAA633 /* CountlyUserDetails.h */,
+				D2EB40C01C58C03500EAA633 /* CountlyUserDetails.m */,
+				D2EB40A71C58C03500EAA633 /* .gitattributes */,
+				D2EB40AA1C58C03500EAA633 /* Countly.podspec */,
+				D2EB40C11C58C03500EAA633 /* LICENSE */,
+				D2EB40C21C58C03500EAA633 /* README.md */,
 			);
 			name = "countly-sdk-ios";
-			path = "../../ios/CountlyTestApp-iOS/countly-sdk-ios";
+			path = "../countly-sdk-ios";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,21 +222,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2EB40CD1C58C03500EAA633 /* CountlyDeviceInfo.m in Sources */,
 				D22D430B1C4631BD00C69E7C /* ViewController.m in Sources */,
-				D2FADF711C46498500060D08 /* CountlyEvent.m in Sources */,
-				D2FADF701C46498500060D08 /* CountlyDeviceInfo.m in Sources */,
-				D2867F631C5347F700032ED6 /* CountlyConfig.m in Sources */,
-				D2FADF6D1C46498500060D08 /* CountlyCommon.m in Sources */,
+				D2EB40CF1C58C03500EAA633 /* CountlyPersistency.m in Sources */,
+				D2EB40C91C58C03500EAA633 /* CountlyCommon.m in Sources */,
+				D2EB40D01C58C03500EAA633 /* CountlyUserDetails.m in Sources */,
 				D22D43081C4631BD00C69E7C /* AppDelegate.m in Sources */,
-				D2FADF6E1C46498500060D08 /* CountlyConnectionManager.m in Sources */,
-				D2FADF731C46498500060D08 /* CountlyUserDetails.m in Sources */,
-				D2FADF721C46498500060D08 /* CountlyPersistency.m in Sources */,
-				D2FADF6A1C46498500060D08 /* Countly_OpenUDID.m in Sources */,
-				D2FADF6B1C46498500060D08 /* CountlyAPM.m in Sources */,
-				D2FADF681C46498500060D08 /* Countly.m in Sources */,
-				D2FADF6C1C46498500060D08 /* CountlyAPMNetworkLog.m in Sources */,
+				D2EB40CA1C58C03500EAA633 /* CountlyConfig.m in Sources */,
+				D2EB40C61C58C03500EAA633 /* Countly_OpenUDID.m in Sources */,
+				D2EB40C71C58C03500EAA633 /* CountlyAPM.m in Sources */,
+				D2EB40C41C58C03500EAA633 /* Countly.m in Sources */,
+				D2EB40C81C58C03500EAA633 /* CountlyAPMNetworkLog.m in Sources */,
+				D2EB40CE1C58C03500EAA633 /* CountlyEvent.m in Sources */,
+				D2EB40CB1C58C03500EAA633 /* CountlyConnectionManager.m in Sources */,
 				D22D43051C4631BD00C69E7C /* main.m in Sources */,
-				D2FADF6F1C46498500060D08 /* CountlyCrashReporter.m in Sources */,
+				D2EB40CC1C58C03500EAA633 /* CountlyCrashReporter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

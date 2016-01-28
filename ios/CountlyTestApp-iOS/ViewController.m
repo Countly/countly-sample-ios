@@ -160,22 +160,20 @@
             NSString* localImagePath = [documentsDirectory.absoluteString stringByAppendingPathComponent:@"SamplePicture.jpg"];
             // SamplePicture.png or SamplePicture.gif can be used too.
         
-            [Countly.sharedInstance recordUserDetails:@{
-                                                    kCLYUserName:@"John Doe",
-                                                    kCLYUserEmail:@"john@doe.com",
-                                                    kCLYUserBirthYear:@1970,
-                                                    kCLYUserOrganization:@"United Nations",
-                                                    kCLYUserGender:@"M",
-                                                    kCLYUserPhone:@"+0123456789",
-                                                    //kCLYUserPicture:@"http://example.com/examplepicture.jpg",
-                                                    kCLYUserCustom:@{@"testkey1":@"testvalue1",@"testkey2":@"testvalue2"},
-                                                    kCLYUserPicturePath:localImagePath
-                                                    }];
+            CountlyUserDetails.sharedInstance.name = @"John Doe";
+            CountlyUserDetails.sharedInstance.email = @"john@doe.com";
+            CountlyUserDetails.sharedInstance.birthYear = 1970;
+            CountlyUserDetails.sharedInstance.organization = @"United Nations";
+            CountlyUserDetails.sharedInstance.gender = @"M";
+            CountlyUserDetails.sharedInstance.phone = @"+0123456789";
+            CountlyUserDetails.sharedInstance.pictureURL = @"http://example.com/examplepicture.jpg";
+            CountlyUserDetails.sharedInstance.pictureLocalPath = localImagePath;
+            CountlyUserDetails.sharedInstance.custom = @{@"testkey1":@"testvalue1",@"testkey2":@"testvalue2"};        
         }break;
         
         case 22:
         {
-            [Countly.sharedInstance setLocation:33.6789 longitude:43.1234];
+            [Countly.sharedInstance recordLocation:(CLLocationCoordinate2D){33.6789,43.1234}];
         }break;
         
         default:break;

@@ -168,7 +168,9 @@
             CountlyUserDetails.sharedInstance.phone = @"+0123456789";
             CountlyUserDetails.sharedInstance.pictureURL = @"http://example.com/examplepicture.jpg";
             CountlyUserDetails.sharedInstance.pictureLocalPath = localImagePath;
-            CountlyUserDetails.sharedInstance.custom = @{@"testkey1":@"testvalue1",@"testkey2":@"testvalue2"};        
+            CountlyUserDetails.sharedInstance.custom = @{@"testkey1":@"testvalue1",@"testkey2":@"testvalue2"};
+        
+            [CountlyUserDetails.sharedInstance recordUserDetails];
         }break;
         
         case 22:

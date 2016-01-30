@@ -166,7 +166,7 @@
             CountlyUserDetails.sharedInstance.organization = @"United Nations";
             CountlyUserDetails.sharedInstance.gender = @"M";
             CountlyUserDetails.sharedInstance.phone = @"+0123456789";
-            CountlyUserDetails.sharedInstance.pictureURL = @"http://example.com/examplepicture.jpg";
+            CountlyUserDetails.sharedInstance.pictureURL = @"http://s12.postimg.org/qji0724gd/988a10da33b57631caa7ee8e2b5a9036.jpg";
             CountlyUserDetails.sharedInstance.pictureLocalPath = localImagePath;
             CountlyUserDetails.sharedInstance.custom = @{@"testkey1":@"testvalue1",@"testkey2":@"testvalue2"};
         
@@ -174,6 +174,25 @@
         }break;
         
         case 22:
+        {
+            [CountlyUserDetails.sharedInstance set:@"key101" value:@"value101"];
+            [CountlyUserDetails.sharedInstance incrementBy:@"key102" value:5];
+            [CountlyUserDetails.sharedInstance push:@"key103" value:@"singlevalue"];
+            [CountlyUserDetails.sharedInstance push:@"key104" values:@[@"first",@"second",@"third"]];
+            [CountlyUserDetails.sharedInstance push:@"key105" values:@[@"a",@"b",@"c",@"d"]];
+            [CountlyUserDetails.sharedInstance save];
+        }break;
+
+        case 23:
+        {
+            [CountlyUserDetails.sharedInstance multiply:@"key102" value:2];
+            [CountlyUserDetails.sharedInstance unSet:@"key103"];
+            [CountlyUserDetails.sharedInstance pull:@"key104" value:@"second"];
+            [CountlyUserDetails.sharedInstance pull:@"key105" values:@[@"a",@"d"]];
+            [CountlyUserDetails.sharedInstance save];
+        }break;
+
+        case 24:
         {
             [Countly.sharedInstance recordLocation:(CLLocationCoordinate2D){33.6789,43.1234}];
         }break;

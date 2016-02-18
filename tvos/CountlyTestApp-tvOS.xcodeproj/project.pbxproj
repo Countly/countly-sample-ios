@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D22D41721C6EEF620078AF7D /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D41711C6EEF620078AF7D /* CountlyViewTracking.m */; };
 		D22D43051C4631BD00C69E7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D43041C4631BD00C69E7C /* main.m */; };
 		D22D43081C4631BD00C69E7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D43071C4631BD00C69E7C /* AppDelegate.m */; };
 		D22D430B1C4631BD00C69E7C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D430A1C4631BD00C69E7C /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D22D41701C6EEF620078AF7D /* CountlyViewTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyViewTracking.h; sourceTree = "<group>"; };
+		D22D41711C6EEF620078AF7D /* CountlyViewTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyViewTracking.m; sourceTree = "<group>"; };
 		D22D43001C4631BD00C69E7C /* CountlyTestApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22D43041C4631BD00C69E7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D22D43061C4631BD00C69E7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -144,6 +147,8 @@
 				D2EB40BE1C58C03500EAA633 /* CountlyPersistency.m */,
 				D2EB40BF1C58C03500EAA633 /* CountlyUserDetails.h */,
 				D2EB40C01C58C03500EAA633 /* CountlyUserDetails.m */,
+				D22D41701C6EEF620078AF7D /* CountlyViewTracking.h */,
+				D22D41711C6EEF620078AF7D /* CountlyViewTracking.m */,
 				D2EB40A71C58C03500EAA633 /* .gitattributes */,
 				D2EB40AA1C58C03500EAA633 /* Countly.podspec */,
 				D2EB40C11C58C03500EAA633 /* LICENSE */,
@@ -234,6 +239,7 @@
 				D2EB40C41C58C03500EAA633 /* Countly.m in Sources */,
 				D2EB40C81C58C03500EAA633 /* CountlyAPMNetworkLog.m in Sources */,
 				D2EB40CE1C58C03500EAA633 /* CountlyEvent.m in Sources */,
+				D22D41721C6EEF620078AF7D /* CountlyViewTracking.m in Sources */,
 				D2EB40CB1C58C03500EAA633 /* CountlyConnectionManager.m in Sources */,
 				D22D43051C4631BD00C69E7C /* main.m in Sources */,
 				D2EB40CC1C58C03500EAA633 /* CountlyCrashReporter.m in Sources */,

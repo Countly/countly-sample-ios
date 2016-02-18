@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D22D416F1C6EED4D0078AF7D /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D416E1C6EED4D0078AF7D /* CountlyViewTracking.m */; };
 		D2315A2E18EBE52000119D0D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2315A2D18EBE52000119D0D /* Cocoa.framework */; };
 		D2315A3818EBE52100119D0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2315A3618EBE52100119D0D /* InfoPlist.strings */; };
 		D2315A3A18EBE52100119D0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2315A3918EBE52100119D0D /* main.m */; };
@@ -28,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D22D416D1C6EED4D0078AF7D /* CountlyViewTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyViewTracking.h; sourceTree = "<group>"; };
+		D22D416E1C6EED4D0078AF7D /* CountlyViewTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyViewTracking.m; sourceTree = "<group>"; };
 		D2315A2A18EBE52000119D0D /* CountlyTestApp-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2315A2D18EBE52000119D0D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D2315A3018EBE52000119D0D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -170,6 +173,8 @@
 				D2EB40911C58C00400EAA633 /* CountlyPersistency.m */,
 				D2EB40921C58C00400EAA633 /* CountlyUserDetails.h */,
 				D2EB40931C58C00400EAA633 /* CountlyUserDetails.m */,
+				D22D416D1C6EED4D0078AF7D /* CountlyViewTracking.h */,
+				D22D416E1C6EED4D0078AF7D /* CountlyViewTracking.m */,
 				D2EB407A1C58C00400EAA633 /* .gitattributes */,
 				D2EB407D1C58C00400EAA633 /* Countly.podspec */,
 				D2EB40941C58C00400EAA633 /* LICENSE */,
@@ -246,6 +251,7 @@
 			files = (
 				D2315A4118EBE52100119D0D /* AppDelegate.m in Sources */,
 				D2EB40A11C58C00400EAA633 /* CountlyEvent.m in Sources */,
+				D22D416F1C6EED4D0078AF7D /* CountlyViewTracking.m in Sources */,
 				D2EB40A01C58C00400EAA633 /* CountlyDeviceInfo.m in Sources */,
 				D2EB40971C58C00400EAA633 /* Countly.m in Sources */,
 				D2EB40991C58C00400EAA633 /* Countly_OpenUDID.m in Sources */,

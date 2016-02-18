@@ -16,7 +16,7 @@
     config.appKey = @"YOUR_APP_KEY";
     config.host = @"https://YOUR_COUNTLY_SERVER";
 //  config.deviceID = @"customDeviceID"                               //Optional custom or system generated device ID
-//  config.features = @[CLYMessaging, CLYCrashReporting, CLYAPM];     //Optional features
+//  config.features = @[CLYMessaging, CLYCrashReporting, CLYAPM, CLYViewTracking];     //Optional features
 //  config.launchOptions = launchOptions;                             //Required for CLYMessaging feature
     [Countly.sharedInstance startWithConfig:config];
 

@@ -12,6 +12,8 @@
 		D20C2C611A3F2DF600664CAD /* SamplePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */; };
 		D290ED8A186337A90027082D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290ED89186337A90027082D /* CoreTelephony.framework */; };
 		D290ED8C186337B00027082D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290ED8B186337B00027082D /* CoreData.framework */; };
+		D2A72C131C7597AF008CCD38 /* TestViewControllerPushPop.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A72C111C7597AF008CCD38 /* TestViewControllerPushPop.m */; };
+		D2A72C141C7597AF008CCD38 /* TestViewControllerPushPop.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A72C121C7597AF008CCD38 /* TestViewControllerPushPop.xib */; };
 		D2BAB0A217EC8EE600807D0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A117EC8EE600807D0D /* Foundation.framework */; };
 		D2BAB0A417EC8EE600807D0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A317EC8EE600807D0D /* CoreGraphics.framework */; };
 		D2BAB0A617EC8EE600807D0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A517EC8EE600807D0D /* UIKit.framework */; };
@@ -34,14 +36,21 @@
 		D2EB40741C58BFAA00EAA633 /* CountlyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40621C58BFAA00EAA633 /* CountlyEvent.m */; };
 		D2EB40751C58BFAA00EAA633 /* CountlyPersistency.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40641C58BFAA00EAA633 /* CountlyPersistency.m */; };
 		D2EB40761C58BFAA00EAA633 /* CountlyUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40661C58BFAA00EAA633 /* CountlyUserDetails.m */; };
+		D2F530131C757E5B00A1B922 /* TestViewControllerModal.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F530111C757E5B00A1B922 /* TestViewControllerModal.m */; };
+		D2F530141C757E5B00A1B922 /* TestViewControllerModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2F530121C757E5B00A1B922 /* TestViewControllerModal.xib */; };
+		D2FB68FC1C69D5F200079DF6 /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FB68FB1C69D5F200079DF6 /* CountlyViewTracking.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SamplePicture.gif; sourceTree = "<group>"; };
 		D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SamplePicture.jpg; sourceTree = "<group>"; };
 		D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SamplePicture.png; sourceTree = "<group>"; };
+		D22D41671C6E386C0078AF7D /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		D290ED89186337A90027082D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D290ED8B186337B00027082D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D2A72C101C7597AF008CCD38 /* TestViewControllerPushPop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewControllerPushPop.h; sourceTree = "<group>"; };
+		D2A72C111C7597AF008CCD38 /* TestViewControllerPushPop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewControllerPushPop.m; sourceTree = "<group>"; };
+		D2A72C121C7597AF008CCD38 /* TestViewControllerPushPop.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewControllerPushPop.xib; sourceTree = "<group>"; };
 		D2BAB09E17EC8EE600807D0D /* CountlyTestApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BAB0A117EC8EE600807D0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2BAB0A317EC8EE600807D0D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -85,6 +94,11 @@
 		D2EB40661C58BFAA00EAA633 /* CountlyUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyUserDetails.m; sourceTree = "<group>"; };
 		D2EB40671C58BFAA00EAA633 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D2EB40681C58BFAA00EAA633 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D2F530101C757E5B00A1B922 /* TestViewControllerModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewControllerModal.h; sourceTree = "<group>"; };
+		D2F530111C757E5B00A1B922 /* TestViewControllerModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewControllerModal.m; sourceTree = "<group>"; };
+		D2F530121C757E5B00A1B922 /* TestViewControllerModal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewControllerModal.xib; sourceTree = "<group>"; };
+		D2FB68FA1C69D5F200079DF6 /* CountlyViewTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyViewTracking.h; sourceTree = "<group>"; };
+		D2FB68FB1C69D5F200079DF6 /* CountlyViewTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyViewTracking.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +149,7 @@
 		D2BAB0A017EC8EE600807D0D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D22D41671C6E386C0078AF7D /* WatchConnectivity.framework */,
 				D2D4F4271A0BB34500C0EF0B /* AdSupport.framework */,
 				D290ED8B186337B00027082D /* CoreData.framework */,
 				D290ED89186337A90027082D /* CoreTelephony.framework */,
@@ -153,6 +168,12 @@
 				D2BAB0B617EC8EE600807D0D /* ViewController.h */,
 				D2BAB0B717EC8EE600807D0D /* ViewController.m */,
 				D2BAB0D617EC8FF400807D0D /* ViewController.xib */,
+				D2F530101C757E5B00A1B922 /* TestViewControllerModal.h */,
+				D2F530111C757E5B00A1B922 /* TestViewControllerModal.m */,
+				D2F530121C757E5B00A1B922 /* TestViewControllerModal.xib */,
+				D2A72C101C7597AF008CCD38 /* TestViewControllerPushPop.h */,
+				D2A72C111C7597AF008CCD38 /* TestViewControllerPushPop.m */,
+				D2A72C121C7597AF008CCD38 /* TestViewControllerPushPop.xib */,
 				D20C2C5B1A3F2DF600664CAD /* img */,
 				D2BAB0B917EC8EE600807D0D /* Images.xcassets */,
 				D2BAB0A817EC8EE600807D0D /* Supporting Files */,
@@ -174,10 +195,12 @@
 		D2EB404C1C58BFAA00EAA633 /* countly-sdk-ios */ = {
 			isa = PBXGroup;
 			children = (
-				D2EB404E1C58BFAA00EAA633 /* Countly.h */,
-				D2EB404F1C58BFAA00EAA633 /* Countly.m */,
+				D2EB404D1C58BFAA00EAA633 /* .gitattributes */,
 				D2EB40511C58BFAA00EAA633 /* Countly_OpenUDID.h */,
 				D2EB40521C58BFAA00EAA633 /* Countly_OpenUDID.m */,
+				D2EB404E1C58BFAA00EAA633 /* Countly.h */,
+				D2EB404F1C58BFAA00EAA633 /* Countly.m */,
+				D2EB40501C58BFAA00EAA633 /* Countly.podspec */,
 				D2EB40531C58BFAA00EAA633 /* CountlyAPM.h */,
 				D2EB40541C58BFAA00EAA633 /* CountlyAPM.m */,
 				D2EB40551C58BFAA00EAA633 /* CountlyAPMNetworkLog.h */,
@@ -198,8 +221,8 @@
 				D2EB40641C58BFAA00EAA633 /* CountlyPersistency.m */,
 				D2EB40651C58BFAA00EAA633 /* CountlyUserDetails.h */,
 				D2EB40661C58BFAA00EAA633 /* CountlyUserDetails.m */,
-				D2EB404D1C58BFAA00EAA633 /* .gitattributes */,
-				D2EB40501C58BFAA00EAA633 /* Countly.podspec */,
+				D2FB68FA1C69D5F200079DF6 /* CountlyViewTracking.h */,
+				D2FB68FB1C69D5F200079DF6 /* CountlyViewTracking.m */,
 				D2EB40671C58BFAA00EAA633 /* LICENSE */,
 				D2EB40681C58BFAA00EAA633 /* README.md */,
 			);
@@ -261,8 +284,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2BAB0BA17EC8EE600807D0D /* Images.xcassets in Resources */,
+				D2F530141C757E5B00A1B922 /* TestViewControllerModal.xib in Resources */,
 				D20C2C601A3F2DF600664CAD /* SamplePicture.jpg in Resources */,
 				D2BAB0D717EC8FF400807D0D /* ViewController.xib in Resources */,
+				D2A72C141C7597AF008CCD38 /* TestViewControllerPushPop.xib in Resources */,
 				D20C2C5F1A3F2DF600664CAD /* SamplePicture.gif in Resources */,
 				D20C2C611A3F2DF600664CAD /* SamplePicture.png in Resources */,
 				D2BAB0AC17EC8EE600807D0D /* InfoPlist.strings in Resources */,
@@ -276,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2A72C131C7597AF008CCD38 /* TestViewControllerPushPop.m in Sources */,
 				D2EB40731C58BFAA00EAA633 /* CountlyDeviceInfo.m in Sources */,
 				D2BAB0B217EC8EE600807D0D /* AppDelegate.m in Sources */,
 				D2EB40751C58BFAA00EAA633 /* CountlyPersistency.m in Sources */,
@@ -288,6 +314,8 @@
 				D2EB406A1C58BFAA00EAA633 /* Countly.m in Sources */,
 				D2EB406E1C58BFAA00EAA633 /* CountlyAPMNetworkLog.m in Sources */,
 				D2EB40741C58BFAA00EAA633 /* CountlyEvent.m in Sources */,
+				D2F530131C757E5B00A1B922 /* TestViewControllerModal.m in Sources */,
+				D2FB68FC1C69D5F200079DF6 /* CountlyViewTracking.m in Sources */,
 				D2EB40711C58BFAA00EAA633 /* CountlyConnectionManager.m in Sources */,
 				D2BAB0B817EC8EE600807D0D /* ViewController.m in Sources */,
 				D2EB40721C58BFAA00EAA633 /* CountlyCrashReporter.m in Sources */,
@@ -393,6 +421,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CountlyTestApp-iOS/CountlyTestApp-iOS-Prefix.pch";
 				INFOPLIST_FILE = "CountlyTestApp-iOS/CountlyTestApp-iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "CountlyTestApp-iOS";
 				PROVISIONING_PROFILE = "";
@@ -409,6 +438,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CountlyTestApp-iOS/CountlyTestApp-iOS-Prefix.pch";
 				INFOPLIST_FILE = "CountlyTestApp-iOS/CountlyTestApp-iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "CountlyTestApp-iOS";
 				PROVISIONING_PROFILE = "";

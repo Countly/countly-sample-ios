@@ -5,6 +5,8 @@
 // Please visit www.count.ly for more information.
 
 #import "ViewController.h"
+#import "TestViewControllerModal.h"
+#import "TestViewControllerPushPop.h"
 #import "Countly.h"
 
 @interface ViewController ()
@@ -51,10 +53,13 @@
         TestPageCrashReporting,
         TestPageUserDetails,
         TestPageAPM,
+        TestPageViewTracking,
         TestPageCount
     } TestPages;
     
-    NSInteger startPage = TestPageCustomEvents; //start page of testing app can be set here.
+    self.pgc_main.numberOfPages = TestPageCount;
+
+    NSInteger startPage = TestPageViewTracking; //start page of testing app can be set here.
 
     self.scr_main.contentSize = (CGSize){self.scr_main.bounds.size.width*TestPageCount,self.scr_main.bounds.size.height};
     self.scr_main.contentOffset = CGPointMake(self.scr_main.bounds.size.width*startPage, 0);
@@ -299,6 +304,39 @@
     }
 }
 
+- (IBAction)onClick_viewTracking:(id)sender
+{
+    NSLog(@"%s tag: %li",__FUNCTION__,(long)[sender tag]);
+
+    switch ([sender tag])
+    {
+        case 41:
+        {
+            Countly.sharedInstance.isAutoViewTrackingEnabled = NO;
+        }break;
+
+        case 42:
+        {
+            Countly.sharedInstance.isAutoViewTrackingEnabled = YES;
+        }break;
+
+        case 43:
+        {
+            TestViewControllerModal* testViewControllerModal = [TestViewControllerModal.alloc initWithNibName:@"TestViewControllerModal" bundle:nil];
+            [self presentViewController:testViewControllerModal animated:YES completion:nil];
+        }break;
+
+        case 44:
+        {
+            TestViewControllerPushPop* testViewControllerPushPop = [TestViewControllerPushPop.alloc initWithNibName:@"TestViewControllerPushPop" bundle:nil];
+            UINavigationController* nc = [UINavigationController.alloc initWithRootViewController:testViewControllerPushPop];
+            nc.title = @"TestViewControllerPushPop";
+            [self presentViewController:nc animated:YES completion:nil];
+        }break;
+
+        default: break;
+    }
+}
 
 #pragma mark -
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D22D416B1C6E39B90078AF7D /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D416A1C6E39B90078AF7D /* CountlyViewTracking.m */; };
+		D22D416C1C6E39EC0078AF7D /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D416A1C6E39B90078AF7D /* CountlyViewTracking.m */; };
 		D2EB40F11C58C06E00EAA633 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40D61C58C06E00EAA633 /* Countly.m */; };
 		D2EB40F31C58C06E00EAA633 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40D91C58C06E00EAA633 /* Countly_OpenUDID.m */; };
 		D2EB40F41C58C06E00EAA633 /* CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40DB1C58C06E00EAA633 /* CountlyAPM.m */; };
@@ -93,6 +95,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D22D41691C6E39B90078AF7D /* CountlyViewTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyViewTracking.h; sourceTree = "<group>"; };
+		D22D416A1C6E39B90078AF7D /* CountlyViewTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyViewTracking.m; sourceTree = "<group>"; };
 		D2EB40D41C58C06E00EAA633 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		D2EB40D51C58C06E00EAA633 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
 		D2EB40D61C58C06E00EAA633 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
@@ -198,6 +202,8 @@
 				D2EB40EB1C58C06E00EAA633 /* CountlyPersistency.m */,
 				D2EB40EC1C58C06E00EAA633 /* CountlyUserDetails.h */,
 				D2EB40ED1C58C06E00EAA633 /* CountlyUserDetails.m */,
+				D22D41691C6E39B90078AF7D /* CountlyViewTracking.h */,
+				D22D416A1C6E39B90078AF7D /* CountlyViewTracking.m */,
 				D2EB40D41C58C06E00EAA633 /* .gitattributes */,
 				D2EB40D71C58C06E00EAA633 /* Countly.podspec */,
 				D2EB40EE1C58C06E00EAA633 /* LICENSE */,
@@ -435,6 +441,7 @@
 				D2EB40F11C58C06E00EAA633 /* Countly.m in Sources */,
 				D2EB40F51C58C06E00EAA633 /* CountlyAPMNetworkLog.m in Sources */,
 				D2EB40FB1C58C06E00EAA633 /* CountlyEvent.m in Sources */,
+				D22D416B1C6E39B90078AF7D /* CountlyViewTracking.m in Sources */,
 				D2EB40F81C58C06E00EAA633 /* CountlyConnectionManager.m in Sources */,
 				D2FADF841C464C6A00060D08 /* main.m in Sources */,
 				D2EB40F91C58C06E00EAA633 /* CountlyCrashReporter.m in Sources */,
@@ -458,6 +465,7 @@
 				D2EB41091C58C09900EAA633 /* CountlyEvent.m in Sources */,
 				D2EB41051C58C09900EAA633 /* CountlyConfig.m in Sources */,
 				D2F0FC431C4756CF007C5556 /* RowController.m in Sources */,
+				D22D416C1C6E39EC0078AF7D /* CountlyViewTracking.m in Sources */,
 				D2EB41021C58C09900EAA633 /* CountlyAPM.m in Sources */,
 				D2EB41001C58C09900EAA633 /* Countly.m in Sources */,
 				D2FADFBA1C464C6A00060D08 /* ComplicationController.m in Sources */,
@@ -526,6 +534,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -545,9 +554,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -569,7 +579,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -582,8 +593,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -654,6 +666,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "CountlyTestApp-watchOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-watchOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -665,6 +678,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "CountlyTestApp-watchOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-watchOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";

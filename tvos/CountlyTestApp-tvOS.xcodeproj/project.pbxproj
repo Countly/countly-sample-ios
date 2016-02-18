@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D22D41721C6EEF620078AF7D /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D41711C6EEF620078AF7D /* CountlyViewTracking.m */; };
+		D22D43051C4631BD00C69E7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D43041C4631BD00C69E7C /* main.m */; };
+		D22D43081C4631BD00C69E7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D43071C4631BD00C69E7C /* AppDelegate.m */; };
+		D22D430B1C4631BD00C69E7C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D430A1C4631BD00C69E7C /* ViewController.m */; };
+		D22D430E1C4631BD00C69E7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22D430C1C4631BD00C69E7C /* Main.storyboard */; };
+		D22D43101C4631BD00C69E7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22D430F1C4631BD00C69E7C /* Assets.xcassets */; };
+		D2EB40C41C58C03500EAA633 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40A91C58C03500EAA633 /* Countly.m */; };
+		D2EB40C61C58C03500EAA633 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40AC1C58C03500EAA633 /* Countly_OpenUDID.m */; };
+		D2EB40C71C58C03500EAA633 /* CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40AE1C58C03500EAA633 /* CountlyAPM.m */; };
+		D2EB40C81C58C03500EAA633 /* CountlyAPMNetworkLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40B01C58C03500EAA633 /* CountlyAPMNetworkLog.m */; };
+		D2EB40C91C58C03500EAA633 /* CountlyCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40B21C58C03500EAA633 /* CountlyCommon.m */; };
+		D2EB40CA1C58C03500EAA633 /* CountlyConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40B41C58C03500EAA633 /* CountlyConfig.m */; };
+		D2EB40CB1C58C03500EAA633 /* CountlyConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40B61C58C03500EAA633 /* CountlyConnectionManager.m */; };
+		D2EB40CC1C58C03500EAA633 /* CountlyCrashReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40B81C58C03500EAA633 /* CountlyCrashReporter.m */; };
+		D2EB40CD1C58C03500EAA633 /* CountlyDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40BA1C58C03500EAA633 /* CountlyDeviceInfo.m */; };
+		D2EB40CE1C58C03500EAA633 /* CountlyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40BC1C58C03500EAA633 /* CountlyEvent.m */; };
+		D2EB40CF1C58C03500EAA633 /* CountlyPersistency.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40BE1C58C03500EAA633 /* CountlyPersistency.m */; };
+		D2EB40D01C58C03500EAA633 /* CountlyUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40C01C58C03500EAA633 /* CountlyUserDetails.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D22D41701C6EEF620078AF7D /* CountlyViewTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyViewTracking.h; sourceTree = "<group>"; };
+		D22D41711C6EEF620078AF7D /* CountlyViewTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyViewTracking.m; sourceTree = "<group>"; };
+		D22D43001C4631BD00C69E7C /* CountlyTestApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D22D43041C4631BD00C69E7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D22D43061C4631BD00C69E7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D22D43071C4631BD00C69E7C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D22D43091C4631BD00C69E7C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D22D430A1C4631BD00C69E7C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D22D430D1C4631BD00C69E7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D22D430F1C4631BD00C69E7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D22D43111C4631BD00C69E7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2EB40A71C58C03500EAA633 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		D2EB40A81C58C03500EAA633 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
+		D2EB40A91C58C03500EAA633 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
+		D2EB40AA1C58C03500EAA633 /* Countly.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countly.podspec; sourceTree = "<group>"; };
+		D2EB40AB1C58C03500EAA633 /* Countly_OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly_OpenUDID.h; sourceTree = "<group>"; };
+		D2EB40AC1C58C03500EAA633 /* Countly_OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly_OpenUDID.m; sourceTree = "<group>"; };
+		D2EB40AD1C58C03500EAA633 /* CountlyAPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPM.h; sourceTree = "<group>"; };
+		D2EB40AE1C58C03500EAA633 /* CountlyAPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPM.m; sourceTree = "<group>"; };
+		D2EB40AF1C58C03500EAA633 /* CountlyAPMNetworkLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPMNetworkLog.h; sourceTree = "<group>"; };
+		D2EB40B01C58C03500EAA633 /* CountlyAPMNetworkLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPMNetworkLog.m; sourceTree = "<group>"; };
+		D2EB40B11C58C03500EAA633 /* CountlyCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCommon.h; sourceTree = "<group>"; };
+		D2EB40B21C58C03500EAA633 /* CountlyCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCommon.m; sourceTree = "<group>"; };
+		D2EB40B31C58C03500EAA633 /* CountlyConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConfig.h; sourceTree = "<group>"; };
+		D2EB40B41C58C03500EAA633 /* CountlyConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConfig.m; sourceTree = "<group>"; };
+		D2EB40B51C58C03500EAA633 /* CountlyConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConnectionManager.h; sourceTree = "<group>"; };
+		D2EB40B61C58C03500EAA633 /* CountlyConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConnectionManager.m; sourceTree = "<group>"; };
+		D2EB40B71C58C03500EAA633 /* CountlyCrashReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCrashReporter.h; sourceTree = "<group>"; };
+		D2EB40B81C58C03500EAA633 /* CountlyCrashReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCrashReporter.m; sourceTree = "<group>"; };
+		D2EB40B91C58C03500EAA633 /* CountlyDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyDeviceInfo.h; sourceTree = "<group>"; };
+		D2EB40BA1C58C03500EAA633 /* CountlyDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyDeviceInfo.m; sourceTree = "<group>"; };
+		D2EB40BB1C58C03500EAA633 /* CountlyEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyEvent.h; sourceTree = "<group>"; };
+		D2EB40BC1C58C03500EAA633 /* CountlyEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyEvent.m; sourceTree = "<group>"; };
+		D2EB40BD1C58C03500EAA633 /* CountlyPersistency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPersistency.h; sourceTree = "<group>"; };
+		D2EB40BE1C58C03500EAA633 /* CountlyPersistency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPersistency.m; sourceTree = "<group>"; };
+		D2EB40BF1C58C03500EAA633 /* CountlyUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyUserDetails.h; sourceTree = "<group>"; };
+		D2EB40C01C58C03500EAA633 /* CountlyUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyUserDetails.m; sourceTree = "<group>"; };
+		D2EB40C11C58C03500EAA633 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D2EB40C21C58C03500EAA633 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D22D42FD1C4631BD00C69E7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D22D42F71C4631BD00C69E7C = {
+			isa = PBXGroup;
+			children = (
+				D22D43021C4631BD00C69E7C /* CountlyTestApp-tvOS */,
+				D2EB40A61C58C03500EAA633 /* countly-sdk-ios */,
+				D22D43011C4631BD00C69E7C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D22D43011C4631BD00C69E7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D22D43001C4631BD00C69E7C /* CountlyTestApp-tvOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D22D43021C4631BD00C69E7C /* CountlyTestApp-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				D22D43061C4631BD00C69E7C /* AppDelegate.h */,
+				D22D43071C4631BD00C69E7C /* AppDelegate.m */,
+				D22D43091C4631BD00C69E7C /* ViewController.h */,
+				D22D430A1C4631BD00C69E7C /* ViewController.m */,
+				D22D430C1C4631BD00C69E7C /* Main.storyboard */,
+				D22D430F1C4631BD00C69E7C /* Assets.xcassets */,
+				D22D43111C4631BD00C69E7C /* Info.plist */,
+				D22D43031C4631BD00C69E7C /* Supporting Files */,
+			);
+			path = "CountlyTestApp-tvOS";
+			sourceTree = "<group>";
+		};
+		D22D43031C4631BD00C69E7C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D22D43041C4631BD00C69E7C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2EB40A61C58C03500EAA633 /* countly-sdk-ios */ = {
+			isa = PBXGroup;
+			children = (
+				D2EB40A81C58C03500EAA633 /* Countly.h */,
+				D2EB40A91C58C03500EAA633 /* Countly.m */,
+				D2EB40AB1C58C03500EAA633 /* Countly_OpenUDID.h */,
+				D2EB40AC1C58C03500EAA633 /* Countly_OpenUDID.m */,
+				D2EB40AD1C58C03500EAA633 /* CountlyAPM.h */,
+				D2EB40AE1C58C03500EAA633 /* CountlyAPM.m */,
+				D2EB40AF1C58C03500EAA633 /* CountlyAPMNetworkLog.h */,
+				D2EB40B01C58C03500EAA633 /* CountlyAPMNetworkLog.m */,
+				D2EB40B11C58C03500EAA633 /* CountlyCommon.h */,
+				D2EB40B21C58C03500EAA633 /* CountlyCommon.m */,
+				D2EB40B31C58C03500EAA633 /* CountlyConfig.h */,
+				D2EB40B41C58C03500EAA633 /* CountlyConfig.m */,
+				D2EB40B51C58C03500EAA633 /* CountlyConnectionManager.h */,
+				D2EB40B61C58C03500EAA633 /* CountlyConnectionManager.m */,
+				D2EB40B71C58C03500EAA633 /* CountlyCrashReporter.h */,
+				D2EB40B81C58C03500EAA633 /* CountlyCrashReporter.m */,
+				D2EB40B91C58C03500EAA633 /* CountlyDeviceInfo.h */,
+				D2EB40BA1C58C03500EAA633 /* CountlyDeviceInfo.m */,
+				D2EB40BB1C58C03500EAA633 /* CountlyEvent.h */,
+				D2EB40BC1C58C03500EAA633 /* CountlyEvent.m */,
+				D2EB40BD1C58C03500EAA633 /* CountlyPersistency.h */,
+				D2EB40BE1C58C03500EAA633 /* CountlyPersistency.m */,
+				D2EB40BF1C58C03500EAA633 /* CountlyUserDetails.h */,
+				D2EB40C01C58C03500EAA633 /* CountlyUserDetails.m */,
+				D22D41701C6EEF620078AF7D /* CountlyViewTracking.h */,
+				D22D41711C6EEF620078AF7D /* CountlyViewTracking.m */,
+				D2EB40A71C58C03500EAA633 /* .gitattributes */,
+				D2EB40AA1C58C03500EAA633 /* Countly.podspec */,
+				D2EB40C11C58C03500EAA633 /* LICENSE */,
+				D2EB40C21C58C03500EAA633 /* README.md */,
+			);
+			name = "countly-sdk-ios";
+			path = "../countly-sdk-ios";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D22D42FF1C4631BD00C69E7C /* CountlyTestApp-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D22D43141C4631BD00C69E7C /* Build configuration list for PBXNativeTarget "CountlyTestApp-tvOS" */;
+			buildPhases = (
+				D22D42FC1C4631BD00C69E7C /* Sources */,
+				D22D42FD1C4631BD00C69E7C /* Frameworks */,
+				D22D42FE1C4631BD00C69E7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CountlyTestApp-tvOS";
+			productName = "CountlyTestApp-tvOS";
+			productReference = D22D43001C4631BD00C69E7C /* CountlyTestApp-tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D22D42F81C4631BD00C69E7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Countly;
+				TargetAttributes = {
+					D22D42FF1C4631BD00C69E7C = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = D22D42FB1C4631BD00C69E7C /* Build configuration list for PBXProject "CountlyTestApp-tvOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D22D42F71C4631BD00C69E7C;
+			productRefGroup = D22D43011C4631BD00C69E7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D22D42FF1C4631BD00C69E7C /* CountlyTestApp-tvOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D22D42FE1C4631BD00C69E7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D22D43101C4631BD00C69E7C /* Assets.xcassets in Resources */,
+				D22D430E1C4631BD00C69E7C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D22D42FC1C4631BD00C69E7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2EB40CD1C58C03500EAA633 /* CountlyDeviceInfo.m in Sources */,
+				D22D430B1C4631BD00C69E7C /* ViewController.m in Sources */,
+				D2EB40CF1C58C03500EAA633 /* CountlyPersistency.m in Sources */,
+				D2EB40C91C58C03500EAA633 /* CountlyCommon.m in Sources */,
+				D2EB40D01C58C03500EAA633 /* CountlyUserDetails.m in Sources */,
+				D22D43081C4631BD00C69E7C /* AppDelegate.m in Sources */,
+				D2EB40CA1C58C03500EAA633 /* CountlyConfig.m in Sources */,
+				D2EB40C61C58C03500EAA633 /* Countly_OpenUDID.m in Sources */,
+				D2EB40C71C58C03500EAA633 /* CountlyAPM.m in Sources */,
+				D2EB40C41C58C03500EAA633 /* Countly.m in Sources */,
+				D2EB40C81C58C03500EAA633 /* CountlyAPMNetworkLog.m in Sources */,
+				D2EB40CE1C58C03500EAA633 /* CountlyEvent.m in Sources */,
+				D22D41721C6EEF620078AF7D /* CountlyViewTracking.m in Sources */,
+				D2EB40CB1C58C03500EAA633 /* CountlyConnectionManager.m in Sources */,
+				D22D43051C4631BD00C69E7C /* main.m in Sources */,
+				D2EB40CC1C58C03500EAA633 /* CountlyCrashReporter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D22D430C1C4631BD00C69E7C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D22D430D1C4631BD00C69E7C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D22D43121C4631BD00C69E7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		D22D43131C4631BD00C69E7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D22D43151C4631BD00C69E7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "CountlyTestApp-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D22D43161C4631BD00C69E7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "CountlyTestApp-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D22D42FB1C4631BD00C69E7C /* Build configuration list for PBXProject "CountlyTestApp-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D22D43121C4631BD00C69E7C /* Debug */,
+				D22D43131C4631BD00C69E7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D22D43141C4631BD00C69E7C /* Build configuration list for PBXNativeTarget "CountlyTestApp-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D22D43151C4631BD00C69E7C /* Debug */,
+				D22D43161C4631BD00C69E7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D22D42F81C4631BD00C69E7C /* Project object */;
+}

@@ -196,10 +196,10 @@
 			isa = PBXGroup;
 			children = (
 				D2EB404D1C58BFAA00EAA633 /* .gitattributes */,
-				D2EB40511C58BFAA00EAA633 /* Countly_OpenUDID.h */,
-				D2EB40521C58BFAA00EAA633 /* Countly_OpenUDID.m */,
 				D2EB404E1C58BFAA00EAA633 /* Countly.h */,
 				D2EB404F1C58BFAA00EAA633 /* Countly.m */,
+				D2EB40511C58BFAA00EAA633 /* Countly_OpenUDID.h */,
+				D2EB40521C58BFAA00EAA633 /* Countly_OpenUDID.m */,
 				D2EB40501C58BFAA00EAA633 /* Countly.podspec */,
 				D2EB40531C58BFAA00EAA633 /* CountlyAPM.h */,
 				D2EB40541C58BFAA00EAA633 /* CountlyAPM.m */,

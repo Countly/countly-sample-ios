@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
@@ -186,7 +186,7 @@ count &amp; sum</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" id="u4i-38-jOp">
-                                    <rect key="frame" x="20" y="65" width="280" height="50"/>
+                                    <rect key="frame" x="20" y="65" width="130" height="50"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.28341542120000002" green="0.28341542120000002" blue="0.28341542120000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -198,7 +198,7 @@ count &amp; sum</string>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Yf7-5p-bN7">
-                                    <rect key="frame" x="20" y="130" width="280" height="50"/>
+                                    <rect key="frame" x="170" y="65" width="130" height="50"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.28341542120000002" green="0.28341542120000002" blue="0.28341542120000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -210,7 +210,7 @@ count &amp; sum</string>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ddm-Zt-hh7">
-                                    <rect key="frame" x="20" y="195" width="280" height="50"/>
+                                    <rect key="frame" x="20" y="130" width="130" height="50"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.28341542120000002" green="0.28341542120000002" blue="0.28341542120000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -221,8 +221,32 @@ count &amp; sum</string>
                                         <action selector="onClick_crash:" destination="-1" eventType="touchUpInside" id="bJy-Q0-BJq"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cbt-Lb-CBw">
+                                    <rect key="frame" x="20" y="195" width="130" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.28341542120000002" green="0.28341542120000002" blue="0.28341542120000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" title="assert fail">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onClick_crash:" destination="-1" eventType="touchUpInside" id="uef-7V-R2I"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9nh-Hf-SpV">
+                                    <rect key="frame" x="170" y="195" width="130" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.28341542120000002" green="0.28341542120000002" blue="0.28341542120000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" title="kill">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onClick_crash:" destination="-1" eventType="touchUpInside" id="buT-zo-Ohl"/>
+                                    </connections>
+                                </button>
                                 <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" id="8EC-8q-GQZ">
-                                    <rect key="frame" x="20" y="260" width="280" height="50"/>
+                                    <rect key="frame" x="170" y="130" width="130" height="50"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.28341542120000002" green="0.28341542120000002" blue="0.28341542120000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -231,6 +255,18 @@ count &amp; sum</string>
                                     </state>
                                     <connections>
                                         <action selector="onClick_crash:" destination="-1" eventType="touchUpInside" id="Z2m-xs-VHo"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4AA-GE-l81">
+                                    <rect key="frame" x="20" y="260" width="280" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.28341542120000002" green="0.28341542120000002" blue="0.28341542120000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" title="custom crash log">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onClick_crash:" destination="-1" eventType="touchUpInside" id="zct-hS-dif"/>
                                     </connections>
                                 </button>
                             </subviews>

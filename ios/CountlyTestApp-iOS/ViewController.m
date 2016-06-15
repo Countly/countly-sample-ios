@@ -147,6 +147,21 @@
         {
             [CountlyCrashReporter.sharedInstance crashTest4];
         }break;
+        
+        case 15:
+        {
+            [CountlyCrashReporter.sharedInstance crashTest5];
+        }break;
+
+        case 16:
+        {
+            [CountlyCrashReporter.sharedInstance crashTest6];
+        }break;
+
+        case 17:
+        {
+            [Countly.sharedInstance crashLog:@"This is a custom crash log!"];
+        }break;
 
         default: break;
     }
@@ -165,36 +180,36 @@
             NSString* localImagePath = [documentsDirectory.absoluteString stringByAppendingPathComponent:@"SamplePicture.jpg"];
             // SamplePicture.png or SamplePicture.gif can be used too.
         
-            CountlyUserDetails.sharedInstance.name = @"John Doe";
-            CountlyUserDetails.sharedInstance.email = @"john@doe.com";
-            CountlyUserDetails.sharedInstance.birthYear = 1970;
-            CountlyUserDetails.sharedInstance.organization = @"United Nations";
-            CountlyUserDetails.sharedInstance.gender = @"M";
-            CountlyUserDetails.sharedInstance.phone = @"+0123456789";
-            CountlyUserDetails.sharedInstance.pictureURL = @"http://s12.postimg.org/qji0724gd/988a10da33b57631caa7ee8e2b5a9036.jpg";
-            CountlyUserDetails.sharedInstance.pictureLocalPath = localImagePath;
-            CountlyUserDetails.sharedInstance.custom = @{@"testkey1":@"testvalue1",@"testkey2":@"testvalue2"};
+            Countly.user.name = @"John Doe";
+            Countly.user.email = @"john@doe.com";
+            Countly.user.birthYear = 1970;
+            Countly.user.organization = @"United Nations";
+            Countly.user.gender = @"M";
+            Countly.user.phone = @"+0123456789";
+            Countly.user.pictureURL = @"http://s12.postimg.org/qji0724gd/988a10da33b57631caa7ee8e2b5a9036.jpg";
+            Countly.user.pictureLocalPath = localImagePath;
+            Countly.user.custom = @{@"testkey1":@"testvalue1",@"testkey2":@"testvalue2"};
         
-            [CountlyUserDetails.sharedInstance recordUserDetails];
+            [Countly.user recordUserDetails];
         }break;
         
         case 22:
         {
-            [CountlyUserDetails.sharedInstance set:@"key101" value:@"value101"];
-            [CountlyUserDetails.sharedInstance incrementBy:@"key102" value:5];
-            [CountlyUserDetails.sharedInstance push:@"key103" value:@"singlevalue"];
-            [CountlyUserDetails.sharedInstance push:@"key104" values:@[@"first",@"second",@"third"]];
-            [CountlyUserDetails.sharedInstance push:@"key105" values:@[@"a",@"b",@"c",@"d"]];
-            [CountlyUserDetails.sharedInstance save];
+            [Countly.user set:@"key101" value:@"value101"];
+            [Countly.user incrementBy:@"key102" value:5];
+            [Countly.user push:@"key103" value:@"singlevalue"];
+            [Countly.user push:@"key104" values:@[@"first",@"second",@"third"]];
+            [Countly.user push:@"key105" values:@[@"a",@"b",@"c",@"d"]];
+            [Countly.user save];
         }break;
 
         case 23:
         {
-            [CountlyUserDetails.sharedInstance multiply:@"key102" value:2];
-            [CountlyUserDetails.sharedInstance unSet:@"key103"];
-            [CountlyUserDetails.sharedInstance pull:@"key104" value:@"second"];
-            [CountlyUserDetails.sharedInstance pull:@"key105" values:@[@"a",@"d"]];
-            [CountlyUserDetails.sharedInstance save];
+            [Countly.user multiply:@"key102" value:2];
+            [Countly.user unSet:@"key103"];
+            [Countly.user pull:@"key104" value:@"second"];
+            [Countly.user pull:@"key105" values:@[@"a",@"d"]];
+            [Countly.user save];
         }break;
 
         case 24:

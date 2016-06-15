@@ -37,4 +37,32 @@
 
     return YES;
 }
+
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings 
+{
+    [application registerForRemoteNotifications];
+}
+
+
+- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken 
+{
+    [Countly.sharedInstance didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+
+- (void) application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error 
+{
+    [Countly.sharedInstance didFailToRegisterForRemoteNotifications];
+}
+
+
+- (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler 
+{
+    if (![Countly.sharedInstance handleRemoteNotification:userInfo])
+    {
+        
+    }
+}
+
 @end

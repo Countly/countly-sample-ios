@@ -50,12 +50,13 @@
         TestPageUserDetails,
         TestPageAPM,
         TestPageViewTracking,
+        TestPagePushNotifications,
         TestPageCount
     } TestPages;
     
     self.pgc_main.numberOfPages = TestPageCount;
 
-    NSInteger startPage = TestPageViewTracking; //start page of testing app can be set here.
+    NSInteger startPage = TestPageCustomEvents; //start page of testing app can be set here.
 
     self.scr_main.contentSize = (CGSize){self.scr_main.bounds.size.width*TestPageCount,self.scr_main.bounds.size.height};
     self.scr_main.contentOffset = CGPointMake(self.scr_main.bounds.size.width*startPage, 0);
@@ -207,11 +208,6 @@
             [Countly.user pull:@"key105" values:@[@"a",@"d"]];
             [Countly.user save];
         }break;
-
-        case 24:
-        {
-            [Countly.sharedInstance recordLocation:(CLLocationCoordinate2D){33.6789,43.1234}];
-        }break;
         
         default:break;
     }
@@ -345,6 +341,28 @@
             [self presentViewController:nc animated:YES completion:nil];
         }break;
 
+        default: break;
+    }
+}
+
+- (IBAction)onClick_pushNotifications:(id)sender
+{
+    NSLog(@"%s tag: %li",__FUNCTION__,(long)[sender tag]);
+
+    switch ([sender tag])
+    {
+        case 51:
+        {
+            UIUserNotificationType userNotificationTypes = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
+            UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes categories:[Countly.sharedInstance countlyNotificationCategories]];
+            [UIApplication.sharedApplication registerUserNotificationSettings:notificationSettings];
+        }break;
+
+        case 52:
+        {
+            [Countly.sharedInstance recordLocation:(CLLocationCoordinate2D){33.6789,43.1234}];
+        }break;
+    
         default: break;
     }
 }

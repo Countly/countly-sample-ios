@@ -19,10 +19,6 @@
 {
     [super viewDidLoad];
 
-//uncomment these lines (and some in main.m) for displaying console logs inside the test app
-//    self.logFilePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"logfile.log"];
-//    [self performSelector:@selector(updateLogs) withObject:nil afterDelay:0.1];
-
     //copy pictures from App Bundle to Documents directory, to use later for User Details picture upload tests.
     NSURL* documentsDirectory = [NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
 
@@ -358,31 +354,6 @@
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     self.pgc_main.currentPage = (NSInteger)self.scr_main.contentOffset.x/self.scr_main.frame.size.width;
-}
-
-#pragma mark -
-
--(void)updateLogs
-{
-    NSError* fileError;
-    
-    NSData *d = [NSData dataWithContentsOfFile:self.logFilePath options:0 error:&fileError];
-    NSString *s = [NSString.alloc initWithData:d encoding:NSUTF8StringEncoding];
-    
-    if(![s isEqualToString:@""])
-        self.txt_log.text = s;
-    
-    UIScrollView* textViewScroll = (UIScrollView*)self.txt_log;
-    
-    if (textViewScroll.contentOffset.y >= textViewScroll.contentSize.height - textViewScroll.bounds.size.height)
-    {
-        NSRange myRange = NSMakeRange(self.txt_log.text.length, 0);
-       [self.txt_log scrollRangeToVisible:myRange];
-    }
-
-    s = nil;
-    
-    [self performSelector:@selector(updateLogs) withObject:nil afterDelay:0.2];
 }
 
 #pragma mark -

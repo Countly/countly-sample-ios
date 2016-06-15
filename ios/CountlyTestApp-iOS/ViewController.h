@@ -12,7 +12,6 @@
 - (IBAction)onClick_userDetails:(id)sender;
 - (IBAction)onClick_APM:(id)sender;
 - (IBAction)onClick_viewTracking:(id)sender;
-@property (strong, nonatomic) IBOutlet UITextView *txt_log;
 @property (strong, nonatomic) IBOutlet UIPageControl *pgc_main;
 @property (strong, nonatomic) IBOutlet UIScrollView *scr_main;
 @end

@@ -264,6 +264,15 @@
 				CLASSPREFIX = CC;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = InnovationBox;
+				TargetAttributes = {
+					D2BAB09D17EC8EE600807D0D = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = D2BAB09917EC8EE600807D0D /* Build configuration list for PBXProject "CountlyTestApp-iOS" */;
 			compatibilityVersion = "Xcode 3.2";

@@ -8,6 +8,8 @@ So you should do:
 
 <pre class="prettyprint">
 	git submodule update --init
+    cd countly-sdk-ios
+    git checkout master
 </pre>
 
 after you cloned this repository to get latest iOS SDK.

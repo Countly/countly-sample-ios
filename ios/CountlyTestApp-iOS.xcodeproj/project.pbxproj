@@ -10,6 +10,7 @@
 		D20C2C5F1A3F2DF600664CAD /* SamplePicture.gif in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */; };
 		D20C2C601A3F2DF600664CAD /* SamplePicture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */; };
 		D20C2C611A3F2DF600664CAD /* SamplePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */; };
+		D23461681D1156A200E9DF54 /* EYLogViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = D23461671D1156A200E9DF54 /* EYLogViewer.m */; };
 		D290ED8A186337A90027082D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290ED89186337A90027082D /* CoreTelephony.framework */; };
 		D290ED8C186337B00027082D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290ED8B186337B00027082D /* CoreData.framework */; };
 		D2A72C131C7597AF008CCD38 /* TestViewControllerPushPop.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A72C111C7597AF008CCD38 /* TestViewControllerPushPop.m */; };
@@ -46,6 +47,8 @@
 		D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SamplePicture.jpg; sourceTree = "<group>"; };
 		D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SamplePicture.png; sourceTree = "<group>"; };
 		D22D41671C6E386C0078AF7D /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		D23461661D1156A200E9DF54 /* EYLogViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYLogViewer.h; sourceTree = "<group>"; };
+		D23461671D1156A200E9DF54 /* EYLogViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYLogViewer.m; sourceTree = "<group>"; };
 		D290ED89186337A90027082D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D290ED8B186337B00027082D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D2A72C101C7597AF008CCD38 /* TestViewControllerPushPop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewControllerPushPop.h; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 				D2A72C101C7597AF008CCD38 /* TestViewControllerPushPop.h */,
 				D2A72C111C7597AF008CCD38 /* TestViewControllerPushPop.m */,
 				D2A72C121C7597AF008CCD38 /* TestViewControllerPushPop.xib */,
+				D23461661D1156A200E9DF54 /* EYLogViewer.h */,
+				D23461671D1156A200E9DF54 /* EYLogViewer.m */,
 				D20C2C5B1A3F2DF600664CAD /* img */,
 				D2BAB0B917EC8EE600807D0D /* Images.xcassets */,
 				D2BAB0A817EC8EE600807D0D /* Supporting Files */,
@@ -196,10 +201,10 @@
 			isa = PBXGroup;
 			children = (
 				D2EB404D1C58BFAA00EAA633 /* .gitattributes */,
-				D2EB40511C58BFAA00EAA633 /* Countly_OpenUDID.h */,
-				D2EB40521C58BFAA00EAA633 /* Countly_OpenUDID.m */,
 				D2EB404E1C58BFAA00EAA633 /* Countly.h */,
 				D2EB404F1C58BFAA00EAA633 /* Countly.m */,
+				D2EB40511C58BFAA00EAA633 /* Countly_OpenUDID.h */,
+				D2EB40521C58BFAA00EAA633 /* Countly_OpenUDID.m */,
 				D2EB40501C58BFAA00EAA633 /* Countly.podspec */,
 				D2EB40531C58BFAA00EAA633 /* CountlyAPM.h */,
 				D2EB40541C58BFAA00EAA633 /* CountlyAPM.m */,
@@ -259,6 +264,15 @@
 				CLASSPREFIX = CC;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = InnovationBox;
+				TargetAttributes = {
+					D2BAB09D17EC8EE600807D0D = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = D2BAB09917EC8EE600807D0D /* Build configuration list for PBXProject "CountlyTestApp-iOS" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -306,6 +320,7 @@
 				D2BAB0B217EC8EE600807D0D /* AppDelegate.m in Sources */,
 				D2EB40751C58BFAA00EAA633 /* CountlyPersistency.m in Sources */,
 				D2EB406F1C58BFAA00EAA633 /* CountlyCommon.m in Sources */,
+				D23461681D1156A200E9DF54 /* EYLogViewer.m in Sources */,
 				D2EB40761C58BFAA00EAA633 /* CountlyUserDetails.m in Sources */,
 				D2BAB0AE17EC8EE600807D0D /* main.m in Sources */,
 				D2EB40701C58BFAA00EAA633 /* CountlyConfig.m in Sources */,

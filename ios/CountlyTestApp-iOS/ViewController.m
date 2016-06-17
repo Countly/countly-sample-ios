@@ -19,10 +19,6 @@
 {
     [super viewDidLoad];
 
-//uncomment these lines (and some in main.m) for displaying console logs inside the test app
-//    self.logFilePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"logfile.log"];
-//    [self performSelector:@selector(updateLogs) withObject:nil afterDelay:0.1];
-
     //copy pictures from App Bundle to Documents directory, to use later for User Details picture upload tests.
     NSURL* documentsDirectory = [NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
 
@@ -54,12 +50,13 @@
         TestPageUserDetails,
         TestPageAPM,
         TestPageViewTracking,
+        TestPagePushNotifications,
         TestPageCount
     } TestPages;
     
     self.pgc_main.numberOfPages = TestPageCount;
 
-    NSInteger startPage = TestPageViewTracking; //start page of testing app can be set here.
+    NSInteger startPage = TestPageCustomEvents; //start page of testing app can be set here.
 
     self.scr_main.contentSize = (CGSize){self.scr_main.bounds.size.width*TestPageCount,self.scr_main.bounds.size.height};
     self.scr_main.contentOffset = CGPointMake(self.scr_main.bounds.size.width*startPage, 0);
@@ -147,6 +144,21 @@
         {
             [CountlyCrashReporter.sharedInstance crashTest4];
         }break;
+        
+        case 15:
+        {
+            [CountlyCrashReporter.sharedInstance crashTest5];
+        }break;
+
+        case 16:
+        {
+            [CountlyCrashReporter.sharedInstance crashTest6];
+        }break;
+
+        case 17:
+        {
+            [Countly.sharedInstance crashLog:@"This is a custom crash log!"];
+        }break;
 
         default: break;
     }
@@ -165,41 +177,36 @@
             NSString* localImagePath = [documentsDirectory.absoluteString stringByAppendingPathComponent:@"SamplePicture.jpg"];
             // SamplePicture.png or SamplePicture.gif can be used too.
         
-            CountlyUserDetails.sharedInstance.name = @"John Doe";
-            CountlyUserDetails.sharedInstance.email = @"john@doe.com";
-            CountlyUserDetails.sharedInstance.birthYear = 1970;
-            CountlyUserDetails.sharedInstance.organization = @"United Nations";
-            CountlyUserDetails.sharedInstance.gender = @"M";
-            CountlyUserDetails.sharedInstance.phone = @"+0123456789";
-            CountlyUserDetails.sharedInstance.pictureURL = @"http://s12.postimg.org/qji0724gd/988a10da33b57631caa7ee8e2b5a9036.jpg";
-            CountlyUserDetails.sharedInstance.pictureLocalPath = localImagePath;
-            CountlyUserDetails.sharedInstance.custom = @{@"testkey1":@"testvalue1",@"testkey2":@"testvalue2"};
+            Countly.user.name = @"John Doe";
+            Countly.user.email = @"john@doe.com";
+            Countly.user.birthYear = 1970;
+            Countly.user.organization = @"United Nations";
+            Countly.user.gender = @"M";
+            Countly.user.phone = @"+0123456789";
+            Countly.user.pictureURL = @"http://s12.postimg.org/qji0724gd/988a10da33b57631caa7ee8e2b5a9036.jpg";
+            Countly.user.pictureLocalPath = localImagePath;
+            Countly.user.custom = @{@"testkey1":@"testvalue1",@"testkey2":@"testvalue2"};
         
-            [CountlyUserDetails.sharedInstance recordUserDetails];
+            [Countly.user recordUserDetails];
         }break;
         
         case 22:
         {
-            [CountlyUserDetails.sharedInstance set:@"key101" value:@"value101"];
-            [CountlyUserDetails.sharedInstance incrementBy:@"key102" value:5];
-            [CountlyUserDetails.sharedInstance push:@"key103" value:@"singlevalue"];
-            [CountlyUserDetails.sharedInstance push:@"key104" values:@[@"first",@"second",@"third"]];
-            [CountlyUserDetails.sharedInstance push:@"key105" values:@[@"a",@"b",@"c",@"d"]];
-            [CountlyUserDetails.sharedInstance save];
+            [Countly.user set:@"key101" value:@"value101"];
+            [Countly.user incrementBy:@"key102" value:5];
+            [Countly.user push:@"key103" value:@"singlevalue"];
+            [Countly.user push:@"key104" values:@[@"first",@"second",@"third"]];
+            [Countly.user push:@"key105" values:@[@"a",@"b",@"c",@"d"]];
+            [Countly.user save];
         }break;
 
         case 23:
         {
-            [CountlyUserDetails.sharedInstance multiply:@"key102" value:2];
-            [CountlyUserDetails.sharedInstance unSet:@"key103"];
-            [CountlyUserDetails.sharedInstance pull:@"key104" value:@"second"];
-            [CountlyUserDetails.sharedInstance pull:@"key105" values:@[@"a",@"d"]];
-            [CountlyUserDetails.sharedInstance save];
-        }break;
-
-        case 24:
-        {
-            [Countly.sharedInstance recordLocation:(CLLocationCoordinate2D){33.6789,43.1234}];
+            [Countly.user multiply:@"key102" value:2];
+            [Countly.user unSet:@"key103"];
+            [Countly.user pull:@"key104" value:@"second"];
+            [Countly.user pull:@"key105" values:@[@"a",@"d"]];
+            [Countly.user save];
         }break;
         
         default:break;
@@ -338,36 +345,33 @@
     }
 }
 
+- (IBAction)onClick_pushNotifications:(id)sender
+{
+    NSLog(@"%s tag: %li",__FUNCTION__,(long)[sender tag]);
+
+    switch ([sender tag])
+    {
+        case 51:
+        {
+            UIUserNotificationType userNotificationTypes = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
+            UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes categories:[Countly.sharedInstance countlyNotificationCategories]];
+            [UIApplication.sharedApplication registerUserNotificationSettings:notificationSettings];
+        }break;
+
+        case 52:
+        {
+            [Countly.sharedInstance recordLocation:(CLLocationCoordinate2D){33.6789,43.1234}];
+        }break;
+    
+        default: break;
+    }
+}
+
 #pragma mark -
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     self.pgc_main.currentPage = (NSInteger)self.scr_main.contentOffset.x/self.scr_main.frame.size.width;
-}
-
-#pragma mark -
-
--(void)updateLogs
-{
-    NSError* fileError;
-    
-    NSData *d = [NSData dataWithContentsOfFile:self.logFilePath options:0 error:&fileError];
-    NSString *s = [NSString.alloc initWithData:d encoding:NSUTF8StringEncoding];
-    
-    if(![s isEqualToString:@""])
-        self.txt_log.text = s;
-    
-    UIScrollView* textViewScroll = (UIScrollView*)self.txt_log;
-    
-    if (textViewScroll.contentOffset.y >= textViewScroll.contentSize.height - textViewScroll.bounds.size.height)
-    {
-        NSRange myRange = NSMakeRange(self.txt_log.text.length, 0);
-       [self.txt_log scrollRangeToVisible:myRange];
-    }
-
-    s = nil;
-    
-    [self performSelector:@selector(updateLogs) withObject:nil afterDelay:0.2];
 }
 
 #pragma mark -

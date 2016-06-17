@@ -9,12 +9,11 @@
 #import <UIKit/UIKit.h>
 
 #import "AppDelegate.h"
+#import "EYLogViewer.h"
 
 int main(int argc, char * argv[])
 {
-//uncomment these lines for displaying console logs inside the test app
-//    NSString *logFilePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"logfile.log"];
-//    freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding],"w",stderr);
+    [EYLogViewer add];
 
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));

@@ -158,6 +158,7 @@
         case 17:
         {
             [Countly.sharedInstance crashLog:@"This is a custom crash log!"];
+            [Countly.sharedInstance crashLog:@"This is another custom crash log with argument: %i!",2];        
         }break;
 
         default: break;
@@ -179,11 +180,11 @@
         
             Countly.user.name = @"John Doe";
             Countly.user.email = @"john@doe.com";
-            Countly.user.birthYear = 1970;
+            Countly.user.birthYear = @(1970);
             Countly.user.organization = @"United Nations";
             Countly.user.gender = @"M";
             Countly.user.phone = @"+0123456789";
-            Countly.user.pictureURL = @"http://s12.postimg.org/qji0724gd/988a10da33b57631caa7ee8e2b5a9036.jpg";
+//            Countly.user.pictureURL = @"http://s12.postimg.org/qji0724gd/988a10da33b57631caa7ee8e2b5a9036.jpg";
             Countly.user.pictureLocalPath = localImagePath;
             Countly.user.custom = @{@"testkey1":@"testvalue1",@"testkey2":@"testvalue2"};
         

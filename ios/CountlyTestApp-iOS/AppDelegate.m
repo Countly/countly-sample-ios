@@ -27,6 +27,7 @@
 //    config.city = @"Tokyo";                                       //Optional city name
 //    config.location = (CLLocationCoordinate2D){35.6895,139.6917}; //Optional location coordinates
 //    config.crashSegmentation = @{@"SomeOtherSDK":@"v3.4.5"};      //Optional crash segmentation for CLYCrashReporting
+//    config.pinnedCertificates = @[@"count.ly.cer"];               //Optional bundled certificates for certificate pinning
     [Countly.sharedInstance startWithConfig:config];
 
     

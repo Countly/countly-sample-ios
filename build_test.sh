@@ -1,4 +1,6 @@
 clear
+echo "Cleaning Xcode derived data..."
+rm -rf ~/Library/Developer/Xcode/DerivedData/*
 echo "Building for iOS..."
 OUTPUT=`xcodebuild -project ios/CountlyTestApp-iOS.xcodeproj/ -target "CountlyTestApp-iOS" -configuration Debug -sdk iphonesimulator build`
 RESULT=`echo "$OUTPUT" | grep "BUILD SUC"`

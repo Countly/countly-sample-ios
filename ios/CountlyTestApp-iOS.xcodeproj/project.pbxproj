@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D20534441D267FB100CBB8B9 /* count.ly.cer in Resources */ = {isa = PBXBuildFile; fileRef = D20534431D267FB100CBB8B9 /* count.ly.cer */; };
 		D20C2C5F1A3F2DF600664CAD /* SamplePicture.gif in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */; };
 		D20C2C601A3F2DF600664CAD /* SamplePicture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */; };
 		D20C2C611A3F2DF600664CAD /* SamplePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D20534431D267FB100CBB8B9 /* count.ly.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = count.ly.cer; sourceTree = "<group>"; };
 		D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SamplePicture.gif; sourceTree = "<group>"; };
 		D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SamplePicture.jpg; sourceTree = "<group>"; };
 		D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SamplePicture.png; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				D2A72C121C7597AF008CCD38 /* TestViewControllerPushPop.xib */,
 				D23461661D1156A200E9DF54 /* EYLogViewer.h */,
 				D23461671D1156A200E9DF54 /* EYLogViewer.m */,
+				D20534431D267FB100CBB8B9 /* count.ly.cer */,
 				D20C2C5B1A3F2DF600664CAD /* img */,
 				D2BAB0B917EC8EE600807D0D /* Images.xcassets */,
 				D2BAB0A817EC8EE600807D0D /* Supporting Files */,
@@ -298,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2BAB0BA17EC8EE600807D0D /* Images.xcassets in Resources */,
+				D20534441D267FB100CBB8B9 /* count.ly.cer in Resources */,
 				D2F530141C757E5B00A1B922 /* TestViewControllerModal.xib in Resources */,
 				D20C2C601A3F2DF600664CAD /* SamplePicture.jpg in Resources */,
 				D2BAB0D717EC8FF400807D0D /* ViewController.xib in Resources */,

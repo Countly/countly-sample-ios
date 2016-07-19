@@ -51,16 +51,21 @@
         TestPageAPM,
         TestPageViewTracking,
         TestPagePushNotifications,
+        TestPageOthers,
         TestPageCount
     } TestPages;
     
     self.pgc_main.numberOfPages = TestPageCount;
 
-    NSInteger startPage = TestPageCustomEvents; //start page of testing app can be set here.
+    NSInteger startPage = TestPageOthers; //start page of testing app can be set here.
 
-    self.scr_main.contentSize = (CGSize){self.scr_main.bounds.size.width*TestPageCount,self.scr_main.bounds.size.height};
-    self.scr_main.contentOffset = CGPointMake(self.scr_main.bounds.size.width*startPage, 0);
-    [self scrollViewDidEndDecelerating:self.scr_main];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^
+    {
+        self.scr_main.contentSize = (CGSize){self.scr_main.bounds.size.width*TestPageCount,self.scr_main.bounds.size.height};
+        self.scr_main.contentOffset = CGPointMake(self.scr_main.bounds.size.width*startPage, 0);
+        [self scrollViewDidEndDecelerating:self.scr_main];
+    });
 
     [super viewWillAppear:animated];
 }
@@ -341,6 +346,22 @@
             nc.title = @"TestViewControllerPushPop";
             [self presentViewController:nc animated:YES completion:nil];
         }break;
+        
+        case 45:
+        {
+            [Countly.sharedInstance addExceptionForAutoViewTracking:TestViewControllerModal.class];
+        }break;
+
+        case 46:
+        {
+            [Countly.sharedInstance removeExceptionForAutoViewTracking:TestViewControllerModal.class];
+        }break;
+        
+        case 47:
+        {
+            [Countly.sharedInstance reportView:@"ManualViewReportExample_MyMainView"];
+        }break;
+        
 
         default: break;
     }
@@ -362,6 +383,30 @@
         case 52:
         {
             [Countly.sharedInstance recordLocation:(CLLocationCoordinate2D){33.6789,43.1234}];
+        }break;
+    
+        default: break;
+    }
+}
+
+- (IBAction)onClick_others:(id)sender
+{
+    NSLog(@"%s tag: %li",__FUNCTION__,(long)[sender tag]);
+
+    switch ([sender tag])
+    {
+        case 61:
+        {
+            [Countly.sharedInstance setCustomHeaderFieldValue:@"thisismyvalue"];
+        }break;
+
+        case 62:
+        {
+            [Countly.sharedInstance showStarRatingDialog:^(NSInteger rating)
+            {
+                NSLog(@"rating %li",(long)rating);
+            }];
+        
         }break;
     
         default: break;

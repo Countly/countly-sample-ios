@@ -28,7 +28,13 @@
 //    config.location = (CLLocationCoordinate2D){35.6895,139.6917}; //Optional location coordinates
 //    config.crashSegmentation = @{@"SomeOtherSDK":@"v3.4.5"};      //Optional crash segmentation for CLYCrashReporting
 //    config.pinnedCertificates = @[@"count.ly.cer"];               //Optional bundled certificates for certificate pinning
-    [Countly.sharedInstance startWithConfig:config];
+//    config.customHeaderFieldName = @"X-My-Custom-Field";          //Optional custom header field name
+//    config.customHeaderFieldValue = @"my_custom_value";           //Optional custom header field value
+//    config.starRatingMessage = @"Would you rate the app?";        //Optional star-rating dialog message
+//    config.starRatingDismissButtonTitle = @"No idea";             //Optional star-rating dialog dismiss button title
+//    config.starRatingSessionCount = 3;                            //Optional star-rating dialog auto-ask by session count
+//    config.starRatingDisableAskingForEachAppVersion = YES;        //Optional star-rating dialog auto-ask by versions disabling
+//    [Countly.sharedInstance startWithConfig:config];
 
     
     self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];

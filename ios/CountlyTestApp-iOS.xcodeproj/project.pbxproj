@@ -38,6 +38,7 @@
 		D2EB40741C58BFAA00EAA633 /* CountlyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40621C58BFAA00EAA633 /* CountlyEvent.m */; };
 		D2EB40751C58BFAA00EAA633 /* CountlyPersistency.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40641C58BFAA00EAA633 /* CountlyPersistency.m */; };
 		D2EB40761C58BFAA00EAA633 /* CountlyUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40661C58BFAA00EAA633 /* CountlyUserDetails.m */; };
+		D2EDCF571D2BFFBD00F75DDC /* CountlyStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EDCF561D2BFFBD00F75DDC /* CountlyStarRating.m */; };
 		D2F530131C757E5B00A1B922 /* TestViewControllerModal.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F530111C757E5B00A1B922 /* TestViewControllerModal.m */; };
 		D2F530141C757E5B00A1B922 /* TestViewControllerModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2F530121C757E5B00A1B922 /* TestViewControllerModal.xib */; };
 		D2FB68FC1C69D5F200079DF6 /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FB68FB1C69D5F200079DF6 /* CountlyViewTracking.m */; };
@@ -99,6 +100,8 @@
 		D2EB40661C58BFAA00EAA633 /* CountlyUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyUserDetails.m; sourceTree = "<group>"; };
 		D2EB40671C58BFAA00EAA633 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D2EB40681C58BFAA00EAA633 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D2EDCF551D2BFFBD00F75DDC /* CountlyStarRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyStarRating.h; sourceTree = "<group>"; };
+		D2EDCF561D2BFFBD00F75DDC /* CountlyStarRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyStarRating.m; sourceTree = "<group>"; };
 		D2F530101C757E5B00A1B922 /* TestViewControllerModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewControllerModal.h; sourceTree = "<group>"; };
 		D2F530111C757E5B00A1B922 /* TestViewControllerModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewControllerModal.m; sourceTree = "<group>"; };
 		D2F530121C757E5B00A1B922 /* TestViewControllerModal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewControllerModal.xib; sourceTree = "<group>"; };
@@ -227,6 +230,8 @@
 				D2EB40621C58BFAA00EAA633 /* CountlyEvent.m */,
 				D2EB40631C58BFAA00EAA633 /* CountlyPersistency.h */,
 				D2EB40641C58BFAA00EAA633 /* CountlyPersistency.m */,
+				D2EDCF551D2BFFBD00F75DDC /* CountlyStarRating.h */,
+				D2EDCF561D2BFFBD00F75DDC /* CountlyStarRating.m */,
 				D2EB40651C58BFAA00EAA633 /* CountlyUserDetails.h */,
 				D2EB40661C58BFAA00EAA633 /* CountlyUserDetails.m */,
 				D2FB68FA1C69D5F200079DF6 /* CountlyViewTracking.h */,
@@ -264,11 +269,12 @@
 		D2BAB09617EC8EE600807D0D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = CC;
+				CLASSPREFIX = Countly;
 				LastUpgradeCheck = 0710;
-				ORGANIZATIONNAME = InnovationBox;
+				ORGANIZATIONNAME = Countly;
 				TargetAttributes = {
 					D2BAB09D17EC8EE600807D0D = {
+						DevelopmentTeam = 3S32KFMHB8;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -338,6 +344,7 @@
 				D2EB40711C58BFAA00EAA633 /* CountlyConnectionManager.m in Sources */,
 				D2BAB0B817EC8EE600807D0D /* ViewController.m in Sources */,
 				D2EB40721C58BFAA00EAA633 /* CountlyCrashReporter.m in Sources */,
+				D2EDCF571D2BFFBD00F75DDC /* CountlyStarRating.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +443,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CountlyTestApp-iOS/CountlyTestApp-iOS-Prefix.pch";
@@ -453,7 +461,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CountlyTestApp-iOS/CountlyTestApp-iOS-Prefix.pch";
 				INFOPLIST_FILE = "CountlyTestApp-iOS/CountlyTestApp-iOS-Info.plist";

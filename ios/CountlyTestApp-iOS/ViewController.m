@@ -166,6 +166,13 @@
             [Countly.sharedInstance crashLog:@"This is another custom crash log with argument: %i!",2];        
         }break;
 
+        case 18:
+        {
+            NSException* myException = [NSException exceptionWithName:@"MyException" reason:@"MyReason" userInfo:@{@"key":@"value"}];
+        
+            [Countly.sharedInstance recordHandledException:myException];
+        }break;
+        
         default: break;
     }
 }
@@ -402,11 +409,20 @@
 
         case 62:
         {
-            [Countly.sharedInstance showStarRatingDialog:^(NSInteger rating)
+            [Countly.sharedInstance askForStarRating:^(NSInteger rating)
             {
                 NSLog(@"rating %li",(long)rating);
             }];
+        }break;
         
+        case 63:
+        {
+            [Countly.sharedInstance setNewDeviceID:@"user@example.com" onServer:NO];
+        }break;
+        
+        case 64:
+        {
+            [Countly.sharedInstance setNewDeviceID:CLYIDFV onServer:YES];
         }break;
     
         default: break;

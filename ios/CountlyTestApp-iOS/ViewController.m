@@ -51,6 +51,7 @@
         TestPageAPM,
         TestPageViewTracking,
         TestPagePushNotifications,
+        TestPageMultiThreading,
         TestPageOthers,
         TestPageCount
     } TestPages;
@@ -393,6 +394,28 @@
         }break;
     
         default: break;
+    }
+}
+
+dispatch_queue_t q[8];
+
+- (IBAction)onClick_multithreading:(id)sender
+{
+    NSLog(@"%s tag: %li",__FUNCTION__,(long)[sender tag]);
+
+    NSInteger t = [sender tag];
+    NSString* tag = @(t).description;
+    NSString* commonQueueName = @"ly.count.multithreading";
+    NSString* queueName = [commonQueueName stringByAppendingString:tag];
+    
+    if(!q[t])
+        q[t] = dispatch_queue_create([queueName UTF8String], NULL);
+    
+    for (int i=0; i<15; i++)
+    {
+        NSString* eventName = [@"MultiThreadingEvent" stringByAppendingString:tag];
+        NSDictionary* segmentation = @{@"k":[@"v"stringByAppendingString:@(i).description]};
+        dispatch_async( q[t], ^{ [Countly.sharedInstance recordEvent:eventName segmentation:segmentation]; });
     }
 }
 

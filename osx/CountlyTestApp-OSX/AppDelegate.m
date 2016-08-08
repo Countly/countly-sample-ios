@@ -93,4 +93,21 @@
     
     [self performSelector:@selector(updateLogs) withObject:nil afterDelay:0.2];
 }
+
+- (void)applicationWillFinishLaunching:(NSNotification *)aNotification
+{
+    [[NSAppleEventManager sharedAppleEventManager]
+     setEventHandler:self
+     andSelector:@selector(handleURLEvent:withReplyEvent:)
+     forEventClass:kInternetEventClass
+     andEventID:kAEGetURL];
+}
+
+- (void)handleURLEvent:(NSAppleEventDescriptor*)event
+        withReplyEvent:(NSAppleEventDescriptor*)replyEvent
+{
+    NSString* url = [[event paramDescriptorForKeyword:keyDirectObject]
+                     stringValue];
+    NSLog(@"%@", url);
+}
 @end

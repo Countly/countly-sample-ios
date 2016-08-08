@@ -51,16 +51,22 @@
         TestPageAPM,
         TestPageViewTracking,
         TestPagePushNotifications,
+        TestPageMultiThreading,
+        TestPageOthers,
         TestPageCount
     } TestPages;
     
     self.pgc_main.numberOfPages = TestPageCount;
 
-    NSInteger startPage = TestPageCustomEvents; //start page of testing app can be set here.
+    NSInteger startPage = TestPageOthers; //start page of testing app can be set here.
 
-    self.scr_main.contentSize = (CGSize){self.scr_main.bounds.size.width*TestPageCount,self.scr_main.bounds.size.height};
-    self.scr_main.contentOffset = CGPointMake(self.scr_main.bounds.size.width*startPage, 0);
-    [self scrollViewDidEndDecelerating:self.scr_main];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^
+    {
+        self.scr_main.contentSize = (CGSize){self.scr_main.bounds.size.width*TestPageCount,self.scr_main.bounds.size.height};
+        self.scr_main.contentOffset = CGPointMake(self.scr_main.bounds.size.width*startPage, 0);
+        [self scrollViewDidEndDecelerating:self.scr_main];
+    });
 
     [super viewWillAppear:animated];
 }
@@ -161,6 +167,13 @@
             [Countly.sharedInstance crashLog:@"This is another custom crash log with argument: %i!",2];        
         }break;
 
+        case 18:
+        {
+            NSException* myException = [NSException exceptionWithName:@"MyException" reason:@"MyReason" userInfo:@{@"key":@"value"}];
+        
+            [Countly.sharedInstance recordHandledException:myException];
+        }break;
+        
         default: break;
     }
 }
@@ -341,6 +354,22 @@
             nc.title = @"TestViewControllerPushPop";
             [self presentViewController:nc animated:YES completion:nil];
         }break;
+        
+        case 45:
+        {
+            [Countly.sharedInstance addExceptionForAutoViewTracking:TestViewControllerModal.class];
+        }break;
+
+        case 46:
+        {
+            [Countly.sharedInstance removeExceptionForAutoViewTracking:TestViewControllerModal.class];
+        }break;
+        
+        case 47:
+        {
+            [Countly.sharedInstance reportView:@"ManualViewReportExample_MyMainView"];
+        }break;
+        
 
         default: break;
     }
@@ -362,6 +391,61 @@
         case 52:
         {
             [Countly.sharedInstance recordLocation:(CLLocationCoordinate2D){33.6789,43.1234}];
+        }break;
+    
+        default: break;
+    }
+}
+
+dispatch_queue_t q[8];
+
+- (IBAction)onClick_multithreading:(id)sender
+{
+    NSLog(@"%s tag: %li",__FUNCTION__,(long)[sender tag]);
+
+    NSInteger t = [sender tag];
+    NSString* tag = @(t).description;
+    NSString* commonQueueName = @"ly.count.multithreading";
+    NSString* queueName = [commonQueueName stringByAppendingString:tag];
+    
+    if(!q[t])
+        q[t] = dispatch_queue_create([queueName UTF8String], NULL);
+    
+    for (int i=0; i<15; i++)
+    {
+        NSString* eventName = [@"MultiThreadingEvent" stringByAppendingString:tag];
+        NSDictionary* segmentation = @{@"k":[@"v"stringByAppendingString:@(i).description]};
+        dispatch_async( q[t], ^{ [Countly.sharedInstance recordEvent:eventName segmentation:segmentation]; });
+    }
+}
+
+- (IBAction)onClick_others:(id)sender
+{
+    NSLog(@"%s tag: %li",__FUNCTION__,(long)[sender tag]);
+
+    switch ([sender tag])
+    {
+        case 61:
+        {
+            [Countly.sharedInstance setCustomHeaderFieldValue:@"thisismyvalue"];
+        }break;
+
+        case 62:
+        {
+            [Countly.sharedInstance askForStarRating:^(NSInteger rating)
+            {
+                NSLog(@"rating %li",(long)rating);
+            }];
+        }break;
+        
+        case 63:
+        {
+            [Countly.sharedInstance setNewDeviceID:@"user@example.com" onServer:NO];
+        }break;
+        
+        case 64:
+        {
+            [Countly.sharedInstance setNewDeviceID:CLYIDFV onServer:YES];
         }break;
     
         default: break;

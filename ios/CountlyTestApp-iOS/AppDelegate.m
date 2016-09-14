@@ -29,15 +29,16 @@
 //    config.eventSendThreshold = 5;                                //Optional event send threshold (default 10 events)
 //    config.updateSessionPeriod = 30;                              //Optional update session period (default 60 seconds)
 //    config.storedRequestsLimit = 500;                             //Optional stored requests limit (default 1000 requests)
+//    config.alwaysUsePOST = YES;                                   //Optional forcing for POST method
 
 //    config.ISOCountryCode = @"JP";                                //Optioanl ISO country code
 //    config.city = @"Tokyo";                                       //Optional city name
 //    config.location = (CLLocationCoordinate2D){35.6895,139.6917}; //Optional location coordinates
 
 //    config.pinnedCertificates = @[@"count.ly.cer"];               //Optional bundled certificates for certificate pinning
-
 //    config.customHeaderFieldName = @"X-My-Custom-Field";          //Optional custom header field name
 //    config.customHeaderFieldValue = @"my_custom_value";           //Optional custom header field value
+//    config.secretSalt = @"secretsalt"                             //Optional salt for parameter tampering protection
 
 //    config.starRatingMessage = @"Would you rate the app?";        //Optional star-rating dialog message
 //    config.starRatingDismissButtonTitle = @"No idea";             //Optional star-rating dialog dismiss button title

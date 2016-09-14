@@ -403,8 +403,11 @@ dispatch_queue_t q[8];
 {
     NSLog(@"%s tag: %li",__FUNCTION__,(long)[sender tag]);
 
-    NSInteger t = [sender tag];
+    NSInteger t = [sender tag] % 10 - 1;
     NSString* tag = @(t).description;
+
+    NSLog(@"thread: %li", (long)t);
+    
     NSString* commonQueueName = @"ly.count.multithreading";
     NSString* queueName = [commonQueueName stringByAppendingString:tag];
     

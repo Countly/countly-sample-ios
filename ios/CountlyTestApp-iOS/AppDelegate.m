@@ -15,14 +15,16 @@
     CountlyConfig* config = CountlyConfig.new;
     config.appKey = @"YOUR_APP_KEY";
     config.host = @"https://YOUR_COUNTLY_SERVER";
-    
-//    config.features = @[CLYMessaging, CLYCrashReporting, CLYAPM, CLYAutoViewTracking];     //Optional features
 
-//    config.launchOptions = launchOptions;                         //Required for CLYMessaging feature
-//    config.isTestDevice = YES;                                    //Optional marking as test device for CLYMessaging
+//    config.features = @[CLYPushNotifications, CLYCrashReporting, CLYAPM, CLYAutoViewTracking]];     //Optional features
+
+//    config.launchOptions = launchOptions;                         //Prior to v16.10 was required for CLYPushNotifications
+//    config.isTestDevice = YES;                                    //Optional marking as test device for CLYPushNotifications
+//    config.sendPushTokenAlways = YES;                             //Optional forcing to send token always
+//    config.doNotShowAlertForNotifications = YES;                  //Optional disabling alerts shown by notification
 
 //    config.crashSegmentation = @{@"SomeOtherSDK":@"v3.4.5"};      //Optional crash segmentation for CLYCrashReporting
-    
+
 //    config.deviceID = @"customDeviceID";                          //Optional custom or system generated device ID
 //    config.forceDeviceIDInitialization = YES;                     //Optional forcing to re-initialize device ID
 
@@ -31,6 +33,7 @@
 //    config.storedRequestsLimit = 500;                             //Optional stored requests limit (default 1000 requests)
 //    config.alwaysUsePOST = YES;                                   //Optional forcing for POST method
 
+//    config.enableAppleWatch = YES;                                  //Optioanl Apple Watch related features
 //    config.ISOCountryCode = @"JP";                                //Optioanl ISO country code
 //    config.city = @"Tokyo";                                       //Optional city name
 //    config.location = (CLLocationCoordinate2D){35.6895,139.6917}; //Optional location coordinates
@@ -47,7 +50,7 @@
 
     [Countly.sharedInstance startWithConfig:config];
 
-    
+
     self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
     self.viewController = [ViewController.alloc initWithNibName:@"ViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
@@ -56,31 +59,28 @@
     return YES;
 }
 
-
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings 
-{
-    [application registerForRemoteNotifications];
-}
-
-
-- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken 
-{
-    [Countly.sharedInstance didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
-}
-
-
-- (void) application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error 
-{
-    [Countly.sharedInstance didFailToRegisterForRemoteNotifications];
-}
-
-
-- (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler 
-{
-    if (![Countly.sharedInstance handleRemoteNotification:userInfo])
-    {
-        
-    }
-}
-
+//NOTE: These push related delegate methods are NOT needed for CLYPushNotifications feature, Countly iOS SDK handles all automatically.
+//- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+//{
+//    NSLog(@"original didRegisterUserNotificationSettings: %@", notificationSettings);
+//}
+//
+//
+//- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+//{
+//    NSLog(@"original didRegisterForRemoteNotificationsWithDeviceToken: %@", deviceToken);
+//}
+//
+//
+//- (void) application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+//{
+//    NSLog(@"original didFailToRegisterForRemoteNotificationsWithError: %@", error);
+//}
+//
+//
+//- (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+//{
+//    NSLog(@"original didReceiveRemoteNotification:fetchCompletionHandler: %@", userInfo);
+//    completionHandler(UIBackgroundFetchResultNewData);
+//}
 @end

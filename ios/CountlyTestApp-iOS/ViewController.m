@@ -55,10 +55,10 @@
         TestPageOthers,
         TestPageCount
     } TestPages;
-    
+
     self.pgc_main.numberOfPages = TestPageCount;
 
-    NSInteger startPage = TestPageOthers; //start page of testing app can be set here.
+    NSInteger startPage = TestPageCustomEvents; //start page of testing app can be set here.
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^
@@ -111,7 +111,7 @@
         case 8:
             [Countly.sharedInstance recordEvent:@"button-click" segmentation:@{@"k" : @"v"} count:5 sum:1.99 duration:0.314];
         break;
-        
+
         case 9:
             [Countly.sharedInstance startEvent:@"timed-event"];
         break;
@@ -119,7 +119,7 @@
         case 10:
             [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k" : @"v"} count:1 sum:0];
         break;
-        
+
         default:break;
     }
 }
@@ -150,7 +150,7 @@
         {
             [CountlyCrashReporter.sharedInstance crashTest4];
         }break;
-        
+
         case 15:
         {
             [CountlyCrashReporter.sharedInstance crashTest5];
@@ -164,16 +164,16 @@
         case 17:
         {
             [Countly.sharedInstance crashLog:@"This is a custom crash log!"];
-            [Countly.sharedInstance crashLog:@"This is another custom crash log with argument: %i!",2];        
+            [Countly.sharedInstance crashLog:@"This is another custom crash log with argument: %i!",2];
         }break;
 
         case 18:
         {
             NSException* myException = [NSException exceptionWithName:@"MyException" reason:@"MyReason" userInfo:@{@"key":@"value"}];
-        
+
             [Countly.sharedInstance recordHandledException:myException];
         }break;
-        
+
         default: break;
     }
 }
@@ -182,7 +182,7 @@
 - (IBAction)onClick_userDetails:(id)sender
 {
     NSLog(@"%s tag: %li",__FUNCTION__,(long)[sender tag]);
-    
+
     switch ([sender tag])
     {
         case 21:
@@ -190,7 +190,7 @@
             NSURL* documentsDirectory = [NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].lastObject;
             NSString* localImagePath = [documentsDirectory.absoluteString stringByAppendingPathComponent:@"SamplePicture.jpg"];
             // SamplePicture.png or SamplePicture.gif can be used too.
-        
+
             Countly.user.name = @"John Doe";
             Countly.user.email = @"john@doe.com";
             Countly.user.birthYear = @(1970);
@@ -200,10 +200,10 @@
 //            Countly.user.pictureURL = @"http://s12.postimg.org/qji0724gd/988a10da33b57631caa7ee8e2b5a9036.jpg";
             Countly.user.pictureLocalPath = localImagePath;
             Countly.user.custom = @{@"testkey1":@"testvalue1",@"testkey2":@"testvalue2"};
-        
+
             [Countly.user recordUserDetails];
         }break;
-        
+
         case 22:
         {
             [Countly.user set:@"key101" value:@"value101"];
@@ -222,7 +222,7 @@
             [Countly.user pull:@"key105" values:@[@"a",@"d"]];
             [Countly.user save];
         }break;
-        
+
         default:break;
     }
 }
@@ -242,7 +242,7 @@
 
     NSURLResponse* response;
     NSError* error;
-        
+
     switch ([sender tag])
     {
         case 31:
@@ -254,10 +254,10 @@
         {
             [NSURLConnection sendAsynchronousRequest:request queue:NSOperationQueue.mainQueue completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError)
             {
-            
+
             }];
         }break;
-        
+
         case 33:
         {
             [NSURLConnection connectionWithRequest:request delegate:self];
@@ -308,7 +308,7 @@
 
             [testTask resume];
 //          [testTask performSelector:@selector(resume) withObject:nil afterDelay:5];
-        
+
         }break;
 
         case 37:
@@ -354,7 +354,7 @@
             nc.title = @"TestViewControllerPushPop";
             [self presentViewController:nc animated:YES completion:nil];
         }break;
-        
+
         case 45:
         {
             [Countly.sharedInstance addExceptionForAutoViewTracking:TestViewControllerModal.class];
@@ -364,12 +364,12 @@
         {
             [Countly.sharedInstance removeExceptionForAutoViewTracking:TestViewControllerModal.class];
         }break;
-        
+
         case 47:
         {
             [Countly.sharedInstance reportView:@"ManualViewReportExample_MyMainView"];
         }break;
-        
+
 
         default: break;
     }
@@ -383,16 +383,21 @@
     {
         case 51:
         {
-            UIUserNotificationType userNotificationTypes = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
-            UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes categories:[Countly.sharedInstance countlyNotificationCategories]];
-            [UIApplication.sharedApplication registerUserNotificationSettings:notificationSettings];
+            [UIApplication.sharedApplication registerForRemoteNotifications];
         }break;
 
         case 52:
         {
+            UIUserNotificationType userNotificationTypes = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
+            UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes categories:nil];
+            [UIApplication.sharedApplication registerUserNotificationSettings:notificationSettings];
+        }break;
+
+        case 53:
+        {
             [Countly.sharedInstance recordLocation:(CLLocationCoordinate2D){33.6789,43.1234}];
         }break;
-    
+
         default: break;
     }
 }
@@ -407,13 +412,13 @@ dispatch_queue_t q[8];
     NSString* tag = @(t).description;
 
     NSLog(@"thread: %li", (long)t);
-    
+
     NSString* commonQueueName = @"ly.count.multithreading";
     NSString* queueName = [commonQueueName stringByAppendingString:tag];
-    
+
     if(!q[t])
         q[t] = dispatch_queue_create([queueName UTF8String], NULL);
-    
+
     for (int i=0; i<15; i++)
     {
         NSString* eventName = [@"MultiThreadingEvent" stringByAppendingString:tag];
@@ -440,17 +445,17 @@ dispatch_queue_t q[8];
                 NSLog(@"rating %li",(long)rating);
             }];
         }break;
-        
+
         case 63:
         {
             [Countly.sharedInstance setNewDeviceID:@"user@example.com" onServer:NO];
         }break;
-        
+
         case 64:
         {
             [Countly.sharedInstance setNewDeviceID:CLYIDFV onServer:YES];
         }break;
-    
+
         default: break;
     }
 }

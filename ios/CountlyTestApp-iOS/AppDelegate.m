@@ -17,7 +17,7 @@
     config.host = @"https://YOUR_COUNTLY_SERVER";
     config.enableDebug = YES;
 
-//    config.features = @[CLYPushNotifications, CLYCrashReporting, CLYAPM, CLYAutoViewTracking]];     //Optional features
+//    config.features = @[CLYPushNotifications, CLYCrashReporting, CLYAPM, CLYAutoViewTracking];     //Optional features
 
 //    config.launchOptions = launchOptions;                         //Prior to v16.10 was required for CLYPushNotifications
 //    config.isTestDevice = YES;                                    //Optional marking as test device for CLYPushNotifications

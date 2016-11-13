@@ -15,6 +15,7 @@
     CountlyConfig* config = CountlyConfig.new;
     config.appKey = @"YOUR_APP_KEY";
     config.host = @"https://YOUR_COUNTLY_SERVER";
+    config.enableDebug = YES;
 
 //    config.features = @[CLYPushNotifications, CLYCrashReporting, CLYAPM, CLYAutoViewTracking]];     //Optional features
 

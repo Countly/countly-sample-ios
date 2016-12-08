@@ -34,8 +34,8 @@
 //    config.storedRequestsLimit = 500;                             //Optional stored requests limit (default 1000 requests)
 //    config.alwaysUsePOST = YES;                                   //Optional forcing for POST method
 
-//    config.enableAppleWatch = YES;                                  //Optioanl Apple Watch related features
-//    config.ISOCountryCode = @"JP";                                //Optioanl ISO country code
+//    config.enableAppleWatch = YES;                                //Optional Apple Watch related features
+//    config.ISOCountryCode = @"JP";                                //Optional ISO country code
 //    config.city = @"Tokyo";                                       //Optional city name
 //    config.location = (CLLocationCoordinate2D){35.6895,139.6917}; //Optional location coordinates
 

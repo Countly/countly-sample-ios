@@ -115,7 +115,8 @@
 
     switch (indexPath.section)
     {
-        case 0: //Custom Events
+#pragma mark Custom Events
+        case 0:
         {
             switch (indexPath.row)
             {
@@ -155,7 +156,8 @@
         break;
 
 
-        case 1: //Crash Reporting
+#pragma mark Crash Reporting
+        case 1:
         {
             switch (indexPath.row)
             {
@@ -180,7 +182,7 @@
                 case 6:
                 {
                     [Countly.sharedInstance crashLog:@"This is a custom crash log!"];
-                    [Countly.sharedInstance crashLog:@"This is another custom crash log with argument: %i!", 2];
+                    [Countly.sharedInstance crashLog:@"This is another custom crash log with argument: %d!", 2];
                 }break;
 
                 case 7:
@@ -195,7 +197,8 @@
         break;
 
 
-        case 2: //User Details
+#pragma mark User Details
+        case 2:
         {
             switch (indexPath.row)
             {
@@ -249,7 +252,8 @@
         break;
 
 
-        case 3: //APM
+#pragma mark APM
+        case 3:
         {
             NSString* urlString = @"http://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json";
         //    NSString* urlString = @"http://www.bbc.co.uk/radio1/playlist.json";
@@ -332,7 +336,8 @@
         break;
 
 
-        case 4: //View Tracking
+#pragma mark View Tracking
+        case 4:
         {
             switch (indexPath.row)
             {
@@ -371,7 +376,8 @@
         break;
 
 
-        case 5: //Push Notifications
+#pragma mark Push Notifications
+        case 5:
         {
             switch (indexPath.row)
             {
@@ -396,9 +402,9 @@
         break;
 
 
-        case 6: //Multi Threading
+#pragma mark Multi Threading
+        case 6:
         {
-            NSLog(@"GELDI GELDI");
             NSInteger t = indexPath.row;
             NSString* tag = @(t).description;
             NSString* commonQueueName = @"ly.count.multithreading";
@@ -417,7 +423,8 @@
         break;
 
 
-        case 7: //Others
+#pragma mark Others
+        case 7:
         {
             switch (indexPath.row)
             {

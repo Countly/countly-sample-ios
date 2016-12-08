@@ -10,13 +10,9 @@
 
 - (IBAction)onClick_pushNew:(id)sender
 {
-    static int count = 0;
-
-    count++;
-
-    TestViewControllerPushPop* testViewControllerPushPop = [TestViewControllerPushPop.alloc initWithNibName:@"TestViewControllerPushPop" bundle:nil];
-    testViewControllerPushPop.title = [NSString stringWithFormat:@"%@%i",NSStringFromClass(self.class),count];
     UINavigationController* nc = (UINavigationController*)self.parentViewController;
+    TestViewControllerPushPop* testViewControllerPushPop = [TestViewControllerPushPop.alloc initWithNibName:@"TestViewControllerPushPop" bundle:nil];
+    testViewControllerPushPop.title = [NSString stringWithFormat:@"%@%d", NSStringFromClass(self.class), (int)nc.viewControllers.count];
     [nc pushViewController:testViewControllerPushPop animated:YES];
 }
 

@@ -13,7 +13,7 @@
 
 int main(int argc, char * argv[])
 {
-    [EYLogViewer add];
+//    [EYLogViewer add]; //Use this to see logs on device
 
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));

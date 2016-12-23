@@ -14,14 +14,12 @@
     CountlyConfig* config = CountlyConfig.new;
     config.appKey = @"YOUR_APP_KEY";
     config.host = @"https://YOUR_COUNTLY_SERVER";
+    config.enableDebug = YES;
+
 //  config.deviceID = @"customDeviceID"                               //Optional custom or system generated device ID
-//  config.features = @[CLYAPM];                                      //Optional features
     [Countly.sharedInstance startWithConfig:config];
     
     self.window.backgroundColor = [NSColor colorWithCalibratedRed:65/255.0 green:178/255.0 blue:70/255.0 alpha:1];
-
-//uncomment these lines (and some in main.m) for displaying console logs inside the test app
-//    [self performSelector:@selector(updateLogs) withObject:nil afterDelay:0.0];
 }
 
 

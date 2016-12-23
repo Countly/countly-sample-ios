@@ -1,11 +1,13 @@
 // erkanyildiz
-// 20160229-1439
+// 20160925-0417JST
 //
 // https://github.com/erkanyildiz/EYLogViewer
 //
 // EYLogViewer.m
 
 #import "EYLogViewer.h"
+#include <pthread.h>
+
 
 @interface EYLogViewer ()
 {
@@ -14,75 +16,54 @@
 
     BOOL isBeingDragged;
     BOOL isVisible;
-    BOOL canUpdate;
 }
-@property(nonatomic,strong) NSDate* lastUpdateDate;
 @end
 
 
 @implementation EYLogViewer
 
-const float updateInterval = 0.1;
-static EYLogViewer* shared;
++ (instancetype)sharedInstance
+{
+    static EYLogViewer* s_EYLogViewer = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{s_EYLogViewer = self.new;});
+    return s_EYLogViewer;
+}
 
 + (void)add
 {
-    // redirect stderr to log file
-    freopen([[EYLogViewer logFilePath] cStringUsingEncoding:NSASCIIStringEncoding], "w", stderr);
-    
-    shared = EYLogViewer.new;
-    [shared tryToFindTopWindow];
+    NSPipe* pipe = NSPipe.pipe;
+    NSFileHandle* fhr = [pipe fileHandleForReading];
+    dup2([[pipe fileHandleForWriting] fileDescriptor], fileno(stderr));
+    [NSNotificationCenter.defaultCenter addObserver:EYLogViewer.sharedInstance selector:@selector(readCompleted:) name:NSFileHandleReadCompletionNotification object:fhr];
+    [fhr readInBackgroundAndNotify];
+
+    [EYLogViewer.sharedInstance tryToFindTopWindow];
 }
 
 
 + (void)show
 {
-    [shared showWithAnimation];
+    [EYLogViewer.sharedInstance showWithAnimation];
 }
 
 
 + (void)hide
 {
-    [shared hideWithAnimation];
+    [EYLogViewer.sharedInstance hideWithAnimation];
 }
 
 
-#pragma mark ---
-
-
-+ (NSString*)logFilePath
-{
-    static NSString* logFilePath = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^
-    {
-        NSURL* url = [NSFileManager.defaultManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask].lastObject;
-
-        if (![NSFileManager.defaultManager fileExistsAtPath:url.absoluteString])
-        {
-            NSError* errorDir = nil;
-            [NSFileManager.defaultManager createDirectoryAtURL:url withIntermediateDirectories:YES attributes:nil error:&errorDir];
-            if(errorDir){ NSLog(@"Can not create Application Support directory: %@", errorDir); }
-        }
-
-        logFilePath = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"EYLogViewer.log"];
-    });
-    
-    return logFilePath;
-}
-
-
-#pragma mark ---
+#pragma mark -
 
 
 -(void)tryToFindTopWindow
 {
     UIView* topView = UIApplication.sharedApplication.keyWindow.subviews.lastObject;
-    
     if(!topView)
     {
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(tryToFindTopWindow) object:nil];
-        [self performSelector:@selector(tryToFindTopWindow) withObject:nil afterDelay:updateInterval];
+        [self performSelector:@selector(tryToFindTopWindow) withObject:nil afterDelay:0.1];
     }
     else
     {
@@ -126,14 +107,12 @@ static EYLogViewer* shared;
     vw_container.layer.shadowRadius = 3;
     vw_container.layer.shadowOpacity = 1;
     [UIApplication.sharedApplication.keyWindow addSubview:vw_container];
-
     // add long press gesture for moving
     UILongPressGestureRecognizer* longPressGestureRec = [UILongPressGestureRecognizer.alloc initWithTarget:self action:@selector(onLongPress:)];
     longPressGestureRec.minimumPressDuration = 0.2;
     [vw_container addGestureRecognizer:longPressGestureRec];
-    
     // add double tap press gesture for copying logs
-    UITapGestureRecognizer* tapGestureRec = [UITapGestureRecognizer.alloc initWithTarget:self action:@selector(onTap:)];
+    UITapGestureRecognizer* tapGestureRec = [UITapGestureRecognizer.alloc initWithTarget:self action:@selector(onDoubleTap:)];
     tapGestureRec.numberOfTapsRequired = 2;
     [vw_container addGestureRecognizer:tapGestureRec];
 
@@ -149,40 +128,22 @@ static EYLogViewer* shared;
     // state bools
     isBeingDragged = NO;
     isVisible = YES;
-    canUpdate = YES;
-    
-    // fire up updater
-    NSTimer* timer = [NSTimer timerWithTimeInterval:updateInterval target:self selector:@selector(update) userInfo:nil repeats:YES];
-    [NSRunLoop.mainRunLoop addTimer:timer forMode:NSRunLoopCommonModes];
 }
 
 
-- (void)update
+- (void)readCompleted:(NSNotification*)notification
 {
-    if(!canUpdate)
-        return;
+    [((NSFileHandle*)notification.object) readInBackgroundAndNotify];
+    NSString* logs = [NSString.alloc initWithData:notification.userInfo[NSFileHandleNotificationDataItem] encoding:NSUTF8StringEncoding];
+
+    dispatch_async(dispatch_get_main_queue(), ^
+    {
+        txt_console.text = [txt_console.text stringByAppendingFormat:@"%@",logs];
+    });
 
     if(isBeingDragged)
         return;
 
-    // check if log file changed
-    NSError* errorAttr = nil;
-    NSDictionary* dict = [NSFileManager.defaultManager attributesOfItemAtPath:[EYLogViewer logFilePath] error:&errorAttr];
-    if(errorAttr){ NSLog(@"Can not get attributes of log file: %@", errorAttr); }
-    if([self.lastUpdateDate isEqualToDate:dict[NSFileModificationDate]])
-        return;
-    
-    // update text view contents with latest logs
-    NSError* errorRead = nil;
-    NSData* readData = [NSData dataWithContentsOfFile:[EYLogViewer logFilePath] options:0 error:&errorRead];
-    if(errorRead){ NSLog(@"Can not read log file: %@", errorRead); }
-    NSString* readString = [NSString.alloc initWithData:readData encoding:NSUTF8StringEncoding];
-
-    if(![readString isEqualToString:@""])
-        txt_console.text = readString;
-
-    self.lastUpdateDate = dict[NSFileModificationDate];
-    
     // deal with uitextview scrolling issues
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(),
     ^{
@@ -202,48 +163,39 @@ static EYLogViewer* shared;
 }
 
 
-#pragma mark ---
+#pragma mark -
 
 
 - (void)onLongPress:(UIPanGestureRecognizer*)recognizer
 {
     // drag drop
-    
     UIView* topView = (UIView*)UIApplication.sharedApplication.keyWindow;
 
     static CGPoint diff;
     static CGPoint scrollContentOffset;
-    
     if (recognizer.state == UIGestureRecognizerStateBegan)
     {
         scrollContentOffset = txt_console.contentOffset;
-    
         CGPoint startPoint = [recognizer locationInView:topView];
-    
         diff = (CGPoint){vw_container.center.x - startPoint.x, vw_container.center.y - startPoint.y};
-    
         isBeingDragged = YES;
     }
     else if (recognizer.state == UIGestureRecognizerStateChanged)
     {
         CGPoint currentPoint = [recognizer locationInView:topView];
-
         CGPoint adjustedPoint = (CGPoint){currentPoint.x + diff.x, currentPoint.y + diff.y};
-
         vw_container.center = adjustedPoint;
-
         txt_console.contentOffset = scrollContentOffset;
     }
     else if (recognizer.state == UIGestureRecognizerStateEnded)
     {
         txt_console.contentOffset = scrollContentOffset;
-
         isBeingDragged = NO;
     }
 }
 
 
-- (void)onTap:(UITapGestureRecognizer*)recognizer
+- (void)onDoubleTap:(UITapGestureRecognizer*)recognizer
 {
     UIPasteboard* pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = txt_console.text;
@@ -262,24 +214,17 @@ static EYLogViewer* shared;
 }
 
 
-#pragma mark ---
+#pragma mark -
 
 
 - (void)hideWithAnimation
 {
     if(!isVisible)
         return;
-    
+
     isVisible = NO;
 
-    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^
-    {
-       vw_container.alpha = 0;
-    }
-    completion:^(BOOL finished)
-    {
-        canUpdate = NO;
-    }];
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{ vw_container.alpha = 0; } completion:nil];
 }
 
 
@@ -287,17 +232,9 @@ static EYLogViewer* shared;
 {
     if(isVisible)
         return;
-    
-    isVisible = YES;
-        
-    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^
-    {
-       vw_container.alpha = 0.7;
-    }
-    completion:^(BOOL finished)
-    {
-        canUpdate = YES;
-    }];
-}
 
+    isVisible = YES;
+
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{ vw_container.alpha = 0.7; }completion:nil];
+}
 @end

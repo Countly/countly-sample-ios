@@ -17,6 +17,18 @@
 @property (weak, nonatomic) IBOutlet UITableView *tbl_main;
 @end
 
+typedef enum : NSUInteger
+{
+    TestSectionCustomEvents,
+    TestSectionCrashReporting,
+    TestSectionUserDetails,
+    TestSectionAPM,
+    TestSectionViewTracking,
+    TestSectionPushNotifications,
+    TestSectionMultiThreading,
+    TestSectionOthers
+} TestSection;
+
 @implementation ViewController
 
 - (void)viewDidLoad
@@ -34,10 +46,13 @@
         [NSFileManager.defaultManager copyItemAtURL:bundleFileURL toURL:destinationURL error:nil];
     }];
     
+    [self.tbl_main reloadData];
     
-    NSInteger startSection = 0; //start section of testing app can be set here.
-    
-    [self.tbl_main scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:startSection] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    NSInteger startSection = TestSectionCustomEvents; //start section of testing app can be set here.
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^
+    {
+        [self.tbl_main scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:startSection] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    });
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -101,7 +116,6 @@
     {
         cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCountlyCellIdentifier];
         cell.textLabel.font = [UIFont fontWithName:@"Avenir" size:14];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
 
     cell.textLabel.text = [self tests][indexPath.section][indexPath.row];
@@ -116,7 +130,7 @@
     switch (indexPath.section)
     {
 #pragma mark Custom Events
-        case 0:
+        case TestSectionCustomEvents:
         {
             switch (indexPath.row)
             {
@@ -157,7 +171,7 @@
 
 
 #pragma mark Crash Reporting
-        case 1:
+        case TestSectionCrashReporting:
         {
             switch (indexPath.row)
             {
@@ -198,7 +212,7 @@
 
 
 #pragma mark User Details
-        case 2:
+        case TestSectionUserDetails:
         {
             switch (indexPath.row)
             {
@@ -253,7 +267,7 @@
 
 
 #pragma mark APM
-        case 3:
+        case TestSectionAPM:
         {
             NSString* urlString = @"http://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json";
         //    NSString* urlString = @"http://www.bbc.co.uk/radio1/playlist.json";
@@ -271,7 +285,10 @@
                 case 0: [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
                 break;
 
-                case 1: [NSURLConnection sendAsynchronousRequest:request queue:NSOperationQueue.mainQueue completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {}];
+                case 1: [NSURLConnection sendAsynchronousRequest:request queue:NSOperationQueue.mainQueue completionHandler:^(NSURLResponse * response, NSData * data, NSError * connectionError)
+                        {
+                            NSLog(@"sendAsynchronousRequest:queue:completionHandler: finished!");
+                        }];
                 break;
 
                 case 2: [NSURLConnection connectionWithRequest:request delegate:self];
@@ -287,47 +304,79 @@
 
                 case 4:
                 {
-                    [request setHTTPMethod:@"POST"];
-                    [request addValue:@"application/x-www-form-urlencoded;charset=utf-8" forHTTPHeaderField: @"Content-Type"];
-                    [request setHTTPBody:[@"testKey1=testValue1&testKey2=testValue2" dataUsingEncoding:NSUTF8StringEncoding]];
-
-                    NSURLConnection * testConnection = [NSURLConnection.alloc initWithRequest:request delegate:self startImmediately:YES];
+                    NSURLConnection * testConnection = [NSURLConnection.alloc initWithRequest:request delegate:self startImmediately:NO];
                     [testConnection start];
                 }break;
 
                 case 5:
                 {
-        /*
-                    NSURLSessionDataTask* testTask = [NSURLSession.sharedSession dataTaskWithRequest:request
-                                                                               completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
-                    {
-                        NSLog(@"dataTaskWithRequest finished!");
-                    }];
-
-                    NSURLSessionDataTask* testTask = [NSURLSession.sharedSession dataTaskWithURL:URL
-                                                                                           completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
-                    {
-                        NSLog(@"dataTaskWithURL finished!");
-                    }];
-
-                    NSURLSessionDownloadTask* testTask = [NSURLSession.sharedSession downloadTaskWithRequest:request
-                                                                                                      completionHandler:^(NSURL * _Nullable location,
-                                                                                                                          NSURLResponse * _Nullable response,
-                                                                                                                          NSError * _Nullable error)
-                    {
-                          NSLog(@"downloadTaskWithRequest finished!");
-                    }];
-        */
+                    NSURLConnection * testConnection = [NSURLConnection.alloc initWithRequest:request delegate:self startImmediately:YES];
+                }break;
+                
+                case 6:
+                {
                     NSURLSessionDataTask* testTask = [NSURLSession.sharedSession dataTaskWithRequest:request];
-
                     [testTask resume];
-                    //[testTask performSelector:@selector(resume) withObject:nil afterDelay:5];
+                }break;
+                
+                case 7:
+                {
+                    NSURLSessionDataTask* testTask = [NSURLSession.sharedSession dataTaskWithRequest:request completionHandler:^(NSData * data, NSURLResponse * response, NSError * error)
+                    {
+                        NSLog(@"dataTaskWithRequest:completionHandler: finished!");
+                    }];
+                    [testTask resume];
+                }break;
+                
+                case 8:
+                {
+                    NSURLSessionDataTask* testTask = [NSURLSession.sharedSession dataTaskWithURL:URL];
+                    [testTask resume];
                 }break;
 
-                case 6: [Countly.sharedInstance addExceptionForAPM:@"http://finance.yahoo.com"];
+                case 9:
+                {
+                    NSURLSessionDataTask* testTask = [NSURLSession.sharedSession dataTaskWithURL:URL completionHandler:^(NSData * data, NSURLResponse * response, NSError * error)
+                    {
+                        NSLog(@"dataTaskWithURL:completionHandler: finished!");
+                    }];
+                    [testTask resume];
+                }break;
+
+                case 10:
+                {
+                    NSURLSessionDownloadTask* testTask = [NSURLSession.sharedSession downloadTaskWithRequest:request];
+                    [testTask resume];
+                }break;
+                
+                case 11:
+                {
+                    NSURLSessionDownloadTask* testTask = [NSURLSession.sharedSession downloadTaskWithRequest:request completionHandler:^(NSURL * location, NSURLResponse * response, NSError * error)
+                    {
+                        NSLog(@"dataTaskWithRequest:completionHandler: finished!");
+                    }];
+                    [testTask resume];
+                }break;
+                
+                case 12:
+                {
+                    NSURLSessionDownloadTask* testTask = [NSURLSession.sharedSession downloadTaskWithURL:URL];
+                    [testTask resume];
+                }break;
+
+                case 13:
+                {
+                    NSURLSessionDownloadTask* testTask = [NSURLSession.sharedSession downloadTaskWithURL:URL completionHandler:^(NSURL * location, NSURLResponse * response, NSError * error)
+                    {
+                        NSLog(@"dataTaskWithURL:completionHandler: finished!");
+                    }];
+                    [testTask resume];
+                }break;
+
+                case 14: [Countly.sharedInstance addExceptionForAPM:@"http://finance.yahoo.com"];
                 break;
 
-                case 7: [Countly.sharedInstance removeExceptionForAPM:@"http://finance.yahoo.com"];
+                case 15: [Countly.sharedInstance removeExceptionForAPM:@"http://finance.yahoo.com"];
                 break;
 
                 default:break;
@@ -337,7 +386,7 @@
 
 
 #pragma mark View Tracking
-        case 4:
+        case TestSectionViewTracking:
         {
             switch (indexPath.row)
             {
@@ -377,7 +426,7 @@
 
 
 #pragma mark Push Notifications
-        case 5:
+        case TestSectionPushNotifications:
         {
             switch (indexPath.row)
             {
@@ -403,7 +452,7 @@
 
 
 #pragma mark Multi Threading
-        case 6:
+        case TestSectionMultiThreading:
         {
             NSInteger t = indexPath.row;
             NSString* tag = @(t).description;
@@ -424,14 +473,14 @@
 
 
 #pragma mark Others
-        case 7:
+        case TestSectionOthers:
         {
             switch (indexPath.row)
             {
                 case 0: [Countly.sharedInstance setCustomHeaderFieldValue:@"thisismyvalue"];
                 break;
 
-                case 1: [Countly.sharedInstance askForStarRating:^(NSInteger rating){ NSLog(@"rating %li",(long)rating); }];
+                case 1: [Countly.sharedInstance askForStarRating:^(NSInteger rating){ NSLog(@"rating %d",(int)rating); }];
                 break;
 
                 case 2: [Countly.sharedInstance setNewDeviceID:@"user@example.com" onServer:NO];
@@ -448,6 +497,8 @@
         default:
             break;
     }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark -
@@ -510,8 +561,16 @@
                     @"sendAsynchronous",
                     @"connectionWithRequest",
                     @"initWithRequest",
-                    @"initWithRequest POST",
+                    @"initWithRequest startImmediately NO",
+                    @"initWithRequest startImmediately YES",
                     @"dataTaskWithRequest",
+                    @"dataTaskWithRequest:completionHandler",
+                    @"dataTaskWithURL",
+                    @"dataTaskWithURL:completionHandler",
+                    @"downloadTaskWithRequest",
+                    @"downloadTaskWithRequest:completionHandler",
+                    @"downloadTaskWithURL",
+                    @"downloadTaskWithURL:completionHandler",
                     @"add exception",
                     @"remove exception"],
     
@@ -547,7 +606,7 @@
 
 #pragma mark -
 
--(void)connection:(NSURLConnection *)connection didFailWithError:(nonnull NSError *)error
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
 //    NSLog(@"%s %@",__FUNCTION__,[connection description]);
 }

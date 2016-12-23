@@ -49,6 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 //      config.starRatingDismissButtonTitle = "No idea"                 //Optional star-rating dialog dismiss button title
 //      config.starRatingSessionCount = 3                               //Optional star-rating dialog auto-ask by session count
 //      config.starRatingDisableAskingForEachAppVersion = true          //Optional star-rating dialog auto-ask by versions disabling
+//      config.starRatingCompletion = { (rating : Int) in print("rating \(rating)") }
 
         Countly.sharedInstance().start(with: config)
     

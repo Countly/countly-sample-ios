@@ -17,9 +17,9 @@
     config.host = @"https://YOUR_COUNTLY_SERVER";
     config.enableDebug = YES;
 
-//    config.features = @[CLYPushNotifications, CLYCrashReporting, CLYAPM, CLYAutoViewTracking];     //Optional features
+//    config.features = @[CLYPushNotifications, CLYCrashReporting, CLYAutoViewTracking];     //Optional features
 
-//    config.launchOptions = launchOptions;                         //Prior to v16.10 was required for CLYPushNotifications
+//    config.launchOptions = launchOptions;                         //Prior to v16.12 was required for CLYPushNotifications
 //    config.isTestDevice = YES;                                    //Optional marking as test device for CLYPushNotifications
 //    config.sendPushTokenAlways = YES;                             //Optional forcing to send token always
 //    config.doNotShowAlertForNotifications = YES;                  //Optional disabling alerts shown by notification
@@ -48,6 +48,7 @@
 //    config.starRatingDismissButtonTitle = @"No idea";             //Optional star-rating dialog dismiss button title
 //    config.starRatingSessionCount = 3;                            //Optional star-rating dialog auto-ask by session count
 //    config.starRatingDisableAskingForEachAppVersion = YES;        //Optional star-rating dialog auto-ask by versions disabling
+//    config.starRatingCompletion = ^(NSInteger rating){ NSLog(@"rating %d",(int)rating); };        //Optional star-rating dialog auto-ask completion block
 
     [Countly.sharedInstance startWithConfig:config];
 

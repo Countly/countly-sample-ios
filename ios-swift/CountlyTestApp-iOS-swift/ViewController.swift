@@ -10,6 +10,18 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate
 {
 }
 
+enum TestSection : Int
+{
+    case CustomEvents = 0
+    case CrashReporting
+    case UserDetails
+    case APM
+    case ViewTracking
+    case PushNotifications
+    case MultiThreading
+    case Others
+}
+
 class ViewController: UIViewController
 {
     let sections : [String] = [
@@ -48,10 +60,20 @@ class ViewController: UIViewController
                                  "custom modifiers 2",
                                  "user logged in",
                                  "user logged out"],
-                                ["dataTaskWith request",
-                                 "dataTaskWith request & completion",
-                                 "dataTaskWith URL & completion",
-                                 "downloadTaskWith request & completion",
+                                ["sendSynchronous",
+                                 "sendAsynchronous",
+                                 "connectionWithRequest",
+                                 "initWithRequest",
+                                 "initWithRequest startImmediately NO",
+                                 "initWithRequest startImmediately YES",
+                                 "dataTaskWithRequest",
+                                 "dataTaskWithRequest:completionHandler",
+                                 "dataTaskWithURL",
+                                 "dataTaskWithURL:completionHandler",
+                                 "downloadTaskWithRequest",
+                                 "downloadTaskWithRequest:completionHandler",
+                                 "downloadTaskWithURL",
+                                 "downloadTaskWithURL:completionHandler",
                                  "add exception",
                                  "remove exception"],
                                 ["turn off auto",
@@ -61,10 +83,10 @@ class ViewController: UIViewController
                                  "add exception",
                                  "remove exception",
                                  "manual report"],
-                                                            ["ask for notification permission",
+                                ["ask for notification permission",
                                  "ask for notification permission with completion handler",
                                  "record location"],
-                                                            ["thread 1",
+                                ["thread 1",
                                  "thread 2",
                                  "thread 3",
                                  "thread 4",
@@ -72,7 +94,7 @@ class ViewController: UIViewController
                                  "thread 6",
                                  "thread 7",
                                  "thread 8"],
-                                                            ["set custom header field value",
+                                ["set custom header field value",
                                  "ask for star-rating",
                                  "set new device id",
                                  "set new device id with server merge"]
@@ -82,9 +104,11 @@ class ViewController: UIViewController
 
     @IBOutlet weak var tableView: UITableView!
 
+    let startSection = TestSection.CustomEvents.rawValue //start section of testing app can be set here.
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        tableView.scrollToRow(at: IndexPath(row: 0, section:startSection), at:UITableViewScrollPosition.top, animated:false)
     }
 
 
@@ -123,19 +147,19 @@ class ViewController: UIViewController
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "CountlyTestCell")
-        cell.selectionStyle = .none
         cell.textLabel?.text = tests[indexPath.section][indexPath.row]
-            return cell
+        cell.textLabel?.font = UIFont.systemFont(ofSize:12)
+        return cell
     }
 
-
+    @available(iOS, deprecated:10.0)
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        NSLog("Test: %@ - %", sections[indexPath.section], tests[indexPath.section][indexPath.row]);
+        print("Test: \(sections[indexPath.section]) - \(tests[indexPath.section][indexPath.row])");
 
         switch indexPath.section
         {
-            case 0: //MARK: Custom Events
+            case TestSection.CustomEvents.rawValue: //MARK: Custom Events
             switch (indexPath.row)
             {
                 case 0: Countly.sharedInstance().recordEvent("button-click")
@@ -174,7 +198,7 @@ class ViewController: UIViewController
             break
 
 
-            case 1: //MARK: Crash Reporting
+            case TestSection.CrashReporting.rawValue: //MARK: Crash Reporting
             switch (indexPath.row)
             {
                 case 0: CountlyCrashReporter.sharedInstance().crashTest()
@@ -214,7 +238,7 @@ class ViewController: UIViewController
             break
 
 
-            case 2: //MARK: User Details
+            case TestSection.UserDetails.rawValue: //MARK: User Details
             switch (indexPath.row)
             {
                 case 0:
@@ -264,7 +288,7 @@ class ViewController: UIViewController
             break
 
 
-            case 3: //MARK: APM
+            case TestSection.APM.rawValue: //MARK: APM
             let urlString : String = "http://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json"
             //let urlString : String = "http://www.bbc.co.uk/radio1/playlist.json"
             //let urlString : String = "https://maps.googleapis.com/maps/api/geocode/json?address=Ebisu%20Garden%20Place,Tokyo"
@@ -272,43 +296,98 @@ class ViewController: UIViewController
 
             let url : URL = URL.init(string: urlString)!
             let request : URLRequest = URLRequest.init(url: url)
-            
+            var response: URLResponse?
             switch (indexPath.row)
             {
                 case 0:
+                    do { try NSURLConnection.sendSynchronousRequest(request, returning: &response) }
+                    catch { print(error) }
+
+                break
+
+                case 1:
+                    NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main, completionHandler:
+                    { (response, data, error) in
+                        print("sendAsynchronousRequest:queue:completionHandler: finished!")
+                    })
+                break
+
+                case 2:
+                    print("connectionWithRequest is not available on Swift")
+                break
+
+                case 3:
+                     let testConnection : NSURLConnection? = NSURLConnection.init(request:request, delegate:self)
+                     print(testConnection!)
+                break
+
+                case 4:
+                     let testConnection : NSURLConnection? = NSURLConnection.init(request:request, delegate:self, startImmediately: false)
+                     testConnection?.start()
+                break
+
+                case 5:
+                    let testConnection : NSURLConnection? = NSURLConnection.init(request:request, delegate:self, startImmediately: true)
+                    print(testConnection!)
+                break
+
+                case 6:
                     let testTask : URLSessionDataTask = URLSession.shared.dataTask(with: request)
                     testTask.resume()
                     //DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(5)) { testTask.resume() }
                 break
 
-                case 1:
+                case 7:
                     let testTask : URLSessionDataTask = URLSession.shared.dataTask(with: request, completionHandler:
                     { (data, response, error) in
-                            NSLog("dataTaskWithRequest finished!");
+                        print("dataTaskWithRequest:completionHandler: finished!")
                     })
                     testTask.resume()
                 break
 
-                case 2:
+                case 8:
+                    let testTask : URLSessionDataTask = URLSession.shared.dataTask(with: url)
+                    testTask.resume()
+                break
+
+                case 9:
                     let testTask : URLSessionDataTask = URLSession.shared.dataTask(with: url, completionHandler:
                     { (data, response, error) in
-                            NSLog("dataTaskWithRequest finished!");
+                        print("dataTaskWithRequest finished!");
                     })
                     testTask.resume()
                 break
- 
-                case 3:
+
+                case 10:
+                    let testTask : URLSessionDownloadTask = URLSession.shared.downloadTask(with: request)
+                    testTask.resume()
+                break
+
+                case 7:
                     let testTask : URLSessionDownloadTask = URLSession.shared.downloadTask(with: request, completionHandler:
-                    { (url, response, error) in
-                        NSLog("downloadTaskWithRequest finished!");
+                    { (data, response, error) in
+                        print("downloadTaskWithRequest:completionHandler: finished!")
                     })
                     testTask.resume()
                 break
 
-                case 4: Countly.sharedInstance().addException(forAPM: "http://finance.yahoo.com")
+                case 8:
+                    let testTask : URLSessionDownloadTask = URLSession.shared.downloadTask(with: url)
+                    testTask.resume()
                 break
 
-                case 5: Countly.sharedInstance().removeException(forAPM: "http://finance.yahoo.com")
+                case 9:
+                    let testTask : URLSessionDownloadTask = URLSession.shared.downloadTask(with: url, completionHandler:
+                    { (data, response, error) in
+                        print("downloadTaskWithRequest finished!");
+                    })
+                    testTask.resume()
+                break
+                
+                case 14: Countly.sharedInstance().addException(forAPM: "http://finance.yahoo.com")
+                break
+
+                case 15: Countly.sharedInstance().removeException(forAPM: "http://finance.yahoo.com")
                 break
 
                 default:break
@@ -316,7 +395,7 @@ class ViewController: UIViewController
             break
 
 
-            case 4: //MARK: View Tracking
+            case TestSection.ViewTracking.rawValue: //MARK: View Tracking
             switch (indexPath.row)
             {
                 case 0: Countly.sharedInstance().isAutoViewTrackingEnabled = false;
@@ -353,7 +432,7 @@ class ViewController: UIViewController
             break
 
 
-            case 5: //MARK: Push Notifications
+            case TestSection.PushNotifications.rawValue: //MARK: Push Notifications
             switch (indexPath.row)
             {
                 case 0: Countly.sharedInstance().askForNotificationPermission()
@@ -363,8 +442,8 @@ class ViewController: UIViewController
                     let authorizationOptions : UNAuthorizationOptions = [.badge, .alert, .sound]
                     Countly.sharedInstance().askForNotificationPermission(options: authorizationOptions, completionHandler:
                     { (granted : Bool, error : Error?) in
-                        NSLog("granted \(granted)")
-                        NSLog("error \(error)")
+                        print("granted \(granted)")
+                        print("error \(error)")
                     })
                 break
 
@@ -376,7 +455,7 @@ class ViewController: UIViewController
             break
 
 
-            case 6: //MARK: Multi Threading
+            case TestSection.MultiThreading.rawValue: //MARK: Multi Threading
             let t : Int = indexPath.row
             let tag : String = String(t)
             let commonQueueName : String = "ly.count.multithreading"
@@ -396,7 +475,7 @@ class ViewController: UIViewController
             break
 
 
-            case 7: //MARK: Others
+            case TestSection.Others.rawValue: //MARK: Others
             switch (indexPath.row)
             {
                 case 0: Countly.sharedInstance().setCustomHeaderFieldValue("thisismyvalue")
@@ -404,7 +483,7 @@ class ViewController: UIViewController
 
                 case 1: Countly.sharedInstance().ask(forStarRating:
                 { (rating : Int) in
-                    NSLog("rating \(rating)")
+                    print("rating \(rating)")
                 })
                 break
 
@@ -420,5 +499,7 @@ class ViewController: UIViewController
 
             default:break
         }
+        
+        tableView.deselectRow(at:indexPath, animated:true)
     }
 }

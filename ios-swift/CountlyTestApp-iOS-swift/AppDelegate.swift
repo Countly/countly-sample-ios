@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         config.host = "https://YOUR_COUNTLY_SERVER"
         config.enableDebug = true
 
-//      config.features = [CLYPushNotifications, CLYCrashReporting, CLYAPM, CLYAutoViewTracking] //Optional features
+//      config.features = [CLYPushNotifications, CLYCrashReporting, CLYAutoViewTracking] //Optional features
 
 //      config.launchOptions = launchOptions                            //Prior to v16.10 was required for CLYPushNotifications
 //      config.isTestDevice = true                                      //Optional marking as test device for CLYPushNotifications

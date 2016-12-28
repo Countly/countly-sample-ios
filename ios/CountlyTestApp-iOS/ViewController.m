@@ -48,7 +48,7 @@ typedef enum : NSUInteger
     
     [self.tbl_main reloadData];
     
-    NSInteger startSection = TestSectionCustomEvents; //start section of testing app can be set here.
+    NSInteger startSection = TestSectionOthers; //start section of testing app can be set here.
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^
     {
         [self.tbl_main scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:startSection] atScrollPosition:UITableViewScrollPositionTop animated:NO];
@@ -411,24 +411,43 @@ typedef enum : NSUInteger
                 case 2:
                 {
                     TestViewControllerModal* testViewControllerModal = [TestViewControllerModal.alloc initWithNibName:@"TestViewControllerModal" bundle:nil];
+                    testViewControllerModal.title = @"MyViewControllerTitle";
                     [self presentViewController:testViewControllerModal animated:YES completion:nil];
                 }break;
 
                 case 3:
                 {
                     TestViewControllerPushPop* testViewControllerPushPop = [TestViewControllerPushPop.alloc initWithNibName:@"TestViewControllerPushPop" bundle:nil];
+                    UILabel* titleView = [UILabel.alloc initWithFrame:(CGRect){0,0,320,30}];
+                    titleView.text = @"MyViewControllerCustomTitleView";
+                    titleView.textAlignment = NSTextAlignmentCenter;
+                    titleView.textColor = UIColor.redColor;
+                    titleView.font = [UIFont systemFontOfSize:12];
+                    testViewControllerPushPop.navigationItem.titleView = titleView;
                     UINavigationController* nc = [UINavigationController.alloc initWithRootViewController:testViewControllerPushPop];
                     nc.title = @"TestViewControllerPushPop";
                     [self presentViewController:nc animated:YES completion:nil];
                 }break;
 
-                case 4: [Countly.sharedInstance addExceptionForAutoViewTracking:TestViewControllerModal.class];
+                case 4: [Countly.sharedInstance addExceptionForAutoViewTracking:NSStringFromClass(TestViewControllerModal.class)];
                 break;
 
-                case 5: [Countly.sharedInstance removeExceptionForAutoViewTracking:TestViewControllerModal.class];
+                case 5: [Countly.sharedInstance removeExceptionForAutoViewTracking:NSStringFromClass(TestViewControllerModal.class)];
                 break;
 
-                case 6: [Countly.sharedInstance reportView:@"ManualViewReportExample_MyMainView"];
+                case 6: [Countly.sharedInstance addExceptionForAutoViewTracking:@"MyViewControllerTitle"];
+                break;
+
+                case 7: [Countly.sharedInstance removeExceptionForAutoViewTracking:@"MyViewControllerTitle"];
+                break;
+
+                case 8: [Countly.sharedInstance addExceptionForAutoViewTracking:@"MyViewControllerCustomTitleView"];
+                break;
+
+                case 9: [Countly.sharedInstance removeExceptionForAutoViewTracking:@"MyViewControllerCustomTitleView"];
+                break;
+
+                case 10: [Countly.sharedInstance reportView:@"ManualViewReportExample_MyMainView"];
                 break;
 
                 default: break;
@@ -590,8 +609,12 @@ typedef enum : NSUInteger
                     @"Turn on AutoViewTracking",
                     @"Present Modal View Controller",
                     @"Push / Pop with Navigation Controller ",
-                    @"Add Exception View Controller",
-                    @"Remove Exception View Controller",
+                    @"Add Exception with Class Name",
+                    @"Remove Exception with Class Name",
+                    @"Add Exception with Title",
+                    @"Remove Exception with Title",
+                    @"Add Exception with Custom titleView",
+                    @"Remove Exception with Custom titleView",
                     @"Report View Manually"],
     
                   @[@"Ask for Notification Permission",

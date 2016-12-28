@@ -36,36 +36,39 @@ class ViewController: UIViewController
                               ]
 
     let tests : [[String]] =  [
-                                ["record event",
-                                 "record event with count",
-                                 "record event with sum",
-                                 "record event with duration",
-                                 "record event with segm.",
-                                 "record event with segm. & count",
-                                 "record event with segm. count & sum",
-                                 "record event with segm. count, sum & dur.",
-                                 "start event",
-                                 "end event",
-                                 "end event with segm. count & sum"],
-                                ["unrecognized selector",
-                                 "out of bounds",
-                                 "NULL pointer",
-                                 "invalid geometry",
-                                 "assert fail",
-                                 "kill",
-                                 "custom crash log",
-                                 "record handled exception"],
-                                ["record user details",
-                                 "custom modifiers 1",
-                                 "custom modifiers 2",
-                                 "user logged in",
-                                 "user logged out"],
+                                ["Record Event",
+                                 "Record Event with Count",
+                                 "Record Event with Sum",
+                                 "Record Event with Duration",
+                                 "Record Event with Segmentation",
+                                 "Record Event with Segmentation & Count",
+                                 "Record Event with Segmentation, Count & Sum",
+                                 "Record Event with Segmentation, Count, Sum & Dur.",
+                                 "Start Event",
+                                 "End Event",
+                                 "End Event with Segmentation, Count & Sum"],
+
+                                ["Unrecognized Selector",
+                                "Out of Bounds",
+                                "NULL pointer",
+                                "Invalid Geometry",
+                                "Assert Fail",
+                                "Kill",
+                                "Custom Crash Log",
+                                "Record Handled Exception"],
+
+                                ["Record User Details",
+                                 "Custom Modifiers 1",
+                                 "Custom Modifiers 2",
+                                 "User Logged in",
+                                 "User Logged out"],
+
                                 ["sendSynchronous",
                                  "sendAsynchronous",
                                  "connectionWithRequest",
                                  "initWithRequest",
-                                 "initWithRequest startImmediately NO",
-                                 "initWithRequest startImmediately YES",
+                                 "initWithRequest:startImmediately NO",
+                                 "initWithRequest:startImmediately YES",
                                  "dataTaskWithRequest",
                                  "dataTaskWithRequest:completionHandler",
                                  "dataTaskWithURL",
@@ -74,30 +77,38 @@ class ViewController: UIViewController
                                  "downloadTaskWithRequest:completionHandler",
                                  "downloadTaskWithURL",
                                  "downloadTaskWithURL:completionHandler",
-                                 "add exception",
-                                 "remove exception"],
-                                ["turn off auto",
-                                 "turn on auto",
-                                 "present modal",
-                                 "navigation controller push / pop",
-                                 "add exception",
-                                 "remove exception",
-                                 "manual report"],
-                                ["ask for notification permission",
-                                 "ask for notification permission with completion handler",
-                                 "record location"],
-                                ["thread 1",
-                                 "thread 2",
-                                 "thread 3",
-                                 "thread 4",
-                                 "thread 5",
-                                 "thread 6",
-                                 "thread 7",
-                                 "thread 8"],
-                                ["set custom header field value",
-                                 "ask for star-rating",
-                                 "set new device id",
-                                 "set new device id with server merge"]
+                                 "Add Exception URL",
+                                 "Remove Exception URL"],
+
+                                ["Turn off AutoViewTracking",
+                                 "Turn on AutoViewTracking",
+                                 "Present Modal View Controller",
+                                 "Push / Pop with Navigation Controller ",
+                                 "Add Exception with Class Name",
+                                 "Remove Exception with Class Name",
+                                 "Add Exception with Title",
+                                 "Remove Exception with Title",
+                                 "Add Exception with Custom titleView",
+                                 "Remove Exception with Custom titleView",
+                                 "Report View Manually"],
+
+                                ["Ask for Notification Permission",
+                                 "Ask for Notification Permission with Completion Handler",
+                                 "Record Geo-Location for Push"],
+
+                                ["Thread 1",
+                                 "Thread 2",
+                                 "Thread 3",
+                                 "Thread 4",
+                                 "Thread 5",
+                                 "Thread 6",
+                                 "Thread 7",
+                                 "Thread 8"],
+
+                                ["Set Custom Header Field Value",
+                                 "Ask for Star-Rating",
+                                 "Set New Device ID",
+                                 "Set New Device ID with Server Merge"]
                               ]
 
     var queue : [DispatchQueue?] = Array(repeating: nil, count: 15)
@@ -189,7 +200,10 @@ class ViewController: UIViewController
                 case 8: Countly.sharedInstance().startEvent("timed-event")
                 break
 
-                case 9: Countly.sharedInstance().endEvent("timed-event", segmentation:["k" : "v"], count:1, sum:0)
+                case 9: Countly.sharedInstance().endEvent("timed-event")
+                break
+
+                case 10: Countly.sharedInstance().endEvent("timed-event", segmentation:["k" : "v"], count:1, sum:0)
                 break
 
                 default:
@@ -407,24 +421,43 @@ class ViewController: UIViewController
                 case 2:
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let testVC = storyboard.instantiateViewController(withIdentifier: "TestViewControllerModal") as! TestViewControllerModal
+                    testVC.title = "MyViewControllerTitle"
                     self.present(testVC, animated: true, completion: nil)
                 break
 
                 case 3:
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let testVC = storyboard.instantiateViewController(withIdentifier: "TestViewControllerPushPop") as! TestViewControllerPushPop
+                    let titleView = UILabel(frame: CGRect(x:0,y:0,width:320,height:30))
+                    titleView.text = "MyViewControllerCustomTitleView"
+                    titleView.textAlignment = NSTextAlignment.center
+                    titleView.textColor = UIColor.red
+                    titleView.font = UIFont.systemFont(ofSize:12)
+                    testVC.navigationItem.titleView = titleView
                     let nc = UINavigationController(rootViewController: testVC)
                     nc.title = "TestViewControllerPushPop"
                     self.present(nc, animated: true, completion: nil)
                 break
 
-                case 4: Countly.sharedInstance().addException(forAutoViewTracking:object_getClass(TestViewControllerModal.self))
+                case 4: Countly.sharedInstance().addException(forAutoViewTracking:String.init(utf8String: object_getClassName(TestViewControllerModal.self)))
                 break
 
-                case 5: Countly.sharedInstance().removeException(forAutoViewTracking:object_getClass(TestViewControllerModal.self))
+                case 5: Countly.sharedInstance().removeException(forAutoViewTracking:String.init(utf8String: object_getClassName(TestViewControllerModal.self)))
                 break
 
-                case 6: Countly.sharedInstance().reportView("ManualViewReportExample")
+                case 6: Countly.sharedInstance().addException(forAutoViewTracking:"MyViewControllerTitle")
+                break
+
+                case 7: Countly.sharedInstance().removeException(forAutoViewTracking:"MyViewControllerTitle")
+                break
+
+                case 8: Countly.sharedInstance().addException(forAutoViewTracking:"MyViewControllerCustomTitleView")
+                break
+
+                case 9: Countly.sharedInstance().removeException(forAutoViewTracking:"MyViewControllerCustomTitleView")
+                break
+
+                case 10: Countly.sharedInstance().reportView("ManualViewReportExample")
                 break
 
                 default: break

@@ -13,6 +13,9 @@
 @interface ViewController ()
 {
     dispatch_queue_t q[8];
+    NSArray* sections;
+    NSArray* tests;
+    NSArray* explanations;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tbl_main;
 @end
@@ -45,7 +48,204 @@ typedef enum : NSUInteger
         NSURL* destinationURL = [documentsDirectory URLByAppendingPathComponent:bundleFileURL.lastPathComponent];
         [NSFileManager.defaultManager copyItemAtURL:bundleFileURL toURL:destinationURL error:nil];
     }];
-    
+
+    sections =
+    @[
+        @"Custom Events",
+        @"Crash Reporting",
+        @"User Details",
+        @"APM",
+        @"View Tracking",
+        @"Push Notifications",
+        @"Multi Threading",
+        @"Others"
+    ];
+
+    tests =
+    @[
+        @[
+            @"Record Event",
+            @"Record Event with Count",
+            @"Record Event with Sum",
+            @"Record Event with Duration",
+            @"Record Event with Segmentation",
+            @"Record Event with Segmentation & Count",
+            @"Record Event with Segmentation, Count & Sum",
+            @"Record Event with Segmentation, Count, Sum & Dur.",
+            @"Start Event",
+            @"End Event",
+            @"End Event with Segmentation, Count & Sum"
+        ],
+
+        @[
+            @"Unrecognized Selector",
+            @"Out of Bounds",
+            @"NULL pointer",
+            @"Invalid Geometry",
+            @"Assert Fail",
+            @"Kill",
+            @"Custom Crash Log",
+            @"Record Handled Exception"
+        ],
+
+        @[
+            @"Record User Details",
+            @"Custom Modifiers 1",
+            @"Custom Modifiers 2",
+            @"User Logged in",
+            @"User Logged out"
+        ],
+
+        @[
+            @"sendSynchronous",
+            @"sendAsynchronous",
+            @"connectionWithRequest",
+            @"initWithRequest",
+            @"initWithRequest:startImmediately NO",
+            @"initWithRequest:startImmediately YES",
+            @"dataTaskWithRequest",
+            @"dataTaskWithRequest:completionHandler",
+            @"dataTaskWithURL",
+            @"dataTaskWithURL:completionHandler",
+            @"downloadTaskWithRequest",
+            @"downloadTaskWithRequest:completionHandler",
+            @"downloadTaskWithURL",
+            @"downloadTaskWithURL:completionHandler",
+            @"Add Exception URL",
+            @"Remove Exception URL"
+        ],
+
+        @[
+            @"Turn off AutoViewTracking",
+            @"Turn on AutoViewTracking",
+            @"Present Modal View Controller",
+            @"Push / Pop with Navigation Controller ",
+            @"Add Exception with Class Name",
+            @"Remove Exception with Class Name",
+            @"Add Exception with Title",
+            @"Remove Exception with Title",
+            @"Add Exception with Custom titleView",
+            @"Remove Exception with Custom titleView",
+            @"Report View Manually"
+        ],
+
+        @[
+            @"Ask for Notification Permission",
+            @"Ask for Notification Permission with Completion Handler",
+            @"Record Geo-Location for Push"
+        ],
+
+        @[
+            @"Thread 1",
+            @"Thread 2",
+            @"Thread 3",
+            @"Thread 4",
+            @"Thread 5",
+            @"Thread 6",
+            @"Thread 7",
+            @"Thread 8"
+        ],
+
+        @[
+            @"Set Custom Header Field Value",
+            @"Ask for Star-Rating",
+            @"Set New Device ID",
+            @"Set New Device ID with Server Merge"
+        ]
+    ];
+
+    explanations =
+    @[
+        @[
+            @"TestEventA",
+            @"TestEventA  c:5",
+            @"TestEventB  s:1.99",
+            @"TestEventB  d:3.14",
+            @"TestEventC  sg:{k:v}",
+            @"TestEventC  sg:{k:v}  c:5",
+            @"TestEventD  sg:{k:v}  c:5  s:1.99",
+            @"TestEventD  sg:{k:v}  c:5  s:1.99  d:0.314",
+            @"timed-event",
+            @"timed-event",
+            @"timed-event  sg:{k:v}  c:1  s:0"
+        ],
+        @[
+            @"crashTest method in SDK",
+            @"crashTest2 method in SDK",
+            @"crashTest3 method in SDK",
+            @"crashTest4 method in SDK",
+            @"crashTest5 method in SDK",
+            @"crashTest6 method in SDK",
+            @"This is a custom crash log!",
+            @"n:MyException  r:MyReason  d:{key:value}"
+        ],
+
+        @[
+            @"Dummy John Doe data",
+            @"set-incrementBy-push-save",
+            @"multiply-unset-pull-save",
+            @"OwnUserID",
+            @"switch back to IDFV and start new session"
+        ],
+
+        @[
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"http://finance.yahoo.com",
+            @"http://finance.yahoo.com"
+        ],
+
+        @[
+            @"",
+            @"",
+            @"",
+            @"",
+            @"TestViewControllerModal.class",
+            @"TestViewControllerModal.class",
+            @"MyViewControllerTitle",
+            @"MyViewControllerTitle",
+            @"MyViewControllerCustomTitleView",
+            @"MyViewControllerCustomTitleView",
+            @"ManualViewReportExample_MyMainView"
+        ],
+
+        @[
+            @"",
+            @"",
+            @"33.6789, 43.1234"
+        ],
+
+        @[
+            @"MultiThreadingEvent  sg:{k:v0}",
+            @"MultiThreadingEvent  sg:{k:v1}",
+            @"MultiThreadingEvent  sg:{k:v2}",
+            @"MultiThreadingEvent  sg:{k:v3}",
+            @"MultiThreadingEvent  sg:{k:v4}",
+            @"MultiThreadingEvent  sg:{k:v5}",
+            @"MultiThreadingEvent  sg:{k:v6}",
+            @"MultiThreadingEvent  sg:{k:v7}"
+        ],
+
+        @[
+            @"thisismyvalue",
+            @"",
+            @"user@example.com",
+            @"IDFV"
+        ]
+    ];
+
     [self.tbl_main reloadData];
     
     NSInteger startSection = TestSectionOthers; //start section of testing app can be set here.
@@ -83,19 +283,19 @@ typedef enum : NSUInteger
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self sections] count];
+    return [sections count];
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self tests][section] count];
+    return [tests[section] count];
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [self sections][section];
+    return sections[section];
 }
 
 
@@ -115,26 +315,22 @@ typedef enum : NSUInteger
     if(!cell)
     {
         cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCountlyCellIdentifier];
-        cell.textLabel.font = [UIFont fontWithName:@"Avenir" size:14];
+        cell.textLabel.font = [UIFont fontWithName:@"Avenir-medium" size:14];
         cell.textLabel.adjustsFontSizeToFitWidth = YES;
-        cell.detailTextLabel.textColor = UIColor.lightGrayColor;
+        cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.8 alpha:1];
         cell.detailTextLabel.font = [UIFont fontWithName:@"Menlo" size:11];
     }
 
-    cell.textLabel.text = [self tests][indexPath.section][indexPath.row];
+    cell.textLabel.text = tests[indexPath.section][indexPath.row];
+    cell.detailTextLabel.text = explanations[indexPath.section][indexPath.row];
     
-    if(indexPath.section == TestSectionCustomEvents)
-        cell.detailTextLabel.text = [self explanations][indexPath.section][indexPath.row];
-    else
-        cell.detailTextLabel.text = @"";
-
     return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Test: %@ - %@",[self sections][indexPath.section],[self tests][indexPath.section][indexPath.row]);
+    NSLog(@"Test: %@ - %@",sections[indexPath.section],tests[indexPath.section][indexPath.row]);
 
     switch (indexPath.section)
     {
@@ -531,140 +727,6 @@ typedef enum : NSUInteger
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
-#pragma mark -
-
-- (NSArray *)sections
-{
-    static NSArray* sections;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^
-    {
-        sections =  @[@"Custom Events",
-                      @"Crash Reporting",
-                      @"User Details",
-                      @"APM",
-                      @"View Tracking",
-                      @"Push Notifications",
-                      @"Multi Threading",
-                      @"Others"];
-    });
-    
-    return sections;
-}
-
-
-- (NSArray *)tests
-{
-    static NSArray* tests;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^
-    {
-        tests = @[
-                  @[@"Record Event",
-                    @"Record Event with Count",
-                    @"Record Event with Sum",
-                    @"Record Event with Duration",
-                    @"Record Event with Segmentation",
-                    @"Record Event with Segmentation & Count",
-                    @"Record Event with Segmentation, Count & Sum",
-                    @"Record Event with Segmentation, Count, Sum & Dur.",
-                    @"Start Event",
-                    @"End Event",
-                    @"End Event with Segmentation, Count & Sum"],
-    
-                  @[@"Unrecognized Selector",
-                    @"Out of Bounds",
-                    @"NULL pointer",
-                    @"Invalid Geometry",
-                    @"Assert Fail",
-                    @"Kill",
-                    @"Custom Crash Log",
-                    @"Record Handled Exception"],
-    
-                  @[@"Record User Details",
-                    @"Custom Modifiers 1",
-                    @"Custom Modifiers 2",
-                    @"User Logged in",
-                    @"User Logged out"],
-    
-                  @[@"sendSynchronous",
-                    @"sendAsynchronous",
-                    @"connectionWithRequest",
-                    @"initWithRequest",
-                    @"initWithRequest:startImmediately NO",
-                    @"initWithRequest:startImmediately YES",
-                    @"dataTaskWithRequest",
-                    @"dataTaskWithRequest:completionHandler",
-                    @"dataTaskWithURL",
-                    @"dataTaskWithURL:completionHandler",
-                    @"downloadTaskWithRequest",
-                    @"downloadTaskWithRequest:completionHandler",
-                    @"downloadTaskWithURL",
-                    @"downloadTaskWithURL:completionHandler",
-                    @"Add Exception URL",
-                    @"Remove Exception URL"],
-    
-                  @[@"Turn off AutoViewTracking",
-                    @"Turn on AutoViewTracking",
-                    @"Present Modal View Controller",
-                    @"Push / Pop with Navigation Controller ",
-                    @"Add Exception with Class Name",
-                    @"Remove Exception with Class Name",
-                    @"Add Exception with Title",
-                    @"Remove Exception with Title",
-                    @"Add Exception with Custom titleView",
-                    @"Remove Exception with Custom titleView",
-                    @"Report View Manually"],
-    
-                  @[@"Ask for Notification Permission",
-                    @"Ask for Notification Permission with Completion Handler",
-                    @"Record Geo-Location for Push"],
-    
-                  @[@"Thread 1",
-                    @"Thread 2",
-                    @"Thread 3",
-                    @"Thread 4",
-                    @"Thread 5",
-                    @"Thread 6",
-                    @"Thread 7",
-                    @"Thread 8"],
-    
-                  @[@"Set Custom Header Field Value",
-                    @"Ask for Star-Rating",
-                    @"Set New Device ID",
-                    @"Set New Device ID with Server Merge"]];
-    });
-    
-    return tests;
-}
-
-- (NSArray *)explanations
-{
-    static NSArray* explanations;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^
-    {
-        explanations =
-        @[
-            @[
-            @"TestEventA",
-            @"TestEventA  c:5",
-            @"TestEventB  s:1.99",
-            @"TestEventB  d:3.14",
-            @"TestEventC  sg:{k:v}",
-            @"TestEventC  sg:{k:v}  c:5",
-            @"TestEventD  sg:{k:v}  c:5  s:1.99",
-            @"TestEventD  sg:{k:v}  c:5  s:1.99  d:0.314",
-            @"timed-event",
-            @"timed-event",
-            @"timed-event  sg:{k:v}  c:1  s:0"]
-        ];
-    });
-    
-    return explanations;
-}
-
 
 #pragma mark -
 

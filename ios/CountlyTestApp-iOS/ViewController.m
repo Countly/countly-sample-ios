@@ -9,6 +9,7 @@
 #import "TestViewControllerPushPop.h"
 #import "Countly.h"
 #import "EYLogViewer.h"
+#import "EventCreatorViewController.h"
 
 @interface ViewController ()
 {
@@ -74,7 +75,8 @@ typedef enum : NSUInteger
             @"Record Event with Segmentation, Count, Sum & Dur.",
             @"Start Event",
             @"End Event",
-            @"End Event with Segmentation, Count & Sum"
+            @"End Event with Segmentation, Count & Sum",
+            @"Create a Custom Event"
         ],
 
         @[
@@ -167,7 +169,8 @@ typedef enum : NSUInteger
             @"TestEventD  sg:{k:v}  c:5  s:1.99  d:0.314",
             @"timed-event",
             @"timed-event",
-            @"timed-event  sg:{k:v}  c:1  s:0"
+            @"timed-event  sg:{k:v}  c:1  s:0",
+            @""
         ],
         @[
             @"crashTest method in SDK",
@@ -248,7 +251,7 @@ typedef enum : NSUInteger
 
     [self.tbl_main reloadData];
     
-    NSInteger startSection = TestSectionOthers; //start section of testing app can be set here.
+    NSInteger startSection = TestSectionCustomEvents; //start section of testing app can be set here.
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^
     {
         [self.tbl_main scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:startSection] atScrollPosition:UITableViewScrollPositionTop animated:NO];
@@ -370,6 +373,15 @@ typedef enum : NSUInteger
                 break;
 
                 case 10: [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k" : @"v"} count:1 sum:0];
+                break;
+
+                case 11:
+                {
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"EventCreatorViewController" bundle: nil];
+                    EventCreatorViewController *ecvc = [storyboard instantiateViewControllerWithIdentifier:@"EventCreatorViewController"];
+                    UINavigationController* nc = [UINavigationController.alloc initWithRootViewController:ecvc];
+                    [self presentViewController:nc animated:YES completion:nil];
+                }
                 break;
 
                 default:break;

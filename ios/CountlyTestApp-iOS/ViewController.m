@@ -10,6 +10,7 @@
 #import "Countly.h"
 #import "EYLogViewer.h"
 #import "EventCreatorViewController.h"
+#import "UserDetailsViewController.h"
 
 @interface ViewController ()
 {
@@ -92,8 +93,11 @@ typedef enum : NSUInteger
 
         @[
             @"Record User Details",
-            @"Custom Modifiers 1",
-            @"Custom Modifiers 2",
+            @"Custom Property Modifiers",
+            @"Dummy User Details",
+            @"Delete Some User Details by Nulling",
+            @"Some Custom Property Modifiers 1",
+            @"Some Custom Property Modifiers 2",
             @"User Logged in",
             @"User Logged out"
         ],
@@ -184,7 +188,10 @@ typedef enum : NSUInteger
         ],
 
         @[
+            @"",
+            @"",
             @"Dummy John Doe data",
+            @"email, birthYear, gender",
             @"set-incrementBy-push-save",
             @"multiply-unset-pull-save",
             @"OwnUserID",
@@ -377,7 +384,7 @@ typedef enum : NSUInteger
 
                 case 11:
                 {
-                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"EventCreatorViewController" bundle: nil];
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle: nil];
                     EventCreatorViewController *ecvc = [storyboard instantiateViewControllerWithIdentifier:@"EventCreatorViewController"];
                     UINavigationController* nc = [UINavigationController.alloc initWithRootViewController:ecvc];
                     [self presentViewController:nc animated:YES completion:nil];
@@ -438,6 +445,18 @@ typedef enum : NSUInteger
             {
                 case 0:
                 {
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle: nil];
+                    UserDetailsViewController *udvc = [storyboard instantiateViewControllerWithIdentifier:@"UserDetailsViewController"];
+                    UINavigationController* nc = [UINavigationController.alloc initWithRootViewController:udvc];
+                    [self presentViewController:nc animated:YES completion:nil];
+                }break;
+
+                case 1:
+                {
+                }break;
+
+                case 2:
+                {
                     NSURL* documentsDirectory = [NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].lastObject;
                     NSString* localImagePath = [documentsDirectory.absoluteString stringByAppendingPathComponent:@"SamplePicture.jpg"];
                     // SamplePicture.png or SamplePicture.gif can be used too.
@@ -455,29 +474,40 @@ typedef enum : NSUInteger
                     [Countly.user recordUserDetails];
                 }break;
 
-                case 1:
+                case 3:
+                {
+                    Countly.user.email = NSNull.null;
+                    Countly.user.birthYear = NSNull.null;
+                    Countly.user.gender = NSNull.null;
+
+                    [Countly.user recordUserDetails];
+                }break;
+
+                case 4:
                 {
                     [Countly.user set:@"key101" value:@"value101"];
                     [Countly.user incrementBy:@"key102" value:5];
                     [Countly.user push:@"key103" value:@"singlevalue"];
                     [Countly.user push:@"key104" values:@[@"first",@"second",@"third"]];
                     [Countly.user push:@"key105" values:@[@"a",@"b",@"c",@"d"]];
+
                     [Countly.user save];
                 }break;
 
-                case 2:
+                case 5:
                 {
                     [Countly.user multiply:@"key102" value:2];
                     [Countly.user unSet:@"key103"];
                     [Countly.user pull:@"key104" value:@"second"];
                     [Countly.user pull:@"key105" values:@[@"a",@"d"]];
+
                     [Countly.user save];
                 }break;
 
-                case 3: [Countly.sharedInstance userLoggedIn:@"OwnUserID"];
+                case 6: [Countly.sharedInstance userLoggedIn:@"OwnUserID"];
                 break;
 
-                case 4: [Countly.sharedInstance userLoggedOut];
+                case 7: [Countly.sharedInstance userLoggedOut];
                 break;
 
                 default:break;

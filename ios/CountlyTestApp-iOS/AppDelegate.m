@@ -5,7 +5,7 @@
 // Please visit www.count.ly for more information.
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "MainViewController.h"
 #import "Countly.h"
 
 @implementation AppDelegate
@@ -54,8 +54,8 @@
 
 
     self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
-    self.viewController = [ViewController.alloc initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
+    self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
     [self.window makeKeyAndVisible];
 
     return YES;

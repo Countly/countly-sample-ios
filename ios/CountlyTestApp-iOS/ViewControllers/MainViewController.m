@@ -1,18 +1,19 @@
-// ViewController.h
+// MainViewController.h
 //
 // This code is provided under the MIT License.
 //
 // Please visit www.count.ly for more information.
 
-#import "ViewController.h"
-#import "TestViewControllerModal.h"
-#import "TestViewControllerPushPop.h"
+#import "MainViewController.h"
 #import "Countly.h"
-#import "EYLogViewer.h"
+#import "TestModalViewController.h"
+#import "TestPushPopViewController.h"
 #import "EventCreatorViewController.h"
-#import "UserDetailsViewController.h"
+#import "UserDetailsEditorViewController.h"
+#import "UserDetailsCustomModifiersViewController.h"
+#import "EYLogViewer.h"
 
-@interface ViewController ()
+@interface MainViewController ()
 {
     dispatch_queue_t q[8];
     NSArray* sections;
@@ -34,7 +35,7 @@ typedef enum : NSUInteger
     TestSectionOthers
 } TestSection;
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void)viewDidLoad
 {
@@ -222,8 +223,8 @@ typedef enum : NSUInteger
             @"",
             @"",
             @"",
-            @"TestViewControllerModal.class",
-            @"TestViewControllerModal.class",
+            @"TestModalViewController.class",
+            @"TestModalViewController.class",
             @"MyViewControllerTitle",
             @"MyViewControllerTitle",
             @"MyViewControllerCustomTitleView",
@@ -384,7 +385,7 @@ typedef enum : NSUInteger
 
                 case 11:
                 {
-                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle: nil];
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
                     EventCreatorViewController *ecvc = [storyboard instantiateViewControllerWithIdentifier:@"EventCreatorViewController"];
                     UINavigationController* nc = [UINavigationController.alloc initWithRootViewController:ecvc];
                     [self presentViewController:nc animated:YES completion:nil];
@@ -445,14 +446,18 @@ typedef enum : NSUInteger
             {
                 case 0:
                 {
-                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle: nil];
-                    UserDetailsViewController *udvc = [storyboard instantiateViewControllerWithIdentifier:@"UserDetailsViewController"];
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
+                    UserDetailsEditorViewController *udvc = [storyboard instantiateViewControllerWithIdentifier:@"UserDetailsEditorViewController"];
                     UINavigationController* nc = [UINavigationController.alloc initWithRootViewController:udvc];
                     [self presentViewController:nc animated:YES completion:nil];
                 }break;
 
                 case 1:
                 {
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
+                    UserDetailsCustomModifiersViewController *udvc = [storyboard instantiateViewControllerWithIdentifier:@"UserDetailsCustomModifiersViewController"];
+                    UINavigationController* nc = [UINavigationController.alloc initWithRootViewController:udvc];
+                    [self presentViewController:nc animated:YES completion:nil];
                 }break;
 
                 case 2:
@@ -648,29 +653,32 @@ typedef enum : NSUInteger
 
                 case 2:
                 {
-                    TestViewControllerModal* testViewControllerModal = [TestViewControllerModal.alloc initWithNibName:@"TestViewControllerModal" bundle:nil];
-                    testViewControllerModal.title = @"MyViewControllerTitle";
-                    [self presentViewController:testViewControllerModal animated:YES completion:nil];
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
+                    TestModalViewController* tmvc = [storyboard instantiateViewControllerWithIdentifier:@"TestModalViewController"];
+                    tmvc.title = @"MyViewControllerTitle";
+                    [self presentViewController:tmvc animated:YES completion:nil];
                 }break;
 
                 case 3:
                 {
-                    TestViewControllerPushPop* testViewControllerPushPop = [TestViewControllerPushPop.alloc initWithNibName:@"TestViewControllerPushPop" bundle:nil];
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
+                    TestPushPopViewController* tppvc = [storyboard instantiateViewControllerWithIdentifier:@"TestPushPopViewController"];
+
                     UILabel* titleView = [UILabel.alloc initWithFrame:(CGRect){0,0,320,30}];
                     titleView.text = @"MyViewControllerCustomTitleView";
                     titleView.textAlignment = NSTextAlignmentCenter;
                     titleView.textColor = UIColor.redColor;
                     titleView.font = [UIFont systemFontOfSize:12];
-                    testViewControllerPushPop.navigationItem.titleView = titleView;
-                    UINavigationController* nc = [UINavigationController.alloc initWithRootViewController:testViewControllerPushPop];
-                    nc.title = @"TestViewControllerPushPop";
+                    tppvc.navigationItem.titleView = titleView;
+                    UINavigationController* nc = [UINavigationController.alloc initWithRootViewController:tppvc];
+                    nc.title = @"TestPushPopViewController";
                     [self presentViewController:nc animated:YES completion:nil];
                 }break;
 
-                case 4: [Countly.sharedInstance addExceptionForAutoViewTracking:NSStringFromClass(TestViewControllerModal.class)];
+                case 4: [Countly.sharedInstance addExceptionForAutoViewTracking:NSStringFromClass(TestModalViewController.class)];
                 break;
 
-                case 5: [Countly.sharedInstance removeExceptionForAutoViewTracking:NSStringFromClass(TestViewControllerModal.class)];
+                case 5: [Countly.sharedInstance removeExceptionForAutoViewTracking:NSStringFromClass(TestModalViewController.class)];
                 break;
 
                 case 6: [Countly.sharedInstance addExceptionForAutoViewTracking:@"MyViewControllerTitle"];

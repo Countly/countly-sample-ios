@@ -1,4 +1,4 @@
-// UserDetailsViewController.h
+// UserDetailsCustomModifiersViewController.h
 //
 // This code is provided under the MIT License.
 //
@@ -6,6 +6,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserDetailsViewController : UIViewController
-
+@interface UserDetailsCustomModifiersViewController : UIViewController
 @end

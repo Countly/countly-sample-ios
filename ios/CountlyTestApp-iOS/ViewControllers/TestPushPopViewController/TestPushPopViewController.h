@@ -1,4 +1,4 @@
-// ViewController.h
+// TestPushPopViewController.h
 //
 // This code is provided under the MIT License.
 //
@@ -6,5 +6,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
+@interface TestPushPopViewController : UIViewController
 @end

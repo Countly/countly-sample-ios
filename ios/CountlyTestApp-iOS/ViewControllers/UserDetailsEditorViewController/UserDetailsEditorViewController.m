@@ -1,13 +1,13 @@
-// UserDetailsViewController.m
+// UserDetailsEditorViewController.m
 //
 // This code is provided under the MIT License.
 //
 // Please visit www.count.ly for more information.
 
-#import "UserDetailsViewController.h"
+#import "UserDetailsEditorViewController.h"
 #import "Countly.h"
 
-@interface UserDetailsViewController ()
+@interface UserDetailsEditorViewController ()
 {
     NSMutableArray* custom;
     UITextField* txt_name;
@@ -22,7 +22,7 @@
 @property (nonatomic, weak) IBOutlet UITableView* tableView;
 @end
 
-@implementation UserDetailsViewController
+@implementation UserDetailsEditorViewController
 
 - (void)viewDidLoad
 {
@@ -43,6 +43,7 @@
     self.tableView.tableFooterView = UIView.new;
     [self.tableView reloadData];
 }
+
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -67,10 +68,12 @@
     sgm_gender.selectedSegmentIndex = [(NSString*)Countly.user.gender isEqualToString:@"M"] ? 0 : [(NSString*)Countly.user.gender isEqualToString:@"F"] ? 1 : -1 ;
 }
 
+
 - (void)onClick_cancel:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 - (void)onClick_record:(id)sender
 {
@@ -107,6 +110,7 @@
 {
     return 2;
 }
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

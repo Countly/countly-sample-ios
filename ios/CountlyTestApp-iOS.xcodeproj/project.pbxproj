@@ -11,12 +11,16 @@
 		D20C2C5F1A3F2DF600664CAD /* SamplePicture.gif in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */; };
 		D20C2C601A3F2DF600664CAD /* SamplePicture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */; };
 		D20C2C611A3F2DF600664CAD /* SamplePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */; };
-		D267B2E21E2766E000176C13 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D267B2E11E2766E000176C13 /* UserDetailsViewController.m */; };
+		D2340D081E33B726003C3841 /* Countly.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2340CF91E33B726003C3841 /* Countly.storyboard */; };
+		D2340D091E33B726003C3841 /* EventCreatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340CFC1E33B726003C3841 /* EventCreatorViewController.m */; };
+		D2340D131E33BA09003C3841 /* TestModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340D111E33BA09003C3841 /* TestModalViewController.m */; };
+		D2340D191E33BE15003C3841 /* TestPushPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340D171E33BE15003C3841 /* TestPushPopViewController.m */; };
+		D2340D1D1E33C55B003C3841 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340D1B1E33C55B003C3841 /* MainViewController.m */; };
+		D2340D211E33D89E003C3841 /* UserDetailsEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340D201E33D89E003C3841 /* UserDetailsEditorViewController.m */; };
+		D2340D251E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340D241E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m */; };
 		D273859F1D963842008D201F /* CountlyPushNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = D273859E1D963842008D201F /* CountlyPushNotifications.m */; };
 		D290ED8A186337A90027082D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290ED89186337A90027082D /* CoreTelephony.framework */; };
 		D290ED8C186337B00027082D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290ED8B186337B00027082D /* CoreData.framework */; };
-		D2A72C131C7597AF008CCD38 /* TestViewControllerPushPop.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A72C111C7597AF008CCD38 /* TestViewControllerPushPop.m */; };
-		D2A72C141C7597AF008CCD38 /* TestViewControllerPushPop.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A72C121C7597AF008CCD38 /* TestViewControllerPushPop.xib */; };
 		D2AAC1101D9921A400B6EA08 /* EYLogViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AAC10F1D9921A400B6EA08 /* EYLogViewer.m */; };
 		D2BAB0A217EC8EE600807D0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A117EC8EE600807D0D /* Foundation.framework */; };
 		D2BAB0A417EC8EE600807D0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A317EC8EE600807D0D /* CoreGraphics.framework */; };
@@ -24,12 +28,8 @@
 		D2BAB0AC17EC8EE600807D0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2BAB0AA17EC8EE600807D0D /* InfoPlist.strings */; };
 		D2BAB0AE17EC8EE600807D0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BAB0AD17EC8EE600807D0D /* main.m */; };
 		D2BAB0B217EC8EE600807D0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BAB0B117EC8EE600807D0D /* AppDelegate.m */; };
-		D2BAB0B817EC8EE600807D0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BAB0B717EC8EE600807D0D /* ViewController.m */; };
 		D2BAB0BA17EC8EE600807D0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2BAB0B917EC8EE600807D0D /* Images.xcassets */; };
-		D2BAB0D717EC8FF400807D0D /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2BAB0D617EC8FF400807D0D /* ViewController.xib */; };
 		D2D4F4281A0BB34500C0EF0B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D4F4271A0BB34500C0EF0B /* AdSupport.framework */; };
-		D2DA0C221E237D7C002641B9 /* EventCreatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DA0C201E237D7C002641B9 /* EventCreatorViewController.m */; };
-		D2DA0C251E2397B1002641B9 /* Countly.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2DA0C241E2397B1002641B9 /* Countly.storyboard */; };
 		D2EB406A1C58BFAA00EAA633 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB404F1C58BFAA00EAA633 /* Countly.m */; };
 		D2EB406C1C58BFAA00EAA633 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40521C58BFAA00EAA633 /* Countly_OpenUDID.m */; };
 		D2EB406D1C58BFAA00EAA633 /* CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40541C58BFAA00EAA633 /* CountlyAPM.m */; };
@@ -43,8 +43,6 @@
 		D2EB40751C58BFAA00EAA633 /* CountlyPersistency.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40641C58BFAA00EAA633 /* CountlyPersistency.m */; };
 		D2EB40761C58BFAA00EAA633 /* CountlyUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40661C58BFAA00EAA633 /* CountlyUserDetails.m */; };
 		D2EDCF571D2BFFBD00F75DDC /* CountlyStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EDCF561D2BFFBD00F75DDC /* CountlyStarRating.m */; };
-		D2F530131C757E5B00A1B922 /* TestViewControllerModal.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F530111C757E5B00A1B922 /* TestViewControllerModal.m */; };
-		D2F530141C757E5B00A1B922 /* TestViewControllerModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2F530121C757E5B00A1B922 /* TestViewControllerModal.xib */; };
 		D2FB68FC1C69D5F200079DF6 /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FB68FB1C69D5F200079DF6 /* CountlyViewTracking.m */; };
 /* End PBXBuildFile section */
 
@@ -54,15 +52,23 @@
 		D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SamplePicture.jpg; sourceTree = "<group>"; };
 		D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SamplePicture.png; sourceTree = "<group>"; };
 		D22D41671C6E386C0078AF7D /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
-		D267B2E01E2766E000176C13 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
-		D267B2E11E2766E000176C13 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
+		D2340CF91E33B726003C3841 /* Countly.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Countly.storyboard; sourceTree = "<group>"; };
+		D2340CFB1E33B726003C3841 /* EventCreatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCreatorViewController.h; sourceTree = "<group>"; };
+		D2340CFC1E33B726003C3841 /* EventCreatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCreatorViewController.m; sourceTree = "<group>"; };
+		D2340D101E33BA09003C3841 /* TestModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModalViewController.h; sourceTree = "<group>"; };
+		D2340D111E33BA09003C3841 /* TestModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModalViewController.m; sourceTree = "<group>"; };
+		D2340D161E33BE15003C3841 /* TestPushPopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPushPopViewController.h; sourceTree = "<group>"; };
+		D2340D171E33BE15003C3841 /* TestPushPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPushPopViewController.m; sourceTree = "<group>"; };
+		D2340D1B1E33C55B003C3841 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		D2340D1C1E33C55B003C3841 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		D2340D1F1E33D89E003C3841 /* UserDetailsEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsEditorViewController.h; sourceTree = "<group>"; };
+		D2340D201E33D89E003C3841 /* UserDetailsEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsEditorViewController.m; sourceTree = "<group>"; };
+		D2340D231E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsCustomModifiersViewController.h; sourceTree = "<group>"; };
+		D2340D241E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsCustomModifiersViewController.m; sourceTree = "<group>"; };
 		D273859D1D963842008D201F /* CountlyPushNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPushNotifications.h; sourceTree = "<group>"; };
 		D273859E1D963842008D201F /* CountlyPushNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPushNotifications.m; sourceTree = "<group>"; };
 		D290ED89186337A90027082D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D290ED8B186337B00027082D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		D2A72C101C7597AF008CCD38 /* TestViewControllerPushPop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewControllerPushPop.h; sourceTree = "<group>"; };
-		D2A72C111C7597AF008CCD38 /* TestViewControllerPushPop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewControllerPushPop.m; sourceTree = "<group>"; };
-		D2A72C121C7597AF008CCD38 /* TestViewControllerPushPop.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewControllerPushPop.xib; sourceTree = "<group>"; };
 		D2AAC10C1D98F7B000B6EA08 /* CountlyTestApp-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CountlyTestApp-iOS.entitlements"; sourceTree = "<group>"; };
 		D2AAC10E1D9921A400B6EA08 /* EYLogViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYLogViewer.h; sourceTree = "<group>"; };
 		D2AAC10F1D9921A400B6EA08 /* EYLogViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYLogViewer.m; sourceTree = "<group>"; };
@@ -76,14 +82,8 @@
 		D2BAB0AF17EC8EE600807D0D /* CountlyTestApp-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CountlyTestApp-iOS-Prefix.pch"; sourceTree = "<group>"; };
 		D2BAB0B017EC8EE600807D0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2BAB0B117EC8EE600807D0D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D2BAB0B617EC8EE600807D0D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D2BAB0B717EC8EE600807D0D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D2BAB0B917EC8EE600807D0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D2BAB0D617EC8FF400807D0D /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		D2D4F4271A0BB34500C0EF0B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		D2DA0C1F1E237D7C002641B9 /* EventCreatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCreatorViewController.h; sourceTree = "<group>"; };
-		D2DA0C201E237D7C002641B9 /* EventCreatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCreatorViewController.m; sourceTree = "<group>"; };
-		D2DA0C241E2397B1002641B9 /* Countly.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Countly.storyboard; sourceTree = "<group>"; };
 		D2EB404D1C58BFAA00EAA633 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		D2EB404E1C58BFAA00EAA633 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
 		D2EB404F1C58BFAA00EAA633 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
@@ -114,9 +114,6 @@
 		D2EB40681C58BFAA00EAA633 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D2EDCF551D2BFFBD00F75DDC /* CountlyStarRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyStarRating.h; sourceTree = "<group>"; };
 		D2EDCF561D2BFFBD00F75DDC /* CountlyStarRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyStarRating.m; sourceTree = "<group>"; };
-		D2F530101C757E5B00A1B922 /* TestViewControllerModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewControllerModal.h; sourceTree = "<group>"; };
-		D2F530111C757E5B00A1B922 /* TestViewControllerModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewControllerModal.m; sourceTree = "<group>"; };
-		D2F530121C757E5B00A1B922 /* TestViewControllerModal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewControllerModal.xib; sourceTree = "<group>"; };
 		D2FB68FA1C69D5F200079DF6 /* CountlyViewTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyViewTracking.h; sourceTree = "<group>"; };
 		D2FB68FB1C69D5F200079DF6 /* CountlyViewTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyViewTracking.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +143,66 @@
 				D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */,
 			);
 			path = img;
+			sourceTree = "<group>";
+		};
+		D2340CF81E33B726003C3841 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2340CF91E33B726003C3841 /* Countly.storyboard */,
+				D2340D1C1E33C55B003C3841 /* MainViewController.h */,
+				D2340D1B1E33C55B003C3841 /* MainViewController.m */,
+				D2340D0F1E33BA09003C3841 /* TestModalViewController */,
+				D2340D151E33BE15003C3841 /* TestPushPopViewController */,
+				D2340D1E1E33D89E003C3841 /* UserDetailsEditorViewController */,
+				D2340CFA1E33B726003C3841 /* EventCreatorViewController */,
+				D2340D221E33D8F6003C3841 /* UserDetailsCustomModifiersViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D2340CFA1E33B726003C3841 /* EventCreatorViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D2340CFB1E33B726003C3841 /* EventCreatorViewController.h */,
+				D2340CFC1E33B726003C3841 /* EventCreatorViewController.m */,
+			);
+			path = EventCreatorViewController;
+			sourceTree = "<group>";
+		};
+		D2340D0F1E33BA09003C3841 /* TestModalViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D2340D101E33BA09003C3841 /* TestModalViewController.h */,
+				D2340D111E33BA09003C3841 /* TestModalViewController.m */,
+			);
+			path = TestModalViewController;
+			sourceTree = "<group>";
+		};
+		D2340D151E33BE15003C3841 /* TestPushPopViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D2340D161E33BE15003C3841 /* TestPushPopViewController.h */,
+				D2340D171E33BE15003C3841 /* TestPushPopViewController.m */,
+			);
+			path = TestPushPopViewController;
+			sourceTree = "<group>";
+		};
+		D2340D1E1E33D89E003C3841 /* UserDetailsEditorViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D2340D1F1E33D89E003C3841 /* UserDetailsEditorViewController.h */,
+				D2340D201E33D89E003C3841 /* UserDetailsEditorViewController.m */,
+			);
+			path = UserDetailsEditorViewController;
+			sourceTree = "<group>";
+		};
+		D2340D221E33D8F6003C3841 /* UserDetailsCustomModifiersViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D2340D231E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.h */,
+				D2340D241E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m */,
+			);
+			path = UserDetailsCustomModifiersViewController;
 			sourceTree = "<group>";
 		};
 		D2AAC10D1D9921A400B6EA08 /* EYLogViewer */ = {
@@ -195,20 +252,7 @@
 				D2AAC10C1D98F7B000B6EA08 /* CountlyTestApp-iOS.entitlements */,
 				D2BAB0B017EC8EE600807D0D /* AppDelegate.h */,
 				D2BAB0B117EC8EE600807D0D /* AppDelegate.m */,
-				D2BAB0B617EC8EE600807D0D /* ViewController.h */,
-				D2BAB0B717EC8EE600807D0D /* ViewController.m */,
-				D2BAB0D617EC8FF400807D0D /* ViewController.xib */,
-				D2DA0C1F1E237D7C002641B9 /* EventCreatorViewController.h */,
-				D2DA0C201E237D7C002641B9 /* EventCreatorViewController.m */,
-				D267B2E01E2766E000176C13 /* UserDetailsViewController.h */,
-				D267B2E11E2766E000176C13 /* UserDetailsViewController.m */,
-				D2DA0C241E2397B1002641B9 /* Countly.storyboard */,
-				D2F530101C757E5B00A1B922 /* TestViewControllerModal.h */,
-				D2F530111C757E5B00A1B922 /* TestViewControllerModal.m */,
-				D2F530121C757E5B00A1B922 /* TestViewControllerModal.xib */,
-				D2A72C101C7597AF008CCD38 /* TestViewControllerPushPop.h */,
-				D2A72C111C7597AF008CCD38 /* TestViewControllerPushPop.m */,
-				D2A72C121C7597AF008CCD38 /* TestViewControllerPushPop.xib */,
+				D2340CF81E33B726003C3841 /* ViewControllers */,
 				D2AAC10D1D9921A400B6EA08 /* EYLogViewer */,
 				D20534431D267FB100CBB8B9 /* count.ly.cer */,
 				D20C2C5B1A3F2DF600664CAD /* img */,
@@ -340,14 +384,11 @@
 			files = (
 				D2BAB0BA17EC8EE600807D0D /* Images.xcassets in Resources */,
 				D20534441D267FB100CBB8B9 /* count.ly.cer in Resources */,
-				D2F530141C757E5B00A1B922 /* TestViewControllerModal.xib in Resources */,
-				D2DA0C251E2397B1002641B9 /* Countly.storyboard in Resources */,
 				D20C2C601A3F2DF600664CAD /* SamplePicture.jpg in Resources */,
-				D2BAB0D717EC8FF400807D0D /* ViewController.xib in Resources */,
-				D2A72C141C7597AF008CCD38 /* TestViewControllerPushPop.xib in Resources */,
 				D20C2C5F1A3F2DF600664CAD /* SamplePicture.gif in Resources */,
 				D20C2C611A3F2DF600664CAD /* SamplePicture.png in Resources */,
 				D2BAB0AC17EC8EE600807D0D /* InfoPlist.strings in Resources */,
+				D2340D081E33B726003C3841 /* Countly.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,28 +399,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2A72C131C7597AF008CCD38 /* TestViewControllerPushPop.m in Sources */,
 				D273859F1D963842008D201F /* CountlyPushNotifications.m in Sources */,
+				D2340D191E33BE15003C3841 /* TestPushPopViewController.m in Sources */,
+				D2340D211E33D89E003C3841 /* UserDetailsEditorViewController.m in Sources */,
 				D2EB40731C58BFAA00EAA633 /* CountlyDeviceInfo.m in Sources */,
 				D2BAB0B217EC8EE600807D0D /* AppDelegate.m in Sources */,
-				D267B2E21E2766E000176C13 /* UserDetailsViewController.m in Sources */,
-				D2DA0C221E237D7C002641B9 /* EventCreatorViewController.m in Sources */,
 				D2EB40751C58BFAA00EAA633 /* CountlyPersistency.m in Sources */,
+				D2340D131E33BA09003C3841 /* TestModalViewController.m in Sources */,
 				D2EB406F1C58BFAA00EAA633 /* CountlyCommon.m in Sources */,
 				D2EB40761C58BFAA00EAA633 /* CountlyUserDetails.m in Sources */,
 				D2BAB0AE17EC8EE600807D0D /* main.m in Sources */,
 				D2EB40701C58BFAA00EAA633 /* CountlyConfig.m in Sources */,
+				D2340D1D1E33C55B003C3841 /* MainViewController.m in Sources */,
 				D2EB406C1C58BFAA00EAA633 /* Countly_OpenUDID.m in Sources */,
 				D2EB406D1C58BFAA00EAA633 /* CountlyAPM.m in Sources */,
 				D2EB406A1C58BFAA00EAA633 /* Countly.m in Sources */,
 				D2AAC1101D9921A400B6EA08 /* EYLogViewer.m in Sources */,
+				D2340D091E33B726003C3841 /* EventCreatorViewController.m in Sources */,
 				D2EB406E1C58BFAA00EAA633 /* CountlyAPMNetworkLog.m in Sources */,
 				D2EB40741C58BFAA00EAA633 /* CountlyEvent.m in Sources */,
-				D2F530131C757E5B00A1B922 /* TestViewControllerModal.m in Sources */,
 				D2FB68FC1C69D5F200079DF6 /* CountlyViewTracking.m in Sources */,
 				D2EB40711C58BFAA00EAA633 /* CountlyConnectionManager.m in Sources */,
-				D2BAB0B817EC8EE600807D0D /* ViewController.m in Sources */,
 				D2EB40721C58BFAA00EAA633 /* CountlyCrashReporter.m in Sources */,
+				D2340D251E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m in Sources */,
 				D2EDCF571D2BFFBD00F75DDC /* CountlyStarRating.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

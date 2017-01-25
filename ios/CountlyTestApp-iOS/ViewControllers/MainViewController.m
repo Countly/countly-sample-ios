@@ -403,23 +403,45 @@ typedef enum : NSUInteger
         {
             switch (indexPath.row)
             {
-                case 0:[CountlyCrashReporter.sharedInstance crashTest];
-                break;
+                case 0:
+                {
+                    #pragma clang diagnostic push
+                    #pragma clang diagnostic ignored "-Wundeclared-selector"
+                    [self performSelector:@selector(thisIsTheUnrecognizedSelectorCausingTheCrash)];
+                    #pragma clang diagnostic pop
+                }break;
 
-                case 1:[CountlyCrashReporter.sharedInstance crashTest2];
-                break;
+                case 1:
+                {
+                    #pragma clang diagnostic push
+                    #pragma clang diagnostic ignored "-Wunused-variable"
+                    NSArray* anArray = @[@"one",@"two",@"three"];
+                    NSString* myCrashingString = anArray[5];
+                    #pragma clang diagnostic pop
+                }break;
 
-                case 2:[CountlyCrashReporter.sharedInstance crashTest3];
-                break;
+                case 2:
+                {
+                    int *nullPointer = NULL;
+                    *nullPointer = 2015;
+                }break;
 
-                case 3:[CountlyCrashReporter.sharedInstance crashTest4];
-                break;
+                case 3:
+                {
+                    CGRect aRect = (CGRect){0.0/0.0, 0.0, 100.0, 100.0};
+                    UIView *crashView = UIView.new;
+                    crashView.frame = aRect;
+                }break;
 
-                case 4:[CountlyCrashReporter.sharedInstance crashTest5];
-                break;
+                case 4:
+                {
+                    kill(getpid(), SIGABRT);
+                }break;
 
-                case 5:[CountlyCrashReporter.sharedInstance crashTest6];
-                break;
+                case 5:
+                {
+                    __builtin_trap();
+                }break;
 
                 case 6:
                 {
@@ -491,7 +513,7 @@ typedef enum : NSUInteger
                 case 4:
                 {
                     [Countly.user set:@"key101" value:@"value101"];
-                    [Countly.user incrementBy:@"key102" value:5];
+                    [Countly.user incrementBy:@"key102" value:@5];
                     [Countly.user push:@"key103" value:@"singlevalue"];
                     [Countly.user push:@"key104" values:@[@"first",@"second",@"third"]];
                     [Countly.user push:@"key105" values:@[@"a",@"b",@"c",@"d"]];
@@ -501,7 +523,7 @@ typedef enum : NSUInteger
 
                 case 5:
                 {
-                    [Countly.user multiply:@"key102" value:2];
+                    [Countly.user multiply:@"key102" value:@2];
                     [Countly.user unSet:@"key103"];
                     [Countly.user pull:@"key104" value:@"second"];
                     [Countly.user pull:@"key105" values:@[@"a",@"d"]];

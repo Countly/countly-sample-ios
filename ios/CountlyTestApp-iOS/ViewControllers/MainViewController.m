@@ -67,6 +67,7 @@ typedef enum : NSUInteger
     tests =
     @[
         @[
+            @"Create a Custom Event",
             @"Record Event",
             @"Record Event with Count",
             @"Record Event with Sum",
@@ -78,7 +79,6 @@ typedef enum : NSUInteger
             @"Start Event",
             @"End Event",
             @"End Event with Segmentation, Count & Sum",
-            @"Create a Custom Event"
         ],
 
         @[
@@ -164,6 +164,7 @@ typedef enum : NSUInteger
     explanations =
     @[
         @[
+            @"",
             @"TestEventA",
             @"TestEventA  c:5",
             @"TestEventB  s:1.99",
@@ -175,7 +176,6 @@ typedef enum : NSUInteger
             @"timed-event",
             @"timed-event",
             @"timed-event  sg:{k:v}  c:1  s:0",
-            @""
         ],
         @[
             @"crashTest method in SDK",
@@ -350,46 +350,46 @@ typedef enum : NSUInteger
         {
             switch (indexPath.row)
             {
-                case 0: [Countly.sharedInstance recordEvent:@"TestEventA"];
-                break;
-
-                case 1: [Countly.sharedInstance recordEvent:@"TestEventA" count:5];
-                break;
-
-                case 2: [Countly.sharedInstance recordEvent:@"TestEventB" sum:1.99];
-                break;
-
-                case 3: [Countly.sharedInstance recordEvent:@"TestEventB" duration:3.14];
-                break;
-
-                case 4: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k" : @"v"}];
-                break;
-
-                case 5: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k" : @"v"} count:5];
-                break;
-
-                case 6: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k" : @"v"} count:5 sum:1.99];
-                break;
-
-                case 7: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k" : @"v"} count:5 sum:1.99 duration:0.314];
-                break;
-
-                case 8: [Countly.sharedInstance startEvent:@"timed-event"];
-                break;
-
-                case 9: [Countly.sharedInstance endEvent:@"timed-event"];
-                break;
-
-                case 10: [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k" : @"v"} count:1 sum:0];
-                break;
-
-                case 11:
+                case 0:
                 {
                     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
                     EventCreatorViewController *ecvc = [storyboard instantiateViewControllerWithIdentifier:@"EventCreatorViewController"];
                     UINavigationController* nc = [UINavigationController.alloc initWithRootViewController:ecvc];
                     [self presentViewController:nc animated:YES completion:nil];
                 }
+                break;
+            
+                case 1: [Countly.sharedInstance recordEvent:@"TestEventA"];
+                break;
+
+                case 2: [Countly.sharedInstance recordEvent:@"TestEventA" count:5];
+                break;
+
+                case 3: [Countly.sharedInstance recordEvent:@"TestEventB" sum:1.99];
+                break;
+
+                case 4: [Countly.sharedInstance recordEvent:@"TestEventB" duration:3.14];
+                break;
+
+                case 5: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k" : @"v"}];
+                break;
+
+                case 6: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k" : @"v"} count:5];
+                break;
+
+                case 7: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k" : @"v"} count:5 sum:1.99];
+                break;
+
+                case 8: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k" : @"v"} count:5 sum:1.99 duration:0.314];
+                break;
+
+                case 9: [Countly.sharedInstance startEvent:@"timed-event"];
+                break;
+
+                case 10: [Countly.sharedInstance endEvent:@"timed-event"];
+                break;
+
+                case 11: [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k" : @"v"} count:1 sum:0];
                 break;
 
                 default:break;

@@ -304,16 +304,26 @@ typedef enum : NSUInteger
 }
 
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return sections[section];
+    return 24;
 }
 
 
--(void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    ((UITableViewHeaderFooterView*)view).backgroundView.backgroundColor = UIColor.grayColor;
-    ((UITableViewHeaderFooterView*)view).textLabel.textColor = UIColor.whiteColor;
+    UIView* headerView = UIView.new;
+    headerView.backgroundColor = UIColor.grayColor;
+    UIImageView* imageView = [UIImageView.alloc initWithFrame:(CGRect){15,6,12,12}];
+    imageView.image = [UIImage imageNamed:[sections[section] stringByReplacingOccurrencesOfString:@" " withString:@""]];
+    [headerView addSubview:imageView];
+    UILabel* label = [UILabel.alloc initWithFrame:(CGRect){33,0,320,24}];
+    label.font = [UIFont fontWithName:@"AvenirNext-bold" size:14];
+    label.textColor = UIColor.whiteColor;
+    label.text = sections[section];
+    [headerView addSubview:label];
+
+    return headerView;
 }
 
 

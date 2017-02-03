@@ -30,6 +30,7 @@
 //    config.forceDeviceIDInitialization = YES;                     //Optional forcing to re-initialize device ID
 
 //    config.eventSendThreshold = 5;                                //Optional event send threshold (default 10 events)
+//    config.manualSessionHandling = YES;                           //Optional manual session handling
 //    config.updateSessionPeriod = 30;                              //Optional update session period (default 60 seconds)
 //    config.storedRequestsLimit = 500;                             //Optional stored requests limit (default 1000 requests)
 //    config.alwaysUsePOST = YES;                                   //Optional forcing for POST method

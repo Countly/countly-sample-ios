@@ -215,22 +215,22 @@ class ViewController: UIViewController
             case TestSection.CrashReporting.rawValue: //MARK: Crash Reporting
             switch (indexPath.row)
             {
-                case 0: CountlyCrashReporter.sharedInstance().crashTest()
+                case 0:
                 break
 
-                case 1: CountlyCrashReporter.sharedInstance().crashTest2()
+                case 1:
                 break
 
-                case 2: CountlyCrashReporter.sharedInstance().crashTest3()
+                case 2:
                 break
 
-                case 3: CountlyCrashReporter.sharedInstance().crashTest4()
+                case 3:
                 break
 
-                case 4: CountlyCrashReporter.sharedInstance().crashTest5()
+                case 4:
                 break
 
-                case 5: CountlyCrashReporter.sharedInstance().crashTest6()
+                case 5:
                 break
 
                 case 6:

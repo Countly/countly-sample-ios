@@ -87,7 +87,8 @@ typedef enum : NSUInteger
             @"NULL pointer",
             @"Invalid Geometry",
             @"Assert Fail",
-            @"Kill",
+            @"kill",
+            @"__builtin_trap",
             @"Custom Crash Log",
             @"Record Handled Exception"
         ],
@@ -178,12 +179,13 @@ typedef enum : NSUInteger
             @"timed-event  sg:{k:v}  c:1  s:0",
         ],
         @[
-            @"crashTest method in SDK",
-            @"crashTest2 method in SDK",
-            @"crashTest3 method in SDK",
-            @"crashTest4 method in SDK",
-            @"crashTest5 method in SDK",
-            @"crashTest6 method in SDK",
+            @"thisIsTheUnrecognizedSelectorCausingTheCrash",
+            @"5th element in a 3 elements array",
+            @"set value to 2017",
+            @"CALayer position contains nan",
+            @"This is the test assert that failed!",
+            @"SIGABRT",
+            @"SIGTERM",
             @"This is a custom crash log!",
             @"n:MyException  r:MyReason  d:{key:value}"
         ],
@@ -433,7 +435,7 @@ typedef enum : NSUInteger
                 case 2:
                 {
                     int *nullPointer = NULL;
-                    *nullPointer = 2015;
+                    *nullPointer = 2017;
                 }break;
 
                 case 3:
@@ -445,21 +447,26 @@ typedef enum : NSUInteger
 
                 case 4:
                 {
+                    NSAssert(0==1, @"This is the test assert that failed!");
+                }break;
+                
+                case 5:
+                {
                     kill(getpid(), SIGABRT);
                 }break;
 
-                case 5:
+                case 6:
                 {
                     __builtin_trap();
                 }break;
 
-                case 6:
+                case 7:
                 {
                     [Countly.sharedInstance crashLog:@"This is a custom crash log!"];
                     [Countly.sharedInstance crashLog:@"This is another custom crash log with argument: %d!", 2];
                 }break;
 
-                case 7:
+                case 8:
                 {
                     NSException* myException = [NSException exceptionWithName:@"MyException" reason:@"MyReason" userInfo:@{@"key":@"value"}];
                     [Countly.sharedInstance recordHandledException:myException];

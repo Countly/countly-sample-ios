@@ -87,8 +87,8 @@ typedef enum : NSUInteger
             @"NULL pointer",
             @"Invalid Geometry",
             @"Assert Fail",
-            @"kill",
-            @"__builtin_trap",
+            @"Terminate",
+            @"Terminate 2",
             @"Custom Crash Log",
             @"Record Handled Exception"
         ],
@@ -181,11 +181,11 @@ typedef enum : NSUInteger
         @[
             @"thisIsTheUnrecognizedSelectorCausingTheCrash",
             @"5th element in a 3 elements array",
-            @"set value to 2017",
+            @"dereference",
             @"CALayer position contains nan",
             @"This is the test assert that failed!",
-            @"SIGABRT",
-            @"SIGTERM",
+            @"kill SIGABRT",
+            @"__builtin_trap SIGTERM",
             @"This is a custom crash log!",
             @"n:MyException  r:MyReason  d:{key:value}"
         ],
@@ -415,50 +415,26 @@ typedef enum : NSUInteger
         {
             switch (indexPath.row)
             {
-                case 0:
-                {
-                    #pragma clang diagnostic push
-                    #pragma clang diagnostic ignored "-Wundeclared-selector"
-                    [self performSelector:@selector(thisIsTheUnrecognizedSelectorCausingTheCrash)];
-                    #pragma clang diagnostic pop
-                }break;
+                case 0: [self crashTest0];
+                break;
 
-                case 1:
-                {
-                    #pragma clang diagnostic push
-                    #pragma clang diagnostic ignored "-Wunused-variable"
-                    NSArray* anArray = @[@"one",@"two",@"three"];
-                    NSString* myCrashingString = anArray[5];
-                    #pragma clang diagnostic pop
-                }break;
+                case 1: [self crashTest1];
+                break;
 
-                case 2:
-                {
-                    int *nullPointer = NULL;
-                    *nullPointer = 2017;
-                }break;
+                case 2: [self crashTest2];
+                break;
 
-                case 3:
-                {
-                    CGRect aRect = (CGRect){0.0/0.0, 0.0, 100.0, 100.0};
-                    UIView *crashView = UIView.new;
-                    crashView.frame = aRect;
-                }break;
+                case 3: [self crashTest3];
+                break;
 
-                case 4:
-                {
-                    NSAssert(0==1, @"This is the test assert that failed!");
-                }break;
+                case 4: [self crashTest4];
+                break;
                 
-                case 5:
-                {
-                    kill(getpid(), SIGABRT);
-                }break;
+                case 5: [self crashTest5];
+                break;
 
-                case 6:
-                {
-                    __builtin_trap();
-                }break;
+                case 6: [self crashTest6];
+                break;
 
                 case 7:
                 {
@@ -834,6 +810,61 @@ typedef enum : NSUInteger
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
 //    NSLog(@"%s %@",__FUNCTION__,[connection description]);
+}
+
+
+#pragma mark - Crash Tests
+
+
+- (void)crashTest0
+{
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wundeclared-selector"
+    [self performSelector:@selector(thisIsTheUnrecognizedSelectorCausingTheCrash)];
+    #pragma clang diagnostic pop
+}
+
+
+- (void)crashTest1
+{
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wunused-variable"
+    NSArray* anArray = @[@"one",@"two",@"three"];
+    NSString* myCrashingString = anArray[5];
+    #pragma clang diagnostic pop
+}
+
+
+- (void)crashTest2
+{
+    int *nullPointer = NULL;
+    *nullPointer = 2017;
+}
+
+
+- (void)crashTest3
+{
+    CGRect aRect = (CGRect){0.0/0.0, 0.0, 100.0, 100.0};
+    UIView *crashView = UIView.new;
+    crashView.frame = aRect;
+}
+
+
+- (void)crashTest4
+{
+    NSAssert(0==1, @"This is the test assert that failed!");
+}
+
+
+- (void)crashTest5
+{
+    kill(getpid(), SIGABRT);
+}
+
+
+- (void)crashTest6
+{
+    __builtin_trap();
 }
 
 @end

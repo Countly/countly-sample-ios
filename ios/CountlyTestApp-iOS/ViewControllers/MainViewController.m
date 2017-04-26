@@ -491,7 +491,7 @@ typedef enum : NSUInteger
                     Countly.user.pictureLocalPath = localImagePath;
                     Countly.user.custom = @{@"testkey1":@"testvalue1",@"testkey2":@"testvalue2"};
 
-                    [Countly.user recordUserDetails];
+                    [Countly.user save];
                 }break;
 
                 case 3:
@@ -500,7 +500,7 @@ typedef enum : NSUInteger
                     Countly.user.birthYear = NSNull.null;
                     Countly.user.gender = NSNull.null;
 
-                    [Countly.user recordUserDetails];
+                    [Countly.user save];
                 }break;
 
                 case 4:

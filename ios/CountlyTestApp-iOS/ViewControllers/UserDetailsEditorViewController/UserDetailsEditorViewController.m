@@ -91,7 +91,7 @@
         cust[dict[@"k"]] = dict[@"v"];
     Countly.user.custom = cust;
 
-    [Countly.user recordUserDetails];
+    [Countly.user save];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -32,6 +32,7 @@
 		D252E3CA1DE1F249006548B0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D252E3B71DE1F249006548B0 /* LICENSE */; };
 		D257996F1DE71166006A64CA /* TestViewControllerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257996E1DE71166006A64CA /* TestViewControllerModal.swift */; };
 		D2666B951DE9D68C0088E822 /* TestViewControllerPushPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2666B941DE9D68C0088E822 /* TestViewControllerPushPop.swift */; };
+		D2A6CEAF1EB3B52600EC10A5 /* CountlyNotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A6CEAD1EB3B52600EC10A5 /* CountlyNotificationService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,8 @@
 		D252E3CC1DE28A63006548B0 /* CountlyTestApp-iOS-swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CountlyTestApp-iOS-swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		D257996E1DE71166006A64CA /* TestViewControllerModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewControllerModal.swift; sourceTree = "<group>"; };
 		D2666B941DE9D68C0088E822 /* TestViewControllerPushPop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewControllerPushPop.swift; sourceTree = "<group>"; };
+		D2A6CEAD1EB3B52600EC10A5 /* CountlyNotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyNotificationService.m; sourceTree = "<group>"; };
+		D2A6CEAE1EB3B52600EC10A5 /* CountlyNotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyNotificationService.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,8 @@
 				D252E3AE1DE1F249006548B0 /* CountlyPersistency.m */,
 				D252E3AF1DE1F249006548B0 /* CountlyPushNotifications.h */,
 				D252E3B01DE1F249006548B0 /* CountlyPushNotifications.m */,
+				D2A6CEAE1EB3B52600EC10A5 /* CountlyNotificationService.h */,
+				D2A6CEAD1EB3B52600EC10A5 /* CountlyNotificationService.m */,
 				D252E3B11DE1F249006548B0 /* CountlyStarRating.h */,
 				D252E3B21DE1F249006548B0 /* CountlyStarRating.m */,
 				D252E3B31DE1F249006548B0 /* CountlyUserDetails.h */,
@@ -256,6 +261,7 @@
 				D252E3C51DE1F249006548B0 /* CountlyPersistency.m in Sources */,
 				D2666B951DE9D68C0088E822 /* TestViewControllerPushPop.swift in Sources */,
 				D252E3BE1DE1F249006548B0 /* CountlyAPMNetworkLog.m in Sources */,
+				D2A6CEAF1EB3B52600EC10A5 /* CountlyNotificationService.m in Sources */,
 				D257996F1DE71166006A64CA /* TestViewControllerModal.swift in Sources */,
 				D252E3851DE074D2006548B0 /* AppDelegate.swift in Sources */,
 				D252E3BF1DE1F249006548B0 /* CountlyCommon.m in Sources */,

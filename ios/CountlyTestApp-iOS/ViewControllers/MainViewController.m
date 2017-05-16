@@ -72,6 +72,7 @@ typedef enum : NSUInteger
             @"Record Event with Count",
             @"Record Event with Sum",
             @"Record Event with Duration",
+            @"Record Event with Count & Sum",
             @"Record Event with Segmentation",
             @"Record Event with Segmentation & Count",
             @"Record Event with Segmentation, Count & Sum",
@@ -158,7 +159,10 @@ typedef enum : NSUInteger
             @"Set Custom Header Field Value",
             @"Ask for Star-Rating",
             @"Set New Device ID",
-            @"Set New Device ID with Server Merge"
+            @"Set New Device ID with Server Merge",
+            @"Begin Session",
+            @"Update Session",
+            @"End Session"
         ]
     ];
 
@@ -170,6 +174,7 @@ typedef enum : NSUInteger
             @"TestEventA  c:5",
             @"TestEventB  s:1.99",
             @"TestEventB  d:3.14",
+            @"TestEventB  c:5 s:1.99",
             @"TestEventC  sg:{k:v}",
             @"TestEventC  sg:{k:v}  c:5",
             @"TestEventD  sg:{k:v}  c:5  s:1.99",
@@ -255,7 +260,10 @@ typedef enum : NSUInteger
             @"thisismyvalue",
             @"",
             @"user@example.com",
-            @"IDFV"
+            @"IDFV",
+            @"manual session handling",
+            @"manual session handling",
+            @"manual session handling"
         ]
     ];
 
@@ -282,14 +290,14 @@ typedef enum : NSUInteger
 
 - (IBAction)onClick_console:(id)sender
 {
-    static bool isHidden = NO;
-    
-    isHidden = !isHidden;
-
-    if(isHidden)
-        [EYLogViewer hide];
-    else
-        [EYLogViewer show];
+//    static bool isHidden = NO;
+//    
+//    isHidden = !isHidden;
+//
+//    if(isHidden)
+//        [EYLogViewer hide];
+//    else
+//        [EYLogViewer show];
 }
 
 #pragma mark -
@@ -383,25 +391,28 @@ typedef enum : NSUInteger
                 case 4: [Countly.sharedInstance recordEvent:@"TestEventB" duration:3.14];
                 break;
 
-                case 5: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k" : @"v"}];
+                case 5: [Countly.sharedInstance recordEvent:@"TestEventB" count:5 sum:1.99];
                 break;
 
-                case 6: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k" : @"v"} count:5];
+                case 6: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k" : @"v"}];
                 break;
 
-                case 7: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k" : @"v"} count:5 sum:1.99];
+                case 7: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k" : @"v"} count:5];
                 break;
 
-                case 8: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k" : @"v"} count:5 sum:1.99 duration:0.314];
+                case 8: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k" : @"v"} count:5 sum:1.99];
                 break;
 
-                case 9: [Countly.sharedInstance startEvent:@"timed-event"];
+                case 9: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k" : @"v"} count:5 sum:1.99 duration:0.314];
                 break;
 
-                case 10: [Countly.sharedInstance endEvent:@"timed-event"];
+                case 10: [Countly.sharedInstance startEvent:@"timed-event"];
                 break;
 
-                case 11: [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k" : @"v"} count:1 sum:0];
+                case 11: [Countly.sharedInstance endEvent:@"timed-event"];
+                break;
+
+                case 12: [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k" : @"v"} count:1 sum:0];
                 break;
 
                 default:break;
@@ -730,7 +741,8 @@ typedef enum : NSUInteger
                     UNAuthorizationOptions authorizationOptions = UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert;
                     [Countly.sharedInstance askForNotificationPermissionWithOptions:authorizationOptions completionHandler:^(BOOL granted, NSError *error)
                     {
-                        
+                        NSLog(@"Notification Permission Granted: %d", granted);
+                        NSLog(@"Error: %@", error);
                     }];
                 }break;
 
@@ -779,6 +791,15 @@ typedef enum : NSUInteger
                 break;
 
                 case 3: [Countly.sharedInstance setNewDeviceID:CLYIDFV onServer:YES];
+                break;
+
+                case 4: [Countly.sharedInstance beginSession];
+                break;
+
+                case 5: [Countly.sharedInstance updateSession];
+                break;
+
+                case 6: [Countly.sharedInstance endSession];
                 break;
 
                 default: break;

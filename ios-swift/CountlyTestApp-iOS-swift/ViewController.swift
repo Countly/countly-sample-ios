@@ -486,7 +486,7 @@ class ViewController: UIViewController
                     Countly.sharedInstance().askForNotificationPermission(options: authorizationOptions, completionHandler:
                     { (granted : Bool, error : Error?) in
                         print("granted \(granted)")
-                        print("error \(error)")
+                        print("error \(error.debugDescription)")
                     })
                 break
 

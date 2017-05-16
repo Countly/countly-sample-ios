@@ -11,6 +11,10 @@
 		D20C2C5F1A3F2DF600664CAD /* SamplePicture.gif in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */; };
 		D20C2C601A3F2DF600664CAD /* SamplePicture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */; };
 		D20C2C611A3F2DF600664CAD /* SamplePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */; };
+		D2314A001EB151CF0026F0DD /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D23149FF1EB151CF0026F0DD /* NotificationService.m */; };
+		D2314A041EB151CF0026F0DD /* CountlyNSE.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D23149FC1EB151CF0026F0DD /* CountlyNSE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D2314A0B1EB1528B0026F0DD /* CountlyNotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2314A0A1EB1528B0026F0DD /* CountlyNotificationService.m */; };
+		D2314A0D1EB154690026F0DD /* CountlyNotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2314A0A1EB1528B0026F0DD /* CountlyNotificationService.m */; };
 		D2340D081E33B726003C3841 /* Countly.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2340CF91E33B726003C3841 /* Countly.storyboard */; };
 		D2340D091E33B726003C3841 /* EventCreatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340CFC1E33B726003C3841 /* EventCreatorViewController.m */; };
 		D2340D131E33BA09003C3841 /* TestModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340D111E33BA09003C3841 /* TestModalViewController.m */; };
@@ -20,7 +24,6 @@
 		D2340D251E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340D241E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m */; };
 		D273859F1D963842008D201F /* CountlyPushNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = D273859E1D963842008D201F /* CountlyPushNotifications.m */; };
 		D290ED8A186337A90027082D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290ED89186337A90027082D /* CoreTelephony.framework */; };
-		D290ED8C186337B00027082D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290ED8B186337B00027082D /* CoreData.framework */; };
 		D2AAC1101D9921A400B6EA08 /* EYLogViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AAC10F1D9921A400B6EA08 /* EYLogViewer.m */; };
 		D2BAB0A217EC8EE600807D0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A117EC8EE600807D0D /* Foundation.framework */; };
 		D2BAB0A417EC8EE600807D0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A317EC8EE600807D0D /* CoreGraphics.framework */; };
@@ -46,12 +49,42 @@
 		D2FB68FC1C69D5F200079DF6 /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FB68FB1C69D5F200079DF6 /* CountlyViewTracking.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D2314A021EB151CF0026F0DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2BAB09617EC8EE600807D0D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D23149FB1EB151CF0026F0DD;
+			remoteInfo = CountlyNSE;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D2314A081EB151CF0026F0DD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D2314A041EB151CF0026F0DD /* CountlyNSE.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		D20534431D267FB100CBB8B9 /* count.ly.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = count.ly.cer; sourceTree = "<group>"; };
 		D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SamplePicture.gif; sourceTree = "<group>"; };
 		D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SamplePicture.jpg; sourceTree = "<group>"; };
 		D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SamplePicture.png; sourceTree = "<group>"; };
 		D22D41671C6E386C0078AF7D /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		D23149FC1EB151CF0026F0DD /* CountlyNSE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CountlyNSE.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D23149FE1EB151CF0026F0DD /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		D23149FF1EB151CF0026F0DD /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		D2314A011EB151CF0026F0DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2314A091EB1528B0026F0DD /* CountlyNotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyNotificationService.h; sourceTree = "<group>"; };
+		D2314A0A1EB1528B0026F0DD /* CountlyNotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyNotificationService.m; sourceTree = "<group>"; };
 		D2340CF91E33B726003C3841 /* Countly.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Countly.storyboard; sourceTree = "<group>"; };
 		D2340CFB1E33B726003C3841 /* EventCreatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCreatorViewController.h; sourceTree = "<group>"; };
 		D2340CFC1E33B726003C3841 /* EventCreatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCreatorViewController.m; sourceTree = "<group>"; };
@@ -68,7 +101,6 @@
 		D273859D1D963842008D201F /* CountlyPushNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPushNotifications.h; sourceTree = "<group>"; };
 		D273859E1D963842008D201F /* CountlyPushNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPushNotifications.m; sourceTree = "<group>"; };
 		D290ED89186337A90027082D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		D290ED8B186337B00027082D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D2AAC10C1D98F7B000B6EA08 /* CountlyTestApp-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CountlyTestApp-iOS.entitlements"; sourceTree = "<group>"; };
 		D2AAC10E1D9921A400B6EA08 /* EYLogViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYLogViewer.h; sourceTree = "<group>"; };
 		D2AAC10F1D9921A400B6EA08 /* EYLogViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYLogViewer.m; sourceTree = "<group>"; };
@@ -119,12 +151,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D23149F91EB151CF0026F0DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2BAB09B17EC8EE600807D0D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D2D4F4281A0BB34500C0EF0B /* AdSupport.framework in Frameworks */,
-				D290ED8C186337B00027082D /* CoreData.framework in Frameworks */,
 				D290ED8A186337A90027082D /* CoreTelephony.framework in Frameworks */,
 				D2BAB0A417EC8EE600807D0D /* CoreGraphics.framework in Frameworks */,
 				D2BAB0A617EC8EE600807D0D /* UIKit.framework in Frameworks */,
@@ -143,6 +181,16 @@
 				D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */,
 			);
 			path = img;
+			sourceTree = "<group>";
+		};
+		D23149FD1EB151CF0026F0DD /* CountlyNSE */ = {
+			isa = PBXGroup;
+			children = (
+				D23149FE1EB151CF0026F0DD /* NotificationService.h */,
+				D23149FF1EB151CF0026F0DD /* NotificationService.m */,
+				D2314A011EB151CF0026F0DD /* Info.plist */,
+			);
+			path = CountlyNSE;
 			sourceTree = "<group>";
 		};
 		D2340CF81E33B726003C3841 /* ViewControllers */ = {
@@ -219,6 +267,7 @@
 			children = (
 				D2BAB0A717EC8EE600807D0D /* CountlyTestApp-iOS */,
 				D2EB404C1C58BFAA00EAA633 /* countly-sdk-ios */,
+				D23149FD1EB151CF0026F0DD /* CountlyNSE */,
 				D2BAB0A017EC8EE600807D0D /* Frameworks */,
 				D2BAB09F17EC8EE600807D0D /* Products */,
 			);
@@ -228,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				D2BAB09E17EC8EE600807D0D /* CountlyTestApp-iOS.app */,
+				D23149FC1EB151CF0026F0DD /* CountlyNSE.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,7 +287,6 @@
 			children = (
 				D22D41671C6E386C0078AF7D /* WatchConnectivity.framework */,
 				D2D4F4271A0BB34500C0EF0B /* AdSupport.framework */,
-				D290ED8B186337B00027082D /* CoreData.framework */,
 				D290ED89186337A90027082D /* CoreTelephony.framework */,
 				D2BAB0A117EC8EE600807D0D /* Foundation.framework */,
 				D2BAB0A317EC8EE600807D0D /* CoreGraphics.framework */,
@@ -302,6 +351,8 @@
 				D2EB40641C58BFAA00EAA633 /* CountlyPersistency.m */,
 				D273859D1D963842008D201F /* CountlyPushNotifications.h */,
 				D273859E1D963842008D201F /* CountlyPushNotifications.m */,
+				D2314A091EB1528B0026F0DD /* CountlyNotificationService.h */,
+				D2314A0A1EB1528B0026F0DD /* CountlyNotificationService.m */,
 				D2EDCF551D2BFFBD00F75DDC /* CountlyStarRating.h */,
 				D2EDCF561D2BFFBD00F75DDC /* CountlyStarRating.m */,
 				D2EB40651C58BFAA00EAA633 /* CountlyUserDetails.h */,
@@ -318,6 +369,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D23149FB1EB151CF0026F0DD /* CountlyNSE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2314A071EB151CF0026F0DD /* Build configuration list for PBXNativeTarget "CountlyNSE" */;
+			buildPhases = (
+				D23149F81EB151CF0026F0DD /* Sources */,
+				D23149F91EB151CF0026F0DD /* Frameworks */,
+				D23149FA1EB151CF0026F0DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CountlyNSE;
+			productName = CountlyNSE;
+			productReference = D23149FC1EB151CF0026F0DD /* CountlyNSE.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D2BAB09D17EC8EE600807D0D /* CountlyTestApp-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2BAB0D017EC8EE600807D0D /* Build configuration list for PBXNativeTarget "CountlyTestApp-iOS" */;
@@ -325,10 +393,12 @@
 				D2BAB09A17EC8EE600807D0D /* Sources */,
 				D2BAB09B17EC8EE600807D0D /* Frameworks */,
 				D2BAB09C17EC8EE600807D0D /* Resources */,
+				D2314A081EB151CF0026F0DD /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D2314A031EB151CF0026F0DD /* PBXTargetDependency */,
 			);
 			name = "CountlyTestApp-iOS";
 			productName = "CountlyTestApp-iOS";
@@ -345,6 +415,11 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Countly;
 				TargetAttributes = {
+					D23149FB1EB151CF0026F0DD = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 3S32KFMHB8;
+						ProvisioningStyle = Manual;
+					};
 					D2BAB09D17EC8EE600807D0D = {
 						DevelopmentTeam = 3S32KFMHB8;
 						ProvisioningStyle = Manual;
@@ -373,11 +448,19 @@
 			projectRoot = "";
 			targets = (
 				D2BAB09D17EC8EE600807D0D /* CountlyTestApp-iOS */,
+				D23149FB1EB151CF0026F0DD /* CountlyNSE */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D23149FA1EB151CF0026F0DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2BAB09C17EC8EE600807D0D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -395,6 +478,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D23149F81EB151CF0026F0DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2314A0D1EB154690026F0DD /* CountlyNotificationService.m in Sources */,
+				D2314A001EB151CF0026F0DD /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2BAB09A17EC8EE600807D0D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -410,6 +502,7 @@
 				D2EB40761C58BFAA00EAA633 /* CountlyUserDetails.m in Sources */,
 				D2BAB0AE17EC8EE600807D0D /* main.m in Sources */,
 				D2EB40701C58BFAA00EAA633 /* CountlyConfig.m in Sources */,
+				D2314A0B1EB1528B0026F0DD /* CountlyNotificationService.m in Sources */,
 				D2340D1D1E33C55B003C3841 /* MainViewController.m in Sources */,
 				D2EB406C1C58BFAA00EAA633 /* Countly_OpenUDID.m in Sources */,
 				D2EB406D1C58BFAA00EAA633 /* CountlyAPM.m in Sources */,
@@ -428,6 +521,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D2314A031EB151CF0026F0DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D23149FB1EB151CF0026F0DD /* CountlyNSE */;
+			targetProxy = D2314A021EB151CF0026F0DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		D2BAB0AA17EC8EE600807D0D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -440,6 +541,53 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D2314A051EB151CF0026F0DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3S32KFMHB8;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = CountlyNSE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-iOS.CountlyNSE";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "441d54c1-d5e6-48d2-81fc-16ab17716eed";
+				PROVISIONING_PROFILE_SPECIFIER = iOS_Dev_CountlyTestAppiOSCountlyNSE_20170512;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D2314A061EB151CF0026F0DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3S32KFMHB8;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = CountlyNSE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-iOS.CountlyNSE";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "871648a3-c121-4151-aeb9-5c7da007e341";
+				PROVISIONING_PROFILE_SPECIFIER = iOS_Dist_CountlyTestAppiOSCountNSE_20170512;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		D2BAB0CE17EC8EE600807D0D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -539,7 +687,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-iOS/CountlyTestApp-iOS.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 3S32KFMHB8;
@@ -549,8 +697,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "CountlyTestApp-iOS";
-				PROVISIONING_PROFILE = "59d7a3ba-5084-497d-9ff7-6b003a22a805";
-				PROVISIONING_PROFILE_SPECIFIER = iOS_Dev_CountlyTestAppiOS_PushTesting_20161122;
+				PROVISIONING_PROFILE = "7f1db0ed-e04c-4de8-b88a-b92abd49239d";
+				PROVISIONING_PROFILE_SPECIFIER = iOS_Dev_CountlyTestAppiOS_20170512;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -561,7 +709,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-iOS/CountlyTestApp-iOS.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 3S32KFMHB8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -570,8 +718,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "CountlyTestApp-iOS";
-				PROVISIONING_PROFILE = "4fb83b82-c372-459b-badf-cc1ca0d087dd";
-				PROVISIONING_PROFILE_SPECIFIER = iOS_Dist_CountlyTestAppiOS_PushTesting_20160603;
+				PROVISIONING_PROFILE = "9f5500b3-f626-49f4-bb3e-80767a9d50ed";
+				PROVISIONING_PROFILE_SPECIFIER = iOS_Dist_CountlyTestAppiOS_20170512;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -579,6 +727,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D2314A071EB151CF0026F0DD /* Build configuration list for PBXNativeTarget "CountlyNSE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2314A051EB151CF0026F0DD /* Debug */,
+				D2314A061EB151CF0026F0DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D2BAB09917EC8EE600807D0D /* Build configuration list for PBXProject "CountlyTestApp-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

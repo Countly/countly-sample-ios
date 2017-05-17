@@ -201,8 +201,8 @@
 				D2340D1B1E33C55B003C3841 /* MainViewController.m */,
 				D2340D0F1E33BA09003C3841 /* TestModalViewController */,
 				D2340D151E33BE15003C3841 /* TestPushPopViewController */,
-				D2340D1E1E33D89E003C3841 /* UserDetailsEditorViewController */,
 				D2340CFA1E33B726003C3841 /* EventCreatorViewController */,
+				D2340D1E1E33D89E003C3841 /* UserDetailsEditorViewController */,
 				D2340D221E33D8F6003C3841 /* UserDetailsCustomModifiersViewController */,
 			);
 			path = ViewControllers;

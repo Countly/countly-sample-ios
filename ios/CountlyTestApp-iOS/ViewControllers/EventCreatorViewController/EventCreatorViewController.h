@@ -6,5 +6,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EventCreatorViewController : UIViewController
+@interface KeyboardInsetViewController : UIViewController
+@property (nonatomic, weak) UIScrollView* keyboardInsetTargetView;
+@end
+
+#pragma mark -
+
+
+@interface EventCreatorViewController : KeyboardInsetViewController
 @end

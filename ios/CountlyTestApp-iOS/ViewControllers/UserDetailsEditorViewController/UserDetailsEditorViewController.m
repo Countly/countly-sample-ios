@@ -28,6 +28,8 @@
 {
     [super viewDidLoad];
     
+    self.keyboardInsetTargetView = self.tableView;
+    
     self.title = @"User Details";
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem.alloc initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(onClick_cancel:)];
@@ -103,7 +105,7 @@
 }
 
 
-#pragma mark -
+#pragma mark ---
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

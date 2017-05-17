@@ -5,6 +5,7 @@
 // Please visit www.count.ly for more information.
 
 #import <UIKit/UIKit.h>
+#import "EventCreatorViewController.h"
 
-@interface UserDetailsEditorViewController : UIViewController
+@interface UserDetailsEditorViewController : KeyboardInsetViewController
 @end

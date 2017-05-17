@@ -40,6 +40,71 @@
 
 @end
 
+#pragma mark -
+
+@interface KeyboardInsetViewController ()
+{
+    UIEdgeInsets contentInset;
+}
+@end
+
+
+@implementation KeyboardInsetViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(keyboardShow:) name:UIKeyboardWillShowNotification object:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(keyboardHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    contentInset = self.keyboardInsetTargetView.contentInset;
+}
+
+- (void)keyboardShow:(NSNotification*)aNotification
+{
+    CGFloat h = [aNotification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size.height;
+    UIEdgeInsets i = contentInset;
+    i.bottom += h;
+    
+    CGFloat d = [aNotification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    UIViewAnimationOptions o = [aNotification.userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue] << 16;
+
+    [UIView animateWithDuration:d delay:0 options:o animations:^
+    {
+        self.keyboardInsetTargetView.contentInset = i;
+        self.keyboardInsetTargetView.scrollIndicatorInsets = i;
+    } completion:nil];
+}
+
+- (void)keyboardHide:(NSNotification*)aNotification
+{
+    CGFloat d = [aNotification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    UIViewAnimationOptions o = [aNotification.userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue] << 16;
+
+    [UIView animateWithDuration:d delay:0 options:o animations:^
+    {
+        self.keyboardInsetTargetView.contentInset = contentInset;
+        self.keyboardInsetTargetView.scrollIndicatorInsets = contentInset;
+    } completion:nil];
+}
+
+- (void)dealloc
+{
+    [NSNotificationCenter.defaultCenter removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+
+    [NSNotificationCenter.defaultCenter removeObserver:self name:UIKeyboardDidHideNotification object:nil];
+}
+
+
+@end
+
+#pragma mark -
 
 
 @interface EventCreatorViewController ()
@@ -55,6 +120,8 @@
 {
     [super viewDidLoad];
     
+    self.keyboardInsetTargetView = self.tableView;
+
     self.title = @"Create Event";
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem.alloc initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(onClick_cancel:)];
@@ -107,7 +174,7 @@
 }
 
 
-#pragma mark -
+#pragma mark ---
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

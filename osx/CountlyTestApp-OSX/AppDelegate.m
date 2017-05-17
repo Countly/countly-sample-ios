@@ -71,27 +71,6 @@
     }
 }
 
-
--(void)updateLogs
-{
-    NSString *logFilePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"logfile.log"];
-    
-    NSData *d = [NSData dataWithContentsOfFile:logFilePath];
-    NSString *s = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
-    
-    if(![s isEqualToString:@""] && ![s isEqualToString:self.txt_log.string])
-    {
-        [self.txt_log setString:s];
-
-        NSRange myRange=NSMakeRange(self.txt_log.string.length, 0);
-        [self.txt_log scrollRangeToVisible:myRange];
-    }
-    
-    s = nil;
-    
-    [self performSelector:@selector(updateLogs) withObject:nil afterDelay:0.2];
-}
-
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
     [[NSAppleEventManager sharedAppleEventManager]

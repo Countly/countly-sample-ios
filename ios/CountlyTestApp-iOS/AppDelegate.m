@@ -5,7 +5,7 @@
 // Please visit www.count.ly for more information.
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "MainViewController.h"
 #import "Countly.h"
 
 @implementation AppDelegate
@@ -30,6 +30,7 @@
 //    config.forceDeviceIDInitialization = YES;                     //Optional forcing to re-initialize device ID
 
 //    config.eventSendThreshold = 5;                                //Optional event send threshold (default 10 events)
+//    config.manualSessionHandling = YES;                           //Optional manual session handling
 //    config.updateSessionPeriod = 30;                              //Optional update session period (default 60 seconds)
 //    config.storedRequestsLimit = 500;                             //Optional stored requests limit (default 1000 requests)
 //    config.alwaysUsePOST = YES;                                   //Optional forcing for POST method
@@ -38,6 +39,7 @@
 //    config.ISOCountryCode = @"JP";                                //Optional ISO country code
 //    config.city = @"Tokyo";                                       //Optional city name
 //    config.location = (CLLocationCoordinate2D){35.6895,139.6917}; //Optional location coordinates
+//    config.IP = @"128.0.0.1"                                        //Optional IP address
 
 //    config.pinnedCertificates = @[@"count.ly.cer"];               //Optional bundled certificates for certificate pinning
 //    config.customHeaderFieldName = @"X-My-Custom-Field";          //Optional custom header field name
@@ -45,7 +47,6 @@
 //    config.secretSalt = @"secretsalt"                             //Optional salt for parameter tampering protection
 
 //    config.starRatingMessage = @"Would you rate the app?";        //Optional star-rating dialog message
-//    config.starRatingDismissButtonTitle = @"No idea";             //Optional star-rating dialog dismiss button title
 //    config.starRatingSessionCount = 3;                            //Optional star-rating dialog auto-ask by session count
 //    config.starRatingDisableAskingForEachAppVersion = YES;        //Optional star-rating dialog auto-ask by versions disabling
 //    config.starRatingCompletion = ^(NSInteger rating){ NSLog(@"rating %d",(int)rating); };        //Optional star-rating dialog auto-ask completion block
@@ -54,8 +55,8 @@
 
 
     self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
-    self.viewController = [ViewController.alloc initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
+    self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
     [self.window makeKeyAndVisible];
 
     return YES;

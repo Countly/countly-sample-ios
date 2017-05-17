@@ -50,10 +50,11 @@ class ViewController: UIViewController
 
                                 ["Unrecognized Selector",
                                 "Out of Bounds",
-                                "NULL pointer",
+                                "Unwrapping nil Optional",
                                 "Invalid Geometry",
                                 "Assert Fail",
-                                "Kill",
+                                "Terminate",
+                                "Terminate 2",
                                 "Custom Crash Log",
                                 "Record Handled Exception"],
 
@@ -215,25 +216,35 @@ class ViewController: UIViewController
             case TestSection.CrashReporting.rawValue: //MARK: Crash Reporting
             switch (indexPath.row)
             {
-                case 0: CountlyCrashReporter.sharedInstance().crashTest()
+                case 0:
+                    crashTest0()
                 break
 
-                case 1: CountlyCrashReporter.sharedInstance().crashTest2()
+                case 1:
+                    crashTest1()
                 break
 
-                case 2: CountlyCrashReporter.sharedInstance().crashTest3()
+                case 2:
+                    crashTest2()
                 break
 
-                case 3: CountlyCrashReporter.sharedInstance().crashTest4()
+                case 3:
+                    crashTest3()
                 break
 
-                case 4: CountlyCrashReporter.sharedInstance().crashTest5()
+                case 4:
+                    crashTest4()
                 break
 
-                case 5: CountlyCrashReporter.sharedInstance().crashTest6()
+                case 5:
+                    crashTest5()
                 break
 
                 case 6:
+                    crashTest6()
+                break
+
+                case 7:
                     // Thanks to Swift, it is not possible to call variadic methods without modification:
                     // http://stackoverflow.com/questions/33706250/how-to-call-an-objective-c-variadic-method-from-swift
                     // http://stackoverflow.com/questions/24374110/swift-call-variadics-c-function-defined-in-objective-c
@@ -241,7 +252,7 @@ class ViewController: UIViewController
                     //Countly.sharedInstance().crashLog("This is another custom crash log with argument: %i!", 2)
                 break
 
-                case 7:
+                case 8:
                     let myException : NSException = NSException.init(name:NSExceptionName(rawValue: "MyException"), reason:"MyReason", userInfo:["key":"value"])
                     Countly.sharedInstance().recordHandledException(myException)
                 break
@@ -316,7 +327,6 @@ class ViewController: UIViewController
                 case 0:
                     do { try NSURLConnection.sendSynchronousRequest(request, returning: &response) }
                     catch { print(error) }
-
                 break
 
                 case 1:
@@ -476,7 +486,7 @@ class ViewController: UIViewController
                     Countly.sharedInstance().askForNotificationPermission(options: authorizationOptions, completionHandler:
                     { (granted : Bool, error : Error?) in
                         print("granted \(granted)")
-                        print("error \(error)")
+                        print("error \(error.debugDescription)")
                     })
                 break
 
@@ -534,5 +544,48 @@ class ViewController: UIViewController
         }
         
         tableView.deselectRow(at:indexPath, animated:true)
+    }
+
+    //MARK: Crash Tests
+
+    func crashTest0()
+    {
+        let s : Selector = Selector("thisIsTheUnrecognized"+"SelectorCausingTheCrash");
+        Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: s, userInfo: nil, repeats: true)
+    }
+    
+    func crashTest1()
+    {
+        let a : Array = ["one","two","three"]
+        let s : String = a[5]
+        print(s)
+    }
+    
+    func crashTest2()
+    {
+        let crashingOptional: Int? = nil
+        print("\(crashingOptional!)")
+    }
+
+    func crashTest3()
+    {
+        let aRect : CGRect = CGRect(x:0.0/0.0, y:0.0, width:100.0, height:100.0)
+        let crashView : UIView  = UIView.init(frame: aRect);
+        crashView.frame = aRect;
+    }
+
+    func crashTest4()
+    {
+        assert(0 == 1, "This is the test assert that failed!")
+    }
+
+    func crashTest5()
+    {
+        kill(getpid(), SIGABRT)
+    }
+
+    func crashTest6()
+    {
+        kill(getpid(), SIGTERM)
     }
 }

@@ -1,18 +1,24 @@
-// ViewController.h
+// MainViewController.h
 //
 // This code is provided under the MIT License.
 //
 // Please visit www.count.ly for more information.
 
-#import "ViewController.h"
-#import "TestViewControllerModal.h"
-#import "TestViewControllerPushPop.h"
+#import "MainViewController.h"
 #import "Countly.h"
+#import "TestModalViewController.h"
+#import "TestPushPopViewController.h"
+#import "EventCreatorViewController.h"
+#import "UserDetailsEditorViewController.h"
+#import "UserDetailsCustomModifiersViewController.h"
 #import "EYLogViewer.h"
 
-@interface ViewController ()
+@interface MainViewController ()
 {
     dispatch_queue_t q[8];
+    NSArray* sections;
+    NSArray* tests;
+    NSArray* explanations;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tbl_main;
 @end
@@ -29,7 +35,7 @@ typedef enum : NSUInteger
     TestSectionOthers
 } TestSection;
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void)viewDidLoad
 {
@@ -45,10 +51,225 @@ typedef enum : NSUInteger
         NSURL* destinationURL = [documentsDirectory URLByAppendingPathComponent:bundleFileURL.lastPathComponent];
         [NSFileManager.defaultManager copyItemAtURL:bundleFileURL toURL:destinationURL error:nil];
     }];
-    
+
+    sections =
+    @[
+        @"Custom Events",
+        @"Crash Reporting",
+        @"User Details",
+        @"APM",
+        @"View Tracking",
+        @"Push Notifications",
+        @"Multi Threading",
+        @"Others"
+    ];
+
+    tests =
+    @[
+        @[
+            @"Create a Custom Event",
+            @"Record Event",
+            @"Record Event with Count",
+            @"Record Event with Sum",
+            @"Record Event with Duration",
+            @"Record Event with Count & Sum",
+            @"Record Event with Segmentation",
+            @"Record Event with Segmentation & Count",
+            @"Record Event with Segmentation, Count & Sum",
+            @"Record Event with Segmentation, Count, Sum & Dur.",
+            @"Start Event",
+            @"End Event",
+            @"End Event with Segmentation, Count & Sum",
+        ],
+
+        @[
+            @"Unrecognized Selector",
+            @"Out of Bounds",
+            @"NULL pointer",
+            @"Invalid Geometry",
+            @"Assert Fail",
+            @"Terminate",
+            @"Terminate 2",
+            @"Custom Crash Log",
+            @"Record Handled Exception"
+        ],
+
+        @[
+            @"Record User Details",
+            @"Custom Property Modifiers",
+            @"Dummy User Details",
+            @"Delete Some User Details by Nulling",
+            @"Some Custom Property Modifiers 1",
+            @"Some Custom Property Modifiers 2",
+            @"User Logged in",
+            @"User Logged out"
+        ],
+
+        @[
+            @"sendSynchronous",
+            @"sendAsynchronous",
+            @"connectionWithRequest",
+            @"initWithRequest",
+            @"initWithRequest:startImmediately NO",
+            @"initWithRequest:startImmediately YES",
+            @"dataTaskWithRequest",
+            @"dataTaskWithRequest:completionHandler",
+            @"dataTaskWithURL",
+            @"dataTaskWithURL:completionHandler",
+            @"downloadTaskWithRequest",
+            @"downloadTaskWithRequest:completionHandler",
+            @"downloadTaskWithURL",
+            @"downloadTaskWithURL:completionHandler",
+            @"Add Exception URL",
+            @"Remove Exception URL"
+        ],
+
+        @[
+            @"Turn off AutoViewTracking",
+            @"Turn on AutoViewTracking",
+            @"Present Modal View Controller",
+            @"Push / Pop with Navigation Controller ",
+            @"Add Exception with Class Name",
+            @"Remove Exception with Class Name",
+            @"Add Exception with Title",
+            @"Remove Exception with Title",
+            @"Add Exception with Custom titleView",
+            @"Remove Exception with Custom titleView",
+            @"Report View Manually"
+        ],
+
+        @[
+            @"Ask for Notification Permission",
+            @"Ask for Notification Permission with Completion Handler",
+            @"Record Geo-Location for Push"
+        ],
+
+        @[
+            @"Thread 1",
+            @"Thread 2",
+            @"Thread 3",
+            @"Thread 4",
+            @"Thread 5",
+            @"Thread 6",
+            @"Thread 7",
+            @"Thread 8"
+        ],
+
+        @[
+            @"Set Custom Header Field Value",
+            @"Ask for Star-Rating",
+            @"Set New Device ID",
+            @"Set New Device ID with Server Merge",
+            @"Begin Session",
+            @"Update Session",
+            @"End Session"
+        ]
+    ];
+
+    explanations =
+    @[
+        @[
+            @"",
+            @"TestEventA",
+            @"TestEventA  c:5",
+            @"TestEventB  s:1.99",
+            @"TestEventB  d:3.14",
+            @"TestEventB  c:5 s:1.99",
+            @"TestEventC  sg:{k:v}",
+            @"TestEventC  sg:{k:v}  c:5",
+            @"TestEventD  sg:{k:v}  c:5  s:1.99",
+            @"TestEventD  sg:{k:v}  c:5  s:1.99  d:0.314",
+            @"timed-event",
+            @"timed-event",
+            @"timed-event  sg:{k:v}  c:1  s:0",
+        ],
+        @[
+            @"thisIsTheUnrecognizedSelectorCausingTheCrash",
+            @"5th element in a 3 elements array",
+            @"dereference",
+            @"CALayer position contains nan",
+            @"This is the test assert that failed!",
+            @"kill SIGABRT",
+            @"__builtin_trap SIGTERM",
+            @"This is a custom crash log!",
+            @"n:MyException  r:MyReason  d:{key:value}"
+        ],
+
+        @[
+            @"",
+            @"",
+            @"Dummy John Doe data",
+            @"email, birthYear, gender",
+            @"set-incrementBy-push-save",
+            @"multiply-unset-pull-save",
+            @"OwnUserID",
+            @"switch back to IDFV and start new session"
+        ],
+
+        @[
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"http://finance.yahoo.com",
+            @"http://finance.yahoo.com"
+        ],
+
+        @[
+            @"",
+            @"",
+            @"",
+            @"",
+            @"TestModalViewController.class",
+            @"TestModalViewController.class",
+            @"MyViewControllerTitle",
+            @"MyViewControllerTitle",
+            @"MyViewControllerCustomTitleView",
+            @"MyViewControllerCustomTitleView",
+            @"ManualViewReportExample_MyMainView"
+        ],
+
+        @[
+            @"",
+            @"",
+            @"33.6789, 43.1234"
+        ],
+
+        @[
+            @"MultiThreadingEvent  sg:{k:v0}",
+            @"MultiThreadingEvent  sg:{k:v1}",
+            @"MultiThreadingEvent  sg:{k:v2}",
+            @"MultiThreadingEvent  sg:{k:v3}",
+            @"MultiThreadingEvent  sg:{k:v4}",
+            @"MultiThreadingEvent  sg:{k:v5}",
+            @"MultiThreadingEvent  sg:{k:v6}",
+            @"MultiThreadingEvent  sg:{k:v7}"
+        ],
+
+        @[
+            @"thisismyvalue",
+            @"",
+            @"user@example.com",
+            @"IDFV",
+            @"manual session handling",
+            @"manual session handling",
+            @"manual session handling"
+        ]
+    ];
+
     [self.tbl_main reloadData];
     
-    NSInteger startSection = TestSectionOthers; //start section of testing app can be set here.
+    NSInteger startSection = TestSectionCustomEvents; //start section of testing app can be set here.
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^
     {
         [self.tbl_main scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:startSection] atScrollPosition:UITableViewScrollPositionTop animated:NO];
@@ -69,40 +290,50 @@ typedef enum : NSUInteger
 
 - (IBAction)onClick_console:(id)sender
 {
-    static bool isHidden = NO;
-    
-    isHidden = !isHidden;
-
-    if(isHidden)
-        [EYLogViewer hide];
-    else
-        [EYLogViewer show];
+//    static bool isHidden = NO;
+//    
+//    isHidden = !isHidden;
+//
+//    if(isHidden)
+//        [EYLogViewer hide];
+//    else
+//        [EYLogViewer show];
 }
 
 #pragma mark -
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self sections] count];
+    return [sections count];
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self tests][section] count];
+    return [tests[section] count];
 }
 
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return [self sections][section];
+    return 24;
 }
 
 
--(void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    ((UITableViewHeaderFooterView*)view).backgroundView.backgroundColor = UIColor.grayColor;
-    ((UITableViewHeaderFooterView*)view).textLabel.textColor = UIColor.whiteColor;
+    UIView* headerView = UIView.new;
+    headerView.backgroundColor = UIColor.grayColor;
+    UIImageView* imageView = [UIImageView.alloc initWithFrame:(CGRect){15,6,12,12}];
+    imageView.image = [UIImage imageNamed:[sections[section] stringByReplacingOccurrencesOfString:@" " withString:@""]];
+    [headerView addSubview:imageView];
+    UILabel* label = [UILabel.alloc initWithFrame:(CGRect){33,0,320,24}];
+    label.font = [UIFont fontWithName:@"AvenirNext-bold" size:14];
+    label.textColor = UIColor.whiteColor;
+    label.text = sections[section];
+    [headerView addSubview:label];
+
+    return headerView;
 }
 
 
@@ -115,26 +346,22 @@ typedef enum : NSUInteger
     if(!cell)
     {
         cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCountlyCellIdentifier];
-        cell.textLabel.font = [UIFont fontWithName:@"Avenir" size:14];
+        cell.textLabel.font = [UIFont fontWithName:@"Avenir-medium" size:14];
         cell.textLabel.adjustsFontSizeToFitWidth = YES;
-        cell.detailTextLabel.textColor = UIColor.lightGrayColor;
+        cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.8 alpha:1];
         cell.detailTextLabel.font = [UIFont fontWithName:@"Menlo" size:11];
     }
 
-    cell.textLabel.text = [self tests][indexPath.section][indexPath.row];
+    cell.textLabel.text = tests[indexPath.section][indexPath.row];
+    cell.detailTextLabel.text = explanations[indexPath.section][indexPath.row];
     
-    if(indexPath.section == TestSectionCustomEvents)
-        cell.detailTextLabel.text = [self explanations][indexPath.section][indexPath.row];
-    else
-        cell.detailTextLabel.text = @"";
-
     return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Test: %@ - %@",[self sections][indexPath.section],[self tests][indexPath.section][indexPath.row]);
+    NSLog(@"Test: %@ - %@",sections[indexPath.section],tests[indexPath.section][indexPath.row]);
 
     switch (indexPath.section)
     {
@@ -143,37 +370,49 @@ typedef enum : NSUInteger
         {
             switch (indexPath.row)
             {
-                case 0: [Countly.sharedInstance recordEvent:@"TestEventA"];
+                case 0:
+                {
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
+                    EventCreatorViewController *ecvc = [storyboard instantiateViewControllerWithIdentifier:@"EventCreatorViewController"];
+                    UINavigationController* nc = [UINavigationController.alloc initWithRootViewController:ecvc];
+                    [self presentViewController:nc animated:YES completion:nil];
+                }
+                break;
+            
+                case 1: [Countly.sharedInstance recordEvent:@"TestEventA"];
                 break;
 
-                case 1: [Countly.sharedInstance recordEvent:@"TestEventA" count:5];
+                case 2: [Countly.sharedInstance recordEvent:@"TestEventA" count:5];
                 break;
 
-                case 2: [Countly.sharedInstance recordEvent:@"TestEventB" sum:1.99];
+                case 3: [Countly.sharedInstance recordEvent:@"TestEventB" sum:1.99];
                 break;
 
-                case 3: [Countly.sharedInstance recordEvent:@"TestEventB" duration:3.14];
+                case 4: [Countly.sharedInstance recordEvent:@"TestEventB" duration:3.14];
                 break;
 
-                case 4: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k" : @"v"}];
+                case 5: [Countly.sharedInstance recordEvent:@"TestEventB" count:5 sum:1.99];
                 break;
 
-                case 5: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k" : @"v"} count:5];
+                case 6: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k" : @"v"}];
                 break;
 
-                case 6: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k" : @"v"} count:5 sum:1.99];
+                case 7: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k" : @"v"} count:5];
                 break;
 
-                case 7: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k" : @"v"} count:5 sum:1.99 duration:0.314];
+                case 8: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k" : @"v"} count:5 sum:1.99];
                 break;
 
-                case 8: [Countly.sharedInstance startEvent:@"timed-event"];
+                case 9: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k" : @"v"} count:5 sum:1.99 duration:0.314];
                 break;
 
-                case 9: [Countly.sharedInstance endEvent:@"timed-event"];
+                case 10: [Countly.sharedInstance startEvent:@"timed-event"];
                 break;
 
-                case 10: [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k" : @"v"} count:1 sum:0];
+                case 11: [Countly.sharedInstance endEvent:@"timed-event"];
+                break;
+
+                case 12: [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k" : @"v"} count:1 sum:0];
                 break;
 
                 default:break;
@@ -187,31 +426,34 @@ typedef enum : NSUInteger
         {
             switch (indexPath.row)
             {
-                case 0:[CountlyCrashReporter.sharedInstance crashTest];
+                case 0: [self crashTest0];
                 break;
 
-                case 1:[CountlyCrashReporter.sharedInstance crashTest2];
+                case 1: [self crashTest1];
                 break;
 
-                case 2:[CountlyCrashReporter.sharedInstance crashTest3];
+                case 2: [self crashTest2];
                 break;
 
-                case 3:[CountlyCrashReporter.sharedInstance crashTest4];
+                case 3: [self crashTest3];
                 break;
 
-                case 4:[CountlyCrashReporter.sharedInstance crashTest5];
+                case 4: [self crashTest4];
+                break;
+                
+                case 5: [self crashTest5];
                 break;
 
-                case 5:[CountlyCrashReporter.sharedInstance crashTest6];
+                case 6: [self crashTest6];
                 break;
 
-                case 6:
+                case 7:
                 {
                     [Countly.sharedInstance crashLog:@"This is a custom crash log!"];
                     [Countly.sharedInstance crashLog:@"This is another custom crash log with argument: %d!", 2];
                 }break;
 
-                case 7:
+                case 8:
                 {
                     NSException* myException = [NSException exceptionWithName:@"MyException" reason:@"MyReason" userInfo:@{@"key":@"value"}];
                     [Countly.sharedInstance recordHandledException:myException];
@@ -230,6 +472,22 @@ typedef enum : NSUInteger
             {
                 case 0:
                 {
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
+                    UserDetailsEditorViewController *udvc = [storyboard instantiateViewControllerWithIdentifier:@"UserDetailsEditorViewController"];
+                    UINavigationController* nc = [UINavigationController.alloc initWithRootViewController:udvc];
+                    [self presentViewController:nc animated:YES completion:nil];
+                }break;
+
+                case 1:
+                {
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
+                    UserDetailsCustomModifiersViewController *udvc = [storyboard instantiateViewControllerWithIdentifier:@"UserDetailsCustomModifiersViewController"];
+                    UINavigationController* nc = [UINavigationController.alloc initWithRootViewController:udvc];
+                    [self presentViewController:nc animated:YES completion:nil];
+                }break;
+
+                case 2:
+                {
                     NSURL* documentsDirectory = [NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].lastObject;
                     NSString* localImagePath = [documentsDirectory.absoluteString stringByAppendingPathComponent:@"SamplePicture.jpg"];
                     // SamplePicture.png or SamplePicture.gif can be used too.
@@ -244,32 +502,43 @@ typedef enum : NSUInteger
                     Countly.user.pictureLocalPath = localImagePath;
                     Countly.user.custom = @{@"testkey1":@"testvalue1",@"testkey2":@"testvalue2"};
 
-                    [Countly.user recordUserDetails];
+                    [Countly.user save];
                 }break;
 
-                case 1:
+                case 3:
+                {
+                    Countly.user.email = NSNull.null;
+                    Countly.user.birthYear = NSNull.null;
+                    Countly.user.gender = NSNull.null;
+
+                    [Countly.user save];
+                }break;
+
+                case 4:
                 {
                     [Countly.user set:@"key101" value:@"value101"];
-                    [Countly.user incrementBy:@"key102" value:5];
+                    [Countly.user incrementBy:@"key102" value:@5];
                     [Countly.user push:@"key103" value:@"singlevalue"];
                     [Countly.user push:@"key104" values:@[@"first",@"second",@"third"]];
                     [Countly.user push:@"key105" values:@[@"a",@"b",@"c",@"d"]];
+
                     [Countly.user save];
                 }break;
 
-                case 2:
+                case 5:
                 {
-                    [Countly.user multiply:@"key102" value:2];
+                    [Countly.user multiply:@"key102" value:@2];
                     [Countly.user unSet:@"key103"];
                     [Countly.user pull:@"key104" value:@"second"];
                     [Countly.user pull:@"key105" values:@[@"a",@"d"]];
+
                     [Countly.user save];
                 }break;
 
-                case 3: [Countly.sharedInstance userLoggedIn:@"OwnUserID"];
+                case 6: [Countly.sharedInstance userLoggedIn:@"OwnUserID"];
                 break;
 
-                case 4: [Countly.sharedInstance userLoggedOut];
+                case 7: [Countly.sharedInstance userLoggedOut];
                 break;
 
                 default:break;
@@ -410,29 +679,32 @@ typedef enum : NSUInteger
 
                 case 2:
                 {
-                    TestViewControllerModal* testViewControllerModal = [TestViewControllerModal.alloc initWithNibName:@"TestViewControllerModal" bundle:nil];
-                    testViewControllerModal.title = @"MyViewControllerTitle";
-                    [self presentViewController:testViewControllerModal animated:YES completion:nil];
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
+                    TestModalViewController* tmvc = [storyboard instantiateViewControllerWithIdentifier:@"TestModalViewController"];
+                    tmvc.title = @"MyViewControllerTitle";
+                    [self presentViewController:tmvc animated:YES completion:nil];
                 }break;
 
                 case 3:
                 {
-                    TestViewControllerPushPop* testViewControllerPushPop = [TestViewControllerPushPop.alloc initWithNibName:@"TestViewControllerPushPop" bundle:nil];
+                    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
+                    TestPushPopViewController* tppvc = [storyboard instantiateViewControllerWithIdentifier:@"TestPushPopViewController"];
+
                     UILabel* titleView = [UILabel.alloc initWithFrame:(CGRect){0,0,320,30}];
                     titleView.text = @"MyViewControllerCustomTitleView";
                     titleView.textAlignment = NSTextAlignmentCenter;
                     titleView.textColor = UIColor.redColor;
                     titleView.font = [UIFont systemFontOfSize:12];
-                    testViewControllerPushPop.navigationItem.titleView = titleView;
-                    UINavigationController* nc = [UINavigationController.alloc initWithRootViewController:testViewControllerPushPop];
-                    nc.title = @"TestViewControllerPushPop";
+                    tppvc.navigationItem.titleView = titleView;
+                    UINavigationController* nc = [UINavigationController.alloc initWithRootViewController:tppvc];
+                    nc.title = @"TestPushPopViewController";
                     [self presentViewController:nc animated:YES completion:nil];
                 }break;
 
-                case 4: [Countly.sharedInstance addExceptionForAutoViewTracking:NSStringFromClass(TestViewControllerModal.class)];
+                case 4: [Countly.sharedInstance addExceptionForAutoViewTracking:NSStringFromClass(TestModalViewController.class)];
                 break;
 
-                case 5: [Countly.sharedInstance removeExceptionForAutoViewTracking:NSStringFromClass(TestViewControllerModal.class)];
+                case 5: [Countly.sharedInstance removeExceptionForAutoViewTracking:NSStringFromClass(TestModalViewController.class)];
                 break;
 
                 case 6: [Countly.sharedInstance addExceptionForAutoViewTracking:@"MyViewControllerTitle"];
@@ -469,7 +741,8 @@ typedef enum : NSUInteger
                     UNAuthorizationOptions authorizationOptions = UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert;
                     [Countly.sharedInstance askForNotificationPermissionWithOptions:authorizationOptions completionHandler:^(BOOL granted, NSError *error)
                     {
-                        
+                        NSLog(@"Notification Permission Granted: %d", granted);
+                        NSLog(@"Error: %@", error);
                     }];
                 }break;
 
@@ -520,6 +793,15 @@ typedef enum : NSUInteger
                 case 3: [Countly.sharedInstance setNewDeviceID:CLYIDFV onServer:YES];
                 break;
 
+                case 4: [Countly.sharedInstance beginSession];
+                break;
+
+                case 5: [Countly.sharedInstance updateSession];
+                break;
+
+                case 6: [Countly.sharedInstance endSession];
+                break;
+
                 default: break;
             }
         }
@@ -531,140 +813,6 @@ typedef enum : NSUInteger
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
-#pragma mark -
-
-- (NSArray *)sections
-{
-    static NSArray* sections;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^
-    {
-        sections =  @[@"Custom Events",
-                      @"Crash Reporting",
-                      @"User Details",
-                      @"APM",
-                      @"View Tracking",
-                      @"Push Notifications",
-                      @"Multi Threading",
-                      @"Others"];
-    });
-    
-    return sections;
-}
-
-
-- (NSArray *)tests
-{
-    static NSArray* tests;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^
-    {
-        tests = @[
-                  @[@"Record Event",
-                    @"Record Event with Count",
-                    @"Record Event with Sum",
-                    @"Record Event with Duration",
-                    @"Record Event with Segmentation",
-                    @"Record Event with Segmentation & Count",
-                    @"Record Event with Segmentation, Count & Sum",
-                    @"Record Event with Segmentation, Count, Sum & Dur.",
-                    @"Start Event",
-                    @"End Event",
-                    @"End Event with Segmentation, Count & Sum"],
-    
-                  @[@"Unrecognized Selector",
-                    @"Out of Bounds",
-                    @"NULL pointer",
-                    @"Invalid Geometry",
-                    @"Assert Fail",
-                    @"Kill",
-                    @"Custom Crash Log",
-                    @"Record Handled Exception"],
-    
-                  @[@"Record User Details",
-                    @"Custom Modifiers 1",
-                    @"Custom Modifiers 2",
-                    @"User Logged in",
-                    @"User Logged out"],
-    
-                  @[@"sendSynchronous",
-                    @"sendAsynchronous",
-                    @"connectionWithRequest",
-                    @"initWithRequest",
-                    @"initWithRequest:startImmediately NO",
-                    @"initWithRequest:startImmediately YES",
-                    @"dataTaskWithRequest",
-                    @"dataTaskWithRequest:completionHandler",
-                    @"dataTaskWithURL",
-                    @"dataTaskWithURL:completionHandler",
-                    @"downloadTaskWithRequest",
-                    @"downloadTaskWithRequest:completionHandler",
-                    @"downloadTaskWithURL",
-                    @"downloadTaskWithURL:completionHandler",
-                    @"Add Exception URL",
-                    @"Remove Exception URL"],
-    
-                  @[@"Turn off AutoViewTracking",
-                    @"Turn on AutoViewTracking",
-                    @"Present Modal View Controller",
-                    @"Push / Pop with Navigation Controller ",
-                    @"Add Exception with Class Name",
-                    @"Remove Exception with Class Name",
-                    @"Add Exception with Title",
-                    @"Remove Exception with Title",
-                    @"Add Exception with Custom titleView",
-                    @"Remove Exception with Custom titleView",
-                    @"Report View Manually"],
-    
-                  @[@"Ask for Notification Permission",
-                    @"Ask for Notification Permission with Completion Handler",
-                    @"Record Geo-Location for Push"],
-    
-                  @[@"Thread 1",
-                    @"Thread 2",
-                    @"Thread 3",
-                    @"Thread 4",
-                    @"Thread 5",
-                    @"Thread 6",
-                    @"Thread 7",
-                    @"Thread 8"],
-    
-                  @[@"Set Custom Header Field Value",
-                    @"Ask for Star-Rating",
-                    @"Set New Device ID",
-                    @"Set New Device ID with Server Merge"]];
-    });
-    
-    return tests;
-}
-
-- (NSArray *)explanations
-{
-    static NSArray* explanations;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^
-    {
-        explanations =
-        @[
-            @[
-            @"TestEventA",
-            @"TestEventA  c:5",
-            @"TestEventB  s:1.99",
-            @"TestEventB  d:3.14",
-            @"TestEventC  sg:{k:v}",
-            @"TestEventC  sg:{k:v}  c:5",
-            @"TestEventD  sg:{k:v}  c:5  s:1.99",
-            @"TestEventD  sg:{k:v}  c:5  s:1.99  d:0.314",
-            @"timed-event",
-            @"timed-event",
-            @"timed-event  sg:{k:v}  c:1  s:0"]
-        ];
-    });
-    
-    return explanations;
-}
-
 
 #pragma mark -
 
@@ -683,6 +831,61 @@ typedef enum : NSUInteger
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
 //    NSLog(@"%s %@",__FUNCTION__,[connection description]);
+}
+
+
+#pragma mark - Crash Tests
+
+
+- (void)crashTest0
+{
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wundeclared-selector"
+    [self performSelector:@selector(thisIsTheUnrecognizedSelectorCausingTheCrash)];
+    #pragma clang diagnostic pop
+}
+
+
+- (void)crashTest1
+{
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wunused-variable"
+    NSArray* anArray = @[@"one",@"two",@"three"];
+    NSString* myCrashingString = anArray[5];
+    #pragma clang diagnostic pop
+}
+
+
+- (void)crashTest2
+{
+    int *nullPointer = NULL;
+    *nullPointer = 2017;
+}
+
+
+- (void)crashTest3
+{
+    CGRect aRect = (CGRect){0.0/0.0, 0.0, 100.0, 100.0};
+    UIView *crashView = UIView.new;
+    crashView.frame = aRect;
+}
+
+
+- (void)crashTest4
+{
+    NSAssert(0==1, @"This is the test assert that failed!");
+}
+
+
+- (void)crashTest5
+{
+    kill(getpid(), SIGABRT);
+}
+
+
+- (void)crashTest6
+{
+    __builtin_trap();
 }
 
 @end

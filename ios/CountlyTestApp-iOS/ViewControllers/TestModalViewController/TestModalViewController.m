@@ -1,20 +1,21 @@
-// TestViewControllerModal.m
+// TestModalViewController.m
 //
 // This code is provided under the MIT License.
 //
 // Please visit www.count.ly for more information.
 
-#import "TestViewControllerModal.h"
+#import "TestModalViewController.h"
 
-@interface TestViewControllerModal ()
+@interface TestModalViewController ()
 @end
 
-@implementation TestViewControllerModal
+@implementation TestModalViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 }
+
 
 - (IBAction)onClick_dismiss:(id)sender
 {

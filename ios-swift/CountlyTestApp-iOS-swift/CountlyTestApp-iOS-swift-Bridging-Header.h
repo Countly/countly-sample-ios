@@ -8,6 +8,6 @@
 #ifndef CountlyTestApp_iOS_swift_Bridging_Header_h
 #define CountlyTestApp_iOS_swift_Bridging_Header_h
 
-#import "CountlyCommon.h"
+#import "Countly.h"
 
 #endif /* CountlyTestApp_iOS_swift_Bridging_Header_h */

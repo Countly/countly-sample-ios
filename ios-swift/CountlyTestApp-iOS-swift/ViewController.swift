@@ -449,10 +449,10 @@ class ViewController: UIViewController
                     self.present(nc, animated: true, completion: nil)
                 break
 
-                case 4: Countly.sharedInstance().addException(forAutoViewTracking:String.init(utf8String: object_getClassName(TestViewControllerModal.self)))
+                case 4: Countly.sharedInstance().addException(forAutoViewTracking:String.init(utf8String: object_getClassName(TestViewControllerModal.self))!)
                 break
 
-                case 5: Countly.sharedInstance().removeException(forAutoViewTracking:String.init(utf8String: object_getClassName(TestViewControllerModal.self)))
+                case 5: Countly.sharedInstance().removeException(forAutoViewTracking:String.init(utf8String: object_getClassName(TestViewControllerModal.self))!)
                 break
 
                 case 6: Countly.sharedInstance().addException(forAutoViewTracking:"MyViewControllerTitle")

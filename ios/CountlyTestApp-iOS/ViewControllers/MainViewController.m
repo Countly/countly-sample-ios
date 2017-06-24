@@ -15,7 +15,6 @@
 
 @interface MainViewController ()
 {
-    dispatch_queue_t q[8];
     NSArray* sections;
     NSArray* tests;
     NSArray* explanations;
@@ -31,7 +30,7 @@ typedef enum : NSUInteger
     TestSectionAPM,
     TestSectionViewTracking,
     TestSectionPushNotifications,
-    TestSectionMultiThreading,
+    TestSectionMultithreading,
     TestSectionOthers
 } TestSection;
 
@@ -60,7 +59,7 @@ typedef enum : NSUInteger
         @"APM",
         @"View Tracking",
         @"Push Notifications",
-        @"Multi Threading",
+        @"Multithreading",
         @"Others"
     ];
 
@@ -91,7 +90,8 @@ typedef enum : NSUInteger
             @"Terminate",
             @"Terminate 2",
             @"Custom Crash Log",
-            @"Record Handled Exception"
+            @"Record Handled Exception",
+            @"Record Handled Exception with Stack Trace"
         ],
 
         @[
@@ -145,14 +145,12 @@ typedef enum : NSUInteger
         ],
 
         @[
-            @"Thread 1",
-            @"Thread 2",
-            @"Thread 3",
-            @"Thread 4",
-            @"Thread 5",
-            @"Thread 6",
-            @"Thread 7",
-            @"Thread 8"
+            @"Own Queue Multithread Testing 1",
+            @"Own Queue Multithread Testing 2",
+            @"Own Queue Multithread Testing 3",
+            @"Global Queue Multithread Testing 1",
+            @"Global Queue Multithread Testing 2",
+            @"Global Queue Multithread Testing 3",
         ],
 
         @[
@@ -192,7 +190,8 @@ typedef enum : NSUInteger
             @"kill SIGABRT",
             @"__builtin_trap SIGTERM",
             @"This is a custom crash log!",
-            @"n:MyException  r:MyReason  d:{key:value}"
+            @"n:MyException  r:MyReason  d:{key:value}",
+            @"n:MyExc  r:MyReason  d:{key:value} and stack trace"
         ],
 
         @[
@@ -246,14 +245,12 @@ typedef enum : NSUInteger
         ],
 
         @[
-            @"MultiThreadingEvent  sg:{k:v0}",
-            @"MultiThreadingEvent  sg:{k:v1}",
-            @"MultiThreadingEvent  sg:{k:v2}",
-            @"MultiThreadingEvent  sg:{k:v3}",
-            @"MultiThreadingEvent  sg:{k:v4}",
-            @"MultiThreadingEvent  sg:{k:v5}",
-            @"MultiThreadingEvent  sg:{k:v6}",
-            @"MultiThreadingEvent  sg:{k:v7}"
+            @"MultithreadingEvent1 on 15 threads",
+            @"MultithreadingEvent3 on 15 threads",
+            @"MultithreadingEvent3 on 15 threads",
+            @"MultithreadingEvent4",
+            @"MultithreadingEvent5",
+            @"MultithreadingEvent6"
         ],
 
         @[
@@ -457,6 +454,12 @@ typedef enum : NSUInteger
                 {
                     NSException* myException = [NSException exceptionWithName:@"MyException" reason:@"MyReason" userInfo:@{@"key":@"value"}];
                     [Countly.sharedInstance recordHandledException:myException];
+                }break;
+
+                case 9:
+                {
+                    NSException* myException = [NSException exceptionWithName:@"MyExc" reason:@"MyReason" userInfo:@{@"key":@"value"}];
+                    [Countly.sharedInstance recordHandledException:myException withStackTrace:[NSThread callStackSymbols]];
                 }break;
 
                 default: break;
@@ -755,22 +758,31 @@ typedef enum : NSUInteger
         break;
 
 
-#pragma mark Multi Threading
-        case TestSectionMultiThreading:
+#pragma mark Multithreading
+        case TestSectionMultithreading:
         {
-            NSInteger t = indexPath.row;
-            NSString* tag = @(t).description;
-            NSString* commonQueueName = @"ly.count.multithreading";
-            NSString* queueName = [commonQueueName stringByAppendingString:tag];
-
-            if(!q[t])
-                q[t] = dispatch_queue_create([queueName UTF8String], NULL);
+            NSString* eventName = [@"MultithreadingEvent" stringByAppendingFormat:@"%d", (int)indexPath.row + 1];
 
             for (int i=0; i<15; i++)
             {
-                NSString* eventName = [@"MultiThreadingEvent" stringByAppendingString:tag];
-                NSDictionary* segmentation = @{@"k":[@"v"stringByAppendingString:@(i).description]};
-                dispatch_async( q[t], ^{ [Countly.sharedInstance recordEvent:eventName segmentation:segmentation]; });
+                dispatch_queue_t queue;
+                if (indexPath.row >= 3)
+                {
+                    queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+                }
+                else
+                {
+                    NSString* queueName = [@"ly.count.multithreading" stringByAppendingFormat:@"%d", i];
+                    queue = dispatch_queue_create(queueName.UTF8String, DISPATCH_QUEUE_CONCURRENT);
+                }
+
+                NSDictionary* segmentation = @{@"k":[@"v"stringByAppendingFormat:@"%d", i]};
+
+                dispatch_async(queue, ^
+                {
+                    [Countly.sharedInstance recordEvent:eventName segmentation:segmentation];
+                    NSLog(@"Thread %d", i);
+                });
             }
         }
         break;

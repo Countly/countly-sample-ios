@@ -7,13 +7,17 @@
 #import "TestModalViewController.h"
 
 @interface TestModalViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @end
 
 @implementation TestModalViewController
 
-- (void)viewDidLoad
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    if(self.title.length)
+        self.titleLabel.text = self.title;
+
+    [super viewWillAppear:animated];
 }
 
 

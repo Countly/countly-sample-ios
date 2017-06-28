@@ -6,6 +6,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "TestModalViewController.h"
 #import "Countly.h"
 
 @implementation AppDelegate
@@ -57,6 +58,25 @@
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
     self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
     [self.window makeKeyAndVisible];
+
+    return YES;
+}
+
+//NOTE: Deeplinking example
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options
+{
+    if ([url.scheme isEqualToString: @"countly"])
+    {
+        NSString* product = url.host;
+    
+        if ([product isEqualToString: @"productA"] || [product isEqualToString: @"productB"])
+        {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
+            TestModalViewController* tmvc = [storyboard instantiateViewControllerWithIdentifier:@"TestModalViewController"];
+            tmvc.title = [@"Page of " stringByAppendingString:product];
+            [self.window.rootViewController presentViewController:tmvc animated:YES completion:nil];
+        }
+    }
 
     return YES;
 }

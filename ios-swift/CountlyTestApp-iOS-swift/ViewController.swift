@@ -95,7 +95,8 @@ class ViewController: UIViewController
 
                                 ["Ask for Notification Permission",
                                  "Ask for Notification Permission with Completion Handler",
-                                 "Record Geo-Location for Push"],
+                                 "Record Geo-Location for Push",
+                                 "Record Push Notification Action"],
 
                                 ["Thread 1",
                                  "Thread 2",
@@ -245,11 +246,7 @@ class ViewController: UIViewController
                 break
 
                 case 7:
-                    // Thanks to Swift, it is not possible to call variadic methods without modification:
-                    // http://stackoverflow.com/questions/33706250/how-to-call-an-objective-c-variadic-method-from-swift
-                    // http://stackoverflow.com/questions/24374110/swift-call-variadics-c-function-defined-in-objective-c
-                    //Countly.sharedInstance().crashLog("This is a custom crash log.")
-                    //Countly.sharedInstance().crashLog("This is another custom crash log with argument: %i!", 2)
+                    Countly.sharedInstance().crashLog("This is a custom crash log.")
                 break
 
                 case 8:
@@ -492,6 +489,18 @@ class ViewController: UIViewController
 
                 case 2: Countly.sharedInstance().recordLocation(CLLocationCoordinate2D(latitude:33.6789, longitude:43.1234))
                 break
+                
+                case 3:
+                    let userInfo : Dictionary<String, AnyObject> = Dictionary() // notification dictionary
+                    let buttonIndex : Int = 1 	// clicked button index
+                                                // 1 for first action button
+                                                // 2 for second action button
+                                                // 0 for default action
+            
+                    Countly.sharedInstance().recordAction(forNotification:userInfo, clickedButtonIndex:buttonIndex)
+                break
+            
+
 
                 default: break
             }

@@ -141,7 +141,8 @@ typedef enum : NSUInteger
         @[
             @"Ask for Notification Permission",
             @"Ask for Notification Permission with Completion Handler",
-            @"Record Geo-Location for Push"
+            @"Record Geo-Location for Push",
+            @"Record Push Notification Action"
         ],
 
         @[
@@ -241,7 +242,8 @@ typedef enum : NSUInteger
         @[
             @"",
             @"",
-            @"33.6789, 43.1234"
+            @"33.6789, 43.1234",
+            @"for manually handled push notifications"
         ],
 
         @[
@@ -444,11 +446,8 @@ typedef enum : NSUInteger
                 case 6: [self crashTest6];
                 break;
 
-                case 7:
-                {
-                    [Countly.sharedInstance crashLog:@"This is a custom crash log!"];
-                    [Countly.sharedInstance crashLog:@"This is another custom crash log with argument: %d!", 2];
-                }break;
+                case 7: [Countly.sharedInstance crashLog:@"This is a custom crash log!"];
+                break;
 
                 case 8:
                 {
@@ -751,6 +750,16 @@ typedef enum : NSUInteger
 
                 case 2: [Countly.sharedInstance recordLocation:(CLLocationCoordinate2D){33.6789,43.1234}];
                 break;
+
+                case 3:
+                {
+                    NSDictionary* userInfo;     // notification dictionary
+                    NSInteger buttonIndex = 1; 	// clicked button index
+                                                // 1 for first action button
+                                                // 2 for second action button
+                                                // 0 for default action
+                    [Countly.sharedInstance recordActionForNotification:userInfo clickedButtonIndex:buttonIndex];
+                }break;
 
                 default: break;
             }

@@ -36,10 +36,13 @@
 //    config.alwaysUsePOST = YES;                                   //Optional forcing for POST method
 
 //    config.enableAppleWatch = YES;                                //Optional Apple Watch related features
+
+//    config.applyZeroIDFAFix = YES;                                //Optional Zero-IDFA fix
+
 //    config.ISOCountryCode = @"JP";                                //Optional ISO country code
 //    config.city = @"Tokyo";                                       //Optional city name
 //    config.location = (CLLocationCoordinate2D){35.6895,139.6917}; //Optional location coordinates
-//    config.IP = @"128.0.0.1"                                        //Optional IP address
+//    config.IP = @"128.0.0.1";                                     //Optional IP address
 
 //    config.pinnedCertificates = @[@"count.ly.cer"];               //Optional bundled certificates for certificate pinning
 //    config.customHeaderFieldName = @"X-My-Custom-Field";          //Optional custom header field name

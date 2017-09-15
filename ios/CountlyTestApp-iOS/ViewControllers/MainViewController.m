@@ -446,7 +446,7 @@ typedef enum : NSUInteger
                 case 6: [self crashTest6];
                 break;
 
-                case 7: [Countly.sharedInstance crashLog:@"This is a custom crash log!"];
+                case 7: [Countly.sharedInstance recordCrashLog:@"This is a custom crash log!"];
                 break;
 
                 case 8:

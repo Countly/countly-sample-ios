@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D209A7C61F6B9B5300B19B9B /* countly_dsym_uploader.sh in Resources */ = {isa = PBXBuildFile; fileRef = D209A7C51F6B9B5300B19B9B /* countly_dsym_uploader.sh */; };
 		D252E3851DE074D2006548B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252E3841DE074D2006548B0 /* AppDelegate.swift */; };
 		D252E3871DE074D2006548B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252E3861DE074D2006548B0 /* ViewController.swift */; };
 		D252E38A1DE074D2006548B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D252E3881DE074D2006548B0 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D209A7C51F6B9B5300B19B9B /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
 		D252E3811DE074D2006548B0 /* CountlyTestApp-iOS-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-iOS-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D252E3841DE074D2006548B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D252E3861DE074D2006548B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +133,6 @@
 		D252E3961DE1F249006548B0 /* countly-sdk-ios */ = {
 			isa = PBXGroup;
 			children = (
-				D252E3971DE1F249006548B0 /* .gitattributes */,
 				D252E3981DE1F249006548B0 /* Countly.h */,
 				D252E3991DE1F249006548B0 /* Countly.m */,
 				D252E39B1DE1F249006548B0 /* Countly_OpenUDID.h */,
@@ -164,6 +165,8 @@
 				D252E3B41DE1F249006548B0 /* CountlyUserDetails.m */,
 				D252E3B51DE1F249006548B0 /* CountlyViewTracking.h */,
 				D252E3B61DE1F249006548B0 /* CountlyViewTracking.m */,
+				D252E3971DE1F249006548B0 /* .gitattributes */,
+				D209A7C51F6B9B5300B19B9B /* countly_dsym_uploader.sh */,
 				D252E39A1DE1F249006548B0 /* Countly.podspec */,
 				D252E3B71DE1F249006548B0 /* LICENSE */,
 				D252E3B81DE1F249006548B0 /* README.md */,
@@ -237,6 +240,7 @@
 				D252E38F1DE074D2006548B0 /* LaunchScreen.storyboard in Resources */,
 				D252E38C1DE074D2006548B0 /* Assets.xcassets in Resources */,
 				D252E38A1DE074D2006548B0 /* Main.storyboard in Resources */,
+				D209A7C61F6B9B5300B19B9B /* countly_dsym_uploader.sh in Resources */,
 				D252E3B91DE1F249006548B0 /* .gitattributes in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D209A7CC1F6B9DBE00B19B9B /* countly_dsym_uploader.sh in Resources */ = {isa = PBXBuildFile; fileRef = D209A7CB1F6B9DBE00B19B9B /* countly_dsym_uploader.sh */; };
 		D22D416B1C6E39B90078AF7D /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D416A1C6E39B90078AF7D /* CountlyViewTracking.m */; };
 		D22D416C1C6E39EC0078AF7D /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D416A1C6E39B90078AF7D /* CountlyViewTracking.m */; };
 		D23C98DA1ECAF287006BCBA4 /* CountlyNotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D23C98D81ECAF287006BCBA4 /* CountlyNotificationService.m */; };
@@ -100,6 +101,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D209A7CB1F6B9DBE00B19B9B /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
 		D22D41691C6E39B90078AF7D /* CountlyViewTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyViewTracking.h; sourceTree = "<group>"; };
 		D22D416A1C6E39B90078AF7D /* CountlyViewTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyViewTracking.m; sourceTree = "<group>"; };
 		D23C98D81ECAF287006BCBA4 /* CountlyNotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyNotificationService.m; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				D22D41691C6E39B90078AF7D /* CountlyViewTracking.h */,
 				D22D416A1C6E39B90078AF7D /* CountlyViewTracking.m */,
 				D2EB40D41C58C06E00EAA633 /* .gitattributes */,
+				D209A7CB1F6B9DBE00B19B9B /* countly_dsym_uploader.sh */,
 				D2EB40D71C58C06E00EAA633 /* Countly.podspec */,
 				D2EB40EE1C58C06E00EAA633 /* LICENSE */,
 				D2EB40EF1C58C06E00EAA633 /* README.md */,
@@ -421,6 +424,7 @@
 			files = (
 				D2FADF921C464C6A00060D08 /* LaunchScreen.storyboard in Resources */,
 				D2FADF8F1C464C6A00060D08 /* Assets.xcassets in Resources */,
+				D209A7CC1F6B9DBE00B19B9B /* countly_dsym_uploader.sh in Resources */,
 				D2FADF8D1C464C6A00060D08 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

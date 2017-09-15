@@ -56,7 +56,8 @@ class ViewController: UIViewController
                                 "Terminate",
                                 "Terminate 2",
                                 "Custom Crash Log",
-                                "Record Handled Exception"],
+                                "Record Handled Exception",
+                                "Record Handled Exception With Stack Trace"],
 
                                 ["Record User Details",
                                  "Custom Modifiers 1",
@@ -246,12 +247,20 @@ class ViewController: UIViewController
                 break
 
                 case 7:
-                    Countly.sharedInstance().crashLog("This is a custom crash log.")
+                    Countly.sharedInstance().recordCrashLog("This is a custom crash log.")
                 break
 
                 case 8:
                     let myException : NSException = NSException.init(name:NSExceptionName(rawValue: "MyException"), reason:"MyReason", userInfo:["key":"value"])
                     Countly.sharedInstance().recordHandledException(myException)
+                    
+                    Countly.sharedInstance().recordHandledException(myException, withStackTrace: Thread.callStackSymbols)
+                break
+
+                case 9:
+                    let myException : NSException = NSException.init(name:NSExceptionName(rawValue: "MyException"), reason:"MyReason", userInfo:["key":"value"])
+
+                    Countly.sharedInstance().recordHandledException(myException, withStackTrace: Thread.callStackSymbols)
                 break
 
                 default:
@@ -278,7 +287,7 @@ class ViewController: UIViewController
                     Countly.user().pictureLocalPath = localImagePath as CountlyUserDetailsNullableString
                     Countly.user().custom = ["testkey1":"testvalue1","testkey2":"testvalue2"] as CountlyUserDetailsNullableDictionary
 
-                    Countly.user().record()
+                    Countly.user().save()
                 break
 
                 case 1:

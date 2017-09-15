@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D209A7CA1F6B9BDA00B19B9B /* countly_dsym_uploader.sh in Resources */ = {isa = PBXBuildFile; fileRef = D209A7C91F6B9BDA00B19B9B /* countly_dsym_uploader.sh */; };
 		D22D41721C6EEF620078AF7D /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D41711C6EEF620078AF7D /* CountlyViewTracking.m */; };
 		D22D43051C4631BD00C69E7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D43041C4631BD00C69E7C /* main.m */; };
 		D22D43081C4631BD00C69E7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D43071C4631BD00C69E7C /* AppDelegate.m */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D209A7C91F6B9BDA00B19B9B /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
 		D22D41701C6EEF620078AF7D /* CountlyViewTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyViewTracking.h; sourceTree = "<group>"; };
 		D22D41711C6EEF620078AF7D /* CountlyViewTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyViewTracking.m; sourceTree = "<group>"; };
 		D22D43001C4631BD00C69E7C /* CountlyTestApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +167,7 @@
 				D22D41701C6EEF620078AF7D /* CountlyViewTracking.h */,
 				D22D41711C6EEF620078AF7D /* CountlyViewTracking.m */,
 				D2EB40A71C58C03500EAA633 /* .gitattributes */,
+				D209A7C91F6B9BDA00B19B9B /* countly_dsym_uploader.sh */,
 				D2EB40AA1C58C03500EAA633 /* Countly.podspec */,
 				D2EB40C11C58C03500EAA633 /* LICENSE */,
 				D2EB40C21C58C03500EAA633 /* README.md */,
@@ -232,6 +235,7 @@
 			files = (
 				D22D43101C4631BD00C69E7C /* Assets.xcassets in Resources */,
 				D22D430E1C4631BD00C69E7C /* Main.storyboard in Resources */,
+				D209A7CA1F6B9BDA00B19B9B /* countly_dsym_uploader.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

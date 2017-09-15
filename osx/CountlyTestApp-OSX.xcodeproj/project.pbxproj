@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D209A7C81F6B9BB200B19B9B /* countly_dsym_uploader.sh in Resources */ = {isa = PBXBuildFile; fileRef = D209A7C71F6B9BB200B19B9B /* countly_dsym_uploader.sh */; };
 		D22D416F1C6EED4D0078AF7D /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D416E1C6EED4D0078AF7D /* CountlyViewTracking.m */; };
 		D2315A2E18EBE52000119D0D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2315A2D18EBE52000119D0D /* Cocoa.framework */; };
 		D2315A3818EBE52100119D0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2315A3618EBE52100119D0D /* InfoPlist.strings */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D209A7C71F6B9BB200B19B9B /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
 		D22D416D1C6EED4D0078AF7D /* CountlyViewTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyViewTracking.h; sourceTree = "<group>"; };
 		D22D416E1C6EED4D0078AF7D /* CountlyViewTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyViewTracking.m; sourceTree = "<group>"; };
 		D2315A2A18EBE52000119D0D /* CountlyTestApp-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +193,7 @@
 				D22D416D1C6EED4D0078AF7D /* CountlyViewTracking.h */,
 				D22D416E1C6EED4D0078AF7D /* CountlyViewTracking.m */,
 				D2EB407A1C58C00400EAA633 /* .gitattributes */,
+				D209A7C71F6B9BB200B19B9B /* countly_dsym_uploader.sh */,
 				D2EB407D1C58C00400EAA633 /* Countly.podspec */,
 				D2EB40941C58C00400EAA633 /* LICENSE */,
 				D2EB40951C58C00400EAA633 /* README.md */,
@@ -253,6 +256,7 @@
 			files = (
 				D2315A3818EBE52100119D0D /* InfoPlist.strings in Resources */,
 				D2315A4618EBE52100119D0D /* Images.xcassets in Resources */,
+				D209A7C81F6B9BB200B19B9B /* countly_dsym_uploader.sh in Resources */,
 				D2315A4418EBE52100119D0D /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

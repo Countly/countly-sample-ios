@@ -98,6 +98,7 @@
 		D2340D201E33D89E003C3841 /* UserDetailsEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsEditorViewController.m; sourceTree = "<group>"; };
 		D2340D231E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsCustomModifiersViewController.h; sourceTree = "<group>"; };
 		D2340D241E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsCustomModifiersViewController.m; sourceTree = "<group>"; };
+		D257384F1F629FFB0063FA89 /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
 		D273859D1D963842008D201F /* CountlyPushNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPushNotifications.h; sourceTree = "<group>"; };
 		D273859E1D963842008D201F /* CountlyPushNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPushNotifications.m; sourceTree = "<group>"; };
 		D290ED89186337A90027082D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -325,12 +326,10 @@
 		D2EB404C1C58BFAA00EAA633 /* countly-sdk-ios */ = {
 			isa = PBXGroup;
 			children = (
-				D2EB404D1C58BFAA00EAA633 /* .gitattributes */,
 				D2EB404E1C58BFAA00EAA633 /* Countly.h */,
 				D2EB404F1C58BFAA00EAA633 /* Countly.m */,
 				D2EB40511C58BFAA00EAA633 /* Countly_OpenUDID.h */,
 				D2EB40521C58BFAA00EAA633 /* Countly_OpenUDID.m */,
-				D2EB40501C58BFAA00EAA633 /* Countly.podspec */,
 				D2EB40531C58BFAA00EAA633 /* CountlyAPM.h */,
 				D2EB40541C58BFAA00EAA633 /* CountlyAPM.m */,
 				D2EB40551C58BFAA00EAA633 /* CountlyAPMNetworkLog.h */,
@@ -359,6 +358,9 @@
 				D2EB40661C58BFAA00EAA633 /* CountlyUserDetails.m */,
 				D2FB68FA1C69D5F200079DF6 /* CountlyViewTracking.h */,
 				D2FB68FB1C69D5F200079DF6 /* CountlyViewTracking.m */,
+				D2EB404D1C58BFAA00EAA633 /* .gitattributes */,
+				D257384F1F629FFB0063FA89 /* countly_dsym_uploader.sh */,
+				D2EB40501C58BFAA00EAA633 /* Countly.podspec */,
 				D2EB40671C58BFAA00EAA633 /* LICENSE */,
 				D2EB40681C58BFAA00EAA633 /* README.md */,
 			);

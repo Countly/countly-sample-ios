@@ -11,6 +11,7 @@
 		D20C2C5F1A3F2DF600664CAD /* SamplePicture.gif in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */; };
 		D20C2C601A3F2DF600664CAD /* SamplePicture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */; };
 		D20C2C611A3F2DF600664CAD /* SamplePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */; };
+		D22AC9D21F711B5B0021DDD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22AC9D11F711B5B0021DDD5 /* LaunchScreen.storyboard */; };
 		D2314A001EB151CF0026F0DD /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D23149FF1EB151CF0026F0DD /* NotificationService.m */; };
 		D2314A041EB151CF0026F0DD /* CountlyNSE.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D23149FC1EB151CF0026F0DD /* CountlyNSE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D2314A0B1EB1528B0026F0DD /* CountlyNotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2314A0A1EB1528B0026F0DD /* CountlyNotificationService.m */; };
@@ -78,6 +79,7 @@
 		D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SamplePicture.gif; sourceTree = "<group>"; };
 		D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SamplePicture.jpg; sourceTree = "<group>"; };
 		D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SamplePicture.png; sourceTree = "<group>"; };
+		D22AC9D11F711B5B0021DDD5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D22D41671C6E386C0078AF7D /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		D23149FC1EB151CF0026F0DD /* CountlyNSE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CountlyNSE.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23149FE1EB151CF0026F0DD /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				D2BAB0AA17EC8EE600807D0D /* InfoPlist.strings */,
 				D2BAB0AD17EC8EE600807D0D /* main.m */,
 				D2BAB0AF17EC8EE600807D0D /* CountlyTestApp-iOS-Prefix.pch */,
+				D22AC9D11F711B5B0021DDD5 /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2BAB0BA17EC8EE600807D0D /* Images.xcassets in Resources */,
+				D22AC9D21F711B5B0021DDD5 /* LaunchScreen.storyboard in Resources */,
 				D20534441D267FB100CBB8B9 /* count.ly.cer in Resources */,
 				D20C2C601A3F2DF600664CAD /* SamplePicture.jpg in Resources */,
 				D20C2C5F1A3F2DF600664CAD /* SamplePicture.gif in Resources */,
@@ -687,7 +691,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-iOS/CountlyTestApp-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -709,7 +712,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-iOS/CountlyTestApp-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";

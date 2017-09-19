@@ -36,15 +36,15 @@
 		D209A7C71F6B9BB200B19B9B /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
 		D22D416D1C6EED4D0078AF7D /* CountlyViewTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyViewTracking.h; sourceTree = "<group>"; };
 		D22D416E1C6EED4D0078AF7D /* CountlyViewTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyViewTracking.m; sourceTree = "<group>"; };
-		D2315A2A18EBE52000119D0D /* CountlyTestApp-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2315A2A18EBE52000119D0D /* CountlyTestApp-macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-macos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2315A2D18EBE52000119D0D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D2315A3018EBE52000119D0D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		D2315A3118EBE52000119D0D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D2315A3218EBE52000119D0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D2315A3518EBE52000119D0D /* CountlyTestApp-OSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CountlyTestApp-OSX-Info.plist"; sourceTree = "<group>"; };
+		D2315A3518EBE52000119D0D /* CountlyTestApp-macos-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CountlyTestApp-macos-Info.plist"; sourceTree = "<group>"; };
 		D2315A3718EBE52100119D0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D2315A3918EBE52100119D0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D2315A3B18EBE52100119D0D /* CountlyTestApp-OSX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CountlyTestApp-OSX-Prefix.pch"; sourceTree = "<group>"; };
+		D2315A3B18EBE52100119D0D /* CountlyTestApp-macos-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CountlyTestApp-macos-Prefix.pch"; sourceTree = "<group>"; };
 		D2315A3F18EBE52100119D0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2315A4018EBE52100119D0D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D2315A4318EBE52100119D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		D2315A2118EBE52000119D0D = {
 			isa = PBXGroup;
 			children = (
-				D2315A3318EBE52000119D0D /* CountlyTestApp-OSX */,
+				D2315A3318EBE52000119D0D /* CountlyTestApp-macos */,
 				D2EB40791C58C00400EAA633 /* countly-sdk-ios */,
 				D2315A2C18EBE52000119D0D /* Frameworks */,
 				D2315A2B18EBE52000119D0D /* Products */,
@@ -110,7 +110,7 @@
 		D2315A2B18EBE52000119D0D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2315A2A18EBE52000119D0D /* CountlyTestApp-OSX.app */,
+				D2315A2A18EBE52000119D0D /* CountlyTestApp-macos.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,7 +134,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		D2315A3318EBE52000119D0D /* CountlyTestApp-OSX */ = {
+		D2315A3318EBE52000119D0D /* CountlyTestApp-macos */ = {
 			isa = PBXGroup;
 			children = (
 				D2315A3F18EBE52100119D0D /* AppDelegate.h */,
@@ -143,16 +143,16 @@
 				D2315A4518EBE52100119D0D /* Images.xcassets */,
 				D2315A3418EBE52000119D0D /* Supporting Files */,
 			);
-			path = "CountlyTestApp-OSX";
+			path = "CountlyTestApp-macos";
 			sourceTree = "<group>";
 		};
 		D2315A3418EBE52000119D0D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D2315A3518EBE52000119D0D /* CountlyTestApp-OSX-Info.plist */,
+				D2315A3518EBE52000119D0D /* CountlyTestApp-macos-Info.plist */,
 				D2315A3618EBE52100119D0D /* InfoPlist.strings */,
 				D2315A3918EBE52100119D0D /* main.m */,
-				D2315A3B18EBE52100119D0D /* CountlyTestApp-OSX-Prefix.pch */,
+				D2315A3B18EBE52100119D0D /* CountlyTestApp-macos-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -205,9 +205,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D2315A2918EBE52000119D0D /* CountlyTestApp-OSX */ = {
+		D2315A2918EBE52000119D0D /* CountlyTestApp-macos */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D2315A5B18EBE52100119D0D /* Build configuration list for PBXNativeTarget "CountlyTestApp-OSX" */;
+			buildConfigurationList = D2315A5B18EBE52100119D0D /* Build configuration list for PBXNativeTarget "CountlyTestApp-macos" */;
 			buildPhases = (
 				D2315A2618EBE52000119D0D /* Sources */,
 				D2315A2718EBE52000119D0D /* Frameworks */,
@@ -217,9 +217,9 @@
 			);
 			dependencies = (
 			);
-			name = "CountlyTestApp-OSX";
-			productName = "CountlyTestApp-OSX";
-			productReference = D2315A2A18EBE52000119D0D /* CountlyTestApp-OSX.app */;
+			name = "CountlyTestApp-macos";
+			productName = "CountlyTestApp-macos";
+			productReference = D2315A2A18EBE52000119D0D /* CountlyTestApp-macos.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -231,7 +231,7 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Countly;
 			};
-			buildConfigurationList = D2315A2518EBE52000119D0D /* Build configuration list for PBXProject "CountlyTestApp-OSX" */;
+			buildConfigurationList = D2315A2518EBE52000119D0D /* Build configuration list for PBXProject "CountlyTestApp-macos" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -244,7 +244,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D2315A2918EBE52000119D0D /* CountlyTestApp-OSX */,
+				D2315A2918EBE52000119D0D /* CountlyTestApp-macos */,
 			);
 		};
 /* End PBXProject section */
@@ -398,10 +398,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CountlyTestApp-OSX/CountlyTestApp-OSX-Prefix.pch";
-				INFOPLIST_FILE = "CountlyTestApp-OSX/CountlyTestApp-OSX-Info.plist";
+				GCC_PREFIX_HEADER = "CountlyTestApp-macos/CountlyTestApp-macos-Prefix.pch";
+				INFOPLIST_FILE = "CountlyTestApp-macos/CountlyTestApp-macos-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "CountlyTestApp-OSX";
+				PRODUCT_NAME = "CountlyTestApp-macos";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -412,10 +412,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CountlyTestApp-OSX/CountlyTestApp-OSX-Prefix.pch";
-				INFOPLIST_FILE = "CountlyTestApp-OSX/CountlyTestApp-OSX-Info.plist";
+				GCC_PREFIX_HEADER = "CountlyTestApp-macos/CountlyTestApp-macos-Prefix.pch";
+				INFOPLIST_FILE = "CountlyTestApp-macos/CountlyTestApp-macos-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "CountlyTestApp-OSX";
+				PRODUCT_NAME = "CountlyTestApp-macos";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -423,7 +423,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D2315A2518EBE52000119D0D /* Build configuration list for PBXProject "CountlyTestApp-OSX" */ = {
+		D2315A2518EBE52000119D0D /* Build configuration list for PBXProject "CountlyTestApp-macos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D2315A5918EBE52100119D0D /* Debug */,
@@ -432,7 +432,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D2315A5B18EBE52100119D0D /* Build configuration list for PBXNativeTarget "CountlyTestApp-OSX" */ = {
+		D2315A5B18EBE52100119D0D /* Build configuration list for PBXNativeTarget "CountlyTestApp-macos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D2315A5C18EBE52100119D0D /* Debug */,

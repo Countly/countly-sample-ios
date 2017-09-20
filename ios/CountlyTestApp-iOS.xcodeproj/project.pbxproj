@@ -28,6 +28,7 @@
 		D252ECDB1F72016300481A79 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D252ECDA1F72016300481A79 /* Images.xcassets */; };
 		D252ECE11F72026100481A79 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECDC1F72026100481A79 /* AppDelegate.m */; };
 		D252ECE21F72026100481A79 /* EYLogViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECE01F72026100481A79 /* EYLogViewer.m */; };
+		D252ECE61F7203C200481A79 /* EYCrashTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECE51F7203C200481A79 /* EYCrashTesting.m */; };
 		D273859F1D963842008D201F /* CountlyPushNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = D273859E1D963842008D201F /* CountlyPushNotifications.m */; };
 		D290ED8A186337A90027082D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290ED89186337A90027082D /* CoreTelephony.framework */; };
 		D2BAB0A217EC8EE600807D0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A117EC8EE600807D0D /* Foundation.framework */; };
@@ -108,6 +109,8 @@
 		D252ECDC1F72026100481A79 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D252ECDF1F72026100481A79 /* EYLogViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYLogViewer.h; sourceTree = "<group>"; };
 		D252ECE01F72026100481A79 /* EYLogViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYLogViewer.m; sourceTree = "<group>"; };
+		D252ECE41F7203C200481A79 /* EYCrashTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYCrashTesting.h; sourceTree = "<group>"; };
+		D252ECE51F7203C200481A79 /* EYCrashTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYCrashTesting.m; sourceTree = "<group>"; };
 		D257384F1F629FFB0063FA89 /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
 		D273859D1D963842008D201F /* CountlyPushNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPushNotifications.h; sourceTree = "<group>"; };
 		D273859E1D963842008D201F /* CountlyPushNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPushNotifications.m; sourceTree = "<group>"; };
@@ -272,6 +275,7 @@
 		D252ECDD1F72026100481A79 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				D252ECE31F7203C200481A79 /* EYCrashTesting */,
 				D252ECDE1F72026100481A79 /* EYLogViewer */,
 			);
 			path = External;
@@ -284,6 +288,15 @@
 				D252ECE01F72026100481A79 /* EYLogViewer.m */,
 			);
 			path = EYLogViewer;
+			sourceTree = "<group>";
+		};
+		D252ECE31F7203C200481A79 /* EYCrashTesting */ = {
+			isa = PBXGroup;
+			children = (
+				D252ECE41F7203C200481A79 /* EYCrashTesting.h */,
+				D252ECE51F7203C200481A79 /* EYCrashTesting.m */,
+			);
+			path = EYCrashTesting;
 			sourceTree = "<group>";
 		};
 		D2BAB09517EC8EE600807D0D = {
@@ -505,6 +518,7 @@
 			files = (
 				D273859F1D963842008D201F /* CountlyPushNotifications.m in Sources */,
 				D2340D191E33BE15003C3841 /* TestPushPopViewController.m in Sources */,
+				D252ECE61F7203C200481A79 /* EYCrashTesting.m in Sources */,
 				D2340D211E33D89E003C3841 /* UserDetailsEditorViewController.m in Sources */,
 				D2EB40731C58BFAA00EAA633 /* CountlyDeviceInfo.m in Sources */,
 				D2EB40751C58BFAA00EAA633 /* CountlyPersistency.m in Sources */,

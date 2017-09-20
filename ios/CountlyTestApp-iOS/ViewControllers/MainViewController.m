@@ -12,6 +12,7 @@
 #import "UserDetailsEditorViewController.h"
 #import "UserDetailsCustomModifiersViewController.h"
 #import "EYLogViewer.h"
+#import "EYCrashTesting.h"
 
 @interface MainViewController ()
 {
@@ -84,11 +85,16 @@ typedef enum : NSUInteger
         @[
             @"Unrecognized Selector",
             @"Out of Bounds",
-            @"NULL pointer",
+            @"NULL Pointer",
             @"Invalid Geometry",
-            @"Assert Fail",
-            @"Terminate",
-            @"Terminate 2",
+            @"Raise Custom Exception",
+            @"kill",
+            @"__builtin_trap",
+            @"Access to a Non-Object",
+            @"Message a Released Object",
+            @"Write to Read-Only Memory",
+            @"Stack Overflow",
+            @"abort",
             @"Custom Crash Log",
             @"Record Handled Exception",
             @"Record Handled Exception with Stack Trace"
@@ -185,11 +191,16 @@ typedef enum : NSUInteger
         @[
             @"thisIsTheUnrecognizedSelectorCausingTheCrash",
             @"5th element in a 3 elements array",
-            @"dereference",
+            @"Dereference",
             @"CALayer position contains nan",
-            @"This is the test assert that failed!",
-            @"kill SIGABRT",
-            @"__builtin_trap SIGTERM",
+            @"This is the exception!",
+            @"with SIGABRT",
+            @"",
+            @"",
+            @"",
+            @"using function pointer aFunction",
+            @"infinite recursive call",
+            @"",
             @"This is a custom crash log!",
             @"n:MyException  r:MyReason  d:{key:value}",
             @"n:MyExc  r:MyReason  d:{key:value} and stack trace"
@@ -425,37 +436,29 @@ typedef enum : NSUInteger
         {
             switch (indexPath.row)
             {
-                case 0: [self crashTest0];
+                case 0:  [EYCrashTesting crashTest0];  break;
+                case 1:  [EYCrashTesting crashTest1];  break;
+                case 2:  [EYCrashTesting crashTest2];  break;
+                case 3:  [EYCrashTesting crashTest3];  break;
+                case 4:  [EYCrashTesting crashTest4];  break;
+                case 5:  [EYCrashTesting crashTest5];  break;
+                case 6:  [EYCrashTesting crashTest6];  break;
+                case 7:  [EYCrashTesting crashTest7];  break;
+                case 8:  [EYCrashTesting crashTest8];  break;
+                case 9:  [EYCrashTesting crashTest9];  break;
+                case 10: [EYCrashTesting crashTest10]; break;
+                case 11: [EYCrashTesting crashTest11]; break;
+
+                case 12: [Countly.sharedInstance recordCrashLog:@"This is a custom crash log!"];
                 break;
 
-                case 1: [self crashTest1];
-                break;
-
-                case 2: [self crashTest2];
-                break;
-
-                case 3: [self crashTest3];
-                break;
-
-                case 4: [self crashTest4];
-                break;
-                
-                case 5: [self crashTest5];
-                break;
-
-                case 6: [self crashTest6];
-                break;
-
-                case 7: [Countly.sharedInstance recordCrashLog:@"This is a custom crash log!"];
-                break;
-
-                case 8:
+                case 13:
                 {
                     NSException* myException = [NSException exceptionWithName:@"MyException" reason:@"MyReason" userInfo:@{@"key":@"value"}];
                     [Countly.sharedInstance recordHandledException:myException];
                 }break;
 
-                case 9:
+                case 14:
                 {
                     NSException* myException = [NSException exceptionWithName:@"MyExc" reason:@"MyReason" userInfo:@{@"key":@"value"}];
                     [Countly.sharedInstance recordHandledException:myException withStackTrace:[NSThread callStackSymbols]];

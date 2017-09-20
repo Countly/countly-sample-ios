@@ -68,18 +68,22 @@ void aFunction()
 
 + (void)crashTest1
 {
+    #ifndef __clang_analyzer__
     #pragma clang diagnostic push
     #pragma clang diagnostic ignored "-Wunused-variable"
     NSArray* anArray = @[@"one",@"two",@"three"];
     NSString* myCrashingString = anArray[5];
     #pragma clang diagnostic pop
+    #endif
 }
 
 
 + (void)crashTest2
 {
+    #ifndef __clang_analyzer__
     int *nullPointer = NULL;
     *nullPointer = 2017;
+    #endif
 }
 
 
@@ -119,9 +123,11 @@ void aFunction()
 
 + (void)crashTest8
 {
+    #ifndef __clang_analyzer__
     NSObject*  test = NSObject.new;
     CFRelease((__bridge CFTypeRef)test);
     NSLog(@"%@", test.description);
+    #endif
 }
 
 

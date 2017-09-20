@@ -756,7 +756,7 @@ typedef enum : NSUInteger
 
                 case 3:
                 {
-                    NSDictionary* userInfo;     // notification dictionary
+                    NSDictionary* userInfo = NSDictionary.new;     // this should be the notification dictionary
                     NSInteger buttonIndex = 1; 	// clicked button index
                                                 // 1 for first action button
                                                 // 2 for second action button

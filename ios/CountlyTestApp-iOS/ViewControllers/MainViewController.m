@@ -404,16 +404,16 @@ typedef enum : NSUInteger
                 case 5: [Countly.sharedInstance recordEvent:@"TestEventB" count:5 sum:1.99];
                 break;
 
-                case 6: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k" : @"v"}];
+                case 6: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k": @"v"}];
                 break;
 
-                case 7: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k" : @"v"} count:5];
+                case 7: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k": @"v"} count:5];
                 break;
 
-                case 8: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k" : @"v"} count:5 sum:1.99];
+                case 8: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k": @"v"} count:5 sum:1.99];
                 break;
 
-                case 9: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k" : @"v"} count:5 sum:1.99 duration:0.314];
+                case 9: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k": @"v"} count:5 sum:1.99 duration:0.314];
                 break;
 
                 case 10: [Countly.sharedInstance startEvent:@"timed-event"];
@@ -422,7 +422,7 @@ typedef enum : NSUInteger
                 case 11: [Countly.sharedInstance endEvent:@"timed-event"];
                 break;
 
-                case 12: [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k" : @"v"} count:1 sum:0];
+                case 12: [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k": @"v"} count:1 sum:0];
                 break;
 
                 default:break;
@@ -454,13 +454,13 @@ typedef enum : NSUInteger
 
                 case 13:
                 {
-                    NSException* myException = [NSException exceptionWithName:@"MyException" reason:@"MyReason" userInfo:@{@"key":@"value"}];
+                    NSException* myException = [NSException exceptionWithName:@"MyException" reason:@"MyReason" userInfo:@{@"key": @"value"}];
                     [Countly.sharedInstance recordHandledException:myException];
                 }break;
 
                 case 14:
                 {
-                    NSException* myException = [NSException exceptionWithName:@"MyExc" reason:@"MyReason" userInfo:@{@"key":@"value"}];
+                    NSException* myException = [NSException exceptionWithName:@"MyExc" reason:@"MyReason" userInfo:@{@"key": @"value"}];
                     [Countly.sharedInstance recordHandledException:myException withStackTrace:[NSThread callStackSymbols]];
                 }break;
 
@@ -505,7 +505,7 @@ typedef enum : NSUInteger
                     Countly.user.phone = @"+0123456789";
                     //Countly.user.pictureURL = @"http://s12.postimg.org/qji0724gd/988a10da33b57631caa7ee8e2b5a9036.jpg";
                     Countly.user.pictureLocalPath = localImagePath;
-                    Countly.user.custom = @{@"testkey1":@"testvalue1",@"testkey2":@"testvalue2"};
+                    Countly.user.custom = @{@"testkey1": @"testvalue1", @"testkey2": @"testvalue2"};
 
                     [Countly.user save];
                 }break;
@@ -855,61 +855,6 @@ typedef enum : NSUInteger
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
 //    NSLog(@"%s %@",__FUNCTION__,[connection description]);
-}
-
-
-#pragma mark - Crash Tests
-
-
-- (void)crashTest0
-{
-    #pragma clang diagnostic push
-    #pragma clang diagnostic ignored "-Wundeclared-selector"
-    [self performSelector:@selector(thisIsTheUnrecognizedSelectorCausingTheCrash)];
-    #pragma clang diagnostic pop
-}
-
-
-- (void)crashTest1
-{
-    #pragma clang diagnostic push
-    #pragma clang diagnostic ignored "-Wunused-variable"
-    NSArray* anArray = @[@"one",@"two",@"three"];
-    NSString* myCrashingString = anArray[5];
-    #pragma clang diagnostic pop
-}
-
-
-- (void)crashTest2
-{
-    int *nullPointer = NULL;
-    *nullPointer = 2017;
-}
-
-
-- (void)crashTest3
-{
-    CGRect aRect = (CGRect){0.0/0.0, 0.0, 100.0, 100.0};
-    UIView *crashView = UIView.new;
-    crashView.frame = aRect;
-}
-
-
-- (void)crashTest4
-{
-    NSAssert(0==1, @"This is the test assert that failed!");
-}
-
-
-- (void)crashTest5
-{
-    kill(getpid(), SIGABRT);
-}
-
-
-- (void)crashTest6
-{
-    __builtin_trap();
 }
 
 @end

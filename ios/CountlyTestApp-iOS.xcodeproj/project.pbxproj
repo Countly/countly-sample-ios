@@ -3,14 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D20534441D267FB100CBB8B9 /* count.ly.cer in Resources */ = {isa = PBXBuildFile; fileRef = D20534431D267FB100CBB8B9 /* count.ly.cer */; };
-		D20C2C5F1A3F2DF600664CAD /* SamplePicture.gif in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */; };
-		D20C2C601A3F2DF600664CAD /* SamplePicture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */; };
-		D20C2C611A3F2DF600664CAD /* SamplePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */; };
 		D2314A001EB151CF0026F0DD /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D23149FF1EB151CF0026F0DD /* NotificationService.m */; };
 		D2314A041EB151CF0026F0DD /* CountlyNSE.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D23149FC1EB151CF0026F0DD /* CountlyNSE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D2314A0B1EB1528B0026F0DD /* CountlyNotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2314A0A1EB1528B0026F0DD /* CountlyNotificationService.m */; };
@@ -22,16 +18,21 @@
 		D2340D1D1E33C55B003C3841 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340D1B1E33C55B003C3841 /* MainViewController.m */; };
 		D2340D211E33D89E003C3841 /* UserDetailsEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340D201E33D89E003C3841 /* UserDetailsEditorViewController.m */; };
 		D2340D251E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340D241E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m */; };
+		D252ECCF1F7200CE00481A79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D252ECCC1F7200CE00481A79 /* LaunchScreen.storyboard */; };
+		D252ECD01F7200CE00481A79 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECCD1F7200CE00481A79 /* main.m */; };
+		D252ECD61F72014E00481A79 /* count.ly.cer in Resources */ = {isa = PBXBuildFile; fileRef = D252ECD21F72014E00481A79 /* count.ly.cer */; };
+		D252ECD71F72014E00481A79 /* SamplePicture.gif in Resources */ = {isa = PBXBuildFile; fileRef = D252ECD31F72014E00481A79 /* SamplePicture.gif */; };
+		D252ECD81F72014E00481A79 /* SamplePicture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D252ECD41F72014E00481A79 /* SamplePicture.jpg */; };
+		D252ECD91F72014E00481A79 /* SamplePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = D252ECD51F72014E00481A79 /* SamplePicture.png */; };
+		D252ECDB1F72016300481A79 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D252ECDA1F72016300481A79 /* Images.xcassets */; };
+		D252ECE11F72026100481A79 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECDC1F72026100481A79 /* AppDelegate.m */; };
+		D252ECE21F72026100481A79 /* EYLogViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECE01F72026100481A79 /* EYLogViewer.m */; };
+		D252ECE61F7203C200481A79 /* EYCrashTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECE51F7203C200481A79 /* EYCrashTesting.m */; };
 		D273859F1D963842008D201F /* CountlyPushNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = D273859E1D963842008D201F /* CountlyPushNotifications.m */; };
 		D290ED8A186337A90027082D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290ED89186337A90027082D /* CoreTelephony.framework */; };
-		D2AAC1101D9921A400B6EA08 /* EYLogViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AAC10F1D9921A400B6EA08 /* EYLogViewer.m */; };
 		D2BAB0A217EC8EE600807D0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A117EC8EE600807D0D /* Foundation.framework */; };
 		D2BAB0A417EC8EE600807D0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A317EC8EE600807D0D /* CoreGraphics.framework */; };
 		D2BAB0A617EC8EE600807D0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A517EC8EE600807D0D /* UIKit.framework */; };
-		D2BAB0AC17EC8EE600807D0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2BAB0AA17EC8EE600807D0D /* InfoPlist.strings */; };
-		D2BAB0AE17EC8EE600807D0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BAB0AD17EC8EE600807D0D /* main.m */; };
-		D2BAB0B217EC8EE600807D0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BAB0B117EC8EE600807D0D /* AppDelegate.m */; };
-		D2BAB0BA17EC8EE600807D0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2BAB0B917EC8EE600807D0D /* Images.xcassets */; };
 		D2D4F4281A0BB34500C0EF0B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D4F4271A0BB34500C0EF0B /* AdSupport.framework */; };
 		D2EB406A1C58BFAA00EAA633 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB404F1C58BFAA00EAA633 /* Countly.m */; };
 		D2EB406C1C58BFAA00EAA633 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40521C58BFAA00EAA633 /* Countly_OpenUDID.m */; };
@@ -74,10 +75,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D20534431D267FB100CBB8B9 /* count.ly.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = count.ly.cer; sourceTree = "<group>"; };
-		D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SamplePicture.gif; sourceTree = "<group>"; };
-		D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SamplePicture.jpg; sourceTree = "<group>"; };
-		D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SamplePicture.png; sourceTree = "<group>"; };
 		D22D41671C6E386C0078AF7D /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		D23149FC1EB151CF0026F0DD /* CountlyNSE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CountlyNSE.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23149FE1EB151CF0026F0DD /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
@@ -98,25 +95,31 @@
 		D2340D201E33D89E003C3841 /* UserDetailsEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsEditorViewController.m; sourceTree = "<group>"; };
 		D2340D231E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsCustomModifiersViewController.h; sourceTree = "<group>"; };
 		D2340D241E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsCustomModifiersViewController.m; sourceTree = "<group>"; };
+		D252ECC91F7200CE00481A79 /* CountlyTestApp-iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CountlyTestApp-iOS-Info.plist"; sourceTree = "<group>"; };
+		D252ECCA1F7200CE00481A79 /* CountlyTestApp-iOS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CountlyTestApp-iOS-Prefix.pch"; sourceTree = "<group>"; };
+		D252ECCB1F7200CE00481A79 /* CountlyTestApp-iOS.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "CountlyTestApp-iOS.entitlements"; sourceTree = "<group>"; };
+		D252ECCC1F7200CE00481A79 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D252ECCD1F7200CE00481A79 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D252ECD21F72014E00481A79 /* count.ly.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = count.ly.cer; sourceTree = "<group>"; };
+		D252ECD31F72014E00481A79 /* SamplePicture.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SamplePicture.gif; sourceTree = "<group>"; };
+		D252ECD41F72014E00481A79 /* SamplePicture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SamplePicture.jpg; sourceTree = "<group>"; };
+		D252ECD51F72014E00481A79 /* SamplePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SamplePicture.png; sourceTree = "<group>"; };
+		D252ECDA1F72016300481A79 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D252ECDC1F72026100481A79 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D252ECDF1F72026100481A79 /* EYLogViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYLogViewer.h; sourceTree = "<group>"; };
+		D252ECE01F72026100481A79 /* EYLogViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYLogViewer.m; sourceTree = "<group>"; };
+		D252ECE41F7203C200481A79 /* EYCrashTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYCrashTesting.h; sourceTree = "<group>"; };
+		D252ECE51F7203C200481A79 /* EYCrashTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYCrashTesting.m; sourceTree = "<group>"; };
+		D257384F1F629FFB0063FA89 /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
 		D273859D1D963842008D201F /* CountlyPushNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPushNotifications.h; sourceTree = "<group>"; };
 		D273859E1D963842008D201F /* CountlyPushNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPushNotifications.m; sourceTree = "<group>"; };
 		D290ED89186337A90027082D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		D2AAC10C1D98F7B000B6EA08 /* CountlyTestApp-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CountlyTestApp-iOS.entitlements"; sourceTree = "<group>"; };
-		D2AAC10E1D9921A400B6EA08 /* EYLogViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYLogViewer.h; sourceTree = "<group>"; };
-		D2AAC10F1D9921A400B6EA08 /* EYLogViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYLogViewer.m; sourceTree = "<group>"; };
 		D2BAB09E17EC8EE600807D0D /* CountlyTestApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BAB0A117EC8EE600807D0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2BAB0A317EC8EE600807D0D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D2BAB0A517EC8EE600807D0D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D2BAB0A917EC8EE600807D0D /* CountlyTestApp-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CountlyTestApp-iOS-Info.plist"; sourceTree = "<group>"; };
-		D2BAB0AB17EC8EE600807D0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D2BAB0AD17EC8EE600807D0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D2BAB0AF17EC8EE600807D0D /* CountlyTestApp-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CountlyTestApp-iOS-Prefix.pch"; sourceTree = "<group>"; };
 		D2BAB0B017EC8EE600807D0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D2BAB0B117EC8EE600807D0D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D2BAB0B917EC8EE600807D0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D2D4F4271A0BB34500C0EF0B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		D2EB404D1C58BFAA00EAA633 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		D2EB404E1C58BFAA00EAA633 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
 		D2EB404F1C58BFAA00EAA633 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
 		D2EB40501C58BFAA00EAA633 /* Countly.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countly.podspec; sourceTree = "<group>"; };
@@ -173,16 +176,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D20C2C5B1A3F2DF600664CAD /* img */ = {
-			isa = PBXGroup;
-			children = (
-				D20C2C5C1A3F2DF600664CAD /* SamplePicture.gif */,
-				D20C2C5D1A3F2DF600664CAD /* SamplePicture.jpg */,
-				D20C2C5E1A3F2DF600664CAD /* SamplePicture.png */,
-			);
-			path = img;
-			sourceTree = "<group>";
-		};
 		D23149FD1EB151CF0026F0DD /* CountlyNSE */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,13 +246,55 @@
 			path = UserDetailsCustomModifiersViewController;
 			sourceTree = "<group>";
 		};
-		D2AAC10D1D9921A400B6EA08 /* EYLogViewer */ = {
+		D252ECC81F7200CE00481A79 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				D2AAC10E1D9921A400B6EA08 /* EYLogViewer.h */,
-				D2AAC10F1D9921A400B6EA08 /* EYLogViewer.m */,
+				D252ECC91F7200CE00481A79 /* CountlyTestApp-iOS-Info.plist */,
+				D252ECCA1F7200CE00481A79 /* CountlyTestApp-iOS-Prefix.pch */,
+				D252ECCB1F7200CE00481A79 /* CountlyTestApp-iOS.entitlements */,
+				D252ECCC1F7200CE00481A79 /* LaunchScreen.storyboard */,
+				D252ECCD1F7200CE00481A79 /* main.m */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		D252ECD11F72014E00481A79 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D252ECDA1F72016300481A79 /* Images.xcassets */,
+				D252ECD21F72014E00481A79 /* count.ly.cer */,
+				D252ECD31F72014E00481A79 /* SamplePicture.gif */,
+				D252ECD41F72014E00481A79 /* SamplePicture.jpg */,
+				D252ECD51F72014E00481A79 /* SamplePicture.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D252ECDD1F72026100481A79 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				D252ECE31F7203C200481A79 /* EYCrashTesting */,
+				D252ECDE1F72026100481A79 /* EYLogViewer */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		D252ECDE1F72026100481A79 /* EYLogViewer */ = {
+			isa = PBXGroup;
+			children = (
+				D252ECDF1F72026100481A79 /* EYLogViewer.h */,
+				D252ECE01F72026100481A79 /* EYLogViewer.m */,
 			);
 			path = EYLogViewer;
+			sourceTree = "<group>";
+		};
+		D252ECE31F7203C200481A79 /* EYCrashTesting */ = {
+			isa = PBXGroup;
+			children = (
+				D252ECE41F7203C200481A79 /* EYCrashTesting.h */,
+				D252ECE51F7203C200481A79 /* EYCrashTesting.m */,
+			);
+			path = EYCrashTesting;
 			sourceTree = "<group>";
 		};
 		D2BAB09517EC8EE600807D0D = {
@@ -298,39 +333,23 @@
 		D2BAB0A717EC8EE600807D0D /* CountlyTestApp-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D2AAC10C1D98F7B000B6EA08 /* CountlyTestApp-iOS.entitlements */,
 				D2BAB0B017EC8EE600807D0D /* AppDelegate.h */,
-				D2BAB0B117EC8EE600807D0D /* AppDelegate.m */,
+				D252ECDC1F72026100481A79 /* AppDelegate.m */,
 				D2340CF81E33B726003C3841 /* ViewControllers */,
-				D2AAC10D1D9921A400B6EA08 /* EYLogViewer */,
-				D20534431D267FB100CBB8B9 /* count.ly.cer */,
-				D20C2C5B1A3F2DF600664CAD /* img */,
-				D2BAB0B917EC8EE600807D0D /* Images.xcassets */,
-				D2BAB0A817EC8EE600807D0D /* Supporting Files */,
+				D252ECDD1F72026100481A79 /* External */,
+				D252ECD11F72014E00481A79 /* Resources */,
+				D252ECC81F7200CE00481A79 /* SupportingFiles */,
 			);
 			path = "CountlyTestApp-iOS";
-			sourceTree = "<group>";
-		};
-		D2BAB0A817EC8EE600807D0D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D2BAB0A917EC8EE600807D0D /* CountlyTestApp-iOS-Info.plist */,
-				D2BAB0AA17EC8EE600807D0D /* InfoPlist.strings */,
-				D2BAB0AD17EC8EE600807D0D /* main.m */,
-				D2BAB0AF17EC8EE600807D0D /* CountlyTestApp-iOS-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		D2EB404C1C58BFAA00EAA633 /* countly-sdk-ios */ = {
 			isa = PBXGroup;
 			children = (
-				D2EB404D1C58BFAA00EAA633 /* .gitattributes */,
 				D2EB404E1C58BFAA00EAA633 /* Countly.h */,
 				D2EB404F1C58BFAA00EAA633 /* Countly.m */,
 				D2EB40511C58BFAA00EAA633 /* Countly_OpenUDID.h */,
 				D2EB40521C58BFAA00EAA633 /* Countly_OpenUDID.m */,
-				D2EB40501C58BFAA00EAA633 /* Countly.podspec */,
 				D2EB40531C58BFAA00EAA633 /* CountlyAPM.h */,
 				D2EB40541C58BFAA00EAA633 /* CountlyAPM.m */,
 				D2EB40551C58BFAA00EAA633 /* CountlyAPMNetworkLog.h */,
@@ -359,6 +378,8 @@
 				D2EB40661C58BFAA00EAA633 /* CountlyUserDetails.m */,
 				D2FB68FA1C69D5F200079DF6 /* CountlyViewTracking.h */,
 				D2FB68FB1C69D5F200079DF6 /* CountlyViewTracking.m */,
+				D257384F1F629FFB0063FA89 /* countly_dsym_uploader.sh */,
+				D2EB40501C58BFAA00EAA633 /* Countly.podspec */,
 				D2EB40671C58BFAA00EAA633 /* LICENSE */,
 				D2EB40681C58BFAA00EAA633 /* README.md */,
 			);
@@ -412,7 +433,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = Countly;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Countly;
 				TargetAttributes = {
 					D23149FB1EB151CF0026F0DD = {
@@ -435,7 +456,7 @@
 				};
 			};
 			buildConfigurationList = D2BAB09917EC8EE600807D0D /* Build configuration list for PBXProject "CountlyTestApp-iOS" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -465,13 +486,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2BAB0BA17EC8EE600807D0D /* Images.xcassets in Resources */,
-				D20534441D267FB100CBB8B9 /* count.ly.cer in Resources */,
-				D20C2C601A3F2DF600664CAD /* SamplePicture.jpg in Resources */,
-				D20C2C5F1A3F2DF600664CAD /* SamplePicture.gif in Resources */,
-				D20C2C611A3F2DF600664CAD /* SamplePicture.png in Resources */,
-				D2BAB0AC17EC8EE600807D0D /* InfoPlist.strings in Resources */,
+				D252ECCF1F7200CE00481A79 /* LaunchScreen.storyboard in Resources */,
+				D252ECDB1F72016300481A79 /* Images.xcassets in Resources */,
+				D252ECD91F72014E00481A79 /* SamplePicture.png in Resources */,
+				D252ECD61F72014E00481A79 /* count.ly.cer in Resources */,
+				D252ECD81F72014E00481A79 /* SamplePicture.jpg in Resources */,
 				D2340D081E33B726003C3841 /* Countly.storyboard in Resources */,
+				D252ECD71F72014E00481A79 /* SamplePicture.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,26 +514,27 @@
 			files = (
 				D273859F1D963842008D201F /* CountlyPushNotifications.m in Sources */,
 				D2340D191E33BE15003C3841 /* TestPushPopViewController.m in Sources */,
+				D252ECE61F7203C200481A79 /* EYCrashTesting.m in Sources */,
 				D2340D211E33D89E003C3841 /* UserDetailsEditorViewController.m in Sources */,
 				D2EB40731C58BFAA00EAA633 /* CountlyDeviceInfo.m in Sources */,
-				D2BAB0B217EC8EE600807D0D /* AppDelegate.m in Sources */,
 				D2EB40751C58BFAA00EAA633 /* CountlyPersistency.m in Sources */,
 				D2340D131E33BA09003C3841 /* TestModalViewController.m in Sources */,
 				D2EB406F1C58BFAA00EAA633 /* CountlyCommon.m in Sources */,
 				D2EB40761C58BFAA00EAA633 /* CountlyUserDetails.m in Sources */,
-				D2BAB0AE17EC8EE600807D0D /* main.m in Sources */,
 				D2EB40701C58BFAA00EAA633 /* CountlyConfig.m in Sources */,
+				D252ECE21F72026100481A79 /* EYLogViewer.m in Sources */,
 				D2314A0B1EB1528B0026F0DD /* CountlyNotificationService.m in Sources */,
 				D2340D1D1E33C55B003C3841 /* MainViewController.m in Sources */,
 				D2EB406C1C58BFAA00EAA633 /* Countly_OpenUDID.m in Sources */,
 				D2EB406D1C58BFAA00EAA633 /* CountlyAPM.m in Sources */,
 				D2EB406A1C58BFAA00EAA633 /* Countly.m in Sources */,
-				D2AAC1101D9921A400B6EA08 /* EYLogViewer.m in Sources */,
+				D252ECD01F7200CE00481A79 /* main.m in Sources */,
 				D2340D091E33B726003C3841 /* EventCreatorViewController.m in Sources */,
 				D2EB406E1C58BFAA00EAA633 /* CountlyAPMNetworkLog.m in Sources */,
 				D2EB40741C58BFAA00EAA633 /* CountlyEvent.m in Sources */,
 				D2FB68FC1C69D5F200079DF6 /* CountlyViewTracking.m in Sources */,
 				D2EB40711C58BFAA00EAA633 /* CountlyConnectionManager.m in Sources */,
+				D252ECE11F72026100481A79 /* AppDelegate.m in Sources */,
 				D2EB40721C58BFAA00EAA633 /* CountlyCrashReporter.m in Sources */,
 				D2340D251E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m in Sources */,
 				D2EDCF571D2BFFBD00F75DDC /* CountlyStarRating.m in Sources */,
@@ -528,17 +550,6 @@
 			targetProxy = D2314A021EB151CF0026F0DD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D2BAB0AA17EC8EE600807D0D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2BAB0AB17EC8EE600807D0D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D2314A051EB151CF0026F0DD /* Debug */ = {
@@ -558,8 +569,8 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-iOS.CountlyNSE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "441d54c1-d5e6-48d2-81fc-16ab17716eed";
-				PROVISIONING_PROFILE_SPECIFIER = iOS_Dev_CountlyTestAppiOSCountlyNSE_20170512;
+				PROVISIONING_PROFILE = "2eeac36d-26eb-4706-a589-b5fe3970ef72";
+				PROVISIONING_PROFILE_SPECIFIER = iOS_Dev_CountlyTestAppiOSCountlyNSE_20170921;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -582,8 +593,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-iOS.CountlyNSE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "871648a3-c121-4151-aeb9-5c7da007e341";
-				PROVISIONING_PROFILE_SPECIFIER = iOS_Dist_CountlyTestAppiOSCountNSE_20170512;
+				PROVISIONING_PROFILE = "825a59d4-250d-4b55-a140-2092ee162720";
+				PROVISIONING_PROFILE_SPECIFIER = iOS_Dist_CountlyTestAppiOSCountlyNSE_20170921;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -596,14 +607,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -646,14 +663,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -685,20 +708,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-iOS/CountlyTestApp-iOS.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 3S32KFMHB8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CountlyTestApp-iOS/CountlyTestApp-iOS-Prefix.pch";
-				INFOPLIST_FILE = "CountlyTestApp-iOS/CountlyTestApp-iOS-Info.plist";
+				GCC_PREFIX_HEADER = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS-Prefix.pch";
+				INFOPLIST_FILE = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "CountlyTestApp-iOS";
-				PROVISIONING_PROFILE = "7f1db0ed-e04c-4de8-b88a-b92abd49239d";
-				PROVISIONING_PROFILE_SPECIFIER = iOS_Dev_CountlyTestAppiOS_20170512;
+				PROVISIONING_PROFILE = "e98d86fc-7fad-48b3-9a23-ee421601a5fe";
+				PROVISIONING_PROFILE_SPECIFIER = iOS_Dev_CountlyTestAppiOS_20170921;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -707,19 +729,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-iOS/CountlyTestApp-iOS.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 3S32KFMHB8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CountlyTestApp-iOS/CountlyTestApp-iOS-Prefix.pch";
-				INFOPLIST_FILE = "CountlyTestApp-iOS/CountlyTestApp-iOS-Info.plist";
+				GCC_PREFIX_HEADER = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS-Prefix.pch";
+				INFOPLIST_FILE = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "CountlyTestApp-iOS";
-				PROVISIONING_PROFILE = "9f5500b3-f626-49f4-bb3e-80767a9d50ed";
-				PROVISIONING_PROFILE_SPECIFIER = iOS_Dist_CountlyTestAppiOS_20170512;
+				PROVISIONING_PROFILE = "55df0d76-38f0-4856-91be-c4973522c580";
+				PROVISIONING_PROFILE_SPECIFIER = iOS_Dist_CountlyTestAppiOS_20170921;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

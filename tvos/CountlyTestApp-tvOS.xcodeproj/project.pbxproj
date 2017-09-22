@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D209A7CA1F6B9BDA00B19B9B /* countly_dsym_uploader.sh in Resources */ = {isa = PBXBuildFile; fileRef = D209A7C91F6B9BDA00B19B9B /* countly_dsym_uploader.sh */; };
 		D22D41721C6EEF620078AF7D /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D41711C6EEF620078AF7D /* CountlyViewTracking.m */; };
 		D22D43051C4631BD00C69E7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D43041C4631BD00C69E7C /* main.m */; };
 		D22D43081C4631BD00C69E7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D43071C4631BD00C69E7C /* AppDelegate.m */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D209A7C91F6B9BDA00B19B9B /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
 		D22D41701C6EEF620078AF7D /* CountlyViewTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyViewTracking.h; sourceTree = "<group>"; };
 		D22D41711C6EEF620078AF7D /* CountlyViewTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyViewTracking.m; sourceTree = "<group>"; };
 		D22D43001C4631BD00C69E7C /* CountlyTestApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +167,7 @@
 				D22D41701C6EEF620078AF7D /* CountlyViewTracking.h */,
 				D22D41711C6EEF620078AF7D /* CountlyViewTracking.m */,
 				D2EB40A71C58C03500EAA633 /* .gitattributes */,
+				D209A7C91F6B9BDA00B19B9B /* countly_dsym_uploader.sh */,
 				D2EB40AA1C58C03500EAA633 /* Countly.podspec */,
 				D2EB40C11C58C03500EAA633 /* LICENSE */,
 				D2EB40C21C58C03500EAA633 /* README.md */,
@@ -199,7 +202,7 @@
 		D22D42F81C4631BD00C69E7C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Countly;
 				TargetAttributes = {
 					D22D42FF1C4631BD00C69E7C = {
@@ -232,6 +235,7 @@
 			files = (
 				D22D43101C4631BD00C69E7C /* Assets.xcassets in Resources */,
 				D22D430E1C4631BD00C69E7C /* Main.storyboard in Resources */,
+				D209A7CA1F6B9BDA00B19B9B /* countly_dsym_uploader.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,14 +290,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -331,14 +341,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

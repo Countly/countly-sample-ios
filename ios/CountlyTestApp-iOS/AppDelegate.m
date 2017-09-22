@@ -6,6 +6,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "TestModalViewController.h"
 #import "Countly.h"
 
 @implementation AppDelegate
@@ -19,7 +20,6 @@
 
 //    config.features = @[CLYPushNotifications, CLYCrashReporting, CLYAutoViewTracking];     //Optional features
 
-//    config.launchOptions = launchOptions;                         //Prior to v16.12 was required for CLYPushNotifications
 //    config.isTestDevice = YES;                                    //Optional marking as test device for CLYPushNotifications
 //    config.sendPushTokenAlways = YES;                             //Optional forcing to send token always
 //    config.doNotShowAlertForNotifications = YES;                  //Optional disabling alerts shown by notification
@@ -36,10 +36,13 @@
 //    config.alwaysUsePOST = YES;                                   //Optional forcing for POST method
 
 //    config.enableAppleWatch = YES;                                //Optional Apple Watch related features
+
+//    config.applyZeroIDFAFix = YES;                                //Optional Zero-IDFA fix
+
 //    config.ISOCountryCode = @"JP";                                //Optional ISO country code
 //    config.city = @"Tokyo";                                       //Optional city name
 //    config.location = (CLLocationCoordinate2D){35.6895,139.6917}; //Optional location coordinates
-//    config.IP = @"128.0.0.1"                                        //Optional IP address
+//    config.IP = @"128.0.0.1";                                     //Optional IP address
 
 //    config.pinnedCertificates = @[@"count.ly.cer"];               //Optional bundled certificates for certificate pinning
 //    config.customHeaderFieldName = @"X-My-Custom-Field";          //Optional custom header field name
@@ -58,6 +61,25 @@
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
     self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
     [self.window makeKeyAndVisible];
+
+    return YES;
+}
+
+//NOTE: Deeplinking example
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options
+{
+    if ([url.scheme isEqualToString: @"countly"])
+    {
+        NSString* product = url.host;
+    
+        if ([product isEqualToString: @"productA"] || [product isEqualToString: @"productB"])
+        {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
+            TestModalViewController* tmvc = [storyboard instantiateViewControllerWithIdentifier:@"TestModalViewController"];
+            tmvc.title = [@"Page of " stringByAppendingString:product];
+            [self.window.rootViewController presentViewController:tmvc animated:YES completion:nil];
+        }
+    }
 
     return YES;
 }

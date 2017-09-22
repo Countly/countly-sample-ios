@@ -56,7 +56,8 @@ class ViewController: UIViewController
                                 "Terminate",
                                 "Terminate 2",
                                 "Custom Crash Log",
-                                "Record Handled Exception"],
+                                "Record Handled Exception",
+                                "Record Handled Exception With Stack Trace"],
 
                                 ["Record User Details",
                                  "Custom Modifiers 1",
@@ -95,7 +96,8 @@ class ViewController: UIViewController
 
                                 ["Ask for Notification Permission",
                                  "Ask for Notification Permission with Completion Handler",
-                                 "Record Geo-Location for Push"],
+                                 "Record Geo-Location for Push",
+                                 "Record Push Notification Action"],
 
                                 ["Thread 1",
                                  "Thread 2",
@@ -245,16 +247,20 @@ class ViewController: UIViewController
                 break
 
                 case 7:
-                    // Thanks to Swift, it is not possible to call variadic methods without modification:
-                    // http://stackoverflow.com/questions/33706250/how-to-call-an-objective-c-variadic-method-from-swift
-                    // http://stackoverflow.com/questions/24374110/swift-call-variadics-c-function-defined-in-objective-c
-                    //Countly.sharedInstance().crashLog("This is a custom crash log.")
-                    //Countly.sharedInstance().crashLog("This is another custom crash log with argument: %i!", 2)
+                    Countly.sharedInstance().recordCrashLog("This is a custom crash log.")
                 break
 
                 case 8:
                     let myException : NSException = NSException.init(name:NSExceptionName(rawValue: "MyException"), reason:"MyReason", userInfo:["key":"value"])
                     Countly.sharedInstance().recordHandledException(myException)
+                    
+                    Countly.sharedInstance().recordHandledException(myException, withStackTrace: Thread.callStackSymbols)
+                break
+
+                case 9:
+                    let myException : NSException = NSException.init(name:NSExceptionName(rawValue: "MyException"), reason:"MyReason", userInfo:["key":"value"])
+
+                    Countly.sharedInstance().recordHandledException(myException, withStackTrace: Thread.callStackSymbols)
                 break
 
                 default:
@@ -281,7 +287,7 @@ class ViewController: UIViewController
                     Countly.user().pictureLocalPath = localImagePath as CountlyUserDetailsNullableString
                     Countly.user().custom = ["testkey1":"testvalue1","testkey2":"testvalue2"] as CountlyUserDetailsNullableDictionary
 
-                    Countly.user().record()
+                    Countly.user().save()
                 break
 
                 case 1:
@@ -449,10 +455,10 @@ class ViewController: UIViewController
                     self.present(nc, animated: true, completion: nil)
                 break
 
-                case 4: Countly.sharedInstance().addException(forAutoViewTracking:String.init(utf8String: object_getClassName(TestViewControllerModal.self)))
+                case 4: Countly.sharedInstance().addException(forAutoViewTracking:String.init(utf8String: object_getClassName(TestViewControllerModal.self))!)
                 break
 
-                case 5: Countly.sharedInstance().removeException(forAutoViewTracking:String.init(utf8String: object_getClassName(TestViewControllerModal.self)))
+                case 5: Countly.sharedInstance().removeException(forAutoViewTracking:String.init(utf8String: object_getClassName(TestViewControllerModal.self))!)
                 break
 
                 case 6: Countly.sharedInstance().addException(forAutoViewTracking:"MyViewControllerTitle")
@@ -492,6 +498,18 @@ class ViewController: UIViewController
 
                 case 2: Countly.sharedInstance().recordLocation(CLLocationCoordinate2D(latitude:33.6789, longitude:43.1234))
                 break
+                
+                case 3:
+                    let userInfo : Dictionary<String, AnyObject> = Dictionary() // notification dictionary
+                    let buttonIndex : Int = 1 	// clicked button index
+                                                // 1 for first action button
+                                                // 2 for second action button
+                                                // 0 for default action
+            
+                    Countly.sharedInstance().recordAction(forNotification:userInfo, clickedButtonIndex:buttonIndex)
+                break
+            
+
 
                 default: break
             }

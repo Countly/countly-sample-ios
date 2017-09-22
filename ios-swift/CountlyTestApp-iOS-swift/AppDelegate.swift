@@ -37,9 +37,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 //      config.alwaysUsePOST = true                                     //Optional forcing for POST method
 
 //      config.enableAppleWatch = true                                  //Optional Apple Watch related features
+
+//      config.applyZeroIDFAFix = true                                  //Optional Zero-IDFA fix
+
+//      config.enableAppleWatch = true                                  //Optional Apple Watch related features
 //      config.isoCountryCode = "JP"                                    //Optional ISO country code
 //      config.city = "Tokyo"                                           //Optional city name
 //      config.location = CLLocationCoordinate2D(latitude:35.6895, longitude: 139.6917) //Optional location coordinates
+//      config.IP = "128.0.0.1"                                         //Optional IP address
 
 //      config.pinnedCertificates = ["count.ly.cer"]                    //Optional bundled certificates for certificate pinning
 //      config.customHeaderFieldName = "X-My-Custom-Field"              //Optional custom header field name

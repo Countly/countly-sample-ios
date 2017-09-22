@@ -59,7 +59,7 @@ sudo rm -rf watchos/build
 
 
 echo "Building for macOS..."
-OUTPUT=`xcodebuild -project osx/CountlyTestApp-OSX.xcodeproj/ -target "CountlyTestApp-OSX" -configuration Debug build`
+OUTPUT=`xcodebuild -project macos/CountlyTestApp-macos.xcodeproj/ -target "CountlyTestApp-macos" -configuration Debug build`
 RESULT=`echo "$OUTPUT" | grep "BUILD SUC"`
 
 if [ "$RESULT" != "** BUILD SUCCEEDED **" ]
@@ -69,4 +69,4 @@ else
 	echo "${RESULT}"
 fi
 
-sudo rm -rf osx/build
+sudo rm -rf macos/build

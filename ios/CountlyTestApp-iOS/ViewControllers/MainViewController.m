@@ -12,10 +12,10 @@
 #import "UserDetailsEditorViewController.h"
 #import "UserDetailsCustomModifiersViewController.h"
 #import "EYLogViewer.h"
+#import "EYCrashTesting.h"
 
 @interface MainViewController ()
 {
-    dispatch_queue_t q[8];
     NSArray* sections;
     NSArray* tests;
     NSArray* explanations;
@@ -31,7 +31,7 @@ typedef enum : NSUInteger
     TestSectionAPM,
     TestSectionViewTracking,
     TestSectionPushNotifications,
-    TestSectionMultiThreading,
+    TestSectionMultithreading,
     TestSectionOthers
 } TestSection;
 
@@ -60,7 +60,7 @@ typedef enum : NSUInteger
         @"APM",
         @"View Tracking",
         @"Push Notifications",
-        @"Multi Threading",
+        @"Multithreading",
         @"Others"
     ];
 
@@ -85,13 +85,19 @@ typedef enum : NSUInteger
         @[
             @"Unrecognized Selector",
             @"Out of Bounds",
-            @"NULL pointer",
+            @"NULL Pointer",
             @"Invalid Geometry",
-            @"Assert Fail",
-            @"Terminate",
-            @"Terminate 2",
+            @"Raise Custom Exception",
+            @"kill",
+            @"__builtin_trap",
+            @"Access to a Non-Object",
+            @"Message a Released Object",
+            @"Write to Read-Only Memory",
+            @"Stack Overflow",
+            @"abort",
             @"Custom Crash Log",
-            @"Record Handled Exception"
+            @"Record Handled Exception",
+            @"Record Handled Exception with Stack Trace"
         ],
 
         @[
@@ -141,18 +147,17 @@ typedef enum : NSUInteger
         @[
             @"Ask for Notification Permission",
             @"Ask for Notification Permission with Completion Handler",
-            @"Record Geo-Location for Push"
+            @"Record Geo-Location for Push",
+            @"Record Push Notification Action"
         ],
 
         @[
-            @"Thread 1",
-            @"Thread 2",
-            @"Thread 3",
-            @"Thread 4",
-            @"Thread 5",
-            @"Thread 6",
-            @"Thread 7",
-            @"Thread 8"
+            @"Own Queue Multithread Testing 1",
+            @"Own Queue Multithread Testing 2",
+            @"Own Queue Multithread Testing 3",
+            @"Global Queue Multithread Testing 1",
+            @"Global Queue Multithread Testing 2",
+            @"Global Queue Multithread Testing 3",
         ],
 
         @[
@@ -186,13 +191,19 @@ typedef enum : NSUInteger
         @[
             @"thisIsTheUnrecognizedSelectorCausingTheCrash",
             @"5th element in a 3 elements array",
-            @"dereference",
+            @"Dereference",
             @"CALayer position contains nan",
-            @"This is the test assert that failed!",
-            @"kill SIGABRT",
-            @"__builtin_trap SIGTERM",
+            @"This is the exception!",
+            @"with SIGABRT",
+            @"",
+            @"",
+            @"",
+            @"using function pointer aFunction",
+            @"infinite recursive call",
+            @"",
             @"This is a custom crash log!",
-            @"n:MyException  r:MyReason  d:{key:value}"
+            @"n:MyException  r:MyReason  d:{key:value}",
+            @"n:MyExc  r:MyReason  d:{key:value} and stack trace"
         ],
 
         @[
@@ -242,18 +253,17 @@ typedef enum : NSUInteger
         @[
             @"",
             @"",
-            @"33.6789, 43.1234"
+            @"33.6789, 43.1234",
+            @"for manually handled push notifications"
         ],
 
         @[
-            @"MultiThreadingEvent  sg:{k:v0}",
-            @"MultiThreadingEvent  sg:{k:v1}",
-            @"MultiThreadingEvent  sg:{k:v2}",
-            @"MultiThreadingEvent  sg:{k:v3}",
-            @"MultiThreadingEvent  sg:{k:v4}",
-            @"MultiThreadingEvent  sg:{k:v5}",
-            @"MultiThreadingEvent  sg:{k:v6}",
-            @"MultiThreadingEvent  sg:{k:v7}"
+            @"MultithreadingEvent1 on 15 threads",
+            @"MultithreadingEvent3 on 15 threads",
+            @"MultithreadingEvent3 on 15 threads",
+            @"MultithreadingEvent4",
+            @"MultithreadingEvent5",
+            @"MultithreadingEvent6"
         ],
 
         @[
@@ -394,16 +404,16 @@ typedef enum : NSUInteger
                 case 5: [Countly.sharedInstance recordEvent:@"TestEventB" count:5 sum:1.99];
                 break;
 
-                case 6: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k" : @"v"}];
+                case 6: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k": @"v"}];
                 break;
 
-                case 7: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k" : @"v"} count:5];
+                case 7: [Countly.sharedInstance recordEvent:@"TestEventC" segmentation:@{@"k": @"v"} count:5];
                 break;
 
-                case 8: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k" : @"v"} count:5 sum:1.99];
+                case 8: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k": @"v"} count:5 sum:1.99];
                 break;
 
-                case 9: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k" : @"v"} count:5 sum:1.99 duration:0.314];
+                case 9: [Countly.sharedInstance recordEvent:@"TestEventD" segmentation:@{@"k": @"v"} count:5 sum:1.99 duration:0.314];
                 break;
 
                 case 10: [Countly.sharedInstance startEvent:@"timed-event"];
@@ -412,7 +422,7 @@ typedef enum : NSUInteger
                 case 11: [Countly.sharedInstance endEvent:@"timed-event"];
                 break;
 
-                case 12: [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k" : @"v"} count:1 sum:0];
+                case 12: [Countly.sharedInstance endEvent:@"timed-event" segmentation:@{@"k": @"v"} count:1 sum:0];
                 break;
 
                 default:break;
@@ -426,37 +436,32 @@ typedef enum : NSUInteger
         {
             switch (indexPath.row)
             {
-                case 0: [self crashTest0];
+                case 0:  [EYCrashTesting crashTest0];  break;
+                case 1:  [EYCrashTesting crashTest1];  break;
+                case 2:  [EYCrashTesting crashTest2];  break;
+                case 3:  [EYCrashTesting crashTest3];  break;
+                case 4:  [EYCrashTesting crashTest4];  break;
+                case 5:  [EYCrashTesting crashTest5];  break;
+                case 6:  [EYCrashTesting crashTest6];  break;
+                case 7:  [EYCrashTesting crashTest7];  break;
+                case 8:  [EYCrashTesting crashTest8];  break;
+                case 9:  [EYCrashTesting crashTest9];  break;
+                case 10: [EYCrashTesting crashTest10]; break;
+                case 11: [EYCrashTesting crashTest11]; break;
+
+                case 12: [Countly.sharedInstance recordCrashLog:@"This is a custom crash log!"];
                 break;
 
-                case 1: [self crashTest1];
-                break;
-
-                case 2: [self crashTest2];
-                break;
-
-                case 3: [self crashTest3];
-                break;
-
-                case 4: [self crashTest4];
-                break;
-                
-                case 5: [self crashTest5];
-                break;
-
-                case 6: [self crashTest6];
-                break;
-
-                case 7:
+                case 13:
                 {
-                    [Countly.sharedInstance crashLog:@"This is a custom crash log!"];
-                    [Countly.sharedInstance crashLog:@"This is another custom crash log with argument: %d!", 2];
+                    NSException* myException = [NSException exceptionWithName:@"MyException" reason:@"MyReason" userInfo:@{@"key": @"value"}];
+                    [Countly.sharedInstance recordHandledException:myException];
                 }break;
 
-                case 8:
+                case 14:
                 {
-                    NSException* myException = [NSException exceptionWithName:@"MyException" reason:@"MyReason" userInfo:@{@"key":@"value"}];
-                    [Countly.sharedInstance recordHandledException:myException];
+                    NSException* myException = [NSException exceptionWithName:@"MyExc" reason:@"MyReason" userInfo:@{@"key": @"value"}];
+                    [Countly.sharedInstance recordHandledException:myException withStackTrace:[NSThread callStackSymbols]];
                 }break;
 
                 default: break;
@@ -500,7 +505,7 @@ typedef enum : NSUInteger
                     Countly.user.phone = @"+0123456789";
                     //Countly.user.pictureURL = @"http://s12.postimg.org/qji0724gd/988a10da33b57631caa7ee8e2b5a9036.jpg";
                     Countly.user.pictureLocalPath = localImagePath;
-                    Countly.user.custom = @{@"testkey1":@"testvalue1",@"testkey2":@"testvalue2"};
+                    Countly.user.custom = @{@"testkey1": @"testvalue1", @"testkey2": @"testvalue2"};
 
                     [Countly.user save];
                 }break;
@@ -749,28 +754,47 @@ typedef enum : NSUInteger
                 case 2: [Countly.sharedInstance recordLocation:(CLLocationCoordinate2D){33.6789,43.1234}];
                 break;
 
+                case 3:
+                {
+                    NSDictionary* userInfo = NSDictionary.new;     // this should be the notification dictionary
+                    NSInteger buttonIndex = 1; 	// clicked button index
+                                                // 1 for first action button
+                                                // 2 for second action button
+                                                // 0 for default action
+                    [Countly.sharedInstance recordActionForNotification:userInfo clickedButtonIndex:buttonIndex];
+                }break;
+
                 default: break;
             }
         }
         break;
 
 
-#pragma mark Multi Threading
-        case TestSectionMultiThreading:
+#pragma mark Multithreading
+        case TestSectionMultithreading:
         {
-            NSInteger t = indexPath.row;
-            NSString* tag = @(t).description;
-            NSString* commonQueueName = @"ly.count.multithreading";
-            NSString* queueName = [commonQueueName stringByAppendingString:tag];
-
-            if(!q[t])
-                q[t] = dispatch_queue_create([queueName UTF8String], NULL);
+            NSString* eventName = [@"MultithreadingEvent" stringByAppendingFormat:@"%d", (int)indexPath.row + 1];
 
             for (int i=0; i<15; i++)
             {
-                NSString* eventName = [@"MultiThreadingEvent" stringByAppendingString:tag];
-                NSDictionary* segmentation = @{@"k":[@"v"stringByAppendingString:@(i).description]};
-                dispatch_async( q[t], ^{ [Countly.sharedInstance recordEvent:eventName segmentation:segmentation]; });
+                dispatch_queue_t queue;
+                if (indexPath.row >= 3)
+                {
+                    queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+                }
+                else
+                {
+                    NSString* queueName = [@"ly.count.multithreading" stringByAppendingFormat:@"%d", i];
+                    queue = dispatch_queue_create(queueName.UTF8String, DISPATCH_QUEUE_CONCURRENT);
+                }
+
+                NSDictionary* segmentation = @{@"k":[@"v"stringByAppendingFormat:@"%d", i]};
+
+                dispatch_async(queue, ^
+                {
+                    [Countly.sharedInstance recordEvent:eventName segmentation:segmentation];
+                    NSLog(@"Thread %d", i);
+                });
             }
         }
         break;
@@ -831,61 +855,6 @@ typedef enum : NSUInteger
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
 //    NSLog(@"%s %@",__FUNCTION__,[connection description]);
-}
-
-
-#pragma mark - Crash Tests
-
-
-- (void)crashTest0
-{
-    #pragma clang diagnostic push
-    #pragma clang diagnostic ignored "-Wundeclared-selector"
-    [self performSelector:@selector(thisIsTheUnrecognizedSelectorCausingTheCrash)];
-    #pragma clang diagnostic pop
-}
-
-
-- (void)crashTest1
-{
-    #pragma clang diagnostic push
-    #pragma clang diagnostic ignored "-Wunused-variable"
-    NSArray* anArray = @[@"one",@"two",@"three"];
-    NSString* myCrashingString = anArray[5];
-    #pragma clang diagnostic pop
-}
-
-
-- (void)crashTest2
-{
-    int *nullPointer = NULL;
-    *nullPointer = 2017;
-}
-
-
-- (void)crashTest3
-{
-    CGRect aRect = (CGRect){0.0/0.0, 0.0, 100.0, 100.0};
-    UIView *crashView = UIView.new;
-    crashView.frame = aRect;
-}
-
-
-- (void)crashTest4
-{
-    NSAssert(0==1, @"This is the test assert that failed!");
-}
-
-
-- (void)crashTest5
-{
-    kill(getpid(), SIGABRT);
-}
-
-
-- (void)crashTest6
-{
-    __builtin_trap();
 }
 
 @end

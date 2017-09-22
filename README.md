@@ -1,15 +1,15 @@
-countly-sdk-samples
+# countly-sample-ios
 ===================
 
-Countly Mobile Analytics - Sample projects to demonstrate how to use Countly SDKs.
+Sample projects to demonstrate how to use Countly iOS SDK.
 
-Countly iOS SDK is added as a submodule. 
+Countly iOS SDK is added as a git submodule. 
 So you should do:
 
 <pre class="prettyprint">
 	git submodule update --init
-    cd countly-sdk-ios
-    git checkout master
 </pre>
 
-after you cloned this repository to get latest iOS SDK.
+after you cloned this repository to get latest Countly iOS SDK.
+
+https://count.ly

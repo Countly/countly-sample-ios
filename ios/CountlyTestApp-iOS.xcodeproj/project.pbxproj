@@ -120,7 +120,6 @@
 		D2BAB0A517EC8EE600807D0D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D2BAB0B017EC8EE600807D0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2D4F4271A0BB34500C0EF0B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		D2EB404D1C58BFAA00EAA633 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		D2EB404E1C58BFAA00EAA633 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
 		D2EB404F1C58BFAA00EAA633 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
 		D2EB40501C58BFAA00EAA633 /* Countly.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countly.podspec; sourceTree = "<group>"; };
@@ -379,7 +378,6 @@
 				D2EB40661C58BFAA00EAA633 /* CountlyUserDetails.m */,
 				D2FB68FA1C69D5F200079DF6 /* CountlyViewTracking.h */,
 				D2FB68FB1C69D5F200079DF6 /* CountlyViewTracking.m */,
-				D2EB404D1C58BFAA00EAA633 /* .gitattributes */,
 				D257384F1F629FFB0063FA89 /* countly_dsym_uploader.sh */,
 				D2EB40501C58BFAA00EAA633 /* Countly.podspec */,
 				D2EB40671C58BFAA00EAA633 /* LICENSE */,

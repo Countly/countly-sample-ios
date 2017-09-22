@@ -1,7 +1,6 @@
 # countly-sample-ios
-===================
 
-Sample projects to demonstrate how to use Countly iOS SDK.
+Sample iOS, iOS-Swift, watchOS, tvOS and macOS projects to demonstrate how to use Countly iOS SDK.
 
 Countly iOS SDK is added as a git submodule. 
 So you should do:
@@ -10,6 +9,6 @@ So you should do:
 	git submodule update --init
 </pre>
 
-after you cloned this repository to get latest Countly iOS SDK.
+after you cloned this repository to get the latest Countly iOS SDK.
 
 https://count.ly

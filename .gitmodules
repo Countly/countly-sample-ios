@@ -1,3 +1,4 @@
 [submodule "countly-sdk-ios"]
 	path = countly-sdk-ios
 	url = https://github.com/Countly/countly-sdk-ios.git
+	branch = master

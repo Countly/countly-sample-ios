@@ -13,7 +13,6 @@
 		D252E38A1DE074D2006548B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D252E3881DE074D2006548B0 /* Main.storyboard */; };
 		D252E38C1DE074D2006548B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D252E38B1DE074D2006548B0 /* Assets.xcassets */; };
 		D252E38F1DE074D2006548B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D252E38D1DE074D2006548B0 /* LaunchScreen.storyboard */; };
-		D252E3B91DE1F249006548B0 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = D252E3971DE1F249006548B0 /* .gitattributes */; };
 		D252E3BA1DE1F249006548B0 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D252E3991DE1F249006548B0 /* Countly.m */; };
 		D252E3BB1DE1F249006548B0 /* Countly.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D252E39A1DE1F249006548B0 /* Countly.podspec */; };
 		D252E3BC1DE1F249006548B0 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D252E39C1DE1F249006548B0 /* Countly_OpenUDID.m */; };
@@ -45,7 +44,6 @@
 		D252E38B1DE074D2006548B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D252E38E1DE074D2006548B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D252E3901DE074D2006548B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D252E3971DE1F249006548B0 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		D252E3981DE1F249006548B0 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
 		D252E3991DE1F249006548B0 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
 		D252E39A1DE1F249006548B0 /* Countly.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countly.podspec; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 				D252E3B41DE1F249006548B0 /* CountlyUserDetails.m */,
 				D252E3B51DE1F249006548B0 /* CountlyViewTracking.h */,
 				D252E3B61DE1F249006548B0 /* CountlyViewTracking.m */,
-				D252E3971DE1F249006548B0 /* .gitattributes */,
 				D209A7C51F6B9B5300B19B9B /* countly_dsym_uploader.sh */,
 				D252E39A1DE1F249006548B0 /* Countly.podspec */,
 				D252E3B71DE1F249006548B0 /* LICENSE */,
@@ -242,7 +239,6 @@
 				D252E38C1DE074D2006548B0 /* Assets.xcassets in Resources */,
 				D252E38A1DE074D2006548B0 /* Main.storyboard in Resources */,
 				D209A7C61F6B9B5300B19B9B /* countly_dsym_uploader.sh in Resources */,
-				D252E3B91DE1F249006548B0 /* .gitattributes in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

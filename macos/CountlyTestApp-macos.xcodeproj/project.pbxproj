@@ -55,7 +55,6 @@
 		D2A6CEB11EB3B57000EC10A5 /* CountlyNotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyNotificationService.h; sourceTree = "<group>"; };
 		D2D772881D37D99700F019B8 /* CountlyStarRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyStarRating.h; sourceTree = "<group>"; };
 		D2D772891D37D99700F019B8 /* CountlyStarRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyStarRating.m; sourceTree = "<group>"; };
-		D2EB407A1C58C00400EAA633 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		D2EB407B1C58C00400EAA633 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
 		D2EB407C1C58C00400EAA633 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
 		D2EB407D1C58C00400EAA633 /* Countly.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countly.podspec; sourceTree = "<group>"; };
@@ -192,7 +191,6 @@
 				D2EB40931C58C00400EAA633 /* CountlyUserDetails.m */,
 				D22D416D1C6EED4D0078AF7D /* CountlyViewTracking.h */,
 				D22D416E1C6EED4D0078AF7D /* CountlyViewTracking.m */,
-				D2EB407A1C58C00400EAA633 /* .gitattributes */,
 				D209A7C71F6B9BB200B19B9B /* countly_dsym_uploader.sh */,
 				D2EB407D1C58C00400EAA633 /* Countly.podspec */,
 				D2EB40941C58C00400EAA633 /* LICENSE */,

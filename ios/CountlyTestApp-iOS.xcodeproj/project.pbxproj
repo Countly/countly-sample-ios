@@ -439,11 +439,11 @@
 					D23149FB1EB151CF0026F0DD = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 3S32KFMHB8;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					D2BAB09D17EC8EE600807D0D = {
 						DevelopmentTeam = 3S32KFMHB8;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -560,8 +560,9 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 3S32KFMHB8;
+				DEVELOPMENT_TEAM = "";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = CountlyNSE/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -569,8 +570,8 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-iOS.CountlyNSE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2eeac36d-26eb-4706-a589-b5fe3970ef72";
-				PROVISIONING_PROFILE_SPECIFIER = iOS_Dev_CountlyTestAppiOSCountlyNSE_20170921;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -582,10 +583,11 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 3S32KFMHB8;
+				DEVELOPMENT_TEAM = "";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = CountlyNSE/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -593,8 +595,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-iOS.CountlyNSE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "825a59d4-250d-4b55-a140-2092ee162720";
-				PROVISIONING_PROFILE_SPECIFIER = iOS_Dist_CountlyTestAppiOSCountlyNSE_20170921;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -711,16 +713,17 @@
 				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 3S32KFMHB8;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS-Prefix.pch";
 				INFOPLIST_FILE = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "CountlyTestApp-iOS";
-				PROVISIONING_PROFILE = "e98d86fc-7fad-48b3-9a23-ee421601a5fe";
-				PROVISIONING_PROFILE_SPECIFIER = iOS_Dev_CountlyTestAppiOS_20170921;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -731,16 +734,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 3S32KFMHB8;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS-Prefix.pch";
 				INFOPLIST_FILE = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "CountlyTestApp-iOS";
-				PROVISIONING_PROFILE = "55df0d76-38f0-4856-91be-c4973522c580";
-				PROVISIONING_PROFILE_SPECIFIER = iOS_Dist_CountlyTestAppiOS_20170921;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

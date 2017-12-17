@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D203EA7B1FDED8CF00A03F32 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = D203EA7A1FDED8CF00A03F32 /* CHANGELOG.md */; };
 		D2314A001EB151CF0026F0DD /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D23149FF1EB151CF0026F0DD /* NotificationService.m */; };
 		D2314A041EB151CF0026F0DD /* CountlyNSE.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D23149FC1EB151CF0026F0DD /* CountlyNSE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D2314A0B1EB1528B0026F0DD /* CountlyNotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2314A0A1EB1528B0026F0DD /* CountlyNotificationService.m */; };
@@ -75,6 +76,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D203EA7A1FDED8CF00A03F32 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		D22D41671C6E386C0078AF7D /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		D23149FC1EB151CF0026F0DD /* CountlyNSE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CountlyNSE.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23149FE1EB151CF0026F0DD /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				D2EB40501C58BFAA00EAA633 /* Countly.podspec */,
 				D2EB40671C58BFAA00EAA633 /* LICENSE */,
 				D2EB40681C58BFAA00EAA633 /* README.md */,
+				D203EA7A1FDED8CF00A03F32 /* CHANGELOG.md */,
 			);
 			name = "countly-sdk-ios";
 			path = "../countly-sdk-ios";
@@ -489,6 +492,7 @@
 				D252ECCF1F7200CE00481A79 /* LaunchScreen.storyboard in Resources */,
 				D252ECDB1F72016300481A79 /* Images.xcassets in Resources */,
 				D252ECD91F72014E00481A79 /* SamplePicture.png in Resources */,
+				D203EA7B1FDED8CF00A03F32 /* CHANGELOG.md in Resources */,
 				D252ECD61F72014E00481A79 /* count.ly.cer in Resources */,
 				D252ECD81F72014E00481A79 /* SamplePicture.jpg in Resources */,
 				D2340D081E33B726003C3841 /* Countly.storyboard in Resources */,

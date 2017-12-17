@@ -24,20 +24,20 @@
 //    config.sendPushTokenAlways = YES;                             //Optional forcing to send token always
 //    config.doNotShowAlertForNotifications = YES;                  //Optional disabling alerts shown by notification
 
-//    config.crashSegmentation = @{@"SomeOtherSDK":@"v3.4.5"};      //Optional crash segmentation for CLYCrashReporting
-
 //    config.deviceID = @"customDeviceID";                          //Optional custom or system generated device ID
 //    config.forceDeviceIDInitialization = YES;                     //Optional forcing to re-initialize device ID
+//    config.applyZeroIDFAFix = YES;                                //Optional Zero-IDFA fix
 
 //    config.eventSendThreshold = 5;                                //Optional event send threshold (default 10 events)
-//    config.manualSessionHandling = YES;                           //Optional manual session handling
 //    config.updateSessionPeriod = 30;                              //Optional update session period (default 60 seconds)
 //    config.storedRequestsLimit = 500;                             //Optional stored requests limit (default 1000 requests)
 //    config.alwaysUsePOST = YES;                                   //Optional forcing for POST method
 
+//    config.manualSessionHandling = YES;                           //Optional manual session handling
 //    config.enableAppleWatch = YES;                                //Optional Apple Watch related features
+//    config.enableAttribution = YES;                               //Optional attribution
 
-//    config.applyZeroIDFAFix = YES;                                //Optional Zero-IDFA fix
+//    config.crashSegmentation = @{@"SomeOtherSDK":@"v3.4.5"};      //Optional crash segmentation for CLYCrashReporting
 
 //    config.ISOCountryCode = @"JP";                                //Optional ISO country code
 //    config.city = @"Tokyo";                                       //Optional city name

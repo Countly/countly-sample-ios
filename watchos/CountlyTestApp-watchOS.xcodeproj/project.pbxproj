@@ -108,6 +108,7 @@
 		D23C98D91ECAF287006BCBA4 /* CountlyNotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyNotificationService.h; sourceTree = "<group>"; };
 		D28292251D998CC100D650F2 /* CountlyPushNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPushNotifications.h; sourceTree = "<group>"; };
 		D28292261D998CC100D650F2 /* CountlyPushNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPushNotifications.m; sourceTree = "<group>"; };
+		D2C01AC820027A1600BAE8E3 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		D2D7728E1D37DA5700F019B8 /* CountlyStarRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyStarRating.h; sourceTree = "<group>"; };
 		D2D7728F1D37DA5700F019B8 /* CountlyStarRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyStarRating.m; sourceTree = "<group>"; };
 		D2EB40D51C58C06E00EAA633 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
@@ -226,6 +227,7 @@
 				D2EB40D71C58C06E00EAA633 /* Countly.podspec */,
 				D2EB40EE1C58C06E00EAA633 /* LICENSE */,
 				D2EB40EF1C58C06E00EAA633 /* README.md */,
+				D2C01AC820027A1600BAE8E3 /* CHANGELOG.md */,
 			);
 			name = "countly-sdk-ios";
 			path = "../countly-sdk-ios";
@@ -289,12 +291,12 @@
 		D2FADFA91C464C6A00060D08 /* CountlyTestApp-watchOS WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D2FADFAF1C464C6A00060D08 /* ExtensionDelegate.h */,
+				D2FADFB01C464C6A00060D08 /* ExtensionDelegate.m */,
 				D2FADFAC1C464C6A00060D08 /* InterfaceController.h */,
 				D2FADFAD1C464C6A00060D08 /* InterfaceController.m */,
 				D2F0FC411C4756CF007C5556 /* RowController.h */,
 				D2F0FC421C4756CF007C5556 /* RowController.m */,
-				D2FADFAF1C464C6A00060D08 /* ExtensionDelegate.h */,
-				D2FADFB01C464C6A00060D08 /* ExtensionDelegate.m */,
 				D2FADFB21C464C6A00060D08 /* NotificationController.h */,
 				D2FADFB31C464C6A00060D08 /* NotificationController.m */,
 				D2FADFB51C464C6A00060D08 /* GlanceController.h */,

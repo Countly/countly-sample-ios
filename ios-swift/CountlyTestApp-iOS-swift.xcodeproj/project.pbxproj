@@ -33,6 +33,7 @@
 		D257996F1DE71166006A64CA /* TestViewControllerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257996E1DE71166006A64CA /* TestViewControllerModal.swift */; };
 		D2666B951DE9D68C0088E822 /* TestViewControllerPushPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2666B941DE9D68C0088E822 /* TestViewControllerPushPop.swift */; };
 		D2A6CEAF1EB3B52600EC10A5 /* CountlyNotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A6CEAD1EB3B52600EC10A5 /* CountlyNotificationService.m */; };
+		D2C01AC720026E2800BAE8E3 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = D2C01AC620026E2800BAE8E3 /* CHANGELOG.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		D2666B941DE9D68C0088E822 /* TestViewControllerPushPop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewControllerPushPop.swift; sourceTree = "<group>"; };
 		D2A6CEAD1EB3B52600EC10A5 /* CountlyNotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyNotificationService.m; sourceTree = "<group>"; };
 		D2A6CEAE1EB3B52600EC10A5 /* CountlyNotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyNotificationService.h; sourceTree = "<group>"; };
+		D2C01AC620026E2800BAE8E3 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				D252E39A1DE1F249006548B0 /* Countly.podspec */,
 				D252E3B71DE1F249006548B0 /* LICENSE */,
 				D252E3B81DE1F249006548B0 /* README.md */,
+				D2C01AC620026E2800BAE8E3 /* CHANGELOG.md */,
 			);
 			name = "countly-sdk-ios";
 			path = "../countly-sdk-ios";
@@ -238,6 +241,7 @@
 				D252E38F1DE074D2006548B0 /* LaunchScreen.storyboard in Resources */,
 				D252E38C1DE074D2006548B0 /* Assets.xcassets in Resources */,
 				D252E38A1DE074D2006548B0 /* Main.storyboard in Resources */,
+				D2C01AC720026E2800BAE8E3 /* CHANGELOG.md in Resources */,
 				D209A7C61F6B9B5300B19B9B /* countly_dsym_uploader.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

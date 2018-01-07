@@ -23,6 +23,10 @@
 //    config.isTestDevice = YES;                                    //Optional marking as test device for CLYPushNotifications
 //    config.sendPushTokenAlways = YES;                             //Optional forcing to send token always
 //    config.doNotShowAlertForNotifications = YES;                  //Optional disabling alerts shown by notification
+//    config.location = (CLLocationCoordinate2D){35.6895,139.6917}; //Optional location for geo-location push
+//    config.city = @"Tokyo";                                       //Optional city name for geo-location push
+//    config.ISOCountryCode = @"JP";                                //Optional ISO country code for geo-location push
+//    config.IP = @"128.0.0.1";                                     //Optional IP address for geo-location push
 
 //    config.deviceID = @"customDeviceID";                          //Optional custom or system generated device ID
 //    config.forceDeviceIDInitialization = YES;                     //Optional forcing to re-initialize device ID
@@ -38,11 +42,6 @@
 //    config.enableAttribution = YES;                               //Optional attribution
 
 //    config.crashSegmentation = @{@"SomeOtherSDK":@"v3.4.5"};      //Optional crash segmentation for CLYCrashReporting
-
-//    config.ISOCountryCode = @"JP";                                //Optional ISO country code
-//    config.city = @"Tokyo";                                       //Optional city name
-//    config.location = (CLLocationCoordinate2D){35.6895,139.6917}; //Optional location coordinates
-//    config.IP = @"128.0.0.1";                                     //Optional IP address
 
 //    config.pinnedCertificates = @[@"count.ly.cer"];               //Optional bundled certificates for certificate pinning
 //    config.customHeaderFieldName = @"X-My-Custom-Field";          //Optional custom header field name
@@ -84,28 +83,4 @@
     return YES;
 }
 
-//NOTE: These push related delegate methods are NOT needed for CLYPushNotifications feature, Countly iOS SDK handles all automatically.
-//- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
-//{
-//    NSLog(@"original didRegisterUserNotificationSettings: %@", notificationSettings);
-//}
-//
-//
-//- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-//{
-//    NSLog(@"original didRegisterForRemoteNotificationsWithDeviceToken: %@", deviceToken);
-//}
-//
-//
-//- (void) application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
-//{
-//    NSLog(@"original didFailToRegisterForRemoteNotificationsWithError: %@", error);
-//}
-//
-//
-//- (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
-//{
-//    NSLog(@"original didReceiveRemoteNotification:fetchCompletionHandler: %@", userInfo);
-//    completionHandler(UIBackgroundFetchResultNewData);
-//}
 @end

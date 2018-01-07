@@ -147,7 +147,9 @@ typedef enum : NSUInteger
         @[
             @"Ask for Notification Permission",
             @"Ask for Notification Permission with Completion Handler",
-            @"Record Geo-Location for Push",
+            @"Record Location for Geo-Location Push",
+            @"Record City and Country for Geo-Location Push",
+            @"Record IP Address for Geo-Location Push",
             @"Record Push Notification Action"
         ],
 
@@ -254,6 +256,8 @@ typedef enum : NSUInteger
             @"",
             @"",
             @"33.6789, 43.1234",
+            @"Tokyo - JP",
+            @"1.2.3.4",
             @"for manually handled push notifications"
         ],
 
@@ -754,7 +758,13 @@ typedef enum : NSUInteger
                 case 2: [Countly.sharedInstance recordLocation:(CLLocationCoordinate2D){33.6789,43.1234}];
                 break;
 
-                case 3:
+                case 3: [Countly.sharedInstance recordCity:@"Tokyo" andISOCountryCode:@"JP"];
+                break;
+
+                case 4: [Countly.sharedInstance recordIP:@"1.2.3.4"];
+                break;
+
+                case 5:
                 {
                     NSDictionary* userInfo = NSDictionary.new;     // this should be the notification dictionary
                     NSInteger buttonIndex = 1; 	// clicked button index

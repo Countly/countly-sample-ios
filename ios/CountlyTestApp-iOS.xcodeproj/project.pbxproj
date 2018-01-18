@@ -18,6 +18,7 @@
 		D2340D1D1E33C55B003C3841 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340D1B1E33C55B003C3841 /* MainViewController.m */; };
 		D2340D211E33D89E003C3841 /* UserDetailsEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340D201E33D89E003C3841 /* UserDetailsEditorViewController.m */; };
 		D2340D251E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340D241E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m */; };
+		D23EF08F2010DE0600524549 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = D23EF08E2010DE0600524549 /* LICENSE.md */; };
 		D252ECCF1F7200CE00481A79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D252ECCC1F7200CE00481A79 /* LaunchScreen.storyboard */; };
 		D252ECD01F7200CE00481A79 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECCD1F7200CE00481A79 /* main.m */; };
 		D252ECD61F72014E00481A79 /* count.ly.cer in Resources */ = {isa = PBXBuildFile; fileRef = D252ECD21F72014E00481A79 /* count.ly.cer */; };
@@ -90,6 +91,7 @@
 		D2340D201E33D89E003C3841 /* UserDetailsEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsEditorViewController.m; sourceTree = "<group>"; };
 		D2340D231E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsCustomModifiersViewController.h; sourceTree = "<group>"; };
 		D2340D241E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsCustomModifiersViewController.m; sourceTree = "<group>"; };
+		D23EF08E2010DE0600524549 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		D252ECC91F7200CE00481A79 /* CountlyTestApp-iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CountlyTestApp-iOS-Info.plist"; sourceTree = "<group>"; };
 		D252ECCB1F7200CE00481A79 /* CountlyTestApp-iOS.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "CountlyTestApp-iOS.entitlements"; sourceTree = "<group>"; };
 		D252ECCC1F7200CE00481A79 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -134,7 +136,6 @@
 		D2EB40641C58BFAA00EAA633 /* CountlyPersistency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPersistency.m; sourceTree = "<group>"; };
 		D2EB40651C58BFAA00EAA633 /* CountlyUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyUserDetails.h; sourceTree = "<group>"; };
 		D2EB40661C58BFAA00EAA633 /* CountlyUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyUserDetails.m; sourceTree = "<group>"; };
-		D2EB40671C58BFAA00EAA633 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D2EB40681C58BFAA00EAA633 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D2EDCF551D2BFFBD00F75DDC /* CountlyStarRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyStarRating.h; sourceTree = "<group>"; };
 		D2EDCF561D2BFFBD00F75DDC /* CountlyStarRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyStarRating.m; sourceTree = "<group>"; };
@@ -349,8 +350,8 @@
 				D2FB68FB1C69D5F200079DF6 /* CountlyViewTracking.m */,
 				D257384F1F629FFB0063FA89 /* countly_dsym_uploader.sh */,
 				D2EB40501C58BFAA00EAA633 /* Countly.podspec */,
-				D2EB40671C58BFAA00EAA633 /* LICENSE */,
 				D2EB40681C58BFAA00EAA633 /* README.md */,
+				D23EF08E2010DE0600524549 /* LICENSE.md */,
 				D203EA7A1FDED8CF00A03F32 /* CHANGELOG.md */,
 			);
 			name = "countly-sdk-ios";
@@ -460,6 +461,7 @@
 				D252ECDB1F72016300481A79 /* Images.xcassets in Resources */,
 				D252ECD91F72014E00481A79 /* SamplePicture.png in Resources */,
 				D252ECD61F72014E00481A79 /* count.ly.cer in Resources */,
+				D23EF08F2010DE0600524549 /* LICENSE.md in Resources */,
 				D252ECD81F72014E00481A79 /* SamplePicture.jpg in Resources */,
 				D2340D081E33B726003C3841 /* Countly.storyboard in Resources */,
 				D252ECD71F72014E00481A79 /* SamplePicture.gif in Resources */,

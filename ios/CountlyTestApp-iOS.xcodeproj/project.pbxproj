@@ -18,6 +18,7 @@
 		D2340D1D1E33C55B003C3841 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340D1B1E33C55B003C3841 /* MainViewController.m */; };
 		D2340D211E33D89E003C3841 /* UserDetailsEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340D201E33D89E003C3841 /* UserDetailsEditorViewController.m */; };
 		D2340D251E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340D241E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m */; };
+		D23EF08F2010DE0600524549 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = D23EF08E2010DE0600524549 /* LICENSE.md */; };
 		D252ECCF1F7200CE00481A79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D252ECCC1F7200CE00481A79 /* LaunchScreen.storyboard */; };
 		D252ECD01F7200CE00481A79 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECCD1F7200CE00481A79 /* main.m */; };
 		D252ECD61F72014E00481A79 /* count.ly.cer in Resources */ = {isa = PBXBuildFile; fileRef = D252ECD21F72014E00481A79 /* count.ly.cer */; };
@@ -29,11 +30,6 @@
 		D252ECE21F72026100481A79 /* EYLogViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECE01F72026100481A79 /* EYLogViewer.m */; };
 		D252ECE61F7203C200481A79 /* EYCrashTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECE51F7203C200481A79 /* EYCrashTesting.m */; };
 		D273859F1D963842008D201F /* CountlyPushNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = D273859E1D963842008D201F /* CountlyPushNotifications.m */; };
-		D290ED8A186337A90027082D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290ED89186337A90027082D /* CoreTelephony.framework */; };
-		D2BAB0A217EC8EE600807D0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A117EC8EE600807D0D /* Foundation.framework */; };
-		D2BAB0A417EC8EE600807D0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A317EC8EE600807D0D /* CoreGraphics.framework */; };
-		D2BAB0A617EC8EE600807D0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BAB0A517EC8EE600807D0D /* UIKit.framework */; };
-		D2D4F4281A0BB34500C0EF0B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D4F4271A0BB34500C0EF0B /* AdSupport.framework */; };
 		D2EB406A1C58BFAA00EAA633 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB404F1C58BFAA00EAA633 /* Countly.m */; };
 		D2EB406C1C58BFAA00EAA633 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40521C58BFAA00EAA633 /* Countly_OpenUDID.m */; };
 		D2EB406D1C58BFAA00EAA633 /* CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40541C58BFAA00EAA633 /* CountlyAPM.m */; };
@@ -75,7 +71,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D22D41671C6E386C0078AF7D /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		D203EA7A1FDED8CF00A03F32 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		D23149FC1EB151CF0026F0DD /* CountlyNSE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CountlyNSE.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23149FE1EB151CF0026F0DD /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
 		D23149FF1EB151CF0026F0DD /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
@@ -95,8 +91,8 @@
 		D2340D201E33D89E003C3841 /* UserDetailsEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsEditorViewController.m; sourceTree = "<group>"; };
 		D2340D231E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsCustomModifiersViewController.h; sourceTree = "<group>"; };
 		D2340D241E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsCustomModifiersViewController.m; sourceTree = "<group>"; };
+		D23EF08E2010DE0600524549 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		D252ECC91F7200CE00481A79 /* CountlyTestApp-iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CountlyTestApp-iOS-Info.plist"; sourceTree = "<group>"; };
-		D252ECCA1F7200CE00481A79 /* CountlyTestApp-iOS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CountlyTestApp-iOS-Prefix.pch"; sourceTree = "<group>"; };
 		D252ECCB1F7200CE00481A79 /* CountlyTestApp-iOS.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "CountlyTestApp-iOS.entitlements"; sourceTree = "<group>"; };
 		D252ECCC1F7200CE00481A79 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D252ECCD1F7200CE00481A79 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -113,13 +109,8 @@
 		D257384F1F629FFB0063FA89 /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
 		D273859D1D963842008D201F /* CountlyPushNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPushNotifications.h; sourceTree = "<group>"; };
 		D273859E1D963842008D201F /* CountlyPushNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPushNotifications.m; sourceTree = "<group>"; };
-		D290ED89186337A90027082D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D2BAB09E17EC8EE600807D0D /* CountlyTestApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2BAB0A117EC8EE600807D0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D2BAB0A317EC8EE600807D0D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D2BAB0A517EC8EE600807D0D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D2BAB0B017EC8EE600807D0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D2D4F4271A0BB34500C0EF0B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		D2EB404E1C58BFAA00EAA633 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
 		D2EB404F1C58BFAA00EAA633 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
 		D2EB40501C58BFAA00EAA633 /* Countly.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countly.podspec; sourceTree = "<group>"; };
@@ -145,7 +136,6 @@
 		D2EB40641C58BFAA00EAA633 /* CountlyPersistency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPersistency.m; sourceTree = "<group>"; };
 		D2EB40651C58BFAA00EAA633 /* CountlyUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyUserDetails.h; sourceTree = "<group>"; };
 		D2EB40661C58BFAA00EAA633 /* CountlyUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyUserDetails.m; sourceTree = "<group>"; };
-		D2EB40671C58BFAA00EAA633 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D2EB40681C58BFAA00EAA633 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D2EDCF551D2BFFBD00F75DDC /* CountlyStarRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyStarRating.h; sourceTree = "<group>"; };
 		D2EDCF561D2BFFBD00F75DDC /* CountlyStarRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyStarRating.m; sourceTree = "<group>"; };
@@ -165,11 +155,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2D4F4281A0BB34500C0EF0B /* AdSupport.framework in Frameworks */,
-				D290ED8A186337A90027082D /* CoreTelephony.framework in Frameworks */,
-				D2BAB0A417EC8EE600807D0D /* CoreGraphics.framework in Frameworks */,
-				D2BAB0A617EC8EE600807D0D /* UIKit.framework in Frameworks */,
-				D2BAB0A217EC8EE600807D0D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				D252ECC91F7200CE00481A79 /* CountlyTestApp-iOS-Info.plist */,
-				D252ECCA1F7200CE00481A79 /* CountlyTestApp-iOS-Prefix.pch */,
 				D252ECCB1F7200CE00481A79 /* CountlyTestApp-iOS.entitlements */,
 				D252ECCC1F7200CE00481A79 /* LaunchScreen.storyboard */,
 				D252ECCD1F7200CE00481A79 /* main.m */,
@@ -303,7 +287,6 @@
 				D2BAB0A717EC8EE600807D0D /* CountlyTestApp-iOS */,
 				D2EB404C1C58BFAA00EAA633 /* countly-sdk-ios */,
 				D23149FD1EB151CF0026F0DD /* CountlyNSE */,
-				D2BAB0A017EC8EE600807D0D /* Frameworks */,
 				D2BAB09F17EC8EE600807D0D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -315,19 +298,6 @@
 				D23149FC1EB151CF0026F0DD /* CountlyNSE.appex */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D2BAB0A017EC8EE600807D0D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D22D41671C6E386C0078AF7D /* WatchConnectivity.framework */,
-				D2D4F4271A0BB34500C0EF0B /* AdSupport.framework */,
-				D290ED89186337A90027082D /* CoreTelephony.framework */,
-				D2BAB0A117EC8EE600807D0D /* Foundation.framework */,
-				D2BAB0A317EC8EE600807D0D /* CoreGraphics.framework */,
-				D2BAB0A517EC8EE600807D0D /* UIKit.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D2BAB0A717EC8EE600807D0D /* CountlyTestApp-iOS */ = {
@@ -380,8 +350,9 @@
 				D2FB68FB1C69D5F200079DF6 /* CountlyViewTracking.m */,
 				D257384F1F629FFB0063FA89 /* countly_dsym_uploader.sh */,
 				D2EB40501C58BFAA00EAA633 /* Countly.podspec */,
-				D2EB40671C58BFAA00EAA633 /* LICENSE */,
 				D2EB40681C58BFAA00EAA633 /* README.md */,
+				D23EF08E2010DE0600524549 /* LICENSE.md */,
+				D203EA7A1FDED8CF00A03F32 /* CHANGELOG.md */,
 			);
 			name = "countly-sdk-ios";
 			path = "../countly-sdk-ios";
@@ -439,11 +410,11 @@
 					D23149FB1EB151CF0026F0DD = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 3S32KFMHB8;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					D2BAB09D17EC8EE600807D0D = {
 						DevelopmentTeam = 3S32KFMHB8;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -490,6 +461,7 @@
 				D252ECDB1F72016300481A79 /* Images.xcassets in Resources */,
 				D252ECD91F72014E00481A79 /* SamplePicture.png in Resources */,
 				D252ECD61F72014E00481A79 /* count.ly.cer in Resources */,
+				D23EF08F2010DE0600524549 /* LICENSE.md in Resources */,
 				D252ECD81F72014E00481A79 /* SamplePicture.jpg in Resources */,
 				D2340D081E33B726003C3841 /* Countly.storyboard in Resources */,
 				D252ECD71F72014E00481A79 /* SamplePicture.gif in Resources */,
@@ -560,8 +532,9 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 3S32KFMHB8;
+				DEVELOPMENT_TEAM = "";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = CountlyNSE/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -569,8 +542,8 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-iOS.CountlyNSE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2eeac36d-26eb-4706-a589-b5fe3970ef72";
-				PROVISIONING_PROFILE_SPECIFIER = iOS_Dev_CountlyTestAppiOSCountlyNSE_20170921;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -582,10 +555,11 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 3S32KFMHB8;
+				DEVELOPMENT_TEAM = "";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = CountlyNSE/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -593,8 +567,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-iOS.CountlyNSE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "825a59d4-250d-4b55-a140-2092ee162720";
-				PROVISIONING_PROFILE_SPECIFIER = iOS_Dist_CountlyTestAppiOSCountlyNSE_20170921;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -711,16 +685,17 @@
 				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 3S32KFMHB8;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "CountlyTestApp-iOS";
-				PROVISIONING_PROFILE = "e98d86fc-7fad-48b3-9a23-ee421601a5fe";
-				PROVISIONING_PROFILE_SPECIFIER = iOS_Dev_CountlyTestAppiOS_20170921;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -731,16 +706,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 3S32KFMHB8;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "CountlyTestApp-iOS";
-				PROVISIONING_PROFILE = "55df0d76-38f0-4856-91be-c4973522c580";
-				PROVISIONING_PROFILE_SPECIFIER = iOS_Dist_CountlyTestAppiOS_20170921;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

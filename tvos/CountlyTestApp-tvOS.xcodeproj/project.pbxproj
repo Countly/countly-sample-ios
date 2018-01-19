@@ -29,6 +29,7 @@
 		D2EB40CE1C58C03500EAA633 /* CountlyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40BC1C58C03500EAA633 /* CountlyEvent.m */; };
 		D2EB40CF1C58C03500EAA633 /* CountlyPersistency.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40BE1C58C03500EAA633 /* CountlyPersistency.m */; };
 		D2EB40D01C58C03500EAA633 /* CountlyUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40C01C58C03500EAA633 /* CountlyUserDetails.m */; };
+		D2F065042010DF5900A899B8 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = D2F065032010DF5900A899B8 /* LICENSE.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,9 +49,9 @@
 		D28292231D998C9A00D650F2 /* CountlyPushNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPushNotifications.m; sourceTree = "<group>"; };
 		D2A6CEB31EB3B5BD00EC10A5 /* CountlyNotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyNotificationService.m; sourceTree = "<group>"; };
 		D2A6CEB41EB3B5BD00EC10A5 /* CountlyNotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyNotificationService.h; sourceTree = "<group>"; };
+		D2C01AC220026DC300BAE8E3 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		D2D772911D3882D400F019B8 /* CountlyStarRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyStarRating.h; sourceTree = "<group>"; };
 		D2D772921D3882D400F019B8 /* CountlyStarRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyStarRating.m; sourceTree = "<group>"; };
-		D2EB40A71C58C03500EAA633 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		D2EB40A81C58C03500EAA633 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
 		D2EB40A91C58C03500EAA633 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
 		D2EB40AA1C58C03500EAA633 /* Countly.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countly.podspec; sourceTree = "<group>"; };
@@ -76,8 +77,8 @@
 		D2EB40BE1C58C03500EAA633 /* CountlyPersistency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPersistency.m; sourceTree = "<group>"; };
 		D2EB40BF1C58C03500EAA633 /* CountlyUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyUserDetails.h; sourceTree = "<group>"; };
 		D2EB40C01C58C03500EAA633 /* CountlyUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyUserDetails.m; sourceTree = "<group>"; };
-		D2EB40C11C58C03500EAA633 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D2EB40C21C58C03500EAA633 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D2F065032010DF5900A899B8 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,11 +167,11 @@
 				D2EB40C01C58C03500EAA633 /* CountlyUserDetails.m */,
 				D22D41701C6EEF620078AF7D /* CountlyViewTracking.h */,
 				D22D41711C6EEF620078AF7D /* CountlyViewTracking.m */,
-				D2EB40A71C58C03500EAA633 /* .gitattributes */,
 				D209A7C91F6B9BDA00B19B9B /* countly_dsym_uploader.sh */,
 				D2EB40AA1C58C03500EAA633 /* Countly.podspec */,
-				D2EB40C11C58C03500EAA633 /* LICENSE */,
 				D2EB40C21C58C03500EAA633 /* README.md */,
+				D2F065032010DF5900A899B8 /* LICENSE.md */,
+				D2C01AC220026DC300BAE8E3 /* CHANGELOG.md */,
 			);
 			name = "countly-sdk-ios";
 			path = "../countly-sdk-ios";
@@ -233,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F065042010DF5900A899B8 /* LICENSE.md in Resources */,
 				D22D43101C4631BD00C69E7C /* Assets.xcassets in Resources */,
 				D22D430E1C4631BD00C69E7C /* Main.storyboard in Resources */,
 				D209A7CA1F6B9BDA00B19B9B /* countly_dsym_uploader.sh in Resources */,

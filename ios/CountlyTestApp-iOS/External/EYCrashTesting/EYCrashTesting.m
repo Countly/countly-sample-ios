@@ -1,5 +1,5 @@
 // erkanyildiz
-// 20170920-1103+0900
+// 20171226-1155+0900
 //
 // EYCrashTesting.m
 
@@ -97,8 +97,9 @@ void aFunction()
 
 + (void)crashTest4
 {
-    NSException* e = [NSException exceptionWithName:NSGenericException reason:@"This is the exception!"
-                                 userInfo:@{ NSLocalizedDescriptionKey: @"And this is the exception's description."}];
+    NSString* reason = @"This is the exception!";
+    NSDictionary* userInfo = @{NSLocalizedDescriptionKey: @"And this is the exception's description."};
+    NSException* e = [NSException exceptionWithName:NSGenericException reason:reason userInfo:userInfo];
     [e raise];
 }
 

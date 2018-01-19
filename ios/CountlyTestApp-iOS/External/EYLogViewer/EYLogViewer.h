@@ -1,5 +1,5 @@
 // erkanyildiz
-// 20160925-0417JST
+// 20180107-2246+0900
 //
 // https://github.com/erkanyildiz/EYLogViewer
 //
@@ -9,6 +9,7 @@
 
 
 @interface EYLogViewer : NSObject
+
 /**
  * Adds EYLogViewer to the top window of the application.
  *
@@ -29,5 +30,12 @@
  * Three-finger swipe down gesture hides EYLogViewer also.
  */
 + (void)hide;
+
+/**
+ * Clears console.
+ *
+ * Triple-tap gesture clears console also.
+ */
++ (void)clear;
 
 @end

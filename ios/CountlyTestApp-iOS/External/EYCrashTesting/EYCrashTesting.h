@@ -1,9 +1,10 @@
 // erkanyildiz
-// 20170920-1103+0900
+// 20171226-1155+0900
 //
 // EYCrashTesting.h
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface EYCrashTesting : NSObject
 
@@ -12,14 +13,14 @@
 + (void)crashTest0;     // Unrecognized Selector
 + (void)crashTest1;     // Out of Bounds
 + (void)crashTest2;     // NULL Pointer
-+ (void)crashTest3;     //Invalid Geometry
-+ (void)crashTest4;     //Raise Custom Exception
-+ (void)crashTest5;     //kill
-+ (void)crashTest6;     //__builtin_trap
-+ (void)crashTest7;     //Access to a Non-Object
-+ (void)crashTest8;     //Message a Released Object
-+ (void)crashTest9;     //Write to Read-Only Memory
-+ (void)crashTest10;    //Stack Overflow
-+ (void)crashTest11;    //abort
++ (void)crashTest3;     // Invalid Geometry
++ (void)crashTest4;     // Raise Custom Exception
++ (void)crashTest5;     // kill
++ (void)crashTest6;     // __builtin_trap
++ (void)crashTest7;     // Access to a Non-Object
++ (void)crashTest8;     // Message a Released Object
++ (void)crashTest9;     // Write to Read-Only Memory
++ (void)crashTest10;    // Stack Overflow
++ (void)crashTest11;    // abort
 
 @end

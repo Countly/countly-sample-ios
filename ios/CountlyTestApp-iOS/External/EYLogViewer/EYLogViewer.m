@@ -1,18 +1,19 @@
 // erkanyildiz
-// 20160925-0417JST
+// 20180107-2246+0900
 //
 // https://github.com/erkanyildiz/EYLogViewer
 //
 // EYLogViewer.m
 
 #import "EYLogViewer.h"
+#import <UIKit/UIKit.h>
 #include <pthread.h>
 
 
 @interface EYLogViewer ()
 {
     UIView* vw_container;
-    UITextView* txt_console;
+    UITextView* tx_console;
 
     BOOL isBeingDragged;
     BOOL isVisible;
@@ -24,17 +25,18 @@
 
 + (instancetype)sharedInstance
 {
-    static EYLogViewer* s_EYLogViewer = nil;
+    static EYLogViewer* s_sharedInstance = nil;
     static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{s_EYLogViewer = self.new;});
-    return s_EYLogViewer;
+    dispatch_once(&onceToken, ^{ s_sharedInstance = self.new; });
+    return s_sharedInstance;
 }
 
 + (void)add
 {
     NSPipe* pipe = NSPipe.pipe;
-    NSFileHandle* fhr = [pipe fileHandleForReading];
-    dup2([[pipe fileHandleForWriting] fileDescriptor], fileno(stderr));
+    NSFileHandle* fhr = pipe.fileHandleForReading;
+    dup2(pipe.fileHandleForWriting.fileDescriptor, fileno(stderr));
+    dup2(pipe.fileHandleForWriting.fileDescriptor, fileno(stdout));
     [NSNotificationCenter.defaultCenter addObserver:EYLogViewer.sharedInstance selector:@selector(readCompleted:) name:NSFileHandleReadCompletionNotification object:fhr];
     [fhr readInBackgroundAndNotify];
 
@@ -54,13 +56,18 @@
 }
 
 
++ (void)clear
+{
+    [EYLogViewer.sharedInstance clearConsole];
+}
+
+
 #pragma mark -
 
 
--(void)tryToFindTopWindow
+- (void)tryToFindTopWindow
 {
-    UIView* topView = UIApplication.sharedApplication.keyWindow.subviews.lastObject;
-    if(!topView)
+    if (!UIApplication.sharedApplication.keyWindow.subviews.lastObject)
     {
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(tryToFindTopWindow) object:nil];
         [self performSelector:@selector(tryToFindTopWindow) withObject:nil afterDelay:0.1];
@@ -72,7 +79,7 @@
 }
 
 
--(void)setup
+- (void)setup
 {
     // add three finger swipe down gesture for hiding
     UISwipeGestureRecognizer* swipeDownGestureRec = [UISwipeGestureRecognizer.alloc initWithTarget:self action:@selector(onSwipeDown:)];
@@ -87,43 +94,49 @@
     [UIApplication.sharedApplication.keyWindow addGestureRecognizer:swipeUpGestureRec];
 
     // add container view with border, shadow, background color etc...
-    const float consoleHeightRatio = 0.4;   //0.0 to 1.0 from bottom to top
-    const float margin = 5;                 //margin in pixels
-
-    CGRect initialRect =(CGRect){
-                                    margin,
-                                    UIScreen.mainScreen.bounds.size.height * (1.0 - consoleHeightRatio),
-                                    UIScreen.mainScreen.bounds.size.width - 2 * margin,
-                                    UIScreen.mainScreen.bounds.size.height * consoleHeightRatio - margin
-                                };
-
+    CGFloat const consoleHeightRatio = 0.4;   // 0.0 to 1.0 from bottom to top
+    CGFloat const margin = 5.0;               // margin in pixels
+    CGRect initialRect = (CGRect)
+    {
+        margin,
+        UIScreen.mainScreen.bounds.size.height * (1.0 - consoleHeightRatio),
+        UIScreen.mainScreen.bounds.size.width - 2.0 * margin,
+        UIScreen.mainScreen.bounds.size.height * consoleHeightRatio - margin
+    };
     vw_container = [UIView.alloc initWithFrame:initialRect];
     vw_container.backgroundColor = [UIColor colorWithRed:156/255.0 green:82/255.0 blue:72/255.0 alpha:1];
-    vw_container.alpha = 0.7;
-    vw_container.layer.borderWidth = 1;
-    vw_container.layer.borderColor =  [UIColor colorWithRed:92/255.0 green:44/255.0 blue:36/255.0 alpha:1].CGColor;
+    vw_container.alpha = 0.85;
+    vw_container.layer.borderWidth = 1.0;
+    vw_container.layer.borderColor = [UIColor colorWithRed:92/255.0 green:44/255.0 blue:36/255.0 alpha:1].CGColor;
     vw_container.layer.shadowColor = UIColor.blackColor.CGColor;
-    vw_container.layer.shadowOffset = (CGSize){0,2};
-    vw_container.layer.shadowRadius = 3;
-    vw_container.layer.shadowOpacity = 1;
+    vw_container.layer.shadowOffset = (CGSize){0.0, 2.0};
+    vw_container.layer.shadowRadius = 3.0;
+    vw_container.layer.shadowOpacity = 1.0;
     [UIApplication.sharedApplication.keyWindow addSubview:vw_container];
+
     // add long press gesture for moving
     UILongPressGestureRecognizer* longPressGestureRec = [UILongPressGestureRecognizer.alloc initWithTarget:self action:@selector(onLongPress:)];
     longPressGestureRec.minimumPressDuration = 0.2;
     [vw_container addGestureRecognizer:longPressGestureRec];
+
     // add double tap press gesture for copying logs
-    UITapGestureRecognizer* tapGestureRec = [UITapGestureRecognizer.alloc initWithTarget:self action:@selector(onDoubleTap:)];
-    tapGestureRec.numberOfTapsRequired = 2;
-    [vw_container addGestureRecognizer:tapGestureRec];
+    UITapGestureRecognizer* doubleTapGestureRec = [UITapGestureRecognizer.alloc initWithTarget:self action:@selector(onDoubleTap:)];
+    doubleTapGestureRec.numberOfTapsRequired = 2;
+    [vw_container addGestureRecognizer:doubleTapGestureRec];
+
+    // add triple tap press gesture for clearing logs
+    UITapGestureRecognizer* tripleTapGestureRec = [UITapGestureRecognizer.alloc initWithTarget:self action:@selector(onTripleTap:)];
+    tripleTapGestureRec.numberOfTapsRequired = 3;
+    [vw_container addGestureRecognizer:tripleTapGestureRec];
 
     // add text view to display logs
-    txt_console = [UITextView.alloc initWithFrame:vw_container.bounds];
-    txt_console.editable = NO;
-    txt_console.selectable = NO;
-    txt_console.backgroundColor = UIColor.clearColor;
-    txt_console.textColor = [UIColor colorWithRed:215/255.0 green:201/255.0 blue:169/255.0 alpha:1];
-    txt_console.font = [UIFont fontWithName:@"Menlo" size:10];
-    [vw_container addSubview:txt_console];
+    tx_console = [UITextView.alloc initWithFrame:vw_container.bounds];
+    tx_console.editable = NO;
+    tx_console.selectable = NO;
+    tx_console.backgroundColor = UIColor.clearColor;
+    tx_console.textColor = [UIColor colorWithRed:215/255.0 green:201/255.0 blue:169/255.0 alpha:1];
+    tx_console.font = [UIFont fontWithName:@"Menlo" size:10.0];
+    [vw_container addSubview:tx_console];
 
     // state bools
     isBeingDragged = NO;
@@ -138,26 +151,21 @@
 
     dispatch_async(dispatch_get_main_queue(), ^
     {
-        txt_console.text = [txt_console.text stringByAppendingFormat:@"%@",logs];
+        tx_console.text = [tx_console.text stringByAppendingFormat:@"%@",logs];
     });
 
-    if(isBeingDragged)
+    if (isBeingDragged)
         return;
 
     // deal with uitextview scrolling issues
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(),
-    ^{
-        UIScrollView* textViewScroll = (UIScrollView*)txt_console;
-
-        BOOL shouldAutoScroll = (textViewScroll.contentOffset.y + txt_console.bounds.size.height*2 >= textViewScroll.contentSize.height);
-
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^
+    {
+        BOOL shouldAutoScroll = (tx_console.contentOffset.y + tx_console.bounds.size.height * 2 >= tx_console.contentSize.height);
         if (shouldAutoScroll)
         {
-            NSRange myRange = NSMakeRange(txt_console.text.length-1, 0);
-
-            [txt_console scrollRangeToVisible:myRange];
-            txt_console.scrollEnabled = NO;
-            txt_console.scrollEnabled = YES;
+            [tx_console scrollRangeToVisible:(NSRange){tx_console.text.length - 1, 0}];
+            tx_console.scrollEnabled = NO;
+            tx_console.scrollEnabled = YES;
         }
     });
 }
@@ -170,12 +178,12 @@
 {
     // drag drop
     UIView* topView = (UIView*)UIApplication.sharedApplication.keyWindow;
-
     static CGPoint diff;
     static CGPoint scrollContentOffset;
+
     if (recognizer.state == UIGestureRecognizerStateBegan)
     {
-        scrollContentOffset = txt_console.contentOffset;
+        scrollContentOffset = tx_console.contentOffset;
         CGPoint startPoint = [recognizer locationInView:topView];
         diff = (CGPoint){vw_container.center.x - startPoint.x, vw_container.center.y - startPoint.y};
         isBeingDragged = YES;
@@ -185,11 +193,11 @@
         CGPoint currentPoint = [recognizer locationInView:topView];
         CGPoint adjustedPoint = (CGPoint){currentPoint.x + diff.x, currentPoint.y + diff.y};
         vw_container.center = adjustedPoint;
-        txt_console.contentOffset = scrollContentOffset;
+        tx_console.contentOffset = scrollContentOffset;
     }
     else if (recognizer.state == UIGestureRecognizerStateEnded)
     {
-        txt_console.contentOffset = scrollContentOffset;
+        tx_console.contentOffset = scrollContentOffset;
         isBeingDragged = NO;
     }
 }
@@ -197,8 +205,13 @@
 
 - (void)onDoubleTap:(UITapGestureRecognizer*)recognizer
 {
-    UIPasteboard* pasteboard = [UIPasteboard generalPasteboard];
-    pasteboard.string = txt_console.text;
+    UIPasteboard.generalPasteboard.string = tx_console.text;
+}
+
+
+- (void)onTripleTap:(UITapGestureRecognizer*)recognizer
+{
+    [self clearConsole];
 }
 
 
@@ -219,22 +232,29 @@
 
 - (void)hideWithAnimation
 {
-    if(!isVisible)
+    if (!isVisible)
         return;
 
     isVisible = NO;
 
-    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{ vw_container.alpha = 0; } completion:nil];
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{ vw_container.alpha = 0.0; } completion:nil];
 }
 
 
 - (void)showWithAnimation
 {
-    if(isVisible)
+    if (isVisible)
         return;
 
     isVisible = YES;
 
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{ vw_container.alpha = 0.7; }completion:nil];
 }
+
+
+- (void)clearConsole
+{
+    tx_console.text = @"";
+}
+
 @end

@@ -1,5 +1,5 @@
 // erkanyildiz
-// 20171226-1155+0900
+// 20180225-2331+0900
 //
 // EYCrashTesting.m
 
@@ -29,7 +29,7 @@
 
     for (NSString* title in tests)
     {
-        UIAlertAction* action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(UIAlertAction* action)
+        UIAlertAction* crashAction = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(UIAlertAction* action)
         {
             NSUInteger index = [alert.actions indexOfObject:action];
 
@@ -42,7 +42,7 @@
             #pragma clang diagnostic pop
         }];
 
-        [alert addAction:action];
+        [alert addAction:crashAction];
     }
 
     UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];

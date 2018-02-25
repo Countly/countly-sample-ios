@@ -571,15 +571,15 @@ typedef enum : NSUInteger
             NSURL* URL = [NSURL URLWithString:urlString];
             NSMutableURLRequest* request= [NSMutableURLRequest requestWithURL:URL];
 
-            NSURLResponse* response;
-            NSError* error;
+            NSURLResponse* returningResponse;
+            NSError* returningError;
 
             switch (indexPath.row)
             {
-                case 0: [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+                case 0: [NSURLConnection sendSynchronousRequest:request returningResponse:&returningResponse error:&returningError];
                 break;
 
-                case 1: [NSURLConnection sendAsynchronousRequest:request queue:NSOperationQueue.mainQueue completionHandler:^(NSURLResponse * response, NSData * data, NSError * connectionError)
+                case 1: [NSURLConnection sendAsynchronousRequest:request queue:NSOperationQueue.mainQueue completionHandler:^(NSURLResponse* response, NSData* data, NSError* error)
                         {
                             NSLog(@"sendAsynchronousRequest:queue:completionHandler: finished!");
                         }];

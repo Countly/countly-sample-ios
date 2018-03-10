@@ -1,9 +1,9 @@
 // erkanyildiz
-// 20180107-2246+0900
-//
-// https://github.com/erkanyildiz/EYLogViewer
+// 20180310-2028+0900
 //
 // EYLogViewer.h
+//
+// https://github.com/erkanyildiz/EYLogViewer
 
 #import <Foundation/Foundation.h>
 

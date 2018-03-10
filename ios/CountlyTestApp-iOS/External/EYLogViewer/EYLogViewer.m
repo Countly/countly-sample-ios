@@ -1,5 +1,5 @@
 // erkanyildiz
-// 20180310-2028+0900
+// 20180310-2045+0900
 //
 // EYLogViewer.m
 //
@@ -133,7 +133,7 @@
     self.tx_console.editable = NO;
     self.tx_console.selectable = NO;
     self.tx_console.backgroundColor = UIColor.clearColor;
-    self.tx_console.textColor = [UIColor colorWithRed:215/255.0 green:201/255.0 blue:169/255.0 alpha:1];
+    self.tx_console.textColor = [UIColor colorWithRed:215/255.0 green:201/255.0 blue:169/255.0 alpha:1.0];
     self.tx_console.font = [UIFont fontWithName:@"Menlo" size:10.0];
     [self.vw_container addSubview:self.tx_console];
 
@@ -143,14 +143,14 @@
 }
 
 
-- (void)readCompleted:(NSNotification*)notification
+- (void)readCompleted:(NSNotification *)notification
 {
-    [((NSFileHandle*)notification.object) readInBackgroundAndNotify];
+    [((NSFileHandle *)notification.object) readInBackgroundAndNotify];
     NSString* logs = [NSString.alloc initWithData:notification.userInfo[NSFileHandleNotificationDataItem] encoding:NSUTF8StringEncoding];
 
     dispatch_async(dispatch_get_main_queue(), ^
     {
-        self.tx_console.text = [self.tx_console.text stringByAppendingFormat:@"%@",logs];
+        self.tx_console.text = [self.tx_console.text stringByAppendingFormat:@"%@", logs];
     });
 
     if (isBeingDragged)
@@ -173,7 +173,7 @@
 #pragma mark -
 
 
-- (void)onLongPress:(UIPanGestureRecognizer*)recognizer
+- (void)onLongPress:(UIPanGestureRecognizer *)recognizer
 {
     // drag drop
     UIView* topView = (UIView*)UIApplication.sharedApplication.keyWindow;
@@ -202,25 +202,25 @@
 }
 
 
-- (void)onDoubleTap:(UITapGestureRecognizer*)recognizer
+- (void)onDoubleTap:(UITapGestureRecognizer *)recognizer
 {
     UIPasteboard.generalPasteboard.string = self.tx_console.text;
 }
 
 
-- (void)onTripleTap:(UITapGestureRecognizer*)recognizer
+- (void)onTripleTap:(UITapGestureRecognizer *)recognizer
 {
     [self clearConsole];
 }
 
 
-- (void)onSwipeDown:(UISwipeGestureRecognizer*)recognizer
+- (void)onSwipeDown:(UISwipeGestureRecognizer *)recognizer
 {
     [self hideWithAnimation];
 }
 
 
-- (void)onSwipeUp:(UISwipeGestureRecognizer*)recognizer
+- (void)onSwipeUp:(UISwipeGestureRecognizer *)recognizer
 {
     [self showWithAnimation];
 }

@@ -768,10 +768,10 @@ typedef enum : NSUInteger
                 case 4: [Countly.sharedInstance recordIP:@"1.2.3.4"];
                 break;
 
-                case 5: Countly.sharedInstance.isGeoLocationEnabled  = NO;
+                case 5: Countly.sharedInstance.isGeoLocationEnabled = NO;
                 break;
 
-                case 6: Countly.sharedInstance.isGeoLocationEnabled  = YES;
+                case 6: Countly.sharedInstance.isGeoLocationEnabled = YES;
                 break;
 
                 case 7:

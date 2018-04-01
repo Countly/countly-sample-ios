@@ -39,8 +39,9 @@
 
     self.custom = NSMutableArray.new;
 
-    for (NSString* key in (NSDictionary*)Countly.user.custom)
-        [self.custom addObject:@{@"k":key, @"v":Countly.user.custom[key]}];
+    NSDictionary* userCustomProperties = (NSDictionary *)Countly.user.custom;
+    for (NSString* key in userCustomProperties)
+        [self.custom addObject:@{@"k": key, @"v": userCustomProperties[key]}];
 
     self.tableView.tableFooterView = UIView.new;
     [self.tableView reloadData];

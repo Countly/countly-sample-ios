@@ -15,6 +15,7 @@
 		D2315A4118EBE52100119D0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2315A4018EBE52100119D0D /* AppDelegate.m */; };
 		D2315A4418EBE52100119D0D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2315A4218EBE52100119D0D /* MainMenu.xib */; };
 		D2315A4618EBE52100119D0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2315A4518EBE52100119D0D /* Images.xcassets */; };
+		D249AD3C2070CA2700BFBE18 /* CountlyConsentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D249AD3B2070CA2700BFBE18 /* CountlyConsentManager.m */; };
 		D28292211D998C4100D650F2 /* CountlyPushNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = D28292201D998C4100D650F2 /* CountlyPushNotifications.m */; };
 		D2A6CEB21EB3B57000EC10A5 /* CountlyNotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A6CEB01EB3B57000EC10A5 /* CountlyNotificationService.m */; };
 		D2D7728A1D37D99700F019B8 /* CountlyStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D772891D37D99700F019B8 /* CountlyStarRating.m */; };
@@ -49,6 +50,8 @@
 		D2315A4018EBE52100119D0D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D2315A4318EBE52100119D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D2315A4518EBE52100119D0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D249AD3A2070CA2700BFBE18 /* CountlyConsentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConsentManager.h; sourceTree = "<group>"; };
+		D249AD3B2070CA2700BFBE18 /* CountlyConsentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConsentManager.m; sourceTree = "<group>"; };
 		D282921F1D998C4100D650F2 /* CountlyPushNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPushNotifications.h; sourceTree = "<group>"; };
 		D28292201D998C4100D650F2 /* CountlyPushNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPushNotifications.m; sourceTree = "<group>"; };
 		D2A6CEB01EB3B57000EC10A5 /* CountlyNotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyNotificationService.m; sourceTree = "<group>"; };
@@ -173,6 +176,8 @@
 				D2EB40871C58C00400EAA633 /* CountlyConfig.m */,
 				D2EB40881C58C00400EAA633 /* CountlyConnectionManager.h */,
 				D2EB40891C58C00400EAA633 /* CountlyConnectionManager.m */,
+				D249AD3A2070CA2700BFBE18 /* CountlyConsentManager.h */,
+				D249AD3B2070CA2700BFBE18 /* CountlyConsentManager.m */,
 				D2EB408A1C58C00400EAA633 /* CountlyCrashReporter.h */,
 				D2EB408B1C58C00400EAA633 /* CountlyCrashReporter.m */,
 				D2EB408C1C58C00400EAA633 /* CountlyDeviceInfo.h */,
@@ -273,6 +278,7 @@
 				D2EB40A11C58C00400EAA633 /* CountlyEvent.m in Sources */,
 				D22D416F1C6EED4D0078AF7D /* CountlyViewTracking.m in Sources */,
 				D2EB40A01C58C00400EAA633 /* CountlyDeviceInfo.m in Sources */,
+				D249AD3C2070CA2700BFBE18 /* CountlyConsentManager.m in Sources */,
 				D2EB40971C58C00400EAA633 /* Countly.m in Sources */,
 				D2EB40991C58C00400EAA633 /* Countly_OpenUDID.m in Sources */,
 				D2A6CEB21EB3B57000EC10A5 /* CountlyNotificationService.m in Sources */,

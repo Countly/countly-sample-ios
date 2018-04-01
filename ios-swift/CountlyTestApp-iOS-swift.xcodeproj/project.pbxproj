@@ -31,6 +31,7 @@
 		D252E3C91DE1F249006548B0 /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D252E3B61DE1F249006548B0 /* CountlyViewTracking.m */; };
 		D257996F1DE71166006A64CA /* TestViewControllerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257996E1DE71166006A64CA /* TestViewControllerModal.swift */; };
 		D2666B951DE9D68C0088E822 /* TestViewControllerPushPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2666B941DE9D68C0088E822 /* TestViewControllerPushPop.swift */; };
+		D29E5FBA206F2E6F0010F061 /* CountlyConsentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D29E5FB9206F2E6F0010F061 /* CountlyConsentManager.m */; };
 		D2A6CEAF1EB3B52600EC10A5 /* CountlyNotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A6CEAD1EB3B52600EC10A5 /* CountlyNotificationService.m */; };
 		D2C01AC720026E2800BAE8E3 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = D2C01AC620026E2800BAE8E3 /* CHANGELOG.md */; };
 		D2F065002010DF2400A899B8 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = D2F064FF2010DF2300A899B8 /* LICENSE.md */; };
@@ -80,6 +81,8 @@
 		D252E3CC1DE28A63006548B0 /* CountlyTestApp-iOS-swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CountlyTestApp-iOS-swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		D257996E1DE71166006A64CA /* TestViewControllerModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewControllerModal.swift; sourceTree = "<group>"; };
 		D2666B941DE9D68C0088E822 /* TestViewControllerPushPop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewControllerPushPop.swift; sourceTree = "<group>"; };
+		D29E5FB8206F2E6F0010F061 /* CountlyConsentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConsentManager.h; sourceTree = "<group>"; };
+		D29E5FB9206F2E6F0010F061 /* CountlyConsentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConsentManager.m; sourceTree = "<group>"; };
 		D2A6CEAD1EB3B52600EC10A5 /* CountlyNotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyNotificationService.m; sourceTree = "<group>"; };
 		D2A6CEAE1EB3B52600EC10A5 /* CountlyNotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyNotificationService.h; sourceTree = "<group>"; };
 		D2C01AC620026E2800BAE8E3 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 				D252E3A41DE1F249006548B0 /* CountlyConfig.m */,
 				D252E3A51DE1F249006548B0 /* CountlyConnectionManager.h */,
 				D252E3A61DE1F249006548B0 /* CountlyConnectionManager.m */,
+				D29E5FB8206F2E6F0010F061 /* CountlyConsentManager.h */,
+				D29E5FB9206F2E6F0010F061 /* CountlyConsentManager.m */,
 				D252E3A71DE1F249006548B0 /* CountlyCrashReporter.h */,
 				D252E3A81DE1F249006548B0 /* CountlyCrashReporter.m */,
 				D252E3A91DE1F249006548B0 /* CountlyDeviceInfo.h */,
@@ -263,6 +268,7 @@
 				D252E3BA1DE1F249006548B0 /* Countly.m in Sources */,
 				D252E3BC1DE1F249006548B0 /* Countly_OpenUDID.m in Sources */,
 				D252E3C11DE1F249006548B0 /* CountlyConnectionManager.m in Sources */,
+				D29E5FBA206F2E6F0010F061 /* CountlyConsentManager.m in Sources */,
 				D252E3C51DE1F249006548B0 /* CountlyPersistency.m in Sources */,
 				D2666B951DE9D68C0088E822 /* TestViewControllerPushPop.swift in Sources */,
 				D252E3BE1DE1F249006548B0 /* CountlyAPMNetworkLog.m in Sources */,
@@ -324,6 +330,7 @@
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -341,6 +348,7 @@
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_SHADOW = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
@@ -381,6 +389,7 @@
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -392,6 +401,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_SHADOW = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
@@ -409,6 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = 3S32KFMHB8;
 				INFOPLIST_FILE = "CountlyTestApp-iOS-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -425,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = 3S32KFMHB8;
 				INFOPLIST_FILE = "CountlyTestApp-iOS-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

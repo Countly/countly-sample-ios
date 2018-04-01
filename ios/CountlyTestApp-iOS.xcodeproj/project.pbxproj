@@ -30,6 +30,7 @@
 		D252ECE21F72026100481A79 /* EYLogViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECE01F72026100481A79 /* EYLogViewer.m */; };
 		D252ECE61F7203C200481A79 /* EYCrashTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECE51F7203C200481A79 /* EYCrashTesting.m */; };
 		D273859F1D963842008D201F /* CountlyPushNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = D273859E1D963842008D201F /* CountlyPushNotifications.m */; };
+		D2E4148A2062AA3C0088900F /* CountlyConsentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E414892062AA3C0088900F /* CountlyConsentManager.m */; };
 		D2EB406A1C58BFAA00EAA633 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB404F1C58BFAA00EAA633 /* Countly.m */; };
 		D2EB406C1C58BFAA00EAA633 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40521C58BFAA00EAA633 /* Countly_OpenUDID.m */; };
 		D2EB406D1C58BFAA00EAA633 /* CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40541C58BFAA00EAA633 /* CountlyAPM.m */; };
@@ -111,6 +112,8 @@
 		D273859E1D963842008D201F /* CountlyPushNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPushNotifications.m; sourceTree = "<group>"; };
 		D2BAB09E17EC8EE600807D0D /* CountlyTestApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BAB0B017EC8EE600807D0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D2E414882062AA3C0088900F /* CountlyConsentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConsentManager.h; sourceTree = "<group>"; };
+		D2E414892062AA3C0088900F /* CountlyConsentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConsentManager.m; sourceTree = "<group>"; };
 		D2EB404E1C58BFAA00EAA633 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
 		D2EB404F1C58BFAA00EAA633 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
 		D2EB40501C58BFAA00EAA633 /* Countly.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countly.podspec; sourceTree = "<group>"; };
@@ -330,6 +333,8 @@
 				D2EB405A1C58BFAA00EAA633 /* CountlyConfig.m */,
 				D2EB405B1C58BFAA00EAA633 /* CountlyConnectionManager.h */,
 				D2EB405C1C58BFAA00EAA633 /* CountlyConnectionManager.m */,
+				D2E414882062AA3C0088900F /* CountlyConsentManager.h */,
+				D2E414892062AA3C0088900F /* CountlyConsentManager.m */,
 				D2EB405D1C58BFAA00EAA633 /* CountlyCrashReporter.h */,
 				D2EB405E1C58BFAA00EAA633 /* CountlyCrashReporter.m */,
 				D2EB405F1C58BFAA00EAA633 /* CountlyDeviceInfo.h */,
@@ -491,6 +496,7 @@
 				D2EB40731C58BFAA00EAA633 /* CountlyDeviceInfo.m in Sources */,
 				D2EB40751C58BFAA00EAA633 /* CountlyPersistency.m in Sources */,
 				D2340D131E33BA09003C3841 /* TestModalViewController.m in Sources */,
+				D2E4148A2062AA3C0088900F /* CountlyConsentManager.m in Sources */,
 				D2EB406F1C58BFAA00EAA633 /* CountlyCommon.m in Sources */,
 				D2EB40761C58BFAA00EAA633 /* CountlyUserDetails.m in Sources */,
 				D2EB40701C58BFAA00EAA633 /* CountlyConfig.m in Sources */,
@@ -682,6 +688,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_ASSIGN_ENUM = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -690,6 +698,8 @@
 				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				INFOPLIST_FILE = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
@@ -704,6 +714,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_ASSIGN_ENUM = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -711,6 +723,8 @@
 				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				INFOPLIST_FILE = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";

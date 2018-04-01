@@ -14,6 +14,7 @@
 		D22D430B1C4631BD00C69E7C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D430A1C4631BD00C69E7C /* ViewController.m */; };
 		D22D430E1C4631BD00C69E7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22D430C1C4631BD00C69E7C /* Main.storyboard */; };
 		D22D43101C4631BD00C69E7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22D430F1C4631BD00C69E7C /* Assets.xcassets */; };
+		D249AD3F2070CAA900BFBE18 /* CountlyConsentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D249AD3E2070CAA900BFBE18 /* CountlyConsentManager.m */; };
 		D28292241D998C9A00D650F2 /* CountlyPushNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = D28292231D998C9A00D650F2 /* CountlyPushNotifications.m */; };
 		D2A6CEB51EB3B5BD00EC10A5 /* CountlyNotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A6CEB31EB3B5BD00EC10A5 /* CountlyNotificationService.m */; };
 		D2D772931D3882D400F019B8 /* CountlyStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D772921D3882D400F019B8 /* CountlyStarRating.m */; };
@@ -45,6 +46,8 @@
 		D22D430D1C4631BD00C69E7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D22D430F1C4631BD00C69E7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D22D43111C4631BD00C69E7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D249AD3D2070CAA900BFBE18 /* CountlyConsentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConsentManager.h; sourceTree = "<group>"; };
+		D249AD3E2070CAA900BFBE18 /* CountlyConsentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConsentManager.m; sourceTree = "<group>"; };
 		D28292221D998C9A00D650F2 /* CountlyPushNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPushNotifications.h; sourceTree = "<group>"; };
 		D28292231D998C9A00D650F2 /* CountlyPushNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPushNotifications.m; sourceTree = "<group>"; };
 		D2A6CEB31EB3B5BD00EC10A5 /* CountlyNotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyNotificationService.m; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				D2EB40B41C58C03500EAA633 /* CountlyConfig.m */,
 				D2EB40B51C58C03500EAA633 /* CountlyConnectionManager.h */,
 				D2EB40B61C58C03500EAA633 /* CountlyConnectionManager.m */,
+				D249AD3D2070CAA900BFBE18 /* CountlyConsentManager.h */,
+				D249AD3E2070CAA900BFBE18 /* CountlyConsentManager.m */,
 				D2EB40B71C58C03500EAA633 /* CountlyCrashReporter.h */,
 				D2EB40B81C58C03500EAA633 /* CountlyCrashReporter.m */,
 				D2EB40B91C58C03500EAA633 /* CountlyDeviceInfo.h */,
@@ -253,6 +258,7 @@
 				D2EB40CF1C58C03500EAA633 /* CountlyPersistency.m in Sources */,
 				D2EB40C91C58C03500EAA633 /* CountlyCommon.m in Sources */,
 				D2D772931D3882D400F019B8 /* CountlyStarRating.m in Sources */,
+				D249AD3F2070CAA900BFBE18 /* CountlyConsentManager.m in Sources */,
 				D2EB40D01C58C03500EAA633 /* CountlyUserDetails.m in Sources */,
 				D22D43081C4631BD00C69E7C /* AppDelegate.m in Sources */,
 				D28292241D998C9A00D650F2 /* CountlyPushNotifications.m in Sources */,

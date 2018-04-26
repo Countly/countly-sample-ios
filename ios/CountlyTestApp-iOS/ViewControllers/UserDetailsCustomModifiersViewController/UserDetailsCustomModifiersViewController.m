@@ -8,9 +8,7 @@
 #import "Countly.h"
 
 @interface UserDetailsCustomModifiersViewController ()
-{
-    NSArray* listOfCustomModifiers;
-}
+@property (nonatomic) NSArray* listOfCustomModifiers;
 @property (nonatomic, weak) IBOutlet UITableView* tableView;
 @end
 
@@ -32,7 +30,7 @@ static NSMutableArray* addedModifiers;
 
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(onClick_save:)];
     
-    listOfCustomModifiers =
+    self.listOfCustomModifiers =
     @[
         @"set",
         @"setOnce",
@@ -97,7 +95,7 @@ static NSMutableArray* addedModifiers;
 
     switch (section)
     {
-        case 0: numberOfRows = listOfCustomModifiers.count; break;
+        case 0: numberOfRows = self.listOfCustomModifiers.count; break;
         case 1: numberOfRows = addedModifiers.count; break;
     }
 
@@ -119,7 +117,7 @@ static NSMutableArray* addedModifiers;
 
     if(indexPath.section == 0)
     {
-        cell.textLabel.text = listOfCustomModifiers[indexPath.row];
+        cell.textLabel.text = self.listOfCustomModifiers[indexPath.row];
         cell.textLabel.font = [UIFont fontWithName:@"Avenir-medium" size:14];
     }
     else if(indexPath.section == 1)
@@ -140,7 +138,7 @@ static NSMutableArray* addedModifiers;
         BOOL isOnlyKey = indexPath.row == 2 || indexPath.row == 3;
         BOOL isNumeric = indexPath.row >= 4 && indexPath.row <= 7;
     
-        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:listOfCustomModifiers[indexPath.row] message:isOnlyKey ? @"Enter key:":@"Enter key and value:" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:self.listOfCustomModifiers[indexPath.row] message:isOnlyKey ? @"Enter key:":@"Enter key and value:" preferredStyle:UIAlertControllerStyleAlert];
 
         [alertController addTextFieldWithConfigurationHandler:^(UITextField * textField)
         {
@@ -183,7 +181,7 @@ static NSMutableArray* addedModifiers;
                     default: break;
                 }
             
-                [addedModifiers addObject:@{@"k":key, @"v":value, @"m":listOfCustomModifiers[indexPath.row]}];
+                [addedModifiers addObject:@{@"k": key, @"v": value, @"m": self.listOfCustomModifiers[indexPath.row]}];
                 [self reload];
             }
         }];

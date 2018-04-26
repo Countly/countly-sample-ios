@@ -31,7 +31,9 @@ typedef enum : NSUInteger
     TestSectionAPM,
     TestSectionViewTracking,
     TestSectionPushNotifications,
+    TestSectionLocation,
     TestSectionMultithreading,
+    TestSectionConsents,
     TestSectionOthers
 } TestSection;
 
@@ -60,7 +62,9 @@ typedef enum : NSUInteger
         @"APM",
         @"View Tracking",
         @"Push Notifications",
+        @"Location",
         @"Multithreading",
+        @"Consents",
         @"Others"
     ];
 
@@ -147,12 +151,14 @@ typedef enum : NSUInteger
         @[
             @"Ask for Notification Permission",
             @"Ask for Notification Permission with Completion Handler",
-            @"Record Location for Geo-Location Push",
-            @"Record City and Country for Geo-Location Push",
-            @"Record IP Address for Geo-Location Push",
-            @"Disable Geo-Location",
-            @"Enable Geo-Location",
             @"Record Push Notification Action"
+        ],
+
+        @[
+            @"Record Location",
+            @"Record City and Country",
+            @"Record IP Address",
+            @"Disable Location Info",
         ],
 
         @[
@@ -162,6 +168,31 @@ typedef enum : NSUInteger
             @"Global Queue Multithread Testing 1",
             @"Global Queue Multithread Testing 2",
             @"Global Queue Multithread Testing 3",
+        ],
+
+        @[
+            @"Give for Sessions",
+            @"Give for Events",
+            @"Give for UserDetails",
+            @"Give for CrashReporting",
+            @"Give for PushNotifications",
+            @"Give for Location",
+            @"Give for ViewTracking",
+            @"Give for Attribution",
+            @"Give for StarRating",
+            @"Give for AppleWatch",
+            @"Give for All the Features",
+            @"Cancel for Sessions",
+            @"Cancel for Events",
+            @"Cancel for UserDetails",
+            @"Cancel for CrashReporting",
+            @"Cancel for PushNotifications",
+            @"Cancel for Location",
+            @"Cancel for ViewTracking",
+            @"Cancel for Attribution",
+            @"Cancel for StarRating",
+            @"Cancel for AppleWatch",
+            @"Cancel for All the Features",
         ],
 
         @[
@@ -192,6 +223,7 @@ typedef enum : NSUInteger
             @"timed-event",
             @"timed-event  sg:{k:v}  c:1  s:0",
         ],
+
         @[
             @"thisIsTheUnrecognizedSelectorCausingTheCrash",
             @"5th element in a 3 elements array",
@@ -257,12 +289,14 @@ typedef enum : NSUInteger
         @[
             @"",
             @"",
+            @"for manually handled push notifications"
+        ],
+
+        @[
             @"33.6789, 43.1234",
             @"Tokyo - JP",
             @"1.2.3.4",
             @"",
-            @"",
-            @"for manually handled push notifications"
         ],
 
         @[
@@ -272,6 +306,31 @@ typedef enum : NSUInteger
             @"MultithreadingEvent4",
             @"MultithreadingEvent5",
             @"MultithreadingEvent6"
+        ],
+
+        @[
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
+            @"",
         ],
 
         @[
@@ -571,15 +630,15 @@ typedef enum : NSUInteger
             NSURL* URL = [NSURL URLWithString:urlString];
             NSMutableURLRequest* request= [NSMutableURLRequest requestWithURL:URL];
 
-            NSURLResponse* response;
-            NSError* error;
+            NSURLResponse* returningResponse;
+            NSError* returningError;
 
             switch (indexPath.row)
             {
-                case 0: [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+                case 0: [NSURLConnection sendSynchronousRequest:request returningResponse:&returningResponse error:&returningError];
                 break;
 
-                case 1: [NSURLConnection sendAsynchronousRequest:request queue:NSOperationQueue.mainQueue completionHandler:^(NSURLResponse * response, NSData * data, NSError * connectionError)
+                case 1: [NSURLConnection sendAsynchronousRequest:request queue:NSOperationQueue.mainQueue completionHandler:^(NSURLResponse* response, NSData* data, NSError* error)
                         {
                             NSLog(@"sendAsynchronousRequest:queue:completionHandler: finished!");
                         }];
@@ -732,7 +791,7 @@ typedef enum : NSUInteger
                 case 9: [Countly.sharedInstance removeExceptionForAutoViewTracking:@"MyViewControllerCustomTitleView"];
                 break;
 
-                case 10: [Countly.sharedInstance reportView:@"ManualViewReportExample_MyMainView"];
+                case 10: [Countly.sharedInstance recordView:@"ManualViewReportExample_MyMainView"];
                 break;
 
                 default: break;
@@ -751,30 +810,18 @@ typedef enum : NSUInteger
 
                 case 1:
                 {
-                    UNAuthorizationOptions authorizationOptions = UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert;
-                    [Countly.sharedInstance askForNotificationPermissionWithOptions:authorizationOptions completionHandler:^(BOOL granted, NSError *error)
+                    if (@available(iOS 10.0, *))
                     {
-                        NSLog(@"Notification Permission Granted: %d", granted);
-                        NSLog(@"Error: %@", error);
-                    }];
+                        UNAuthorizationOptions authorizationOptions = UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert;
+                        [Countly.sharedInstance askForNotificationPermissionWithOptions:authorizationOptions completionHandler:^(BOOL granted, NSError *error)
+                        {
+                            NSLog(@"Notification Permission Granted: %d", granted);
+                            NSLog(@"Error: %@", error);
+                        }];
+                    }
                 }break;
 
-                case 2: [Countly.sharedInstance recordLocation:(CLLocationCoordinate2D){33.6789,43.1234}];
-                break;
-
-                case 3: [Countly.sharedInstance recordCity:@"Tokyo" andISOCountryCode:@"JP"];
-                break;
-
-                case 4: [Countly.sharedInstance recordIP:@"1.2.3.4"];
-                break;
-
-                case 5: Countly.sharedInstance.isGeoLocationEnabled  = NO;
-                break;
-
-                case 6: Countly.sharedInstance.isGeoLocationEnabled  = YES;
-                break;
-
-                case 7:
+                case 2:
                 {
                     NSDictionary* userInfo = NSDictionary.new;     // this should be the notification dictionary
                     NSInteger buttonIndex = 1; 	// clicked button index
@@ -783,6 +830,29 @@ typedef enum : NSUInteger
                                                 // 0 for default action
                     [Countly.sharedInstance recordActionForNotification:userInfo clickedButtonIndex:buttonIndex];
                 }break;
+
+                default: break;
+            }
+        }
+        break;
+
+
+#pragma mark Location
+        case TestSectionLocation:
+        {
+            switch (indexPath.row)
+            {
+                case 0: [Countly.sharedInstance recordLocation:(CLLocationCoordinate2D){33.6789,43.1234}];
+                break;
+
+                case 1: [Countly.sharedInstance recordCity:@"Tokyo" andISOCountryCode:@"JP"];
+                break;
+
+                case 2: [Countly.sharedInstance recordIP:@"1.2.3.4"];
+                break;
+
+                case 3: [Countly.sharedInstance disableLocationInfo];
+                break;
 
                 default: break;
             }
@@ -815,6 +885,83 @@ typedef enum : NSUInteger
                     [Countly.sharedInstance recordEvent:eventName segmentation:segmentation];
                     NSLog(@"Thread %d", i);
                 });
+            }
+        }
+        break;
+
+
+#pragma mark Consents
+        case TestSectionConsents:
+        {
+            switch (indexPath.row)
+            {
+                case 0: [Countly.sharedInstance giveConsentForFeature:CLYConsentSessions];
+                break;
+
+                case 1: [Countly.sharedInstance giveConsentForFeature:CLYConsentEvents];
+                break;
+
+                case 2: [Countly.sharedInstance giveConsentForFeature:CLYConsentUserDetails];
+                break;
+
+                case 3: [Countly.sharedInstance giveConsentForFeature:CLYConsentCrashReporting];
+                break;
+
+                case 4: [Countly.sharedInstance giveConsentForFeature:CLYConsentPushNotifications];
+                break;
+
+                case 5: [Countly.sharedInstance giveConsentForFeature:CLYConsentLocation];
+                break;
+
+                case 6: [Countly.sharedInstance giveConsentForFeature:CLYConsentViewTracking];
+                break;
+
+                case 7: [Countly.sharedInstance giveConsentForFeature:CLYConsentAttribution];
+                break;
+
+                case 8: [Countly.sharedInstance giveConsentForFeature:CLYConsentStarRating];
+                break;
+
+                case 9: [Countly.sharedInstance giveConsentForFeature:CLYConsentAppleWatch];
+                break;
+
+                case 10: [Countly.sharedInstance giveConsentForAllFeatures];
+                break;
+
+                case 11: [Countly.sharedInstance cancelConsentForFeature:CLYConsentSessions];
+                break;
+
+                case 12: [Countly.sharedInstance cancelConsentForFeature:CLYConsentEvents];
+                break;
+
+                case 13: [Countly.sharedInstance cancelConsentForFeature:CLYConsentUserDetails];
+                break;
+
+                case 14: [Countly.sharedInstance cancelConsentForFeature:CLYConsentCrashReporting];
+                break;
+
+                case 15: [Countly.sharedInstance cancelConsentForFeature:CLYConsentPushNotifications];
+                break;
+
+                case 16: [Countly.sharedInstance cancelConsentForFeature:CLYConsentLocation];
+                break;
+
+                case 17: [Countly.sharedInstance cancelConsentForFeature:CLYConsentViewTracking];
+                break;
+
+                case 18: [Countly.sharedInstance cancelConsentForFeature:CLYConsentAttribution];
+                break;
+
+                case 19: [Countly.sharedInstance cancelConsentForFeature:CLYConsentStarRating];
+                break;
+
+                case 20: [Countly.sharedInstance cancelConsentForFeature:CLYConsentAppleWatch];
+                break;
+
+                case 21: [Countly.sharedInstance cancelConsentForAllFeatures];
+                break;
+
+                default: break;
             }
         }
         break;

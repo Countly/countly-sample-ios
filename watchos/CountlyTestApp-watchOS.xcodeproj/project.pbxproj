@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D200087C2083B171003DB5DA /* CountlyLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D200087B2083B171003DB5DA /* CountlyLocationManager.m */; };
+		D200087D2083B18F003DB5DA /* CountlyLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D200087B2083B171003DB5DA /* CountlyLocationManager.m */; };
 		D209A7CC1F6B9DBE00B19B9B /* countly_dsym_uploader.sh in Resources */ = {isa = PBXBuildFile; fileRef = D209A7CB1F6B9DBE00B19B9B /* countly_dsym_uploader.sh */; };
 		D22D416B1C6E39B90078AF7D /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D416A1C6E39B90078AF7D /* CountlyViewTracking.m */; };
 		D22D416C1C6E39EC0078AF7D /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D416A1C6E39B90078AF7D /* CountlyViewTracking.m */; };
 		D23C98DA1ECAF287006BCBA4 /* CountlyNotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D23C98D81ECAF287006BCBA4 /* CountlyNotificationService.m */; };
+		D249AD422070CADF00BFBE18 /* CountlyConsentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D249AD412070CADE00BFBE18 /* CountlyConsentManager.m */; };
+		D249AD432070CAE900BFBE18 /* CountlyConsentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D249AD412070CADE00BFBE18 /* CountlyConsentManager.m */; };
 		D28292271D998CC100D650F2 /* CountlyPushNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = D28292261D998CC100D650F2 /* CountlyPushNotifications.m */; };
 		D28292281D998CD400D650F2 /* CountlyPushNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = D28292261D998CC100D650F2 /* CountlyPushNotifications.m */; };
 		D28292291D998CE100D650F2 /* CountlyStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7728F1D37DA5700F019B8 /* CountlyStarRating.m */; };
@@ -102,11 +106,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D200087A2083B171003DB5DA /* CountlyLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyLocationManager.h; sourceTree = "<group>"; };
+		D200087B2083B171003DB5DA /* CountlyLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyLocationManager.m; sourceTree = "<group>"; };
 		D209A7CB1F6B9DBE00B19B9B /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
 		D22D41691C6E39B90078AF7D /* CountlyViewTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyViewTracking.h; sourceTree = "<group>"; };
 		D22D416A1C6E39B90078AF7D /* CountlyViewTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyViewTracking.m; sourceTree = "<group>"; };
 		D23C98D81ECAF287006BCBA4 /* CountlyNotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyNotificationService.m; sourceTree = "<group>"; };
 		D23C98D91ECAF287006BCBA4 /* CountlyNotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyNotificationService.h; sourceTree = "<group>"; };
+		D249AD402070CADE00BFBE18 /* CountlyConsentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConsentManager.h; sourceTree = "<group>"; };
+		D249AD412070CADE00BFBE18 /* CountlyConsentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConsentManager.m; sourceTree = "<group>"; };
 		D28292251D998CC100D650F2 /* CountlyPushNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPushNotifications.h; sourceTree = "<group>"; };
 		D28292261D998CC100D650F2 /* CountlyPushNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPushNotifications.m; sourceTree = "<group>"; };
 		D2C01AC820027A1600BAE8E3 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -206,18 +214,22 @@
 				D2EB40E11C58C06E00EAA633 /* CountlyConfig.m */,
 				D2EB40E21C58C06E00EAA633 /* CountlyConnectionManager.h */,
 				D2EB40E31C58C06E00EAA633 /* CountlyConnectionManager.m */,
+				D249AD402070CADE00BFBE18 /* CountlyConsentManager.h */,
+				D249AD412070CADE00BFBE18 /* CountlyConsentManager.m */,
 				D2EB40E41C58C06E00EAA633 /* CountlyCrashReporter.h */,
 				D2EB40E51C58C06E00EAA633 /* CountlyCrashReporter.m */,
 				D2EB40E61C58C06E00EAA633 /* CountlyDeviceInfo.h */,
 				D2EB40E71C58C06E00EAA633 /* CountlyDeviceInfo.m */,
 				D2EB40E81C58C06E00EAA633 /* CountlyEvent.h */,
 				D2EB40E91C58C06E00EAA633 /* CountlyEvent.m */,
+				D200087A2083B171003DB5DA /* CountlyLocationManager.h */,
+				D200087B2083B171003DB5DA /* CountlyLocationManager.m */,
+				D23C98D91ECAF287006BCBA4 /* CountlyNotificationService.h */,
+				D23C98D81ECAF287006BCBA4 /* CountlyNotificationService.m */,
 				D2EB40EA1C58C06E00EAA633 /* CountlyPersistency.h */,
 				D2EB40EB1C58C06E00EAA633 /* CountlyPersistency.m */,
 				D28292251D998CC100D650F2 /* CountlyPushNotifications.h */,
 				D28292261D998CC100D650F2 /* CountlyPushNotifications.m */,
-				D23C98D91ECAF287006BCBA4 /* CountlyNotificationService.h */,
-				D23C98D81ECAF287006BCBA4 /* CountlyNotificationService.m */,
 				D2D7728E1D37DA5700F019B8 /* CountlyStarRating.h */,
 				D2D7728F1D37DA5700F019B8 /* CountlyStarRating.m */,
 				D2EB40EC1C58C06E00EAA633 /* CountlyUserDetails.h */,
@@ -381,7 +393,7 @@
 		D2FADF771C464C6A00060D08 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Countly;
 				TargetAttributes = {
 					D2FADF7E1C464C6A00060D08 = {
@@ -460,6 +472,8 @@
 				D2EB40FC1C58C06E00EAA633 /* CountlyPersistency.m in Sources */,
 				D2EB40F61C58C06E00EAA633 /* CountlyCommon.m in Sources */,
 				D2D772901D37DA5700F019B8 /* CountlyStarRating.m in Sources */,
+				D200087C2083B171003DB5DA /* CountlyLocationManager.m in Sources */,
+				D249AD422070CADF00BFBE18 /* CountlyConsentManager.m in Sources */,
 				D2EB40FD1C58C06E00EAA633 /* CountlyUserDetails.m in Sources */,
 				D2FADF871C464C6A00060D08 /* AppDelegate.m in Sources */,
 				D28292271D998CC100D650F2 /* CountlyPushNotifications.m in Sources */,
@@ -488,6 +502,7 @@
 				D2EB41081C58C09900EAA633 /* CountlyDeviceInfo.m in Sources */,
 				D2EB41071C58C09900EAA633 /* CountlyCrashReporter.m in Sources */,
 				D2FADFB41C464C6A00060D08 /* NotificationController.m in Sources */,
+				D200087D2083B18F003DB5DA /* CountlyLocationManager.m in Sources */,
 				D2EB410A1C58C09900EAA633 /* CountlyPersistency.m in Sources */,
 				D2EB41041C58C09900EAA633 /* CountlyCommon.m in Sources */,
 				D2EB41061C58C09900EAA633 /* CountlyConnectionManager.m in Sources */,
@@ -496,6 +511,7 @@
 				D2EB41051C58C09900EAA633 /* CountlyConfig.m in Sources */,
 				D2F0FC431C4756CF007C5556 /* RowController.m in Sources */,
 				D22D416C1C6E39EC0078AF7D /* CountlyViewTracking.m in Sources */,
+				D249AD432070CAE900BFBE18 /* CountlyConsentManager.m in Sources */,
 				D2EB41021C58C09900EAA633 /* CountlyAPM.m in Sources */,
 				D28292291D998CE100D650F2 /* CountlyStarRating.m in Sources */,
 				D2EB41001C58C09900EAA633 /* Countly.m in Sources */,
@@ -560,12 +576,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -613,12 +631,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -652,6 +672,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = 3S32KFMHB8;
 				INFOPLIST_FILE = "CountlyTestApp-watchOS WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -668,6 +689,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = 3S32KFMHB8;
 				INFOPLIST_FILE = "CountlyTestApp-watchOS WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -684,6 +706,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = 3S32KFMHB8;
 				IBSC_MODULE = CountlyTestApp_watchOS_WatchKit_Extension;
 				INFOPLIST_FILE = "CountlyTestApp-watchOS WatchKit App/Info.plist";
@@ -700,6 +723,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = 3S32KFMHB8;
 				IBSC_MODULE = CountlyTestApp_watchOS_WatchKit_Extension;
 				INFOPLIST_FILE = "CountlyTestApp-watchOS WatchKit App/Info.plist";
@@ -716,6 +740,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = 3S32KFMHB8;
 				INFOPLIST_FILE = "CountlyTestApp-watchOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -729,6 +754,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = 3S32KFMHB8;
 				INFOPLIST_FILE = "CountlyTestApp-watchOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

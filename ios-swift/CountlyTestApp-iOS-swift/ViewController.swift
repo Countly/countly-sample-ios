@@ -393,7 +393,7 @@ class ViewController: UIViewController
                     testTask.resume()
                 break
 
-                case 7:
+                case 11:
                     let testTask : URLSessionDownloadTask = URLSession.shared.downloadTask(with: request, completionHandler:
                     { (data, response, error) in
                         print("downloadTaskWithRequest:completionHandler: finished!")
@@ -401,12 +401,12 @@ class ViewController: UIViewController
                     testTask.resume()
                 break
 
-                case 8:
+                case 12:
                     let testTask : URLSessionDownloadTask = URLSession.shared.downloadTask(with: url)
                     testTask.resume()
                 break
 
-                case 9:
+                case 13:
                     let testTask : URLSessionDownloadTask = URLSession.shared.downloadTask(with: url, completionHandler:
                     { (data, response, error) in
                         print("downloadTaskWithRequest finished!");
@@ -497,6 +497,9 @@ class ViewController: UIViewController
                 break
 
                 case 2: Countly.sharedInstance().recordLocation(CLLocationCoordinate2D(latitude:33.6789, longitude:43.1234))
+                        Countly.sharedInstance().recordIP("255.255.255.255")
+                        Countly.sharedInstance().recordCity("Tokyo", andISOCountryCode: "JP")
+                        Countly.sharedInstance().isGeoLocationEnabled = true
                 break
                 
                 case 3:

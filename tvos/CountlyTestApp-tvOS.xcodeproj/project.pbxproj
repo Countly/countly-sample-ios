@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D20008792083B0D6003DB5DA /* CountlyLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D20008782083B0D6003DB5DA /* CountlyLocationManager.m */; };
 		D209A7CA1F6B9BDA00B19B9B /* countly_dsym_uploader.sh in Resources */ = {isa = PBXBuildFile; fileRef = D209A7C91F6B9BDA00B19B9B /* countly_dsym_uploader.sh */; };
 		D22D41721C6EEF620078AF7D /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D41711C6EEF620078AF7D /* CountlyViewTracking.m */; };
 		D22D43051C4631BD00C69E7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D43041C4631BD00C69E7C /* main.m */; };
@@ -14,6 +15,7 @@
 		D22D430B1C4631BD00C69E7C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D430A1C4631BD00C69E7C /* ViewController.m */; };
 		D22D430E1C4631BD00C69E7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22D430C1C4631BD00C69E7C /* Main.storyboard */; };
 		D22D43101C4631BD00C69E7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22D430F1C4631BD00C69E7C /* Assets.xcassets */; };
+		D249AD3F2070CAA900BFBE18 /* CountlyConsentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D249AD3E2070CAA900BFBE18 /* CountlyConsentManager.m */; };
 		D28292241D998C9A00D650F2 /* CountlyPushNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = D28292231D998C9A00D650F2 /* CountlyPushNotifications.m */; };
 		D2A6CEB51EB3B5BD00EC10A5 /* CountlyNotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A6CEB31EB3B5BD00EC10A5 /* CountlyNotificationService.m */; };
 		D2D772931D3882D400F019B8 /* CountlyStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D772921D3882D400F019B8 /* CountlyStarRating.m */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D20008772083B0D5003DB5DA /* CountlyLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyLocationManager.h; sourceTree = "<group>"; };
+		D20008782083B0D6003DB5DA /* CountlyLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyLocationManager.m; sourceTree = "<group>"; };
 		D209A7C91F6B9BDA00B19B9B /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
 		D22D41701C6EEF620078AF7D /* CountlyViewTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyViewTracking.h; sourceTree = "<group>"; };
 		D22D41711C6EEF620078AF7D /* CountlyViewTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyViewTracking.m; sourceTree = "<group>"; };
@@ -45,6 +49,8 @@
 		D22D430D1C4631BD00C69E7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D22D430F1C4631BD00C69E7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D22D43111C4631BD00C69E7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D249AD3D2070CAA900BFBE18 /* CountlyConsentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConsentManager.h; sourceTree = "<group>"; };
+		D249AD3E2070CAA900BFBE18 /* CountlyConsentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConsentManager.m; sourceTree = "<group>"; };
 		D28292221D998C9A00D650F2 /* CountlyPushNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPushNotifications.h; sourceTree = "<group>"; };
 		D28292231D998C9A00D650F2 /* CountlyPushNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPushNotifications.m; sourceTree = "<group>"; };
 		D2A6CEB31EB3B5BD00EC10A5 /* CountlyNotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyNotificationService.m; sourceTree = "<group>"; };
@@ -149,18 +155,22 @@
 				D2EB40B41C58C03500EAA633 /* CountlyConfig.m */,
 				D2EB40B51C58C03500EAA633 /* CountlyConnectionManager.h */,
 				D2EB40B61C58C03500EAA633 /* CountlyConnectionManager.m */,
+				D249AD3D2070CAA900BFBE18 /* CountlyConsentManager.h */,
+				D249AD3E2070CAA900BFBE18 /* CountlyConsentManager.m */,
 				D2EB40B71C58C03500EAA633 /* CountlyCrashReporter.h */,
 				D2EB40B81C58C03500EAA633 /* CountlyCrashReporter.m */,
 				D2EB40B91C58C03500EAA633 /* CountlyDeviceInfo.h */,
 				D2EB40BA1C58C03500EAA633 /* CountlyDeviceInfo.m */,
 				D2EB40BB1C58C03500EAA633 /* CountlyEvent.h */,
 				D2EB40BC1C58C03500EAA633 /* CountlyEvent.m */,
+				D20008772083B0D5003DB5DA /* CountlyLocationManager.h */,
+				D20008782083B0D6003DB5DA /* CountlyLocationManager.m */,
+				D2A6CEB41EB3B5BD00EC10A5 /* CountlyNotificationService.h */,
+				D2A6CEB31EB3B5BD00EC10A5 /* CountlyNotificationService.m */,
 				D2EB40BD1C58C03500EAA633 /* CountlyPersistency.h */,
 				D2EB40BE1C58C03500EAA633 /* CountlyPersistency.m */,
 				D28292221D998C9A00D650F2 /* CountlyPushNotifications.h */,
 				D28292231D998C9A00D650F2 /* CountlyPushNotifications.m */,
-				D2A6CEB41EB3B5BD00EC10A5 /* CountlyNotificationService.h */,
-				D2A6CEB31EB3B5BD00EC10A5 /* CountlyNotificationService.m */,
 				D2D772911D3882D400F019B8 /* CountlyStarRating.h */,
 				D2D772921D3882D400F019B8 /* CountlyStarRating.m */,
 				D2EB40BF1C58C03500EAA633 /* CountlyUserDetails.h */,
@@ -203,7 +213,7 @@
 		D22D42F81C4631BD00C69E7C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Countly;
 				TargetAttributes = {
 					D22D42FF1C4631BD00C69E7C = {
@@ -253,6 +263,8 @@
 				D2EB40CF1C58C03500EAA633 /* CountlyPersistency.m in Sources */,
 				D2EB40C91C58C03500EAA633 /* CountlyCommon.m in Sources */,
 				D2D772931D3882D400F019B8 /* CountlyStarRating.m in Sources */,
+				D20008792083B0D6003DB5DA /* CountlyLocationManager.m in Sources */,
+				D249AD3F2070CAA900BFBE18 /* CountlyConsentManager.m in Sources */,
 				D2EB40D01C58C03500EAA633 /* CountlyUserDetails.m in Sources */,
 				D22D43081C4631BD00C69E7C /* AppDelegate.m in Sources */,
 				D28292241D998C9A00D650F2 /* CountlyPushNotifications.m in Sources */,
@@ -296,12 +308,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -347,12 +361,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -385,6 +401,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "CountlyTestApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-tvOS";
@@ -397,6 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "CountlyTestApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-tvOS";

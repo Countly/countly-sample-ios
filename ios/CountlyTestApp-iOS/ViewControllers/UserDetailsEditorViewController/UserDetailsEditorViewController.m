@@ -9,7 +9,6 @@
 
 @interface UserDetailsEditorViewController ()
 {
-    NSMutableArray* custom;
     UITextField* txt_name;
     UITextField* txt_username;
     UITextField* txt_email;
@@ -20,6 +19,7 @@
     UISegmentedControl* sgm_gender;
 }
 @property (nonatomic, weak) IBOutlet UITableView* tableView;
+@property (nonatomic) NSMutableArray* custom;
 @end
 
 @implementation UserDetailsEditorViewController
@@ -37,10 +37,11 @@
 
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithTitle:@"Record" style:UIBarButtonItemStylePlain target:self action:@selector(onClick_record:)];
 
-    custom = NSMutableArray.new;
+    self.custom = NSMutableArray.new;
 
-    for (NSString* key in (NSDictionary*)Countly.user.custom)
-        [custom addObject:@{@"k":key, @"v":Countly.user.custom[key]}];
+    NSDictionary* userCustomProperties = (NSDictionary *)Countly.user.custom;
+    for (NSString* key in userCustomProperties)
+        [self.custom addObject:@{@"k": key, @"v": userCustomProperties[key]}];
 
     self.tableView.tableFooterView = UIView.new;
     [self.tableView reloadData];
@@ -88,8 +89,8 @@
     Countly.user.birthYear = txt_birthYear.text.length ? @(txt_birthYear.text.integerValue) : nil;
     Countly.user.gender = (sgm_gender.selectedSegmentIndex == 0) ? @"M" : (sgm_gender.selectedSegmentIndex == 1) ? @"F" : nil;
 
-    NSMutableDictionary* cust = custom.count ? NSMutableDictionary.new : nil;
-    for (NSDictionary* dict in custom)
+    NSMutableDictionary* cust = self.custom.count ? NSMutableDictionary.new : nil;
+    for (NSDictionary* dict in self.custom)
         cust[dict[@"k"]] = dict[@"v"];
     Countly.user.custom = cust;
 
@@ -135,7 +136,7 @@
     switch (section)
     {
         case 0: numberOfRows = 1; break;
-        case 1: numberOfRows = custom.count + 1; break;
+        case 1: numberOfRows = self.custom.count + 1; break;
     }
 
     return numberOfRows;
@@ -150,17 +151,17 @@
     {
         case 0: identifier = @"UserDetailsDefaultProperties"; break;
         case 1: identifier = @"UserDetailsCustomProperties";
-                if(indexPath.row == custom.count)
+                if(indexPath.row == self.custom.count)
                     identifier = @"UserDetailsCustomPropertiesAdd";
         break;
     }
     
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier];
 
-    if(indexPath.section == 1 && indexPath.row != custom.count)
+    if(indexPath.section == 1 && indexPath.row != self.custom.count)
     {
-        ((UILabel *)[cell viewWithTag:201]).text = custom[indexPath.row][@"k"];
-        ((UILabel *)[cell viewWithTag:202]).text = custom[indexPath.row][@"v"];
+        ((UILabel *)[cell viewWithTag:201]).text = self.custom[indexPath.row][@"k"];
+        ((UILabel *)[cell viewWithTag:202]).text = self.custom[indexPath.row][@"v"];
     }
 
     return cell;
@@ -171,7 +172,7 @@
 {
     if(indexPath.section == 1)
     {
-        if(indexPath.row == custom.count)
+        if(indexPath.row == self.custom.count)
         {
             UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Add Custom Property" message:@"Enter custom property key and value:" preferredStyle:UIAlertControllerStyleAlert];
 
@@ -195,7 +196,7 @@
                 NSString* value = alertController.textFields[1].text;
                 if(key.length && value.length)
                 {
-                    [custom addObject:@{@"k":key,@"v":value}];
+                    [self.custom addObject:@{@"k":key, @"v":value}];
                     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationAutomatic];
                 }
             }];
@@ -206,7 +207,7 @@
         }
         else
         {
-            [custom removeObjectAtIndex:indexPath.row];
+            [self.custom removeObjectAtIndex:indexPath.row];
             [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationAutomatic];
         }
     }

@@ -43,9 +43,7 @@
 #pragma mark -
 
 @interface KeyboardInsetViewController ()
-{
-    UIEdgeInsets contentInset;
-}
+@property (nonatomic) UIEdgeInsets contentInset;
 @end
 
 
@@ -63,13 +61,13 @@
 {
     [super viewDidAppear:animated];
 
-    contentInset = self.keyboardInsetTargetView.contentInset;
+    self.contentInset = self.keyboardInsetTargetView.contentInset;
 }
 
 - (void)keyboardShow:(NSNotification*)aNotification
 {
     CGFloat h = [aNotification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue].size.height;
-    UIEdgeInsets i = contentInset;
+    UIEdgeInsets i = self.contentInset;
     i.bottom += h;
     
     CGFloat d = [aNotification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
@@ -89,8 +87,8 @@
 
     [UIView animateWithDuration:d delay:0 options:o animations:^
     {
-        self.keyboardInsetTargetView.contentInset = contentInset;
-        self.keyboardInsetTargetView.scrollIndicatorInsets = contentInset;
+        self.keyboardInsetTargetView.contentInset = self.contentInset;
+        self.keyboardInsetTargetView.scrollIndicatorInsets = self.contentInset;
     } completion:nil];
 }
 
@@ -108,9 +106,7 @@
 
 
 @interface EventCreatorViewController ()
-{
-    NSMutableArray* segmentation;
-}
+@property (nonatomic) NSMutableArray* segmentation;
 @property (nonatomic, weak) IBOutlet UITableView* tableView;
 @end
 
@@ -129,7 +125,7 @@
 
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithTitle:@"Record" style:UIBarButtonItemStylePlain target:self action:@selector(onClick_record:)];
 
-    segmentation = NSMutableArray.new;
+    self.segmentation = NSMutableArray.new;
 
     self.tableView.tableFooterView = UIView.new;
 }
@@ -157,8 +153,8 @@
     NSInteger count = txt_count.text.integerValue;
     double sum = [txt_sum.text stringByReplacingOccurrencesOfString:@"," withString:@"."].doubleValue;
     double duration = [txt_duration.text stringByReplacingOccurrencesOfString:@"," withString:@"."].doubleValue;
-    NSMutableDictionary* segm = segmentation.count ? NSMutableDictionary.new : nil;
-    for (NSDictionary* dict in segmentation)
+    NSMutableDictionary* segm = self.segmentation.count ? NSMutableDictionary.new : nil;
+    for (NSDictionary* dict in self.segmentation)
         segm[dict[@"k"]] = dict[@"v"];
 
     [Countly.sharedInstance recordEvent:name segmentation:segm count:count sum:sum duration:duration];
@@ -203,7 +199,7 @@
     switch (section)
     {
         case 0: numberOfRows = 1; break;
-        case 1: numberOfRows = segmentation.count + 1; break;
+        case 1: numberOfRows = self.segmentation.count + 1; break;
     }
 
     return numberOfRows;
@@ -218,17 +214,17 @@
     {
         case 0: identifier = @"EventBasicValues"; break;
         case 1: identifier = @"EventSegmentation";
-                if(indexPath.row == segmentation.count)
+                if(indexPath.row == self.segmentation.count)
                     identifier = @"EventSegmentationAdd";
         break;
     }
     
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier];
 
-    if(indexPath.section == 1 && indexPath.row != segmentation.count)
+    if(indexPath.section == 1 && indexPath.row != self.segmentation.count)
     {
-        ((UILabel *)[cell viewWithTag:201]).text = segmentation[indexPath.row][@"k"];
-        ((UILabel *)[cell viewWithTag:202]).text = segmentation[indexPath.row][@"v"];
+        ((UILabel *)[cell viewWithTag:201]).text = self.segmentation[indexPath.row][@"k"];
+        ((UILabel *)[cell viewWithTag:202]).text = self.segmentation[indexPath.row][@"v"];
     }
 
     return cell;
@@ -239,7 +235,7 @@
 {
     if(indexPath.section == 1)
     {
-        if(indexPath.row == segmentation.count)
+        if(indexPath.row == self.segmentation.count)
         {
             UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Add Segment" message:@"Enter segmentation key and value:" preferredStyle:UIAlertControllerStyleAlert];
 
@@ -263,7 +259,7 @@
                 NSString* value = alertController.textFields[1].text;
                 if(key.length && value.length)
                 {
-                    [segmentation addObject:@{@"k":key,@"v":value}];
+                    [self.segmentation addObject:@{@"k":key,@"v":value}];
                     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationAutomatic];
                 }
             }];
@@ -274,7 +270,7 @@
         }
         else
         {
-            [segmentation removeObjectAtIndex:indexPath.row];
+            [self.segmentation removeObjectAtIndex:indexPath.row];
             [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationAutomatic];
         }
     }

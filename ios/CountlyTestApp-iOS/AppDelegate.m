@@ -20,6 +20,8 @@
 
 //    config.features = @[CLYPushNotifications, CLYCrashReporting, CLYAutoViewTracking];     //Optional features
 
+//    config.requiresConsent = YES;                                 //Optional consents
+
 //    config.isTestDevice = YES;                                    //Optional marking as test device for CLYPushNotifications
 //    config.sendPushTokenAlways = YES;                             //Optional forcing to send token always
 //    config.doNotShowAlertForNotifications = YES;                  //Optional disabling alerts shown by notification

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D20008732083ADAA003DB5DA /* CountlyLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D20008722083ADAA003DB5DA /* CountlyLocationManager.m */; };
 		D209A7C61F6B9B5300B19B9B /* countly_dsym_uploader.sh in Resources */ = {isa = PBXBuildFile; fileRef = D209A7C51F6B9B5300B19B9B /* countly_dsym_uploader.sh */; };
 		D252E3851DE074D2006548B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252E3841DE074D2006548B0 /* AppDelegate.swift */; };
 		D252E3871DE074D2006548B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252E3861DE074D2006548B0 /* ViewController.swift */; };
@@ -38,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D20008712083ADAA003DB5DA /* CountlyLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyLocationManager.h; sourceTree = "<group>"; };
+		D20008722083ADAA003DB5DA /* CountlyLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyLocationManager.m; sourceTree = "<group>"; };
 		D209A7C51F6B9B5300B19B9B /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
 		D252E3811DE074D2006548B0 /* CountlyTestApp-iOS-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-iOS-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D252E3841DE074D2006548B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,12 +161,14 @@
 				D252E3AA1DE1F249006548B0 /* CountlyDeviceInfo.m */,
 				D252E3AB1DE1F249006548B0 /* CountlyEvent.h */,
 				D252E3AC1DE1F249006548B0 /* CountlyEvent.m */,
+				D20008712083ADAA003DB5DA /* CountlyLocationManager.h */,
+				D20008722083ADAA003DB5DA /* CountlyLocationManager.m */,
+				D2A6CEAE1EB3B52600EC10A5 /* CountlyNotificationService.h */,
+				D2A6CEAD1EB3B52600EC10A5 /* CountlyNotificationService.m */,
 				D252E3AD1DE1F249006548B0 /* CountlyPersistency.h */,
 				D252E3AE1DE1F249006548B0 /* CountlyPersistency.m */,
 				D252E3AF1DE1F249006548B0 /* CountlyPushNotifications.h */,
 				D252E3B01DE1F249006548B0 /* CountlyPushNotifications.m */,
-				D2A6CEAE1EB3B52600EC10A5 /* CountlyNotificationService.h */,
-				D2A6CEAD1EB3B52600EC10A5 /* CountlyNotificationService.m */,
 				D252E3B11DE1F249006548B0 /* CountlyStarRating.h */,
 				D252E3B21DE1F249006548B0 /* CountlyStarRating.m */,
 				D252E3B31DE1F249006548B0 /* CountlyUserDetails.h */,
@@ -271,6 +276,7 @@
 				D29E5FBA206F2E6F0010F061 /* CountlyConsentManager.m in Sources */,
 				D252E3C51DE1F249006548B0 /* CountlyPersistency.m in Sources */,
 				D2666B951DE9D68C0088E822 /* TestViewControllerPushPop.swift in Sources */,
+				D20008732083ADAA003DB5DA /* CountlyLocationManager.m in Sources */,
 				D252E3BE1DE1F249006548B0 /* CountlyAPMNetworkLog.m in Sources */,
 				D2A6CEAF1EB3B52600EC10A5 /* CountlyNotificationService.m in Sources */,
 				D257996F1DE71166006A64CA /* TestViewControllerModal.swift in Sources */,

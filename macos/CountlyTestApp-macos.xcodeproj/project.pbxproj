@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D20008762083AE68003DB5DA /* CountlyLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D20008752083AE68003DB5DA /* CountlyLocationManager.m */; };
 		D209A7C81F6B9BB200B19B9B /* countly_dsym_uploader.sh in Resources */ = {isa = PBXBuildFile; fileRef = D209A7C71F6B9BB200B19B9B /* countly_dsym_uploader.sh */; };
 		D22D416F1C6EED4D0078AF7D /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D22D416E1C6EED4D0078AF7D /* CountlyViewTracking.m */; };
 		D2315A2E18EBE52000119D0D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2315A2D18EBE52000119D0D /* Cocoa.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D20008742083AE68003DB5DA /* CountlyLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyLocationManager.h; sourceTree = "<group>"; };
+		D20008752083AE68003DB5DA /* CountlyLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyLocationManager.m; sourceTree = "<group>"; };
 		D209A7C71F6B9BB200B19B9B /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
 		D22D416D1C6EED4D0078AF7D /* CountlyViewTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyViewTracking.h; sourceTree = "<group>"; };
 		D22D416E1C6EED4D0078AF7D /* CountlyViewTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyViewTracking.m; sourceTree = "<group>"; };
@@ -184,12 +187,14 @@
 				D2EB408D1C58C00400EAA633 /* CountlyDeviceInfo.m */,
 				D2EB408E1C58C00400EAA633 /* CountlyEvent.h */,
 				D2EB408F1C58C00400EAA633 /* CountlyEvent.m */,
+				D20008742083AE68003DB5DA /* CountlyLocationManager.h */,
+				D20008752083AE68003DB5DA /* CountlyLocationManager.m */,
+				D2A6CEB11EB3B57000EC10A5 /* CountlyNotificationService.h */,
+				D2A6CEB01EB3B57000EC10A5 /* CountlyNotificationService.m */,
 				D2EB40901C58C00400EAA633 /* CountlyPersistency.h */,
 				D2EB40911C58C00400EAA633 /* CountlyPersistency.m */,
 				D282921F1D998C4100D650F2 /* CountlyPushNotifications.h */,
 				D28292201D998C4100D650F2 /* CountlyPushNotifications.m */,
-				D2A6CEB11EB3B57000EC10A5 /* CountlyNotificationService.h */,
-				D2A6CEB01EB3B57000EC10A5 /* CountlyNotificationService.m */,
 				D2D772881D37D99700F019B8 /* CountlyStarRating.h */,
 				D2D772891D37D99700F019B8 /* CountlyStarRating.m */,
 				D2EB40921C58C00400EAA633 /* CountlyUserDetails.h */,
@@ -286,6 +291,7 @@
 				D2EB40A31C58C00400EAA633 /* CountlyUserDetails.m in Sources */,
 				D2EB40A21C58C00400EAA633 /* CountlyPersistency.m in Sources */,
 				D2EB409B1C58C00400EAA633 /* CountlyAPMNetworkLog.m in Sources */,
+				D20008762083AE68003DB5DA /* CountlyLocationManager.m in Sources */,
 				D2315A3A18EBE52100119D0D /* main.m in Sources */,
 				D2D7728A1D37D99700F019B8 /* CountlyStarRating.m in Sources */,
 				D2EB409C1C58C00400EAA633 /* CountlyCommon.m in Sources */,
@@ -418,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
@@ -432,6 +439,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";

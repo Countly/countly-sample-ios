@@ -46,13 +46,13 @@ typedef enum : NSUInteger
     //copy pictures from App Bundle to Documents directory, to use later for User Details picture upload tests.
     NSURL* documentsDirectory = [NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
 
-    NSArray *fileTypes = @[@"gif",@"jpg",@"png"];
-    [fileTypes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
+    NSArray* fileTypes = @[@"gif", @"jpg", @"png"];
+    for (NSString* fileType in fileTypes)
     {
-        NSURL* bundleFileURL = [NSBundle.mainBundle URLForResource:@"SamplePicture" withExtension:((NSString*)obj).lowercaseString];
+        NSURL* bundleFileURL = [NSBundle.mainBundle URLForResource:@"SamplePicture" withExtension:fileType];
         NSURL* destinationURL = [documentsDirectory URLByAppendingPathComponent:bundleFileURL.lastPathComponent];
         [NSFileManager.defaultManager copyItemAtURL:bundleFileURL toURL:destinationURL error:nil];
-    }];
+    }
 
     sections =
     @[

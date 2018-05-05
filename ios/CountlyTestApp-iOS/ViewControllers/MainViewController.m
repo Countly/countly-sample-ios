@@ -15,12 +15,8 @@
 #import "EYCrashTesting.h"
 
 @interface MainViewController ()
-{
-    NSArray* sections;
-    NSArray* tests;
-    NSArray* explanations;
-}
-@property (weak, nonatomic) IBOutlet UITableView *tbl_main;
+@property (nonatomic, weak) IBOutlet UITableView *tbl_main;
+@property (nonatomic) NSArray* tests;
 @end
 
 typedef enum : NSUInteger
@@ -54,294 +50,497 @@ typedef enum : NSUInteger
         [NSFileManager.defaultManager copyItemAtURL:bundleFileURL toURL:destinationURL error:nil];
     }
 
-    sections =
+    self.tests =
     @[
-        @"Custom Events",
-        @"Crash Reporting",
-        @"User Details",
-        @"APM",
-        @"View Tracking",
-        @"Push Notifications",
-        @"Location",
-        @"Multithreading",
-        @"Consents",
-        @"Others"
-    ];
+        @{
+            @"name": @"Custom Events",
+            @"tests":
+            @[
+                @{
+                    @"name": @"Create a Custom Event",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Record Event",
+                    @"explanation": @"TestEventA",
+                },
+                @{
+                    @"name": @"Record Event with Count",
+                    @"explanation": @"TestEventA  c:5",
+                },
+                @{
+                    @"name": @"Record Event with Sum",
+                    @"explanation": @"TestEventB  s:1.99",
+                },
+                @{
+                    @"name": @"Record Event with Duration",
+                    @"explanation": @"TestEventB  d:3.14",
+                },
+                @{
+                    @"name": @"Record Event with Count & Sum",
+                    @"explanation": @"TestEventB  c:5 s:1.99",
+                },
+                @{
+                    @"name": @"Record Event with Segmentation",
+                    @"explanation": @"TestEventC  sg:{k:v}",
+                },
+                @{
+                    @"name": @"Record Event with Segmentation & Count",
+                    @"explanation": @"TestEventC  sg:{k:v}  c:5",
+                },
+                @{
+                    @"name": @"Record Event with Segmentation, Count & Sum",
+                    @"explanation": @"TestEventD  sg:{k:v}  c:5  s:1.99",
+                },
+                @{
+                    @"name": @"Record Event with Segmentation, Count, Sum & Dur.",
+                    @"explanation": @"TestEventD  sg:{k:v}  c:5  s:1.99  d:0.314",
+                },
+                @{
+                    @"name": @"Start Event",
+                    @"explanation": @"timed-event",
+                },
+                @{
+                    @"name": @"End Event",
+                    @"explanation": @"timed-event",
+                },
+                @{
+                    @"name": @"End Event with Segmentation, Count & Sum",
+                    @"explanation": @"timed-event  sg:{k:v}  c:1  s:0",
+                },
+            ],
+        },
 
-    tests =
-    @[
-        @[
-            @"Create a Custom Event",
-            @"Record Event",
-            @"Record Event with Count",
-            @"Record Event with Sum",
-            @"Record Event with Duration",
-            @"Record Event with Count & Sum",
-            @"Record Event with Segmentation",
-            @"Record Event with Segmentation & Count",
-            @"Record Event with Segmentation, Count & Sum",
-            @"Record Event with Segmentation, Count, Sum & Dur.",
-            @"Start Event",
-            @"End Event",
-            @"End Event with Segmentation, Count & Sum",
-        ],
+        @{
+            @"name": @"Crash Reporting",
+            @"tests":
+            @[
+                @{
+                    @"name": @"Unrecognized Selector",
+                    @"explanation": @"thisIsTheUnrecognizedSelectorCausingTheCrash",
+                },
+                @{
+                    @"name": @"Out of Bounds",
+                    @"explanation": @"5th element in a 3 elements array",
+                },
+                @{
+                    @"name": @"NULL Pointer",
+                    @"explanation": @"Dereference",
+                },
+                @{
+                    @"name": @"Invalid Geometry",
+                    @"explanation": @"CALayer position contains nan",
+                },
+                @{
+                    @"name": @"Raise Custom Exception",
+                    @"explanation": @"This is the exception!",
+                },
+                @{
+                    @"name": @"kill",
+                    @"explanation": @"with SIGABRT",
+                },
+                @{
+                    @"name": @"__builtin_trap",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Access to a Non-Object",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Message a Released Object",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Write to Read-Only Memory",
+                    @"explanation": @"using function pointer aFunction",
+                },
+                @{
+                    @"name": @"Stack Overflow",
+                    @"explanation": @"infinite recursive call",
+                },
+                @{
+                    @"name": @"abort",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Custom Crash Log",
+                    @"explanation": @"This is a custom crash log!",
+                },
+                @{
+                    @"name": @"Record Handled Exception",
+                    @"explanation": @"n:MyException  r:MyReason  d:{key:value}",
+                },
+                @{
+                    @"name": @"Record Handled Exception with Stack Trace",
+                    @"explanation": @"n:MyExc  r:MyReason  d:{key:value} and stack trace",
+                },
+            ],
+        },
 
-        @[
-            @"Unrecognized Selector",
-            @"Out of Bounds",
-            @"NULL Pointer",
-            @"Invalid Geometry",
-            @"Raise Custom Exception",
-            @"kill",
-            @"__builtin_trap",
-            @"Access to a Non-Object",
-            @"Message a Released Object",
-            @"Write to Read-Only Memory",
-            @"Stack Overflow",
-            @"abort",
-            @"Custom Crash Log",
-            @"Record Handled Exception",
-            @"Record Handled Exception with Stack Trace"
-        ],
+        @{
+            @"name": @"User Details",
+            @"tests":
+            @[
+                @{
+                    @"name": @"Record User Details",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Custom Property Modifiers",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Dummy User Details",
+                    @"explanation": @"Dummy John Doe data",
+                },
+                @{
+                    @"name": @"Delete Some User Details by Nulling",
+                    @"explanation": @"email, birthYear, gender",
+                },
+                @{
+                    @"name": @"Some Custom Property Modifiers 1",
+                    @"explanation": @"set-incrementBy-push-save",
+                },
+                @{
+                    @"name": @"Some Custom Property Modifiers 2",
+                    @"explanation": @"multiply-unset-pull-save",
+                },
+                @{
+                    @"name": @"User Logged in",
+                    @"explanation": @"OwnUserID",
+                },
+                @{
+                    @"name": @"User Logged out",
+                    @"explanation": @"switch back to IDFV and start new session",
+                },
+            ],
+        },
 
-        @[
-            @"Record User Details",
-            @"Custom Property Modifiers",
-            @"Dummy User Details",
-            @"Delete Some User Details by Nulling",
-            @"Some Custom Property Modifiers 1",
-            @"Some Custom Property Modifiers 2",
-            @"User Logged in",
-            @"User Logged out"
-        ],
+        @{
+            @"name": @"APM",
+            @"tests":
+            @[
+                @{
+                    @"name":@"sendSynchronous",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name":@"sendAsynchronous",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name":@"connectionWithRequest",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name":@"initWithRequest",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name":@"initWithRequest:startImmediately NO",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name":@"initWithRequest:startImmediately YES",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name":@"dataTaskWithRequest",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name":@"dataTaskWithRequest:completionHandler",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name":@"dataTaskWithURL",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name":@"dataTaskWithURL:completionHandler",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name":@"downloadTaskWithRequest",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name":@"downloadTaskWithRequest:completionHandler",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name":@"downloadTaskWithURL",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name":@"downloadTaskWithURL:completionHandler",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name":@"Add Exception URL",
+                    @"explanation": @"http://finance.yahoo.com",
+                },
+                @{
+                    @"name":@"Remove Exception URL",
+                    @"explanation": @"http://finance.yahoo.com",
+                },
+            ],
+        },
 
-        @[
-            @"sendSynchronous",
-            @"sendAsynchronous",
-            @"connectionWithRequest",
-            @"initWithRequest",
-            @"initWithRequest:startImmediately NO",
-            @"initWithRequest:startImmediately YES",
-            @"dataTaskWithRequest",
-            @"dataTaskWithRequest:completionHandler",
-            @"dataTaskWithURL",
-            @"dataTaskWithURL:completionHandler",
-            @"downloadTaskWithRequest",
-            @"downloadTaskWithRequest:completionHandler",
-            @"downloadTaskWithURL",
-            @"downloadTaskWithURL:completionHandler",
-            @"Add Exception URL",
-            @"Remove Exception URL"
-        ],
+        @{
+            @"name": @"View Tracking",
+            @"tests":
+            @[
+                @{
+                    @"name": @"Turn off AutoViewTracking",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Turn on AutoViewTracking",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Present Modal View Controller",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Push / Pop with Navigation Controller ",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Add Exception with Class Name",
+                    @"explanation": @"TestModalViewController.class",
+                },
+                @{
+                    @"name": @"Remove Exception with Class Name",
+                    @"explanation": @"TestModalViewController.class",
+                },
+                @{
+                    @"name": @"Add Exception with Title",
+                    @"explanation": @"MyViewControllerTitle",
+                },
+                @{
+                    @"name": @"Remove Exception with Title",
+                    @"explanation": @"MyViewControllerTitle",
+                },
+                @{
+                    @"name": @"Add Exception with Custom titleView",
+                    @"explanation": @"MyViewControllerCustomTitleView",
+                },
+                @{
+                    @"name": @"Remove Exception with Custom titleView",
+                    @"explanation": @"MyViewControllerCustomTitleView",
+                },
+                @{
+                    @"name": @"Report View Manually",
+                    @"explanation": @"ManualViewReportExample_MyMainView",
+                },
+            ],
+        },
 
-        @[
-            @"Turn off AutoViewTracking",
-            @"Turn on AutoViewTracking",
-            @"Present Modal View Controller",
-            @"Push / Pop with Navigation Controller ",
-            @"Add Exception with Class Name",
-            @"Remove Exception with Class Name",
-            @"Add Exception with Title",
-            @"Remove Exception with Title",
-            @"Add Exception with Custom titleView",
-            @"Remove Exception with Custom titleView",
-            @"Report View Manually"
-        ],
+        @{
+            @"name": @"Push Notifications",
+            @"tests":
+            @[
+                @{
+                    @"name": @"Ask for Notification Permission",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Ask for Notification Permission with Completion Handler",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Record Push Notification Action",
+                    @"explanation": @"for manually handled push notifications",
+                },
+            ],
+        },
 
-        @[
-            @"Ask for Notification Permission",
-            @"Ask for Notification Permission with Completion Handler",
-            @"Record Push Notification Action"
-        ],
+        @{
+            @"name": @"Location",
+            @"tests":
+            @[
+                @{
+                    @"name": @"Record Location",
+                    @"explanation": @"33.6789, 43.1234",
+                },
+                @{
+                    @"name": @"Record City and Country",
+                    @"explanation": @"Tokyo - JP",
+                },
+                @{
+                    @"name": @"Record IP Address",
+                    @"explanation": @"1.2.3.4",
+                },
+                @{
+                    @"name": @"Disable Location Info",
+                    @"explanation": @"",
+                },
+            ],
+        },
 
-        @[
-            @"Record Location",
-            @"Record City and Country",
-            @"Record IP Address",
-            @"Disable Location Info",
-        ],
+        @{
+            @"name": @"Multithreading",
+            @"tests":
+            @[
+                @{
+                    @"name": @"Own Queue Multithread Testing 1",
+                    @"explanation": @"MultithreadingEvent1 on 15 threads",
+                },
+                @{
+                    @"name": @"Own Queue Multithread Testing 2",
+                    @"explanation": @"MultithreadingEvent3 on 15 threads",
+                },
+                @{
+                    @"name": @"Own Queue Multithread Testing 3",
+                    @"explanation": @"MultithreadingEvent3 on 15 threads",
+                },
+                @{
+                    @"name": @"Global Queue Multithread Testing 1",
+                    @"explanation": @"MultithreadingEvent4",
+                },
+                @{
+                    @"name": @"Global Queue Multithread Testing 2",
+                    @"explanation": @"MultithreadingEvent5",
+                },
+                @{
+                    @"name": @"Global Queue Multithread Testing 3",
+                    @"explanation": @"MultithreadingEvent6",
+                },
+            ],
+        },
 
-        @[
-            @"Own Queue Multithread Testing 1",
-            @"Own Queue Multithread Testing 2",
-            @"Own Queue Multithread Testing 3",
-            @"Global Queue Multithread Testing 1",
-            @"Global Queue Multithread Testing 2",
-            @"Global Queue Multithread Testing 3",
-        ],
+        @{
+            @"name": @"Consents",
+            @"tests":
+            @[
+                @{
+                    @"name": @"Give for Sessions",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Give for Events",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Give for UserDetails",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Give for CrashReporting",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Give for PushNotifications",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Give for Location",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Give for ViewTracking",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Give for Attribution",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Give for StarRating",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Give for AppleWatch",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Give for All the Features",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Cancel for Sessions",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Cancel for Events",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Cancel for UserDetails",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Cancel for CrashReporting",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Cancel for PushNotifications",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Cancel for Location",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Cancel for ViewTracking",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Cancel for Attribution",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Cancel for StarRating",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Cancel for AppleWatch",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Cancel for All the Features",
+                    @"explanation": @"",
+                },
+            ],
+        },
 
-        @[
-            @"Give for Sessions",
-            @"Give for Events",
-            @"Give for UserDetails",
-            @"Give for CrashReporting",
-            @"Give for PushNotifications",
-            @"Give for Location",
-            @"Give for ViewTracking",
-            @"Give for Attribution",
-            @"Give for StarRating",
-            @"Give for AppleWatch",
-            @"Give for All the Features",
-            @"Cancel for Sessions",
-            @"Cancel for Events",
-            @"Cancel for UserDetails",
-            @"Cancel for CrashReporting",
-            @"Cancel for PushNotifications",
-            @"Cancel for Location",
-            @"Cancel for ViewTracking",
-            @"Cancel for Attribution",
-            @"Cancel for StarRating",
-            @"Cancel for AppleWatch",
-            @"Cancel for All the Features",
-        ],
-
-        @[
-            @"Set Custom Header Field Value",
-            @"Ask for Star-Rating",
-            @"Set New Device ID",
-            @"Set New Device ID with Server Merge",
-            @"Begin Session",
-            @"Update Session",
-            @"End Session"
-        ]
-    ];
-
-    explanations =
-    @[
-        @[
-            @"",
-            @"TestEventA",
-            @"TestEventA  c:5",
-            @"TestEventB  s:1.99",
-            @"TestEventB  d:3.14",
-            @"TestEventB  c:5 s:1.99",
-            @"TestEventC  sg:{k:v}",
-            @"TestEventC  sg:{k:v}  c:5",
-            @"TestEventD  sg:{k:v}  c:5  s:1.99",
-            @"TestEventD  sg:{k:v}  c:5  s:1.99  d:0.314",
-            @"timed-event",
-            @"timed-event",
-            @"timed-event  sg:{k:v}  c:1  s:0",
-        ],
-
-        @[
-            @"thisIsTheUnrecognizedSelectorCausingTheCrash",
-            @"5th element in a 3 elements array",
-            @"Dereference",
-            @"CALayer position contains nan",
-            @"This is the exception!",
-            @"with SIGABRT",
-            @"",
-            @"",
-            @"",
-            @"using function pointer aFunction",
-            @"infinite recursive call",
-            @"",
-            @"This is a custom crash log!",
-            @"n:MyException  r:MyReason  d:{key:value}",
-            @"n:MyExc  r:MyReason  d:{key:value} and stack trace"
-        ],
-
-        @[
-            @"",
-            @"",
-            @"Dummy John Doe data",
-            @"email, birthYear, gender",
-            @"set-incrementBy-push-save",
-            @"multiply-unset-pull-save",
-            @"OwnUserID",
-            @"switch back to IDFV and start new session"
-        ],
-
-        @[
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"http://finance.yahoo.com",
-            @"http://finance.yahoo.com"
-        ],
-
-        @[
-            @"",
-            @"",
-            @"",
-            @"",
-            @"TestModalViewController.class",
-            @"TestModalViewController.class",
-            @"MyViewControllerTitle",
-            @"MyViewControllerTitle",
-            @"MyViewControllerCustomTitleView",
-            @"MyViewControllerCustomTitleView",
-            @"ManualViewReportExample_MyMainView"
-        ],
-
-        @[
-            @"",
-            @"",
-            @"for manually handled push notifications"
-        ],
-
-        @[
-            @"33.6789, 43.1234",
-            @"Tokyo - JP",
-            @"1.2.3.4",
-            @"",
-        ],
-
-        @[
-            @"MultithreadingEvent1 on 15 threads",
-            @"MultithreadingEvent3 on 15 threads",
-            @"MultithreadingEvent3 on 15 threads",
-            @"MultithreadingEvent4",
-            @"MultithreadingEvent5",
-            @"MultithreadingEvent6"
-        ],
-
-        @[
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-            @"",
-        ],
-
-        @[
-            @"thisismyvalue",
-            @"",
-            @"user@example.com",
-            @"IDFV",
-            @"manual session handling",
-            @"manual session handling",
-            @"manual session handling"
-        ]
+        @{
+            @"name": @"Others",
+            @"tests":
+            @[
+                @{
+                    @"name": @"Set Custom Header Field Value",
+                    @"explanation": @"thisismyvalue",
+                },
+                @{
+                    @"name": @"Ask for Star-Rating",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Set New Device ID",
+                    @"explanation": @"user@example.com",
+                },
+                @{
+                    @"name": @"Set New Device ID with Server Merge",
+                    @"explanation": @"IDFV",
+                },
+                @{
+                    @"name": @"Begin Session",
+                    @"explanation": @"manual session handling",
+                },
+                @{
+                    @"name": @"Update Session",
+                    @"explanation": @"manual session handling",
+                },
+                @{
+                    @"name": @"End Session",
+                    @"explanation": @"manual session handling",
+                },
+            ],
+        },
     ];
 
     [self.tbl_main reloadData];
@@ -353,17 +552,21 @@ typedef enum : NSUInteger
     });
 }
 
+
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
 }
+
 
 -(BOOL)prefersStatusBarHidden
 {
     return NO;
 }
 
+
 #pragma mark -
+
 
 - (IBAction)onClick_console:(id)sender
 {
@@ -377,17 +580,20 @@ typedef enum : NSUInteger
 //        [EYLogViewer show];
 }
 
+
 #pragma mark -
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [sections count];
+    return self.tests.count;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [tests[section] count];
+    NSArray* tests = self.tests[section][@"tests"];
+    return tests.count;
 }
 
 
@@ -399,15 +605,19 @@ typedef enum : NSUInteger
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    NSString* sectionName = self.tests[section][@"name"];
+
     UIView* headerView = UIView.new;
     headerView.backgroundColor = UIColor.grayColor;
+
     UIImageView* imageView = [UIImageView.alloc initWithFrame:(CGRect){15,6,12,12}];
-    imageView.image = [UIImage imageNamed:[sections[section] stringByReplacingOccurrencesOfString:@" " withString:@""]];
+    imageView.image = [UIImage imageNamed:[sectionName stringByReplacingOccurrencesOfString:@" " withString:@""]];
     [headerView addSubview:imageView];
+
     UILabel* label = [UILabel.alloc initWithFrame:(CGRect){33,0,320,24}];
     label.font = [UIFont fontWithName:@"AvenirNext-bold" size:14];
     label.textColor = UIColor.whiteColor;
-    label.text = sections[section];
+    label.text = sectionName;
     [headerView addSubview:label];
 
     return headerView;
@@ -420,7 +630,7 @@ typedef enum : NSUInteger
     
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:kCountlyCellIdentifier];
     
-    if(!cell)
+    if (!cell)
     {
         cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCountlyCellIdentifier];
         cell.textLabel.font = [UIFont fontWithName:@"Avenir-medium" size:14];
@@ -429,8 +639,9 @@ typedef enum : NSUInteger
         cell.detailTextLabel.font = [UIFont fontWithName:@"Menlo" size:11];
     }
 
-    cell.textLabel.text = tests[indexPath.section][indexPath.row];
-    cell.detailTextLabel.text = explanations[indexPath.section][indexPath.row];
+    NSArray* tests = self.tests[indexPath.section][@"tests"];
+    cell.textLabel.text = tests[indexPath.row][@"name"];
+    cell.detailTextLabel.text = tests[indexPath.row][@"explanation"];
     
     return cell;
 }
@@ -438,7 +649,9 @@ typedef enum : NSUInteger
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Test: %@ - %@",sections[indexPath.section],tests[indexPath.section][indexPath.row]);
+    NSString* sectionName = self.tests[indexPath.section][@"name"];
+    NSArray* tests = self.tests[indexPath.section][@"tests"];
+    NSLog(@"Test: %@ - %@", sectionName, tests[indexPath.row][@"name"]);
 
     switch (indexPath.section)
     {
@@ -1005,7 +1218,9 @@ typedef enum : NSUInteger
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+
 #pragma mark -
+
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {

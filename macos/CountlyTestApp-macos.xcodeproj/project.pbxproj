@@ -429,6 +429,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "CountlyTestApp-macos/CountlyTestApp-macos-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "CountlyTestApp-macos";
 				WRAPPER_EXTENSION = app;
@@ -444,6 +445,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "CountlyTestApp-macos/CountlyTestApp-macos-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "CountlyTestApp-macos";
 				WRAPPER_EXTENSION = app;

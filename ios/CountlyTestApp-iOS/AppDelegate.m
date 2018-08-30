@@ -34,16 +34,18 @@
 //    config.forceDeviceIDInitialization = YES;                     //Optional forcing to re-initialize device ID
 //    config.applyZeroIDFAFix = YES;                                //Optional Zero-IDFA fix
 
-//    config.eventSendThreshold = 5;                                //Optional event send threshold (default 10 events)
 //    config.updateSessionPeriod = 30;                              //Optional update session period (default 60 seconds)
+//    config.manualSessionHandling = YES;                           //Optional manual session handling
+
+//    config.eventSendThreshold = 5;                                //Optional event send threshold (default 10 events)
 //    config.storedRequestsLimit = 500;                             //Optional stored requests limit (default 1000 requests)
 //    config.alwaysUsePOST = YES;                                   //Optional forcing for POST method
 
-//    config.manualSessionHandling = YES;                           //Optional manual session handling
 //    config.enableAppleWatch = YES;                                //Optional Apple Watch related features
 //    config.enableAttribution = YES;                               //Optional attribution
 
 //    config.crashSegmentation = @{@"SomeOtherSDK":@"v3.4.5"};      //Optional crash segmentation for CLYCrashReporting
+//    config.crashLogLimit = 5;                                     //Optional crash log limiy
 
 //    config.pinnedCertificates = @[@"count.ly.cer"];               //Optional bundled certificates for certificate pinning
 //    config.customHeaderFieldName = @"X-My-Custom-Field";          //Optional custom header field name

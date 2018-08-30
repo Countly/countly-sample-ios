@@ -175,6 +175,10 @@ typedef enum : NSUInteger
                     @"name": @"Record Handled Exception with Stack Trace",
                     @"explanation": @"n:MyExc  r:MyReason  d:{key:value} and stack trace",
                 },
+                @{
+                    @"name": @"Record Unhandled Exception with Stack Trace",
+                    @"explanation": @"n:MyUnhandledExc  r:MyReason  d:{key:value} and stack trace",
+                },
             ],
         },
 
@@ -293,11 +297,11 @@ typedef enum : NSUInteger
             @"tests":
             @[
                 @{
-                    @"name": @"Turn off AutoViewTracking",
+                    @"name": @"Deactivate AutoViewTracking",
                     @"explanation": @"",
                 },
                 @{
-                    @"name": @"Turn on AutoViewTracking",
+                    @"name": @"Activate AutoViewTracking",
                     @"explanation": @"",
                 },
                 @{
@@ -539,6 +543,10 @@ typedef enum : NSUInteger
                     @"name": @"End Session",
                     @"explanation": @"manual session handling",
                 },
+                @{
+                    @"name": @"Present Feedback Widget",
+                    @"explanation": @"Feedback Widget ID needs to be hardcoded",
+                },
             ],
         },
     ];
@@ -742,6 +750,12 @@ typedef enum : NSUInteger
                 {
                     NSException* myException = [NSException exceptionWithName:@"MyExc" reason:@"MyReason" userInfo:@{@"key": @"value"}];
                     [Countly.sharedInstance recordHandledException:myException withStackTrace:[NSThread callStackSymbols]];
+                }break;
+
+                case 15:
+                {
+                    NSException* myException = [NSException exceptionWithName:@"MyUnhandledExc" reason:@"MyReason" userInfo:@{@"key": @"value"}];
+                    [Countly.sharedInstance recordUnhandledException:myException withStackTrace:[NSThread callStackSymbols]];
                 }break;
 
                 default: break;
@@ -956,10 +970,10 @@ typedef enum : NSUInteger
         {
             switch (indexPath.row)
             {
-                case 0: Countly.sharedInstance.isAutoViewTrackingEnabled = NO;
+                case 0: Countly.sharedInstance.isAutoViewTrackingActive = NO;
                 break;
 
-                case 1: Countly.sharedInstance.isAutoViewTrackingEnabled = YES;
+                case 1: Countly.sharedInstance.isAutoViewTrackingActive = YES;
                 break;
 
                 case 2:
@@ -1204,6 +1218,16 @@ typedef enum : NSUInteger
                 break;
 
                 case 6: [Countly.sharedInstance endSession];
+                break;
+
+                case 7:
+                    [Countly.sharedInstance presentFeedbackWidgetWithID:@"FEEDBACK_WIDGET_ID" completionHandler:^(NSError * _Nonnull error)
+                    {
+                        if (error)
+                            NSLog(@"Feedback widget presentation faile: \n%@\n%@", error.localizedDescription, error.userInfo);
+                        else
+                            NSLog(@"Feedback widget presented successfully");
+                    }];
                 break;
 
                 default: break;

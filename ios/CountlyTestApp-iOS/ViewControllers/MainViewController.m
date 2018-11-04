@@ -1224,7 +1224,7 @@ typedef enum : NSUInteger
                     [Countly.sharedInstance presentFeedbackWidgetWithID:@"FEEDBACK_WIDGET_ID" completionHandler:^(NSError * _Nonnull error)
                     {
                         if (error)
-                            NSLog(@"Feedback widget presentation faile: \n%@\n%@", error.localizedDescription, error.userInfo);
+                            NSLog(@"Feedback widget presentation failed: \n%@\n%@", error.localizedDescription, error.userInfo);
                         else
                             NSLog(@"Feedback widget presented successfully");
                     }];

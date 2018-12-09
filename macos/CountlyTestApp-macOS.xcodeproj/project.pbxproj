@@ -39,9 +39,10 @@
 		D20008742083AE68003DB5DA /* CountlyLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyLocationManager.h; sourceTree = "<group>"; };
 		D20008752083AE68003DB5DA /* CountlyLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyLocationManager.m; sourceTree = "<group>"; };
 		D209A7C71F6B9BB200B19B9B /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
+		D22053A8218F47EA00BC88A3 /* CountlyTestApp-macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CountlyTestApp-macOS.entitlements"; sourceTree = "<group>"; };
 		D22D416D1C6EED4D0078AF7D /* CountlyViewTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyViewTracking.h; sourceTree = "<group>"; };
 		D22D416E1C6EED4D0078AF7D /* CountlyViewTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyViewTracking.m; sourceTree = "<group>"; };
-		D2315A2A18EBE52000119D0D /* CountlyTestApp-macOS.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-macOS.temp_caseinsensitive_rename.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2315A2A18EBE52000119D0D /* CountlyTestApp-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2315A2D18EBE52000119D0D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D2315A3018EBE52000119D0D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		D2315A3118EBE52000119D0D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -116,7 +117,7 @@
 		D2315A2B18EBE52000119D0D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2315A2A18EBE52000119D0D /* CountlyTestApp-macOS.temp_caseinsensitive_rename.app */,
+				D2315A2A18EBE52000119D0D /* CountlyTestApp-macOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,6 +144,7 @@
 		D2315A3318EBE52000119D0D /* CountlyTestApp-macOS */ = {
 			isa = PBXGroup;
 			children = (
+				D22053A8218F47EA00BC88A3 /* CountlyTestApp-macOS.entitlements */,
 				D2315A3F18EBE52100119D0D /* AppDelegate.h */,
 				D2315A4018EBE52100119D0D /* AppDelegate.m */,
 				D2315A4218EBE52100119D0D /* MainMenu.xib */,
@@ -228,7 +230,7 @@
 			);
 			name = "CountlyTestApp-macOS";
 			productName = "CountlyTestApp-macOS";
-			productReference = D2315A2A18EBE52000119D0D /* CountlyTestApp-macOS.temp_caseinsensitive_rename.app */;
+			productReference = D2315A2A18EBE52000119D0D /* CountlyTestApp-macOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -239,6 +241,17 @@
 			attributes = {
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Countly;
+				TargetAttributes = {
+					D2315A2918EBE52000119D0D = {
+						DevelopmentTeam = 3S32KFMHB8;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = D2315A2518EBE52000119D0D /* Build configuration list for PBXProject "CountlyTestApp-macOS" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -425,13 +438,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-macOS/CountlyTestApp-macOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3S32KFMHB8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "CountlyTestApp-macOS/CountlyTestApp-macOS-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-macOS";
-				PRODUCT_NAME = "CountlyTestApp-macOS.temp_caseinsensitive_rename";
+				PRODUCT_NAME = "CountlyTestApp-macOS";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -441,13 +459,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-macOS/CountlyTestApp-macOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3S32KFMHB8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "CountlyTestApp-macOS/CountlyTestApp-macOS-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-macOS";
-				PRODUCT_NAME = "CountlyTestApp-macOS.temp_caseinsensitive_rename";
+				PRODUCT_NAME = "CountlyTestApp-macOS";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

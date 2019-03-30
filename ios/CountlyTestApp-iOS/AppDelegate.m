@@ -57,6 +57,19 @@
 //    config.starRatingDisableAskingForEachAppVersion = YES;        //Optional star-rating dialog auto-ask by versions disabling
 //    config.starRatingCompletion = ^(NSInteger rating){ NSLog(@"rating %d",(int)rating); };        //Optional star-rating dialog auto-ask completion block
 
+//    config.enableRemoteConfig = YES;                              //Optional Remote Config
+//    config.remoteConfigCompletionHandler = ^(NSError * error)     //Optional Remote Config completion handler
+//    {
+//        if (!error)
+//        {
+//            NSLog(@"Remote Config is ready to use!");
+//        }
+//        else
+//        {
+//            NSLog(@"There is an error while fetching Remote Config:\n%@", error);
+//        }
+//    };
+
     [Countly.sharedInstance startWithConfig:config];
 
 

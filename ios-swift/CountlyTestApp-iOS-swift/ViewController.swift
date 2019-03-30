@@ -122,7 +122,7 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        tableView.scrollToRow(at: IndexPath(row: 0, section:startSection), at:UITableViewScrollPosition.top, animated:false)
+        tableView.scrollToRow(at: IndexPath(row: 0, section:startSection), at:UITableView.ScrollPosition.top, animated:false)
     }
 
 

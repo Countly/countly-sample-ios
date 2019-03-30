@@ -223,7 +223,7 @@
 					D252E3801DE074D2006548B0 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 3S32KFMHB8;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -445,8 +445,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-iOS-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CountlyTestApp-iOS-swift/CountlyTestApp-iOS-swift-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -462,8 +461,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-iOS-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CountlyTestApp-iOS-swift/CountlyTestApp-iOS-swift-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

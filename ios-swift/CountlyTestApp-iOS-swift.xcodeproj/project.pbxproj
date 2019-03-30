@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D20008732083ADAA003DB5DA /* CountlyLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D20008722083ADAA003DB5DA /* CountlyLocationManager.m */; };
 		D209A7C61F6B9B5300B19B9B /* countly_dsym_uploader.sh in Resources */ = {isa = PBXBuildFile; fileRef = D209A7C51F6B9B5300B19B9B /* countly_dsym_uploader.sh */; };
+		D24105C2220DB2340000A79C /* CountlyRemoteConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D24105C1220DB2330000A79C /* CountlyRemoteConfig.m */; };
 		D252E3851DE074D2006548B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252E3841DE074D2006548B0 /* AppDelegate.swift */; };
 		D252E3871DE074D2006548B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252E3861DE074D2006548B0 /* ViewController.swift */; };
 		D252E38A1DE074D2006548B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D252E3881DE074D2006548B0 /* Main.storyboard */; };
@@ -42,6 +43,8 @@
 		D20008712083ADAA003DB5DA /* CountlyLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyLocationManager.h; sourceTree = "<group>"; };
 		D20008722083ADAA003DB5DA /* CountlyLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyLocationManager.m; sourceTree = "<group>"; };
 		D209A7C51F6B9B5300B19B9B /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
+		D24105C0220DB2330000A79C /* CountlyRemoteConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyRemoteConfig.h; sourceTree = "<group>"; };
+		D24105C1220DB2330000A79C /* CountlyRemoteConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyRemoteConfig.m; sourceTree = "<group>"; };
 		D252E3811DE074D2006548B0 /* CountlyTestApp-iOS-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-iOS-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D252E3841DE074D2006548B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D252E3861DE074D2006548B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +172,8 @@
 				D252E3AE1DE1F249006548B0 /* CountlyPersistency.m */,
 				D252E3AF1DE1F249006548B0 /* CountlyPushNotifications.h */,
 				D252E3B01DE1F249006548B0 /* CountlyPushNotifications.m */,
+				D24105C0220DB2330000A79C /* CountlyRemoteConfig.h */,
+				D24105C1220DB2330000A79C /* CountlyRemoteConfig.m */,
 				D252E3B11DE1F249006548B0 /* CountlyStarRating.h */,
 				D252E3B21DE1F249006548B0 /* CountlyStarRating.m */,
 				D252E3B31DE1F249006548B0 /* CountlyUserDetails.h */,
@@ -212,20 +217,20 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Countly;
 				TargetAttributes = {
 					D252E3801DE074D2006548B0 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 3S32KFMHB8;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = D252E37C1DE074D2006548B0 /* Build configuration list for PBXProject "CountlyTestApp-iOS-swift" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -277,6 +282,7 @@
 				D252E3C51DE1F249006548B0 /* CountlyPersistency.m in Sources */,
 				D2666B951DE9D68C0088E822 /* TestViewControllerPushPop.swift in Sources */,
 				D20008732083ADAA003DB5DA /* CountlyLocationManager.m in Sources */,
+				D24105C2220DB2340000A79C /* CountlyRemoteConfig.m in Sources */,
 				D252E3BE1DE1F249006548B0 /* CountlyAPMNetworkLog.m in Sources */,
 				D2A6CEAF1EB3B52600EC10A5 /* CountlyNotificationService.m in Sources */,
 				D257996F1DE71166006A64CA /* TestViewControllerModal.swift in Sources */,
@@ -314,6 +320,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -375,6 +382,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -437,8 +445,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-iOS-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CountlyTestApp-iOS-swift/CountlyTestApp-iOS-swift-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -454,8 +461,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-iOS-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CountlyTestApp-iOS-swift/CountlyTestApp-iOS-swift-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

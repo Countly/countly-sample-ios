@@ -61,6 +61,8 @@
 		D2FADFB71C464C6A00060D08 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADFB61C464C6A00060D08 /* GlanceController.m */; };
 		D2FADFBA1C464C6A00060D08 /* ComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FADFB91C464C6A00060D08 /* ComplicationController.m */; };
 		D2FADFBC1C464C6A00060D08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2FADFBB1C464C6A00060D08 /* Assets.xcassets */; };
+		D2FB7E5F22142CCF00D6C0AC /* CountlyRemoteConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FB7E5E22142CCF00D6C0AC /* CountlyRemoteConfig.m */; };
+		D2FB7E6022142CD400D6C0AC /* CountlyRemoteConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FB7E5E22142CCF00D6C0AC /* CountlyRemoteConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +179,8 @@
 		D2FADFB91C464C6A00060D08 /* ComplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComplicationController.m; sourceTree = "<group>"; };
 		D2FADFBB1C464C6A00060D08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2FADFBD1C464C6A00060D08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2FB7E5D22142CCF00D6C0AC /* CountlyRemoteConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyRemoteConfig.h; sourceTree = "<group>"; };
+		D2FB7E5E22142CCF00D6C0AC /* CountlyRemoteConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyRemoteConfig.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +234,8 @@
 				D2EB40EB1C58C06E00EAA633 /* CountlyPersistency.m */,
 				D28292251D998CC100D650F2 /* CountlyPushNotifications.h */,
 				D28292261D998CC100D650F2 /* CountlyPushNotifications.m */,
+				D2FB7E5D22142CCF00D6C0AC /* CountlyRemoteConfig.h */,
+				D2FB7E5E22142CCF00D6C0AC /* CountlyRemoteConfig.m */,
 				D2D7728E1D37DA5700F019B8 /* CountlyStarRating.h */,
 				D2D7728F1D37DA5700F019B8 /* CountlyStarRating.m */,
 				D2EB40EC1C58C06E00EAA633 /* CountlyUserDetails.h */,
@@ -393,7 +399,7 @@
 		D2FADF771C464C6A00060D08 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Countly;
 				TargetAttributes = {
 					D2FADF7E1C464C6A00060D08 = {
@@ -412,7 +418,7 @@
 			};
 			buildConfigurationList = D2FADF7A1C464C6A00060D08 /* Build configuration list for PBXProject "CountlyTestApp-watchOS" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -479,6 +485,7 @@
 				D28292271D998CC100D650F2 /* CountlyPushNotifications.m in Sources */,
 				D23C98DA1ECAF287006BCBA4 /* CountlyNotificationService.m in Sources */,
 				D2EB40F71C58C06E00EAA633 /* CountlyConfig.m in Sources */,
+				D2FB7E5F22142CCF00D6C0AC /* CountlyRemoteConfig.m in Sources */,
 				D2EB40F31C58C06E00EAA633 /* Countly_OpenUDID.m in Sources */,
 				D2EB40F41C58C06E00EAA633 /* CountlyAPM.m in Sources */,
 				D2EB40F11C58C06E00EAA633 /* Countly.m in Sources */,
@@ -511,6 +518,7 @@
 				D2EB41051C58C09900EAA633 /* CountlyConfig.m in Sources */,
 				D2F0FC431C4756CF007C5556 /* RowController.m in Sources */,
 				D22D416C1C6E39EC0078AF7D /* CountlyViewTracking.m in Sources */,
+				D2FB7E6022142CD400D6C0AC /* CountlyRemoteConfig.m in Sources */,
 				D249AD432070CAE900BFBE18 /* CountlyConsentManager.m in Sources */,
 				D2EB41021C58C09900EAA633 /* CountlyAPM.m in Sources */,
 				D28292291D998CE100D650F2 /* CountlyStarRating.m in Sources */,
@@ -568,6 +576,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -623,6 +632,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;

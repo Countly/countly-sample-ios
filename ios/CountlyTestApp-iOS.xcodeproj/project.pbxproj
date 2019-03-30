@@ -31,6 +31,7 @@
 		D252ECE61F7203C200481A79 /* EYCrashTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECE51F7203C200481A79 /* EYCrashTesting.m */; };
 		D273859F1D963842008D201F /* CountlyPushNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = D273859E1D963842008D201F /* CountlyPushNotifications.m */; };
 		D2A61163207FB93700D1DA7F /* CountlyLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A61162207FB93700D1DA7F /* CountlyLocationManager.m */; };
+		D2B12AD021E62180001FBBBF /* CountlyRemoteConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B12ACF21E62180001FBBBF /* CountlyRemoteConfig.m */; };
 		D2E4148A2062AA3C0088900F /* CountlyConsentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E414892062AA3C0088900F /* CountlyConsentManager.m */; };
 		D2EB406A1C58BFAA00EAA633 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB404F1C58BFAA00EAA633 /* Countly.m */; };
 		D2EB406C1C58BFAA00EAA633 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40521C58BFAA00EAA633 /* Countly_OpenUDID.m */; };
@@ -113,6 +114,8 @@
 		D273859E1D963842008D201F /* CountlyPushNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPushNotifications.m; sourceTree = "<group>"; };
 		D2A61161207FB93600D1DA7F /* CountlyLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyLocationManager.h; sourceTree = "<group>"; };
 		D2A61162207FB93700D1DA7F /* CountlyLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyLocationManager.m; sourceTree = "<group>"; };
+		D2B12ACE21E62180001FBBBF /* CountlyRemoteConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountlyRemoteConfig.h; sourceTree = "<group>"; };
+		D2B12ACF21E62180001FBBBF /* CountlyRemoteConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountlyRemoteConfig.m; sourceTree = "<group>"; };
 		D2BAB09E17EC8EE600807D0D /* CountlyTestApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BAB0B017EC8EE600807D0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2E414882062AA3C0088900F /* CountlyConsentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConsentManager.h; sourceTree = "<group>"; };
@@ -352,6 +355,8 @@
 				D2EB40641C58BFAA00EAA633 /* CountlyPersistency.m */,
 				D273859D1D963842008D201F /* CountlyPushNotifications.h */,
 				D273859E1D963842008D201F /* CountlyPushNotifications.m */,
+				D2B12ACE21E62180001FBBBF /* CountlyRemoteConfig.h */,
+				D2B12ACF21E62180001FBBBF /* CountlyRemoteConfig.m */,
 				D2EDCF551D2BFFBD00F75DDC /* CountlyStarRating.h */,
 				D2EDCF561D2BFFBD00F75DDC /* CountlyStarRating.m */,
 				D2EB40651C58BFAA00EAA633 /* CountlyUserDetails.h */,
@@ -414,7 +419,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = Countly;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Countly;
 				TargetAttributes = {
 					D23149FB1EB151CF0026F0DD = {
@@ -438,7 +443,7 @@
 			};
 			buildConfigurationList = D2BAB09917EC8EE600807D0D /* Build configuration list for PBXProject "CountlyTestApp-iOS" */;
 			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -510,6 +515,7 @@
 				D2314A0B1EB1528B0026F0DD /* CountlyNotificationService.m in Sources */,
 				D2340D1D1E33C55B003C3841 /* MainViewController.m in Sources */,
 				D2EB406C1C58BFAA00EAA633 /* Countly_OpenUDID.m in Sources */,
+				D2B12AD021E62180001FBBBF /* CountlyRemoteConfig.m in Sources */,
 				D2EB406D1C58BFAA00EAA633 /* CountlyAPM.m in Sources */,
 				D2EB406A1C58BFAA00EAA633 /* Countly.m in Sources */,
 				D252ECD01F7200CE00481A79 /* main.m in Sources */,
@@ -589,6 +595,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -647,6 +654,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;

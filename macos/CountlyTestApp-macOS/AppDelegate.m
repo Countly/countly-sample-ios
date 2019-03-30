@@ -16,9 +16,11 @@
     config.host = @"https://YOUR_COUNTLY_SERVER";
     config.enableDebug = YES;
 
-//  config.deviceID = @"customDeviceID"                               //Optional custom or system generated device ID
+//  config.features = @[CLYPushNotifications];              //Optional  push notification features
+//  config.launchNotification = aNotification;              //Optional launch notification for push notification feature
+//  config.deviceID = @"customDeviceID"                     //Optional custom or system generated device ID
     [Countly.sharedInstance startWithConfig:config];
-    
+
     self.window.backgroundColor = [NSColor colorWithCalibratedRed:65/255.0 green:178/255.0 blue:70/255.0 alpha:1];
 }
 
@@ -28,7 +30,7 @@
     switch ([sender tag])
     {
         case 1:
-            [Countly.sharedInstance recordEvent:@"button-click"];
+            [Countly.sharedInstance askForNotificationPermission];
         break;
         
         case 2:
@@ -87,4 +89,5 @@
                      stringValue];
     NSLog(@"%@", url);
 }
+
 @end

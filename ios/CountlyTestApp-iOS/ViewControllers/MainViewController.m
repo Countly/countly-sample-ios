@@ -30,6 +30,7 @@ typedef enum : NSUInteger
     TestSectionLocation,
     TestSectionMultithreading,
     TestSectionConsents,
+    TestSectionRemoteConfig,
     TestSectionOthers
 } TestSection;
 
@@ -509,6 +510,29 @@ typedef enum : NSUInteger
                     @"explanation": @"",
                 },
             ],
+        },
+
+        @{
+            @"name": @"Remote Config",
+            @"tests":
+            @[
+                @{
+                    @"name": @"Access a Remote Config value",
+                    @"explanation": @"for `level_difficulty` key",
+                },
+                @{
+                    @"name": @"Update all Remote Config values",
+                    @"explanation": @"",
+                },
+                @{
+                    @"name": @"Update some Remote Config values",
+                    @"explanation": @"for `a` and `b` keys",
+                },
+                @{
+                    @"name": @"Update all but some Remote Config values",
+                    @"explanation": @"except `a` and `b` keys",
+                },
+            ]
         },
 
         @{
@@ -1194,6 +1218,69 @@ typedef enum : NSUInteger
         break;
 
 
+#pragma mark Remote Config
+        case TestSectionRemoteConfig:
+        {
+            switch (indexPath.row)
+            {
+                case 0:
+                {
+                    id levelDifficulty = [Countly.sharedInstance remoteConfigValueForKey:@"level_difficulty"];
+                    NSLog(@"Level Difficulty: %@", levelDifficulty);
+                }
+                break;
+
+                case 1:
+                {
+                    [Countly.sharedInstance updateRemoteConfigWithCompletionHandler:^(NSError * error)
+                    {
+                        if (!error)
+                        {
+                            NSLog(@"Remote Config is updated and ready to use!");
+                        }
+                        else
+                        {
+                            NSLog(@"There is an error while updating Remote Config:\n%@", error);
+                        }
+                    }];
+                }
+                break;
+
+                case 2:
+                {
+                    [Countly.sharedInstance updateRemoteConfigOnlyForKeys:@[@"a", @"b"] completionHandler:^(NSError * error)
+                    {
+                        if (!error)
+                        {
+                            NSLog(@"Remote Config is updated and ready to use!");
+                        }
+                        else
+                        {
+                            NSLog(@"There is an error while updating Remote Config:\n%@", error);
+                        }
+                    }];
+                }
+                break;
+
+                case 3:
+                {
+                    [Countly.sharedInstance updateRemoteConfigExceptForKeys:@[@"a", @"b"] completionHandler:^(NSError * error)
+                    {
+                        if (!error)
+                        {
+                            NSLog(@"Remote Config is updated and ready to use!");
+                        }
+                        else
+                        {
+                            NSLog(@"There is an error while updating Remote Config:\n%@", error);
+                        }
+                    }];
+                }
+                break;
+            }
+        }
+
+
 #pragma mark Others
         case TestSectionOthers:
         {
@@ -1224,7 +1311,7 @@ typedef enum : NSUInteger
                     [Countly.sharedInstance presentFeedbackWidgetWithID:@"FEEDBACK_WIDGET_ID" completionHandler:^(NSError * _Nonnull error)
                     {
                         if (error)
-                            NSLog(@"Feedback widget presentation faile: \n%@\n%@", error.localizedDescription, error.userInfo);
+                            NSLog(@"Feedback widget presentation failed: \n%@\n%@", error.localizedDescription, error.userInfo);
                         else
                             NSLog(@"Feedback widget presented successfully");
                     }];
@@ -1264,3 +1351,9 @@ typedef enum : NSUInteger
 }
 
 @end
+
+
+//- (id)remoteConfigValueForKey:(NSString *)key;
+//- (void)updateRemoteConfigWithCompletionHandler:(void (^)(NSError * error))completionHandler;
+//- (void)updateRemoteConfigOnlyForKeys:(NSArray *)keys completionHandler:(void (^)(NSError * error))completionHandler;
+//- (void)updateRemoteConfigExceptForKeys:(NSArray *)omitKeys completionHandler:(void (^)(NSError * error))completionHandler;

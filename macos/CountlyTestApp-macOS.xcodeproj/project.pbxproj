@@ -33,20 +33,22 @@
 		D2EB40A21C58C00400EAA633 /* CountlyPersistency.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40911C58C00400EAA633 /* CountlyPersistency.m */; };
 		D2EB40A31C58C00400EAA633 /* CountlyUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40931C58C00400EAA633 /* CountlyUserDetails.m */; };
 		D2F065022010DF4500A899B8 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = D2F065012010DF4400A899B8 /* LICENSE.md */; };
+		D2FB7E5922142C4500D6C0AC /* CountlyRemoteConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FB7E5822142C4500D6C0AC /* CountlyRemoteConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D20008742083AE68003DB5DA /* CountlyLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyLocationManager.h; sourceTree = "<group>"; };
 		D20008752083AE68003DB5DA /* CountlyLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyLocationManager.m; sourceTree = "<group>"; };
 		D209A7C71F6B9BB200B19B9B /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
+		D22053A8218F47EA00BC88A3 /* CountlyTestApp-macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CountlyTestApp-macOS.entitlements"; sourceTree = "<group>"; };
 		D22D416D1C6EED4D0078AF7D /* CountlyViewTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyViewTracking.h; sourceTree = "<group>"; };
 		D22D416E1C6EED4D0078AF7D /* CountlyViewTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyViewTracking.m; sourceTree = "<group>"; };
-		D2315A2A18EBE52000119D0D /* CountlyTestApp-macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-macos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2315A2A18EBE52000119D0D /* CountlyTestApp-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2315A2D18EBE52000119D0D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D2315A3018EBE52000119D0D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		D2315A3118EBE52000119D0D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D2315A3218EBE52000119D0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D2315A3518EBE52000119D0D /* CountlyTestApp-macos-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CountlyTestApp-macos-Info.plist"; sourceTree = "<group>"; };
+		D2315A3518EBE52000119D0D /* CountlyTestApp-macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CountlyTestApp-macOS-Info.plist"; sourceTree = "<group>"; };
 		D2315A3718EBE52100119D0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D2315A3918EBE52100119D0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D2315A3F18EBE52100119D0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,6 +91,8 @@
 		D2EB40931C58C00400EAA633 /* CountlyUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyUserDetails.m; sourceTree = "<group>"; };
 		D2EB40951C58C00400EAA633 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D2F065012010DF4400A899B8 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		D2FB7E5722142C4400D6C0AC /* CountlyRemoteConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyRemoteConfig.h; sourceTree = "<group>"; };
+		D2FB7E5822142C4500D6C0AC /* CountlyRemoteConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyRemoteConfig.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +110,7 @@
 		D2315A2118EBE52000119D0D = {
 			isa = PBXGroup;
 			children = (
-				D2315A3318EBE52000119D0D /* CountlyTestApp-macos */,
+				D2315A3318EBE52000119D0D /* CountlyTestApp-macOS */,
 				D2EB40791C58C00400EAA633 /* countly-sdk-ios */,
 				D2315A2C18EBE52000119D0D /* Frameworks */,
 				D2315A2B18EBE52000119D0D /* Products */,
@@ -116,7 +120,7 @@
 		D2315A2B18EBE52000119D0D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2315A2A18EBE52000119D0D /* CountlyTestApp-macos.app */,
+				D2315A2A18EBE52000119D0D /* CountlyTestApp-macOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,22 +144,23 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		D2315A3318EBE52000119D0D /* CountlyTestApp-macos */ = {
+		D2315A3318EBE52000119D0D /* CountlyTestApp-macOS */ = {
 			isa = PBXGroup;
 			children = (
+				D22053A8218F47EA00BC88A3 /* CountlyTestApp-macOS.entitlements */,
 				D2315A3F18EBE52100119D0D /* AppDelegate.h */,
 				D2315A4018EBE52100119D0D /* AppDelegate.m */,
 				D2315A4218EBE52100119D0D /* MainMenu.xib */,
 				D2315A4518EBE52100119D0D /* Images.xcassets */,
 				D2315A3418EBE52000119D0D /* Supporting Files */,
 			);
-			path = "CountlyTestApp-macos";
+			path = "CountlyTestApp-macOS";
 			sourceTree = "<group>";
 		};
 		D2315A3418EBE52000119D0D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D2315A3518EBE52000119D0D /* CountlyTestApp-macos-Info.plist */,
+				D2315A3518EBE52000119D0D /* CountlyTestApp-macOS-Info.plist */,
 				D2315A3618EBE52100119D0D /* InfoPlist.strings */,
 				D2315A3918EBE52100119D0D /* main.m */,
 			);
@@ -195,6 +200,8 @@
 				D2EB40911C58C00400EAA633 /* CountlyPersistency.m */,
 				D282921F1D998C4100D650F2 /* CountlyPushNotifications.h */,
 				D28292201D998C4100D650F2 /* CountlyPushNotifications.m */,
+				D2FB7E5722142C4400D6C0AC /* CountlyRemoteConfig.h */,
+				D2FB7E5822142C4500D6C0AC /* CountlyRemoteConfig.m */,
 				D2D772881D37D99700F019B8 /* CountlyStarRating.h */,
 				D2D772891D37D99700F019B8 /* CountlyStarRating.m */,
 				D2EB40921C58C00400EAA633 /* CountlyUserDetails.h */,
@@ -214,9 +221,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D2315A2918EBE52000119D0D /* CountlyTestApp-macos */ = {
+		D2315A2918EBE52000119D0D /* CountlyTestApp-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D2315A5B18EBE52100119D0D /* Build configuration list for PBXNativeTarget "CountlyTestApp-macos" */;
+			buildConfigurationList = D2315A5B18EBE52100119D0D /* Build configuration list for PBXNativeTarget "CountlyTestApp-macOS" */;
 			buildPhases = (
 				D2315A2618EBE52000119D0D /* Sources */,
 				D2315A2718EBE52000119D0D /* Frameworks */,
@@ -226,9 +233,9 @@
 			);
 			dependencies = (
 			);
-			name = "CountlyTestApp-macos";
-			productName = "CountlyTestApp-macos";
-			productReference = D2315A2A18EBE52000119D0D /* CountlyTestApp-macos.app */;
+			name = "CountlyTestApp-macOS";
+			productName = "CountlyTestApp-macOS";
+			productReference = D2315A2A18EBE52000119D0D /* CountlyTestApp-macOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -237,12 +244,23 @@
 		D2315A2218EBE52000119D0D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Countly;
+				TargetAttributes = {
+					D2315A2918EBE52000119D0D = {
+						DevelopmentTeam = 3S32KFMHB8;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
-			buildConfigurationList = D2315A2518EBE52000119D0D /* Build configuration list for PBXProject "CountlyTestApp-macos" */;
+			buildConfigurationList = D2315A2518EBE52000119D0D /* Build configuration list for PBXProject "CountlyTestApp-macOS" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -253,7 +271,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D2315A2918EBE52000119D0D /* CountlyTestApp-macos */,
+				D2315A2918EBE52000119D0D /* CountlyTestApp-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -288,6 +306,7 @@
 				D2EB40991C58C00400EAA633 /* Countly_OpenUDID.m in Sources */,
 				D2A6CEB21EB3B57000EC10A5 /* CountlyNotificationService.m in Sources */,
 				D2EB409E1C58C00400EAA633 /* CountlyConnectionManager.m in Sources */,
+				D2FB7E5922142C4500D6C0AC /* CountlyRemoteConfig.m in Sources */,
 				D2EB40A31C58C00400EAA633 /* CountlyUserDetails.m in Sources */,
 				D2EB40A21C58C00400EAA633 /* CountlyPersistency.m in Sources */,
 				D2EB409B1C58C00400EAA633 /* CountlyAPMNetworkLog.m in Sources */,
@@ -327,6 +346,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -369,7 +389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -379,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -415,7 +436,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -425,13 +446,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-macOS/CountlyTestApp-macOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3S32KFMHB8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "CountlyTestApp-macos/CountlyTestApp-macos-Info.plist";
+				INFOPLIST_FILE = "CountlyTestApp-macOS/CountlyTestApp-macOS-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "CountlyTestApp-macos";
+				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-macOS";
+				PRODUCT_NAME = "CountlyTestApp-macOS";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -441,13 +467,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-macOS/CountlyTestApp-macOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3S32KFMHB8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "CountlyTestApp-macos/CountlyTestApp-macos-Info.plist";
+				INFOPLIST_FILE = "CountlyTestApp-macOS/CountlyTestApp-macOS-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "CountlyTestApp-macos";
+				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-macOS";
+				PRODUCT_NAME = "CountlyTestApp-macOS";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -455,7 +486,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D2315A2518EBE52000119D0D /* Build configuration list for PBXProject "CountlyTestApp-macos" */ = {
+		D2315A2518EBE52000119D0D /* Build configuration list for PBXProject "CountlyTestApp-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D2315A5918EBE52100119D0D /* Debug */,
@@ -464,7 +495,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D2315A5B18EBE52100119D0D /* Build configuration list for PBXNativeTarget "CountlyTestApp-macos" */ = {
+		D2315A5B18EBE52100119D0D /* Build configuration list for PBXNativeTarget "CountlyTestApp-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D2315A5C18EBE52100119D0D /* Debug */,

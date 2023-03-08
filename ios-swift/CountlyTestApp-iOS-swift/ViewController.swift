@@ -61,9 +61,7 @@ class ViewController: UIViewController
 
                                 ["Record User Details",
                                  "Custom Modifiers 1",
-                                 "Custom Modifiers 2",
-                                 "User Logged in",
-                                 "User Logged out"],
+                                 "Custom Modifiers 2"],
 
                                 ["sendSynchronous",
                                  "sendAsynchronous",
@@ -78,9 +76,7 @@ class ViewController: UIViewController
                                  "downloadTaskWithRequest",
                                  "downloadTaskWithRequest:completionHandler",
                                  "downloadTaskWithURL",
-                                 "downloadTaskWithURL:completionHandler",
-                                 "Add Exception URL",
-                                 "Remove Exception URL"],
+                                 "downloadTaskWithURL:completionHandler"],
 
                                 ["Turn off AutoViewTracking",
                                  "Turn on AutoViewTracking",
@@ -108,8 +104,7 @@ class ViewController: UIViewController
                                  "Thread 7",
                                  "Thread 8"],
 
-                                ["Set Custom Header Field Value",
-                                 "Ask for Star-Rating",
+                                ["Ask for Star-Rating",
                                  "Set New Device ID",
                                  "Set New Device ID with Server Merge"]
                               ]
@@ -306,13 +301,7 @@ class ViewController: UIViewController
                     Countly.user().pull("key105", values:["a","d"])
                     Countly.user().save()
                 break
-
-                case 3: Countly.sharedInstance().userLogged(in:"OwnUserID")
-                break
-
-                case 4: Countly.sharedInstance().userLoggedOut()
-                break
-
+				
                 default:
                 break
             }
@@ -414,12 +403,6 @@ class ViewController: UIViewController
                     testTask.resume()
                 break
                 
-                case 14: Countly.sharedInstance().addException(forAPM: "http://finance.yahoo.com")
-                break
-
-                case 15: Countly.sharedInstance().removeException(forAPM: "http://finance.yahoo.com")
-                break
-
                 default:break
             }
             break
@@ -428,10 +411,10 @@ class ViewController: UIViewController
             case TestSection.ViewTracking.rawValue: //MARK: View Tracking
             switch (indexPath.row)
             {
-                case 0: Countly.sharedInstance().isAutoViewTrackingEnabled = false;
+				case 0: Countly.sharedInstance().isAutoViewTrackingActive = false;
                 break
 
-                case 1: Countly.sharedInstance().isAutoViewTrackingEnabled = true;
+                case 1: Countly.sharedInstance().isAutoViewTrackingActive = true;
                 break
 
                 case 2:
@@ -473,7 +456,7 @@ class ViewController: UIViewController
                 case 9: Countly.sharedInstance().removeException(forAutoViewTracking:"MyViewControllerCustomTitleView")
                 break
 
-                case 10: Countly.sharedInstance().reportView("ManualViewReportExample")
+                case 10: Countly.sharedInstance().recordView("ManualViewReportExample")
                 break
 
                 default: break
@@ -496,10 +479,8 @@ class ViewController: UIViewController
                     })
                 break
 
-                case 2: Countly.sharedInstance().recordLocation(CLLocationCoordinate2D(latitude:33.6789, longitude:43.1234))
-                        Countly.sharedInstance().recordIP("255.255.255.255")
-                        Countly.sharedInstance().recordCity("Tokyo", andISOCountryCode: "JP")
-                        Countly.sharedInstance().isGeoLocationEnabled = true
+                case 2:
+				Countly.sharedInstance().recordLocation(CLLocationCoordinate2D(latitude:33.6789, longitude:43.1234), city: "Tokyo", isoCountryCode: "JP", ip: "255.255.255.255")
                 break
                 
                 case 3:
@@ -542,19 +523,16 @@ class ViewController: UIViewController
             case TestSection.Others.rawValue: //MARK: Others
             switch (indexPath.row)
             {
-                case 0: Countly.sharedInstance().setCustomHeaderFieldValue("thisismyvalue")
-                break
-
-                case 1: Countly.sharedInstance().ask(forStarRating:
+                case 0: Countly.sharedInstance().ask(forStarRating:
                 { (rating : Int) in
                     print("rating \(rating)")
                 })
                 break
 
-                case 2: Countly.sharedInstance().setNewDeviceID("user@example.com", onServer:false)
+                case 1: Countly.sharedInstance().setNewDeviceID("user@example.com", onServer:false)
                 break
 
-                case 3: Countly.sharedInstance().setNewDeviceID(CLYIDFV, onServer:true)
+                case 2: Countly.sharedInstance().setNewDeviceID(nil, onServer:true)
                 break
 
                 default: break

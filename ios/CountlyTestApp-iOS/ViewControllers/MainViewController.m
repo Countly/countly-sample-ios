@@ -211,14 +211,6 @@ typedef enum : NSUInteger
                     @"name": @"Some Custom Property Modifiers 2",
                     @"explanation": @"multiply-unset-pull-save",
                 },
-                @{
-                    @"name": @"User Logged in",
-                    @"explanation": @"OwnUserID",
-                },
-                @{
-                    @"name": @"User Logged out",
-                    @"explanation": @"switch back to IDFV and start new session",
-                },
             ],
         },
 
@@ -281,14 +273,6 @@ typedef enum : NSUInteger
                 @{
                     @"name":@"downloadTaskWithURL:completionHandler",
                     @"explanation": @"",
-                },
-                @{
-                    @"name":@"Add Exception URL",
-                    @"explanation": @"http://finance.yahoo.com",
-                },
-                @{
-                    @"name":@"Remove Exception URL",
-                    @"explanation": @"http://finance.yahoo.com",
                 },
             ],
         },
@@ -369,15 +353,7 @@ typedef enum : NSUInteger
             @[
                 @{
                     @"name": @"Record Location",
-                    @"explanation": @"33.6789, 43.1234",
-                },
-                @{
-                    @"name": @"Record City and Country",
-                    @"explanation": @"Tokyo - JP",
-                },
-                @{
-                    @"name": @"Record IP Address",
-                    @"explanation": @"1.2.3.4",
+                    @"explanation": @"LatLong: 33.6789, 43.1234, City: Tokyo - JP, IP: 1.2.3.4",
                 },
                 @{
                     @"name": @"Disable Location Info",
@@ -454,13 +430,17 @@ typedef enum : NSUInteger
                     @"explanation": @"",
                 },
                 @{
-                    @"name": @"Give for StarRating",
+                    @"name": @"Give for Feedback",
                     @"explanation": @"",
                 },
                 @{
-                    @"name": @"Give for AppleWatch",
+                    @"name": @"Give for PerformanceMonitoring",
                     @"explanation": @"",
                 },
+				@{
+					@"name": @"Give for RemoteConfig",
+					@"explanation": @"",
+				},
                 @{
                     @"name": @"Give for All the Features",
                     @"explanation": @"",
@@ -498,13 +478,17 @@ typedef enum : NSUInteger
                     @"explanation": @"",
                 },
                 @{
-                    @"name": @"Cancel for StarRating",
+                    @"name": @"Cancel for Feedback",
                     @"explanation": @"",
                 },
                 @{
-                    @"name": @"Cancel for AppleWatch",
+                    @"name": @"Cancel for PerformanceMonitoring",
                     @"explanation": @"",
                 },
+				@{
+					@"name": @"Cancel for RemoteConfig",
+					@"explanation": @"",
+				},
                 @{
                     @"name": @"Cancel for All the Features",
                     @"explanation": @"",
@@ -539,10 +523,6 @@ typedef enum : NSUInteger
             @"name": @"Others",
             @"tests":
             @[
-                @{
-                    @"name": @"Set Custom Header Field Value",
-                    @"explanation": @"thisismyvalue",
-                },
                 @{
                     @"name": @"Ask for Star-Rating",
                     @"explanation": @"",
@@ -767,19 +747,19 @@ typedef enum : NSUInteger
                 case 13:
                 {
                     NSException* myException = [NSException exceptionWithName:@"MyException" reason:@"MyReason" userInfo:@{@"key": @"value"}];
-                    [Countly.sharedInstance recordHandledException:myException];
+					[Countly.sharedInstance recordException:myException];
                 }break;
 
                 case 14:
                 {
                     NSException* myException = [NSException exceptionWithName:@"MyExc" reason:@"MyReason" userInfo:@{@"key": @"value"}];
-                    [Countly.sharedInstance recordHandledException:myException withStackTrace:[NSThread callStackSymbols]];
+					[Countly.sharedInstance recordException:myException isFatal:NO stackTrace:[NSThread callStackSymbols] segmentation:nil];
                 }break;
 
                 case 15:
                 {
                     NSException* myException = [NSException exceptionWithName:@"MyUnhandledExc" reason:@"MyReason" userInfo:@{@"key": @"value"}];
-                    [Countly.sharedInstance recordUnhandledException:myException withStackTrace:[NSThread callStackSymbols]];
+					[Countly.sharedInstance recordException:myException isFatal:YES stackTrace:[NSThread callStackSymbols] segmentation:nil];
                 }break;
 
                 default: break;
@@ -857,12 +837,6 @@ typedef enum : NSUInteger
 
                     [Countly.user save];
                 }break;
-
-                case 6: [Countly.sharedInstance userLoggedIn:@"OwnUserID"];
-                break;
-
-                case 7: [Countly.sharedInstance userLoggedOut];
-                break;
 
                 default:break;
             }
@@ -977,11 +951,11 @@ typedef enum : NSUInteger
                     [testTask resume];
                 }break;
 
-                case 14: [Countly.sharedInstance addExceptionForAPM:@"http://finance.yahoo.com"];
-                break;
-
-                case 15: [Countly.sharedInstance removeExceptionForAPM:@"http://finance.yahoo.com"];
-                break;
+//                case 14: [Countly.sharedInstance addExceptionForAPM:@"http://finance.yahoo.com"];
+//                break;
+//
+//                case 15: [Countly.sharedInstance removeExceptionForAPM:@"http://finance.yahoo.com"];
+//                break;
 
                 default:break;
             }
@@ -1093,16 +1067,11 @@ typedef enum : NSUInteger
         {
             switch (indexPath.row)
             {
-                case 0: [Countly.sharedInstance recordLocation:(CLLocationCoordinate2D){33.6789,43.1234}];
+					
+				case 0: [Countly.sharedInstance recordLocation:(CLLocationCoordinate2D){33.6789,43.1234} city:@"Tokyo" ISOCountryCode:@"JP" IP:@"1.2.3.4"];
                 break;
-
-                case 1: [Countly.sharedInstance recordCity:@"Tokyo" andISOCountryCode:@"JP"];
-                break;
-
-                case 2: [Countly.sharedInstance recordIP:@"1.2.3.4"];
-                break;
-
-                case 3: [Countly.sharedInstance disableLocationInfo];
+					
+                case 1: [Countly.sharedInstance disableLocationInfo];
                 break;
 
                 default: break;
@@ -1170,46 +1139,52 @@ typedef enum : NSUInteger
                 case 7: [Countly.sharedInstance giveConsentForFeature:CLYConsentAttribution];
                 break;
 
-                case 8: [Countly.sharedInstance giveConsentForFeature:CLYConsentStarRating];
+                case 8: [Countly.sharedInstance giveConsentForFeature:CLYConsentFeedback];
                 break;
 
-                case 9: [Countly.sharedInstance giveConsentForFeature:CLYConsentAppleWatch];
+                case 9: [Countly.sharedInstance giveConsentForFeature:CLYConsentPerformanceMonitoring];
+                break;
+					
+				case 10: [Countly.sharedInstance giveConsentForFeature:CLYConsentRemoteConfig];
+					break;
+
+                case 11: [Countly.sharedInstance giveConsentForAllFeatures];
                 break;
 
-                case 10: [Countly.sharedInstance giveConsentForAllFeatures];
+                case 12: [Countly.sharedInstance cancelConsentForFeature:CLYConsentSessions];
                 break;
 
-                case 11: [Countly.sharedInstance cancelConsentForFeature:CLYConsentSessions];
+                case 13: [Countly.sharedInstance cancelConsentForFeature:CLYConsentEvents];
                 break;
 
-                case 12: [Countly.sharedInstance cancelConsentForFeature:CLYConsentEvents];
+                case 14: [Countly.sharedInstance cancelConsentForFeature:CLYConsentUserDetails];
                 break;
 
-                case 13: [Countly.sharedInstance cancelConsentForFeature:CLYConsentUserDetails];
+                case 15: [Countly.sharedInstance cancelConsentForFeature:CLYConsentCrashReporting];
                 break;
 
-                case 14: [Countly.sharedInstance cancelConsentForFeature:CLYConsentCrashReporting];
+                case 16: [Countly.sharedInstance cancelConsentForFeature:CLYConsentPushNotifications];
                 break;
 
-                case 15: [Countly.sharedInstance cancelConsentForFeature:CLYConsentPushNotifications];
+                case 17: [Countly.sharedInstance cancelConsentForFeature:CLYConsentLocation];
                 break;
 
-                case 16: [Countly.sharedInstance cancelConsentForFeature:CLYConsentLocation];
+                case 18: [Countly.sharedInstance cancelConsentForFeature:CLYConsentViewTracking];
                 break;
 
-                case 17: [Countly.sharedInstance cancelConsentForFeature:CLYConsentViewTracking];
+                case 19: [Countly.sharedInstance cancelConsentForFeature:CLYConsentAttribution];
                 break;
 
-                case 18: [Countly.sharedInstance cancelConsentForFeature:CLYConsentAttribution];
+                case 20: [Countly.sharedInstance cancelConsentForFeature:CLYConsentFeedback];
                 break;
 
-                case 19: [Countly.sharedInstance cancelConsentForFeature:CLYConsentStarRating];
+                case 21: [Countly.sharedInstance cancelConsentForFeature:CLYConsentPerformanceMonitoring];
                 break;
+					
+				case 22: [Countly.sharedInstance cancelConsentForFeature:CLYConsentRemoteConfig];
+					break;
 
-                case 20: [Countly.sharedInstance cancelConsentForFeature:CLYConsentAppleWatch];
-                break;
-
-                case 21: [Countly.sharedInstance cancelConsentForAllFeatures];
+                case 23: [Countly.sharedInstance cancelConsentForAllFeatures];
                 break;
 
                 default: break;
@@ -1286,35 +1261,31 @@ typedef enum : NSUInteger
         {
             switch (indexPath.row)
             {
-                case 0: [Countly.sharedInstance setCustomHeaderFieldValue:@"thisismyvalue"];
+                case 0: [Countly.sharedInstance askForStarRating:^(NSInteger rating){ NSLog(@"rating %d",(int)rating); }];
                 break;
 
-                case 1: [Countly.sharedInstance askForStarRating:^(NSInteger rating){ NSLog(@"rating %d",(int)rating); }];
+                case 1: [Countly.sharedInstance setNewDeviceID:@"user@example.com" onServer:NO];
                 break;
 
-                case 2: [Countly.sharedInstance setNewDeviceID:@"user@example.com" onServer:NO];
+                case 2: [Countly.sharedInstance setNewDeviceID:nil onServer:YES];
                 break;
 
-                case 3: [Countly.sharedInstance setNewDeviceID:CLYIDFV onServer:YES];
+                case 3: [Countly.sharedInstance beginSession];
                 break;
 
-                case 4: [Countly.sharedInstance beginSession];
+                case 4: [Countly.sharedInstance updateSession];
                 break;
 
-                case 5: [Countly.sharedInstance updateSession];
+                case 5: [Countly.sharedInstance endSession];
                 break;
 
-                case 6: [Countly.sharedInstance endSession];
-                break;
-
-                case 7:
-                    [Countly.sharedInstance presentFeedbackWidgetWithID:@"FEEDBACK_WIDGET_ID" completionHandler:^(NSError * _Nonnull error)
-                    {
-                        if (error)
-                            NSLog(@"Feedback widget presentation failed: \n%@\n%@", error.localizedDescription, error.userInfo);
-                        else
-                            NSLog(@"Feedback widget presented successfully");
-                    }];
+                case 6:
+					[Countly.sharedInstance presentRatingWidgetWithID:@"FEEDBACK_WIDGET_ID" completionHandler:^(NSError * _Nullable error) {
+						if (error)
+							NSLog(@"Feedback widget presentation failed: \n%@\n%@", error.localizedDescription, error.userInfo);
+						else
+							NSLog(@"Feedback widget presented successfully");
+					}];
                 break;
 
                 default: break;

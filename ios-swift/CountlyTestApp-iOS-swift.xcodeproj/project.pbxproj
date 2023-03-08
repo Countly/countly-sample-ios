@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A87EDA729B8C6E00095DF38 /* CountlyPerformanceMonitoring.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A87EDA229B8C6E00095DF38 /* CountlyPerformanceMonitoring.m */; };
+		1A87EDA829B8C6E00095DF38 /* CountlyFeedbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A87EDA429B8C6E00095DF38 /* CountlyFeedbacks.m */; };
+		1A87EDA929B8C6E00095DF38 /* CountlyFeedbackWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A87EDA629B8C6E00095DF38 /* CountlyFeedbackWidget.m */; };
 		D20008732083ADAA003DB5DA /* CountlyLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D20008722083ADAA003DB5DA /* CountlyLocationManager.m */; };
 		D209A7C61F6B9B5300B19B9B /* countly_dsym_uploader.sh in Resources */ = {isa = PBXBuildFile; fileRef = D209A7C51F6B9B5300B19B9B /* countly_dsym_uploader.sh */; };
 		D24105C2220DB2340000A79C /* CountlyRemoteConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D24105C1220DB2330000A79C /* CountlyRemoteConfig.m */; };
@@ -17,9 +20,6 @@
 		D252E38F1DE074D2006548B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D252E38D1DE074D2006548B0 /* LaunchScreen.storyboard */; };
 		D252E3BA1DE1F249006548B0 /* Countly.m in Sources */ = {isa = PBXBuildFile; fileRef = D252E3991DE1F249006548B0 /* Countly.m */; };
 		D252E3BB1DE1F249006548B0 /* Countly.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D252E39A1DE1F249006548B0 /* Countly.podspec */; };
-		D252E3BC1DE1F249006548B0 /* Countly_OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D252E39C1DE1F249006548B0 /* Countly_OpenUDID.m */; };
-		D252E3BD1DE1F249006548B0 /* CountlyAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = D252E39E1DE1F249006548B0 /* CountlyAPM.m */; };
-		D252E3BE1DE1F249006548B0 /* CountlyAPMNetworkLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D252E3A01DE1F249006548B0 /* CountlyAPMNetworkLog.m */; };
 		D252E3BF1DE1F249006548B0 /* CountlyCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = D252E3A21DE1F249006548B0 /* CountlyCommon.m */; };
 		D252E3C01DE1F249006548B0 /* CountlyConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D252E3A41DE1F249006548B0 /* CountlyConfig.m */; };
 		D252E3C11DE1F249006548B0 /* CountlyConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D252E3A61DE1F249006548B0 /* CountlyConnectionManager.m */; };
@@ -28,7 +28,6 @@
 		D252E3C41DE1F249006548B0 /* CountlyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D252E3AC1DE1F249006548B0 /* CountlyEvent.m */; };
 		D252E3C51DE1F249006548B0 /* CountlyPersistency.m in Sources */ = {isa = PBXBuildFile; fileRef = D252E3AE1DE1F249006548B0 /* CountlyPersistency.m */; };
 		D252E3C61DE1F249006548B0 /* CountlyPushNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = D252E3B01DE1F249006548B0 /* CountlyPushNotifications.m */; };
-		D252E3C71DE1F249006548B0 /* CountlyStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = D252E3B21DE1F249006548B0 /* CountlyStarRating.m */; };
 		D252E3C81DE1F249006548B0 /* CountlyUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = D252E3B41DE1F249006548B0 /* CountlyUserDetails.m */; };
 		D252E3C91DE1F249006548B0 /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D252E3B61DE1F249006548B0 /* CountlyViewTracking.m */; };
 		D257996F1DE71166006A64CA /* TestViewControllerModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257996E1DE71166006A64CA /* TestViewControllerModal.swift */; };
@@ -36,10 +35,15 @@
 		D29E5FBA206F2E6F0010F061 /* CountlyConsentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D29E5FB9206F2E6F0010F061 /* CountlyConsentManager.m */; };
 		D2A6CEAF1EB3B52600EC10A5 /* CountlyNotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A6CEAD1EB3B52600EC10A5 /* CountlyNotificationService.m */; };
 		D2C01AC720026E2800BAE8E3 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = D2C01AC620026E2800BAE8E3 /* CHANGELOG.md */; };
-		D2F065002010DF2400A899B8 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = D2F064FF2010DF2300A899B8 /* LICENSE.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A87EDA129B8C6E00095DF38 /* CountlyPerformanceMonitoring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPerformanceMonitoring.h; sourceTree = "<group>"; };
+		1A87EDA229B8C6E00095DF38 /* CountlyPerformanceMonitoring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPerformanceMonitoring.m; sourceTree = "<group>"; };
+		1A87EDA329B8C6E00095DF38 /* CountlyFeedbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyFeedbacks.h; sourceTree = "<group>"; };
+		1A87EDA429B8C6E00095DF38 /* CountlyFeedbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyFeedbacks.m; sourceTree = "<group>"; };
+		1A87EDA529B8C6E00095DF38 /* CountlyFeedbackWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyFeedbackWidget.h; sourceTree = "<group>"; };
+		1A87EDA629B8C6E00095DF38 /* CountlyFeedbackWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyFeedbackWidget.m; sourceTree = "<group>"; };
 		D20008712083ADAA003DB5DA /* CountlyLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyLocationManager.h; sourceTree = "<group>"; };
 		D20008722083ADAA003DB5DA /* CountlyLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyLocationManager.m; sourceTree = "<group>"; };
 		D209A7C51F6B9B5300B19B9B /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
@@ -55,12 +59,6 @@
 		D252E3981DE1F249006548B0 /* Countly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly.h; sourceTree = "<group>"; };
 		D252E3991DE1F249006548B0 /* Countly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly.m; sourceTree = "<group>"; };
 		D252E39A1DE1F249006548B0 /* Countly.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countly.podspec; sourceTree = "<group>"; };
-		D252E39B1DE1F249006548B0 /* Countly_OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countly_OpenUDID.h; sourceTree = "<group>"; };
-		D252E39C1DE1F249006548B0 /* Countly_OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countly_OpenUDID.m; sourceTree = "<group>"; };
-		D252E39D1DE1F249006548B0 /* CountlyAPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPM.h; sourceTree = "<group>"; };
-		D252E39E1DE1F249006548B0 /* CountlyAPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPM.m; sourceTree = "<group>"; };
-		D252E39F1DE1F249006548B0 /* CountlyAPMNetworkLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPMNetworkLog.h; sourceTree = "<group>"; };
-		D252E3A01DE1F249006548B0 /* CountlyAPMNetworkLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPMNetworkLog.m; sourceTree = "<group>"; };
 		D252E3A11DE1F249006548B0 /* CountlyCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCommon.h; sourceTree = "<group>"; };
 		D252E3A21DE1F249006548B0 /* CountlyCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCommon.m; sourceTree = "<group>"; };
 		D252E3A31DE1F249006548B0 /* CountlyConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConfig.h; sourceTree = "<group>"; };
@@ -77,8 +75,6 @@
 		D252E3AE1DE1F249006548B0 /* CountlyPersistency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPersistency.m; sourceTree = "<group>"; };
 		D252E3AF1DE1F249006548B0 /* CountlyPushNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyPushNotifications.h; sourceTree = "<group>"; };
 		D252E3B01DE1F249006548B0 /* CountlyPushNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyPushNotifications.m; sourceTree = "<group>"; };
-		D252E3B11DE1F249006548B0 /* CountlyStarRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyStarRating.h; sourceTree = "<group>"; };
-		D252E3B21DE1F249006548B0 /* CountlyStarRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyStarRating.m; sourceTree = "<group>"; };
 		D252E3B31DE1F249006548B0 /* CountlyUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyUserDetails.h; sourceTree = "<group>"; };
 		D252E3B41DE1F249006548B0 /* CountlyUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyUserDetails.m; sourceTree = "<group>"; };
 		D252E3B51DE1F249006548B0 /* CountlyViewTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyViewTracking.h; sourceTree = "<group>"; };
@@ -92,7 +88,6 @@
 		D2A6CEAD1EB3B52600EC10A5 /* CountlyNotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyNotificationService.m; sourceTree = "<group>"; };
 		D2A6CEAE1EB3B52600EC10A5 /* CountlyNotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyNotificationService.h; sourceTree = "<group>"; };
 		D2C01AC620026E2800BAE8E3 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
-		D2F064FF2010DF2300A899B8 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,14 +137,14 @@
 		D252E3961DE1F249006548B0 /* countly-sdk-ios */ = {
 			isa = PBXGroup;
 			children = (
+				1A87EDA329B8C6E00095DF38 /* CountlyFeedbacks.h */,
+				1A87EDA429B8C6E00095DF38 /* CountlyFeedbacks.m */,
+				1A87EDA529B8C6E00095DF38 /* CountlyFeedbackWidget.h */,
+				1A87EDA629B8C6E00095DF38 /* CountlyFeedbackWidget.m */,
+				1A87EDA129B8C6E00095DF38 /* CountlyPerformanceMonitoring.h */,
+				1A87EDA229B8C6E00095DF38 /* CountlyPerformanceMonitoring.m */,
 				D252E3981DE1F249006548B0 /* Countly.h */,
 				D252E3991DE1F249006548B0 /* Countly.m */,
-				D252E39B1DE1F249006548B0 /* Countly_OpenUDID.h */,
-				D252E39C1DE1F249006548B0 /* Countly_OpenUDID.m */,
-				D252E39D1DE1F249006548B0 /* CountlyAPM.h */,
-				D252E39E1DE1F249006548B0 /* CountlyAPM.m */,
-				D252E39F1DE1F249006548B0 /* CountlyAPMNetworkLog.h */,
-				D252E3A01DE1F249006548B0 /* CountlyAPMNetworkLog.m */,
 				D252E3A11DE1F249006548B0 /* CountlyCommon.h */,
 				D252E3A21DE1F249006548B0 /* CountlyCommon.m */,
 				D252E3A31DE1F249006548B0 /* CountlyConfig.h */,
@@ -174,8 +169,6 @@
 				D252E3B01DE1F249006548B0 /* CountlyPushNotifications.m */,
 				D24105C0220DB2330000A79C /* CountlyRemoteConfig.h */,
 				D24105C1220DB2330000A79C /* CountlyRemoteConfig.m */,
-				D252E3B11DE1F249006548B0 /* CountlyStarRating.h */,
-				D252E3B21DE1F249006548B0 /* CountlyStarRating.m */,
 				D252E3B31DE1F249006548B0 /* CountlyUserDetails.h */,
 				D252E3B41DE1F249006548B0 /* CountlyUserDetails.m */,
 				D252E3B51DE1F249006548B0 /* CountlyViewTracking.h */,
@@ -183,7 +176,6 @@
 				D209A7C51F6B9B5300B19B9B /* countly_dsym_uploader.sh */,
 				D252E39A1DE1F249006548B0 /* Countly.podspec */,
 				D252E3B81DE1F249006548B0 /* README.md */,
-				D2F064FF2010DF2300A899B8 /* LICENSE.md */,
 				D2C01AC620026E2800BAE8E3 /* CHANGELOG.md */,
 			);
 			name = "countly-sdk-ios";
@@ -217,7 +209,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1410;
 				ORGANIZATIONNAME = Countly;
 				TargetAttributes = {
 					D252E3801DE074D2006548B0 = {
@@ -257,7 +249,6 @@
 				D252E38A1DE074D2006548B0 /* Main.storyboard in Resources */,
 				D2C01AC720026E2800BAE8E3 /* CHANGELOG.md in Resources */,
 				D209A7C61F6B9B5300B19B9B /* countly_dsym_uploader.sh in Resources */,
-				D2F065002010DF2400A899B8 /* LICENSE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,23 +265,22 @@
 				D252E3C41DE1F249006548B0 /* CountlyEvent.m in Sources */,
 				D252E3C91DE1F249006548B0 /* CountlyViewTracking.m in Sources */,
 				D252E3C31DE1F249006548B0 /* CountlyDeviceInfo.m in Sources */,
-				D252E3C71DE1F249006548B0 /* CountlyStarRating.m in Sources */,
 				D252E3BA1DE1F249006548B0 /* Countly.m in Sources */,
-				D252E3BC1DE1F249006548B0 /* Countly_OpenUDID.m in Sources */,
 				D252E3C11DE1F249006548B0 /* CountlyConnectionManager.m in Sources */,
 				D29E5FBA206F2E6F0010F061 /* CountlyConsentManager.m in Sources */,
 				D252E3C51DE1F249006548B0 /* CountlyPersistency.m in Sources */,
 				D2666B951DE9D68C0088E822 /* TestViewControllerPushPop.swift in Sources */,
+				1A87EDA929B8C6E00095DF38 /* CountlyFeedbackWidget.m in Sources */,
 				D20008732083ADAA003DB5DA /* CountlyLocationManager.m in Sources */,
 				D24105C2220DB2340000A79C /* CountlyRemoteConfig.m in Sources */,
-				D252E3BE1DE1F249006548B0 /* CountlyAPMNetworkLog.m in Sources */,
 				D2A6CEAF1EB3B52600EC10A5 /* CountlyNotificationService.m in Sources */,
 				D257996F1DE71166006A64CA /* TestViewControllerModal.swift in Sources */,
+				1A87EDA829B8C6E00095DF38 /* CountlyFeedbacks.m in Sources */,
 				D252E3851DE074D2006548B0 /* AppDelegate.swift in Sources */,
 				D252E3BF1DE1F249006548B0 /* CountlyCommon.m in Sources */,
 				D252E3C01DE1F249006548B0 /* CountlyConfig.m in Sources */,
-				D252E3BD1DE1F249006548B0 /* CountlyAPM.m in Sources */,
 				D252E3C21DE1F249006548B0 /* CountlyCrashReporter.m in Sources */,
+				1A87EDA729B8C6E00095DF38 /* CountlyPerformanceMonitoring.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +331,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -368,7 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -403,6 +394,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -424,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -440,7 +432,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = 3S32KFMHB8;
 				INFOPLIST_FILE = "CountlyTestApp-iOS-swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-iOS-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -456,7 +448,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = 3S32KFMHB8;
 				INFOPLIST_FILE = "CountlyTestApp-iOS-swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-iOS-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";

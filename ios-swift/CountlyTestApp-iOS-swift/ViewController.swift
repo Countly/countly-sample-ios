@@ -105,6 +105,8 @@ class ViewController: UIViewController
                                  "Thread 8"],
 
                                 ["Ask for Star-Rating",
+								 "Present NPS",
+								 "Present Survey",
                                  "Set New Device ID",
                                  "Set New Device ID with Server Merge"]
                               ]
@@ -528,11 +530,17 @@ class ViewController: UIViewController
                     print("rating \(rating)")
                 })
                 break
+				
+				case 1: presentFeedbackWidget(widgetType: CLYFeedbackWidgetType.NPS)
+				break
+				
+				case 2: presentFeedbackWidget(widgetType: CLYFeedbackWidgetType.survey)
+				break
 
-                case 1: Countly.sharedInstance().setNewDeviceID("user@example.com", onServer:false)
+                case 3: Countly.sharedInstance().setNewDeviceID("user@example.com", onServer:false)
                 break
 
-                case 2: Countly.sharedInstance().setNewDeviceID(nil, onServer:true)
+                case 4: Countly.sharedInstance().setNewDeviceID(nil, onServer:true)
                 break
 
                 default: break
@@ -546,6 +554,34 @@ class ViewController: UIViewController
     }
 
     //MARK: Crash Tests
+	
+	func presentFeedbackWidget(widgetType: CLYFeedbackWidgetType) {
+		Countly.sharedInstance().getFeedbackWidgets
+		{ (feedbackWidgets: [CountlyFeedbackWidget]?, error) in
+			if (error != nil)
+			{
+				print("Getting widgets list failed. \n \(error!.localizedDescription) \n \((error! as NSError).userInfo)")
+			}
+			else
+			{
+				if(feedbackWidgets != nil) {
+					for feedbackWidget in feedbackWidgets! {
+						if(feedbackWidget.type == widgetType) {
+							feedbackWidget.present(
+								appear:{
+									print("Appeared.")
+									
+								},
+								andDismiss: {
+									print("Dismissed.")
+								})
+							break;
+						}
+					}
+				}
+			}
+		}
+	}
 
     func crashTest0()
     {

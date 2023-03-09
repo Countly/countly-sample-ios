@@ -550,7 +550,17 @@ typedef enum : NSUInteger
                 @{
                     @"name": @"Present Feedback Widget",
                     @"explanation": @"Feedback Widget ID needs to be hardcoded",
-                },
+                }
+				,
+				@{
+					@"name": @"Present NPS",
+					@"explanation": @"Show NPS widget",
+				}
+				,
+				@{
+					@"name": @"Present Survey",
+					@"explanation": @"Show Survey widget",
+				}
             ],
         },
     ];
@@ -1286,6 +1296,11 @@ typedef enum : NSUInteger
 						else
 							NSLog(@"Feedback widget presented successfully");
 					}];
+				case 7:
+					[self presentFeedbackWidget:CLYFeedbackWidgetTypeNPS];
+					break;
+				case 8: [self presentFeedbackWidget:CLYFeedbackWidgetTypeSurvey];;
+					break;
                 break;
 
                 default: break;
@@ -1303,6 +1318,30 @@ typedef enum : NSUInteger
 
 #pragma mark -
 
+-(void) presentFeedbackWidget:(CLYFeedbackWidgetType) widgetType {
+	[Countly.sharedInstance getFeedbackWidgets:^(NSArray * feedbackWidgets, NSError * error)
+	 {
+		if (error)
+		{
+			NSLog(@"Getting widgets list failed. Error: %@", error);
+		}
+		else
+		{
+			for (CountlyFeedbackWidget *feedbackWidget in feedbackWidgets)
+			{
+				if ([widgetType isEqualToString:feedbackWidget.type])
+				{
+					[feedbackWidget presentWithAppearBlock:^{
+						NSLog(@"Appeared!");
+					} andDismissBlock:^{
+						NSLog(@"Dismissed!");
+					}];
+					break;
+				}
+			}
+		}
+	}];
+}
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {

@@ -1301,7 +1301,6 @@ typedef enum : NSUInteger
 					break;
 				case 8: [self presentFeedbackWidget:CLYFeedbackWidgetTypeSurvey];;
 					break;
-                break;
 
                 default: break;
             }

@@ -105,8 +105,8 @@ class ViewController: UIViewController
                                  "Thread 8"],
 
                                 ["Ask for Star-Rating",
-								 "Present NPS",
-								 "Present Survey",
+                                 "Present NPS",
+                                 "Present Survey",
                                  "Set New Device ID",
                                  "Set New Device ID with Server Merge"]
                               ]
@@ -531,11 +531,11 @@ class ViewController: UIViewController
                 })
                 break
 				
-				case 1: presentFeedbackWidget(widgetType: CLYFeedbackWidgetType.NPS)
-				break
+                case 1: presentFeedbackWidget(widgetType: CLYFeedbackWidgetType.NPS)
+                break
 				
-				case 2: presentFeedbackWidget(widgetType: CLYFeedbackWidgetType.survey)
-				break
+                case 2: presentFeedbackWidget(widgetType: CLYFeedbackWidgetType.survey)
+                break
 
                 case 3: Countly.sharedInstance().setNewDeviceID("user@example.com", onServer:false)
                 break

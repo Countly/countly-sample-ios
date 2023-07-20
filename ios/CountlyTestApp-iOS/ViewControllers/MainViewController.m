@@ -501,20 +501,83 @@ typedef enum : NSUInteger
             @"tests":
                 @[
                     @{
-                        @"name": @"Access a Remote Config value",
-                        @"explanation": @"for `level_difficulty` key",
+                        @"name": @"Register RC callback 1",
+                        @"explanation": @"Register remote config callback 1",
                     },
                     @{
-                        @"name": @"Update all Remote Config values",
-                        @"explanation": @"",
+                        @"name": @"Register RC callback 2",
+                        @"explanation": @"Register remote config callback 2",
                     },
                     @{
-                        @"name": @"Update some Remote Config values",
-                        @"explanation": @"for `a` and `b` keys",
+                        @"name": @"Register RC callback 3",
+                        @"explanation": @"Register remote config callback 3",
+                    },
+                    
+                    @{
+                        @"name": @"Remove RC callback 1",
+                        @"explanation": @"Remove remote config callback 1",
                     },
                     @{
-                        @"name": @"Update all but some Remote Config values",
-                        @"explanation": @"except `a` and `b` keys",
+                        @"name": @"Remove RC callback 2",
+                        @"explanation": @"Remove remote config callback 2",
+                    },
+                    @{
+                        @"name": @"Remove RC callback 3",
+                        @"explanation": @"Remove remote config callback 3",
+                    },
+                    
+                    @{
+                        @"name": @"Download RC",
+                        @"explanation": @"for all keys",
+                    },
+                    
+                    @{
+                        @"name": @"Download RC (keys)",
+                        @"explanation": @"for `rc_1` key",
+                    },
+                    
+                    @{
+                        @"name": @"Download RC (omit keys)",
+                        @"explanation": @"for `ab_1` key",
+                    },
+                    
+                    @{
+                        @"name": @"Get RC",
+                        @"explanation": @"get all RC values",
+                    },
+                    @{
+                        @"name": @"Get RC (key)",
+                        @"explanation": @"for `ab_1` key",
+                    },
+                    
+                    @{
+                        @"name": @"Clear RC",
+                        @"explanation": @"clear all RC values",
+                    },
+                    
+                    @{
+                        @"name": @"AB enroll (keys)",
+                        @"explanation": @"for `ab_1` key",
+                    },
+                    @{
+                        @"name": @"AB exit (keys)",
+                        @"explanation": @"for `ab_1` key",
+                    },
+                    @{
+                        @"name": @"Download Variants",
+                        @"explanation": @"download all variants",
+                    },
+                    @{
+                        @"name": @"Get Variants",
+                        @"explanation": @"get all variants",
+                    },
+                    @{
+                        @"name": @"Get Variant",
+                        @"explanation": @"for `ab_1` key",
+                    },
+                    @{
+                        @"name": @"AB enroll (variant)",
+                        @"explanation": @"for key: `ab_1` and name: 'Variant B'",
                     },
                 ]
         },
@@ -1210,59 +1273,148 @@ typedef enum : NSUInteger
             {
                 case 0:
                 {
-                    id levelDifficulty = [Countly.sharedInstance remoteConfigValueForKey:@"level_difficulty"];
-                    NSLog(@"Level Difficulty: %@", levelDifficulty);
-                }
+                    [Countly.sharedInstance.remoteConfig registerDownloadCallback:rcCallback1];
                     break;
+                }
                     
                 case 1:
                 {
-                    [Countly.sharedInstance updateRemoteConfigWithCompletionHandler:^(NSError * error)
-                     {
-                        if (!error)
-                        {
-                            NSLog(@"Remote Config is updated and ready to use!");
-                        }
-                        else
-                        {
-                            NSLog(@"There is an error while updating Remote Config:\n%@", error);
-                        }
-                    }];
-                }
+                    [Countly.sharedInstance.remoteConfig registerDownloadCallback:rcCallback2];
                     break;
-                    
+                }
                 case 2:
                 {
-                    [Countly.sharedInstance updateRemoteConfigOnlyForKeys:@[@"a", @"b"] completionHandler:^(NSError * error)
-                     {
-                        if (!error)
-                        {
-                            NSLog(@"Remote Config is updated and ready to use!");
-                        }
-                        else
-                        {
-                            NSLog(@"There is an error while updating Remote Config:\n%@", error);
-                        }
-                    }];
-                }
+                    [Countly.sharedInstance.remoteConfig registerDownloadCallback:rcCallback3];
                     break;
+                }
                     
                 case 3:
                 {
-                    [Countly.sharedInstance updateRemoteConfigExceptForKeys:@[@"a", @"b"] completionHandler:^(NSError * error)
-                     {
-                        if (!error)
-                        {
-                            NSLog(@"Remote Config is updated and ready to use!");
+                    [Countly.sharedInstance.remoteConfig removeDownloadCallback:rcCallback1];
+                    break;
+                }
+                    
+                case 4:
+                {
+                    [Countly.sharedInstance.remoteConfig removeDownloadCallback:rcCallback2];
+                    break;
+                }
+                case 5:
+                {
+                    [Countly.sharedInstance.remoteConfig removeDownloadCallback:rcCallback3];
+                    break;
+                }
+                    
+                case 6:
+                {
+                    [Countly.sharedInstance.remoteConfig downloadKeys:^(CLYRequestResult  _Nonnull response, NSError * _Nullable error, BOOL fullValueUpdate, NSDictionary<NSString *,CountlyRCData *> * _Nonnull downloadedValues) {
+                        if(response == CLYResponseSuccess) {
+                            NSLog(@"Download RC is successful. \n%@", downloadedValues);
                         }
-                        else
-                        {
-                            NSLog(@"There is an error while updating Remote Config:\n%@", error);
+                        else {
+                            NSLog(@"Download RC failed: %@", error);
                         }
                     }];
-                }
                     break;
+                }
+                    
+                case 7:
+                {
+                    [Countly.sharedInstance.remoteConfig downloadSpecificKeys:@[@"rc_1"] completionHandler:^(CLYRequestResult  _Nonnull response, NSError * _Nullable error, BOOL fullValueUpdate, NSDictionary<NSString *,CountlyRCData *> * _Nonnull downloadedValues) {
+                        if(response == CLYResponseSuccess) {
+                            NSLog(@"Download RC is successful. \n%@", downloadedValues);
+                        }
+                        else {
+                            NSLog(@"Download RC failed: %@", error);
+                        }
+                    }];
+                    break;
+                }
+                case 8:
+                {
+                    [Countly.sharedInstance.remoteConfig downloadOmittingKeys:@[@"ab_1"] completionHandler:^(CLYRequestResult  _Nonnull response, NSError * _Nullable error, BOOL fullValueUpdate, NSDictionary<NSString *,CountlyRCData *> * _Nonnull downloadedValues) {
+                        if(response == CLYResponseSuccess) {
+                            NSLog(@"Download RC is successful. \n%@", downloadedValues);
+                        }
+                        else {
+                            NSLog(@"Download RC failed: %@", error);
+                        }
+                    }];
+                    break;
+                }
+                    
+                case 9:
+                {
+                    NSDictionary<NSString*, CountlyRCData *> * rCValues = [Countly.sharedInstance.remoteConfig getAllValues];
+                    
+                    NSLog(@"Get all RC is successful. \n%@", rCValues);
+                    break;
+                }
+                case 10:
+                {
+                    CountlyRCData* rCValue = [Countly.sharedInstance.remoteConfig getValue:@"rc_1"];
+                    
+                    NSLog(@"Get RC for key 'rc_1' is successful. \n%@", rCValue);
+                    break;
+                }
+                    
+                case 11:
+                {
+                    [Countly.sharedInstance.remoteConfig clearAll];
+                    break;
+                }
+                    
+                case 12:
+                {
+                    [Countly.sharedInstance.remoteConfig enrollIntoABTestsForKeys:@[@"ab_1"]];
+                    break;
+                }
+                case 13:
+                {
+                    [Countly.sharedInstance.remoteConfig exitABTestsForKeys:@[@"ab_1"]];
+                    break;
+                }
+                    
+                case 14:
+                {
+                    [Countly.sharedInstance.remoteConfig testingDownloadVariantInformation:^(CLYRequestResult  _Nonnull response, NSError * _Nullable error) {
+                        if(response == CLYResponseSuccess) {
+                            NSLog(@"testingDownloadVariantInformation is successful.");
+                        }
+                        else {
+                            NSLog(@"testingDownloadVariantInformation failed: %@", error);
+                        }
+                    }];
+                    break;
+                }
+                case 15:
+                {
+                    NSDictionary * variants = [Countly.sharedInstance.remoteConfig testingGetAllVariants];
+                    NSLog(@"testingGetAllVariants is successful. \n%@", variants);
+                    break;
+                }
+                    
+                case 16:
+                {
+                    NSArray * variant = [Countly.sharedInstance.remoteConfig testingGetVariantsForKey:@"ab_1"];
+                    NSLog(@"testingGetAllVariants is successful. \n%@", variant);
+                    break;
+                }
+                    
+                case 17:
+                {
+                    [Countly.sharedInstance.remoteConfig testingEnrollIntoVariant:@"ab_1" variantName:@"Variant B" completionHandler:^(CLYRequestResult  _Nonnull response, NSError * _Nullable error) {
+                        if(response == CLYResponseSuccess) {
+                            NSLog(@"testingEnrollIntoVariant is successful.");
+                        }
+                        else {
+                            NSLog(@"testingEnrollIntoVariant failed: %@", error);
+                        }
+                    }];
+                    break;
+                }
             }
+            break;
         }
             
             
@@ -1274,10 +1426,10 @@ typedef enum : NSUInteger
                 case 0: [Countly.sharedInstance askForStarRating:^(NSInteger rating){ NSLog(@"rating %d",(int)rating); }];
                     break;
                     
-                case 1: [Countly.sharedInstance setNewDeviceID:@"user@example.com" onServer:NO];
+                case 1: [Countly.sharedInstance changeDeviceIDWithoutMerge:@"user@example.com"];
                     break;
                     
-                case 2: [Countly.sharedInstance setNewDeviceID:nil onServer:YES];
+                case 2: [Countly.sharedInstance changeDeviceIDWithMerge:nil];
                     break;
                     
                 case 3: [Countly.sharedInstance beginSession];
@@ -1290,12 +1442,13 @@ typedef enum : NSUInteger
                     break;
                     
                 case 6:
-                    [Countly.sharedInstance presentRatingWidgetWithID:@"FEEDBACK_WIDGET_ID" completionHandler:^(NSError * _Nullable error) {
+                    [Countly.sharedInstance presentRatingWidgetWithID:@"645de9d4b31eb33639e7022a" completionHandler:^(NSError * _Nullable error) {
                         if (error)
                             NSLog(@"Feedback widget presentation failed: \n%@\n%@", error.localizedDescription, error.userInfo);
                         else
                             NSLog(@"Feedback widget presented successfully");
                     }];
+                    break;
                 case 7:
                     [self presentFeedbackWidget:CLYFeedbackWidgetTypeNPS];
                     break;
@@ -1313,6 +1466,21 @@ typedef enum : NSUInteger
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+RCDownloadCallback rcCallback1 = ^(CLYRequestResult response, NSError * error, BOOL fullValueUpdate, NSDictionary* downloadedValues)
+{
+    printf("remoteConfigLocalCallback rcCallback 1");
+};
+
+RCDownloadCallback rcCallback2 = ^(CLYRequestResult response, NSError * error, BOOL fullValueUpdate, NSDictionary* downloadedValues)
+{
+    printf("remoteConfigLocalCallback rcCallback 2");
+};
+
+RCDownloadCallback rcCallback3 = ^(CLYRequestResult response, NSError * error, BOOL fullValueUpdate, NSDictionary* downloadedValues)
+{
+    printf("remoteConfigLocalCallback rcCallback 3");
+};
 
 
 #pragma mark -

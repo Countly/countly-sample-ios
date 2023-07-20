@@ -13,6 +13,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate
 enum TestSection : Int
 {
     case CustomEvents = 0
+    case Views
     case CrashReporting
     case UserDetails
     case APM
@@ -26,6 +27,7 @@ class ViewController: UIViewController
 {
     let sections : [String] = [
         "Custom Events",
+        "Views",
         "Crash Reporting",
         "User Details",
         "APM",
@@ -46,7 +48,16 @@ class ViewController: UIViewController
          "Record Event with Segmentation, Count, Sum & Dur.",
          "Start Event",
          "End Event",
-         "End Event with Segmentation, Count & Sum"],
+         "End Event with Segmentation, Count & Sum",
+         "Basic Internal NPS Event",
+         "Basic Internal Survey Event",
+         "Basic Internal Stat Rating Event",
+         "Basic Internal Orientation Event"],
+        
+        ["Record View A",
+         "Record View B",
+         "Record View C",
+         "Record View D"],
         
         ["Unrecognized Selector",
          "Out of Bounds",
@@ -105,6 +116,7 @@ class ViewController: UIViewController
          "Thread 8"],
         
         ["Ask for Star-Rating",
+         "Present Rating Widget",
          "Present NPS",
          "Present Survey",
          "Set New Device ID",
@@ -206,10 +218,49 @@ class ViewController: UIViewController
             case 10: Countly.sharedInstance().endEvent("timed-event", segmentation:["k" : "v"], count:1, sum:0)
                 break
                 
+            case 11: Countly.sharedInstance().recordEvent(kCountlyReservedEventNPS)
+                break
+                
+            case 12: Countly.sharedInstance().recordEvent(kCountlyReservedEventSurvey)
+                break
+                
+                
+            case 13: Countly.sharedInstance().recordEvent("[CLY]_star_rating")
+                break
+                
+            case 14: Countly.sharedInstance().recordEvent("[CLY]_orientation")
+                break
+                
             default:
                 break
             }
             break
+            
+        case TestSection.Views.rawValue: //MARK: Custom Events
+            switch (indexPath.row)
+            {
+            case 0: Countly.sharedInstance().recordView("View A")
+                break
+                
+            
+            case 1: Countly.sharedInstance().recordView("View B")
+                break
+                
+                
+            case 2: Countly.sharedInstance().recordView("View C")
+                break
+                
+                
+            case 3: Countly.sharedInstance().recordView("View D")
+                break
+                
+            
+                
+            default:
+                break
+            }
+            break
+            
             
             
         case TestSection.CrashReporting.rawValue: //MARK: Crash Reporting
@@ -531,16 +582,22 @@ class ViewController: UIViewController
             })
                 break
                 
-            case 1: presentFeedbackWidget(widgetType: CLYFeedbackWidgetType.NPS)
+            case 1:
+                Countly.sharedInstance().presentRatingWidget(withID: "645de9d4b31eb33639e7022a") { error in
+                    print("presentRatingWidget \(error.debugDescription)")
+                }
+                          break
+                
+            case 2:presentFeedbackWidget(widgetType: CLYFeedbackWidgetType.NPS)
                 break
                 
-            case 2: presentFeedbackWidget(widgetType: CLYFeedbackWidgetType.survey)
+            case 3: presentFeedbackWidget(widgetType: CLYFeedbackWidgetType.survey)
                 break
                 
-            case 3: Countly.sharedInstance().setNewDeviceID("user@example.com", onServer:false)
+            case 4: Countly.sharedInstance().setNewDeviceID("user@example.com", onServer:false)
                 break
                 
-            case 4: Countly.sharedInstance().setNewDeviceID(nil, onServer:true)
+            case 5: Countly.sharedInstance().setNewDeviceID(nil, onServer:true)
                 break
                 
             default: break

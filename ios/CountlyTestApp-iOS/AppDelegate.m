@@ -11,15 +11,29 @@
 
 @implementation AppDelegate
 
+- (void)internalLog:(nonnull NSString *)log withLevel:(CLYInternalLogLevel)level {
+    NSLog(@"Countly internalLog : %@", log);
+}
+RCDownloadCallback rcGlobalCallback = ^(CLYRequestResult response, NSError * error, BOOL fullValueUpdate, NSDictionary* downloadedValues)
+{
+    NSLog(@"remoteConfigCallback rcGlobalCallback");
+};
+
+RCDownloadCallback rcCallback = ^(CLYRequestResult response, NSError * error, BOOL fullValueUpdate, NSDictionary* downloadedValues)
+{
+    NSLog(@"remoteConfigCallback rcCallback");
+};
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     CountlyConfig* config = CountlyConfig.new;
+    config.loggerDelegate = self; 
     config.appKey = @"YOUR_APP_KEY";
     config.host = @"https://YOUR_COUNTLY_SERVER";
     config.enableDebug = YES;
 
 //    config.features = @[CLYPushNotifications, CLYCrashReporting, CLYAutoViewTracking];     //Optional features
-
+//    config.pushTestMode = CLYPushTestModeDevelopment;
 //    config.requiresConsent = YES;                                 //Optional consents
 
 //    config.isTestDevice = YES;                                    //Optional marking as test device for CLYPushNotifications
@@ -70,7 +84,14 @@
 //        }
 //    };
 
+    config.enableRemoteConfigValueCaching = YES;
+    config.enableRemoteConfigAutomaticTriggers = YES;
+    [config remoteConfigRegisterGlobalCallback:rcGlobalCallback];
+
     [Countly.sharedInstance startWithConfig:config];
+    
+    
+    [Countly.sharedInstance.remoteConfig registerDownloadCallback:rcCallback];
 
 
     self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];

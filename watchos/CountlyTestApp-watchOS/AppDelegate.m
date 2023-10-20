@@ -14,7 +14,7 @@
     CountlyConfig* config = CountlyConfig.new;
     config.appKey = @"YOUR_APP_KEY";
     config.host = @"https://YOUR_COUNTLY_SERVER";
-    config.enableAppleWatch = YES;
+//    config.enableAppleWatch = YES;
     config.enableDebug = YES;
 
 //  config.deviceID = @"customDeviceID"                               //Optional custom or system generated device ID

@@ -16,6 +16,7 @@ enum TestSection : Int
     case Views
     case CrashReporting
     case UserDetails
+    case RemoteConfig
     case APM
     case ViewTracking
     case PushNotifications
@@ -30,6 +31,7 @@ class ViewController: UIViewController
         "Views",
         "Crash Reporting",
         "User Details",
+        "Remote Config",
         "APM",
         "View Tracking",
         "Push Notifications",
@@ -73,6 +75,22 @@ class ViewController: UIViewController
         ["Record User Details",
          "Custom Modifiers 1",
          "Custom Modifiers 2"],
+        
+        ["Download All RC Values",
+         "Download Specific RC Values",
+         "Download Omitting Specific RC Values",
+         "Get All RC Values",
+         "Get Specific RC Values",
+         "Clear All RC Values",
+         "Register RC Download Callback",
+         "Remove RC Download Callback",
+         "Get All RC Values And Enroll",
+         "Get Specific RC Values And Enroll",
+         "Enroll Into AB Tests",
+         "Exit AB Tests",
+         "Fetch All Test Variants",
+         "Fetch Specific Test Variants",
+         "Download Experiment Information"],
         
         ["sendSynchronous",
          "sendAsynchronous",
@@ -359,7 +377,103 @@ class ViewController: UIViewController
                 break
             }
             break
-            
+//                "Download Experiment Information"
+        case TestSection.RemoteConfig.rawValue: //MARK: User Details
+            switch (indexPath.row)
+            {
+                case 0:
+                    Countly.sharedInstance().remoteConfig().downloadKeys { response, error, fullValueUpdate , downloadedValues in
+                        if(response == .responseSuccess) {
+                            print(downloadedValues);
+                        }
+                        else {
+                            print(error?.localizedDescription ?? "");
+                        }
+                    }
+                    break
+                    
+                case 1:
+                    Countly.sharedInstance().remoteConfig().downloadSpecificKeys(["RC_KEY"]) { response, error, fullValueUpdate , downloadedValues in
+                        if(response == .responseSuccess) {
+                            print(downloadedValues);
+                        }
+                        else {
+                            print(error?.localizedDescription ?? "");
+                        }
+                    }
+                    break
+                case 2:
+                    Countly.sharedInstance().remoteConfig().downloadOmittingKeys(["RC_KEY"]) { response, error, fullValueUpdate , downloadedValues in
+                        if(response == .responseSuccess) {
+                            print(downloadedValues);
+                        }
+                        else {
+                            print(error?.localizedDescription ?? "");
+                        }
+                    }
+                    break
+                case 3:
+                    let rcValues : [String : CountlyRCData] = Countly.sharedInstance().remoteConfig().getAllValues();
+                    print(rcValues);
+                    break
+                case 4:
+                    let rcValue = Countly.sharedInstance().remoteConfig().getValue("RC_KEY");
+                    print(rcValue)
+                    break
+                case 5:
+                    Countly.sharedInstance().remoteConfig().clearAll()
+                    break
+                case 6:
+                    Countly.sharedInstance().remoteConfig().registerDownloadCallback(rcCallback1);
+                    break
+                case 7:
+                    Countly.sharedInstance().remoteConfig().removeDownloadCallback(rcCallback1);
+                    break
+                case 8:
+                    Countly.sharedInstance().remoteConfig().getAllValuesAndEnroll();
+                    break
+                case 9:
+                    Countly.sharedInstance().remoteConfig().getValueAndEnroll("RC_KEY")
+                    break
+                case 10:
+                    Countly.sharedInstance().remoteConfig().enrollIntoABTests(forKeys: ["RC_KEY"])
+                    break
+                case 11:
+                    Countly.sharedInstance().remoteConfig().exitABTests(forKeys: ["RC_KEY"])
+                    break
+                case 12:
+                    Countly.sharedInstance().remoteConfig().downloadOmittingKeys(["RC_KEY"]) { response, error, fullValueUpdate , downloadedValues in
+                        if(response == .responseSuccess) {
+                            print(downloadedValues);
+                        }
+                        else {
+                            print(error?.localizedDescription ?? "");
+                        }
+                    }
+                    break
+                case 13:
+                    let allVairiants = Countly.sharedInstance().remoteConfig().testingGetAllVariants();
+                    break
+                case 14:
+                    let variant = Countly.sharedInstance().remoteConfig().testingGetVariants(forKey: "RC_KEY");
+                    break
+                case 15:
+                    Countly.sharedInstance().remoteConfig().testingDownloadExperimentInformation { response, error in
+                        if(response == .responseSuccess) {
+                           let allExperiments =  Countly.sharedInstance().remoteConfig().testingGetAllExperimentInfo();
+                            print(allExperiments ?? "");
+                        }
+                        else {
+                            print(error?.localizedDescription ?? "");
+                        }
+                    }
+                    break
+                    
+                default:
+                    break
+            }
+            break
+        
             
         case TestSection.APM.rawValue: //MARK: APM
             let urlString : String = "http://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json"
@@ -639,7 +753,7 @@ class ViewController: UIViewController
             }
         }
     }
-    
+
     func crashTest0()
     {
         let s : Selector = Selector("thisIsTheUnrecognized"+"SelectorCausingTheCrash");
@@ -680,5 +794,15 @@ class ViewController: UIViewController
     {
         kill(getpid(), SIGTERM)
     }
+    
+    let rcCallback1 : RCDownloadCallback = { response, error, fullValueUpdate , downloadedValues in
+        if(response == .responseSuccess) {
+            print(downloadedValues);
+        }
+        else {
+            print(error?.localizedDescription ?? "");
+        }
+    }
+    
 }
 

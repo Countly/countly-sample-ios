@@ -29,8 +29,13 @@ RCDownloadCallback rcCallback = ^(CLYRequestResult response, NSError * error, BO
     CountlyConfig* config = CountlyConfig.new;
     config.loggerDelegate = self; 
     config.appKey = @"YOUR_APP_KEY";
-    config.host = @"https://YOUR_COUNTLY_SERVER";
+    config.host = @"https://your.server.ly";
     config.enableDebug = YES;
+    
+    if ([config.appKey isEqualToString:@"YOUR_APP_KEY"] || [config.host isEqualToString:@"https://your.server.ly"]) {
+        NSLog(@"Please do not use default set of app key and server url");
+        exit(0);
+    }
 
 //    config.features = @[CLYPushNotifications, CLYCrashReporting, CLYAutoViewTracking];     //Optional features
 //    config.pushTestMode = CLYPushTestModeDevelopment;

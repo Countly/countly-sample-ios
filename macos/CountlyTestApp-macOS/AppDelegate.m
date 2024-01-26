@@ -18,7 +18,6 @@
 
     if ([config.appKey isEqualToString:@"YOUR_APP_KEY"] || [config.host isEqualToString:@"https://your.server.ly"]) {
         NSLog(@"Please do not use default set of app key and server url");
-        exit(0);
     }
     
 //  config.features = @[CLYPushNotifications];              //Optional  push notification features

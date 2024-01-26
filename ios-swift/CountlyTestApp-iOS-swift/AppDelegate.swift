@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         
         if (config.appKey == "YOUR_APP_KEY" || config.host == "https://your.server.ly") {
             NSLog("Please do not use default set of app key and server url")
-            exit(0)
         }
 
 

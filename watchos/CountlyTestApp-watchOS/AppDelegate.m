@@ -17,7 +17,7 @@
     config.enableDebug = YES;
 
 //  config.deviceID = @"customDeviceID"                               //Optional custom or system generated device ID
-//  config.features = @[CLYFeature.pushNotifications, CLYCrashReporting, CLYViewTracking];     //Optional features
+//  config.features = @[CLYPushNotifications, CLYCrashReporting, CLYViewTracking];     //Optional features
     [Countly.sharedInstance startWithConfig:config];
 
     return YES;

@@ -16,7 +16,7 @@
     config.host = @"https://YOUR_COUNTLY_SERVER";
     config.enableDebug = YES;
 
-//  config.features = @[CLYFeature.pushNotifications];              //Optional  push notification features
+//  config.features = @[CLYPushNotifications];              //Optional  push notification features
 //  config.launchNotification = aNotification;              //Optional launch notification for push notification feature
 //  config.deviceID = @"customDeviceID"                     //Optional custom or system generated device ID
     [Countly.sharedInstance startWithConfig:config];

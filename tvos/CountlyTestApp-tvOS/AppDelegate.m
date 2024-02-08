@@ -13,10 +13,14 @@
 {
     CountlyConfig* config = CountlyConfig.new;
     config.appKey = @"YOUR_APP_KEY";
-    config.host = @"https://YOUR_COUNTLY_SERVER";
+    config.host = @"https://your.server.ly";
     config.enableDebug = YES;
 
-//  config.deviceID = @"customDeviceID"                               //Optional custom or system generated device ID    
+    if ([config.appKey isEqualToString:@"YOUR_APP_KEY"] || [config.host isEqualToString:@"https://your.server.ly"]) {
+        NSLog(@"Please do not use default set of app key and server url");
+    }
+    
+//  config.deviceID = @"customDeviceID"                               //Optional custom or system generated device ID
 //  config.features = @[CLYCrashReporting, CLYAutoViewTracking];                                      //Optional features
     [Countly.sharedInstance startWithConfig:config];
 

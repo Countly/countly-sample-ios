@@ -18,14 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         config.host = "https://YOUR_COUNTLY_SERVER"
         config.enableDebug = true
 
-//      config.features = [CLYFeature.pushNotifications, CLYCrashReporting, CLYAutoViewTracking] //Optional features
+//      config.features = [CLYFeature.pushNotifications, CLYFeature.CLYCrashReporting, CLYFeature.CLYAutoViewTracking] //Optional features
 
 //      config.launchOptions = launchOptions                            //Prior to v16.10 was required for CLYFeature.pushNotifications
 //      config.isTestDevice = true                                      //Optional marking as test device for CLYFeature.pushNotifications
 //      config.sendPushTokenAlways = true                               //Optional forcing to send token always
 //      config.doNotShowAlertForNotifications = true                    //Optional disabling alerts shown by notification
 
-//      config.crashSegmentation = ["SomeOtherSDK":"v3.4.5"];           //Optional crash segmentation for CLYCrashReporting
+//      config.crashSegmentation = ["SomeOtherSDK":"v3.4.5"];           //Optional crash segmentation for CLYFeature.CLYCrashReporting
 
 //      config.deviceID = "customDeviceID"                              //Optional custom or system generated device ID
 //      config.forceDeviceIDInitialization = true                       //Optional forcing to re-initialize device ID

@@ -32,11 +32,11 @@ RCDownloadCallback rcCallback = ^(CLYRequestResult response, NSError * error, BO
     config.host = @"https://YOUR_COUNTLY_SERVER";
     config.enableDebug = YES;
 
-//    config.features = @[CLYFeature.pushNotifications, CLYCrashReporting, CLYAutoViewTracking];     //Optional features
+//    config.features = @[CLYPushNotifications, CLYCrashReporting, CLYAutoViewTracking];     //Optional features
 //    config.pushTestMode = CLYPushTestModeDevelopment;
 //    config.requiresConsent = YES;                                 //Optional consents
 
-//    config.isTestDevice = YES;                                    //Optional marking as test device for CLYFeature.pushNotifications
+//    config.isTestDevice = YES;                                    //Optional marking as test device for CLYPushNotifications
 //    config.sendPushTokenAlways = YES;                             //Optional forcing to send token always
 //    config.doNotShowAlertForNotifications = YES;                  //Optional disabling alerts shown by notification
 //    config.location = (CLLocationCoordinate2D){35.6895,139.6917}; //Optional location for geo-location push

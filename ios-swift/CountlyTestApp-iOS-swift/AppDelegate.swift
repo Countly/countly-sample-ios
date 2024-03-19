@@ -14,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
         let config: CountlyConfig = CountlyConfig()
-        config.appKey = "e14e913a4b451bc8a5c413acd1d2219a9b30b055"
-        config.host = "https://master.count.ly"
+        config.appKey = "YOUR_APP_KEY"
+        config.host = "https://YOUR_COUNTLY_SERVER"
         config.enableDebug = true
         config.features = [CLYFeature.pushNotifications]
         config.pushTestMode = CLYPushTestMode.development

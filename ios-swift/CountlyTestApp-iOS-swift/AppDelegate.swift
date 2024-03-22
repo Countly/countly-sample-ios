@@ -17,20 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         config.appKey = "YOUR_APP_KEY"
         config.host = "https://your.server.ly"
         config.enableDebug = true
+        config.features = [CLYFeature.pushNotifications]
+        config.pushTestMode = CLYPushTestMode.development
         
         if (config.appKey == "YOUR_APP_KEY" || config.host == "https://your.server.ly") {
             NSLog("Please do not use default set of app key and server url")
         }
 
+//      config.features = [CLYFeature.pushNotifications, CLYFeature.crashReporting] //Optional features
 
-//      config.features = [CLYPushNotifications, CLYCrashReporting, CLYAutoViewTracking] //Optional features
-
-//      config.launchOptions = launchOptions                            //Prior to v16.10 was required for CLYPushNotifications
-//      config.isTestDevice = true                                      //Optional marking as test device for CLYPushNotifications
-//      config.sendPushTokenAlways = ture                               //Optional forcing to send token always
+//      config.launchOptions = launchOptions                            //Prior to v16.10 was required for CLYFeature.pushNotifications
+//      config.isTestDevice = true                                      //Optional marking as test device for CLYFeature.pushNotifications
+//      config.sendPushTokenAlways = true                               //Optional forcing to send token always
 //      config.doNotShowAlertForNotifications = true                    //Optional disabling alerts shown by notification
 
-//      config.crashSegmentation = ["SomeOtherSDK":"v3.4.5"];           //Optional crash segmentation for CLYCrashReporting
+//      config.crashSegmentation = ["SomeOtherSDK":"v3.4.5"];           //Optional crash segmentation for CLYFeature.crashReporting
 
 //      config.deviceID = "customDeviceID"                              //Optional custom or system generated device ID
 //      config.forceDeviceIDInitialization = true                       //Optional forcing to re-initialize device ID

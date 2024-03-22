@@ -46,7 +46,8 @@ after you cloned this repository to get the latest Countly iOS SDK.
 
 	* Change Bundle ID CodeSigning configurations according to your developer account configurations.
 	* Change Countly server URL and AppID: `config.appKey = @"YOUR_APP_KEY"; config.host = @"https://YOUR_COUNTLY_SERVER";`
-	* Enable push notifications: `config.features = @[CLYPushNotifications];`
+	* [Objective C only] Enable push notifications: `config.features = @[CLYPushNotifications];`
+	* [Swift only] Enable push notifications: `config.features = @[CLYFeature.pushNotifications];`
 
 3. Create your push notification certificate and upload your Countly server.
 

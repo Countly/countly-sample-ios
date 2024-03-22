@@ -15,10 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     {
         let config: CountlyConfig = CountlyConfig()
         config.appKey = "YOUR_APP_KEY"
-        config.host = "https://YOUR_COUNTLY_SERVER"
+        config.host = "https://your.server.ly"
         config.enableDebug = true
         config.features = [CLYFeature.pushNotifications]
         config.pushTestMode = CLYPushTestMode.development
+        
+        if (config.appKey == "YOUR_APP_KEY" || config.host == "https://your.server.ly") {
+            NSLog("Please do not use default set of app key and server url")
+        }
 
 //      config.features = [CLYFeature.pushNotifications, CLYFeature.crashReporting] //Optional features
 

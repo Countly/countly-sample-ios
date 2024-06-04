@@ -25,6 +25,14 @@
 		1A5D7E0E2A4AD17A0016EC41 /* CountlyRCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5D7DFE2A4AD1650016EC41 /* CountlyRCData.m */; };
 		1A5D7E0F2A4AD17A0016EC41 /* CountlyServerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5D7E002A4AD1650016EC41 /* CountlyServerConfig.m */; };
 		1A5D7E102A4AD17A0016EC41 /* CountlyPerformanceMonitoring.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5D7DF92A4AD1650016EC41 /* CountlyPerformanceMonitoring.m */; };
+		3936DBEA2BF767CE0016E3A1 /* CountlySDKLimitsConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3936DBE52BF767CE0016E3A1 /* CountlySDKLimitsConfig.m */; };
+		3936DBEB2BF767CE0016E3A1 /* CountlySDKLimitsConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3936DBE52BF767CE0016E3A1 /* CountlySDKLimitsConfig.m */; };
+		3936DBEC2BF767CE0016E3A1 /* CountlyAPMConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3936DBE62BF767CE0016E3A1 /* CountlyAPMConfig.m */; };
+		3936DBED2BF767CE0016E3A1 /* CountlyAPMConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3936DBE62BF767CE0016E3A1 /* CountlyAPMConfig.m */; };
+		399F98692C00B5B100BF3F7F /* CountlyCrashData.m in Sources */ = {isa = PBXBuildFile; fileRef = 399F98662C00B5B100BF3F7F /* CountlyCrashData.m */; };
+		399F986A2C00B5B100BF3F7F /* CountlyCrashData.m in Sources */ = {isa = PBXBuildFile; fileRef = 399F98662C00B5B100BF3F7F /* CountlyCrashData.m */; };
+		399F986B2C00B5B100BF3F7F /* CountlyCrashesConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 399F98672C00B5B100BF3F7F /* CountlyCrashesConfig.m */; };
+		399F986C2C00B5B100BF3F7F /* CountlyCrashesConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 399F98672C00B5B100BF3F7F /* CountlyCrashesConfig.m */; };
 		D200087C2083B171003DB5DA /* CountlyLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D200087B2083B171003DB5DA /* CountlyLocationManager.m */; };
 		D200087D2083B18F003DB5DA /* CountlyLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D200087B2083B171003DB5DA /* CountlyLocationManager.m */; };
 		D209A7CC1F6B9DBE00B19B9B /* countly_dsym_uploader.sh in Resources */ = {isa = PBXBuildFile; fileRef = D209A7CB1F6B9DBE00B19B9B /* countly_dsym_uploader.sh */; };
@@ -135,6 +143,15 @@
 		1A5D7E022A4AD1650016EC41 /* CountlyRCData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountlyRCData.h; sourceTree = "<group>"; };
 		1A5D7E032A4AD1650016EC41 /* CountlyFeedbackWidget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountlyFeedbackWidget.m; sourceTree = "<group>"; };
 		1A5D7E042A4AD1650016EC41 /* CountlyServerConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountlyServerConfig.h; sourceTree = "<group>"; };
+		3936DBE52BF767CE0016E3A1 /* CountlySDKLimitsConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlySDKLimitsConfig.m; sourceTree = "<group>"; };
+		3936DBE62BF767CE0016E3A1 /* CountlyAPMConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyAPMConfig.m; sourceTree = "<group>"; };
+		3936DBE72BF767CE0016E3A1 /* CountlyAPMConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyAPMConfig.h; sourceTree = "<group>"; };
+		3936DBE82BF767CE0016E3A1 /* CountlySDKLimitsConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlySDKLimitsConfig.h; sourceTree = "<group>"; };
+		3936DBE92BF767CE0016E3A1 /* Resettable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resettable.h; sourceTree = "<group>"; };
+		399F98652C00B5B100BF3F7F /* CountlyCrashesConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCrashesConfig.h; sourceTree = "<group>"; };
+		399F98662C00B5B100BF3F7F /* CountlyCrashData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCrashData.m; sourceTree = "<group>"; };
+		399F98672C00B5B100BF3F7F /* CountlyCrashesConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCrashesConfig.m; sourceTree = "<group>"; };
+		399F98682C00B5B100BF3F7F /* CountlyCrashData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCrashData.h; sourceTree = "<group>"; };
 		D200087A2083B171003DB5DA /* CountlyLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyLocationManager.h; sourceTree = "<group>"; };
 		D200087B2083B171003DB5DA /* CountlyLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyLocationManager.m; sourceTree = "<group>"; };
 		D209A7CB1F6B9DBE00B19B9B /* countly_dsym_uploader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = countly_dsym_uploader.sh; sourceTree = "<group>"; };
@@ -222,6 +239,15 @@
 		D2EB40D31C58C06E00EAA633 /* countly-sdk-ios */ = {
 			isa = PBXGroup;
 			children = (
+				399F98682C00B5B100BF3F7F /* CountlyCrashData.h */,
+				399F98662C00B5B100BF3F7F /* CountlyCrashData.m */,
+				399F98652C00B5B100BF3F7F /* CountlyCrashesConfig.h */,
+				399F98672C00B5B100BF3F7F /* CountlyCrashesConfig.m */,
+				3936DBE72BF767CE0016E3A1 /* CountlyAPMConfig.h */,
+				3936DBE62BF767CE0016E3A1 /* CountlyAPMConfig.m */,
+				3936DBE82BF767CE0016E3A1 /* CountlySDKLimitsConfig.h */,
+				3936DBE52BF767CE0016E3A1 /* CountlySDKLimitsConfig.m */,
+				3936DBE92BF767CE0016E3A1 /* Resettable.h */,
 				1A57F74A2AE0274000E57FBC /* CountlyExperimentInformation.h */,
 				1A57F7492AE0274000E57FBC /* CountlyExperimentInformation.m */,
 				1A57F73C2AE025F700E57FBC /* CountlyViewData.h */,
@@ -502,6 +528,7 @@
 				D2EB40FA1C58C06E00EAA633 /* CountlyDeviceInfo.m in Sources */,
 				D2FADF8A1C464C6A00060D08 /* ViewController.m in Sources */,
 				D2EB40FC1C58C06E00EAA633 /* CountlyPersistency.m in Sources */,
+				3936DBEA2BF767CE0016E3A1 /* CountlySDKLimitsConfig.m in Sources */,
 				D2EB40F61C58C06E00EAA633 /* CountlyCommon.m in Sources */,
 				1A5D7E072A4AD1790016EC41 /* CountlyRemoteConfigInternal.m in Sources */,
 				1A57F7422AE0260100E57FBC /* CountlyFeedbacks.m in Sources */,
@@ -513,8 +540,10 @@
 				D28292271D998CC100D650F2 /* CountlyPushNotifications.m in Sources */,
 				D23C98DA1ECAF287006BCBA4 /* CountlyNotificationService.m in Sources */,
 				1A5D7E092A4AD1790016EC41 /* CountlyServerConfig.m in Sources */,
+				3936DBEC2BF767CE0016E3A1 /* CountlyAPMConfig.m in Sources */,
 				D2EB40F71C58C06E00EAA633 /* CountlyConfig.m in Sources */,
 				D2FB7E5F22142CCF00D6C0AC /* CountlyRemoteConfig.m in Sources */,
+				399F986B2C00B5B100BF3F7F /* CountlyCrashesConfig.m in Sources */,
 				D2EB40F11C58C06E00EAA633 /* Countly.m in Sources */,
 				1A5D7E0A2A4AD1790016EC41 /* CountlyPerformanceMonitoring.m in Sources */,
 				1A5D7E062A4AD1790016EC41 /* CountlyFeedbackWidget.m in Sources */,
@@ -523,6 +552,7 @@
 				1A57F7432AE0260100E57FBC /* CountlyViewData.m in Sources */,
 				D2EB40F81C58C06E00EAA633 /* CountlyConnectionManager.m in Sources */,
 				1A5D7E082A4AD1790016EC41 /* CountlyRCData.m in Sources */,
+				399F98692C00B5B100BF3F7F /* CountlyCrashData.m in Sources */,
 				1A57F74B2AE0274100E57FBC /* CountlyExperimentInformation.m in Sources */,
 				D2FADF841C464C6A00060D08 /* main.m in Sources */,
 				D2EB40F91C58C06E00EAA633 /* CountlyCrashReporter.m in Sources */,
@@ -539,6 +569,7 @@
 				1A57F7452AE0260200E57FBC /* CountlyViewData.m in Sources */,
 				D2FADFAE1C464C6A00060D08 /* InterfaceController.m in Sources */,
 				D2EB41081C58C09900EAA633 /* CountlyDeviceInfo.m in Sources */,
+				399F986A2C00B5B100BF3F7F /* CountlyCrashData.m in Sources */,
 				1A5D7E0F2A4AD17A0016EC41 /* CountlyServerConfig.m in Sources */,
 				1A57F7442AE0260200E57FBC /* CountlyViewTrackingInternal.m in Sources */,
 				D2EB41071C58C09900EAA633 /* CountlyCrashReporter.m in Sources */,
@@ -552,10 +583,13 @@
 				D2FADFB71C464C6A00060D08 /* GlanceController.m in Sources */,
 				1A5D7E0C2A4AD17A0016EC41 /* CountlyFeedbackWidget.m in Sources */,
 				D2EB41091C58C09900EAA633 /* CountlyEvent.m in Sources */,
+				3936DBED2BF767CE0016E3A1 /* CountlyAPMConfig.m in Sources */,
 				D2EB41051C58C09900EAA633 /* CountlyConfig.m in Sources */,
 				D2F0FC431C4756CF007C5556 /* RowController.m in Sources */,
 				1A57F74C2AE0274100E57FBC /* CountlyExperimentInformation.m in Sources */,
 				D22D416C1C6E39EC0078AF7D /* CountlyViewTracking.m in Sources */,
+				3936DBEB2BF767CE0016E3A1 /* CountlySDKLimitsConfig.m in Sources */,
+				399F986C2C00B5B100BF3F7F /* CountlyCrashesConfig.m in Sources */,
 				1A5D7E0B2A4AD17A0016EC41 /* CountlyFeedbacks.m in Sources */,
 				D2FB7E6022142CD400D6C0AC /* CountlyRemoteConfig.m in Sources */,
 				D249AD432070CAE900BFBE18 /* CountlyConsentManager.m in Sources */,

@@ -28,8 +28,8 @@ RCDownloadCallback rcCallback = ^(CLYRequestResult response, NSError * error, BO
 {
     CountlyConfig* config = CountlyConfig.new;
     config.loggerDelegate = self; 
-    config.appKey = @"YOUR_APP_KEY";
-    config.host = @"https://your.server.ly";
+    config.appKey = @"d94e14e1cbf95e09e3a544ae92b0fcd4e9efbeb7";
+    config.host = @"https://gabriel.count.ly";
     config.enableDebug = YES;
     
     if ([config.appKey isEqualToString:@"YOUR_APP_KEY"] || [config.host isEqualToString:@"https://your.server.ly"]) {
@@ -92,6 +92,7 @@ RCDownloadCallback rcCallback = ^(CLYRequestResult response, NSError * error, BO
     config.enableRemoteConfigAutomaticTriggers = YES;
     [config remoteConfigRegisterGlobalCallback:rcGlobalCallback];
 
+    config.enableContentUpdates = YES;
     [Countly.sharedInstance startWithConfig:config];
     
     

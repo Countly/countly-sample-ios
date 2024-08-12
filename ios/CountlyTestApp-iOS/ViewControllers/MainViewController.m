@@ -21,6 +21,7 @@
 
 typedef enum : NSUInteger
 {
+    TestContentBuilder,
     TestSectionCustomEvents,
     TestSectionCrashReporting,
     TestSectionUserDetails,
@@ -53,6 +54,21 @@ typedef enum : NSUInteger
     
     self.tests =
     @[
+        @{
+            @"name": @"Content Builder",
+            @"tests":
+                @[
+                    @{
+                        @"name": @"Open for Content",
+                        @"explanation": @"",
+                    },
+                    @{
+                        @"name": @"Exit from Content",
+                        @"explanation": @"",
+                    },
+                ],
+        },
+        
         @{
             @"name": @"Custom Events",
             @"tests":
@@ -630,7 +646,7 @@ typedef enum : NSUInteger
     
     [self.tbl_main reloadData];
     
-    NSInteger startSection = TestSectionCustomEvents; //start section of testing app can be set here.
+    NSInteger startSection = TestContentBuilder; //start section of testing app can be set here.
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^
                    {
         [self.tbl_main scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:startSection] atScrollPosition:UITableViewScrollPositionTop animated:NO];
@@ -740,6 +756,22 @@ typedef enum : NSUInteger
     
     switch (indexPath.section)
     {
+#pragma mark Content Builder
+        case TestContentBuilder:
+        {
+            switch (indexPath.row)
+            {
+                case 0:
+                    [Countly.sharedInstance.content openForContent];
+                    break;
+                case 1:
+                    [Countly.sharedInstance.content exitFromContent];
+                    break;
+                default: break;
+            }
+        }
+            
+            break;
 #pragma mark Custom Events
         case TestSectionCustomEvents:
         {

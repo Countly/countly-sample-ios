@@ -24,6 +24,9 @@
 		399117EA2C69FF0600DC4C66 /* CountlySDKLimitsConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 399117E42C69FF0600DC4C66 /* CountlySDKLimitsConfig.m */; };
 		399117EB2C69FF0600DC4C66 /* CountlyCrashData.m in Sources */ = {isa = PBXBuildFile; fileRef = 399117E52C69FF0600DC4C66 /* CountlyCrashData.m */; };
 		399117EC2C69FF0600DC4C66 /* CountlyCrashesConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 399117E72C69FF0600DC4C66 /* CountlyCrashesConfig.m */; };
+		9663534E2CF85B6100F30BDE /* CountlyContentConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9663534D2CF85B6100F30BDE /* CountlyContentConfig.m */; };
+		966353512CF85B9500F30BDE /* CountlyExperimentalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9663534F2CF85B9500F30BDE /* CountlyExperimentalConfig.m */; };
+		966353522CF85B9500F30BDE /* CountlyFeedbacksInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 966353502CF85B9500F30BDE /* CountlyFeedbacksInternal.m */; };
 		D2314A001EB151CF0026F0DD /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D23149FF1EB151CF0026F0DD /* NotificationService.m */; };
 		D2314A041EB151CF0026F0DD /* CountlyNSE.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D23149FC1EB151CF0026F0DD /* CountlyNSE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D2314A0B1EB1528B0026F0DD /* CountlyNotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2314A0A1EB1528B0026F0DD /* CountlyNotificationService.m */; };
@@ -120,6 +123,9 @@
 		399117E72C69FF0600DC4C66 /* CountlyCrashesConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCrashesConfig.m; sourceTree = "<group>"; };
 		399117E82C69FF0600DC4C66 /* CountlySDKLimitsConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlySDKLimitsConfig.h; sourceTree = "<group>"; };
 		399117E92C69FF0600DC4C66 /* CountlyCrashesConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCrashesConfig.h; sourceTree = "<group>"; };
+		9663534D2CF85B6100F30BDE /* CountlyContentConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyContentConfig.m; path = "../countly-sdk-ios/CountlyContentConfig.m"; sourceTree = "<group>"; };
+		9663534F2CF85B9500F30BDE /* CountlyExperimentalConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyExperimentalConfig.m; path = "../countly-sdk-ios/CountlyExperimentalConfig.m"; sourceTree = "<group>"; };
+		966353502CF85B9500F30BDE /* CountlyFeedbacksInternal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyFeedbacksInternal.m; path = "../countly-sdk-ios/CountlyFeedbacksInternal.m"; sourceTree = "<group>"; };
 		D203EA7A1FDED8CF00A03F32 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		D23149FC1EB151CF0026F0DD /* CountlyNSE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CountlyNSE.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23149FE1EB151CF0026F0DD /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
@@ -330,6 +336,9 @@
 		D2BAB09517EC8EE600807D0D = {
 			isa = PBXGroup;
 			children = (
+				9663534F2CF85B9500F30BDE /* CountlyExperimentalConfig.m */,
+				966353502CF85B9500F30BDE /* CountlyFeedbacksInternal.m */,
+				9663534D2CF85B6100F30BDE /* CountlyContentConfig.m */,
 				D2BAB0A717EC8EE600807D0D /* CountlyTestApp-iOS */,
 				D2EB404C1C58BFAA00EAA633 /* countly-sdk-ios */,
 				D23149FD1EB151CF0026F0DD /* CountlyNSE */,
@@ -559,6 +568,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				966353512CF85B9500F30BDE /* CountlyExperimentalConfig.m in Sources */,
+				966353522CF85B9500F30BDE /* CountlyFeedbacksInternal.m in Sources */,
+				9663534E2CF85B6100F30BDE /* CountlyContentConfig.m in Sources */,
 				D273859F1D963842008D201F /* CountlyPushNotifications.m in Sources */,
 				D2340D191E33BE15003C3841 /* TestPushPopViewController.m in Sources */,
 				D252ECE61F7203C200481A79 /* EYCrashTesting.m in Sources */,

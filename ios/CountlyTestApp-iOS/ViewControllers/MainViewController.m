@@ -9,6 +9,8 @@
 #import "TestModalViewController.h"
 #import "TestPushPopViewController.h"
 #import "EventCreatorViewController.h"
+#import "DeviceIdChangerViewController.h"
+
 #import "UserDetailsEditorViewController.h"
 #import "UserDetailsCustomModifiersViewController.h"
 #import "EYLogViewer.h"
@@ -36,6 +38,17 @@ typedef enum : NSUInteger
 } TestSection;
 
 @implementation MainViewController
+
+
+static NSURLSessionConfiguration *_sessionConfig;
+
++ (void)setSessionConfig:(NSURLSessionConfiguration *)config {
+    _sessionConfig = config;
+}
+
++ (NSURLSessionConfiguration *)sessionConfig {
+    return _sessionConfig;
+}
 
 - (void)viewDidLoad
 {
@@ -67,7 +80,7 @@ typedef enum : NSUInteger
                         @"explanation": @"",
                     },
                     @{
-                        @"name": @"set new device id",
+                        @"name": @"Change Device ID",
                         @"explanation": @"",
                     },
                 ],
@@ -757,9 +770,6 @@ typedef enum : NSUInteger
     NSString* sectionName = self.tests[indexPath.section][@"name"];
     NSArray* tests = self.tests[indexPath.section][@"tests"];
     NSLog(@"Test: %@ - %@", sectionName, tests[indexPath.row][@"name"]);
-    NSString *baseString = @"arif";
-    NSString *timestamp = [NSString stringWithFormat:@"_%@", @([[NSDate date] timeIntervalSince1970])];
-    NSString *finalString = [baseString stringByAppendingString:timestamp];
     switch (indexPath.section)
     {
 #pragma mark Content Builder
@@ -767,14 +777,21 @@ typedef enum : NSUInteger
         {
             switch (indexPath.row)
             {
-                case 0:
+                case 0: {
                     [Countly.sharedInstance.content enterContentZone];
+                   
+
                     break;
+                }
                 case 1:
-                    [Countly.sharedInstance.content exitContentZone];
+                    [Countly.sharedInstance.content refreshContentZone];
                     break;
                 case 2:
-                    [Countly.sharedInstance setID:finalString];
+                {
+                    DeviceIdChangerViewController* controller = [DeviceIdChangerViewController new];
+                    [self addChildViewController:controller];
+                    [self.view addSubview:controller.view];
+                }
                     break;
                 default: break;
             }
@@ -1483,12 +1500,7 @@ typedef enum : NSUInteger
                     break;
                     
                 case 6:
-                    [Countly.sharedInstance presentRatingWidgetWithID:@"645de9d4b31eb33639e7022a" completionHandler:^(NSError * _Nullable error) {
-                        if (error)
-                            NSLog(@"Feedback widget presentation failed: \n%@\n%@", error.localizedDescription, error.userInfo);
-                        else
-                            NSLog(@"Feedback widget presented successfully");
-                    }];
+                    [Countly.sharedInstance.feedback presentRating];
                     break;
                 case 7:
                     [self presentFeedbackWidget:CLYFeedbackWidgetTypeNPS];

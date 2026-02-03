@@ -118,7 +118,8 @@ RCDownloadCallback rcCallback = ^(CLYRequestResult response, NSError * error, BO
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
             TestModalViewController* tmvc = [storyboard instantiateViewControllerWithIdentifier:@"TestModalViewController"];
             tmvc.title = [@"Page of " stringByAppendingString:product];
-            [self.window.rootViewController presentViewController:tmvc animated:YES completion:nil];
+            [self.window.rootViewController addChildViewController:tmvc];
+            [self.window.rootViewController.view addSubview:tmvc.view];
         }
     }
 

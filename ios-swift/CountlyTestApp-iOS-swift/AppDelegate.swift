@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         config.features = [CLYFeature.pushNotifications]
         config.pushTestMode = CLYPushTestMode.development
         
+        
         if (config.appKey == "YOUR_APP_KEY" || config.host == "https://your.server.ly") {
             NSLog("Please do not use default set of app key and server url")
         }

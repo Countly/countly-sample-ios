@@ -27,11 +27,15 @@ RCDownloadCallback rcCallback = ^(CLYRequestResult response, NSError * error, BO
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     CountlyConfig* config = CountlyConfig.new;
-    config.loggerDelegate = self; 
-    config.appKey = @"8ea66de07f0eac4a5138981bdc99ee080290a0cd";
-    config.host = @"http://stable-je-cb.count.ly";
     config.enableDebug = YES;
-    
+    config.features = @[CLYCrashReporting, CLYPushNotifications];
+    config.sendPushTokenAlways = YES;
+    config.appKey = @"APP_KEY";
+    config.host = @"https://SERVER_URL";
+    config.pushTestMode = CLYPushTestModeDevelopment;
+    config.alwaysUsePOST = YES;
+    [config.content setWebviewDisplayOption:IMMERSIVE];
+
     if ([config.appKey isEqualToString:@"YOUR_APP_KEY"] || [config.host isEqualToString:@"https://your.server.ly"]) {
         NSLog(@"Please do not use default set of app key and server url");
     }
@@ -94,15 +98,7 @@ RCDownloadCallback rcCallback = ^(CLYRequestResult response, NSError * error, BO
 
     [Countly.sharedInstance startWithConfig:config];
     
-    
     [Countly.sharedInstance.remoteConfig registerDownloadCallback:rcCallback];
-
-
-    self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
-    self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-    [self.window makeKeyAndVisible];
-
     return YES;
 }
 

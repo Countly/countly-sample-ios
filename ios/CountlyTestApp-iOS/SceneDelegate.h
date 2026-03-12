@@ -1,4 +1,4 @@
-// AppDelegate.h
+// SceneDelegate.h
 //
 // This code is provided under the MIT License.
 //
@@ -6,5 +6,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
+@property (strong, nonatomic) UIWindow *window;
 @end

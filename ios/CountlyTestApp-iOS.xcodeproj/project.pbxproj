@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA000001300000000000AA01 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA000001300000000000AA03 /* SceneDelegate.m */; };
 		1A57F7292AE0258500E57FBC /* CountlyViewTrackingInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A57F7282AE0257800E57FBC /* CountlyViewTrackingInternal.m */; };
 		1A57F72A2AE0258500E57FBC /* CountlyViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A57F7252AE0257800E57FBC /* CountlyViewData.m */; };
 		1A57F72B2AE0258500E57FBC /* CountlyExperimentInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A57F7262AE0257800E57FBC /* CountlyExperimentInformation.m */; };
@@ -24,14 +25,14 @@
 		399117EA2C69FF0600DC4C66 /* CountlySDKLimitsConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 399117E42C69FF0600DC4C66 /* CountlySDKLimitsConfig.m */; };
 		399117EB2C69FF0600DC4C66 /* CountlyCrashData.m in Sources */ = {isa = PBXBuildFile; fileRef = 399117E52C69FF0600DC4C66 /* CountlyCrashData.m */; };
 		399117EC2C69FF0600DC4C66 /* CountlyCrashesConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 399117E72C69FF0600DC4C66 /* CountlyCrashesConfig.m */; };
+		9611F31E2F3F336900EBD7D3 /* CountlyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9611F31B2F3F336900EBD7D3 /* CountlyWebViewController.m */; };
+		9611F31F2F3F336900EBD7D3 /* TouchDelegatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9611F31C2F3F336900EBD7D3 /* TouchDelegatingView.m */; };
+		9611F3202F3F336900EBD7D3 /* CountlyOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9611F31D2F3F336900EBD7D3 /* CountlyOverlayWindow.m */; };
+		9611F3222F3F33AC00EBD7D3 /* CountlyHealthTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9611F3212F3F33AC00EBD7D3 /* CountlyHealthTracker.m */; };
 		9663534E2CF85B6100F30BDE /* CountlyContentConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9663534D2CF85B6100F30BDE /* CountlyContentConfig.m */; };
 		966353512CF85B9500F30BDE /* CountlyExperimentalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9663534F2CF85B9500F30BDE /* CountlyExperimentalConfig.m */; };
 		966353522CF85B9500F30BDE /* CountlyFeedbacksInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 966353502CF85B9500F30BDE /* CountlyFeedbacksInternal.m */; };
-		9691B72F2F1F7ACF00A6ADCB /* CountlyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9691B72E2F1F7ACF00A6ADCB /* CountlyWebViewController.m */; };
-		9691B74B2F1F86B800A6ADCB /* CountlyOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9691B74A2F1F86B800A6ADCB /* CountlyOverlayWindow.m */; };
-		96AAC9252F20D3190021CA5A /* TouchDelegatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AAC9242F20D3190021CA5A /* TouchDelegatingView.m */; };
 		96B0C4B12DE9D26600F8B23B /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		96B0C4D42DE9D90500F8B23B /* CountlyHealthTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B0C4D32DE9D90500F8B23B /* CountlyHealthTracker.m */; };
 		96B0C4DB2DE9D91C00F8B23B /* CountlyContentConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B0C4D62DE9D91C00F8B23B /* CountlyContentConfig.m */; };
 		96B0C4DC2DE9D91C00F8B23B /* CountlyExperimentalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B0C4D82DE9D91C00F8B23B /* CountlyExperimentalConfig.m */; };
 		96B0C4DD2DE9D91C00F8B23B /* CountlyFeedbacksInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B0C4DA2DE9D91C00F8B23B /* CountlyFeedbacksInternal.m */; };
@@ -117,16 +118,15 @@
 		399117E72C69FF0600DC4C66 /* CountlyCrashesConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCrashesConfig.m; sourceTree = "<group>"; };
 		399117E82C69FF0600DC4C66 /* CountlySDKLimitsConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlySDKLimitsConfig.h; sourceTree = "<group>"; };
 		399117E92C69FF0600DC4C66 /* CountlyCrashesConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCrashesConfig.h; sourceTree = "<group>"; };
+		960AD4492F3B68D0007A0DAE /* CountlyWebViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyWebViewManager.m; path = "../countly-sdk-ios/CountlyWebViewManager.m"; sourceTree = "<group>"; };
+		9611F31B2F3F336900EBD7D3 /* CountlyWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyWebViewController.m; path = "../countly-sdk-ios/CountlyWebViewController.m"; sourceTree = "<group>"; };
+		9611F31C2F3F336900EBD7D3 /* TouchDelegatingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TouchDelegatingView.m; path = "../countly-sdk-ios/TouchDelegatingView.m"; sourceTree = "<group>"; };
+		9611F31D2F3F336900EBD7D3 /* CountlyOverlayWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyOverlayWindow.m; path = "../countly-sdk-ios/CountlyOverlayWindow.m"; sourceTree = "<group>"; };
+		9611F3212F3F33AC00EBD7D3 /* CountlyHealthTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyHealthTracker.m; path = "../countly-sdk-ios/CountlyHealthTracker.m"; sourceTree = "<group>"; };
 		9663534D2CF85B6100F30BDE /* CountlyContentConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyContentConfig.m; path = "../countly-sdk-ios/CountlyContentConfig.m"; sourceTree = "<group>"; };
 		9663534F2CF85B9500F30BDE /* CountlyExperimentalConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyExperimentalConfig.m; path = "../countly-sdk-ios/CountlyExperimentalConfig.m"; sourceTree = "<group>"; };
 		966353502CF85B9500F30BDE /* CountlyFeedbacksInternal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyFeedbacksInternal.m; path = "../countly-sdk-ios/CountlyFeedbacksInternal.m"; sourceTree = "<group>"; };
-		9691B72E2F1F7ACF00A6ADCB /* CountlyWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyWebViewController.m; path = "../countly-sdk-ios/CountlyWebViewController.m"; sourceTree = "<group>"; };
-		9691B7452F1F83E700A6ADCB /* CountlyOverlayWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountlyOverlayWindow.h; sourceTree = "<group>"; };
-		9691B74A2F1F86B800A6ADCB /* CountlyOverlayWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountlyOverlayWindow.m; sourceTree = "<group>"; };
-		96AAC9242F20D3190021CA5A /* TouchDelegatingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TouchDelegatingView.m; path = "../countly-sdk-ios/TouchDelegatingView.m"; sourceTree = "<group>"; };
 		96B0C4B32DE9D31A00F8B23B /* CountlyFeedbackWidget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyFeedbackWidget.m; path = "../countly-sdk-ios/CountlyFeedbackWidget.m"; sourceTree = "<group>"; };
-		96B0C4D22DE9D90500F8B23B /* CountlyHealthTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountlyHealthTracker.h; sourceTree = "<group>"; };
-		96B0C4D32DE9D90500F8B23B /* CountlyHealthTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountlyHealthTracker.m; sourceTree = "<group>"; };
 		96B0C4D52DE9D91C00F8B23B /* CountlyContentConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountlyContentConfig.h; sourceTree = "<group>"; };
 		96B0C4D62DE9D91C00F8B23B /* CountlyContentConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountlyContentConfig.m; sourceTree = "<group>"; };
 		96B0C4D72DE9D91C00F8B23B /* CountlyExperimentalConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountlyExperimentalConfig.h; sourceTree = "<group>"; };
@@ -175,6 +175,8 @@
 		D2B12ACE21E62180001FBBBF /* CountlyRemoteConfigInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountlyRemoteConfigInternal.h; sourceTree = "<group>"; };
 		D2B12ACF21E62180001FBBBF /* CountlyRemoteConfigInternal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountlyRemoteConfigInternal.m; sourceTree = "<group>"; };
 		D2BAB09E17EC8EE600807D0D /* CountlyTestApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA000001300000000000AA02 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		AA000001300000000000AA03 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		D2BAB0B017EC8EE600807D0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2E414882062AA3C0088900F /* CountlyConsentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConsentManager.h; sourceTree = "<group>"; };
 		D2E414892062AA3C0088900F /* CountlyConsentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConsentManager.m; sourceTree = "<group>"; };
@@ -204,6 +206,22 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		96BD74E52EE1A09A002C6DD3 /* DeviceIdChangerViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DeviceIdChangerViewController; sourceTree = "<group>"; };
+		BB00000130000000000000A1 /* SectionTestViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SectionTestViewController; sourceTree = "<group>"; };
+		BB00000130000000000000A2 /* ContentBuilderViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ContentBuilderViewController; sourceTree = "<group>"; };
+		BB00000130000000000000A3 /* CustomEventsViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CustomEventsViewController; sourceTree = "<group>"; };
+		BB00000130000000000000A4 /* CrashReportingViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CrashReportingViewController; sourceTree = "<group>"; };
+		BB00000130000000000000A5 /* UserDetailsSectionViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = UserDetailsSectionViewController; sourceTree = "<group>"; };
+		BB00000130000000000000A6 /* APMViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = APMViewController; sourceTree = "<group>"; };
+		BB00000130000000000000A7 /* ViewTrackingViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewTrackingViewController; sourceTree = "<group>"; };
+		BB00000130000000000000A8 /* PushNotificationsViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PushNotificationsViewController; sourceTree = "<group>"; };
+		BB00000130000000000000A9 /* LocationViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = LocationViewController; sourceTree = "<group>"; };
+		BB0000013000000000000010 /* MultithreadingViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MultithreadingViewController; sourceTree = "<group>"; };
+		BB0000013000000000000011 /* ConsentsViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ConsentsViewController; sourceTree = "<group>"; };
+		BB0000013000000000000012 /* RemoteConfigViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RemoteConfigViewController; sourceTree = "<group>"; };
+		BB0000013000000000000013 /* FeedbackViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = FeedbackViewController; sourceTree = "<group>"; };
+		BB0000013000000000000014 /* AttributionViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AttributionViewController; sourceTree = "<group>"; };
+		BB0000013000000000000015 /* QueueOperationsViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = QueueOperationsViewController; sourceTree = "<group>"; };
+		BB0000013000000000000016 /* SDKLifecycleViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SDKLifecycleViewController; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +250,22 @@
 			isa = PBXGroup;
 			children = (
 				96BD74E52EE1A09A002C6DD3 /* DeviceIdChangerViewController */,
+				BB00000130000000000000A1 /* SectionTestViewController */,
+				BB00000130000000000000A2 /* ContentBuilderViewController */,
+				BB00000130000000000000A3 /* CustomEventsViewController */,
+				BB00000130000000000000A4 /* CrashReportingViewController */,
+				BB00000130000000000000A5 /* UserDetailsSectionViewController */,
+				BB00000130000000000000A6 /* APMViewController */,
+				BB00000130000000000000A7 /* ViewTrackingViewController */,
+				BB00000130000000000000A8 /* PushNotificationsViewController */,
+				BB00000130000000000000A9 /* LocationViewController */,
+				BB0000013000000000000010 /* MultithreadingViewController */,
+				BB0000013000000000000011 /* ConsentsViewController */,
+				BB0000013000000000000012 /* RemoteConfigViewController */,
+				BB0000013000000000000013 /* FeedbackViewController */,
+				BB0000013000000000000014 /* AttributionViewController */,
+				BB0000013000000000000015 /* QueueOperationsViewController */,
+				BB0000013000000000000016 /* SDKLifecycleViewController */,
 				D2340CF91E33B726003C3841 /* Countly.storyboard */,
 				D2340D1C1E33C55B003C3841 /* MainViewController.h */,
 				D2340D1B1E33C55B003C3841 /* MainViewController.m */,
@@ -342,9 +376,12 @@
 		D2BAB09517EC8EE600807D0D = {
 			isa = PBXGroup;
 			children = (
-				96AAC9242F20D3190021CA5A /* TouchDelegatingView.m */,
-				9691B72E2F1F7ACF00A6ADCB /* CountlyWebViewController.m */,
+				9611F3212F3F33AC00EBD7D3 /* CountlyHealthTracker.m */,
+				9611F31D2F3F336900EBD7D3 /* CountlyOverlayWindow.m */,
+				9611F31B2F3F336900EBD7D3 /* CountlyWebViewController.m */,
+				9611F31C2F3F336900EBD7D3 /* TouchDelegatingView.m */,
 				96B418A82F17D1F300F4DFC3 /* CountlyWebViewManager.m */,
+				960AD4492F3B68D0007A0DAE /* CountlyWebViewManager.m */,
 				96B0C4B32DE9D31A00F8B23B /* CountlyFeedbackWidget.m */,
 				9663534F2CF85B9500F30BDE /* CountlyExperimentalConfig.m */,
 				966353502CF85B9500F30BDE /* CountlyFeedbacksInternal.m */,
@@ -369,6 +406,8 @@
 			children = (
 				D2BAB0B017EC8EE600807D0D /* AppDelegate.h */,
 				D252ECDC1F72026100481A79 /* AppDelegate.m */,
+				AA000001300000000000AA02 /* SceneDelegate.h */,
+				AA000001300000000000AA03 /* SceneDelegate.m */,
 				D2340CF81E33B726003C3841 /* ViewControllers */,
 				D252ECDD1F72026100481A79 /* External */,
 				D252ECD11F72014E00481A79 /* Resources */,
@@ -380,16 +419,12 @@
 		D2EB404C1C58BFAA00EAA633 /* countly-sdk-ios */ = {
 			isa = PBXGroup;
 			children = (
-				9691B74A2F1F86B800A6ADCB /* CountlyOverlayWindow.m */,
-				9691B7452F1F83E700A6ADCB /* CountlyOverlayWindow.h */,
 				96B0C4D52DE9D91C00F8B23B /* CountlyContentConfig.h */,
 				96B0C4D62DE9D91C00F8B23B /* CountlyContentConfig.m */,
 				96B0C4D72DE9D91C00F8B23B /* CountlyExperimentalConfig.h */,
 				96B0C4D82DE9D91C00F8B23B /* CountlyExperimentalConfig.m */,
 				96B0C4D92DE9D91C00F8B23B /* CountlyFeedbacksInternal.h */,
 				96B0C4DA2DE9D91C00F8B23B /* CountlyFeedbacksInternal.m */,
-				96B0C4D22DE9D90500F8B23B /* CountlyHealthTracker.h */,
-				96B0C4D32DE9D90500F8B23B /* CountlyHealthTracker.m */,
 				D203EA7A1FDED8CF00A03F32 /* CHANGELOG.md */,
 				D2EB404E1C58BFAA00EAA633 /* Countly.h */,
 				D2EB404F1C58BFAA00EAA633 /* Countly.m */,
@@ -481,6 +516,22 @@
 			);
 			fileSystemSynchronizedGroups = (
 				96BD74E52EE1A09A002C6DD3 /* DeviceIdChangerViewController */,
+				BB00000130000000000000A1 /* SectionTestViewController */,
+				BB00000130000000000000A2 /* ContentBuilderViewController */,
+				BB00000130000000000000A3 /* CustomEventsViewController */,
+				BB00000130000000000000A4 /* CrashReportingViewController */,
+				BB00000130000000000000A5 /* UserDetailsSectionViewController */,
+				BB00000130000000000000A6 /* APMViewController */,
+				BB00000130000000000000A7 /* ViewTrackingViewController */,
+				BB00000130000000000000A8 /* PushNotificationsViewController */,
+				BB00000130000000000000A9 /* LocationViewController */,
+				BB0000013000000000000010 /* MultithreadingViewController */,
+				BB0000013000000000000011 /* ConsentsViewController */,
+				BB0000013000000000000012 /* RemoteConfigViewController */,
+				BB0000013000000000000013 /* FeedbackViewController */,
+				BB0000013000000000000014 /* AttributionViewController */,
+				BB0000013000000000000015 /* QueueOperationsViewController */,
+				BB0000013000000000000016 /* SDKLifecycleViewController */,
 			);
 			name = "CountlyTestApp-iOS";
 			productName = "CountlyTestApp-iOS";
@@ -553,8 +604,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96AAC9252F20D3190021CA5A /* TouchDelegatingView.m in Sources */,
-				9691B72F2F1F7ACF00A6ADCB /* CountlyWebViewController.m in Sources */,
+				9611F3222F3F33AC00EBD7D3 /* CountlyHealthTracker.m in Sources */,
+				9611F31E2F3F336900EBD7D3 /* CountlyWebViewController.m in Sources */,
+				9611F31F2F3F336900EBD7D3 /* TouchDelegatingView.m in Sources */,
+				9611F3202F3F336900EBD7D3 /* CountlyOverlayWindow.m in Sources */,
 				399117E02C69FE7D00DC4C66 /* CountlyWebViewManager.m in Sources */,
 				1A87ED9229B872ED0095DF38 /* CountlyFeedbackWidget.m in Sources */,
 				966353512CF85B9500F30BDE /* CountlyExperimentalConfig.m in Sources */,
@@ -565,7 +618,6 @@
 				D252ECE61F7203C200481A79 /* EYCrashTesting.m in Sources */,
 				399117EA2C69FF0600DC4C66 /* CountlySDKLimitsConfig.m in Sources */,
 				D2340D211E33D89E003C3841 /* UserDetailsEditorViewController.m in Sources */,
-				96B0C4D42DE9D90500F8B23B /* CountlyHealthTracker.m in Sources */,
 				1A57F72B2AE0258500E57FBC /* CountlyExperimentInformation.m in Sources */,
 				D2EB40731C58BFAA00EAA633 /* CountlyDeviceInfo.m in Sources */,
 				1ACA5DBE2A308041001F770B /* CountlyRemoteConfig.m in Sources */,
@@ -581,7 +633,6 @@
 				D2EB406F1C58BFAA00EAA633 /* CountlyCommon.m in Sources */,
 				399117DE2C69FE7D00DC4C66 /* PassThroughBackgroundView.m in Sources */,
 				399117DD2C69FE7D00DC4C66 /* CountlyContentBuilderInternal.m in Sources */,
-				9691B74B2F1F86B800A6ADCB /* CountlyOverlayWindow.m in Sources */,
 				D2EB40761C58BFAA00EAA633 /* CountlyUserDetails.m in Sources */,
 				399117DF2C69FE7D00DC4C66 /* CountlyContentBuilder.m in Sources */,
 				D2EB40701C58BFAA00EAA633 /* CountlyConfig.m in Sources */,
@@ -603,6 +654,7 @@
 				1A89E1372A208BA0009A753A /* CountlyServerConfig.m in Sources */,
 				D2EB40711C58BFAA00EAA633 /* CountlyConnectionManager.m in Sources */,
 				D252ECE11F72026100481A79 /* AppDelegate.m in Sources */,
+				AA000001300000000000AA01 /* SceneDelegate.m in Sources */,
 				D2EB40721C58BFAA00EAA633 /* CountlyCrashReporter.m in Sources */,
 				D2340D251E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m in Sources */,
 			);
@@ -665,7 +717,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
@@ -720,7 +772,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -752,7 +804,7 @@
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				INFOPLIST_FILE = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ly.count.CountlySwift;
 				PRODUCT_NAME = "CountlyTestApp-iOS";
@@ -783,7 +835,7 @@
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				INFOPLIST_FILE = "CountlyTestApp-iOS/SupportingFiles/CountlyTestApp-iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ly.count.CountlySwift;
 				PRODUCT_NAME = "CountlyTestApp-iOS";

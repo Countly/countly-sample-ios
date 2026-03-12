@@ -8,3 +8,27 @@
 ehthumbs.db
 Thumbs.db
 .LSOverride
+
+# Xcode #
+##########
+build/
+DerivedData/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+
+# Xcode workspace and user data (per-project gitignores handle specifics)
+**/xcuserdata/
+**/project.xcworkspace/xcshareddata/swiftpm/
+**/project.xcworkspace/xcuserdata/
+
+# CocoaPods / SPM
+Pods/
+.build/
+
+# Misc
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.hmap
+*.moved-aside

@@ -27,11 +27,15 @@ RCDownloadCallback rcCallback = ^(CLYRequestResult response, NSError * error, BO
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     CountlyConfig* config = CountlyConfig.new;
-    config.loggerDelegate = self; 
-    config.appKey = @"YOUR_APP_KEY";
-    config.host = @"https://your.server.ly";
     config.enableDebug = YES;
-    
+    config.features = @[CLYCrashReporting, CLYPushNotifications];
+    config.sendPushTokenAlways = YES;
+    config.appKey = @"APP_KEY";
+    config.host = @"https://SERVER_URL";
+    config.pushTestMode = CLYPushTestModeDevelopment;
+    config.alwaysUsePOST = YES;
+    [config.content setWebviewDisplayOption:IMMERSIVE];
+
     if ([config.appKey isEqualToString:@"YOUR_APP_KEY"] || [config.host isEqualToString:@"https://your.server.ly"]) {
         NSLog(@"Please do not use default set of app key and server url");
     }
@@ -94,15 +98,7 @@ RCDownloadCallback rcCallback = ^(CLYRequestResult response, NSError * error, BO
 
     [Countly.sharedInstance startWithConfig:config];
     
-    
     [Countly.sharedInstance.remoteConfig registerDownloadCallback:rcCallback];
-
-
-    self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
-    self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-    [self.window makeKeyAndVisible];
-
     return YES;
 }
 
@@ -118,7 +114,8 @@ RCDownloadCallback rcCallback = ^(CLYRequestResult response, NSError * error, BO
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Countly" bundle:nil];
             TestModalViewController* tmvc = [storyboard instantiateViewControllerWithIdentifier:@"TestModalViewController"];
             tmvc.title = [@"Page of " stringByAppendingString:product];
-            [self.window.rootViewController presentViewController:tmvc animated:YES completion:nil];
+            [self.window.rootViewController addChildViewController:tmvc];
+            [self.window.rootViewController.view addSubview:tmvc.view];
         }
     }
 

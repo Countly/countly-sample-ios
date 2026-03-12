@@ -6,5 +6,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
+@interface MainViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 @end

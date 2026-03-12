@@ -10,4 +10,4 @@
 
 #import "Countly.h"
 
-#endif /* CountlyTestApp_iOS_swift_Bridging_Header_h */
+#endif  CountlyTestApp_iOS_swift_Bridging_Header_h

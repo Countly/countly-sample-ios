@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA000001300000000000AA01 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA000001300000000000AA03 /* SceneDelegate.m */; };
 		1A57F7292AE0258500E57FBC /* CountlyViewTrackingInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A57F7282AE0257800E57FBC /* CountlyViewTrackingInternal.m */; };
 		1A57F72A2AE0258500E57FBC /* CountlyViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A57F7252AE0257800E57FBC /* CountlyViewData.m */; };
 		1A57F72B2AE0258500E57FBC /* CountlyExperimentInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A57F7262AE0257800E57FBC /* CountlyExperimentInformation.m */; };
@@ -36,6 +35,7 @@
 		96B0C4DB2DE9D91C00F8B23B /* CountlyContentConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B0C4D62DE9D91C00F8B23B /* CountlyContentConfig.m */; };
 		96B0C4DC2DE9D91C00F8B23B /* CountlyExperimentalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B0C4D82DE9D91C00F8B23B /* CountlyExperimentalConfig.m */; };
 		96B0C4DD2DE9D91C00F8B23B /* CountlyFeedbacksInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B0C4DA2DE9D91C00F8B23B /* CountlyFeedbacksInternal.m */; };
+		AA000001300000000000AA01 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA000001300000000000AA03 /* SceneDelegate.m */; };
 		D2314A0B1EB1528B0026F0DD /* CountlyNotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = D2314A0A1EB1528B0026F0DD /* CountlyNotificationService.m */; };
 		D2340D081E33B726003C3841 /* Countly.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2340CF91E33B726003C3841 /* Countly.storyboard */; };
 		D2340D091E33B726003C3841 /* EventCreatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2340CFC1E33B726003C3841 /* EventCreatorViewController.m */; };
@@ -134,6 +134,8 @@
 		96B0C4D92DE9D91C00F8B23B /* CountlyFeedbacksInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountlyFeedbacksInternal.h; sourceTree = "<group>"; };
 		96B0C4DA2DE9D91C00F8B23B /* CountlyFeedbacksInternal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountlyFeedbacksInternal.m; sourceTree = "<group>"; };
 		96B418A82F17D1F300F4DFC3 /* CountlyWebViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyWebViewManager.m; path = "../countly-sdk-ios/CountlyWebViewManager.m"; sourceTree = "<group>"; };
+		AA000001300000000000AA02 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		AA000001300000000000AA03 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		D203EA7A1FDED8CF00A03F32 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		D23149FE1EB151CF0026F0DD /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
 		D23149FF1EB151CF0026F0DD /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
@@ -175,8 +177,6 @@
 		D2B12ACE21E62180001FBBBF /* CountlyRemoteConfigInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountlyRemoteConfigInternal.h; sourceTree = "<group>"; };
 		D2B12ACF21E62180001FBBBF /* CountlyRemoteConfigInternal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountlyRemoteConfigInternal.m; sourceTree = "<group>"; };
 		D2BAB09E17EC8EE600807D0D /* CountlyTestApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA000001300000000000AA02 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		AA000001300000000000AA03 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		D2BAB0B017EC8EE600807D0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2E414882062AA3C0088900F /* CountlyConsentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyConsentManager.h; sourceTree = "<group>"; };
 		D2E414892062AA3C0088900F /* CountlyConsentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyConsentManager.m; sourceTree = "<group>"; };
@@ -206,6 +206,13 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		96BD74E52EE1A09A002C6DD3 /* DeviceIdChangerViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DeviceIdChangerViewController; sourceTree = "<group>"; };
+		BB0000013000000000000010 /* MultithreadingViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MultithreadingViewController; sourceTree = "<group>"; };
+		BB0000013000000000000011 /* ConsentsViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ConsentsViewController; sourceTree = "<group>"; };
+		BB0000013000000000000012 /* RemoteConfigViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RemoteConfigViewController; sourceTree = "<group>"; };
+		BB0000013000000000000013 /* FeedbackViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = FeedbackViewController; sourceTree = "<group>"; };
+		BB0000013000000000000014 /* AttributionViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AttributionViewController; sourceTree = "<group>"; };
+		BB0000013000000000000015 /* QueueOperationsViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = QueueOperationsViewController; sourceTree = "<group>"; };
+		BB0000013000000000000016 /* SDKLifecycleViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SDKLifecycleViewController; sourceTree = "<group>"; };
 		BB00000130000000000000A1 /* SectionTestViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SectionTestViewController; sourceTree = "<group>"; };
 		BB00000130000000000000A2 /* ContentBuilderViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ContentBuilderViewController; sourceTree = "<group>"; };
 		BB00000130000000000000A3 /* CustomEventsViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CustomEventsViewController; sourceTree = "<group>"; };
@@ -215,13 +222,6 @@
 		BB00000130000000000000A7 /* ViewTrackingViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewTrackingViewController; sourceTree = "<group>"; };
 		BB00000130000000000000A8 /* PushNotificationsViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PushNotificationsViewController; sourceTree = "<group>"; };
 		BB00000130000000000000A9 /* LocationViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = LocationViewController; sourceTree = "<group>"; };
-		BB0000013000000000000010 /* MultithreadingViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MultithreadingViewController; sourceTree = "<group>"; };
-		BB0000013000000000000011 /* ConsentsViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ConsentsViewController; sourceTree = "<group>"; };
-		BB0000013000000000000012 /* RemoteConfigViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RemoteConfigViewController; sourceTree = "<group>"; };
-		BB0000013000000000000013 /* FeedbackViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = FeedbackViewController; sourceTree = "<group>"; };
-		BB0000013000000000000014 /* AttributionViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AttributionViewController; sourceTree = "<group>"; };
-		BB0000013000000000000015 /* QueueOperationsViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = QueueOperationsViewController; sourceTree = "<group>"; };
-		BB0000013000000000000016 /* SDKLifecycleViewController */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SDKLifecycleViewController; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -516,6 +516,13 @@
 			);
 			fileSystemSynchronizedGroups = (
 				96BD74E52EE1A09A002C6DD3 /* DeviceIdChangerViewController */,
+				BB0000013000000000000010 /* MultithreadingViewController */,
+				BB0000013000000000000011 /* ConsentsViewController */,
+				BB0000013000000000000012 /* RemoteConfigViewController */,
+				BB0000013000000000000013 /* FeedbackViewController */,
+				BB0000013000000000000014 /* AttributionViewController */,
+				BB0000013000000000000015 /* QueueOperationsViewController */,
+				BB0000013000000000000016 /* SDKLifecycleViewController */,
 				BB00000130000000000000A1 /* SectionTestViewController */,
 				BB00000130000000000000A2 /* ContentBuilderViewController */,
 				BB00000130000000000000A3 /* CustomEventsViewController */,
@@ -525,13 +532,6 @@
 				BB00000130000000000000A7 /* ViewTrackingViewController */,
 				BB00000130000000000000A8 /* PushNotificationsViewController */,
 				BB00000130000000000000A9 /* LocationViewController */,
-				BB0000013000000000000010 /* MultithreadingViewController */,
-				BB0000013000000000000011 /* ConsentsViewController */,
-				BB0000013000000000000012 /* RemoteConfigViewController */,
-				BB0000013000000000000013 /* FeedbackViewController */,
-				BB0000013000000000000014 /* AttributionViewController */,
-				BB0000013000000000000015 /* QueueOperationsViewController */,
-				BB0000013000000000000016 /* SDKLifecycleViewController */,
 			);
 			name = "CountlyTestApp-iOS";
 			productName = "CountlyTestApp-iOS";

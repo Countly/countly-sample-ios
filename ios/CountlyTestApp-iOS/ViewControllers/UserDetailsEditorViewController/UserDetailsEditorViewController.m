@@ -39,7 +39,13 @@
 
     self.custom = NSMutableArray.new;
 
-    NSDictionary* userCustomProperties = (NSDictionary *)Countly.user.custom;
+    // Reading current SDK state for form pre-population only. Deprecated direct
+    // property reads are intentional here since there's no public read API on
+    // CountlyUserDetails — typical integrations don't need to read back.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    NSDictionary* userCustomProperties = (NSDictionary *)Countly.sharedInstance.userProfile.custom;
+#pragma clang diagnostic pop
     for (NSString* key in userCustomProperties)
         [self.custom addObject:@{@"k": key, @"v": userCustomProperties[key]}];
 
@@ -51,7 +57,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
+
     txt_name = [self.tableView viewWithTag:101];
     txt_username = [self.tableView viewWithTag:102];
     txt_email = [self.tableView viewWithTag:103];
@@ -61,14 +67,18 @@
     txt_birthYear = [self.tableView viewWithTag:107];
     sgm_gender = [self.tableView viewWithTag:108];
 
-    txt_name.text = (NSString*)Countly.user.name;
-    txt_username.text = (NSString*)Countly.user.username;
-    txt_email.text = (NSString*)Countly.user.email;
-    txt_organization.text = (NSString*)Countly.user.organization;
-    txt_phone.text = (NSString*)Countly.user.phone;
-    txt_pictureURL.text = (NSString*)Countly.user.pictureURL;
-    txt_birthYear.text = Countly.user.birthYear.description;
-    sgm_gender.selectedSegmentIndex = [(NSString*)Countly.user.gender isEqualToString:@"M"] ? 0 : [(NSString*)Countly.user.gender isEqualToString:@"F"] ? 1 : -1 ;
+    // Form pre-population from current SDK state — see note in -viewDidLoad.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    txt_name.text = (NSString*)Countly.sharedInstance.userProfile.name;
+    txt_username.text = (NSString*)Countly.sharedInstance.userProfile.username;
+    txt_email.text = (NSString*)Countly.sharedInstance.userProfile.email;
+    txt_organization.text = (NSString*)Countly.sharedInstance.userProfile.organization;
+    txt_phone.text = (NSString*)Countly.sharedInstance.userProfile.phone;
+    txt_pictureURL.text = (NSString*)Countly.sharedInstance.userProfile.pictureURL;
+    txt_birthYear.text = Countly.sharedInstance.userProfile.birthYear.description;
+    sgm_gender.selectedSegmentIndex = [(NSString*)Countly.sharedInstance.userProfile.gender isEqualToString:@"M"] ? 0 : [(NSString*)Countly.sharedInstance.userProfile.gender isEqualToString:@"F"] ? 1 : -1 ;
+#pragma clang diagnostic pop
 }
 
 
@@ -80,21 +90,28 @@
 
 - (void)onClick_record:(id)sender
 {
-    Countly.user.name = txt_name.text.length ? txt_name.text : nil;
-    Countly.user.username = txt_username.text.length ? txt_username.text : nil;
-    Countly.user.email = txt_email.text.length ? txt_email.text : nil;
-    Countly.user.organization = txt_organization.text.length ? txt_organization.text : nil;
-    Countly.user.phone = txt_phone.text.length ? txt_phone.text : nil;
-    Countly.user.pictureURL = txt_pictureURL.text.length ? txt_pictureURL.text : nil;
-    Countly.user.birthYear = txt_birthYear.text.length ? @(txt_birthYear.text.integerValue) : nil;
-    Countly.user.gender = (sgm_gender.selectedSegmentIndex == 0) ? @"M" : (sgm_gender.selectedSegmentIndex == 1) ? @"F" : nil;
+    // Build a single dictionary with named + custom properties and hand it to
+    // -setProperties:. Empty strings clear the corresponding field on the server.
+    NSMutableDictionary<NSString *, id>* properties = NSMutableDictionary.new;
 
-    NSMutableDictionary* cust = self.custom.count ? NSMutableDictionary.new : nil;
+    properties[@"name"]         = txt_name.text         ?: @"";
+    properties[@"username"]     = txt_username.text     ?: @"";
+    properties[@"email"]        = txt_email.text        ?: @"";
+    properties[@"organization"] = txt_organization.text ?: @"";
+    properties[@"phone"]        = txt_phone.text        ?: @"";
+    properties[@"picture"]      = txt_pictureURL.text   ?: @"";
+
+    if (txt_birthYear.text.length)
+        properties[@"byear"] = @(txt_birthYear.text.integerValue);
+
+    NSString *gender = (sgm_gender.selectedSegmentIndex == 0) ? @"M" : (sgm_gender.selectedSegmentIndex == 1) ? @"F" : @"";
+    properties[@"gender"] = gender;
+
     for (NSDictionary* dict in self.custom)
-        cust[dict[@"k"]] = dict[@"v"];
-    Countly.user.custom = cust;
+        properties[dict[@"k"]] = dict[@"v"];
 
-    [Countly.user save];
+    [Countly.sharedInstance.userProfile setProperties:properties];
+    [Countly.sharedInstance.userProfile save];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -5,6 +5,9 @@
 // Please visit www.count.ly for more information.
 
 import UIKit
+import SwiftUI
+import Countly
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
@@ -65,7 +68,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 //      config.starRatingCompletion = { (rating : Int) in print("rating \(rating)") }
 
         Countly.sharedInstance().start(with: config)
-    
+
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = UIHostingController(rootView: RootView())
+        window.makeKeyAndVisible()
+        self.window = window
+
         return true
     }
 }
+

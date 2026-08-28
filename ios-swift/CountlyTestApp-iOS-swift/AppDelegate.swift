@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         let config = CountlyConfig()
-        config.appKey = "YOUR_APP_KEY"
-        config.host = "https://your.server.ly"
+        config.appKey = "parity_app_key"
+        config.host = "http://localhost:8080"
 
         if config.appKey == "YOUR_APP_KEY" || config.host == "https://your.server.ly" {
             NSLog("Please do not use the default app key and server url")
@@ -137,12 +137,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //          report["_name"] as? String != "Ignored"                     // Return false to drop the report
 //      }
 
+        // Parity scenarios drive the SDK directly, so the same run can be captured
+        // from both sample applications and the two captures diffed. See
+        // Tools/parity/SCENARIOS.md.
+        if UserDefaults.standard.string(forKey: "CountlyScenario") != nil {
+            Scenario.configure(config, Scenario.name)
+        }
+
         Countly.shared.start(with: config)
 
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UIHostingController(rootView: RootView())
-        window.makeKeyAndVisible()
-        self.window = window
+        if UserDefaults.standard.string(forKey: "CountlyScenario") != nil {
+            // Delayed so init has finished and its own requests have left, which is
+            // where each scenario's own traffic starts.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { Scenario.run() }
+        }
 
         return true
     }

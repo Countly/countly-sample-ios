@@ -54,6 +54,7 @@
 		D252ECD91F72014E00481A79 /* SamplePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = D252ECD51F72014E00481A79 /* SamplePicture.png */; };
 		D252ECDB1F72016300481A79 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D252ECDA1F72016300481A79 /* Images.xcassets */; };
 		D252ECE11F72026100481A79 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECDC1F72026100481A79 /* AppDelegate.m */; };
+		E4A0F2E2223341F4B220169F /* CountlyScenarios.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA38A2FD164B6DBF45B349 /* CountlyScenarios.m */; };
 		D252ECE21F72026100481A79 /* EYLogViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECE01F72026100481A79 /* EYLogViewer.m */; };
 		D252ECE61F7203C200481A79 /* EYCrashTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECE51F7203C200481A79 /* EYCrashTesting.m */; };
 		D273859F1D963842008D201F /* CountlyPushNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = D273859E1D963842008D201F /* CountlyPushNotifications.m */; };
@@ -179,6 +180,7 @@
 		D252ECD51F72014E00481A79 /* SamplePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SamplePicture.png; sourceTree = "<group>"; };
 		D252ECDA1F72016300481A79 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D252ECDC1F72026100481A79 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		83DA38A2FD164B6DBF45B349 /* CountlyScenarios.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountlyScenarios.m; sourceTree = "<group>"; };
 		D252ECDF1F72026100481A79 /* EYLogViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYLogViewer.h; sourceTree = "<group>"; };
 		D252ECE01F72026100481A79 /* EYLogViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYLogViewer.m; sourceTree = "<group>"; };
 		D252ECE41F7203C200481A79 /* EYCrashTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYCrashTesting.h; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 			children = (
 				D2BAB0B017EC8EE600807D0D /* AppDelegate.h */,
 				D252ECDC1F72026100481A79 /* AppDelegate.m */,
+				83DA38A2FD164B6DBF45B349 /* CountlyScenarios.m */,
 				AA000001300000000000AA02 /* SceneDelegate.h */,
 				AA000001300000000000AA03 /* SceneDelegate.m */,
 				D2340CF81E33B726003C3841 /* ViewControllers */,
@@ -718,6 +721,7 @@
 				1A89E1372A208BA0009A753A /* CountlyServerConfig.m in Sources */,
 				D2EB40711C58BFAA00EAA633 /* CountlyConnectionManager.m in Sources */,
 				D252ECE11F72026100481A79 /* AppDelegate.m in Sources */,
+				E4A0F2E2223341F4B220169F /* CountlyScenarios.m in Sources */,
 				AA000001300000000000AA01 /* SceneDelegate.m in Sources */,
 				D2EB40721C58BFAA00EAA633 /* CountlyCrashReporter.m in Sources */,
 				D2340D251E33D8F6003C3841 /* UserDetailsCustomModifiersViewController.m in Sources */,

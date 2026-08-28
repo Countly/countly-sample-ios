@@ -9,6 +9,15 @@
 #import "TestModalViewController.h"
 #import "Countly.h"
 
+// Parity scenarios drive the SDK directly, so the same run can be captured from
+// both sample applications and the two captures diffed. See Tools/parity/SCENARIOS.md.
+@interface AppDelegate (CountlyScenarios)
+- (void)runScenario;
+@end
+
+NSString* CountlyScenarioName(void);
+void CountlyScenarioConfigure(CountlyConfig* config, NSString* scenario);
+
 @implementation AppDelegate
 
 - (void)internalLog:(nonnull NSString *)log withLevel:(CLYInternalLogLevel)level {
@@ -129,7 +138,21 @@ RCDownloadCallback rcCallback = ^(CLYRequestResult response, NSError * error, BO
     config.enableRemoteConfigAutomaticTriggers = YES;
     [config remoteConfigRegisterGlobalCallback:rcGlobalCallback];
 
+    if ([NSUserDefaults.standardUserDefaults stringForKey:@"CountlyScenario"])
+    {
+        CountlyScenarioConfigure(config, CountlyScenarioName());
+    }
+
     [Countly.sharedInstance startWithConfig:config];
+
+    if ([NSUserDefaults.standardUserDefaults stringForKey:@"CountlyScenario"])
+    {
+        // Delayed so init has finished and its own requests have left, which is
+        // where each scenario's own traffic starts.
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self runScenario];
+        });
+    }
     
     [Countly.sharedInstance.remoteConfig registerDownloadCallback:rcCallback];
     return YES;

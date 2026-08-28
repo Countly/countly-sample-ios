@@ -35,6 +35,39 @@ RCDownloadCallback rcCallback = ^(CLYRequestResult response, NSError * error, BO
     config.pushTestMode = CLYPushTestModeDevelopment;
     config.alwaysUsePOST = YES;
     [config.content setWebviewDisplayOption:IMMERSIVE];
+    config.enableRemoteConfig = YES;
+    config.enableRemoteConfigAutomaticTriggers = YES;
+    // No remote config, no APM, no auto view tracking, no attribution.
+
+    // ===== ORIGINAL CONFIG (revert by uncommenting and removing block above) =====
+    // config.features = @[CLYCrashReporting, CLYPushNotifications];
+    // config.sendPushTokenAlways = YES;
+    // config.appKey = @"dte_web";
+    // config.host = @"https://master.count.ly";
+    // config.pushTestMode = CLYPushTestModeDevelopment;
+    // config.alwaysUsePOST = YES;
+    // config.requiresConsent = YES;
+    //config.city = @"Moscow";
+    //config.ISOCountryCode = @"RU";
+    [config.content setWebviewDisplayOption:SAFE_AREA];
+    //[config.content setContentURLHandler:^BOOL(NSURL * _Nonnull url) {
+    //    __block BOOL Val = YES;
+    //    TestModalViewController *customVC = [[TestModalViewController alloc] init];
+    //    SceneDelegate *mySceneDelegate = [self getActiveSceneDelegate];                    // 4. Find the root view controller to present from
+    //    if(mySceneDelegate){
+    //        UIViewController *rootViewController = mySceneDelegate.window.rootViewController;
+    //
+    //        // If the root is a navigation controller, you might want to push it instead:
+    //         [(UINavigationController *)rootViewController pushViewController:customVC animated:YES];
+    //
+    //        // Otherwise, present it modally:
+    //        //[rootViewController presentViewController:customVC animated:YES completion:nil];
+    //    }
+
+    //    return Val;
+    //}];
+    //fund-intent
+
 
     if ([config.appKey isEqualToString:@"YOUR_APP_KEY"] || [config.host isEqualToString:@"https://your.server.ly"]) {
         NSLog(@"Please do not use default set of app key and server url");

@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         let config = CountlyConfig()
-        config.appKey = "parity_app_key"
-        config.host = "http://localhost:8080"
+        config.appKey = "APP_KEY"
+        config.host = "https://SERVER_URL"
 
         if config.appKey == "YOUR_APP_KEY" || config.host == "https://your.server.ly" {
             NSLog("Please do not use the default app key and server url")

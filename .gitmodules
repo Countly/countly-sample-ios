@@ -2,3 +2,7 @@
 	path = countly-sdk-ios
 	url = https://github.com/Countly/countly-sdk-ios.git
 	branch = staging
+[submodule "countly-sdk-swift"]
+	path = countly-sdk-swift
+	url = https://github.com/Countly/countly-sdk-swift.git
+	branch = staging

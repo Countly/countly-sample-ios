@@ -1,57 +1,79 @@
 // ViewsView.swift
+//
+// This code is provided under the MIT License.
+//
+// Please visit www.count.ly for more information.
+
 import SwiftUI
-import Countly
 
 struct ViewsView: View {
-    private var v: CountlyViewTracking { Countly.sharedInstance().views() }
-    @State private var lastViewID: String = ""
+    private var views: ViewsAPI { Countly.shared.views }
+
+    /// Kept so pause, resume and stop can act on the view that was started.
+    @State private var startedViewID: String?
+
     var body: some View {
         Form {
-            Section("Start / Stop (current)") {
-                ActionButton("Start View 'Dashboard'") { lastViewID = v.startView("Dashboard") }
-                ActionButton("Start View + segmentation") { lastViewID = v.startView("Dashboard", segmentation: ["k": "v"]) }
-                ActionButton("Start Auto-Stopped View") { lastViewID = v.startAutoStoppedView("AutoStopped") }
-                ActionButton("Start Auto-Stopped View + segmentation") { lastViewID = v.startAutoStoppedView("AutoStopped", segmentation: ["k": "v"]) }
-                ActionButton("Stop View by name 'Dashboard'") { v.stopView(withName: "Dashboard") }
-                ActionButton("Stop View by name + segmentation") { v.stopView(withName: "Dashboard", segmentation: ["k": "v"]) }
-                ActionButton("Stop last view by ID") { v.stopView(withID: lastViewID) }
-                ActionButton("Stop last view by ID + segmentation") { v.stopView(withID: lastViewID, segmentation: ["k": "v"]) }
-                ActionButton("Pause last view by ID") { v.pauseView(withID: lastViewID) }
-                ActionButton("Resume last view by ID") { v.resumeView(withID: lastViewID) }
-                ActionButton("Stop All Views") { v.stopAllViews(["k": "v"]) }
+            Section("Start") {
+                ActionButton("Start View") {
+                    startedViewID = views.startView("View A", segmentation: ["origin": "manual"])
+                    AppLog.shared.log("started view id: \(startedViewID ?? "nil")")
+                }
+                ActionButton("Start Auto Stopped View") {
+                    startedViewID = views.startAutoStoppedView("Auto Stopped View")
+                }
             }
-            Section("Segmentation (current)") {
-                ActionButton("Set Global View Segmentation") { v.setGlobalViewSegmentation(["app": "sample"]) }
-                ActionButton("Update Global View Segmentation") { v.updateGlobalViewSegmentation(["extra": "1"]) }
-                ActionButton("Add Segmentation to last view (by ID)") { v.addSegmentationToView(withID: lastViewID, segmentation: ["added": "byID"]) }
-                ActionButton("Add Segmentation to view (by name)") { v.addSegmentationToView(withName: "Dashboard", segmentation: ["added": "byName"]) }
+
+            Section("Stop") {
+                ActionButton("Stop View by Name") { views.stopView(name: "View A", segmentation: ["reason": "navigated"]) }
+                ActionButton("Stop View by ID") {
+                    guard let id = startedViewID else { return AppLog.shared.log("no view started yet") }
+                    views.stopView(id: id)
+                }
+                ActionButton("Stop All Views") { views.stopAllViews(segmentation: ["bulk": "yes"]) }
+                ActionButton("Stop a View that was never started") { views.stopView(name: "Missing View") }
             }
-            Section("Auto view tracking (present real VCs)") {
-                ActionButton("Present Modal View Controller") { presentModal() }
-                ActionButton("Push / Pop with Navigation Controller") { presentPushPop() }
+
+            Section("Pause & resume") {
+                ActionButton("Pause Current View") {
+                    guard let id = startedViewID else { return AppLog.shared.log("no view started yet") }
+                    views.pauseView(id: id)
+                }
+                ActionButton("Resume Current View") {
+                    guard let id = startedViewID else { return AppLog.shared.log("no view started yet") }
+                    views.resumeView(id: id)
+                }
             }
+
+            Section("Segmentation") {
+                ActionButton("Set Global View Segmentation") { views.setGlobalViewSegmentation(["tier": "gold"]) }
+                ActionButton("Update Global View Segmentation") { views.updateGlobalViewSegmentation(["tier": "platinum", "extra": "added"]) }
+                ActionButton("Add Segmentation to View by Name") { views.addSegmentation(toViewWithName: "View A", segmentation: ["late": "addition"]) }
+                ActionButton("Add Segmentation to View by ID") {
+                    guard let id = startedViewID else { return AppLog.shared.log("no view started yet") }
+                    views.addSegmentation(toViewWithID: id, segmentation: ["late": "addition"])
+                }
+            }
+
             Section {
-                ActionButton("Record View A (deprecated)") { Countly.sharedInstance().recordView("View A") }
-                ActionButton("Record View + segmentation (deprecated)") { Countly.sharedInstance().recordView("View B", segmentation: ["k": "v"]) }
-                ActionButton("Report View Manually (deprecated)") { Countly.sharedInstance().recordView("ManualViewReportExample") }
-                ActionButton("Turn OFF AutoViewTracking (deprecated)") { Countly.sharedInstance().isAutoViewTrackingActive = false }
-                ActionButton("Turn ON AutoViewTracking (deprecated)") { Countly.sharedInstance().isAutoViewTrackingActive = true }
-                ActionButton("Add AutoViewTracking Exception (deprecated)") { Countly.sharedInstance().addException(forAutoViewTracking: "MyViewControllerTitle") }
-                ActionButton("Remove AutoViewTracking Exception (deprecated)") { Countly.sharedInstance().removeException(forAutoViewTracking: "MyViewControllerTitle") }
-            } header: { Text("Legacy (deprecated)") }
-              footer: { Text("Prefer views.startView/startAutoStoppedView and setGlobalViewSegmentation.") }
+                ActionButton("Add Auto View Tracking Exclusion") {
+                    views.addAutoViewTrackingExclusionList(["TestViewControllerModal"])
+                }
+                ActionButton("Present a Modal View Controller") {
+                    let controller = TestViewControllerModal()
+                    controller.title = "MyModalViewTitle"
+                    UIKitSupport.present(controller)
+                }
+                ActionButton("Present a Pushed View Controller") {
+                    let controller = TestViewControllerPushPop()
+                    controller.title = "MyPushedViewTitle"
+                    UIKitSupport.present(UINavigationController(rootViewController: controller))
+                }
+            } header: {
+                Text("Automatic view tracking")
+            } footer: {
+                Text("Set enableAutomaticViewTracking in the configuration and presenting these reports a view named after the controller's title. An automatically tracked view is auto stopped, so each one reports how long it was on screen.")
+            }
         }
-    }
-    private func presentModal() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "TestViewControllerModal")
-        vc.title = "MyViewControllerTitle"
-        UIKitSupport.present(vc)
-    }
-    private func presentPushPop() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "TestViewControllerPushPop")
-        let nc = UINavigationController(rootViewController: vc)
-        UIKitSupport.present(nc)
     }
 }

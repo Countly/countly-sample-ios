@@ -1,48 +1,63 @@
 // UserProfileView.swift
+//
+// This code is provided under the MIT License.
+//
+// Please visit www.count.ly for more information.
+
 import SwiftUI
-import Countly
 
 struct UserProfileView: View {
-    private var u: CountlyUserDetails { Countly.sharedInstance().userProfile() }
+    private var user: UserProfileAPI { Countly.shared.userProfile }
+
     var body: some View {
         Form {
-            Section("Set properties (current)") {
-                ActionButton("setProperty predefined (name)") { u.setProperty("name", value: "John Doe"); u.save() }
-                ActionButton("setProperties (batch predefined + custom)") {
-                    u.setProperties(["email": "john@doe.com", "organization": "UN", "byear": "1970", "custom1": "v1"]); u.save()
-                }
-                ActionButton("Clear a property (setProperty name = \"\")") { u.setProperty("name", value: ""); u.save() }
-                ActionButton("setOnce") { u.setOnce("firstSeen", value: "2026"); u.save() }
-            }
-            Section("Numeric / array modifiers (current)") {
-                ActionButton("increment") { u.increment("counter"); u.save() }
-                ActionButton("incrementBy 5") { u.increment(by: "counter", value: 5); u.save() }
-                ActionButton("multiply x2") { u.multiply("counter", value: 2); u.save() }
-                ActionButton("max 100") { u.max("counter", value: 100); u.save() }
-                ActionButton("min 0") { u.min("counter", value: 0); u.save() }
-                ActionButton("push value") { u.push("tags", value: "a"); u.save() }
-                ActionButton("push values") { u.push("tags", values: ["b", "c"]); u.save() }
-                ActionButton("pushUnique value") { u.pushUnique("tags", value: "a"); u.save() }
-                ActionButton("pull value") { u.pull("tags", value: "b"); u.save() }
-            }
-            Section("State (current)") {
-                ActionButton("hasUnsyncedChanges?") { AppLog.shared.log("hasUnsyncedChanges = \(u.hasUnsyncedChanges())") }
-                ActionButton("clear (discard queued)") { u.clear() }
-                ActionButton("save") { u.save() }
-            }
             Section {
-                ActionButton("Record User Details (deprecated properties)") {
-                    Countly.user().name = "John Doe" as CountlyUserDetailsNullableString
-                    Countly.user().email = "john@doe.com" as CountlyUserDetailsNullableString
-                    Countly.user().birthYear = 1970 as CountlyUserDetailsNullableNumber
-                    Countly.user().organization = "United Nations" as CountlyUserDetailsNullableString
-                    Countly.user().custom = ["k1": "v1"] as CountlyUserDetailsNullableDictionary
-                    Countly.user().save()
+                ActionButton("Set Predefined Properties") {
+                    user.setProperties([
+                        "name": "John Doe",
+                        "username": "johndoe",
+                        "email": "john@example.com",
+                        "organization": "Countly",
+                        "phone": "+1234567890",
+                        "gender": "M",
+                        "byear": 1985,
+                        "picture": "https://count.ly/logo.png",
+                    ])
                 }
-                ActionButton("set:value: (deprecated)") { Countly.user().set("key101", value: "value101"); Countly.user().save() }
-                ActionButton("unSet: (deprecated)") { Countly.user().unSet("key101"); Countly.user().save() }
-            } header: { Text("Legacy (deprecated)") }
-              footer: { Text("Prefer userProfile.setProperty:value: / setProperties:.") }
+                ActionButton("Set One Predefined Property") { user.setProperty("name", value: "Jane Doe") }
+                ActionButton("Clear a Predefined Property") { user.setProperty("name", value: "") }
+            } header: {
+                Text("Predefined")
+            } footer: {
+                Text("The server clears a predefined field when it receives an empty string, and ignores null.")
+            }
+
+            Section("Custom properties") {
+                ActionButton("Set Custom Properties") { user.setProperties(["tier": "gold", "visits": 3, "beta": true]) }
+                ActionButton("Set One Custom Property") { user.setCustomProperty("tier", value: "platinum") }
+                ActionButton("Unset a Custom Property") { user.unsetCustomProperty("tier") }
+            }
+
+            Section("Modifiers") {
+                ActionButton("Set Once") { user.setOnce("first_seen", value: "2026-01-01") }
+                ActionButton("Increment") { user.increment("visits") }
+                ActionButton("Increment By") { user.incrementBy("score", value: 25) }
+                ActionButton("Multiply") { user.multiply("score", value: 2) }
+                ActionButton("Max") { user.max("highscore", value: 99) }
+                ActionButton("Min") { user.min("lowscore", value: 1) }
+                ActionButton("Push") { user.push("tags", value: "alpha") }
+                ActionButton("Push Unique") { user.pushUnique("tags", value: "beta") }
+                ActionButton("Pull") { user.pull("tags", value: "alpha") }
+            }
+
+            Section {
+                ActionButton("Save") { user.save() }
+                ActionButton("Clear All Staged Changes") { user.clear() }
+            } header: {
+                Text("Sending")
+            } footer: {
+                Text("Nothing leaves the device until save is called, and saving also flushes any pending events first, so a profile change always reaches the server before the events that follow it.")
+            }
         }
     }
 }

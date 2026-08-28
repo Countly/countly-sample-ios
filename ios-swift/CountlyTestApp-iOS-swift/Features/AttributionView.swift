@@ -1,19 +1,43 @@
 // AttributionView.swift
+//
+// This code is provided under the MIT License.
+//
+// Please visit www.count.ly for more information.
+
 import SwiftUI
-import Countly
 
 struct AttributionView: View {
-    private var cly: Countly { Countly.sharedInstance() }
+    private var attribution: AttributionAPI { Countly.shared.attribution }
+
     var body: some View {
         Form {
-            Section("Current") {
-                ActionButton("Record Direct Attribution") { cly.recordDirectAttribution(withCampaignType: "countly", andCampaignData: "{\"cid\":\"123\",\"cuid\":\"456\"}") }
-                ActionButton("Record Indirect Attribution") { cly.recordIndirectAttribution(["idfa": "00000000-0000-0000-0000-000000000000"]) }
-            }
             Section {
-                ActionButton("Record Attribution ID (deprecated)") { cly.recordAttributionID("attribution-id") }
-            } header: { Text("Legacy (deprecated)") }
-              footer: { Text("Prefer recordDirectAttributionWithCampaignType:andCampaignData: / recordIndirectAttribution:.") }
+                ActionButton("Record Direct Attribution") {
+                    attribution.recordDirectAttribution(campaignType: "countly",
+                                                        campaignData: "{\"cid\":\"CAMPAIGN_ID\",\"cuid\":\"CAMPAIGN_USER_ID\"}")
+                }
+                ActionButton("… without a Campaign User ID") {
+                    attribution.recordDirectAttribution(campaignType: "countly",
+                                                        campaignData: "{\"cid\":\"CAMPAIGN_ID\"}")
+                }
+                ActionButton("… with an Unsupported Campaign Type") {
+                    attribution.recordDirectAttribution(campaignType: "unsupported",
+                                                        campaignData: "{\"cid\":\"CAMPAIGN_ID\"}")
+                }
+            } header: {
+                Text("Direct")
+            } footer: {
+                Text("The campaign the user came from, as the JSON a deep link handed the application. Only the countly campaign type is supported.")
+            }
+
+            Section {
+                ActionButton("Record Indirect Attribution") { attribution.recordIndirectAttribution(["idfa": "ADVERTISING_ID"]) }
+                ActionButton("… with Several Identifiers") { attribution.recordIndirectAttribution(["idfa": "ADVERTISING_ID", "idfv": "VENDOR_ID"]) }
+            } header: {
+                Text("Indirect")
+            } footer: {
+                Text("Advertising identifiers the host application obtained itself. The SDK never collects them on its own.")
+            }
         }
     }
 }

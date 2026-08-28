@@ -5,7 +5,7 @@
 // Please visit www.count.ly for more information.
 
 import SwiftUI
-import Countly
+
 
 /// Shared, in-app log so async SDK results (widget lists, RC downloads, device ID, errors)
 /// are visible without the Xcode console.

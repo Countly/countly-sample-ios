@@ -58,7 +58,7 @@ static NSMutableArray* addedModifiers;
 
 - (void)onClick_save:(id)sender
 {
-    [Countly.user save];
+    [Countly.sharedInstance.userProfile save];
     
     addedModifiers = NSMutableArray.new;
     
@@ -167,17 +167,19 @@ static NSMutableArray* addedModifiers;
             {
                 switch (indexPath.row)
                 {
-                    case 0: [Countly.user set:key value:value]; break;
-                    case 1: [Countly.user setOnce:key value:value]; break;
-                    case 2: [Countly.user unSet:key]; break;
-                    case 3: [Countly.user increment:key]; break;
-                    case 4: [Countly.user incrementBy:key value:@([value doubleValue])]; break;
-                    case 5: [Countly.user multiply:key value:@([value doubleValue])]; break;
-                    case 6: [Countly.user max:key value:@([value doubleValue])]; break;
-                    case 7: [Countly.user min:key value:@([value doubleValue])]; break;
-                    case 8: [Countly.user push:key value:value]; break;
-                    case 9: [Countly.user pushUnique:key value:value]; break;
-                    case 10: [Countly.user pull:key value:value]; break;
+                    // Modern named-aware setter — matches the deprecation guidance on -set:value:.
+                    case 0: [Countly.sharedInstance.userProfile setProperty:key value:value]; break;
+                    case 1: [Countly.sharedInstance.userProfile setOnce:key value:value]; break;
+                    // Empty-string clears a property on the server (Countly empty-string-as-clear semantics).
+                    case 2: [Countly.sharedInstance.userProfile setProperty:key value:@""]; break;
+                    case 3: [Countly.sharedInstance.userProfile increment:key]; break;
+                    case 4: [Countly.sharedInstance.userProfile incrementBy:key value:@([value doubleValue])]; break;
+                    case 5: [Countly.sharedInstance.userProfile multiply:key value:@([value doubleValue])]; break;
+                    case 6: [Countly.sharedInstance.userProfile max:key value:@([value doubleValue])]; break;
+                    case 7: [Countly.sharedInstance.userProfile min:key value:@([value doubleValue])]; break;
+                    case 8: [Countly.sharedInstance.userProfile push:key value:value]; break;
+                    case 9: [Countly.sharedInstance.userProfile pushUnique:key value:value]; break;
+                    case 10: [Countly.sharedInstance.userProfile pull:key value:value]; break;
                     default: break;
                 }
             

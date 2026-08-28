@@ -13,7 +13,6 @@ struct ContentZoneView: View {
         Form {
             Section {
                 ActionButton("Enter Content Zone") { content.enterContentZone() }
-                ActionButton("Enter Content Zone with Tags") { content.enterContentZone(tags: ["promo"]) }
                 ActionButton("Exit Content Zone") { content.exitContentZone() }
             } header: {
                 Text("Zone")
@@ -23,7 +22,6 @@ struct ContentZoneView: View {
 
             Section("While inside the zone") {
                 ActionButton("Refresh Content Zone") { content.refreshContentZone() }
-                ActionButton("Change Content Tags") { content.changeContent(tags: ["seasonal"]) }
             }
 
             Section {

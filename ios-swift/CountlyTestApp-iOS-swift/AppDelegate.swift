@@ -5,6 +5,7 @@
 // Please visit www.count.ly for more information.
 
 import UIKit
+import SwiftUI
 import CoreLocation
 
 // The SDK sources are compiled into this target from the `countly-sdk-swift`
@@ -137,6 +138,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //      }
 
         Countly.shared.start(with: config)
+
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = UIHostingController(rootView: RootView())
+        window.makeKeyAndVisible()
+        self.window = window
 
         return true
     }

@@ -90,6 +90,10 @@
 		FB0F40A3887FCF2AFD13AF67 /* UIKitSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B822B1402AEE937629D769 /* UIKitSupport.swift */; };
 		FEDA4AFD2C9A4D83BEB98107 /* CrashHandlerInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C64082E3344B9AC73D0E6 /* CrashHandlerInstaller.swift */; };
 		847F354C6E5A46E1A903B196 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A05B377A75464D9844C013 /* SceneDelegate.swift */; };
+		45938ECB5D374D0590B4D515 /* ComposerSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E512FD5366F14B2885B69C4B /* ComposerSupport.swift */; };
+		22D4747A137946DBB8C019DB /* EventComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53971ECF13AD4BBCA5B1B3C1 /* EventComposerView.swift */; };
+		29ED93EEDB7F4284BAD59ED4 /* UserDetailsComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE16C72B5C84B069A1209C6 /* UserDetailsComposerView.swift */; };
+		1496D318A12245B3A4A31DC4 /* UserModifiersComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B98A71B5264457B8BFAA006 /* UserModifiersComposerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -177,6 +181,10 @@
 		FC7463A4AEBB4629A84920B8 /* CountlyInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountlyInstance.swift; sourceTree = "<group>"; };
 		FF7F23BE99FB4B1C91995BD8 /* CountlyTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountlyTypes.swift; sourceTree = "<group>"; };
 		A9A05B377A75464D9844C013 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E512FD5366F14B2885B69C4B /* ComposerSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerSupport.swift; sourceTree = "<group>"; };
+		53971ECF13AD4BBCA5B1B3C1 /* EventComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventComposerView.swift; sourceTree = "<group>"; };
+		6BE16C72B5C84B069A1209C6 /* UserDetailsComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsComposerView.swift; sourceTree = "<group>"; };
+		5B98A71B5264457B8BFAA006 /* UserModifiersComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModifiersComposerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +215,9 @@
 				36971EFF8DEB919452BB1E4F /* DeviceIDView.swift */,
 				8F52DA73E8F322E0B17C999D /* AttributionView.swift */,
 				81DA1BFA4FD3F35EC2653C92 /* APMView.swift */,
+				5B98A71B5264457B8BFAA006 /* UserModifiersComposerView.swift */,
+				6BE16C72B5C84B069A1209C6 /* UserDetailsComposerView.swift */,
+				53971ECF13AD4BBCA5B1B3C1 /* EventComposerView.swift */,
 				E481A833F66D4FD993D011A8 /* InstancesView.swift */,
 				8D68D0D8DC3F4AADB09D8BA0 /* LocationView.swift */,
 				80B15412D9D542B28B4AEDF9 /* ABTestingView.swift */,
@@ -297,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				D252E3841DE074D2006548B0 /* AppDelegate.swift */,
+				E512FD5366F14B2885B69C4B /* ComposerSupport.swift */,
 				A9A05B377A75464D9844C013 /* SceneDelegate.swift */,
 				672FD0AF5A67446192679541 /* Scenarios.swift */,
 				D257996E1DE71166006A64CA /* TestViewControllerModal.swift */,
@@ -443,6 +455,7 @@
 				2E2336D5DB1E466A99191779 /* OverlayWindow.swift in Sources */,
 				78F82FE876AC4B36AC13A785 /* WebViewManager.swift in Sources */,
 				D252E3851DE074D2006548B0 /* AppDelegate.swift in Sources */,
+				45938ECB5D374D0590B4D515 /* ComposerSupport.swift in Sources */,
 				847F354C6E5A46E1A903B196 /* SceneDelegate.swift in Sources */,
 				6FE739BDB64D43F3B0ECFC0C /* Scenarios.swift in Sources */,
 				56F2BA1B0720A8FAA709F0B1 /* AppLog.swift in Sources */,
@@ -462,6 +475,9 @@
 				3167AA07BE455F1EA5AD494D /* DeviceIDView.swift in Sources */,
 				282D10186E0BFA38643FD53B /* AttributionView.swift in Sources */,
 				1BEF01BB1E74DF859506E1CE /* APMView.swift in Sources */,
+				1496D318A12245B3A4A31DC4 /* UserModifiersComposerView.swift in Sources */,
+				29ED93EEDB7F4284BAD59ED4 /* UserDetailsComposerView.swift in Sources */,
+				22D4747A137946DBB8C019DB /* EventComposerView.swift in Sources */,
 				A80D1979C5504F96AD5C4A9D /* InstancesView.swift in Sources */,
 				D192F778760640A68AA16279 /* LocationView.swift in Sources */,
 				A38FF54380D74506ABC3108E /* ABTestingView.swift in Sources */,

@@ -22,6 +22,11 @@ struct FeatureGroup: Identifiable {
 
 @MainActor
 let featureGroups: [FeatureGroup] = [
+    FeatureGroup(title: "Compose", features: [
+        Feature(title: "Event Composer", systemImage: "square.and.pencil", tint: .blue, destination: AnyView(EventComposerView())),
+        Feature(title: "User Details Editor", systemImage: "person.text.rectangle", tint: .purple, destination: AnyView(UserDetailsComposerView())),
+        Feature(title: "Property Modifiers", systemImage: "function", tint: .indigo, destination: AnyView(UserModifiersComposerView())),
+    ]),
     FeatureGroup(title: "Data & Events", features: [
         Feature(title: "Custom Events", systemImage: "bolt", tint: .blue, destination: AnyView(CustomEventsView())),
         Feature(title: "Views", systemImage: "rectangle.stack", tint: .teal, destination: AnyView(ViewsView())),

@@ -53,6 +53,7 @@ let featureGroups: [FeatureGroup] = [
     FeatureGroup(title: "Engagement", features: [
         Feature(title: "Remote Config", systemImage: "slider.horizontal.3", tint: .cyan, destination: AnyView(RemoteConfigView())),
         Feature(title: "A/B Testing", systemImage: "arrow.triangle.branch", tint: .mint, destination: AnyView(ABTestingView())),
+        Feature(title: "Feedback", systemImage: "star.bubble", tint: .yellow, destination: AnyView(FeedbackView())),
         Feature(title: "Content", systemImage: "square.on.square", tint: .pink, destination: AnyView(ContentZoneView())),
         Feature(title: "Push Notifications", systemImage: "bell.badge", tint: .red, destination: AnyView(PushNotificationsView())),
     ]),

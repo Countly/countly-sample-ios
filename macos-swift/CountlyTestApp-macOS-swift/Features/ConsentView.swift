@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct ConsentView: View {
-    private var consent: ConsentAPI { Countly.shared.consent }
+    private var consent: ConsentAPI { AppContext.active.consent }
 
     var body: some View {
         FeatureList {

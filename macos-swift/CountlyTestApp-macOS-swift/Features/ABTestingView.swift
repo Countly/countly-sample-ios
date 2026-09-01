@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct ABTestingView: View {
-    private var remoteConfig: RemoteConfigAPI { Countly.shared.remoteConfig }
+    private var remoteConfig: RemoteConfigAPI { AppContext.active.remoteConfig }
 
     @State private var key = "welcome_text"
     @State private var variant = "A"

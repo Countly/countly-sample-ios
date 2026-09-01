@@ -27,9 +27,12 @@ struct MultiThreadingView: View {
     }
 
     private func record(on index: Int) {
+        // Resolved here rather than inside the closure: the point of this screen is
+        // hammering one instance from eight queues, not resolving eight of them.
+        let countly = AppContext.active
         DispatchQueue(label: "sample.thread.\(index)").async {
             for step in 0..<10 {
-                Countly.shared.events.recordEvent("multi-threading-event",
+                countly.events.recordEvent("multi-threading-event",
                                                   segmentation: ["thread": "\(index)", "index": "\(step)"])
             }
         }

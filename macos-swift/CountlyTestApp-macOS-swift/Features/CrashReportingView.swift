@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct CrashReportingView: View {
-    private var crashes: CrashesAPI { Countly.shared.crashes }
+    private var crashes: CrashesAPI { AppContext.active.crashes }
 
     var body: some View {
         FeatureList {

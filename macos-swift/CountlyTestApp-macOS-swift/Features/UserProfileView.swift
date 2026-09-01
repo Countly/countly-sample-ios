@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct UserProfileView: View {
-    private var user: UserProfileAPI { Countly.shared.userProfile }
+    private var user: UserProfileAPI { AppContext.active.userProfile }
 
     var body: some View {
         FeatureList {

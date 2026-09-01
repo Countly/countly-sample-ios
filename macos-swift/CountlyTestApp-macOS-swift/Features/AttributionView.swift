@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct AttributionView: View {
-    private var attribution: AttributionAPI { Countly.shared.attribution }
+    private var attribution: AttributionAPI { AppContext.active.attribution }
 
     var body: some View {
         FeatureList {

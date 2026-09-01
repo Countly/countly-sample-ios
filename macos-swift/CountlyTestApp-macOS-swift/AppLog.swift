@@ -28,8 +28,11 @@ final class AppLog: ObservableObject {
     }
 
     /// A line the SDK itself emitted, already carrying its own level prefix.
+    ///
+    /// Not echoed to the console: the SDK has already printed it there, and
+    /// printing it twice makes the console harder to read than no pane at all.
     func sdk(_ msg: String) {
-        stamp("   \(msg)", latest: nil)
+        stamp("   \(msg)", latest: nil, echo: false)
     }
 
     func clear() {
@@ -43,13 +46,13 @@ final class AppLog: ObservableObject {
         lines.reversed().joined(separator: "\n")
     }
 
-    private func stamp(_ line: String, latest: String?) {
+    private func stamp(_ line: String, latest: String?, echo: Bool = true) {
         let stamped = "\(formatter.string(from: Date())) \(line)"
         DispatchQueue.main.async {
             if let latest { self.latest = latest }
             self.lines.insert(stamped, at: 0)
             if self.lines.count > 500 { self.lines.removeLast() }
-            NSLog("[Sample] %@", line)
+            if echo { NSLog("[Sample] %@", line) }
         }
     }
 }

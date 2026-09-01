@@ -29,7 +29,7 @@ struct UserModifiersComposerView: View {
     @State private var key = "score"
     @State private var value = "25"
 
-    private var user: UserProfileAPI { Countly.shared.userProfile }
+    private var user: UserProfileAPI { AppContext.active.userProfile }
 
     var body: some View {
         FeatureList {

@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct SessionsView: View {
-    private var sessions: SessionsAPI { Countly.shared.sessions }
+    private var sessions: SessionsAPI { AppContext.active.sessions }
 
     var body: some View {
         FeatureList {
@@ -22,8 +22,8 @@ struct SessionsView: View {
             }
 
             Section {
-                ActionButton("Suspend SDK") { Countly.shared.suspend() }
-                ActionButton("Resume SDK") { Countly.shared.resume() }
+                ActionButton("Suspend SDK") { AppContext.active.suspend() }
+                ActionButton("Resume SDK") { AppContext.active.resume() }
             } header: {
                 Text("Lifecycle")
             } footer: {

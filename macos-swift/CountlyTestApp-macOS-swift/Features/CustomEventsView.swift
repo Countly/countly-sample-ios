@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct CustomEventsView: View {
-    private var events: EventsAPI { Countly.shared.events }
+    private var events: EventsAPI { AppContext.active.events }
 
     var body: some View {
         FeatureList {

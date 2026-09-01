@@ -20,7 +20,7 @@ struct UserDetailsComposerView: View {
 
     @State private var custom: [KeyValue] = [KeyValue(key: "tier", value: "gold")]
 
-    private var user: UserProfileAPI { Countly.shared.userProfile }
+    private var user: UserProfileAPI { AppContext.active.userProfile }
 
     var body: some View {
         FeatureList {

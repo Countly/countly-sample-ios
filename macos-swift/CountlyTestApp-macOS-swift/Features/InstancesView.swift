@@ -13,8 +13,8 @@ import SwiftUI
 struct InstancesView: View {
 
     @AppStorage("secondInstanceName") private var name = "secondary"
-    @AppStorage("secondInstanceAppKey") private var appKey = SDKSetup.placeholderAppKey
-    @AppStorage("secondInstanceHost") private var host = SDKSetup.placeholderHost
+    @AppStorage("secondInstanceAppKey") private var appKey = AppContext.defaultAppKey
+    @AppStorage("secondInstanceHost") private var host = AppContext.defaultHost
 
     @State private var eventKey = "event-on-second-instance"
 

@@ -22,14 +22,18 @@ struct FeatureGroup: Identifiable {
 
 /// The sections of the sidebar.
 ///
-/// Only what the SDK actually does on macOS is here. Automatic view tracking,
-/// device orientation and the feedback widgets are guarded to iOS, tvOS or
-/// visionOS in the SDK, so there is nothing on this list that would report
-/// nothing when pressed.
+/// Only what the SDK actually does on macOS is here. The feedback widgets are
+/// guarded to iOS and visionOS in the SDK, so there is no screen for them.
+/// Automatic view tracking and device orientation are guarded to iOS and tvOS and
+/// appear on the Initialize screen, disabled, so the whole configuration surface
+/// stays visible without offering a control that does nothing.
+///
+/// Every screen below drives the instance the Initialize screen configured, and
+/// every call on them is a logged no-op until it has been initialized.
 @MainActor
 let featureGroups: [FeatureGroup] = [
     FeatureGroup(title: "Setup", features: [
-        Feature(title: "SDK Setup", systemImage: "gearshape", tint: .gray, destination: AnyView(SDKSetupView())),
+        Feature(title: "Initialize", systemImage: "power", tint: .gray, destination: AnyView(InitView())),
     ]),
     FeatureGroup(title: "Compose", features: [
         Feature(title: "Event Composer", systemImage: "square.and.pencil", tint: .blue, destination: AnyView(EventComposerView())),

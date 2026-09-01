@@ -16,7 +16,7 @@ struct ContentZoneView: View {
     @State private var newDeviceID = ""
     @State private var contentID = "CONTENT_ID"
 
-    private var content: ContentAPI { Countly.shared.content }
+    private var content: ContentAPI { AppContext.active.content }
 
     var body: some View {
         FeatureList {
@@ -50,8 +50,8 @@ struct ContentZoneView: View {
                         AppLog.shared.log("Enter a device ID first")
                         return
                     }
-                    Countly.shared.deviceID.setID(id)
-                    Countly.shared.consent.giveAllConsents()
+                    AppContext.active.deviceID.setID(id)
+                    AppContext.active.consent.giveAllConsents()
                     AppLog.shared.log("Device ID changed to \(id), all consents given")
                 }
             } header: {
@@ -61,7 +61,7 @@ struct ContentZoneView: View {
             }
 
             Section {
-                FootnoteText("The global content callback and the URL handler are installed in SDKSetup, so an open, a close and any link the page tries to follow all land in the log below.")
+                FootnoteText("The global content callback and the URL handler are installed by the sample when the config is built, so an open, a close and any link the page tries to follow all land in the log below.")
             } header: {
                 Text("Callbacks")
             }

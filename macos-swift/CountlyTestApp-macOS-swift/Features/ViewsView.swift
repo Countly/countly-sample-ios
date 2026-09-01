@@ -13,7 +13,7 @@ import SwiftUI
 /// and `ViewsModule.handleAutoTrackedViewController` behind the same guard. On
 /// macOS a view is only ever reported because the application asked for it.
 struct ViewsView: View {
-    private var views: ViewsAPI { Countly.shared.views }
+    private var views: ViewsAPI { AppContext.active.views }
 
     /// Kept so pause, resume and stop can act on the view that was started.
     @State private var startedViewID: String?

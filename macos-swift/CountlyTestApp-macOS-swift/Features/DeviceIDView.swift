@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct DeviceIDView: View {
-    private var deviceID: DeviceIDAPI { Countly.shared.deviceID }
+    private var deviceID: DeviceIDAPI { AppContext.active.deviceID }
 
     @State private var newID = "new-device-id"
 

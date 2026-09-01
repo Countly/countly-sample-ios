@@ -51,11 +51,11 @@ struct RootView: View {
                 .foregroundStyle(.tertiary)
             Text("Countly Swift SDK v\(SDKIdentity.version)")
                 .font(.headline)
-            Text("Pick a feature on the left. Everything it calls, and everything the SDK says back, lands in the log below.")
+            Text("Start on Initialize: the SDK is not started at launch, so every init-time option is chosen there before anything runs. Everything the other screens call, and everything the SDK says back, lands in the log below.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
-                .frame(maxWidth: 340)
+                .frame(maxWidth: 380)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

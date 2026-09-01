@@ -8,7 +8,7 @@ import SwiftUI
 import CoreLocation
 
 struct LocationView: View {
-    private var location: LocationAPI { Countly.shared.location }
+    private var location: LocationAPI { AppContext.active.location }
 
     var body: some View {
         FeatureList {

@@ -44,7 +44,7 @@ struct EventComposerView: View {
                 if useTimedEvent {
                     Button("End Timed Event") { endTimed() }
                     Button("Cancel Timed Event") {
-                        Countly.shared.events.cancelEvent(key)
+                        AppContext.active.events.cancelEvent(key)
                         AppLog.shared.log("cancelled timed event '\(key)'")
                     }
                 }
@@ -60,12 +60,12 @@ struct EventComposerView: View {
         guard !key.isEmpty else { return AppLog.shared.log("an event needs a key") }
 
         if useTimedEvent {
-            Countly.shared.events.startEvent(key)
+            AppContext.active.events.startEvent(key)
             AppLog.shared.log("started timed event '\(key)'")
             return
         }
 
-        Countly.shared.events.recordEvent(key,
+        AppContext.active.events.recordEvent(key,
                                           segmentation: parsedSegmentation,
                                           count: Int(count) ?? 1,
                                           sum: Double(sum) ?? 0,
@@ -74,7 +74,7 @@ struct EventComposerView: View {
     }
 
     private func endTimed() {
-        Countly.shared.events.endEvent(key,
+        AppContext.active.events.endEvent(key,
                                        segmentation: parsedSegmentation,
                                        count: Int(count) ?? 1,
                                        sum: Double(sum) ?? 0)

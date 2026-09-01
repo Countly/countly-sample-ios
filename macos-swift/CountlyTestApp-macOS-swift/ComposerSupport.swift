@@ -47,7 +47,7 @@ struct LabeledField: View {
             Text(label)
                 .foregroundStyle(.secondary)
                 .frame(width: 130, alignment: .leading)
-            TextField(placeholder.isEmpty ? label : placeholder, text: $text)
+            TextField(label, text: $text, prompt: placeholder.isEmpty ? nil : Text(placeholder))
                 .textFieldStyle(.roundedBorder)
                 .disableAutocorrection(true)
         }

@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct APMView: View {
-    private var performance: APMAPI { Countly.shared.performance }
+    private var performance: APMAPI { AppContext.active.performance }
 
     var body: some View {
         FeatureList {

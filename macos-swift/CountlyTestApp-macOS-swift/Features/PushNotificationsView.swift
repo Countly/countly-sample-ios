@@ -13,7 +13,7 @@ import SwiftUI
 /// macOS has its own launch notification replay for a notification that started
 /// the application.
 struct PushNotificationsView: View {
-    private var push: PushAPI { Countly.shared.push }
+    private var push: PushAPI { AppContext.active.push }
 
     var body: some View {
         FeatureList {

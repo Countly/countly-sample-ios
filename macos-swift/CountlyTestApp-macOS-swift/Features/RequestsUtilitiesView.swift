@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct RequestsUtilitiesView: View {
-    private var queue: RequestQueueAPI { Countly.shared.requestQueue }
+    private var queue: RequestQueueAPI { AppContext.active.requestQueue }
 
     @State private var newHost = ""
     @State private var newAppKey = ""
@@ -37,32 +37,32 @@ struct RequestsUtilitiesView: View {
             }
 
             Section("Direct requests and metrics") {
-                ActionButton("Add a Direct Request") { Countly.shared.addDirectRequest(["custom_key": "custom_value"]) }
-                ActionButton("Record a Metrics Override") { Countly.shared.recordMetrics(["_custom_metric": "custom_value"]) }
+                ActionButton("Add a Direct Request") { AppContext.active.addDirectRequest(["custom_key": "custom_value"]) }
+                ActionButton("Record a Metrics Override") { AppContext.active.recordMetrics(["_custom_metric": "custom_value"]) }
             }
 
             Section {
-                LabeledField("Server URL", text: $newHost, placeholder: SDKSetup.placeholderHost)
+                LabeledField("Server URL", text: $newHost, placeholder: AppContext.defaultHost)
                 Button("Set a New Host") {
                     let host = newHost.trimmingCharacters(in: .whitespaces)
                     guard !host.isEmpty else { return AppLog.shared.log("enter a server URL first") }
-                    Countly.shared.setNewHost(host)
+                    AppContext.active.setNewHost(host)
                     AppLog.shared.log("host set to \(host) for this run only")
                 }
-                LabeledField("App key", text: $newAppKey, placeholder: SDKSetup.placeholderAppKey)
+                LabeledField("App key", text: $newAppKey, placeholder: AppContext.defaultAppKey)
                 Button("Set a New App Key") {
                     let appKey = newAppKey.trimmingCharacters(in: .whitespaces)
                     guard !appKey.isEmpty else { return AppLog.shared.log("enter an app key first") }
-                    Countly.shared.setNewAppKey(appKey)
+                    AppContext.active.setNewAppKey(appKey)
                     AppLog.shared.log("app key set to \(appKey) for this run only")
                 }
                 ActionButton("Add Custom Network Request Headers") {
-                    Countly.shared.addCustomNetworkRequestHeaders(["X-My-Custom-Field": "my_custom_value"])
+                    AppContext.active.addCustomNetworkRequestHeaders(["X-My-Custom-Field": "my_custom_value"])
                 }
                 ActionButton("Set a New URL Session Configuration") {
                     let configuration = URLSessionConfiguration.default
                     configuration.timeoutIntervalForRequest = 15
-                    Countly.shared.setNewURLSessionConfiguration(configuration)
+                    AppContext.active.setNewURLSessionConfiguration(configuration)
                 }
             } header: {
                 Text("Networking")

@@ -36,7 +36,11 @@ enum SDKSetup {
     }
 
     /// What the sample starts with until someone points it somewhere real.
-    static let placeholderHost = "https://your.server.ly"
+    ///
+    /// These are the two values the SDK itself recognises as placeholders and
+    /// refuses to initialize with, so an unconfigured sample says so loudly in the
+    /// log instead of quietly sending nothing.
+    static let placeholderHost = "https://YOUR_COUNTLY_SERVER"
     static let placeholderAppKey = "YOUR_APP_KEY"
 
     static var host: String {

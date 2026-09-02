@@ -7,6 +7,8 @@
 import SwiftUI
 
 struct ContentZoneView: View {
+    @State private var newDeviceID = ""
+
     private var content: ContentAPI { Countly.shared.content }
 
     var body: some View {
@@ -22,6 +24,24 @@ struct ContentZoneView: View {
 
             Section("While inside the zone") {
                 ActionButton("Refresh Content Zone") { content.refreshContentZone() }
+            }
+
+            Section {
+                LabeledField("Device ID", text: $newDeviceID, placeholder: "new_device_id")
+                ActionButton("Change Device ID") {
+                    let id = newDeviceID.trimmingCharacters(in: .whitespacesAndNewlines)
+                    guard !id.isEmpty else {
+                        AppLog.shared.log("Enter a device ID first")
+                        return
+                    }
+                    Countly.shared.deviceID.setID(id)
+                    Countly.shared.consent.giveAllConsents()
+                    AppLog.shared.log("Device ID changed to \(id), all consents given")
+                }
+            } header: {
+                Text("Device ID")
+            } footer: {
+                Text("Content is picked per user, so switching the device ID is how a different audience is checked. Consent is granted again afterwards because a change without merge starts a new user with no consent.")
             }
 
             Section {

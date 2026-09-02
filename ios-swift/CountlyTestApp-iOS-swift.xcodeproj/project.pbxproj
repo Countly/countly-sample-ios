@@ -23,6 +23,7 @@
 		28D0D3B53C5B47EAA72B9BF7 /* CrashModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5AE3365D34AA6B0FAC735 /* CrashModule.swift */; };
 		2A0032FD44D04DC4B8A1D939 /* WeakRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D06442E8B194E77986D11C0 /* WeakRegistry.swift */; };
 		2E2336D5DB1E466A99191779 /* OverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2C2D86266460CA062F349 /* OverlayWindow.swift */; };
+		A1C0F17E4B0E4C0FA0D9E311 /* ContentGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D5A8B26F1B48D2B7E30C55 /* ContentGeometry.swift */; };
 		3064B293EA40450CA79DA5BD /* EventsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8EBE370417404E80BE1D85 /* EventsModule.swift */; };
 		3167AA07BE455F1EA5AD494D /* DeviceIDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36971EFF8DEB919452BB1E4F /* DeviceIDView.swift */; };
 		35FA2FA94E00E162F0527060 /* ContentZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F4397F966F2C5E17EF6BAD /* ContentZoneView.swift */; };
@@ -176,6 +177,7 @@
 		D9233DA27CC17D55DBF16108 /* ViewsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewsView.swift; sourceTree = "<group>"; };
 		E481A833F66D4FD993D011A8 /* InstancesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstancesView.swift; sourceTree = "<group>"; };
 		EAB2C2D86266460CA062F349 /* OverlayWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverlayWindow.swift; path = UI/OverlayWindow.swift; sourceTree = "<group>"; };
+		C4D5A8B26F1B48D2B7E30C55 /* ContentGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentGeometry.swift; path = UI/ContentGeometry.swift; sourceTree = "<group>"; };
 		EE1123C9ACB244388BC2AEC5 /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectionManager.swift; path = Internal/Network/ConnectionManager.swift; sourceTree = "<group>"; };
 		F14B778F8C9B4C93A905F4D0 /* CountlyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountlyEvent.swift; path = Internal/Models/CountlyEvent.swift; sourceTree = "<group>"; };
 		FC7463A4AEBB4629A84920B8 /* CountlyInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountlyInstance.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				22AE4847EE4E4DFEB2D2B100 /* Logger.swift */,
 				6E5FD206D7EE48C6A58A228F /* MonotonicClock.swift */,
 				1D06442E8B194E77986D11C0 /* WeakRegistry.swift */,
+				C4D5A8B26F1B48D2B7E30C55 /* ContentGeometry.swift */,
 				EAB2C2D86266460CA062F349 /* OverlayWindow.swift */,
 				3DB088022F3546F4A579C5BF /* WebViewManager.swift */,
 			);
@@ -452,6 +455,7 @@
 				4FCB692AF0814BCAB662B9FE /* Logger.swift in Sources */,
 				9B38C36BE0CE4493AC49AC5F /* MonotonicClock.swift in Sources */,
 				2A0032FD44D04DC4B8A1D939 /* WeakRegistry.swift in Sources */,
+				A1C0F17E4B0E4C0FA0D9E311 /* ContentGeometry.swift in Sources */,
 				2E2336D5DB1E466A99191779 /* OverlayWindow.swift in Sources */,
 				78F82FE876AC4B36AC13A785 /* WebViewManager.swift in Sources */,
 				D252E3851DE074D2006548B0 /* AppDelegate.swift in Sources */,

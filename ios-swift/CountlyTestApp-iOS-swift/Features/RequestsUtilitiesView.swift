@@ -7,10 +7,27 @@
 import SwiftUI
 
 struct RequestsUtilitiesView: View {
-    private var queue: RequestQueueAPI { Countly.shared.requestQueue }
+    private var cly: Countly { Countly.sharedInstance() }
+    @ObservedObject private var session = SDKSession.shared
+    @State private var showHostPrompt = false
+    @State private var showAppKeyPrompt = false
+    @State private var newHost = ""
+    @State private var newAppKey = ""
 
     var body: some View {
         Form {
+            Section("Override config") {
+                Button("Set New Host…") {
+                    newHost = session.activeHost ?? ""
+                    showHostPrompt = true
+                }
+                Button("Set New App Key…") {
+                    newAppKey = session.activeAppKey ?? ""
+                    showAppKeyPrompt = true
+                }
+                ActionButton("Set New URLSessionConfiguration") { cly.setNewURLSessionConfiguration(.default) }
+                ActionButton("Add Custom Network Request Headers") { cly.addCustomNetworkRequestHeaders(["X-Sample": "1"]) }
+            }
             Section("Queue") {
                 ActionButton("Print Queue Size") { AppLog.shared.log("\(queue.count) requests queued") }
                 ActionButton("Attempt to Send Stored Requests") { queue.attemptToSendStoredRequests() }
@@ -25,36 +42,36 @@ struct RequestsUtilitiesView: View {
             } footer: {
                 Text("For an application whose app key changed, deciding whether the requests queued under the old one are re-attributed or dropped.")
             }
-
-            Section("Flush runnables") {
-                ActionButton("Add a Queue Flush Runnable") {
-                    queue.addQueueFlushRunnable { AppLog.shared.log("the queue drained with nothing failing") }
-                }
-                ActionButton("Clear Queue Flush Runnables") { queue.clearQueueFlushRunnables() }
-            }
-
-            Section("Direct requests and metrics") {
-                ActionButton("Add a Direct Request") { Countly.shared.addDirectRequest(["custom_key": "custom_value"]) }
-                ActionButton("Record a Metrics Override") { Countly.shared.recordMetrics(["_custom_metric": "custom_value"]) }
-            }
-
             Section {
-                ActionButton("Set a New Host") { Countly.shared.setNewHost("https://your.other.server.ly") }
-                ActionButton("Set a New App Key") { Countly.shared.setNewAppKey("YOUR_OTHER_APP_KEY") }
-                ActionButton("Add Custom Network Request Headers") {
-                    Countly.shared.addCustomNetworkRequestHeaders(["X-My-Custom-Field": "my_custom_value"])
+                ActionButton("Re-initialize with Setup values") {
+                    session.reset(clearStorage: false)
+                    session.initialize(with: SetupStore().load())
                 }
-                ActionButton("Set a New URL Session Configuration") {
-                    let configuration = URLSessionConfiguration.default
-                    configuration.timeoutIntervalForRequest = 15
-                    configuration.allowsCellularAccess = false
-                    Countly.shared.setNewURLSessionConfiguration(configuration)
+                ActionButton("Halt and return to Setup") { session.reset(clearStorage: false) }
+                Button("Halt, clear SDK storage and return to Setup", role: .destructive) {
+                    AppLog.shared.log("Halt (clear storage)")
+                    session.reset(clearStorage: true)
                 }
-            } header: {
-                Text("Networking")
-            } footer: {
-                Text("Changing the app key or host mid-run leaves whatever is already queued alone; the maintenance calls above decide what happens to it.")
-            }
+            } header: { Text("Lifecycle") }
+              footer: { Text("Clearing storage drops the request queue and the stored device ID; the Setup values are kept.") }
+        }
+        .alert("Set New Host", isPresented: $showHostPrompt) {
+            TextField("https://your.server.ly", text: $newHost)
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled()
+            Button("Apply") { session.setNewHost(newHost) }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("Requests already in the queue keep the host they were created for.")
+        }
+        .alert("Set New App Key", isPresented: $showAppKeyPrompt) {
+            TextField("App key", text: $newAppKey)
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled()
+            Button("Apply") { session.setNewAppKey(newAppKey) }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("Requests already in the queue keep their app key.")
         }
     }
 }

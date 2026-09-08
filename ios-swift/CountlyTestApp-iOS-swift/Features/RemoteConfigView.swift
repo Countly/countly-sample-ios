@@ -1,46 +1,57 @@
 // RemoteConfigView.swift
+//
+// This code is provided under the MIT License.
+//
+// Please visit www.count.ly for more information.
+
 import SwiftUI
-import Countly
 
 struct RemoteConfigView: View {
-    private var rc: CountlyRemoteConfig { Countly.sharedInstance().remoteConfig() }
-    private let cb: RCDownloadCallback = { response, error, _, values in
-        AppLog.shared.log(response == .responseSuccess ? "RC callback: \(values ?? [:])" : "RC callback error: \(error?.localizedDescription ?? "")")
-    }
+    private var remoteConfig: RemoteConfigAPI { Countly.shared.remoteConfig }
+
     var body: some View {
         Form {
             Section("Download") {
-                ActionButton("Download All RC Values") { rc.downloadKeys(cb) }
-                ActionButton("Download Specific RC Values") { rc.downloadSpecificKeys(["RC_KEY"], completionHandler: cb) }
-                ActionButton("Download Omitting Specific RC Values") { rc.downloadOmittingKeys(["RC_KEY"], completionHandler: cb) }
-            }
-            Section("Get / Clear") {
-                ActionButton("Get All RC Values") { AppLog.shared.log("\(rc.getAllValues())") }
-                ActionButton("Get Specific RC Value") { AppLog.shared.log("\(rc.getValue("RC_KEY"))") }
-                ActionButton("Clear All RC Values") { rc.clearAll() }
-                ActionButton("Register RC Download Callback") { rc.registerDownloadCallback(cb) }
-                ActionButton("Remove RC Download Callback") { rc.removeDownloadCallback(cb) }
-            }
-            Section("Enroll / A-B tests") {
-                ActionButton("Get All RC Values And Enroll") { AppLog.shared.log("\(rc.getAllValuesAndEnroll())") }
-                ActionButton("Get Specific RC Value And Enroll") { AppLog.shared.log("\(rc.getValueAndEnroll("RC_KEY"))") }
-                ActionButton("Enroll Into AB Tests") { rc.enrollIntoABTests(forKeys: ["RC_KEY"]) }
-                ActionButton("Exit AB Tests") { rc.exitABTests(forKeys: ["RC_KEY"]) }
-            }
-            Section("Testing / variants / experiments") {
-                ActionButton("Fetch All Test Variants") { AppLog.shared.log("\(rc.testingGetAllVariants())") }
-                ActionButton("Fetch Specific Test Variants") { AppLog.shared.log("\(rc.testingGetVariants(forKey: "RC_KEY"))") }
-                ActionButton("Enroll Into Variant") {
-                    rc.testingEnroll(intoVariant: "RC_KEY", variantName: "Variant A") { response, error in
-                        AppLog.shared.log(response == .responseSuccess ? "Enrolled into variant" : "Enroll error: \(error?.localizedDescription ?? "")")
+                ActionButton("Download All Values") {
+                    remoteConfig.downloadKeys { result, error, fullUpdate, values in
+                        AppLog.shared.log("download all: \(result), full: \(fullUpdate), count: \(values.count)\(error.map { ", error: \($0.localizedDescription)" } ?? "")")
                     }
                 }
-                ActionButton("Download Experiment Information") {
-                    rc.testingDownloadExperimentInformation { response, error in
-                        if response == .responseSuccess { AppLog.shared.log("Experiments: \(rc.testingGetAllExperimentInfo())") }
-                        else { AppLog.shared.log("Experiment info error: \(error?.localizedDescription ?? "")") }
+                ActionButton("Download Specific Keys") {
+                    remoteConfig.downloadSpecificKeys(["welcome_text"]) { result, _, _, values in
+                        AppLog.shared.log("download specific: \(result), count: \(values.count)")
                     }
                 }
+                ActionButton("Download Omitting Keys") {
+                    remoteConfig.downloadOmittingKeys(["welcome_text"]) { result, _, _, values in
+                        AppLog.shared.log("download omitting: \(result), count: \(values.count)")
+                    }
+                }
+            }
+
+            Section("Read") {
+                ActionButton("Get One Value") {
+                    let data = remoteConfig.getValue("welcome_text")
+                    AppLog.shared.log("welcome_text: \(String(describing: data.value)), belongs to current user: \(data.isCurrentUsersData)")
+                }
+                ActionButton("Get All Values") {
+                    let values = remoteConfig.getAllValues()
+                    AppLog.shared.log("\(values.count) values: \(values.keys.sorted().joined(separator: ", "))")
+                }
+            }
+
+            Section {
+                ActionButton("Register a Download Callback") {
+                    remoteConfig.registerDownloadCallback { result, _, _, values in
+                        AppLog.shared.log("global callback: \(result), \(values.count) values")
+                    }
+                }
+                ActionButton("Remove All Download Callbacks") { remoteConfig.removeAllDownloadCallbacks() }
+                ActionButton("Clear All Values") { remoteConfig.clearAll() }
+            } header: {
+                Text("Callbacks and cache")
+            } footer: {
+                Text("A callback registered here fires on every download, including the automatic one at init.")
             }
         }
     }

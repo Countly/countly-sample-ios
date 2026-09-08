@@ -1,22 +1,37 @@
 // MultiThreadingView.swift
+//
+// This code is provided under the MIT License.
+//
+// Please visit www.count.ly for more information.
+
 import SwiftUI
-import Countly
 
 struct MultiThreadingView: View {
-    @State private var queues: [Int: DispatchQueue] = [:]
+
     var body: some View {
         Form {
             Section {
-                ForEach(1...8, id: \.self) { t in ActionButton("Thread \(t)") { fire(t) } }
-            } footer: { Text("Each thread records 15 events on its own serial queue.") }
+                ForEach(1...8, id: \.self) { index in
+                    ActionButton("Thread \(index)") { record(on: index) }
+                }
+            } header: {
+                Text("Concurrent recording")
+            } footer: {
+                Text("Each button records ten events from its own queue. Every public call is safe from any thread; tapping several at once is the point.")
+            }
+
+            Section {
+                ActionButton("All Eight at Once") { (1...8).forEach(record(on:)) }
+            }
         }
     }
-    private func fire(_ t: Int) {
-        let q = queues[t] ?? DispatchQueue(label: "ly.count.multithreading\(t)")
-        queues[t] = q
-        let tag = String(t)
-        for i in 0..<15 {
-            q.async { Countly.sharedInstance().recordEvent("MultiThreadingEvent" + tag, segmentation: ["k": "v" + String(i)]) }
+
+    private func record(on index: Int) {
+        DispatchQueue(label: "sample.thread.\(index)").async {
+            for step in 0..<10 {
+                Countly.shared.events.recordEvent("multi-threading-event",
+                                                  segmentation: ["thread": "\(index)", "index": "\(step)"])
+            }
         }
     }
 }

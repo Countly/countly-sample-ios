@@ -51,42 +51,42 @@
             NSURL *documentsDirectory = [NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].lastObject;
             NSString *localImagePath = [documentsDirectory.absoluteString stringByAppendingPathComponent:@"SamplePicture.jpg"];
 
-            Countly.user.name = @"John Doe";
-            Countly.user.email = @"john@doe.com";
-            Countly.user.birthYear = @(1970);
-            Countly.user.organization = @"United Nations";
-            Countly.user.gender = @"M";
-            Countly.user.phone = @"+0123456789";
-            Countly.user.pictureLocalPath = localImagePath;
-            Countly.user.custom = @{@"testkey1": @"testvalue1", @"testkey2": @"testvalue2"};
-            [Countly.user save];
+            Countly.sharedInstance.userProfile.name = @"John Doe";
+            Countly.sharedInstance.userProfile.email = @"john@doe.com";
+            Countly.sharedInstance.userProfile.birthYear = @(1970);
+            Countly.sharedInstance.userProfile.organization = @"United Nations";
+            Countly.sharedInstance.userProfile.gender = @"M";
+            Countly.sharedInstance.userProfile.phone = @"+0123456789";
+            Countly.sharedInstance.userProfile.pictureLocalPath = localImagePath;
+            Countly.sharedInstance.userProfile.custom = @{@"testkey1": @"testvalue1", @"testkey2": @"testvalue2"};
+            [Countly.sharedInstance.userProfile save];
         } break;
 
         case 3:
         {
-            Countly.user.email = NSNull.null;
-            Countly.user.birthYear = NSNull.null;
-            Countly.user.gender = NSNull.null;
-            [Countly.user save];
+            Countly.sharedInstance.userProfile.email = NSNull.null;
+            Countly.sharedInstance.userProfile.birthYear = NSNull.null;
+            Countly.sharedInstance.userProfile.gender = NSNull.null;
+            [Countly.sharedInstance.userProfile save];
         } break;
 
         case 4:
         {
-            [Countly.user set:@"key101" value:@"value101"];
-            [Countly.user incrementBy:@"key102" value:@5];
-            [Countly.user push:@"key103" value:@"singlevalue"];
-            [Countly.user push:@"key104" values:@[@"first", @"second", @"third"]];
-            [Countly.user push:@"key105" values:@[@"a", @"b", @"c", @"d"]];
-            [Countly.user save];
+            [Countly.sharedInstance.userProfile set:@"key101" value:@"value101"];
+            [Countly.sharedInstance.userProfile incrementBy:@"key102" value:@5];
+            [Countly.sharedInstance.userProfile push:@"key103" value:@"singlevalue"];
+            [Countly.sharedInstance.userProfile push:@"key104" values:@[@"first", @"second", @"third"]];
+            [Countly.sharedInstance.userProfile push:@"key105" values:@[@"a", @"b", @"c", @"d"]];
+            [Countly.sharedInstance.userProfile save];
         } break;
 
         case 5:
         {
-            [Countly.user multiply:@"key102" value:@2];
-            [Countly.user unSet:@"key103"];
-            [Countly.user pull:@"key104" value:@"second"];
-            [Countly.user pull:@"key105" values:@[@"a", @"d"]];
-            [Countly.user save];
+            [Countly.sharedInstance.userProfile multiply:@"key102" value:@2];
+            [Countly.sharedInstance.userProfile unSet:@"key103"];
+            [Countly.sharedInstance.userProfile pull:@"key104" value:@"second"];
+            [Countly.sharedInstance.userProfile pull:@"key105" values:@[@"a", @"d"]];
+            [Countly.sharedInstance.userProfile save];
         } break;
 
         default: break;

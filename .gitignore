@@ -33,3 +33,6 @@ Pods/
 *.hmap
 *.moved-aside
 docs/
+
+# Parity harness, kept local
+Tools/

@@ -1,6 +1,10 @@
 // ContentZoneView.swift
+//
+// This code is provided under the MIT License.
+//
+// Please visit www.count.ly for more information.
+
 import SwiftUI
-import Countly
 
 struct ContentZoneView: View {
     private var content: CountlyContentBuilder { Countly.sharedInstance().content() }
@@ -25,6 +29,13 @@ struct ContentZoneView: View {
             Section {
                 ActionButton("Enter Content Zone") { content.enterContentZone() }
                 ActionButton("Exit Content Zone") { content.exitContentZone() }
+            } header: {
+                Text("Zone")
+            } footer: {
+                Text("While the zone is entered the SDK asks the server for content to show, on the interval set by zoneTimerInterval.")
+            }
+
+            Section("While inside the zone") {
                 ActionButton("Refresh Content Zone") { content.refreshContentZone() }
             } header: { Text("Content zone") }
               footer: { Text("Content is server-driven; configure a content zone targeted to this device. Results appear in the log.") }

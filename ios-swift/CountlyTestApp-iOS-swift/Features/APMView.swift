@@ -1,28 +1,55 @@
 // APMView.swift
+//
+// This code is provided under the MIT License.
+//
+// Please visit www.count.ly for more information.
+
 import SwiftUI
-import Countly
 
 struct APMView: View {
-    private let url = URL(string: "https://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json")!
-    private var request: URLRequest { URLRequest(url: url) }
+    private var performance: APMAPI { Countly.shared.performance }
+
     var body: some View {
         Form {
-            Section("URLSession") {
-                ActionButton("dataTask(with: request)") { URLSession.shared.dataTask(with: request).resume() }
-                ActionButton("dataTask(with: request, completion)") { URLSession.shared.dataTask(with: request) { _, _, _ in AppLog.shared.log("dataTask request done") }.resume() }
-                ActionButton("dataTask(with: url)") { URLSession.shared.dataTask(with: url).resume() }
-                ActionButton("dataTask(with: url, completion)") { URLSession.shared.dataTask(with: url) { _, _, _ in AppLog.shared.log("dataTask url done") }.resume() }
-                ActionButton("downloadTask(with: request)") { URLSession.shared.downloadTask(with: request).resume() }
-                ActionButton("downloadTask(with: request, completion)") { URLSession.shared.downloadTask(with: request) { _, _, _ in AppLog.shared.log("downloadTask request done") }.resume() }
-                ActionButton("downloadTask(with: url)") { URLSession.shared.downloadTask(with: url).resume() }
-                ActionButton("downloadTask(with: url, completion)") { URLSession.shared.downloadTask(with: url) { _, _, _ in AppLog.shared.log("downloadTask url done") }.resume() }
-            }
-            Section("NSURLConnection (legacy Apple API)") {
-                ActionButton("sendAsynchronousRequest") {
-                    NSURLConnection.sendAsynchronousRequest(request, queue: .main) { _, _, _ in AppLog.shared.log("sendAsynchronousRequest done") }
+            Section {
+                ActionButton("Record a Network Trace") {
+                    let now = Int64(Date().timeIntervalSince1970 * 1000)
+                    performance.recordNetworkTrace("/api/items",
+                                                   requestPayloadSize: 128,
+                                                   responsePayloadSize: 1024,
+                                                   responseStatusCode: 200,
+                                                   startTime: now - 500,
+                                                   endTime: now)
                 }
-                ActionButton("init(request:delegate:)") { _ = NSURLConnection(request: request, delegate: APMConnectionDelegate.shared) }
-                ActionButton("init(request:delegate:startImmediately:false)") { NSURLConnection(request: request, delegate: APMConnectionDelegate.shared, startImmediately: false)?.start() }
+                ActionButton("Record a Failed Network Trace") {
+                    let now = Int64(Date().timeIntervalSince1970 * 1000)
+                    performance.recordNetworkTrace("/api/items",
+                                                   requestPayloadSize: 128,
+                                                   responsePayloadSize: 0,
+                                                   responseStatusCode: 500,
+                                                   startTime: now - 2000,
+                                                   endTime: now)
+                }
+            } header: {
+                Text("Network")
+            } footer: {
+                Text("The SDK does not intercept the host application's traffic. Traces are reported by the application itself.")
+            }
+
+            Section("Custom traces") {
+                ActionButton("Start Custom Trace") { performance.startCustomTrace("custom-trace") }
+                ActionButton("End Custom Trace") { performance.endCustomTrace("custom-trace") }
+                ActionButton("End Custom Trace with Metrics") { performance.endCustomTrace("custom-trace", metrics: ["steps": 3]) }
+                ActionButton("Cancel Custom Trace") { performance.cancelCustomTrace("custom-trace") }
+                ActionButton("Clear All Custom Traces") { performance.clearAllCustomTraces() }
+            }
+
+            Section {
+                ActionButton("App Loading Finished") { performance.appLoadingFinished() }
+            } header: {
+                Text("App start")
+            } footer: {
+                Text("Closes the app start trace. Needs enableManualAppLoadedTrigger in the apm configuration, otherwise the SDK closes it itself.")
             }
         }
     }

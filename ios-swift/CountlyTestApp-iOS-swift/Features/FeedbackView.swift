@@ -1,50 +1,57 @@
 // FeedbackView.swift
+//
+// This code is provided under the MIT License.
+//
+// Please visit www.count.ly for more information.
+
 import SwiftUI
-import Countly
 
 struct FeedbackView: View {
-    private var f: CountlyFeedbacks { Countly.sharedInstance().feedback() }
-    @State private var widgets: [CountlyFeedbackWidget] = []
+    private var feedback: FeedbackAPI { Countly.shared.feedback }
+
     var body: some View {
         Form {
-            Section("Present (current)") {
-                ActionButton("Present NPS") { f.presentNPS() }
-                ActionButton("Present Survey") { f.presentSurvey() }
-                ActionButton("Present Rating") { f.presentRating() }
-                ActionButton("Present NPS by name/tag") { f.presentNPS("nps-tag") }
-            }
-            Section("Widgets (current)") {
+            Section("Available widgets") {
                 ActionButton("Get Available Feedback Widgets") {
-                    f.getAvailableFeedbackWidgets { list, error in
-                        widgets = list ?? []
-                        AppLog.shared.log(error == nil ? "Widgets: \(widgets.count)" : "Error: \(error!.localizedDescription)")
+                    feedback.getAvailableFeedbackWidgets { widgets, error in
+                        guard let widgets else {
+                            return AppLog.shared.log("widget list failed: \(error?.localizedDescription ?? "unknown")")
+                        }
+                        AppLog.shared.log(widgets.isEmpty
+                            ? "no widgets configured for this application"
+                            : widgets.map { "\($0.type.wireName): \($0.name)" }.joined(separator: "; "))
                     }
-                }
-                ActionButton("Present first fetched widget") { widgets.first?.present() }
-                ActionButton("Get first widget data") {
-                    widgets.first?.getData { data, error in
-                        AppLog.shared.log(error == nil ? "Widget data keys: \(data?.keys.map { "\($0)" } ?? [])" : "Error: \(error!.localizedDescription)")
-                    }
-                }
-                ActionButton("Record result (dismiss) for first widget") { widgets.first?.recordResult(nil) }
-                ActionButton("Inspect first widget") {
-                    if let w = widgets.first { AppLog.shared.log("id=\(w.id) name=\(w.name) type=\(w.type) tags=\(w.tags)") }
-                    else { AppLog.shared.log("No widgets fetched yet") }
                 }
             }
+
             Section {
-                ActionButton("Present Rating Widget by ID") {
-                    Countly.sharedInstance().presentRatingWidget(withID: "YOUR_WIDGET_ID") { error in
-                        AppLog.shared.log("presentRatingWidget \(error?.localizedDescription ?? "ok")")
-                    }
+                ActionButton("Present NPS") { feedback.presentNPS { AppLog.shared.log("NPS widget: \($0)") } }
+                ActionButton("Present Survey") { feedback.presentSurvey { AppLog.shared.log("survey widget: \($0)") } }
+                ActionButton("Present Rating") { feedback.presentRating { AppLog.shared.log("rating widget: \($0)") } }
+            } header: {
+                Text("Present the first of a kind")
+            } footer: {
+                Text("With no name, ID or tag the SDK presents the first widget of that type the server offers.")
+            }
+
+            Section("Present a specific widget") {
+                ActionButton("Present NPS by Name, ID or Tag") { feedback.presentNPS("WIDGET_NAME_ID_OR_TAG") { AppLog.shared.log("NPS: \($0)") } }
+                ActionButton("Present Survey by Name, ID or Tag") { feedback.presentSurvey("WIDGET_NAME_ID_OR_TAG") { AppLog.shared.log("survey: \($0)") } }
+                ActionButton("Present Rating by Name, ID or Tag") { feedback.presentRating("WIDGET_NAME_ID_OR_TAG") { AppLog.shared.log("rating: \($0)") } }
+            }
+
+            Section {
+                ActionButton("Record a Rating Widget Result Manually") {
+                    feedback.recordRatingWidget(id: "WIDGET_ID", rating: 4,
+                                                email: "john@example.com",
+                                                comment: "good",
+                                                userCanBeContacted: true)
                 }
-                ActionButton("getFeedbackWidgets (deprecated)") {
-                    Countly.sharedInstance().getFeedbackWidgets { list, error in
-                        AppLog.shared.log(error == nil ? "Legacy widgets: \(list?.count ?? 0)" : "Error: \(error!.localizedDescription)")
-                    }
-                }
-            } header: { Text("Legacy (deprecated)") }
-              footer: { Text("Prefer feedback().presentNPS/Survey/Rating and getAvailableFeedbackWidgets.") }
+            } header: {
+                Text("Manual")
+            } footer: {
+                Text("For a rating collected by the host application's own interface rather than by a Countly widget.")
+            }
         }
     }
 }

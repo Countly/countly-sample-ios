@@ -7,6 +7,8 @@
 import UIKit
 import SwiftUI
 
+// The SDK sources are compiled into this target from the `countly-sdk-swift`
+// submodule, so there is nothing to import.
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
@@ -27,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         window.makeKeyAndVisible()
         self.window = window
 
-        return true
+    func application(_ application: UIApplication,
+                     didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        Countly.didFailToRegisterForRemoteNotifications(error: error)
     }
 }

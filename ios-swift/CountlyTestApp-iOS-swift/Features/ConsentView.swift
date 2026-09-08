@@ -1,25 +1,40 @@
 // ConsentView.swift
+//
+// This code is provided under the MIT License.
+//
+// Please visit www.count.ly for more information.
+
 import SwiftUI
-import Countly
 
 struct ConsentView: View {
-    private var cly: Countly { Countly.sharedInstance() }
+    private var consent: ConsentAPI { Countly.shared.consent }
+
     var body: some View {
         Form {
             Section("Give") {
-                ActionButton("Give All Consents") { cly.giveAllConsents() }
-                ActionButton("Give Consent for Events") { cly.giveConsent(forFeature: .events) }
-                ActionButton("Give Consent for [Events, Crashes]") { cly.giveConsent(forFeatures: [.events, .crashReporting]) }
+                ActionButton("Give Consent for Sessions") { consent.giveConsent(for: .sessions) }
+                ActionButton("Give Consent for Events & Views") { consent.giveConsent(for: [.events, .viewTracking]) }
+                ActionButton("Give All Consents") { consent.giveAllConsents() }
             }
+
             Section("Cancel") {
-                ActionButton("Cancel Consent for Events") { cly.cancelConsent(forFeature: .events) }
-                ActionButton("Cancel Consent for [Events, Crashes]") { cly.cancelConsent(forFeatures: [.events, .crashReporting]) }
-                ActionButton("Cancel Consent for All Features") { cly.cancelConsentForAllFeatures() }
+                ActionButton("Cancel Consent for Events") { consent.cancelConsent(for: .events) }
+                ActionButton("Cancel Consent for Crashes & APM") { consent.cancelConsent(for: [.crashReporting, .performanceMonitoring]) }
+                ActionButton("Cancel All Consents") { consent.cancelAllConsents() }
             }
+
             Section {
-                ActionButton("Give Consent for All Features (deprecated)") { cly.giveConsentForAllFeatures() }
-            } header: { Text("Legacy (deprecated)") }
-              footer: { Text("Prefer giveAllConsents().") }
+                ActionButton("Check Every Consent") {
+                    let states = ConsentFeature.allCases
+                        .map { "\($0.wireName): \(consent.hasConsent(for: $0) ? "yes" : "no")" }
+                        .joined(separator: ", ")
+                    AppLog.shared.log(states)
+                }
+            } header: {
+                Text("Check")
+            } footer: {
+                Text("Without requiresConsent in the configuration every feature reports itself as consented and none of the calls above do anything.")
+            }
         }
     }
 }

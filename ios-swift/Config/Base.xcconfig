@@ -1,0 +1,37 @@
+// Base.xcconfig
+//
+// Public build settings for the Swift sample app. Everything in this file is
+// meant to be committed and is deliberately neutral, so that anyone who clones
+// the repository can open it and build.
+//
+// Values that belong to one machine, person or Apple Developer account (signing
+// team, an internal bundle identifier, a TestFlight build number, a different
+// name under the app icon) go in Local.xcconfig instead. That file is
+// gitignored; copy Local.xcconfig.sample over it to get started.
+
+// Bundle identifier of the sample app. A cloner cannot sign with this one, so
+// override it in Local.xcconfig rather than editing it here.
+PRODUCT_BUNDLE_IDENTIFIER = ly.count.CountlyTestApp-iOS-swift
+
+// Version string shown to testers, read by CFBundleShortVersionString in
+// Info.plist. Its build numbers restart per version, which is why TestFlight
+// treats the two settings below as a pair.
+MARKETING_VERSION = 1.0
+
+// Build number. Read by CFBundleVersion in Info.plist. TestFlight refuses an
+// upload whose build number is not higher than the previous one, so internal
+// builds raise this in Local.xcconfig.
+CURRENT_PROJECT_VERSION = 1
+
+// Name under the app icon, read by CFBundleDisplayName in Info.plist. The key has
+// to exist in Info.plist for a build setting to reach it, so this default keeps
+// the plist free of any one team's product name.
+PRODUCT_DISPLAY_NAME = CountlyTestApp-iOS-swift
+
+// Empty means no team is preselected: Xcode asks whoever opens the project to
+// choose their own under Signing & Capabilities.
+DEVELOPMENT_TEAM =
+
+// Optional local overrides. The "?" makes a missing file harmless, and because
+// the include sits last, every value Local.xcconfig sets wins over the ones above.
+#include? "Local.xcconfig"

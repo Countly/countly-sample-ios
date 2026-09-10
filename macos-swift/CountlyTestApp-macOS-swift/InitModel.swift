@@ -93,7 +93,8 @@ final class InitModel: ObservableObject {
     // MARK: - Content sub-config
 
     @Published var contentZoneTimerInterval = ""
-    @Published var contentDisplayOption = WebViewDisplayOption.immersive
+    @Published var contentDisplayOption = WebViewDisplayOption.safeArea
+    @Published var contentShowWidgetsWithinApp = false
     @Published var contentReloadOnStall = false
     @Published var contentReloadOnStallTimeout = ""
     @Published var contentDisableZoom = false
@@ -212,6 +213,7 @@ final class InitModel: ObservableObject {
 
         config.content.webViewDisplayOption = contentDisplayOption
         config.content.enableContentReloadOnStall = contentReloadOnStall
+        config.content.showWidgetsWithinApp = contentShowWidgetsWithinApp
         config.content.disableZoom = contentDisableZoom
         config.content.disableRotation = contentDisableRotation
         apply(contentZoneTimerInterval, "content.zoneTimerInterval") { config.content.zoneTimerInterval = $0 }

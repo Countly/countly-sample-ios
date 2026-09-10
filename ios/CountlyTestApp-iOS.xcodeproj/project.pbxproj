@@ -28,6 +28,7 @@
 		9611F31F2F3F336900EBD7D3 /* TouchDelegatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9611F31C2F3F336900EBD7D3 /* TouchDelegatingView.m */; };
 		9611F3202F3F336900EBD7D3 /* CountlyOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9611F31D2F3F336900EBD7D3 /* CountlyOverlayWindow.m */; };
 		9611F3222F3F33AC00EBD7D3 /* CountlyHealthTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9611F3212F3F33AC00EBD7D3 /* CountlyHealthTracker.m */; };
+		962C7616305294C90007D3B8 /* CountlyConnectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 962C7615305294C90007D3B8 /* CountlyConnectionTest.m */; };
 		9663534E2CF85B6100F30BDE /* CountlyContentConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9663534D2CF85B6100F30BDE /* CountlyContentConfig.m */; };
 		966353512CF85B9500F30BDE /* CountlyExperimentalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9663534F2CF85B9500F30BDE /* CountlyExperimentalConfig.m */; };
 		966353522CF85B9500F30BDE /* CountlyFeedbacksInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 966353502CF85B9500F30BDE /* CountlyFeedbacksInternal.m */; };
@@ -54,7 +55,6 @@
 		D252ECD91F72014E00481A79 /* SamplePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = D252ECD51F72014E00481A79 /* SamplePicture.png */; };
 		D252ECDB1F72016300481A79 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D252ECDA1F72016300481A79 /* Images.xcassets */; };
 		D252ECE11F72026100481A79 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECDC1F72026100481A79 /* AppDelegate.m */; };
-		E4A0F2E2223341F4B220169F /* CountlyScenarios.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA38A2FD164B6DBF45B349 /* CountlyScenarios.m */; };
 		D252ECE21F72026100481A79 /* EYLogViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECE01F72026100481A79 /* EYLogViewer.m */; };
 		D252ECE61F7203C200481A79 /* EYCrashTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = D252ECE51F7203C200481A79 /* EYCrashTesting.m */; };
 		D273859F1D963842008D201F /* CountlyPushNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = D273859E1D963842008D201F /* CountlyPushNotifications.m */; };
@@ -71,6 +71,7 @@
 		D2EB40751C58BFAA00EAA633 /* CountlyPersistency.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40641C58BFAA00EAA633 /* CountlyPersistency.m */; };
 		D2EB40761C58BFAA00EAA633 /* CountlyUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB40661C58BFAA00EAA633 /* CountlyUserDetails.m */; };
 		D2FB68FC1C69D5F200079DF6 /* CountlyViewTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FB68FB1C69D5F200079DF6 /* CountlyViewTracking.m */; };
+		E4A0F2E2223341F4B220169F /* CountlyScenarios.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA38A2FD164B6DBF45B349 /* CountlyScenarios.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,11 +133,13 @@
 		399117E72C69FF0600DC4C66 /* CountlyCrashesConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyCrashesConfig.m; sourceTree = "<group>"; };
 		399117E82C69FF0600DC4C66 /* CountlySDKLimitsConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlySDKLimitsConfig.h; sourceTree = "<group>"; };
 		399117E92C69FF0600DC4C66 /* CountlyCrashesConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyCrashesConfig.h; sourceTree = "<group>"; };
+		83DA38A2FD164B6DBF45B349 /* CountlyScenarios.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountlyScenarios.m; sourceTree = "<group>"; };
 		960AD4492F3B68D0007A0DAE /* CountlyWebViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyWebViewManager.m; path = "../countly-sdk-ios/CountlyWebViewManager.m"; sourceTree = "<group>"; };
 		9611F31B2F3F336900EBD7D3 /* CountlyWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyWebViewController.m; path = "../countly-sdk-ios/CountlyWebViewController.m"; sourceTree = "<group>"; };
 		9611F31C2F3F336900EBD7D3 /* TouchDelegatingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TouchDelegatingView.m; path = "../countly-sdk-ios/TouchDelegatingView.m"; sourceTree = "<group>"; };
 		9611F31D2F3F336900EBD7D3 /* CountlyOverlayWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyOverlayWindow.m; path = "../countly-sdk-ios/CountlyOverlayWindow.m"; sourceTree = "<group>"; };
 		9611F3212F3F33AC00EBD7D3 /* CountlyHealthTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyHealthTracker.m; path = "../countly-sdk-ios/CountlyHealthTracker.m"; sourceTree = "<group>"; };
+		962C7615305294C90007D3B8 /* CountlyConnectionTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyConnectionTest.m; path = "../countly-sdk-ios/CountlyConnectionTest.m"; sourceTree = "<group>"; };
 		9663534D2CF85B6100F30BDE /* CountlyContentConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyContentConfig.m; path = "../countly-sdk-ios/CountlyContentConfig.m"; sourceTree = "<group>"; };
 		9663534F2CF85B9500F30BDE /* CountlyExperimentalConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyExperimentalConfig.m; path = "../countly-sdk-ios/CountlyExperimentalConfig.m"; sourceTree = "<group>"; };
 		966353502CF85B9500F30BDE /* CountlyFeedbacksInternal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CountlyFeedbacksInternal.m; path = "../countly-sdk-ios/CountlyFeedbacksInternal.m"; sourceTree = "<group>"; };
@@ -152,9 +155,6 @@
 		AA000001300000000000AA02 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		AA000001300000000000AA03 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		D203EA7A1FDED8CF00A03F32 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
-		D23149FE1EB151CF0026F0DD /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
-		D23149FF1EB151CF0026F0DD /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
-		D2314A011EB151CF0026F0DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2314A091EB1528B0026F0DD /* CountlyNotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountlyNotificationService.h; sourceTree = "<group>"; };
 		D2314A0A1EB1528B0026F0DD /* CountlyNotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountlyNotificationService.m; sourceTree = "<group>"; };
 		D2340CF91E33B726003C3841 /* Countly.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Countly.storyboard; sourceTree = "<group>"; };
@@ -180,7 +180,6 @@
 		D252ECD51F72014E00481A79 /* SamplePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SamplePicture.png; sourceTree = "<group>"; };
 		D252ECDA1F72016300481A79 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D252ECDC1F72026100481A79 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		83DA38A2FD164B6DBF45B349 /* CountlyScenarios.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountlyScenarios.m; sourceTree = "<group>"; };
 		D252ECDF1F72026100481A79 /* EYLogViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYLogViewer.h; sourceTree = "<group>"; };
 		D252ECE01F72026100481A79 /* EYLogViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYLogViewer.m; sourceTree = "<group>"; };
 		D252ECE41F7203C200481A79 /* EYCrashTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYCrashTesting.h; sourceTree = "<group>"; };
@@ -400,6 +399,7 @@
 		D2BAB09517EC8EE600807D0D = {
 			isa = PBXGroup;
 			children = (
+				962C7615305294C90007D3B8 /* CountlyConnectionTest.m */,
 				9611F3212F3F33AC00EBD7D3 /* CountlyHealthTracker.m */,
 				9611F31D2F3F336900EBD7D3 /* CountlyOverlayWindow.m */,
 				9611F31B2F3F336900EBD7D3 /* CountlyWebViewController.m */,
@@ -671,6 +671,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				962C7616305294C90007D3B8 /* CountlyConnectionTest.m in Sources */,
 				9611F3222F3F33AC00EBD7D3 /* CountlyHealthTracker.m in Sources */,
 				9611F31E2F3F336900EBD7D3 /* CountlyWebViewController.m in Sources */,
 				9611F31F2F3F336900EBD7D3 /* TouchDelegatingView.m in Sources */,

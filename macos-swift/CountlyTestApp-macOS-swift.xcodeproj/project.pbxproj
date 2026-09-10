@@ -77,6 +77,7 @@
 		D41DB4A30C1145A9C5293B9C /* ComposerSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E644BBEDDDBB689DAA529061 /* ComposerSupport.swift */; };
 		D8029017E831D27D12D97B8B /* ConsentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8C0ADE6CB17C3D7393226 /* ConsentView.swift */; };
 		D97DE46F5F5EDB7189A74F7C /* OverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C23813AD9B5E51DE0742200 /* OverlayWindow.swift */; };
+		F9E261E7A7CB82AC171D4D6D /* WidgetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81C679C75221C68879046C2 /* WidgetLayout.swift */; };
 		DB6B1FEFE27CD8600181E307 /* CountlyFeedbackWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7824765C46DB925F7C4F8D4C /* CountlyFeedbackWidget.swift */; };
 		DC5607FDD7B548B3ADC6910F /* MultiThreadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30766E541EFEF44B5B77748 /* MultiThreadingView.swift */; };
 		E5559266B24415AB9F4A1C00 /* RemoteConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1760826F2316311453D49F53 /* RemoteConfigView.swift */; };
@@ -178,6 +179,7 @@
 		38DA4015C92777485EBAD9A7 /* WeakRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeakRegistry.swift; path = Internal/Util/WeakRegistry.swift; sourceTree = "<group>"; };
 		6BC939D837EB499B14D37C25 /* ContentGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentGeometry.swift; path = UI/ContentGeometry.swift; sourceTree = "<group>"; };
 		0C23813AD9B5E51DE0742200 /* OverlayWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverlayWindow.swift; path = UI/OverlayWindow.swift; sourceTree = "<group>"; };
+		D81C679C75221C68879046C2 /* WidgetLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WidgetLayout.swift; path = UI/WidgetLayout.swift; sourceTree = "<group>"; };
 		03CB2C3E108D6C7C35AB08C3 /* WebViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewManager.swift; path = UI/WebViewManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -311,6 +313,7 @@
 				38DA4015C92777485EBAD9A7 /* WeakRegistry.swift */,
 				6BC939D837EB499B14D37C25 /* ContentGeometry.swift */,
 				0C23813AD9B5E51DE0742200 /* OverlayWindow.swift */,
+				D81C679C75221C68879046C2 /* WidgetLayout.swift */,
 				03CB2C3E108D6C7C35AB08C3 /* WebViewManager.swift */,
 			);
 			name = "countly-sdk-swift";
@@ -468,6 +471,7 @@
 				8980994514FC8FE11022923E /* WeakRegistry.swift in Sources */,
 				390B35851FEA1652D90F5CF4 /* ContentGeometry.swift in Sources */,
 				D97DE46F5F5EDB7189A74F7C /* OverlayWindow.swift in Sources */,
+				F9E261E7A7CB82AC171D4D6D /* WidgetLayout.swift in Sources */,
 				00AB9898A5376F15DFB51295 /* WebViewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -195,6 +195,7 @@ struct InitView: View {
                 Text("safeArea").tag(WebViewDisplayOption.safeArea)
             }
             .pickerStyle(.menu)
+            Toggle("showWidgetsWithinApp", isOn: $model.contentShowWidgetsWithinApp)
             Toggle("enableContentReloadOnStall", isOn: $model.contentReloadOnStall)
             TuningField("contentReloadOnStallTimeout (ms)", text: $model.contentReloadOnStallTimeout, default: "1000")
             Toggle("disableZoom", isOn: $model.contentDisableZoom)
@@ -202,7 +203,7 @@ struct InitView: View {
         } header: {
             Text("content")
         } footer: {
-            FootnoteText("An interval at or below the 15 second minimum is ignored and the previous value kept. The global content callback and the URL handler are always installed by the sample, so both land in the log.")
+            FootnoteText("An interval at or below the 15 second minimum is ignored and the previous value kept. showWidgetsWithinApp decides whether content and feedback widgets are laid out against the whole screen or only the app window, which is worth flipping with the window somewhere other than the top left. The global content callback and the URL handler are always installed by the sample, so both land in the log.")
         }
     }
 

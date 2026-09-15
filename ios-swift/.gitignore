@@ -2,3 +2,6 @@
 ########################
 CountlyTestApp-iOS-swift.xcodeproj/project.xcworkspace/
 CountlyTestApp-iOS-swift.xcodeproj/xcuserdata/
+
+# Local build settings (signing team, internal bundle id, build number)
+Config/Local.xcconfig

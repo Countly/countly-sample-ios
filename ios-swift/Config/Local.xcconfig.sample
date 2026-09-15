@@ -1,0 +1,40 @@
+// Local.xcconfig.sample
+//
+// Template for local build settings. Copy it next to this file, then edit:
+//
+//     cp Config/Local.xcconfig.sample Config/Local.xcconfig
+//
+// Local.xcconfig is gitignored, so nothing you put there reaches the public
+// repository. Base.xcconfig includes it last, so each line below overrides the
+// matching default. Leave a line commented out to keep that default.
+//
+// Set these here and not in Xcode's target editor. A build setting written at
+// target level outruns any xcconfig, so choosing a team under Signing &
+// Capabilities writes DEVELOPMENT_TEAM into project.pbxproj, puts it back in
+// the public diff, and quietly makes this file ineffective.
+
+// Apple Developer Team ID used to sign the build. Find it in
+// Xcode > Settings > Accounts, or on the membership page of the developer account.
+// DEVELOPMENT_TEAM = ABCDE12345
+
+// Bundle identifier. For a TestFlight build this has to match the App Store
+// Connect record exactly.
+// PRODUCT_BUNDLE_IDENTIFIER = com.example.CountlyTester
+
+// Version string, surfaced as CFBundleShortVersionString. Raise it when the
+// build is a new version rather than another attempt at the same one; the build
+// number below may then restart at 1.
+// MARKETING_VERSION = 1.0
+
+// Build number, surfaced as CFBundleVersion. Raise it for every upload.
+// CURRENT_PROJECT_VERSION = 1
+
+// Name shown under the app icon. Without it the app uses its target name,
+// CountlyTestApp-iOS-swift.
+// PRODUCT_DISPLAY_NAME = Countly Tester
+
+// Push notifications need more than a signing team. The bundle identifier above
+// has to be an App ID whose push capability is switched on and whose credential
+// is the one uploaded to the Countly app being tested, or APNs answers
+// "DeviceTokenNotForTopic". The notification service extension follows this
+// identifier automatically, as <identifier>.NotificationService.

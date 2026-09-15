@@ -6,42 +6,42 @@
 
 import UIKit
 import SwiftUI
-import CoreLocation
 
 // The SDK sources are compiled into this target from the `countly-sdk-swift`
 // submodule, so there is nothing to import.
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate
+{
     var window: UIWindow?
 
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
+    {
+        // Parity scenarios drive the SDK directly, so the same run can be captured
+        // from both sample applications and the two captures diffed. They bypass the
+        // Setup screen because the harness launches the app unattended. See
+        // Tools/parity/SCENARIOS.md.
+        if UserDefaults.standard.string(forKey: "CountlyScenario") != nil {
+            let config = CountlyConfig()
+            Scenario.configure(config, Scenario.name)
+            Countly.shared.start(with: config)
 
-        let config = CountlyConfig()
-        config.appKey = "APP_KEY"
-        config.host = "https://SERVER_URL"
-
-        if config.appKey == "YOUR_APP_KEY" || config.host == "https://your.server.ly" {
-            NSLog("Please do not use the default app key and server url")
+            // Delayed so init has finished and its own requests have left, which is
+            // where each scenario's own traffic starts.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { Scenario.run() }
+        } else {
+            // Otherwise the SDK is started from the Setup screen (see SDKSession), or
+            // here when the tester asked for automatic initialization with previously
+            // entered values.
+            let setup = SetupStore().load()
+            if setup.autoInit, setup.validationError == nil {
+                SDKSession.shared.initialize(with: setup)
+            }
         }
 
-        config.enableDebug = true
-        config.internalLogLevel = .debug
-
-        // Push and crash reporting are opt in. Everything else is on by default.
-        config.features = [.pushNotifications, .crashReporting]
-        config.pushTestMode = .development
-        // The token is reported whatever the permission state, as the ObjC sample
-        // does, so the device shows up on the server before the alert is answered.
-        config.sendPushTokenAlways = true
-
-//      The ObjC sample sends its pushes through this application, whose APNs
-//      certificate is registered for the "ly.count.CountlySwift" bundle both
-//      samples now share:
-//      config.appKey = "alertTest"
-//      config.host = "https://v2.count.ly"
+        // Every option the SDK takes, kept here as the sample's reference. The
+        // running configuration is built where the SDK is started: SDKSession for
+        // the Setup screen, Scenario.configure for a harness run.
 
         // ---------------------------------------------------------------------
         // Optional configuration, left commented so the sample starts minimal.
@@ -146,26 +146,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //          report["_name"] as? String != "Ignored"                     // Return false to drop the report
 //      }
 
-        // Parity scenarios drive the SDK directly, so the same run can be captured
-        // from both sample applications and the two captures diffed. See
-        // Tools/parity/SCENARIOS.md.
-        if UserDefaults.standard.string(forKey: "CountlyScenario") != nil {
-            Scenario.configure(config, Scenario.name)
-        }
 
-        Countly.shared.start(with: config)
-
-        if UserDefaults.standard.string(forKey: "CountlyScenario") != nil {
-            // Delayed so init has finished and its own requests have left, which is
-            // where each scenario's own traffic starts.
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { Scenario.run() }
-        }
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = UIHostingController(rootView: RootView())
+        window.makeKeyAndVisible()
+        self.window = window
 
         return true
     }
 
-    // The SDK takes these over automatically. They are here only to show what
-    // `disableAutomaticPushHandling` would make necessary.
+    // The SDK takes these over automatically once push is switched on at init.
+    // They are here only to show what `disableAutomaticPushHandling` would make
+    // necessary.
 
     func application(_ application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {

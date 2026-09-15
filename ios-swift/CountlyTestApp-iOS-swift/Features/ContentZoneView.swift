@@ -7,12 +7,26 @@
 import SwiftUI
 
 struct ContentZoneView: View {
+    private var content: ContentAPI { Countly.shared.content }
+    @AppStorage("content.lastPreviewID") private var contentID = ""
     @State private var newDeviceID = ""
 
-    private var content: ContentAPI { Countly.shared.content }
+    private var trimmedContentID: String { contentID.trimmingCharacters(in: .whitespacesAndNewlines) }
 
     var body: some View {
         Form {
+            Section {
+                TextField("Content ID", text: $contentID)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
+                Button("Preview Content") {
+                    AppLog.shared.log("Preview content \(trimmedContentID)")
+                    content.previewContent(trimmedContentID)
+                }
+                .disabled(trimmedContentID.isEmpty)
+            } header: { Text("Preview by ID") }
+              footer: { Text("Fetches and shows one specific content by its ID, without starting periodic content updates. Experimental SDK API.") }
+
             Section {
                 ActionButton("Enter Content Zone") { content.enterContentZone() }
                 ActionButton("Exit Content Zone") { content.exitContentZone() }
@@ -22,8 +36,12 @@ struct ContentZoneView: View {
                 Text("While the zone is entered the SDK asks the server for content to show, on the interval set by zoneTimerInterval.")
             }
 
-            Section("While inside the zone") {
+            Section {
                 ActionButton("Refresh Content Zone") { content.refreshContentZone() }
+            } header: {
+                Text("While inside the zone")
+            } footer: {
+                Text("Content is server-driven; configure a content zone targeted to this device. Results appear in the log.")
             }
 
             Section {
@@ -42,14 +60,6 @@ struct ContentZoneView: View {
                 Text("Device ID")
             } footer: {
                 Text("Content is picked per user, so switching the device ID is how a different audience is checked. Consent is granted again afterwards because a change without merge starts a new user with no consent.")
-            }
-
-            Section {
-                ActionButton("Preview a Specific Content") { content.previewContent("CONTENT_ID") }
-            } header: {
-                Text("Preview")
-            } footer: {
-                Text("Shows one content entry by ID, bypassing the zone and its triggers, which is how a piece of content is checked before it is released.")
             }
         }
     }

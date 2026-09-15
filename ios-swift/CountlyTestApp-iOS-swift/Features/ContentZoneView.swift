@@ -7,8 +7,9 @@
 import SwiftUI
 
 struct ContentZoneView: View {
-    private var content: CountlyContentBuilder { Countly.sharedInstance().content() }
+    private var content: ContentAPI { Countly.shared.content }
     @AppStorage("content.lastPreviewID") private var contentID = ""
+    @State private var newDeviceID = ""
 
     private var trimmedContentID: String { contentID.trimmingCharacters(in: .whitespacesAndNewlines) }
 
@@ -35,10 +36,31 @@ struct ContentZoneView: View {
                 Text("While the zone is entered the SDK asks the server for content to show, on the interval set by zoneTimerInterval.")
             }
 
-            Section("While inside the zone") {
+            Section {
                 ActionButton("Refresh Content Zone") { content.refreshContentZone() }
-            } header: { Text("Content zone") }
-              footer: { Text("Content is server-driven; configure a content zone targeted to this device. Results appear in the log.") }
+            } header: {
+                Text("While inside the zone")
+            } footer: {
+                Text("Content is server-driven; configure a content zone targeted to this device. Results appear in the log.")
+            }
+
+            Section {
+                LabeledField("Device ID", text: $newDeviceID, placeholder: "new_device_id")
+                ActionButton("Change Device ID") {
+                    let id = newDeviceID.trimmingCharacters(in: .whitespacesAndNewlines)
+                    guard !id.isEmpty else {
+                        AppLog.shared.log("Enter a device ID first")
+                        return
+                    }
+                    Countly.shared.deviceID.setID(id)
+                    Countly.shared.consent.giveAllConsents()
+                    AppLog.shared.log("Device ID changed to \(id), all consents given")
+                }
+            } header: {
+                Text("Device ID")
+            } footer: {
+                Text("Content is picked per user, so switching the device ID is how a different audience is checked. Consent is granted again afterwards because a change without merge starts a new user with no consent.")
+            }
         }
     }
 }

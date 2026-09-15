@@ -6,7 +6,9 @@
 
 import Foundation
 import Combine
-import Countly
+
+// The SDK sources are compiled into this target from the `countly-sdk-swift`
+// submodule, so there is nothing to import.
 
 /// Owns the SDK lifecycle for the sample: the SDK starts only when the tester submits the Setup
 /// screen, and can be halted and started again with different values without relaunching.
@@ -22,27 +24,35 @@ final class SDKSession: ObservableObject {
     func initialize(with values: SetupValues) -> String? {
         if let error = values.validationError { return error }
 
-        // See CountlyConfig.h for the full list of options; only what the Setup screen exposes is set here.
+        // See CountlyConfig.swift for the full list of options; only what the Setup screen exposes is set here.
         let config = CountlyConfig()
         config.host = values.normalizedHost
         config.appKey = values.normalizedAppKey
         config.enableDebug = values.debugLogging
 
-        var features: [CLYFeature] = []
+        var features: [CountlyFeature] = []
         if values.crashReporting { features.append(.crashReporting) }
         if values.pushNotifications { features.append(.pushNotifications) }
         config.features = features
+
+        if values.pushNotifications {
+            // A sample build is signed with a development entitlement, so its token
+            // belongs to the APNs sandbox and the server has to be told which one to
+            // push through. Reporting the token whatever the permission state means
+            // the device shows up before the alert is answered.
+            config.pushTestMode = .development
+            config.sendPushTokenAlways = true
+        }
 
         let deviceID = values.normalizedDeviceID
         if !deviceID.isEmpty { config.deviceID = deviceID }
 
         // Surface content lifecycle in the in-app log so a tester sees what happened on device.
-        config.content().setGlobalContentCallback { status, data in
-            let name = status.rawValue == 0 ? "completed" : "closed"
-            AppLog.shared.log("Content \(name): \(data)")
+        config.content.globalContentCallback = { status, data in
+            AppLog.shared.log("Content \(status == .completed ? "completed" : "closed"): \(data)")
         }
 
-        Countly.sharedInstance().start(with: config)
+        Countly.shared.start(with: config)
 
         activeHost = config.host
         activeAppKey = config.appKey
@@ -56,7 +66,7 @@ final class SDKSession: ObservableObject {
         // halt(true) removes the app's whole UserDefaults domain; keep what the tester typed on the Setup screen.
         let store = SetupStore()
         let setup = store.load()
-        Countly.sharedInstance().halt(clearStorage)
+        Countly.shared.halt(clearStorage: clearStorage)
         if clearStorage { store.save(setup) }
         activeHost = nil
         activeAppKey = nil
@@ -67,7 +77,7 @@ final class SDKSession: ObservableObject {
     /// Points the running SDK at another server. Requests already queued keep the host they were created for.
     func setNewHost(_ host: String) {
         let value = SetupValues.normalizedHost(host)
-        Countly.sharedInstance().setNewHost(value)
+        Countly.shared.setNewHost(value)
         activeHost = value
         AppLog.shared.log("setNewHost: \(value)")
     }
@@ -75,12 +85,12 @@ final class SDKSession: ObservableObject {
     /// Switches the running SDK to another app key. Requests already queued keep their app key.
     func setNewAppKey(_ appKey: String) {
         let value = appKey.trimmingCharacters(in: .whitespacesAndNewlines)
-        Countly.sharedInstance().setNewAppKey(value)
+        Countly.shared.setNewAppKey(value)
         activeAppKey = value
         AppLog.shared.log("setNewAppKey: \(value)")
     }
 
     func currentDeviceID() -> String? {
-        Countly.sharedInstance().deviceID()
+        Countly.shared.deviceID.current
     }
 }

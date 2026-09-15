@@ -32,3 +32,9 @@
 // Name shown under the app icon. Without it the app uses its target name,
 // CountlyTestApp-iOS-swift.
 // PRODUCT_DISPLAY_NAME = Countly Tester
+
+// Push notifications need more than a signing team. The bundle identifier above
+// has to be an App ID whose push capability is switched on and whose credential
+// is the one uploaded to the Countly app being tested, or APNs answers
+// "DeviceTokenNotForTopic". The notification service extension follows this
+// identifier automatically, as <identifier>.NotificationService.

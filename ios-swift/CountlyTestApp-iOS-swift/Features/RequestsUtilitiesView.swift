@@ -7,7 +7,8 @@
 import SwiftUI
 
 struct RequestsUtilitiesView: View {
-    private var cly: Countly { Countly.sharedInstance() }
+    private var cly: CountlyInstance { Countly.shared }
+    private var queue: RequestQueueAPI { Countly.shared.requestQueue }
     @ObservedObject private var session = SDKSession.shared
     @State private var showHostPrompt = false
     @State private var showAppKeyPrompt = false

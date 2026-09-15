@@ -67,7 +67,7 @@ struct UserModifiersComposerView: View {
         if modifier.isNumeric, Double(value) == nil {
             return AppLog.shared.log("\(modifier.rawValue) needs a number, got '\(value)'")
         }
-        let number = NSNumber(value: Double(value) ?? 0)
+        let number = Double(value) ?? 0
 
         switch modifier {
         case .setOnce: user.setOnce(key, value: value)

@@ -7,6 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0E1000000000000000000E7 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E1000000000000000000E4 /* NotificationService.swift */; };
+		C0E1000000000000000000E8 /* CountlyNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E1000000000000000000E6 /* CountlyNotificationService.swift */; };
+		C0E1000000000000000000E9 /* NotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C0E1000000000000000000E2 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C0AD000000000000000000B1 /* LogGathering.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AD000000000000000000A1 /* LogGathering.swift */; };
+		C0AD000000000000000000B2 /* ConnectionTestModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AD000000000000000000A2 /* ConnectionTestModule.swift */; };
+		C0AD000000000000000000B3 /* WidgetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AD000000000000000000A3 /* WidgetLayout.swift */; };
+		3D254368192A4CAF8E2E5692 /* RemoteConfigModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A476D3461EF940BE9100E90D /* RemoteConfigModule.swift */; };
+		3E5EAD238F1543F4BAF50DCC /* UserProfileModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D67661EDBC4366AF209555 /* UserProfileModule.swift */; };
+		3ED24A12ABA2473AA9203362 /* AttributionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651AF016FFCC41F29D1A0979 /* AttributionModule.swift */; };
+		3F68FF3EC2074D2D9CBC54DF /* APMModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83513FEC77964315A3DB635E /* APMModule.swift */; };
+		423F3D9312AB477B9876EA3A /* SDKCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A71C484FCE481EA52A5A79 /* SDKCore.swift */; };
+		4A1A9B3B17A6415BB3F24733 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1123C9ACB244388BC2AEC5 /* ConnectionManager.swift */; };
+		4FCB692AF0814BCAB662B9FE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE4847EE4E4DFEB2D2B100 /* Logger.swift */; };
+		56186189A5054AFCB2BA8BD9 /* LocationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEA1B93FFD641229912A3E5 /* LocationModule.swift */; };
+		653057D9B82D46DD89EEB03E /* CrashLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE597B636342DEA7233D8D /* CrashLogStore.swift */; };
+		6B3578BD9E9D4ECC8125290D /* CountlyInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7463A4AEBB4629A84920B8 /* CountlyInstance.swift */; };
+		6DD0C064387449BD8F483E07 /* CountlySDKLimitsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A9812D04643879B5EFA25 /* CountlySDKLimitsConfig.swift */; };
+		6FE739BDB64D43F3B0ECFC0C /* Scenarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672FD0AF5A67446192679541 /* Scenarios.swift */; };
+		78F82FE876AC4B36AC13A785 /* WebViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB088022F3546F4A579C5BF /* WebViewManager.swift */; };
+		7A4BF441843548F7BD1681F9 /* CountlyExperimentalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F0ADAEC8BF41F099878177 /* CountlyExperimentalConfig.swift */; };
+		7A7BE4D87B8B4C91BD272324 /* CountlyConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F0C452AF024ADF8442CC91 /* CountlyConfig.swift */; };
+		BA6F2BA065544742B974E26F /* CountlyConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84059FFF643D4A8D91EC7352 /* CountlyConsts.swift */; };
+		BBC0BB0830794AF29BFF0404 /* FeedbackModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8AC4729F3E4608AAB7516C /* FeedbackModule.swift */; };
+		D192F778760640A68AA16279 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D68D0D8DC3F4AADB09D8BA0 /* LocationView.swift */; };
+		D24DEBAAE7B84B78908E17FB /* StorageNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E03093075A4EE8BAA59C80 /* StorageNamespace.swift */; };
 		00D05D8618724842A270BACC /* CountlyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B778F8C9B4C93A905F4D0 /* CountlyEvent.swift */; };
 		0D945D1D23944CA2B92BB395 /* RequestQueueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662079DBDB9E4F76890F0776 /* RequestQueueStore.swift */; };
 		109034D6D280530B5493205A /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DF7B2D2924BDACA4969C38 /* UserProfileView.swift */; };
@@ -31,7 +56,6 @@
 		56F2BA1B0720A8FAA709F0B1 /* AppLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D3D0B8FB830EC5FAEF2A04 /* AppLog.swift */; };
 		58AB1DE12E2AEC217A0B2E4C /* ViewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9233DA27CC17D55DBF16108 /* ViewsView.swift */; };
 		60CDBD865146EB883AA49C9D /* PushNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40659C30B297EADF3DD7464A /* PushNotificationsView.swift */; };
-		7322960EA84CCD934CFE16B5 /* Countly in Frameworks */ = {isa = PBXBuildFile; productRef = 9B0AA69C166B726B2DFC00CE /* Countly */; };
 		738F434779C20A87935E2F9E /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B9CDB5C25869AA4566159A /* SetupView.swift */; };
 		7F2CF103FD73CEDA7252C092 /* SessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900263F5829E3DE9AFE1E71B /* SessionsView.swift */; };
 		811D0D80A678391F018A1236 /* ConsentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D28468AE38BEAFDCC5E06 /* ConsentView.swift */; };
@@ -92,7 +116,76 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXContainerItemProxy section */
+		C0E100000000000000000EA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D252E3791DE074D2006548B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0E1000000000000000000E1;
+			remoteInfo = NotificationService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C0E100000000000000000EA3 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C0E1000000000000000000E9 /* NotificationService.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C0E1000000000000000000E4 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		C0E1000000000000000000E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0E1000000000000000000E6 /* CountlyNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountlyNotificationService.swift; path = "../countly-sdk-swift/Sources/CountlyNotificationService/CountlyNotificationService.swift"; sourceTree = SOURCE_ROOT; };
+		C0E1000000000000000000E2 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0E100000000000000000EA9 /* CountlyTestApp-iOS-swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CountlyTestApp-iOS-swift.entitlements"; sourceTree = "<group>"; };
+		C0AD000000000000000000A1 /* LogGathering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogGathering.swift; path = Internal/LogGathering.swift; sourceTree = "<group>"; };
+		C0AD000000000000000000A2 /* ConnectionTestModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectionTestModule.swift; path = Internal/Modules/ConnectionTestModule.swift; sourceTree = "<group>"; };
+		C0AD000000000000000000A3 /* WidgetLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WidgetLayout.swift; path = UI/WidgetLayout.swift; sourceTree = "<group>"; };
+		0C885118F1D14740A96EA50C /* CountlyViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountlyViewData.swift; path = Internal/Models/CountlyViewData.swift; sourceTree = "<group>"; };
+		114B43FBA8344484BACF4316 /* ServerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerConfig.swift; path = Internal/ServerConfig.swift; sourceTree = "<group>"; };
+		53971ECF13AD4BBCA5B1B3C1 /* EventComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventComposerView.swift; sourceTree = "<group>"; };
+		57DD2DA2CFE44DBF813A7604 /* CountlyRCData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountlyRCData.swift; path = Internal/Models/CountlyRCData.swift; sourceTree = "<group>"; };
+		57F865976F074EE6A45917EA /* AutoViewTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoViewTracker.swift; path = Internal/AutoViewTracker.swift; sourceTree = "<group>"; };
+		59F2A1FD3D0642299A17A7C3 /* DeviceMetrics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceMetrics.swift; path = Internal/DeviceMetrics.swift; sourceTree = "<group>"; };
+		5B98A71B5264457B8BFAA006 /* UserModifiersComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModifiersComposerView.swift; sourceTree = "<group>"; };
+		5E8FBBF0C7D047DF8F3C3D61 /* PushRuntime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushRuntime.swift; path = Internal/PushRuntime.swift; sourceTree = "<group>"; };
+		651AF016FFCC41F29D1A0979 /* AttributionModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AttributionModule.swift; path = Internal/Modules/AttributionModule.swift; sourceTree = "<group>"; };
+		662079DBDB9E4F76890F0776 /* RequestQueueStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestQueueStore.swift; path = Internal/Storage/RequestQueueStore.swift; sourceTree = "<group>"; };
+		66A71C484FCE481EA52A5A79 /* SDKCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SDKCore.swift; path = Internal/SDKCore.swift; sourceTree = "<group>"; };
+		672FD0AF5A67446192679541 /* Scenarios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenarios.swift; sourceTree = "<group>"; };
+		6BE16C72B5C84B069A1209C6 /* UserDetailsComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsComposerView.swift; sourceTree = "<group>"; };
+		83513FEC77964315A3DB635E /* APMModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APMModule.swift; path = Internal/Modules/APMModule.swift; sourceTree = "<group>"; };
+		84059FFF643D4A8D91EC7352 /* CountlyConsts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountlyConsts.swift; path = Internal/CountlyConsts.swift; sourceTree = "<group>"; };
+		88C5AE3365D34AA6B0FAC735 /* CrashModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrashModule.swift; path = Internal/Modules/CrashModule.swift; sourceTree = "<group>"; };
+		8C0394EA7E914271B96936BF /* ConsentModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsentModule.swift; path = Internal/Modules/ConsentModule.swift; sourceTree = "<group>"; };
+		8D68D0D8DC3F4AADB09D8BA0 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		9B703BBD39264875877A2309 /* HealthTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthTracker.swift; path = Internal/HealthTracker.swift; sourceTree = "<group>"; };
+		9BFEA14F86B747898075EE40 /* BackgroundTaskGuard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundTaskGuard.swift; path = Internal/BackgroundTaskGuard.swift; sourceTree = "<group>"; };
+		9ECA9A21F2AD4A5F99A37496 /* ContentModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentModule.swift; path = Internal/Modules/ContentModule.swift; sourceTree = "<group>"; };
+		A29A9812D04643879B5EFA25 /* CountlySDKLimitsConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountlySDKLimitsConfig.swift; path = Config/CountlySDKLimitsConfig.swift; sourceTree = "<group>"; };
+		A476D3461EF940BE9100E90D /* RemoteConfigModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteConfigModule.swift; path = Internal/Modules/RemoteConfigModule.swift; sourceTree = "<group>"; };
+		A7F0C452AF024ADF8442CC91 /* CountlyConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountlyConfig.swift; path = Config/CountlyConfig.swift; sourceTree = "<group>"; };
+		A9A05B377A75464D9844C013 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AC8AC4729F3E4608AAB7516C /* FeedbackModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedbackModule.swift; path = Internal/Modules/FeedbackModule.swift; sourceTree = "<group>"; };
+		AF5F577CBC484773B71D8450 /* CountlyContentConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountlyContentConfig.swift; path = Config/CountlyContentConfig.swift; sourceTree = "<group>"; };
+		B361517969024247A2705FD9 /* CountlyAPMConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountlyAPMConfig.swift; path = Config/CountlyAPMConfig.swift; sourceTree = "<group>"; };
+		B757B2F0D56B4A2F94DB3A08 /* DeviceIDModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceIDModule.swift; path = Internal/Modules/DeviceIDModule.swift; sourceTree = "<group>"; };
+		C4D5A8B26F1B48D2B7E30C55 /* ContentGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentGeometry.swift; path = UI/ContentGeometry.swift; sourceTree = "<group>"; };
+		E481A833F66D4FD993D011A8 /* InstancesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstancesView.swift; sourceTree = "<group>"; };
+		E512FD5366F14B2885B69C4B /* ComposerSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerSupport.swift; sourceTree = "<group>"; };
+		EAB2C2D86266460CA062F349 /* OverlayWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverlayWindow.swift; path = UI/OverlayWindow.swift; sourceTree = "<group>"; };
+		EE1123C9ACB244388BC2AEC5 /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectionManager.swift; path = Internal/Network/ConnectionManager.swift; sourceTree = "<group>"; };
+		F14B778F8C9B4C93A905F4D0 /* CountlyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountlyEvent.swift; path = Internal/Models/CountlyEvent.swift; sourceTree = "<group>"; };
+		FC7463A4AEBB4629A84920B8 /* CountlyInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountlyInstance.swift; sourceTree = "<group>"; };
+		FF7F23BE99FB4B1C91995BD8 /* CountlyTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountlyTypes.swift; sourceTree = "<group>"; };
 		00DF7B2D2924BDACA4969C38 /* UserProfileView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		05DE597B636342DEA7233D8D /* CrashLogStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrashLogStore.swift; path = Internal/Storage/CrashLogStore.swift; sourceTree = "<group>"; };
 		07B822B1402AEE937629D769 /* UIKitSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIKitSupport.swift; sourceTree = "<group>"; };
@@ -170,6 +263,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C0E100000000000000000EA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -204,6 +304,9 @@
 		B630D82B6AA74D97B460AED7 /* countly-sdk-swift */ = {
 			isa = PBXGroup;
 			children = (
+				C0AD000000000000000000A1 /* LogGathering.swift */,
+				C0AD000000000000000000A2 /* ConnectionTestModule.swift */,
+				C0AD000000000000000000A3 /* WidgetLayout.swift */,
 				D5B720DEDE4F4A508721DF98 /* CoreAPIs.swift */,
 				3D8B6B84E5404E1EA20A1D1E /* FeatureAPIs.swift */,
 				B361517969024247A2705FD9 /* CountlyAPMConfig.swift */,
@@ -267,6 +370,7 @@
 			children = (
 				B630D82B6AA74D97B460AED7 /* countly-sdk-swift */,
 				D252E3831DE074D2006548B0 /* CountlyTestApp-iOS-swift */,
+				C0E1000000000000000000E3 /* NotificationService */,
 				D252E3821DE074D2006548B0 /* Products */,
 				E5067F4E1F88969178610891 /* CountlyTestApp-iOS-swiftTests */,
 				C0AF16B7A1D24E0193C55E03 /* Config */,
@@ -278,13 +382,25 @@
 			children = (
 				D252E3811DE074D2006548B0 /* CountlyTestApp-iOS-swift.app */,
 				B123759CD0EFC0522B9FB6AA /* CountlyTestApp-iOS-swiftTests.xctest */,
+				C0E1000000000000000000E2 /* NotificationService.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C0E1000000000000000000E3 /* NotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				C0E1000000000000000000E4 /* NotificationService.swift */,
+				C0E1000000000000000000E6 /* CountlyNotificationService.swift */,
+				C0E1000000000000000000E5 /* Info.plist */,
+			);
+			path = NotificationService;
 			sourceTree = "<group>";
 		};
 		D252E3831DE074D2006548B0 /* CountlyTestApp-iOS-swift */ = {
 			isa = PBXGroup;
 			children = (
+				C0E100000000000000000EA9 /* CountlyTestApp-iOS-swift.entitlements */,
 				D252E3841DE074D2006548B0 /* AppDelegate.swift */,
 				E512FD5366F14B2885B69C4B /* ComposerSupport.swift */,
 				A9A05B377A75464D9844C013 /* SceneDelegate.swift */,
@@ -352,15 +468,34 @@
 				D252E37D1DE074D2006548B0 /* Sources */,
 				D252E37E1DE074D2006548B0 /* Frameworks */,
 				D252E37F1DE074D2006548B0 /* Resources */,
+				C0E100000000000000000EA3 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C0E100000000000000000EA5 /* PBXTargetDependency */,
 			);
 			name = "CountlyTestApp-iOS-swift";
 			productName = "CountlyTestApp-iOS-swift";
 			productReference = D252E3811DE074D2006548B0 /* CountlyTestApp-iOS-swift.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C0E1000000000000000000E1 /* NotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0E100000000000000000EA8 /* Build configuration list for PBXNativeTarget "NotificationService" */;
+			buildPhases = (
+				C0E100000000000000000EA0 /* Sources */,
+				C0E100000000000000000EA1 /* Frameworks */,
+				C0E100000000000000000EA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationService;
+			productName = NotificationService;
+			productReference = C0E1000000000000000000E2 /* NotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -377,10 +512,22 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = D252E3801DE074D2006548B0;
 					};
+					C0E1000000000000000000E1 = {
+						CreatedOnToolsVersion = 27.0;
+						ProvisioningStyle = Automatic;
+					};
 					D252E3801DE074D2006548B0 = {
 						CreatedOnToolsVersion = 8.1;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -398,6 +545,7 @@
 			projectRoot = "";
 			targets = (
 				D252E3801DE074D2006548B0 /* CountlyTestApp-iOS-swift */,
+				C0E1000000000000000000E1 /* NotificationService */,
 				A3783DA107510C32324017BE /* CountlyTestApp-iOS-swiftTests */,
 			);
 		};
@@ -421,6 +569,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C0E100000000000000000EA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -436,6 +591,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0AD000000000000000000B1 /* LogGathering.swift in Sources */,
+				C0AD000000000000000000B2 /* ConnectionTestModule.swift in Sources */,
+				C0AD000000000000000000B3 /* WidgetLayout.swift in Sources */,
 				D2666B951DE9D68C0088E822 /* TestViewControllerPushPop.swift in Sources */,
 				D257996F1DE71166006A64CA /* TestViewControllerModal.swift in Sources */,
 				F764ACDA23634672B89372D4 /* CoreAPIs.swift in Sources */,
@@ -526,7 +684,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C0E100000000000000000EA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0E1000000000000000000E7 /* NotificationService.swift in Sources */,
+				C0E1000000000000000000E8 /* CountlyNotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C0E100000000000000000EA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0E1000000000000000000E1 /* NotificationService */;
+			targetProxy = C0E100000000000000000EA4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXTargetDependency section */
 		D14D5B9DD92D8038620D1E56 /* PBXTargetDependency */ = {
@@ -725,6 +900,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-iOS-swift/CountlyTestApp-iOS-swift.entitlements";
 				INFOPLIST_FILE = "CountlyTestApp-iOS-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -733,6 +909,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -742,6 +919,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "CountlyTestApp-iOS-swift/CountlyTestApp-iOS-swift.entitlements";
 				INFOPLIST_FILE = "CountlyTestApp-iOS-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -750,6 +928,55 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C0E100000000000000000EA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0AF16B7A1D24E0193C55E01 /* Base.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(inherited).NotificationService";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C0E100000000000000000EA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0AF16B7A1D24E0193C55E01 /* Base.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(inherited).NotificationService";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -783,26 +1010,17 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		C0E100000000000000000EA8 /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0E100000000000000000EA6 /* Debug */,
+				C0E100000000000000000EA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		FC0EB41B25E1218B50D8DB3F /* XCRemoteSwiftPackageReference "countly-sdk-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Countly/countly-sdk-ios.git";
-			requirement = {
-				branch = staging;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		9B0AA69C166B726B2DFC00CE /* Countly */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FC0EB41B25E1218B50D8DB3F /* XCRemoteSwiftPackageReference "countly-sdk-ios" */;
-			productName = Countly;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D252E3791DE074D2006548B0 /* Project object */;
 }

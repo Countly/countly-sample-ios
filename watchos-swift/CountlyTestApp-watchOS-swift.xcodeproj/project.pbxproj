@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C0A1000000000000000000A1 /* CountlyTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1000000000000000000F1 /* CountlyTestApp.swift */; };
+		C0A1000000000000000000A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1000000000000000000F2 /* ContentView.swift */; };
+		C0A1000000000000000000A3 /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1000000000000000000F3 /* Scenario.swift */; };
+		C0A1000000000000000000A4 /* AppLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1000000000000000000F4 /* AppLog.swift */; };
+		C0A1000000000000000000B4 /* Countly in Frameworks */ = {isa = PBXBuildFile; productRef = C0P1000000000000000000P1 /* Countly */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C0F1000000000000000000F1 /* CountlyTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountlyTestApp.swift; sourceTree = "<group>"; };
+		C0F1000000000000000000F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C0F1000000000000000000F3 /* Scenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
+		C0F1000000000000000000F4 /* AppLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLog.swift; sourceTree = "<group>"; };
+		C0F1000000000000000000F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0F1000000000000000000F9 /* CountlyTestApp-watchOS-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CountlyTestApp-watchOS-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C0B1000000000000000000B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A1000000000000000000B4 /* Countly in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C0G1000000000000000000G0 = {
+			isa = PBXGroup;
+			children = (
+				C0G1000000000000000000G1 /* CountlyTestApp-watchOS-swift */,
+				C0G1000000000000000000G2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C0G1000000000000000000G1 /* CountlyTestApp-watchOS-swift */ = {
+			isa = PBXGroup;
+			children = (
+				C0F1000000000000000000F1 /* CountlyTestApp.swift */,
+				C0F1000000000000000000F2 /* ContentView.swift */,
+				C0F1000000000000000000F3 /* Scenario.swift */,
+				C0F1000000000000000000F4 /* AppLog.swift */,
+				C0F1000000000000000000F5 /* Info.plist */,
+			);
+			path = "CountlyTestApp-watchOS-swift";
+			sourceTree = "<group>";
+		};
+		C0G1000000000000000000G2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0F1000000000000000000F9 /* CountlyTestApp-watchOS-swift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C0T1000000000000000000T1 /* CountlyTestApp-watchOS-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0CL00000000000000000CL2 /* Build configuration list for PBXNativeTarget "CountlyTestApp-watchOS-swift" */;
+			buildPhases = (
+				C0B1000000000000000000B1 /* Sources */,
+				C0B1000000000000000000B2 /* Frameworks */,
+				C0B1000000000000000000B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CountlyTestApp-watchOS-swift";
+			packageProductDependencies = (
+				C0P1000000000000000000P1 /* Countly */,
+			);
+			productName = "CountlyTestApp-watchOS-swift";
+			productReference = C0F1000000000000000000F9 /* CountlyTestApp-watchOS-swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0PR00000000000000000PR1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					C0T1000000000000000000T1 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = C0CL00000000000000000CL1 /* Build configuration list for PBXProject "CountlyTestApp-watchOS-swift" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C0G1000000000000000000G0;
+			packageReferences = (
+				C0LP00000000000000000LP1 /* XCLocalSwiftPackageReference "../countly-sdk-swift" */,
+			);
+			productRefGroup = C0G1000000000000000000G2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C0T1000000000000000000T1 /* CountlyTestApp-watchOS-swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C0B1000000000000000000B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0B1000000000000000000B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A1000000000000000000A1 /* CountlyTestApp.swift in Sources */,
+				C0A1000000000000000000A2 /* ContentView.swift in Sources */,
+				C0A1000000000000000000A3 /* Scenario.swift in Sources */,
+				C0A1000000000000000000A4 /* AppLog.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C0C1000000000000000000C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = watchos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		C0C1000000000000000000C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = watchos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		C0C1000000000000000000C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3S32KFMHB8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "CountlyTestApp-watchOS-swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-watchOS-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		C0C1000000000000000000C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3S32KFMHB8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "CountlyTestApp-watchOS-swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ly.count.CountlyTestApp-watchOS-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0CL00000000000000000CL1 /* Build configuration list for PBXProject "CountlyTestApp-watchOS-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0C1000000000000000000C1 /* Debug */,
+				C0C1000000000000000000C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0CL00000000000000000CL2 /* Build configuration list for PBXNativeTarget "CountlyTestApp-watchOS-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0C1000000000000000000C3 /* Debug */,
+				C0C1000000000000000000C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		C0LP00000000000000000LP1 /* XCLocalSwiftPackageReference "../countly-sdk-swift" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../countly-sdk-swift";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C0P1000000000000000000P1 /* Countly */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Countly;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C0PR00000000000000000PR1 /* Project object */;
+}

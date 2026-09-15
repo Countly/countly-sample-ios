@@ -15,16 +15,29 @@ struct RootView: View {
                 if session.isInitialized {
                     List {
                         Section {
-                            ForEach(features) { feature in
-                                NavigationLink {
-                                    feature.destination.navigationTitle(feature.title)
-                                } label: {
-                                    Label(feature.title, systemImage: feature.systemImage)
-                                }
-                            }
+                            EmptyView()
                         } header: {
                             Text("\(session.activeHost ?? "") · \(session.activeAppKey ?? "")")
                                 .textCase(nil)
+                        }
+                        ForEach(featureGroups) { group in
+                            Section(group.title) {
+                                ForEach(group.features) { feature in
+                                    NavigationLink {
+                                        feature.destination.navigationTitle(feature.title)
+                                    } label: {
+                                        Label {
+                                            Text(feature.title)
+                                        } icon: {
+                                            Image(systemName: feature.systemImage)
+                                                .font(.system(size: 13, weight: .semibold))
+                                                .foregroundStyle(.white)
+                                                .frame(width: 28, height: 28)
+                                                .background(feature.tint, in: RoundedRectangle(cornerRadius: 7))
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 } else {

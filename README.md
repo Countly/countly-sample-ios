@@ -2,7 +2,7 @@
 
 ## Countly iOS SDK Sample Application
 
-Sample iOS, iOS-Swift, watchOS, tvOS, and macOS projects demonstrating how to use the [Countly iOS SDK](https://github.com/Countly/countly-sdk-ios).
+Sample iOS, iOS-Swift, watchOS, watchOS-Swift, tvOS, and macOS projects demonstrating how to use the [Countly iOS SDK](https://github.com/Countly/countly-sdk-ios) and the [Countly Swift SDK](https://github.com/Countly/countly-sdk-swift).
 
 ## What is Countly?
 
@@ -93,6 +93,7 @@ The iOS sample app is organized into grouped sections, each covering a specific 
 | macOS       | `macos/`     |
 | tvOS        | `tvos/`      |
 | watchOS     | `watchos/`   |
+| watchOS (Swift) | `watchos-swift/` |
 
 ## Push Notification Setup
 

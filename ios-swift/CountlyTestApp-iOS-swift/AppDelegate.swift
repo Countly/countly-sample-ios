@@ -33,6 +33,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Push and crash reporting are opt in. Everything else is on by default.
         config.features = [.pushNotifications, .crashReporting]
         config.pushTestMode = .development
+        // The token is reported whatever the permission state, as the ObjC sample
+        // does, so the device shows up on the server before the alert is answered.
+        config.sendPushTokenAlways = true
+
+//      The ObjC sample sends its pushes through this application, whose APNs
+//      certificate is registered for the "ly.count.CountlySwift" bundle both
+//      samples now share:
+//      config.appKey = "alertTest"
+//      config.host = "https://v2.count.ly"
 
         // ---------------------------------------------------------------------
         // Optional configuration, left commented so the sample starts minimal.

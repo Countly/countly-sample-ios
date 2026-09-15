@@ -107,7 +107,7 @@ enum Scenario {
             // the controllers the scenario presents. The two host applications have
             // different root screens, and that is a property of the hosts, not of
             // the SDKs. `view-auto-exclusion` is what actually tests the mechanism.
-            var exclusions = ["CountlySampleRoot"]
+            var exclusions = ["CountlySampleRoot", "Countly"]
             if scenario == "view-auto-exclusion" {
                 exclusions.append("AutoViewExcluded")
             }
@@ -117,6 +117,67 @@ enum Scenario {
         if scenario.hasPrefix("session-auto") || scenario.hasPrefix("lifecycle-") {
             // Short enough that the update timer fires inside the capture window.
             config.updateSessionPeriod = 5
+        }
+
+        // --- scenarios added for the Android comparison ----------------------
+
+        if scenario == "consent-feature-group" {
+            config.requiresConsent = true
+        }
+        if scenario == "apm-fg-bg-manual" || scenario == "apm-auto" {
+            config.apm.enableForegroundBackgroundTracking = true
+        }
+        if scenario == "apm-auto" {
+            config.apm.enableAppStartTimeTracking = true
+        }
+        if scenario == "queue-post-forced" {
+            config.alwaysUsePOST = true
+        }
+        if scenario == "queue-headers" {
+            config.customNetworkRequestHeaders = ["X-Parity-Init": "one"]
+        }
+        if scenario == "content-zone" || scenario == "sbs-listing-filters" {
+            config.content.zoneTimerInterval = 16
+        }
+        if scenario == "deviceid-clear-stored" {
+            config.deviceID = nil
+            config.resetStoredDeviceID = true
+        }
+        if scenario == "init-user-properties" {
+            config.providedUserProperties = ["name": "Init Name", "custom_init": 1]
+        }
+        if scenario == "init-metric-override" {
+            config.customMetrics = ["_carrier": "ParityCarrier", "custom_metric": "123"]
+        }
+        if scenario == "init-all-consents" {
+            config.requiresConsent = true
+            config.enableAllConsents = true
+        }
+        if scenario == "init-consent-enabled" {
+            config.requiresConsent = true
+            config.consents = [.sessions, .events]
+        }
+        if scenario == "sbs-auto-off" {
+            config.enableAutomaticViewTracking = true
+            config.automaticViewTrackingExclusionList = ["CountlySampleRoot", "Countly"]
+        }
+        if scenario == "crash-filter" {
+            config.crashes.crashFilterCallback = { crash in
+                if crash.stackTrace.contains("DroppedByFilter") || crash.name.contains("DroppedByFilter") || crash.crashDescription.contains("DroppedByFilter") {
+                    return true
+                }
+                crash.crashSegmentation["filtered"] = "yes"
+                return false
+            }
+        }
+        if scenario == "views-previous-name" {
+            config.experimental.enablePreviousNameRecording = true
+        }
+        if scenario == "views-visibility" {
+            config.experimental.enableVisibilityTracking = true
+        }
+        if scenario == "location-init-disabled" {
+            config.disableLocation = true
         }
     }
 
@@ -639,10 +700,322 @@ enum Scenario {
                 { cly.requestQueue.attemptToSendStoredRequests() },
             ]
 
+
+        // =====================================================================
+        // Scenarios added for the Android comparison. Where this SDK lacks the
+        // API its step logs the fact and only drains the queue, so the capture
+        // shows the gap.
+        // =====================================================================
+
+        case "event-past":
+            return [
+                { NSLog("[SCENARIO] this SDK has no recordPastEvent") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "event-types":
+            return [
+                { cly.events.recordEvent("evt_types", segmentation: ["str": "s", "int": 1, "double": 1.5, "bool": true, "long": 123456789012, "null": NSNull(), "list": [1, 2], "map": [String: Any](), "empty": ""]) },
+                { cly.events.recordEvent("evt_negative", count: -3, sum: -1.5, duration: -2) },
+                { cly.events.recordEvent("evt_zero_count", count: 0) },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "consent-feature-group":
+            return [
+                { NSLog("[SCENARIO] this SDK has no consent feature groups, giving the members individually") },
+                { cly.consent.giveConsent(for: [.events, .viewTracking]) },
+                { cly.events.recordEvent("after_group_consent") },
+                { cly.consent.cancelConsent(for: [.events, .viewTracking]) },
+                { cly.events.recordEvent("after_group_revoked") },
+                { cly.consent.giveConsent(for: .sessions) },
+                { NSLog("[SCENARIO] getConsent(sessions): \(cly.consent.hasConsent(for: .sessions))") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "apm-network-manual":
+            return [
+                { NSLog("[SCENARIO] this SDK has no startNetworkRequest / endNetworkRequest") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "apm-fg-bg-manual":
+            return [
+                { NSLog("[SCENARIO] this SDK has no manual foreground / background APM triggers") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "apm-auto":
+            return [
+                { NSLog("[SCENARIO] app start trace expected from init, waiting for the harness to background the app") },
+            ]
+
+        case "feedback-manual":
+            var widget: CountlyFeedbackWidget?
+            return [
+                { cly.feedback.getAvailableFeedbackWidgets { widgets, _ in
+                    widget = widgets?.first
+                    NSLog("[SCENARIO] widgets: \(widgets?.count ?? 0), first: \(widget?.id ?? "none")") } },
+                { widget?.getWidgetData { data, error in
+                    NSLog("[SCENARIO] widget data: \(String(describing: data)), error: \(String(describing: error))") } },
+                { widget?.recordResult(["rating": 9, "comment": "manual"]) },
+                { widget?.recordResult(nil) },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "feedback-present":
+            return [
+                { cly.feedback.presentNPS() },
+                { NSLog("[SCENARIO] waiting for the widget to load") },
+                { NSLog("[SCENARIO] still waiting") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "storage-explicit":
+            return [
+                { cly.events.recordEvent("explicit_one") },
+                { cly.events.recordEvent("explicit_two") },
+                { NSLog("[SCENARIO] this SDK has no explicit storage mode") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "queue-post-forced":
+            return [
+                { NSLog("[SCENARIO] alwaysUsePOST set at init") },
+                { cly.events.recordEvent("posted_event") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "queue-headers":
+            return [
+                { cly.events.recordEvent("with_init_header") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+                { cly.addCustomNetworkRequestHeaders(["X-Parity-Runtime": "two"]) },
+                { cly.events.recordEvent("with_runtime_header") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "content-zone":
+            return [
+                { cly.content.enterContentZone() },
+                { cly.content.refreshContentZone() },
+                { cly.content.exitContentZone() },
+                { cly.content.refreshContentZone() },
+                { cly.content.previewContent("preview_id") },
+                { cly.content.enterContentZone() },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "deviceid-set":
+            return [
+                { NSLog("[SCENARIO] before: \(cly.deviceID.current ?? "nil") / \(String(describing: cly.deviceID.type))") },
+                { cly.deviceID.setID("parity-device-set") },
+                { NSLog("[SCENARIO] after: \(cly.deviceID.current ?? "nil") / \(String(describing: cly.deviceID.type))") },
+                { cly.events.recordEvent("after_set_id") },
+                { cly.deviceID.setID(cly.deviceID.current ?? "") },
+                { cly.deviceID.setID("") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "deviceid-clear-stored":
+            return [
+                { NSLog("[SCENARIO] generated: \(cly.deviceID.current ?? "nil") / \(String(describing: cly.deviceID.type))") },
+                { cly.events.recordEvent("with_generated_id") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+                { NSLog("[SCENARIO] waiting for the harness to kill and relaunch the app") },
+            ]
+
+        case "init-user-properties":
+            return [
+                { cly.events.recordEvent("after_init_properties") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "init-metric-override":
+            return [
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "init-all-consents":
+            return [
+                { cly.events.recordEvent("with_init_consents") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "init-consent-enabled":
+            return [
+                { cly.events.recordEvent("with_partial_consents") },
+                { _ = cly.views.startView("NoViewConsent") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "sbs-listing-filters":
+            return [
+                { cly.content.enterContentZone() },
+                { cly.events.recordEvent("blocked_event") },
+                { cly.events.recordEvent("allowed_event", segmentation: ["blocked_seg": "x", "kept_seg": "y"]) },
+                { cly.events.recordEvent("evt_seg_filtered", segmentation: ["local_blocked": "x", "kept_seg": "y"]) },
+                { cly.userProfile.setProperty("blocked_prop", value: "x") },
+                { cly.userProfile.setProperty("kept_prop", value: "y") },
+                { cly.userProfile.setProperty("third_prop", value: "z") },
+                { cly.userProfile.save() },
+                { cly.events.recordEvent("journey_event") },
+                { _ = cly.views.startView("JourneyView") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "sbs-auto-off":
+            return [
+                { cly.events.recordEvent("under_auto_off") },
+                { presentTitled("AutoViewOne") },
+                { _ = cly.views.startView("ManualUnderAutoOff") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "sbs-consent-required":
+            return [
+                { cly.events.recordEvent("server_requires_consent") },
+                { cly.consent.giveAllConsents() },
+                { cly.events.recordEvent("after_giving_consent") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "crash-unhandled":
+            return [
+                { cly.crashes.addCrashBreadcrumb("about to crash") },
+                { cly.events.recordEvent("before_crash") },
+                { NSException(name: .init("ParityUnhandled"), reason: "ParityUnhandled", userInfo: nil).raise() },
+            ]
+
+        case "crash-filter":
+            return [
+                { cly.crashes.recordError("DroppedByFilter", isFatal: false, stackTrace: nil, segmentation: nil) },
+                { cly.crashes.recordError("KeptByFilter", isFatal: false, stackTrace: nil, segmentation: nil) },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "views-previous-name":
+            return [
+                { _ = cly.views.startView("FirstView") },
+                { cly.views.stopView(name: "FirstView") },
+                { _ = cly.views.startView("SecondView") },
+                { cly.events.recordEvent("first_event") },
+                { cly.events.recordEvent("second_event") },
+                { cly.views.stopAllViews() },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "views-visibility":
+            return [
+                { _ = cly.views.startView("VisibleView") },
+                { cly.events.recordEvent("visible_event") },
+                { cly.views.stopAllViews() },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "location-init-disabled":
+            return [
+                { cly.events.recordEvent("with_location_disabled") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "content-rotate":
+            // A full-screen content is shown, the interface is rotated to landscape
+            // and back, and the log shows how the page is re-laid out each time.
+            var rotateSteps: [() -> Void] = [{ cly.content.enterContentZone() }]
+            rotateSteps += Array(repeating: { NSLog("[SCENARIO] waiting for the content") }, count: 12)
+            rotateSteps.append { rotate(.landscapeRight) }
+            rotateSteps += Array(repeating: { NSLog("[SCENARIO] landscape") }, count: 12)
+            rotateSteps.append { rotate(.portrait) }
+            rotateSteps += Array(repeating: { NSLog("[SCENARIO] portrait") }, count: 10)
+            return rotateSteps
+
+        case "orientation":
+            return [
+                { NSLog("[SCENARIO] the harness cannot rotate the simulator, Android only") },
+                { NSLog("[SCENARIO] still waiting") },
+                { NSLog("[SCENARIO] still waiting") },
+                { NSLog("[SCENARIO] still waiting") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "multi-instance":
+            return [
+                { let second = CountlyConfig()
+                  second.appKey = "parity_app_key_2"
+                  second.host = "http://localhost:8080"
+                  second.deviceID = "parity-device-2"
+                  second.enableDebug = true
+                  second.updateSessionPeriod = 60
+                  Countly.instance(named: "second").start(with: second) },
+                { cly.events.recordEvent("on_default") },
+                { Countly.instance(named: "second").events.recordEvent("on_second") },
+                { NSLog("[SCENARIO] instances: \(Countly.listInstances())") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+                { Countly.instance(named: "second").requestQueue.attemptToSendStoredRequests() },
+                { Countly.instance(named: "second").halt() },
+                { cly.events.recordEvent("after_second_halted") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "halt":
+            return [
+                { cly.events.recordEvent("before_halt") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+                { cly.halt() },
+                { cly.events.recordEvent("after_halt") },
+                { NSLog("[SCENARIO] isStarted: \(cly.isStarted)") },
+            ]
+
+        case "rc-id-change":
+            return [
+                { cly.remoteConfig.downloadKeys() },
+                { NSLog("[SCENARIO] before change: \(describe(cly.remoteConfig.getValue("welcome_text")))") },
+                { cly.deviceID.changeWithoutMerge("parity-device-rc") },
+                { NSLog("[SCENARIO] after no-merge change: \(describe(cly.remoteConfig.getValue("welcome_text")))") },
+                { cly.deviceID.changeWithMerge("parity-device-rc-merged") },
+                { NSLog("[SCENARIO] after merge change: \(describe(cly.remoteConfig.getValue("welcome_text")))") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "userprofile-picture":
+            return [
+                { cly.userProfile.setProperty("picture", value: "https://example.com/parity.png") },
+                { cly.userProfile.save() },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
+        case "connection-test":
+            return [
+                { NSLog("[SCENARIO] this SDK has no connection test") },
+                { NSLog("[SCENARIO] still waiting") },
+                { NSLog("[SCENARIO] still waiting") },
+                { NSLog("[SCENARIO] still waiting") },
+                { cly.requestQueue.attemptToSendStoredRequests() },
+            ]
+
         default:
             NSLog("[SCENARIO] unknown scenario: \(scenario)")
             return []
         }
+    }
+
+    private static func describe(_ data: CountlyRCData) -> String {
+        "\(String(describing: data.value)) (isCurrentUsersData: \(data.isCurrentUsersData))"
+    }
+
+    /// Rotates the interface without touching the simulator: the scene is asked
+    /// for the orientation the way an application locking a screen would ask.
+    private static func rotate(_ orientation: UIInterfaceOrientationMask) {
+        guard let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene else {
+            NSLog("[SCENARIO] no active scene to rotate")
+            return
+        }
+        NSLog("[SCENARIO] rotating, landscape: \(orientation == .landscapeRight)")
+        scene.requestGeometryUpdate(.iOS(interfaceOrientations: orientation)) { error in
+            NSLog("[SCENARIO] rotation was refused: \(error.localizedDescription)")
+        }
+        scene.keyWindow?.rootViewController?.setNeedsUpdateOfSupportedInterfaceOrientations()
     }
 
     // MARK: - Runner
